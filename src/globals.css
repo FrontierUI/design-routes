@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'FilsonPro-Heavy';
+  src: url('./assets/fonts/FilsonProHeavy.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Mona-Sans-Medium';
+  src: url('./assets/fonts/Mona-Sans-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Mona-Sans-Regular';
+  src: url('./assets/fonts/Mona-Sans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Mona-Sans-SemiBold';
+  src: url('./assets/fonts/Mona-Sans-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Mona-Sans-Bold';
+  src: url('./assets/fonts/Mona-Sans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Mona-Sans-Black';
+  src: url('./assets/fonts/Mona-Sans-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Mona-Sans-ExtraBold';
+  src: url('./assets/fonts/Mona-Sans-ExtraBold.ttf') format('truetype');
+}
+
+@layer base {
+  body {
+    @apply bg-white text-[#111];
+  }
+}
+
+.monaRegular {
+  font-family: 'Mona-Sans-Regular';
+  font-weight: 400;
+}
+.monaMedium {
+  font-family: 'Mona-Sans-Medium';
+  font-weight: 500;
+}
+.monaSemibold {
+  font-family: 'Mona-Sans-SemiBold';
+  font-weight: 600;
+}
+.monaBold {
+  font-family: 'Mona-Sans-Bold';
+  font-weight: 700;
+}
+.monaExtraBold {
+  font-family: 'Mona-Sans-ExtraBold';
+  font-weight: 800;
+}
+.monaBlack {
+  font-family: 'Mona-Sans-Black';
+  font-weight: 900;
+}
+.filsonHeavy {
+  font-family: 'FilsonPro-Heavy';
+  font-weight: 800;
+}
+
+@layer components {
+  .sub-menu {
+    @apply absolute top-[4.2rem] p-[15px] rounded-[6px] origin-[50%_-170px] backdrop-blur bg-white/[0.04];
+  }
+}
+
+@layer utilities {
+  .flexy {
+    @apply flex items-center justify-center;
+  }
+  .itemsCenter {
+    @apply flex items-center;
+  }
+  .flexBetween {
+    @apply flex items-center justify-between;
+  }
+}
