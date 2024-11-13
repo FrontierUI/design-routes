@@ -7,7 +7,7 @@ import Home from './pages/Home';
 const App = () => {
   return (
     <main className="relative wrappered z-[1] w-full max-w-full h-full">
-      <div className="flex w-full">
+      <div className="flexy w-full">
         <Navbar />
       </div>
 
