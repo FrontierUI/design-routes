@@ -9,7 +9,7 @@ import MobileMenu from './MobileMenu';
 
 const Navbar = () => {
   return (
-    <header className="h-16 xl:h-[4.5rem] text-lg font-semibold fixed inset-0 xl:top-7 flexy bg-white lg:rounded-full w-full xl:w-[84%] xl:left-[7.3%] shadow-lg z-40">
+    <header className="h-16 xl:h-[4.5rem] text-lg font-semibold fixed inset-0 xl:top-7 flexy bg-white z-20 lg:rounded-full w-full xl:w-[90%] xl:left-[4.5%] shadow-lg">
       <nav className="px-3.5 lg:px-5 flexBetween w-full max-w-full mx-auto">
         <div className="itemsCenter gap-x-3 relative">
           <Link
