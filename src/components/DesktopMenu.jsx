@@ -67,12 +67,12 @@ const DesktopMenu = ({ menu }) => {
                     </p>
                   )}
                   <div className="itemsCenter gap-x-1 group/menubox">
-                    <div className="w-fit p-1 rounded-md duration-300 ">
+                    <div className="w-fit p-1 rounded-md">
                       {/* <img src={submenu.icon} className="w-10" alt="" /> */}
                       {submenu.icon && <submenu.icon />}
                     </div>
                     <div>
-                      <h6 className="font-semibold transition-all duration-150 hover:text-primary">
+                      <h6 className="font-semibold text-lg transition-all duration-150 hover:text-primary">
                         {submenu.name}
                       </h6>
                     </div>

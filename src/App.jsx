@@ -7,7 +7,9 @@ import Home from './pages/Home';
 const App = () => {
   return (
     <main className="relative wrappered z-[1] w-full max-w-full h-full">
-      <Navbar />
+      <div className="flex w-full">
+        <Navbar />
+      </div>
 
       <Routes>
         <Route index element={<Home />} />
