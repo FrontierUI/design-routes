@@ -35,7 +35,7 @@ const DesktopMenu = ({ menu }) => {
       onHoverEnd={toggleHoverMenu}
       key={menu.name}
     >
-      <span className="itemsCenter gap-1 cursor-pointer px-3 py-1 rounded-xl">
+      <span className="itemsCenter transition-all duration-150 hover:text-primary gap-1 cursor-pointer px-3 py-1 rounded-xl">
         {menu.name}
         {hasSubMenu && (
           <ChevronDown className="mt-[0.6px] group-hover/link:rotate-180 duration-200" />
@@ -67,12 +67,14 @@ const DesktopMenu = ({ menu }) => {
                     </p>
                   )}
                   <div className="itemsCenter gap-x-1 group/menubox">
-                    <div className="w-fit p-1 rounded-md duration-300">
+                    <div className="w-fit p-1 rounded-md duration-300 ">
                       {/* <img src={submenu.icon} className="w-10" alt="" /> */}
                       {submenu.icon && <submenu.icon />}
                     </div>
                     <div>
-                      <h6 className="font-semibold">{submenu.name}</h6>
+                      <h6 className="font-semibold transition-all duration-150 hover:text-primary">
+                        {submenu.name}
+                      </h6>
                     </div>
                   </div>
                 </div>

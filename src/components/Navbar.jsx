@@ -9,10 +9,13 @@ import MobileMenu from './MobileMenu';
 
 const Navbar = () => {
   return (
-    <header className="h-16 xl:h-[4.5rem] text-lg font-semibold fixed inset-0 lg:top-7 flexy bg-white lg:rounded-full w-full xl:w-[78%] xl:left-[9.2%] shadow-lg">
+    <header className="h-16 xl:h-[4.5rem] text-lg font-semibold fixed inset-0 xl:top-7 flexy bg-white lg:rounded-full w-full xl:w-[84%] xl:left-[7.3%] shadow-lg z-40">
       <nav className="px-3.5 lg:px-5 flexBetween w-full max-w-full mx-auto">
-        <div className="itemsCenter gap-x-3 z-40 relative">
-          <Link to="/">
+        <div className="itemsCenter gap-x-3 relative">
+          <Link
+            to="/"
+            className="transform duration-300 xl:hover:scale-105 transition-all"
+          >
             <img src={BrandLogo} className="w-32 lg:w-36" alt="" />
           </Link>
         </div>
@@ -24,12 +27,18 @@ const Navbar = () => {
         </ul>
 
         <div className="itemsCenter gap-x-5">
-          <button
-            aria-label="sign-in"
-            className="bg-white/5 z-[999] relative px-8 py-1.5 shadow rounded-full itemsCenter"
+          <Link
+            className="flexy transform duration-300 xl:hover:scale-105 transition-all"
+            to="/"
+            target="_blank"
           >
-            Sign In
-          </button>
+            <button
+              aria-label="get-a-demo"
+              className="bg-primary text-white z-[5] relative px-6 py-2 shadow rounded-full itemsCenter"
+            >
+              Get a Demo
+            </button>
+          </Link>
 
           <div className="lg:hidden">
             <MobileMenu Menus={Menus} />

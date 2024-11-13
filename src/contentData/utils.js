@@ -82,12 +82,12 @@ export const Menus = [
     // ],
 
     subMenu: [
-      { name: 'Enterprise', icon: ShieldPlus },
-      { name: 'Collaboration', icon: Users },
-      { name: 'Customers', icon: Dessert },
-      { name: 'Security', icon: Lock },
-      { name: 'Security', icon: Lock },
-      { name: 'Security', icon: Lock },
+      { name: 'Creative Campaigns', icon: ShieldPlus },
+      { name: 'Social Media Management', icon: Users },
+      { name: 'Brand Identity Design', icon: Dessert },
+      { name: 'Presentation Design', icon: Lock },
+      { name: 'Web Design & Development', icon: Lock },
+      { name: 'App Design & Development', icon: Lock },
     ],
   },
 
@@ -95,9 +95,9 @@ export const Menus = [
     name: 'Vertical',
     gridCols: 1,
     subMenu: [
-      { name: 'Help', icon: CircleHelp },
-      { name: 'Community', icon: MessageCircle },
-      { name: 'Emergency', icon: TriangleAlert },
+      { name: 'Agencies', icon: CircleHelp },
+      { name: 'Brands', icon: MessageCircle },
+      { name: 'SMEs', icon: TriangleAlert },
     ],
   },
 
