@@ -66,12 +66,13 @@ import { PanelTop } from 'lucide-react';
 // ];
 
 export const Menus = [
-  { name: 'Pricing' },
+  { name: 'Pricing', href: "/pricing" },
 
   {
     name: 'Products',
     subMenuHeading: ['', ''],
     gridCols: 2,
+    href: "/products",
     // subMenu: [
     //   { name: 'Creative Campaigns', icon: CreativeCamp },
     //   { name: 'Brand Identification Design', icon: BrandIdenDesNav },
@@ -82,12 +83,12 @@ export const Menus = [
     // ],
 
     subMenu: [
-      { name: 'Creative Campaigns', icon: ShieldPlus },
-      { name: 'Social Media Management', icon: Users },
-      { name: 'Brand Identity Design', icon: Dessert },
-      { name: 'Presentation Design', icon: Lock },
-      { name: 'Web Design & Development', icon: Lock },
-      { name: 'App Design & Development', icon: Lock },
+      { name: 'Creative Campaigns', icon: ShieldPlus, href: "/creative-campaigns" },
+      { name: 'Social Media Management', icon: Users, href: "/social-media-management" },
+      { name: 'Brand Identity Design', icon: Dessert, href: "/brand-identity-design" },
+      { name: 'Presentation Design', icon: Lock, href: "/presentation-design" },
+      { name: 'Web Design & Development', icon: Lock, href: "/webdesign-and-development" },
+      { name: 'App Design & Development', icon: Lock, href: "/appdesign-and-development" },
     ],
   },
 
@@ -95,10 +96,11 @@ export const Menus = [
     name: 'Vertical',
     gridCols: 1,
     subMenu: [
-      { name: 'Agencies', icon: CircleHelp },
-      { name: 'Brands', icon: MessageCircle },
-      { name: 'SMEs', icon: TriangleAlert },
+      { name: 'Agencies', icon: CircleHelp, href: "/agencies" },
+      { name: 'Brands', icon: MessageCircle, href: "/brands" },
+      { name: 'SMEs', icon: TriangleAlert, href: "/smes" },
     ],
+    href: "/vertical",
   },
 
   { href: '/our-work', name: 'Our Work' },
