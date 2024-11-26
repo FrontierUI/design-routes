@@ -28,79 +28,59 @@ import { Database } from 'lucide-react';
 import { PanelsTopLeft } from 'lucide-react';
 import { PanelTop } from 'lucide-react';
 
-// export const Menus = [
-//   { name: 'Pricing' },
-
-//   {
-//     // subMenuHeading: [
-//     //   'Creative Campaigns',
-//     //   'Brand Identification Design',
-//     //   'Social Media Management',
-//     //   'Web Design & Development',
-//     //   'App Design & Development',
-//     //   'Presentation Design',
-//     // ],
-
-//     name: 'Products',
-//     subMenuHeading: ['Services'],
-//     subMenu: [
-//       { name: 'Creative Campaigns', icon: CreativeCamp },
-//       { name: 'Brand Identification Design', icon: BrandIdenDesNav },
-//       { name: 'Social Media Management', icon: SocialMediaMan },
-//       { name: 'Web Design & Development', icon: WebDesDevNav },
-//       { name: 'App Design & Development', icon: AppDesDevNav },
-//       { name: 'Presentation Design', icon: Presentation },
-//     ],
-//   },
-//   {
-//     name: 'Vertical',
-//     subMenuHeading: ['Availablity'],
-//     subMenu: [
-//       { name: 'Agencies', icon: Agencies },
-//       { name: 'Brands', icon: BrandsNav },
-//       { name: 'SMEs', icon: DirCon },
-//     ],
-//   },
-//   { name: 'Our Work' },
-//   { name: 'About Us' },
-// ];
-
 export const Menus = [
-  { name: 'Pricing' },
+  { name: 'Pricing', href: '/pricing' },
 
   {
+    // href: 'javascript:void(0)',
     name: 'Products',
     subMenuHeading: ['', ''],
     gridCols: 2,
-    // subMenu: [
-    //   { name: 'Creative Campaigns', icon: CreativeCamp },
-    //   { name: 'Brand Identification Design', icon: BrandIdenDesNav },
-    //   { name: 'Social Media Management', icon: SocialMediaMan },
-    //   { name: 'Presentation Design', icon: Presentation },
-    //   { name: 'Web Design & Development', icon: WebDesDevNav },
-    //   { name: 'App Design & Development', icon: AppDesDevNav },
-    // ],
-
     subMenu: [
-      { name: 'Creative Campaigns', icon: ShieldPlus },
-      { name: 'Social Media Management', icon: Users },
-      { name: 'Brand Identity Design', icon: Dessert },
-      { name: 'Presentation Design', icon: Lock },
-      { name: 'Web Design & Development', icon: Lock },
-      { name: 'App Design & Development', icon: Lock },
+      {
+        name: 'Creative Campaigns',
+        icon: ShieldPlus,
+        href: '/creative-campaigns',
+      },
+      {
+        name: 'Social Media Management',
+        icon: Users,
+        href: '/social-media-management',
+      },
+      {
+        name: 'Brand Identity Design',
+        icon: Dessert,
+        href: '/brand-identity-design',
+      },
+      { name: 'Presentation Design', icon: Lock, href: '/presentation-design' },
+      {
+        name: 'Web Design & Development',
+        icon: Lock,
+        href: '/web-design-and-development',
+      },
+      {
+        name: 'App Design & Development',
+        icon: Lock,
+        href: '/app-design-and-development',
+      },
     ],
   },
 
   {
+    // href: 'javascript:void(0)',
     name: 'Vertical',
     gridCols: 1,
     subMenu: [
-      { name: 'Agencies', icon: CircleHelp },
-      { name: 'Brands', icon: MessageCircle },
-      { name: 'SMEs', icon: TriangleAlert },
+      { name: 'Agencies', href: '/for-agencies', icon: CircleHelp },
+      { name: 'Brands', href: '/for-brands', icon: MessageCircle },
+      {
+        name: 'SMEs',
+        href: '/small-and-medium-sized-enterprise',
+        icon: TriangleAlert,
+      },
     ],
   },
 
-  { href: '/our-work', name: 'Our Work' },
-  { href: '/about-us', name: 'About Us' },
+  { name: 'Our Work', href: '/our-work' },
+  { name: 'About Us', href: '/about-us' },
 ];

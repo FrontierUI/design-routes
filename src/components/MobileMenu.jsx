@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const MobileMenu = ({ Menus }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,22 +29,37 @@ const MobileMenu = ({ Menus }) => {
         animate={{ x: isOpen ? '0%' : '-100%' }}
       >
         <ul>
-          {Menus.map(({ name, subMenu }, i) => {
+          {Menus.map(({ name, href, subMenu }, i) => {
             const isClicked = clicked === i;
             const hasSubMenu = subMenu?.length;
             return (
               <li key={name} className="">
-                <span
-                  className="flexBetween p-4 hover:bg-white/5 rounded-md cursor-pointer relative"
-                  onClick={() => setClicked(isClicked ? null : i)}
-                >
-                  {name}
-                  {hasSubMenu && (
-                    <ChevronDown
-                      className={`ml-auto ${isClicked && 'rotate-180'} `}
-                    />
-                  )}
-                </span>
+                {href ? (
+                  <Link
+                    to={href}
+                    className="flexBetween p-4 hover:bg-white/5 rounded-md cursor-pointer relative"
+                    onClick={() => setClicked(isClicked ? null : i)}
+                  >
+                    {name}
+                    {hasSubMenu && (
+                      <ChevronDown
+                        className={`ml-auto ${isClicked && 'rotate-180'} `}
+                      />
+                    )}
+                  </Link>
+                ) : (
+                  <span
+                    className="flexBetween p-4 hover:bg-white/5 rounded-md cursor-pointer relative"
+                    onClick={() => setClicked(isClicked ? null : i)}
+                  >
+                    {name}
+                    {hasSubMenu && (
+                      <ChevronDown
+                        className={`ml-auto ${isClicked && 'rotate-180'} `}
+                      />
+                    )}
+                  </span>
+                )}
                 {hasSubMenu && (
                   <motion.ul
                     initial="exit"
@@ -56,8 +72,13 @@ const MobileMenu = ({ Menus }) => {
                         key={name}
                         className="p-2 itemsCenter hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
                       >
-                        <Icon size={17} />
-                        {name}
+                        <Link
+                          to={href}
+                          className="flex items-center justify-start transition duration-300 hover:text-[#0000ff] text-gray-900"
+                        >
+                          <Icon size={17} className="mr-2" />
+                          {name}
+                        </Link>
                       </li>
                     ))}
                   </motion.ul>

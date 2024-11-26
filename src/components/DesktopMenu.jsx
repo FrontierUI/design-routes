@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const DesktopMenu = ({ menu }) => {
   const [isHover, toggleHover] = useState(false);
@@ -28,20 +29,31 @@ const DesktopMenu = ({ menu }) => {
 
   return (
     <motion.li
+      key={menu.name}
       className="group/link"
       onHoverStart={() => {
         toggleHoverMenu();
       }}
       onHoverEnd={toggleHoverMenu}
-      key={menu.name}
     >
-      <span className="itemsCenter transition-all duration-150 hover:text-primary gap-1 cursor-pointer px-3 py-1 rounded-xl">
-        {menu.name}
-        {hasSubMenu && (
-          <ChevronDown className="mt-[0.6px] group-hover/link:rotate-180 duration-200" />
-        )}
-      </span>
-
+      {menu.href ? (
+        <Link
+          to={menu.href}
+          className="itemsCenter transition-all duration-150 hover:text-primary gap-1 cursor-pointer px-3 py-1 rounded-xl"
+        >
+          {menu.name}
+          {hasSubMenu && (
+            <ChevronDown className="mt-[0.6px] group-hover/link:rotate-180 duration-200" />
+          )}
+        </Link>
+      ) : (
+        <span className="itemsCenter transition-all duration-150 hover:text-primary gap-1 cursor-pointer px-3 py-1 rounded-xl">
+          {menu.name}
+          {hasSubMenu && (
+            <ChevronDown className="mt-[0.6px] group-hover/link:rotate-180 duration-200" />
+          )}
+        </span>
+      )}
       {hasSubMenu && (
         <motion.div
           className="sub-menu"
@@ -66,7 +78,10 @@ const DesktopMenu = ({ menu }) => {
                       {menu?.subMenuHeading?.[i]}
                     </p>
                   )}
-                  <div className="itemsCenter gap-x-1 group/menubox">
+                  <Link
+                    to={submenu.href}
+                    className="itemsCenter gap-x-1 group/menubox"
+                  >
                     <div className="w-fit p-1 rounded-md">
                       {/* <img src={submenu.icon} className="w-10" alt="" /> */}
                       {submenu.icon && <submenu.icon />}
@@ -76,7 +91,7 @@ const DesktopMenu = ({ menu }) => {
                         {submenu.name}
                       </h6>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               ))}
           </div>

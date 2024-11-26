@@ -4,10 +4,9 @@ import Hero from '../components/Hero';
 
 const Home = () => {
   return (
-    <section className="relative w-full h-full bg-transparent">
+    <div className="relative w-full h-full bg-transparent">
       <Hero />
-      <div className="flexy"></div>
-    </section>
+    </div>
   );
 };
 

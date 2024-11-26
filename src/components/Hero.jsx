@@ -2,9 +2,9 @@
 
 const Hero = () => {
   return (
-    <div className="relative w-full max-w-full h-screen bg-primary">
+    <section className="relative w-full max-w-full h-screen bg-primary">
       <div className="flexy px-5"></div>
-    </div>
+    </section>
   );
 };
 
