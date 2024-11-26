@@ -67,7 +67,7 @@ const MobileMenu = ({ Menus }) => {
                     variants={subMenuDrawer}
                     className="ml-4"
                   >
-                    {subMenu.map(({ name, icon: Icon }) => (
+                    {subMenu.map(({ name, href, icon: Icon }) => (
                       <li
                         key={name}
                         className="p-2 itemsCenter hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
