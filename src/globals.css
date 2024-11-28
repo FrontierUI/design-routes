@@ -36,7 +36,8 @@
 
 @layer base {
   body {
-    @apply bg-white text-[#111];
+    @apply bg-white text-[#111] overflow-x-hidden;
+    font-family: 'Mona-Sans-Regular';
   }
 }
 
@@ -84,5 +85,9 @@
   }
   .flexBetween {
     @apply flex items-center justify-between;
+  }
+
+  .horLine {
+    @apply h-[1px] w-32 bg-white;
   }
 }
