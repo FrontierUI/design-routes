@@ -17,8 +17,8 @@ const Hero = () => {
           <p className="text-lg">We are the extension of your creative team</p>
         </div>
 
-        <div className="flexy relative w-full gap-x-3 mt-4 right-3 lg:right-0">
-          <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out relative lg:left-5 left-1.5 mx-3">
+        <div className="flexy relative w-full gap-x-3 mt-4 right-4 lg:right-0">
+          <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out relative lg:left-5 left-1.5 mx-2 lg:mx-3">
             <img
               src="/images/creativeCloud.png"
               className="w-16 h-16 object-cover"
@@ -26,7 +26,7 @@ const Hero = () => {
             />
             <p className="pt-1.5">Creative Cloud</p>
           </div>
-          <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out mr-3 lg:mx-3">
+          <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out mx-2 lg:mx-3">
             <img
               src="/images/figma.png"
               className="w-16 h-16 object-cover"
@@ -34,7 +34,7 @@ const Hero = () => {
             />
             <p className="pt-1.5">Figma</p>
           </div>
-          <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out mr-3 lg:mx-3">
+          <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out mx-2 lg:mx-3">
             <img
               src="/images/vscode.png"
               className="w-16 h-16 object-cover"
@@ -42,7 +42,7 @@ const Hero = () => {
             />
             <p className="pt-1.5">VS Code</p>
           </div>
-          <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out lg:mx-3">
+          <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out mx-2 lg:mx-3">
             <img
               src="/images/meta.png"
               className="w-16 h-16 object-cover"
