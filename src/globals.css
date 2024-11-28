@@ -39,6 +39,10 @@
     @apply bg-white text-[#111] overflow-x-hidden;
     font-family: 'Mona-Sans-Regular';
   }
+
+  p {
+    @apply leading-none;
+  }
 }
 
 .monaRegular {

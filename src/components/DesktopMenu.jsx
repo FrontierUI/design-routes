@@ -73,11 +73,6 @@ const DesktopMenu = ({ menu }) => {
             {hasSubMenu &&
               menu.subMenu.map((submenu, i) => (
                 <div key={i} className="relative cursor-pointer">
-                  {menu.gridCols > 1 && menu?.subMenuHeading?.[i] && (
-                    <p className="text-lg mb-4 text-gray-500">
-                      {menu?.subMenuHeading?.[i]}
-                    </p>
-                  )}
                   <Link
                     to={submenu.href}
                     className="itemsCenter gap-x-1 group/menubox"

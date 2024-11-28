@@ -34,14 +34,10 @@ export const Menus = [
   {
     // href: 'javascript:void(0)',
     name: 'Products',
-    subMenuHeading: ['', ''],
+    // subMenuHeading: ['', ''],
     gridCols: 2,
     subMenu: [
-      {
-        name: 'Creative Campaigns',
-        icon: ShieldPlus,
-        href: '/creative-campaigns',
-      },
+      { name: 'Creative Campaigns', icon: Bolt, href: '/creative-campaigns' },
       {
         name: 'Social Media Management',
         icon: Users,
