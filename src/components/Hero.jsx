@@ -81,6 +81,9 @@ const Hero = () => {
                     borderRadius: '0.75rem',
                     display: 'flex',
                     alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '100%',
+                    height: '100%',
                   },
                 },
               },
@@ -89,6 +92,8 @@ const Hero = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              width: '100%',
+              height: '100%',
             }}
             muted={true}
             width="100%"
