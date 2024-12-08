@@ -1,5 +1,4 @@
-// import React from 'react';
-
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import BrandLogo from '../assets/images/routeslogo.svg';
@@ -8,12 +7,19 @@ import DesktopMenu from './DesktopMenu';
 import MobileMenu from './MobileMenu';
 
 const Navbar = () => {
+  const [isOpenMain, setIsOpenMain] = useState(false);
+
+  const toggleDrawer = () => {
+    setIsOpenMain(!isOpenMain);
+  };
+
   return (
     <header className="h-16 xl:h-[4.5rem] text-lg font-semibold fixed inset-0 xl:top-7 flexy bg-white z-20 lg:rounded-full w-full xl:w-[90%] xl:left-[4.5%] shadow-lg">
       <nav className="px-3.5 lg:px-5 flexBetween w-full max-w-full mx-auto">
         <div className="itemsCenter gap-x-3 relative">
           <Link
             to="/"
+            onClick={() => toggleDrawer()}
             className="transform duration-300 xl:hover:scale-105 transition-all"
           >
             <img src={BrandLogo} className="w-32 lg:w-36" alt="" />
@@ -30,6 +36,7 @@ const Navbar = () => {
           <Link
             className="flexy transform duration-300 xl:hover:scale-105 transition-all"
             to="/"
+            onClick={() => toggleDrawer()}
             target="_blank"
           >
             <button
@@ -41,7 +48,7 @@ const Navbar = () => {
           </Link>
 
           <div className="lg:hidden">
-            <MobileMenu Menus={Menus} />
+            <MobileMenu Menus={Menus} isOpenMain={isOpenMain} />
           </div>
         </div>
       </nav>

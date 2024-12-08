@@ -74,6 +74,10 @@
   font-weight: 800;
 }
 
+.borderRad1 {
+  border-radius: 1rem !important;
+}
+
 @layer components {
   .sub-menu {
     @apply absolute top-[4.2rem] p-[15px] rounded-[6px] origin-[50%_-170px] backdrop-blur bg-gray-50;

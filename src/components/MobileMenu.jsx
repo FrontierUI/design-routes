@@ -1,11 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const MobileMenu = ({ Menus }) => {
+const MobileMenu = ({ Menus, isOpenMain }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [clicked, setClicked] = useState(null);
+
+  useEffect(() => {
+    setIsOpen(isOpenMain);
+  }, [isOpenMain]);
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -38,7 +42,10 @@ const MobileMenu = ({ Menus }) => {
                   <Link
                     to={href}
                     className="flexBetween p-4 hover:bg-white/5 rounded-md cursor-pointer relative"
-                    onClick={() => setClicked(isClicked ? null : i)}
+                    onClick={() => {
+                      setClicked(isClicked ? null : i);
+                      toggleDrawer();
+                    }}
                   >
                     {name}
                     {hasSubMenu && (
@@ -67,16 +74,18 @@ const MobileMenu = ({ Menus }) => {
                     variants={subMenuDrawer}
                     className="ml-4"
                   >
-                    {subMenu.map(({ name, href, icon: Icon }) => (
+                    {subMenu.map(({ name, href, icon }) => (
                       <li
                         key={name}
                         className="p-2 itemsCenter hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
+                        onClick={() => toggleDrawer()}
                       >
                         <Link
                           to={href}
                           className="flex items-center justify-start transition duration-300 hover:text-[#0000ff] text-gray-900"
+                          onClick={() => toggleDrawer()}
                         >
-                          <Icon size={17} className="mr-2" />
+                          <img src={icon} className="w-8 mr-2" alt="" />
                           {name}
                         </Link>
                       </li>

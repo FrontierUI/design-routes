@@ -78,8 +78,11 @@ const DesktopMenu = ({ menu }) => {
                     className="itemsCenter gap-x-1 group/menubox"
                   >
                     <div className="w-fit p-1 rounded-md">
-                      {/* <img src={submenu.icon} className="w-10" alt="" /> */}
-                      {submenu.icon && <submenu.icon />}
+                      <img
+                        src={submenu.icon}
+                        className="w-8 object-cover mr-2"
+                        alt=""
+                      />
                     </div>
                     <div>
                       <h6 className="font-semibold text-lg transition-all duration-150 hover:text-primary">
