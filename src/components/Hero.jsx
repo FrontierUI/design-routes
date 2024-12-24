@@ -4,17 +4,18 @@ import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
 import vid from '/images/860x500.mp4';
-import Video from './Video';
+// import Video from './Video';
 
 const Hero = () => {
   // let vidStyles = 'rounded-2xl';
 
   return (
-    <section className="w-full h-screen bg-primary">
-      <div className="flexy flex-col px-5 text-white relative top-36 text-center">
+    <section className="relative w-full h-full z-[1]">
+      <div className="absolute w-full bg-primary h-screen -z-[1]" />
+      <div className="flexy flex-col px-5 text-white relative pt-32 text-center">
         <div className="flexy flex-col space-y-2.5">
           <div className="flexy">
-            <hr className="horLine hidden lg:block lg:mr-3 " />
+            <hr className="horLine hidden lg:block lg:mr-3" />
             <h4 className="uppercase text-xl monaMedium">
               Full service design agency
             </h4>
@@ -70,7 +71,7 @@ const Hero = () => {
           </Link>
         </div>
 
-        <div className="flexy relative my-5 w-full h-full lg:w-3/4 rounded-xl">
+        <div className="flexy relative my-5 w-full h-full lg:w-2/3 2xl:w-1/2 rounded-xl">
           <ReactPlayer
             playing
             loop={true}
@@ -78,7 +79,7 @@ const Hero = () => {
               file: {
                 attributes: {
                   style: {
-                    borderRadius: '0.75rem',
+                    borderRadius: '0.5rem',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -101,8 +102,6 @@ const Hero = () => {
             url={vid}
             controls
           />
-
-          {/* <Video /> */}
         </div>
       </div>
     </section>

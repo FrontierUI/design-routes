@@ -40,8 +40,13 @@
     font-family: 'Mona-Sans-Regular';
   }
 
-  p {
-    @apply leading-none;
+  p,
+  span {
+    @apply leading-tight;
+  }
+
+  img {
+    @apply max-w-full h-auto;
   }
 }
 
@@ -98,4 +103,49 @@
   .horLine {
     @apply h-[1px] w-32 bg-white;
   }
+  .smallBtn {
+    @apply py-2 px-6;
+    font-family: 'Mona-Sans-SemiBold';
+  }
+
+  .bord {
+    @apply border-2 border-primary rounded-full;
+  }
+
+  .transitAll {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .scal105 {
+    @apply transform hover:scale-105;
+  }
+  .swiper_container {
+    @apply relative w-full h-full;
+  }
+
+  .swiper-slide {
+    @apply relative w-full h-full;
+  }
+
+  .swiper-slide img {
+    @apply rounded-lg object-cover h-96;
+  }
+
+  .swiper-slide-shadow-left,
+  .swiper-slide-shadow-right {
+    @apply !hidden;
+  }
+}
+
+.slider-controler {
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-controler .swiper-button-next {
+  left: 100% !important;
+  transform: translateX(-100%) !important;
 }

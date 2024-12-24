@@ -8,6 +8,11 @@ import BrandsNav from '../assets/images/brandsNav.svg';
 import Agencies from '../assets/images/agenciess.svg';
 import DirCon from '../assets/images/dirCon.svg';
 
+import web1 from '../assets/images/Web01.mp4';
+import web2 from '../assets/images/Web02.mp4';
+import web3 from '../assets/images/Web03.mp4';
+import web4 from '../assets/images/Web04.mp4';
+
 export const Menus = [
   { name: 'Pricing', href: '/pricing' },
 
@@ -66,4 +71,11 @@ export const Menus = [
 
   { name: 'Our Work', href: '/our-work' },
   { name: 'About Us', href: '/about-us' },
+];
+
+export const smallVids = [
+  { src: web1 },
+  { src: web2 },
+  { src: web3 },
+  { src: web4 },
 ];

@@ -6,7 +6,7 @@ import Home from './pages/Home';
 
 const App = () => {
   return (
-    <main className="relative wrappered z-[1] w-full max-w-full h-full">
+    <main className="relative max-w-full w-full h-full">
       <Navbar />
 
       <Routes>
