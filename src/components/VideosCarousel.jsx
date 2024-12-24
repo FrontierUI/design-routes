@@ -96,6 +96,7 @@ const VideosCarousel = () => {
                       alt=""
                     />
                   </SwiperSlide>
+
                   <SwiperSlide>
                     <img
                       src={uiux}
@@ -103,6 +104,7 @@ const VideosCarousel = () => {
                       alt=""
                     />
                   </SwiperSlide>
+
                   <SwiperSlide>
                     <img
                       src={uiux}
@@ -110,6 +112,7 @@ const VideosCarousel = () => {
                       alt=""
                     />
                   </SwiperSlide>
+
                   <div className="slider-controler">
                     <div className="swiper-button-prev slider-arrow">
                       <ChevronRight />
