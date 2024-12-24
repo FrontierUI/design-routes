@@ -33,6 +33,7 @@ const VideosCarousel = () => {
                   leading agencies and brands to deliver exceptional design
                   faster, more reliably, and at scale.
                 </p>
+
                 <p className="text-md monaRegular">
                   Collaborate with dedicated top-tier creatives and tech
                   experts, trained in the latest AI tools—without the cost and
@@ -130,7 +131,6 @@ const VideosCarousel = () => {
           <div className="relative w-full h-full flexy">
             <div className="w-full h-full">
               <Swiper
-                // effect={'coverflow'}
                 grabCursor={true}
                 centeredSlides={true}
                 loop={true}
