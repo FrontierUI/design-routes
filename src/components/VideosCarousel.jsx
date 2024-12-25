@@ -24,9 +24,9 @@ const VideosCarousel = () => {
   return (
     <div className="relative w-full h-full">
       <div className="flexy py-6">
-        <div className="grid grid-cols-12 gap-4 w-full h-full">
+        <div className="grid grid-cols-12 gap-4 w-full h-full max-h-full">
           <div className="col-span-12 lg:col-span-6 relative w-full h-full flex items-center justify-start">
-            <div className="flex flex-col items-start justify-start space-y-5">
+            <div className="w-full h-full flex flex-col items-start justify-start space-y-5">
               <div className="flex flex-col items-start justify-start space-y-3">
                 <h2 className="monaBold text-4xl">Be Proud of your team</h2>
                 <p className="text-md monaRegular">
@@ -49,20 +49,90 @@ const VideosCarousel = () => {
                   </Link>
                 </div>
               </div>
+
+              <Swiper
+                autoplay={{ delay: 0 }}
+                speed={500}
+                freeMode={true}
+                spaceBetween={10}
+                centeredSlides={false}
+                initialSlide={1}
+                grabCursor={true}
+                slidesPerView={'auto'}
+                breakpoints={{
+                  1344: { slidesPerView: 4 },
+                  1024: { slidesPerView: 3 },
+                  640: { slidesPerView: 2 },
+                }}
+                className="w-full h-full "
+              >
+                <SwiperSlide>
+                  <img
+                    src="https://swiperjs.com/demos/images/nature-5.jpg"
+                    className="img-fluid w-full h-full"
+                    alt=""
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="https://swiperjs.com/demos/images/nature-5.jpg"
+                    className="img-fluid w-full h-full"
+                    alt=""
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="https://swiperjs.com/demos/images/nature-5.jpg"
+                    className="img-fluid w-full h-full"
+                    alt=""
+                  />
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <img
+                    src="https://swiperjs.com/demos/images/nature-2.jpg"
+                    className="img-fluid w-full h-full"
+                    alt=""
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="https://swiperjs.com/demos/images/nature-3.jpg"
+                    className="img-fluid w-full h-full"
+                    alt=""
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="https://swiperjs.com/demos/images/nature-4.jpg"
+                    className="img-fluid w-full h-full"
+                    alt=""
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="https://swiperjs.com/demos/images/nature-1.jpg"
+                    className="img-fluid w-full h-full"
+                    alt=""
+                  />
+                </SwiperSlide>
+              </Swiper>
             </div>
           </div>
 
-          <div className="col-span-12 lg:col-span-6 relative w-full h-full flexy">
+          <div className="col-span-12 lg:col-span-6 relative w-full max-h-full h-full">
             <Swiper
               autoplay={{ delay: 0 }}
               speed={500}
               freeMode={true}
+              centeredSlides={true}
               spaceBetween={10}
               slidesPerView={'auto'}
-              centeredSlides={true}
+              pagination={{ clickable: true }}
               initialSlide={1}
               grabCursor={true}
               breakpoints={{
+                1344: { slidesPerView: 3 },
                 1024: { slidesPerView: 2 },
                 640: { slidesPerView: 1 },
               }}
@@ -85,6 +155,20 @@ const VideosCarousel = () => {
               <SwiperSlide>
                 <img
                   src="https://swiperjs.com/demos/images/nature-3.jpg"
+                  className="img-fluid w-full h-full"
+                  alt=""
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src="https://swiperjs.com/demos/images/nature-4.jpg"
+                  className="img-fluid w-full h-full"
+                  alt=""
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src="https://swiperjs.com/demos/images/nature-1.jpg"
                   className="img-fluid w-full h-full"
                   alt=""
                 />

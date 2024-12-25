@@ -79,12 +79,14 @@ const Hero = () => {
               file: {
                 attributes: {
                   style: {
-                    borderRadius: '0.5rem',
+                    borderRadius: '0.75rem',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     width: '100%',
                     height: '100%',
+                    outline: 'none',
+                    border: 'none',
                   },
                 },
               },
@@ -95,6 +97,9 @@ const Hero = () => {
               justifyContent: 'center',
               width: '100%',
               height: '100%',
+              outline: 'none',
+              border: 'none',
+              borderRadius: '0.75rem',
             }}
             muted={true}
             width="100%"
