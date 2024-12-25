@@ -30,7 +30,7 @@ const Hero = () => {
           <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out relative lg:left-5 left-3 mx-2 lg:mx-3">
             <img
               src="/images/creativeCloud.png"
-              className="w-16 h-16 object-cover"
+              className="w-16 h-16 object-cover img-fluid"
               alt=""
             />
             <p className="pt-1.5">Creative Cloud</p>
@@ -38,7 +38,7 @@ const Hero = () => {
           <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out mx-2 lg:mx-3">
             <img
               src="/images/figma.png"
-              className="w-16 h-16 object-cover"
+              className="w-16 h-16 object-cover img-fluid"
               alt=""
             />
             <p className="pt-1.5">Figma</p>
@@ -46,7 +46,7 @@ const Hero = () => {
           <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out mx-2 lg:mx-3">
             <img
               src="/images/vscode.png"
-              className="w-16 h-16 object-cover"
+              className="w-16 h-16 object-cover img-fluid"
               alt=""
             />
             <p className="pt-1.5">VS Code</p>
@@ -54,7 +54,7 @@ const Hero = () => {
           <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out mx-2 lg:mx-3">
             <img
               src="/images/meta.png"
-              className="w-16 h-16 object-cover"
+              className="w-16 h-16 object-cover img-fluid"
               alt=""
             />
             <p className="pt-1.5">Meta</p>

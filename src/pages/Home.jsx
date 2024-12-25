@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="relative w-full h-full">
       <Hero />
-      <div className="container w-full h-full px-5 lg:px-12 ">
+      <div className="container w-full h-full px-5 lg:px-16">
         <VideosCarousel />
       </div>
     </div>
