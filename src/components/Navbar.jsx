@@ -14,8 +14,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className="h-16 xl:h-[4.5rem] text-lg font-semibold fixed inset-0 xl:top-7 flexy bg-white z-20 lg:rounded-full w-full xl:w-[94%] xl:left-[3%] shadow-lg">
-      <nav className="px-3.5 lg:px-5 flexBetween w-full max-w-full mx-auto">
+    <header className="h-16 xl:h-[4.5rem] text-lg font-semibold fixed inset-0 xl:top-7 flexy bg-white z-20 xl:rounded-full w-full xl:w-[94%] xl:left-[3%] shadow-lg">
+      <nav className="px-2.5 lg:px-5 flexBetween w-full max-w-full mx-auto">
         <div className="itemsCenter gap-x-3 relative">
           <Link
             to="/"

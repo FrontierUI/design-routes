@@ -74,8 +74,8 @@ export const Menus = [
 ];
 
 export const smallVids = [
-  { src: web1 },
-  { src: web2 },
-  { src: web3 },
-  { src: web4 },
+  { vidId: 'web1', src: web1 },
+  { vidId: 'web2', src: web2 },
+  { vidId: 'web3', src: web3 },
+  { vidId: 'web5', src: web4 },
 ];

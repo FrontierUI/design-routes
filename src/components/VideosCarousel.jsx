@@ -1,24 +1,18 @@
 // import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { EffectCoverflow, Navigation, Pagination } from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper';
 
 import 'swiper/css';
-import 'swiper/css/effect-coverflow';
+// import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
 
 import { Link } from 'react-router-dom';
 
 import { smallVids } from '../contentData/utils';
-import {
-  ArrowBigLeft,
-  ArrowBigRight,
-  ChevronLeft,
-  ChevronRight,
-} from 'lucide-react';
-
-import uiux from '../assets/images/uiuxblog.png';
+import ReactPlayer from 'react-player';
 
 const VideosCarousel = () => {
   return (
@@ -50,74 +44,53 @@ const VideosCarousel = () => {
                 </div>
               </div>
 
-              <div className="w-full">
+              <div className="w-full h-full">
                 <Swiper
                   loop={true}
-                  autoplay={{ delay: 1000, disableOnInteraction: true }}
+                  autoplay={{ delay: 1500 }}
                   speed={500}
-                  freeMode={true}
                   spaceBetween={10}
-                  centeredSlides={false}
-                  initialSlide={1}
+                  centeredSlides={true}
+                  modules={[Autoplay, Pagination]}
                   grabCursor={true}
-                  slidesPerView={'auto'}
                   breakpoints={{
-                    1714: { slidesPerView: 4 },
                     1024: { slidesPerView: 3 },
                     640: { slidesPerView: 2 },
                   }}
-                  className="w-full h-full "
+                  className="w-full h-full"
                 >
-                  <SwiperSlide className="!h-80 w-full">
-                    <img
-                      src="https://swiperjs.com/demos/images/nature-5.jpg"
-                      className="img-fluid w-full h-full"
-                      alt=""
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide className="!h-80 w-full">
-                    <img
-                      src="https://swiperjs.com/demos/images/nature-5.jpg"
-                      className="img-fluid w-full h-full"
-                      alt=""
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide className="!h-80 w-full">
-                    <img
-                      src="https://swiperjs.com/demos/images/nature-5.jpg"
-                      className="img-fluid w-full h-full"
-                      alt=""
-                    />
-                  </SwiperSlide>
-
-                  <SwiperSlide className="!h-80 w-full">
-                    <img
-                      src="https://swiperjs.com/demos/images/nature-2.jpg"
-                      className="img-fluid w-full h-full"
-                      alt=""
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide className="!h-80 w-full">
-                    <img
-                      src="https://swiperjs.com/demos/images/nature-3.jpg"
-                      className="img-fluid w-full h-full"
-                      alt=""
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide className="!h-80 w-full">
-                    <img
-                      src="https://swiperjs.com/demos/images/nature-4.jpg"
-                      className="img-fluid w-full h-full"
-                      alt=""
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide className="!h-80 w-full">
-                    <img
-                      src="https://swiperjs.com/demos/images/nature-1.jpg"
-                      className="img-fluid w-full h-full"
-                      alt=""
-                    />
-                  </SwiperSlide>
+                  {smallVids.map((smvid) => (
+                    <SwiperSlide
+                      className="w-full h-full rounded-2xl"
+                      key={smvid.vidId}
+                    >
+                      <ReactPlayer
+                        playing
+                        url={smvid.src}
+                        loop={true}
+                        muted={true}
+                        width="100%"
+                        style={{
+                          width: '100%',
+                          borderRadius: '1rem',
+                          outline: 'none',
+                          border: 'none',
+                        }}
+                        config={{
+                          file: {
+                            attributes: {
+                              style: {
+                                width: '100%',
+                                borderRadius: '1rem',
+                                outline: 'none',
+                                border: 'none',
+                              },
+                            },
+                          },
+                        }}
+                      />
+                    </SwiperSlide>
+                  ))}
                 </Swiper>
               </div>
             </div>
@@ -125,17 +98,18 @@ const VideosCarousel = () => {
 
           <div className="col-span-12 lg:col-span-6 relative w-full max-h-full h-full">
             <Swiper
-              autoplay={{ delay: 0 }}
+              autoplay={{ delay: 1500 }}
               speed={500}
+              loop={true}
               freeMode={true}
-              centeredSlides={false}
-              spaceBetween={15}
+              centeredSlides={true}
+              spaceBetween={12}
+              grabCursor={true}
               slidesPerView={'auto'}
               pagination={{ clickable: true }}
+              modules={[Autoplay, Pagination]}
               initialSlide={1}
-              grabCursor={true}
               breakpoints={{
-                1344: { slidesPerView: 3 },
                 1024: { slidesPerView: 2 },
                 640: { slidesPerView: 1 },
               }}
