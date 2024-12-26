@@ -120,3 +120,7 @@
     @apply transform hover:scale-105;
   }
 }
+
+.swipSlid {
+  height: 100% !important;
+}

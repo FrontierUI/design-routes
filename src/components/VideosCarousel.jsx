@@ -50,73 +50,76 @@ const VideosCarousel = () => {
                 </div>
               </div>
 
-              <Swiper
-                autoplay={{ delay: 0 }}
-                speed={500}
-                freeMode={true}
-                spaceBetween={10}
-                centeredSlides={false}
-                initialSlide={1}
-                grabCursor={true}
-                slidesPerView={'auto'}
-                breakpoints={{
-                  1344: { slidesPerView: 4 },
-                  1024: { slidesPerView: 3 },
-                  640: { slidesPerView: 2 },
-                }}
-                className="w-full h-full "
-              >
-                <SwiperSlide>
-                  <img
-                    src="https://swiperjs.com/demos/images/nature-5.jpg"
-                    className="img-fluid w-full h-full"
-                    alt=""
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img
-                    src="https://swiperjs.com/demos/images/nature-5.jpg"
-                    className="img-fluid w-full h-full"
-                    alt=""
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img
-                    src="https://swiperjs.com/demos/images/nature-5.jpg"
-                    className="img-fluid w-full h-full"
-                    alt=""
-                  />
-                </SwiperSlide>
+              <div className="w-full">
+                <Swiper
+                  loop={true}
+                  autoplay={{ delay: 1000, disableOnInteraction: true }}
+                  speed={500}
+                  freeMode={true}
+                  spaceBetween={10}
+                  centeredSlides={false}
+                  initialSlide={1}
+                  grabCursor={true}
+                  slidesPerView={'auto'}
+                  breakpoints={{
+                    1714: { slidesPerView: 4 },
+                    1024: { slidesPerView: 3 },
+                    640: { slidesPerView: 2 },
+                  }}
+                  className="w-full h-full "
+                >
+                  <SwiperSlide className="!h-80 w-full">
+                    <img
+                      src="https://swiperjs.com/demos/images/nature-5.jpg"
+                      className="img-fluid w-full h-full"
+                      alt=""
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide className="!h-80 w-full">
+                    <img
+                      src="https://swiperjs.com/demos/images/nature-5.jpg"
+                      className="img-fluid w-full h-full"
+                      alt=""
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide className="!h-80 w-full">
+                    <img
+                      src="https://swiperjs.com/demos/images/nature-5.jpg"
+                      className="img-fluid w-full h-full"
+                      alt=""
+                    />
+                  </SwiperSlide>
 
-                <SwiperSlide>
-                  <img
-                    src="https://swiperjs.com/demos/images/nature-2.jpg"
-                    className="img-fluid w-full h-full"
-                    alt=""
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img
-                    src="https://swiperjs.com/demos/images/nature-3.jpg"
-                    className="img-fluid w-full h-full"
-                    alt=""
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img
-                    src="https://swiperjs.com/demos/images/nature-4.jpg"
-                    className="img-fluid w-full h-full"
-                    alt=""
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img
-                    src="https://swiperjs.com/demos/images/nature-1.jpg"
-                    className="img-fluid w-full h-full"
-                    alt=""
-                  />
-                </SwiperSlide>
-              </Swiper>
+                  <SwiperSlide className="!h-80 w-full">
+                    <img
+                      src="https://swiperjs.com/demos/images/nature-2.jpg"
+                      className="img-fluid w-full h-full"
+                      alt=""
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide className="!h-80 w-full">
+                    <img
+                      src="https://swiperjs.com/demos/images/nature-3.jpg"
+                      className="img-fluid w-full h-full"
+                      alt=""
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide className="!h-80 w-full">
+                    <img
+                      src="https://swiperjs.com/demos/images/nature-4.jpg"
+                      className="img-fluid w-full h-full"
+                      alt=""
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide className="!h-80 w-full">
+                    <img
+                      src="https://swiperjs.com/demos/images/nature-1.jpg"
+                      className="img-fluid w-full h-full"
+                      alt=""
+                    />
+                  </SwiperSlide>
+                </Swiper>
+              </div>
             </div>
           </div>
 
@@ -125,8 +128,8 @@ const VideosCarousel = () => {
               autoplay={{ delay: 0 }}
               speed={500}
               freeMode={true}
-              centeredSlides={true}
-              spaceBetween={10}
+              centeredSlides={false}
+              spaceBetween={15}
               slidesPerView={'auto'}
               pagination={{ clickable: true }}
               initialSlide={1}
@@ -136,54 +139,55 @@ const VideosCarousel = () => {
                 1024: { slidesPerView: 2 },
                 640: { slidesPerView: 1 },
               }}
+              className="swipSlid"
             >
-              <SwiperSlide>
+              <SwiperSlide className="h-full">
                 <img
-                  src="https://swiperjs.com/demos/images/nature-5.jpg"
-                  className="img-fluid w-full h-full"
+                  src="/images/iph.jpeg"
+                  className="img-fluid w-full h-full "
                   alt=""
                 />
               </SwiperSlide>
 
-              <SwiperSlide>
+              <SwiperSlide className="h-full">
                 <img
-                  src="https://swiperjs.com/demos/images/nature-2.jpg"
-                  className="img-fluid w-full h-full"
+                  src="/images/iph.jpeg"
+                  className="img-fluid w-full h-full "
                   alt=""
                 />
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide className="h-full">
                 <img
-                  src="https://swiperjs.com/demos/images/nature-3.jpg"
-                  className="img-fluid w-full h-full"
+                  src="/images/iph.jpeg"
+                  className="img-fluid w-full h-full "
                   alt=""
                 />
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide className="h-full">
                 <img
-                  src="https://swiperjs.com/demos/images/nature-4.jpg"
-                  className="img-fluid w-full h-full"
+                  src="/images/iph.jpeg"
+                  className="img-fluid w-full h-full "
                   alt=""
                 />
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide className="h-full">
                 <img
-                  src="https://swiperjs.com/demos/images/nature-1.jpg"
-                  className="img-fluid w-full h-full"
+                  src="/images/iph.jpeg"
+                  className="img-fluid w-full h-full "
                   alt=""
                 />
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide className="h-full">
                 <img
-                  src="https://swiperjs.com/demos/images/nature-4.jpg"
-                  className="img-fluid w-full h-full"
+                  src="/images/iph.jpeg"
+                  className="img-fluid w-full h-full "
                   alt=""
                 />
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide className="h-full">
                 <img
-                  src="https://swiperjs.com/demos/images/nature-1.jpg"
-                  className="img-fluid w-full h-full"
+                  src="/images/iph.jpeg"
+                  className="img-fluid w-full h-full "
                   alt=""
                 />
               </SwiperSlide>
