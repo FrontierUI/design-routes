@@ -2,7 +2,6 @@ import React from 'react';
 
 import Hero from '../components/Hero';
 import VideosCarousel from '../components/VideosCarousel';
-import VideosCarouselFixed from '../components/VideosCarouselFixed';
 
 // import VideosCarousel from '@/src';
 

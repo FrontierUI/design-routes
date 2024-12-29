@@ -71,7 +71,7 @@ const Hero = () => {
           </Link>
         </div>
 
-        <div className="flexy relative my-5 w-full h-full lg:w-2/3 2xl:w-1/2 rounded-xl">
+        <div className="flexy relative my-5 w-full h-full lg:w-2/3 2xl:w-[65%] rounded-xl">
           <ReactPlayer
             playing
             loop={true}
@@ -79,7 +79,7 @@ const Hero = () => {
               file: {
                 attributes: {
                   style: {
-                    borderRadius: '0.75rem',
+                    borderRadius: '1rem',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -99,7 +99,7 @@ const Hero = () => {
               height: '100%',
               outline: 'none',
               border: 'none',
-              borderRadius: '0.75rem',
+              borderRadius: '1rem',
             }}
             muted={true}
             width="100%"

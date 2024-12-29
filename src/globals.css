@@ -119,6 +119,18 @@
   .scal105 {
     @apply transform hover:scale-105;
   }
+
+  .form-item {
+    @apply flex h-[78px] flex-col justify-center rounded-xl border border-[#F2F5F9] px-4 shadow-drop-1;
+  }
+
+  .form-input-focus {
+    @apply outline-none ring-offset-transparent focus:ring-transparent focus:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+  }
+
+  .form-input {
+    @apply border-none shadow-none px-4 py-2 form-input-focus placeholder:text-[#A3B2C7] w-full !important;
+  }
 }
 
 .swipSlid {
