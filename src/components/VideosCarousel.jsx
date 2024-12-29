@@ -1,7 +1,7 @@
-// import React from 'react';
+import React, { Suspense } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import { Navigation, Pagination, Autoplay } from 'swiper';
+import ReactPlayer from 'react-player';
 
 import 'swiper/css';
 // import 'swiper/css/effect-coverflow';
@@ -11,8 +11,7 @@ import 'swiper/css/autoplay';
 
 import { Link } from 'react-router-dom';
 
-import { smallVids } from '../contentData/utils';
-import ReactPlayer from 'react-player';
+import { smallVids, largeVids } from '../contentData/utils';
 
 const VideosCarousel = () => {
   return (
@@ -47,12 +46,15 @@ const VideosCarousel = () => {
               <div className="w-full h-full">
                 <Swiper
                   loop={true}
+                  speed={700}
                   autoplay={{ delay: 1500 }}
-                  speed={500}
-                  spaceBetween={10}
+                  freeMode={true}
+                  spaceBetween={12}
                   centeredSlides={true}
-                  modules={[Autoplay, Pagination]}
+                  modules={[Autoplay]}
                   grabCursor={true}
+                  pagination={{ clickable: true }}
+                  initialSlide={1}
                   breakpoints={{
                     1024: { slidesPerView: 3 },
                     640: { slidesPerView: 2 },
@@ -62,7 +64,7 @@ const VideosCarousel = () => {
                   {smallVids.map((smvid) => (
                     <SwiperSlide
                       className="w-full h-full rounded-2xl"
-                      key={smvid.vidId}
+                      key={smvid.smVidId}
                     >
                       <ReactPlayer
                         playing
@@ -70,8 +72,10 @@ const VideosCarousel = () => {
                         loop={true}
                         muted={true}
                         width="100%"
+                        height="100%"
                         style={{
                           width: '100%',
+                          height: '100%',
                           borderRadius: '1rem',
                           outline: 'none',
                           border: 'none',
@@ -81,6 +85,7 @@ const VideosCarousel = () => {
                             attributes: {
                               style: {
                                 width: '100%',
+                                height: '100%',
                                 borderRadius: '1rem',
                                 outline: 'none',
                                 border: 'none',
@@ -97,75 +102,61 @@ const VideosCarousel = () => {
           </div>
 
           <div className="col-span-12 lg:col-span-6 relative w-full max-h-full h-full">
-            <Swiper
-              autoplay={{ delay: 1500 }}
-              speed={500}
-              loop={true}
-              freeMode={true}
-              centeredSlides={true}
-              spaceBetween={12}
-              grabCursor={true}
-              slidesPerView={'auto'}
-              pagination={{ clickable: true }}
-              modules={[Autoplay, Pagination]}
-              initialSlide={1}
-              breakpoints={{
-                1024: { slidesPerView: 2 },
-                640: { slidesPerView: 1 },
-              }}
-              className="swipSlid"
-            >
-              <SwiperSlide className="h-full">
-                <img
-                  src="/images/iph.jpeg"
-                  className="img-fluid w-full h-full "
-                  alt=""
-                />
-              </SwiperSlide>
-
-              <SwiperSlide className="h-full">
-                <img
-                  src="/images/iph.jpeg"
-                  className="img-fluid w-full h-full "
-                  alt=""
-                />
-              </SwiperSlide>
-              <SwiperSlide className="h-full">
-                <img
-                  src="/images/iph.jpeg"
-                  className="img-fluid w-full h-full "
-                  alt=""
-                />
-              </SwiperSlide>
-              <SwiperSlide className="h-full">
-                <img
-                  src="/images/iph.jpeg"
-                  className="img-fluid w-full h-full "
-                  alt=""
-                />
-              </SwiperSlide>
-              <SwiperSlide className="h-full">
-                <img
-                  src="/images/iph.jpeg"
-                  className="img-fluid w-full h-full "
-                  alt=""
-                />
-              </SwiperSlide>
-              <SwiperSlide className="h-full">
-                <img
-                  src="/images/iph.jpeg"
-                  className="img-fluid w-full h-full "
-                  alt=""
-                />
-              </SwiperSlide>
-              <SwiperSlide className="h-full">
-                <img
-                  src="/images/iph.jpeg"
-                  className="img-fluid w-full h-full "
-                  alt=""
-                />
-              </SwiperSlide>
-            </Swiper>
+            <div className="w-full h-full">
+              <Swiper
+                autoplay={{ delay: 1500 }}
+                speed={1200}
+                loop={true}
+                freeMode={true}
+                centeredSlides={true}
+                spaceBetween={12}
+                grabCursor={true}
+                pagination={{ clickable: true }}
+                modules={[Autoplay]}
+                initialSlide={1}
+                breakpoints={{
+                  1024: { slidesPerView: 2 },
+                  640: { slidesPerView: 1 },
+                }}
+                className="w-full h-full rounded-2xl"
+              >
+                {largeVids.map((largeVids) => (
+                  <SwiperSlide
+                    key={largeVids.vidId}
+                    className="w-full h-full rounded-2xl"
+                  >
+                    <ReactPlayer
+                      playing
+                      url={largeVids.src}
+                      loop={true}
+                      muted={true}
+                      width="100%"
+                      height="100%"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: '1rem',
+                        outline: 'none',
+                        border: 'none',
+                      }}
+                      config={{
+                        file: {
+                          attributes: {
+                            style: {
+                              width: '100%',
+                              height: '100%',
+                              borderRadius: '1rem',
+                              outline: 'none',
+                              border: 'none',
+                            },
+                          },
+                        },
+                      }}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
           </div>
         </div>
       </div>

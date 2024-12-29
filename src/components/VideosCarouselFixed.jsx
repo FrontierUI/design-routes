@@ -14,6 +14,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import uiux from '../assets/images/uiuxblog.png';
+
 const VideosCarouselFixed = () => {
   return (
     <div className="relative w-full h-full">
@@ -137,13 +138,13 @@ const VideosCarouselFixed = () => {
                   modules={[Autoplay, Navigation]} // Use modules as needed
                   breakpoints={{
                     640: {
-                      slidesPerView: 1, // 1 slide visible on small screens
+                      slidesPerView: 1,
                     },
                     768: {
-                      slidesPerView: 2, // 2 slides visible on medium screens
+                      slidesPerView: 2,
                     },
                     1024: {
-                      slidesPerView: 2, // 3 slides visible on large screens
+                      slidesPerView: 2,
                     },
                   }}
                   className="!h-full"
