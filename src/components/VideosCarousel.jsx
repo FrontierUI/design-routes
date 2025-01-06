@@ -45,14 +45,14 @@ const VideosCarousel = () => {
 
               <div className="w-full h-full">
                 <Swiper
-                  effect={'coverflow'}
-                  slidesPerView={'auto'}
-                  coverflowEffect={{
-                    rotate: 0,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 2.5,
-                  }}
+                  // effect={'coverflow'}
+                  // slidesPerView={'auto'}
+                  // coverflowEffect={{
+                  //   rotate: 0,
+                  //   stretch: 0,
+                  //   depth: 100,
+                  //   modifier: 2.5,
+                  // }}
                   loop={true}
                   speed={700}
                   autoplay={{ delay: 1500 }}
@@ -60,9 +60,9 @@ const VideosCarousel = () => {
                   spaceBetween={12}
                   centeredSlides={true}
                   grabCursor={true}
-                  modules={[Autoplay, EffectCoverflow]}
-                  pagination={{ clickable: true, el: '' }}
-                  // initialSlide={1}
+                  modules={[Autoplay]}
+                  pagination={{ clickable: true }}
+                  initialSlide={1}
                   breakpoints={{
                     1024: { slidesPerView: 3 },
                     640: { slidesPerView: 2 },
@@ -125,7 +125,7 @@ const VideosCarousel = () => {
                 loop={true}
                 freeMode={true}
                 centeredSlides={true}
-                spaceBetween={12}
+                // spaceBetween={12}
                 grabCursor={true}
                 pagination={{ clickable: true }}
                 modules={[Autoplay, EffectCoverflow]}
@@ -134,7 +134,7 @@ const VideosCarousel = () => {
                   1024: { slidesPerView: 2 },
                   640: { slidesPerView: 1 },
                 }}
-                className="w-full swiper_container"
+                className="w-full rounded-2xl swiper_container"
               >
                 {largeVids.map((largeVids) => (
                   <SwiperSlide
