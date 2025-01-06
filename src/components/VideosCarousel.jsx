@@ -109,8 +109,8 @@ const VideosCarousel = () => {
             </div>
           </div>
 
-          <div className="col-span-12 lg:col-span-6 relative w-full max-h-full h-full">
-            <div className="w-full h-full">
+          <div className="col-span-12 lg:col-span-6 relative w-full max-h-full h-full rounded-2xl">
+            <div className="w-full h-full rounded-2xl">
               <Swiper
                 effect={'coverflow'}
                 slidesPerView={'auto'}
@@ -118,18 +118,18 @@ const VideosCarousel = () => {
                   rotate: 0,
                   stretch: 0,
                   depth: 100,
-                  modifier: 2.5,
+                  modifier: 1,
                 }}
                 autoplay={{ delay: 1500 }}
                 speed={1200}
                 loop={true}
                 freeMode={true}
                 centeredSlides={true}
-                // spaceBetween={12}
+                spaceBetween={20}
                 grabCursor={true}
                 pagination={{ clickable: true }}
                 modules={[Autoplay, EffectCoverflow]}
-                // initialSlide={1}
+                initialSlide={1}
                 breakpoints={{
                   1024: { slidesPerView: 2 },
                   640: { slidesPerView: 1 },
