@@ -99,7 +99,6 @@
   .flexBetween {
     @apply flex items-center justify-between;
   }
-
   .horLine {
     @apply h-[1px] w-32 bg-white;
   }
@@ -113,15 +112,30 @@
   }
 
   .transitAll {
-    @apply transition-all duration-300 ease-in-out;
+    @apply transition-all duration-500 ease-in-out;
   }
 
   .scal105 {
     @apply transform hover:scale-105;
   }
 
+  .body-1 {
+    @apply text-[16px] leading-[24px];
+    font-family: 'Mona-Sans-Regular';
+  }
+
+  .body-2 {
+    @apply text-[14px] leading-[20px];
+    font-family: 'Mona-Sans-Regular';
+  }
+
+  .body-2 {
+    @apply text-[14px] leading-[20px];
+    font-family: 'Mona-Sans-Regular';
+  }
+
   .form-item {
-    @apply flex h-[78px] flex-col justify-center rounded-xl border border-[#F2F5F9] px-4 shadow-drop-1;
+    @apply flex w-full h-[78px] flex-col justify-center rounded-lg border border-[#F2F5F9] px-4 py-2 shadow-drop-1 space-y-2 !important;
   }
 
   .form-input-focus {
@@ -129,7 +143,12 @@
   }
 
   .form-input {
-    @apply border-none shadow-none px-4 py-2 form-input-focus placeholder:text-[#A3B2C7] w-full !important;
+    @apply border-none shadow-none p-0 form-input-focus placeholder:text-[#A3B2C7] body-2 w-full !important;
+  }
+
+  .form-label {
+    @apply w-full text-[#333F4E] body-1 !important;
+    font-family: 'Mona-Sans-Semibold' !important;
   }
 }
 

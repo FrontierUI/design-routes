@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper';
+import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper';
 import ReactPlayer from 'react-player';
 
 import 'swiper/css';
-// import 'swiper/css/effect-coverflow';
+import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
@@ -45,21 +45,29 @@ const VideosCarousel = () => {
 
               <div className="w-full h-full">
                 <Swiper
+                  effect={'coverflow'}
+                  slidesPerView={'auto'}
+                  coverflowEffect={{
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 2.5,
+                  }}
                   loop={true}
                   speed={700}
                   autoplay={{ delay: 1500 }}
                   freeMode={true}
                   spaceBetween={12}
                   centeredSlides={true}
-                  modules={[Autoplay]}
                   grabCursor={true}
-                  pagination={{ clickable: true }}
-                  initialSlide={1}
+                  modules={[Autoplay, EffectCoverflow]}
+                  pagination={{ clickable: true, el: '' }}
+                  // initialSlide={1}
                   breakpoints={{
                     1024: { slidesPerView: 3 },
                     640: { slidesPerView: 2 },
                   }}
-                  className="w-full h-full"
+                  className="w-full h-full swiper_container"
                 >
                   {smallVids.map((smvid) => (
                     <SwiperSlide
@@ -104,6 +112,14 @@ const VideosCarousel = () => {
           <div className="col-span-12 lg:col-span-6 relative w-full max-h-full h-full">
             <div className="w-full h-full">
               <Swiper
+                effect={'coverflow'}
+                slidesPerView={'auto'}
+                coverflowEffect={{
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 2.5,
+                }}
                 autoplay={{ delay: 1500 }}
                 speed={1200}
                 loop={true}
@@ -112,13 +128,13 @@ const VideosCarousel = () => {
                 spaceBetween={12}
                 grabCursor={true}
                 pagination={{ clickable: true }}
-                modules={[Autoplay]}
-                initialSlide={1}
+                modules={[Autoplay, EffectCoverflow]}
+                // initialSlide={1}
                 breakpoints={{
                   1024: { slidesPerView: 2 },
                   640: { slidesPerView: 1 },
                 }}
-                className="w-full h-full rounded-2xl"
+                className="w-full swiper_container"
               >
                 {largeVids.map((largeVids) => (
                   <SwiperSlide

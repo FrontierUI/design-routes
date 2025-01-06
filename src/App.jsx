@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import SignUp from './pages/auth/sign-up';
+import SignIn from './pages/auth/sign-in';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/auth/sign-up" element={<SignUp />} />
+        <Route path="/auth/sign-in" element={<SignIn />} />
       </Routes>
     </main>
   );
