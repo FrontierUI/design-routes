@@ -30,46 +30,45 @@ export const Menus = [
       {
         name: 'Creative Campaigns',
         icon: CreativeCamp,
-        href: '/creative-campaigns',
+        href: '/products/creative-campaigns',
       },
       {
         name: 'Social Media Management',
         icon: SocialMediaMan,
-        href: '/social-media-management',
+        href: '/products/social-media-management',
       },
       {
         name: 'Brand Identity Design',
         icon: BrandIdenDesNav,
-        href: '/brand-identity-design',
+        href: '/products/brand-identity-design',
       },
       {
         name: 'Presentation Design',
         icon: Presentation,
-        href: '/presentation-design',
+        href: '/products/presentation-design',
       },
       {
         name: 'Web Design & Development',
         icon: WebDesDevNav,
-        href: '/web-design-and-development',
+        href: '/products/web-design-and-development',
       },
       {
         name: 'App Design & Development',
         icon: AppDesDevNav,
-        href: '/app-design-and-development',
+        href: '/products/app-design-and-development',
       },
     ],
   },
 
   {
-    // href: 'javascript:void(0)',
     name: 'Vertical',
     gridCols: 1,
     subMenu: [
-      { name: 'Agencies', href: '/for-agencies', icon: Agencies },
-      { name: 'Brands', href: '/for-brands', icon: BrandsNav },
+      { name: 'Agencies', href: '/vertical/for-agencies', icon: Agencies },
+      { name: 'Brands', href: '/vertical/for-brands', icon: BrandsNav },
       {
         name: 'SMEs',
-        href: '/small-and-medium-sized-enterprise',
+        href: '/vertical/small-and-medium-sized-enterprise',
         icon: DirCon,
       },
     ],

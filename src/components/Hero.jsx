@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
 import vid from '/images/860x500.mp4';
+import LogoMarquee from './LogoMarquee';
 // import Video from './Video';
 
 const Hero = () => {
@@ -11,7 +12,7 @@ const Hero = () => {
 
   return (
     <section className="relative w-full h-full z-[1]">
-      <div className="absolute w-full bg-primary h-screen -z-[1]" />
+      <div className="absolute w-full bg-primary h-full bgPrimSm lg:h-screen -z-[1]" />
       <div className="flexy flex-col px-5 text-white relative pt-32 text-center">
         <div className="flexy flex-col space-y-2.5">
           <div className="flexy">
@@ -71,7 +72,7 @@ const Hero = () => {
           </Link>
         </div>
 
-        <div className="flexy relative my-5 w-full h-full lg:w-2/3 2xl:w-[65%] rounded-xl">
+        <div className="flexy relative my-5 w-full h-full lg:w-2/3 2xl:w-[65%] rounded-xl ">
           <ReactPlayer
             playing
             loop={true}
@@ -87,6 +88,7 @@ const Hero = () => {
                     height: '100%',
                     outline: 'none',
                     border: 'none',
+                    boxShadow: 'shadow-lg',
                   },
                 },
               },
@@ -100,13 +102,64 @@ const Hero = () => {
               outline: 'none',
               border: 'none',
               borderRadius: '1rem',
+              boxShadow: 'shadow-lg',
             }}
             muted={true}
             width="100%"
             height="100%"
             url={vid}
             controls
+            className="!shadow-lg"
           />
+        </div>
+
+        <div className="flexy py-5">
+          <LogoMarquee />
+        </div>
+
+        <div className="flexy py-5 text-left text-black">
+          <ul className="grid grid-cols-1 lg:grid-cols-2 items-center gap-2">
+            <li className="flex items-start justify-start gap-x-1.5">
+              <img
+                src="/images/icons/Right1.svg"
+                className="img-fluid w-6"
+                alt=""
+              />
+              <span className="text-md lg:text-lg monaMedium">
+                Unlimited design for a flat monthly fee.
+              </span>
+            </li>
+            <li className="flex items-start justify-start gap-x-1.5">
+              <img
+                src="/images/icons/Right1.svg"
+                className="img-fluid w-6"
+                alt=""
+              />
+              <span className="text-md lg:text-lg monaMedium">
+                No lengthy hiring procedures.
+              </span>
+            </li>
+            <li className="flex items-start justify-start gap-x-1.5">
+              <img
+                src="/images/icons/Right1.svg"
+                className="img-fluid w-6"
+                alt=""
+              />
+              <span className="text-md lg:text-lg monaMedium">
+                We will take care of all your creative needs.
+              </span>
+            </li>
+            <li className="flex items-start justify-start gap-x-1.5">
+              <img
+                src="/images/icons/Right1.svg"
+                className="img-fluid w-6"
+                alt=""
+              />
+              <span className="text-md lg:text-lg monaMedium">
+                No inefficient freelancers.
+              </span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

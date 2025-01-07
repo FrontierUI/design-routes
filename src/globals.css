@@ -79,6 +79,12 @@
   border-radius: 1rem !important;
 }
 
+@media screen and (max-width: 640px) {
+  .bgPrimSm {
+    height: 120svh !important;
+  }
+}
+
 @layer components {
   .sub-menu {
     @apply absolute top-[4.2rem] p-[15px] rounded-[6px] origin-[50%_-170px] backdrop-blur bg-gray-50;
@@ -160,4 +166,10 @@
 .swiper-3d .swiper-slide-shadow-right,
 .swiper-3d .swiper-slide-shadow-top {
   border-radius: 1rem !important;
+}
+
+.client-logo img {
+  width: 150px;
+  height: 60px;
+  object-fit: contain;
 }

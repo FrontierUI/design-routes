@@ -45,16 +45,8 @@ const VideosCarousel = () => {
 
               <div className="w-full h-full">
                 <Swiper
-                  // effect={'coverflow'}
-                  // slidesPerView={'auto'}
-                  // coverflowEffect={{
-                  //   rotate: 0,
-                  //   stretch: 0,
-                  //   depth: 100,
-                  //   modifier: 2.5,
-                  // }}
                   loop={true}
-                  speed={700}
+                  speed={1000}
                   autoplay={{ delay: 1500 }}
                   freeMode={true}
                   spaceBetween={12}
@@ -120,8 +112,8 @@ const VideosCarousel = () => {
                   depth: 100,
                   modifier: 1,
                 }}
-                autoplay={{ delay: 1500 }}
-                speed={1200}
+                autoplay={{ delay: 1700 }}
+                speed={2000}
                 loop={true}
                 freeMode={true}
                 centeredSlides={true}
