@@ -72,7 +72,7 @@ const Hero = () => {
           </Link>
         </div>
 
-        <div className="flexy relative my-5 w-full h-full lg:w-2/3 2xl:w-[65%] rounded-xl ">
+        <div className="flexy relative my-5 w-full h-full lg:w-2/3 2xl:w-[65%] rounded-xl marginT2r">
           <ReactPlayer
             playing
             loop={true}

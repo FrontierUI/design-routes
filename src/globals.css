@@ -83,6 +83,10 @@
   .bgPrimSm {
     height: 115svh !important;
   }
+
+  .marginT2r {
+    margin-top: 2rem;
+  }
 }
 
 @layer components {
