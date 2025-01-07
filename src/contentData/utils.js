@@ -19,6 +19,48 @@ import lgSeq2 from '../assets/images/Sequence01_1.mp4';
 import lgSeq3 from '../assets/images/Sequence01_2.mp4';
 import lgSeq4 from '../assets/images/Sequence01_3.mp4';
 
+import air from '/images/clientLogo/workair.png';
+import asc from '/images/clientLogo/workasc.png';
+import bayer from '/images/clientLogo/workbayer.png';
+import beachfox from '/images/clientLogo/workbeachfox.png';
+import bembien from '/images/clientLogo/workbembien.png';
+import creactco from '/images/clientLogo/workcreactco.png';
+import csquad from '/images/clientLogo/workcsquad.png';
+import faizasteel from '/images/clientLogo/workfaizasteel.png';
+import faw from '/images/clientLogo/workfaw.png';
+import getz from '/images/clientLogo/workgetz.png';
+import icipak from '/images/clientLogo/workicipak.png';
+import iil from '/images/clientLogo/workiil.png';
+import inverex from '/images/clientLogo/workinverex.png';
+import mazito from '/images/clientLogo/workmazito.png';
+import moosh from '/images/clientLogo/workmoosh.png';
+import nixon from '/images/clientLogo/worknixon.png';
+import rubies from '/images/clientLogo/workrubies.png';
+import soyoung from '/images/clientLogo/worksoyoung.png';
+import up from '/images/clientLogo/workup.png';
+
+export const clientsLogo = [
+  { cLogoId: 'air', src: air },
+  { cLogoId: 'asc', src: asc },
+  { cLogoId: 'bayer', src: bayer },
+  { cLogoId: 'beachfox', src: beachfox },
+  { cLogoId: 'bembien', src: bembien },
+  { cLogoId: 'creactco', src: creactco },
+  { cLogoId: 'csquad', src: csquad },
+  { cLogoId: 'faizasteel', src: faizasteel },
+  { cLogoId: 'faw', src: faw },
+  { cLogoId: 'getz', src: getz },
+  { cLogoId: 'icipak', src: icipak },
+  { cLogoId: 'iil', src: iil },
+  { cLogoId: 'inverex', src: inverex },
+  { cLogoId: 'mazito', src: mazito },
+  { cLogoId: 'moosh', src: moosh },
+  { cLogoId: 'nixon', src: nixon },
+  { cLogoId: 'rubies', src: rubies },
+  { cLogoId: 'soyoung', src: soyoung },
+  { cLogoId: 'up', src: up },
+];
+
 export const Menus = [
   { name: 'Pricing', href: '/pricing' },
 

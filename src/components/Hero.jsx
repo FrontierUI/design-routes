@@ -12,19 +12,19 @@ const Hero = () => {
 
   return (
     <section className="relative w-full h-full z-[1]">
-      <div className="absolute w-full bg-primary h-screen -z-[1]" />
-      <div className="flexy flex-col px-5 text-white relative pt-28 lg:pt-32 text-center">
+      <div className="absolute w-full bg-primary bgPrimSm lg:h-screen -z-[1]" />
+      <div className="flexy flex-col px-5 text-white relative pt-24 lg:pt-32 text-center">
         <div className="flexy flex-col space-y-2.5">
           <div className="flexy">
             <hr className="horLine hidden lg:block lg:mr-3" />
-            <h4 className="uppercase text-xl monaMedium">
+            <h4 className="uppercase text-lg monaMedium">
               Full service design agency
             </h4>
           </div>
           <h1 className="text-5xl xl:text-6xl uppercase monaBold ">
             for agencies & for brands
           </h1>
-          <p className="text-lg">We are the extension of your creative team</p>
+          <p className="text-md">We are the extension of your creative team</p>
         </div>
 
         <div className="flexy relative w-full gap-x-3 mt-4 right-4 lg:right-0">
@@ -119,40 +119,40 @@ const Hero = () => {
 
         <div className="flexy py-5 text-left text-black">
           <ul className="grid grid-cols-1 lg:grid-cols-2 items-center gap-2">
-            <li className="flex items-start justify-start gap-x-1.5">
+            <li className="flex items-center justify-start gap-x-1.5">
               <img
                 src="/images/icons/Right1.svg"
-                className="img-fluid w-6"
+                className="img-fluid w-5"
                 alt=""
               />
               <span className="text-md lg:text-lg monaMedium">
                 Unlimited design for a flat monthly fee.
               </span>
             </li>
-            <li className="flex items-start justify-start gap-x-1.5">
+            <li className="flex items-center justify-start gap-x-1.5">
               <img
                 src="/images/icons/Right1.svg"
-                className="img-fluid w-6"
+                className="img-fluid w-5"
                 alt=""
               />
               <span className="text-md lg:text-lg monaMedium">
                 No lengthy hiring procedures.
               </span>
             </li>
-            <li className="flex items-start justify-start gap-x-1.5">
+            <li className="flex items-center justify-start gap-x-1.5">
               <img
                 src="/images/icons/Right1.svg"
-                className="img-fluid w-6"
+                className="img-fluid w-5"
                 alt=""
               />
               <span className="text-md lg:text-lg monaMedium">
                 We will take care of all your creative needs.
               </span>
             </li>
-            <li className="flex items-start justify-start gap-x-1.5">
+            <li className="flex items-center justify-start gap-x-1.5">
               <img
                 src="/images/icons/Right1.svg"
-                className="img-fluid w-6"
+                className="img-fluid w-5"
                 alt=""
               />
               <span className="text-md lg:text-lg monaMedium">
