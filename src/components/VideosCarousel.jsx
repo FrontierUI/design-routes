@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper';
+import { Autoplay, EffectCoverflow } from 'swiper';
 import ReactPlayer from 'react-player';
 
 import 'swiper/css';
@@ -63,7 +63,7 @@ const VideosCarousel = () => {
                 >
                   {smallVids.map((smvid) => (
                     <SwiperSlide
-                      className="w-full h-full rounded-2xl"
+                      className="w-full !lg:h-full rounded-2xl"
                       key={smvid.smVidId}
                     >
                       <ReactPlayer

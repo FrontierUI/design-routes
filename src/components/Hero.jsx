@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <section className="relative w-full h-full z-[1]">
       <div className="absolute w-full bg-primary bgPrimSm lg:h-screen -z-[1]" />
-      <div className="flexy flex-col px-5 text-white relative pt-24 lg:pt-32 text-center">
+      <div className="flexy flex-col px-5 text-white relative pt-24 lg:pt-32 text-center !overflow-x-hidden">
         <div className="flexy flex-col space-y-2.5">
           <div className="flexy">
             <hr className="horLine hidden lg:block lg:mr-3" />
@@ -113,7 +113,7 @@ const Hero = () => {
           />
         </div>
 
-        <div className="flexy py-5">
+        <div className="flexy py-5 overflow-hidden">
           <LogoMarquee />
         </div>
 

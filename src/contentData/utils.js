@@ -1,12 +1,12 @@
-import CreativeCamp from '../assets/images/cc.svg';
-import BrandIdenDesNav from '../assets/images/brandIdenNav.svg';
-import Presentation from '../assets/images/presentNav.svg';
-import SocialMediaMan from '../assets/images/smmNav.svg';
-import WebDesDevNav from '../assets/images/webDevNav.svg';
-import AppDesDevNav from '../assets/images/appDevNav.svg';
-import BrandsNav from '../assets/images/brandsNav.svg';
-import Agencies from '../assets/images/agenciess.svg';
-import DirCon from '../assets/images/dirCon.svg';
+import CreativeCamp from '/images/icons/cc.svg';
+import BrandIdenDesNav from '/images/icons/brandIdenNav.svg';
+import Presentation from '/images/icons/presentNav.svg';
+import SocialMediaMan from '/images/icons/smmNav.svg';
+import WebDesDevNav from '/images/icons/webDevNav.svg';
+import AppDesDevNav from '/images/icons/appDevNav.svg';
+import BrandsNav from '/images/icons/brandsNav.svg';
+import Agencies from '/images/icons/agenciess.svg';
+import DirCon from '/images/icons/dirCon.svg';
 
 import web1 from '../assets/images/Sequence01_4.mp4';
 import web2 from '../assets/images/Sequence01_5.mp4';
@@ -38,6 +38,17 @@ import nixon from '/images/clientLogo/worknixon.png';
 import rubies from '/images/clientLogo/workrubies.png';
 import soyoung from '/images/clientLogo/worksoyoung.png';
 import up from '/images/clientLogo/workup.png';
+
+import thumb1 from '/images/portfolio/homePort/thumbnail-1.jpg';
+import thumb2 from '/images/portfolio/homePort/thumbnail-2.jpg';
+import thumb3 from '/images/portfolio/homePort/thumbnail-3.jpg';
+import thumb4 from '/images/portfolio/homePort/thumbnail-4.jpg';
+import thumb5 from '/images/portfolio/homePort/thumbnail-5.jpg';
+import thumb6 from '/images/portfolio/homePort/thumbnail-6.jpg';
+import thumb7 from '/images/portfolio/homePort/thumbnail-7.jpg';
+import thumb8 from '/images/portfolio/homePort/thumbnail-8.jpg';
+import thumb9 from '/images/portfolio/homePort/thumbnail-9.jpg';
+import thumb10 from '/images/portfolio/homePort/thumbnail-10.jpg';
 
 export const clientsLogo = [
   { cLogoId: 'air', src: air },
@@ -133,4 +144,60 @@ export const smallVids = [
   { smVidId: 'web5', src: web5 },
   { smVidId: 'web3', src: web3 },
   { smVidId: 'web4', src: web4 },
+];
+
+export const homePortFolioUp = [
+  {
+    homePortUpId: 'thumb1',
+    src: thumb1,
+    href: '/our-work/internation-industries-ltd',
+  },
+  {
+    homePortUpId: 'thumb2',
+    src: thumb2,
+    href: '/our-work/dove-creative-campaign',
+  },
+  {
+    homePortUpId: 'thumb3',
+    src: thumb3,
+    href: '/our-work/digitall-creative-campaign',
+  },
+  {
+    homePortUpId: 'thumb4',
+    src: thumb4,
+    href: '/our-work/effy-creative-campaign',
+  },
+  {
+    homePortUpId: 'thumb5',
+    src: thumb5,
+    href: '/our-work/grom-icecream-creative-campaign',
+  },
+];
+
+export const homePortFolioBot = [
+  {
+    homePortBotId: 'thumb6',
+    src: thumb6,
+    href: '/our-work/oudsire-ajmal-fragrance-creative-campaign',
+  },
+  {
+    homePortBotId: 'thumb7',
+    src: thumb7,
+    href: '/our-work/rivermall-creative-campaign',
+  },
+  {
+    homePortBotId: 'thumb8',
+    src: thumb8,
+    href: '/our-work/fruit-nation-chilled-nectar-creative-campaign',
+  },
+  {
+    homePortBotId: 'thumb9',
+    src: thumb9,
+    href: '/our-work/digitall-creative-campaign',
+  },
+  {
+    homePortBotId: 'thumb10',
+    src: thumb10,
+    href: '/our-work/yap-finance-creative-campaign',
+  },
 ];

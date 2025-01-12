@@ -5,13 +5,14 @@ import { clientsLogo } from '../contentData/utils';
 
 const LogoMarquee = () => {
   return (
-    <div className="client-logo">
+    <div className="client-logo w-full !overflow-x-hidden">
       <Marquee
         direction="right"
         autoFill={true}
         delay={1}
         speed={25}
         pauseOnHover={false}
+        className="w-full !overflow-x-hidden"
       >
         {clientsLogo.map((cnLog) => (
           <div className="mx-4 flexy" key={cnLog.cLogoId}>
