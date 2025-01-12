@@ -8,7 +8,7 @@ import SignIn from './pages/auth/sign-in';
 
 const App = () => {
   return (
-    <main className="relative max-w-full w-full h-full">
+    <main className="relative max-w-full w-full h-full overflow-x-hidden">
       <Navbar />
 
       <Routes>

@@ -18,6 +18,8 @@ const Home = () => {
       <div className="relative w-full h-full bg-primary py-6 px-5">
         <HomePortfolioMarquee />
       </div>
+
+      <div className="w-full h-full px-5 lg:px-12"></div>
     </div>
   );
 };

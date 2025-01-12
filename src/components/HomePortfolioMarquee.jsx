@@ -17,29 +17,35 @@ import { Autoplay } from 'swiper';
 const HomePortfolioMarquee = () => {
   return (
     <div className="w-full flexy flex-col space-y-5">
-      {/* <div className="relative flexy">
+      <div className="relative flexy w-full h-full">
         <Marquee
           direction="right"
-          autoFill={true}
+          autoFill={false}
+          gradient={false}
           delay={1}
-          speed={25}
+          speed={100}
           pauseOnHover={false}
+          className=""
         >
           {homePortFolioUp.map((homeUp) => (
             <div
               key={homeUp.homePortUpId}
-              className="flexy mx-2.5 rounded-xl overflow-hidden"
+              className="rounded-xl lg:max-w-[33.33%] mx-2 overflow-hidden"
             >
               <Link
                 to={homeUp.href}
-                className="w-full transitAll scale105 rounded-xl"
+                className="w-full rounded-xl overflow-hidden"
               >
-                <img src={homeUp.src} className="img-fluid" alt="" />
+                <img
+                  src={homeUp.src}
+                  className="img-fluid transitAll scal105"
+                  alt=""
+                />
               </Link>
             </div>
           ))}
         </Marquee>
-      </div> */}
+      </div>
 
       <div className="relative flexy w-full">
         <Swiper
