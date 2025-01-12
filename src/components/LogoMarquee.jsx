@@ -5,7 +5,7 @@ import { clientsLogo } from '../contentData/utils';
 
 const LogoMarquee = () => {
   return (
-    <div className="client-logo w-full !overflow-x-hidden">
+    <div className="client-logo w-full overflow-x-hidden">
       <Marquee
         direction="right"
         autoFill={true}
