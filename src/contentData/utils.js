@@ -8,6 +8,11 @@ import BrandsNav from '/images/icons/brandsNav.svg';
 import Agencies from '/images/icons/agenciess.svg';
 import DirCon from '/images/icons/dirCon.svg';
 
+import users from '/images/icons/persons.svg';
+import clock24 from '/images/icons/clock24.svg';
+import revisionHome from '/images/icons/revision.svg';
+import dollar from '/images/icons/dollar.svg';
+
 import web1 from '../assets/images/Sequence01_4.mp4';
 import web2 from '../assets/images/Sequence01_5.mp4';
 import web3 from '../assets/images/Sequence01_6.mp4';
@@ -199,5 +204,34 @@ export const homePortFolioBot = [
     homePortBotId: 'thumb10',
     src: thumb10,
     href: '/our-work/yap-finance-creative-campaign',
+  },
+];
+
+export const homeServiceDetails = [
+  {
+    id: 'sd1',
+    icon: dollar,
+    title: '7 days money-back guarantee',
+    description:
+      'Enjoy peace of mind with our hassle-free 7-day money-back guarantee.',
+  },
+  {
+    id: 'sd2',
+    icon: clock24,
+    title: 'Same-day Delivery',
+    description:
+      'Get your project delivered the same day without sacrificing quality.',
+  },
+  {
+    id: 'sd3',
+    icon: revisionHome,
+    title: 'Unlimited Requests & Revisions',
+    description: 'Request as many changes as you need until you’re satisfied.',
+  },
+  {
+    id: 'sd4',
+    icon: users,
+    title: 'Professional team',
+    description: 'Work with our dedicated team of experienced professionals.',
   },
 ];
