@@ -12,7 +12,7 @@ const LogoMarquee = () => {
         delay={1}
         speed={25}
         pauseOnHover={false}
-        className="w-full !overflow-x-hidden"
+        className="w-full"
       >
         {clientsLogo.map((cnLog) => (
           <div className="mx-4 flexy" key={cnLog.cLogoId}>
