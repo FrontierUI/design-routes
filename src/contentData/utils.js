@@ -55,6 +55,13 @@ import thumb8 from '/images/portfolio/homePort/thumbnail-8.jpg';
 import thumb9 from '/images/portfolio/homePort/thumbnail-9.jpg';
 import thumb10 from '/images/portfolio/homePort/thumbnail-10.jpg';
 
+import CCamp from '/images/Creativecampaign.jpg';
+import bIden from '/images/brandingIden.jpg';
+import webUIX from '/images/WebsiteUIUX.jpg';
+import uixApp from '/images/AppUIUX.jpg';
+import socMM from '/images/SMM.jpg';
+import preServ from '/images/presentation.jpg';
+
 export const clientsLogo = [
   { cLogoId: 'air', src: air },
   { cLogoId: 'asc', src: asc },
@@ -98,12 +105,12 @@ export const Menus = [
       {
         name: 'Brand Identity Design',
         icon: BrandIdenDesNav,
-        href: '/products/brand-identity-design',
+        href: '/products/brand-identity-designs',
       },
       {
         name: 'Presentation Design',
         icon: Presentation,
-        href: '/products/presentation-design',
+        href: '/products/presentation-designs',
       },
       {
         name: 'Web Design & Development',
@@ -233,5 +240,62 @@ export const homeServiceDetails = [
     icon: users,
     title: 'Professional team',
     description: 'Work with our dedicated team of experienced professionals.',
+  },
+];
+
+export const prod1 = [
+  {
+    id: 'creativeCampaignService',
+    href: '/products/creative-campaigns',
+    image: CCamp,
+    title: 'Creative Campaigns',
+    descr:
+      'With innovative and compelling campaigns, captivate your unique business goals and resonate with your target audience.',
+  },
+  {
+    id: 'brandIndityDesService',
+    href: '/products/brand-identity-designs',
+    image: bIden,
+    title: 'Brand Identity Design',
+    descr:
+      'Our branding services encompass everything from logo design to brand strategy, ensuring a cohesive and compelling brand identity.',
+  },
+];
+
+export const prod2 = [
+  {
+    id: 'webDesDevService',
+    href: '/products/web-design-and-development',
+    image: webUIX,
+    title: 'Web Design & Development',
+    descr:
+      'User-friendly, and optimized for performance, our websites are built to enhance user experience and drive conversions.',
+  },
+  {
+    id: 'appDesDevService',
+    href: '/products/app-design-and-development',
+    image: uixApp,
+    title: 'Web Design & Development',
+    descr:
+      'Bring your ideas to life with intuitive and engaging mobile applications. We ensure your app delivers a seamless user experience across all devices.',
+  },
+];
+
+export const prod3 = [
+  {
+    id: 'socialMediaManage',
+    href: '/products/social-media-management',
+    image: socMM,
+    title: 'Social Media Management',
+    descr:
+      'Engage with your audience and manage content that drives interaction and nurtures community.',
+  },
+  {
+    id: 'presentationDesService',
+    href: '/products/presentation-designs',
+    image: preServ,
+    title: 'Presentation Design',
+    descr:
+      'Get your presentation design done, we transform your ideas into visually engaging and persuasive presentations.',
   },
 ];

@@ -11,7 +11,7 @@ import {
 
 import Hero from '../components/Hero';
 import HomePortfolioMarquee from '../components/HomePortfolioMarquee';
-import HomePortTopThumbCard from '../components/HomePortTopThumbCard';
+// import HomePortTopThumbCard from '../components/HomePortTopThumbCard';
 import VideosCarousel from '../components/VideosCarousel';
 
 import {
@@ -20,6 +20,8 @@ import {
   homePortFolioBot,
 } from '../contentData/utils';
 import { Link } from 'react-router-dom';
+import ReactPlayer from 'react-player';
+import Services from '../components/Services';
 
 const Home = () => {
   // const images = [
@@ -30,19 +32,19 @@ const Home = () => {
   //   '/images/portfolio/homePort/thumbnail-5.jpg',
   // ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === portfolioData.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+  // const nextSlide = () => {
+  //   setCurrentIndex((prevIndex) =>
+  //     prevIndex === portfolioData.length - 1 ? 0 : prevIndex + 1
+  //   );
+  // };
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? portfolioData.length - 1 : prevIndex - 1
-    );
-  };
+  // const prevSlide = () => {
+  //   setCurrentIndex((prevIndex) =>
+  //     prevIndex === 0 ? portfolioData.length - 1 : prevIndex - 1
+  //   );
+  // };
 
   // const upperMarqueePort = [
   //   '/images/portfolio/homePort/thumbnail-1.jpg',
@@ -98,9 +100,11 @@ const Home = () => {
       </div>
 
       <div className="relative w-full h-full bg-primary py-6 px-5">
-        {/* <HomePortfolioMarquee /> */}
-        {/* <motion.div
-          className="flex gap-4 w-full h-full"
+        <HomePortfolioMarquee />
+      </div>
+
+      {/* <motion.div
+          className="flex"
           ref={ref}
           style={{ x: xTranlation }}
           onHoverStart={() => {
@@ -117,18 +121,18 @@ const Home = () => {
           ))}
         </motion.div> */}
 
-        {/* <motion.div
+      {/* <motion.div
           className="flex gap-x-5"
           initial={{ x: 0 }}
           animate={{ x: '-100%' }}
           transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-        >
+          >
           {upperMarqueePort.map((image, index) => (
             <img src={image} className="img-fluid" key={index} />
           ))}
         </motion.div> */}
 
-        {homePortFolioBot.map(({ href, homePortBotId, src }) => (
+      {/* {homePortFolioBot.map(({ href, homePortBotId, src }) => (
           <div className="flexy" key={homePortBotId}>
             <AnimatePresence>
               <motion.div
@@ -145,11 +149,10 @@ const Home = () => {
               </motion.div>
             </AnimatePresence>
           </div>
-        ))}
-      </div>
+        ))} */}
 
       <div className="w-full h-full py-10 px-5 lg:px-12">
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
           {homeServiceDetails.map((serviceDetail) => (
             <div
               className="relative p-4 rounded-lg flex flex-col items-start justify-center transitAll scal105 hover:bg-primary space-y-2 hover:text-white shadow-drop-2"
@@ -167,6 +170,151 @@ const Home = () => {
               <p>{serviceDetail.description}</p>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div className="relative flexy w-full h-full py-10">
+        <div className="absolute bg-primary w-full h-full lg:h-[400px] -z-[1]" />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 text-white px-5 lg:px-12 z-10">
+          <div className="relative w-full flex items-center justify-start lg:justify-end">
+            <div className="flex flex-col items-start lg:items-end justify-center">
+              <h4 className="monaMedium text-lg">Without Routes</h4>
+              <h2 className="monaBold text-3xl">Old Way</h2>
+              <h4 className="monaMedium text-lg">Classic Landing Page</h4>
+
+              <ul className="flex flex-col items-start lg:items-end justify-center mt-6 space-y-2">
+                <li className="flex items-start lg:items-center justify-center">
+                  <span className="text-lg">Basic design for mobile</span>
+                  <img
+                    src="/images/icons/oldwayWrong.svg"
+                    className="img-fluid ml-2 w-6"
+                    alt=""
+                  />
+                </li>
+                <li className="flex items-start lg:items-center justify-center">
+                  <span className="text-lg">Long scroll navigation</span>
+                  <img
+                    src="/images/icons/oldwayWrong.svg"
+                    className="img-fluid ml-2 w-6"
+                    alt=""
+                  />
+                </li>
+                <li className="flex items-start lg:items-center justify-center">
+                  <span className="text-lg">Endless form</span>
+                  <img
+                    src="/images/icons/oldwayWrong.svg"
+                    className="img-fluid ml-2 w-6"
+                    alt=""
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="relative flex items-start justify-start w-full h-full lg:p-8">
+            <div className="flex items-center justify-start rounded-lg w-full lg:w-[350px]">
+              <img
+                src="/images/OldPetz.png"
+                className="img-fluid w-full h-full rounded-lg"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div className="relative flex items-start justify-start w-full">
+            <div className="bg-transparent flexy w-full h-full">
+              <ReactPlayer
+                playing
+                url={'/images/PetzMz.mp4'}
+                loop={true}
+                muted={true}
+                width="100%"
+                height="100%"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '1rem',
+                  outline: 'none',
+                  border: 'none',
+                  backgroundColor: 'transparent',
+                }}
+                config={{
+                  file: {
+                    attributes: {
+                      style: {
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: '1rem',
+                        outline: 'none',
+                        border: 'none',
+                        backgroundColor: 'transparent',
+                      },
+                    },
+                  },
+                }}
+              />
+            </div>
+          </div>
+
+          <div className="relative w-full flex items-center justify-start lg:pl-10 max-sm:pt-6">
+            <div className="flex flex-col items-start justify-center">
+              <h4 className="monaMedium text-lg">With Routes</h4>
+              <h2 className="monaBold text-3xl">New Way</h2>
+              <h4 className="monaMedium text-lg">Mobile Experience</h4>
+
+              <ul className="flex flex-col items-start justify-center mt-6 space-y-1">
+                <li className="flex items-start lg:items-center justify-center">
+                  <img
+                    src="/images/icons/newWayCheck.svg"
+                    className="img-fluid mr-2 w-6"
+                    alt=""
+                  />
+                  <span className="text-lg">User-friendly</span>
+                </li>
+                <li className="flex items-start lg:items-center justify-center">
+                  <img
+                    src="/images/icons/newWayCheck.svg"
+                    className="img-fluid mr-2 w-6"
+                    alt=""
+                  />
+                  <span className="text-lg">Addictive UI/UX</span>
+                </li>
+                <li className="flex items-start lg:items-center justify-center">
+                  <img
+                    src="/images/icons/newWayCheck.svg"
+                    className="img-fluid mr-2 w-6"
+                    alt=""
+                  />
+                  <span className="text-lg">Instant tap navigation</span>
+                </li>
+                <li className="flex items-start lg:items-center justify-center">
+                  <img
+                    src="/images/icons/newWayCheck.svg"
+                    className="img-fluid mr-2 w-6"
+                    alt=""
+                  />
+                  <span className="text-lg">Engaging experience</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative w-full h-full py-6 bg-white">
+        <div className="w-full h-full flexy flex-col px-5 lg:px-12">
+          <div className="flexy flex-col pb-4 space-y-2 text-center">
+            <p className="text-xl monaMedium">
+              Our Full Stack Creative Products
+            </p>
+            <h2 className="text-2xl monaBold">
+              With any subscription, you gain access to all our creative
+              products
+            </h2>
+          </div>
+
+          <Services />
         </div>
       </div>
     </div>

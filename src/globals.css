@@ -91,7 +91,7 @@
 
 @layer components {
   .sub-menu {
-    @apply absolute top-[4.2rem] p-[15px] rounded-[6px] origin-[50%_-170px] backdrop-blur bg-gray-50;
+    @apply absolute top-[4.2rem] p-[15px] rounded-[6px] origin-[50%_-170px] backdrop-blur bg-white;
   }
 }
 
@@ -112,6 +112,15 @@
   .flexStart {
     @apply flex items-start justify-start;
   }
+
+  .justStartCenter {
+    @apply flex items-start justify-center;
+  }
+
+  .itemsEnd {
+    @apply flex items-end justify-end;
+  }
+
   .horLine {
     @apply h-[1px] w-32 bg-white;
   }
@@ -129,7 +138,7 @@
   }
 
   .scal105 {
-    @apply transform hover:scale-105;
+    @apply transform hover:scale-105 ease-in-out;
   }
 
   .body-1 {
@@ -162,6 +171,10 @@
   .form-label {
     @apply w-full text-[#333F4E] body-1 !important;
     font-family: 'Mona-Sans-Semibold' !important;
+  }
+
+  .portfolioMarquee {
+    @apply max-md:max-w-[21rem] lg:!max-w-[28rem] rounded-xl mx-2 overflow-hidden !important;
   }
 }
 

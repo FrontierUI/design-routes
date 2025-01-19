@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { delay, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const DesktopMenu = ({ menu }) => {
@@ -20,7 +20,7 @@ const DesktopMenu = ({ menu }) => {
     exit: {
       opacity: 0,
       rotateX: -15,
-      transition: { duration: 0.5 },
+      transition: { duration: 0.5, delay: 0.3 },
       transitionEnd: { display: 'none' },
     },
   };

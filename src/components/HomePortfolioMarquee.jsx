@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 
 import { homePortFolioUp, homePortFolioBot } from '../contentData/utils';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 
-import { Autoplay } from 'swiper';
+// import { Autoplay } from 'swiper';
 
 // SwiperCore.use([Autoplay]);
 
@@ -20,18 +20,14 @@ const HomePortfolioMarquee = () => {
       <div className="relative flexy w-full h-full">
         <Marquee
           direction="right"
-          autoFill={false}
+          autoFill={true}
           gradient={false}
           delay={1}
-          speed={100}
+          speed={30}
           pauseOnHover={false}
-          className=""
         >
           {homePortFolioUp.map((homeUp) => (
-            <div
-              key={homeUp.homePortUpId}
-              className="rounded-xl lg:max-w-[33.33%] mx-2 overflow-hidden"
-            >
+            <div key={homeUp.homePortUpId} className="portfolioMarquee">
               <Link
                 to={homeUp.href}
                 className="w-full rounded-xl overflow-hidden"
@@ -47,38 +43,30 @@ const HomePortfolioMarquee = () => {
         </Marquee>
       </div>
 
-      <div className="relative flexy w-full">
-        <Swiper
-          loop={true}
-          freeMode={true}
-          slidesPerView={'1'}
-          className="w-full swiper_container"
-          speed={6500}
-          pagination={false}
-          // initialSlide={1}
-          spaceBetween={10}
-          modules={[Autoplay]}
-          autoplay={{ delay: 50 }}
-          breakpoints={{
-            1024: { slidesPerView: 3 },
-            768: { slidesPerView: 2 },
-            640: { slidesPerView: 1 },
-          }}
+      <div className="relative flexy w-full h-full">
+        <Marquee
+          direction="left"
+          autoFill={true}
+          gradient={false}
+          delay={1}
+          speed={30}
+          pauseOnHover={false}
         >
-          {homePortFolioBot.map((botPort) => (
-            <SwiperSlide
-              key={botPort.homePortBotId}
-              className="overflow-hidden rounded-xl"
-            >
+          {homePortFolioBot.map((homeBot) => (
+            <div key={homeBot.homePortBotId} className="portfolioMarquee">
               <Link
-                to={botPort.href}
-                className="w-full flexy transitAll scal105"
+                to={homeBot.href}
+                className="w-full rounded-xl overflow-hidden"
               >
-                <img src={botPort.src} className="img-fluid" alt="" />
+                <img
+                  src={homeBot.src}
+                  className="img-fluid transitAll scal105"
+                  alt=""
+                />
               </Link>
-            </SwiperSlide>
+            </div>
           ))}
-        </Swiper>
+        </Marquee>
       </div>
     </div>
   );

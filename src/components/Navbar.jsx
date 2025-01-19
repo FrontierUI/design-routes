@@ -34,13 +34,13 @@ const Navbar = () => {
 
         <div className="itemsCenter gap-x-5">
           <Link
-            className="flexy transitAll scal105 hidden lg:block"
+            className="flexy lg:transitAll lg:scal105 !hidden lg:!block"
             to="/"
             onClick={() => toggleDrawer()}
             target="_blank"
           >
             <button
-              // aria-label="get-a-demo"
+              aria-label="get-a-demo"
               className="bg-primary text-white px-6 py-2 shadow rounded-full itemsCenter"
             >
               Get a Demo

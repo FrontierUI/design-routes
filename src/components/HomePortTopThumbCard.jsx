@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Link2 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -8,7 +8,7 @@ const HomePortTopThumbCard = ({ image }) => {
 
   return (
     <motion.div
-      className="relative w-full h-full overflow-hidden rounded-xl flexy"
+      className="portfolioMarquee"
       onHoverStart={() => {
         setShowOverlay(true);
       }}
@@ -19,7 +19,7 @@ const HomePortTopThumbCard = ({ image }) => {
       <AnimatePresence>
         {showOverlay && (
           <motion.div
-            className="absolute inset-0 z-10 flexy"
+            className="absolute inset-0 z-10 flexy "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -38,6 +38,7 @@ const HomePortTopThumbCard = ({ image }) => {
           </motion.div>
         )}
       </AnimatePresence>
+
       <img src={image} alt="image" className="img-fluid" />
     </motion.div>
   );
