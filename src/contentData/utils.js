@@ -62,6 +62,62 @@ import uixApp from '/images/AppUIUX.jpg';
 import socMM from '/images/SMM.jpg';
 import preServ from '/images/presentation.jpg';
 
+import revis from '/images/icons/revisions.svg';
+import reqest from '/images/icons/request.svg';
+import brandProfiles from '/images/icons/brandProfiles.svg';
+import srcFiles from '/images/icons/src.svg';
+import artDirectory from '/images/icons/artDir.svg';
+import collabor from '/images/icons/collab.svg';
+import projectManager from '/images/icons/projectManager.svg';
+import trello from '/images/icons/trello.svg';
+import moneyBack from '/images/icons/moneyBack.svg';
+import cancel from '/images/icons/cancel.svg';
+import middle from '/images/icons/middle.svg';
+
+//
+
+import fixedRat from '/images/icons/fixedRate.png';
+import unlimitedReq from '/images/icons/UnlimitedReq.svg';
+import unlimitedRev from '/images/icons/UnlimRev.svg';
+import sameday from '/images/icons/sameday.svg';
+import proDesigner from '/images/icons/ProDesigners.svg';
+import designMatch from '/images/icons/DesignerMatch.svg';
+
+//
+
+export const professionalism = [
+  {
+    src: fixedRat,
+    title: 'Fixed Monthly Rate',
+    para: 'No hidden costs Pay the same price every month.',
+  },
+  {
+    src: unlimitedReq,
+    title: 'Unlimited Requests',
+    para: "Request as many designs as needed — we won't stop you.",
+  },
+  {
+    src: unlimitedRev,
+    title: 'Unlimited Revisions',
+    para: 'Request as many revisions as your project needs.',
+  },
+  {
+    src: sameday,
+    title: 'Same-day Delivery',
+    para: 'Get your design back same day.',
+  },
+  {
+    src: proDesigner,
+    title: 'Professional Designers',
+    para: 'Work with battle-tested professionals only.',
+  },
+  {
+    src: proDesigner,
+    title: 'Designer Match',
+    para: 'Each request goes to the most qualified designer for the job.',
+  },
+];
+
 export const clientsLogo = [
   { cLogoId: 'air', src: air },
   { cLogoId: 'asc', src: asc },
@@ -298,4 +354,18 @@ export const prod3 = [
     descr:
       'Get your presentation design done, we transform your ideas into visually engaging and persuasive presentations.',
   },
+];
+
+export const srcFilesList = [
+  { para: 'Unlimited requests', src: revis },
+  { para: 'Unlimited revisions', src: reqest },
+  { para: 'Unlimited brand profiles', src: brandProfiles },
+  { para: 'Native source files', src: srcFiles },
+  { para: 'Art Director', src: artDirectory },
+  { para: 'Project Manager', src: projectManager },
+  { para: 'Real-time collabration', src: collabor },
+  { para: 'Trello Project Management', src: trello },
+  { para: '7-day money-back guarantee', src: moneyBack },
+  { para: 'Cancel anytime', src: cancel },
+  { para: 'Middle+/Senior Designer', src: middle },
 ];

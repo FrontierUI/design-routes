@@ -109,6 +109,7 @@
   .flexBetween {
     @apply flex items-center justify-between;
   }
+
   .flexStart {
     @apply flex items-start justify-start;
   }
@@ -123,6 +124,10 @@
 
   .horLine {
     @apply h-[1px] w-32 bg-white;
+  }
+
+  .hrBlack {
+    @apply !h-[2px] opacity-75 w-24 bg-black mr-2 hidden lg:block;
   }
   .smallBtn {
     @apply py-2 px-6;
@@ -139,6 +144,20 @@
 
   .scal105 {
     @apply transform hover:scale-105 ease-in-out;
+  }
+
+  .bgChange {
+    @apply transitAll scal105 bg-white text-black hover:bg-primary hover:text-white;
+  }
+
+  .tpLink {
+    @apply rounded-full py-3.5 px-8 uppercase scal105 transitAll border-2 border-white bg-transparent hover:bg-white hover:text-primary !important;
+    font-family: 'Mona-Sans-SemiBold';
+  }
+
+  .interestedLink {
+    @apply rounded-full py-3.5 px-8 uppercase scal105 transitAll bg-white text-primary !important;
+    font-family: 'Mona-Sans-Bold';
   }
 
   .body-1 {
@@ -192,4 +211,73 @@
   width: 150px;
   height: 60px;
   object-fit: contain;
+}
+
+.plansNumb {
+  position: relative;
+}
+
+.plansNumb::before {
+  position: absolute;
+  content: '';
+  width: 280px;
+  height: 100%;
+  left: 30px;
+  z-index: 1;
+  background-image: url('/images/icons/dottedRightArrow.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.leftArr {
+  position: relative;
+}
+
+.leftArr::before {
+  position: absolute;
+  content: '';
+  width: 280px;
+  height: 100%;
+  left: 24px;
+  background-image: url('/images/icons/dottedArrowLeft.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+.plansNumb48 {
+  position: relative;
+}
+
+.plansNumb48::before {
+  position: absolute;
+  content: '';
+  width: 19.75rem;
+  height: 14.7rem;
+  left: 1.5rem;
+  top: 8px;
+  z-index: 1;
+  background-image: url('/images/icons/turnAroundWhite2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 97.75% 99%;
+}
+
+.downArrow {
+  position: relative;
+}
+
+.downArrow::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 20px;
+  width: 25px;
+  height: 100%;
+  z-index: -1;
+  background: url('/images/icons/downArrowWhite.png') no-repeat 1px top
+    transparent;
+  background-size: 20px 88%;
 }

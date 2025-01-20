@@ -18,10 +18,13 @@ import {
   homeServiceDetails,
   homePortFolioUp,
   homePortFolioBot,
+  srcFilesList,
+  professionalism,
 } from '../contentData/utils';
 import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import Services from '../components/Services';
+import Strategies from '../components/Strategies';
 
 const Home = () => {
   // const images = [
@@ -102,54 +105,6 @@ const Home = () => {
       <div className="relative w-full h-full bg-primary py-6 px-5">
         <HomePortfolioMarquee />
       </div>
-
-      {/* <motion.div
-          className="flex"
-          ref={ref}
-          style={{ x: xTranlation }}
-          onHoverStart={() => {
-            setMustFinish(true);
-            setDuration(SLOW_DURATION);
-          }}
-          onHoverEnd={() => {
-            setMustFinish(true);
-            setDuration(FAST_DURATION);
-          }}
-        >
-          {[...images, ...images].map((item, idx) => (
-            <HomePortTopThumbCard image={item} key={idx} />
-          ))}
-        </motion.div> */}
-
-      {/* <motion.div
-          className="flex gap-x-5"
-          initial={{ x: 0 }}
-          animate={{ x: '-100%' }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-          >
-          {upperMarqueePort.map((image, index) => (
-            <img src={image} className="img-fluid" key={index} />
-          ))}
-        </motion.div> */}
-
-      {/* {homePortFolioBot.map(({ href, homePortBotId, src }) => (
-          <div className="flexy" key={homePortBotId}>
-            <AnimatePresence>
-              <motion.div
-                // key={currentIndex}
-                initial={{ x: 300, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -300, opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className="absolute w-full h-64 rounded-xl"
-              >
-                <Link to={[currentIndex].href} className="block">
-                  <img src={[currentIndex].src} className="img-fluid" alt="" />
-                </Link>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        ))} */}
 
       <div className="w-full h-full py-10 px-5 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
@@ -302,7 +257,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="relative w-full h-full py-6 bg-white">
+      <div className="services relative w-full h-full py-6 bg-white">
         <div className="w-full h-full flexy flex-col px-5 lg:px-12">
           <div className="flexy flex-col pb-4 space-y-2 text-center">
             <p className="text-xl monaMedium">
@@ -313,8 +268,115 @@ const Home = () => {
               products
             </h2>
           </div>
-
           <Services />
+        </div>
+      </div>
+
+      <div className="strategy relative w-full h-full p-5 bg-primary">
+        <div className="text-white w-full space-y-5">
+          <div className="w-full flex items-start lg:items-center justify-start flex-col lg:flex-row xl:justify-between max-md:space-y-3 lg:px-7">
+            <div className="flexStart">
+              <h1 className="monaSemibold text-2xl lg:text-3xl">
+                Here's how to get started
+              </h1>
+            </div>
+            <div className="flexy">
+              <Link to={'/'} className="tpLink">
+                see our plans
+              </Link>
+            </div>
+          </div>
+
+          <Strategies />
+        </div>
+      </div>
+
+      <div className="interested relative w-full h-full lg:my-10 my-5">
+        <div className="flexy flex-col px-5 lg:px-12 space-y-8">
+          <div className="relative w-full h-full flexy lg:max-h-[400px] max-sm:p-3 lg:p-10 overflow-hidden z-[2]">
+            <div
+              className="absolute w-full h-full rounded-xl bg-no-repeat bg-cover bg-center -z-[1] transitAll scal105"
+              style={{ backgroundImage: 'url(/images/interested.jpg)' }}
+            />
+
+            <div className="flexStart text-white flex-col w-full py-16 px-2 lg:px-10">
+              <h1 className="text-5xl monaBold tracking-wider">Interested?</h1>
+              <p className="my-2 w-auto monaMedium  lg:w-2/4 pt-1">
+                Just drop your contact info and we will get back to you as soon
+                as possible.
+              </p>
+
+              <Link
+                to={'/'}
+                target="_blank"
+                className="relative lg:top-4 mt-4 interestedLink text-xl"
+              >
+                book a call with a team
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative w-full h-full grid grid-cols-12 max-md:space-y-5 lg:gap-x-16">
+            <div className="col-span-12 lg:col-span-5 flexStart flex-col space-y-4">
+              <div className="flex items-center justify-start">
+                <hr className="hrBlack" />
+                <h3>see how we compare</h3>
+              </div>
+              <h1 className="monaSemibold text-3xl">
+                What makes us different?
+              </h1>
+              <p className="text-lg monaMedium">
+                We will take care of all your creative needs. No inefficient
+                freelancers. No lengthy hiring procedures. No contracts. Just
+                your work getting done!
+              </p>
+            </div>
+
+            <div className="col-span-12 lg:col-span-7 flexStart w-full">
+              <ul className="grid grid-cols-1 md:grid-cols-2 space-y-2 text-black text-lg monaMedium w-full">
+                {srcFilesList.map((listing) => (
+                  <li
+                    key={listing.para}
+                    className="flex items-center justify-start gap-x-2"
+                  >
+                    <img
+                      src={listing.src}
+                      className="img-fluid"
+                      width={38}
+                      alt=""
+                    />
+                    <p>{listing.para}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative w-full h-full py-6 lg:py-10">
+        <div className="flexy px-5 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full gap-5">
+            {professionalism.map((proff) => (
+              <div
+                key={proff.title}
+                className="flexStart flex-col shadow-drop-1 overflow-hidden rounded-lg w-full h-full"
+              >
+                <div className="bgChange w-full h-full p-6 space-y-6 rounded-lg">
+                  <img
+                    src={proff.src}
+                    className="img-fluid"
+                    width={48}
+                    alt=""
+                  />
+                  <div className="flex flex-col space-y-1">
+                    <h2 className="text-2xl monaSemibold">{proff.title}</h2>
+                    <p className="text-md mb-2">{proff.para}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
