@@ -25,6 +25,7 @@ import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import Services from '../components/Services';
 import Strategies from '../components/Strategies';
+import Testimonials from '../components/Testimonials';
 
 const Home = () => {
   // const images = [
@@ -360,7 +361,7 @@ const Home = () => {
             {professionalism.map((proff) => (
               <div
                 key={proff.title}
-                className="flexStart flex-col shadow-drop-1 overflow-hidden rounded-lg w-full h-full"
+                className="flexStart flex-col shadow-drop-5 overflow-hidden rounded-lg w-full h-full"
               >
                 <div className="bgChange w-full h-full p-6 space-y-6 rounded-lg">
                   <img
@@ -379,6 +380,10 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* <div className="relative w-full h-full pt-6 pb-10">
+        <Testimonials />
+      </div> */}
     </div>
   );
 };

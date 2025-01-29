@@ -10,6 +10,7 @@ export default {
         'drop-2': '0 8px 30px 0 rgba(65, 89, 214, 0.3)',
         'drop-3': '0 8px 30px 0 rgba(65, 89, 214, 0.1)',
         'drop-4': '0 0 12px 0 rgba(204, 204, 204, 1)',
+        'drop-5': '0 4px 10px 10px rgba(225, 225, 225, 0.60)',
       },
     },
   },

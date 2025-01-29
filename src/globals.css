@@ -115,6 +115,10 @@
   }
 
   .justStartCenter {
+    @apply flex items-center justify-start;
+  }
+
+  .itemsStart {
     @apply flex items-start justify-center;
   }
 

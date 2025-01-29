@@ -83,7 +83,51 @@ import sameday from '/images/icons/sameday.svg';
 import proDesigner from '/images/icons/ProDesigners.svg';
 import designMatch from '/images/icons/DesignerMatch.svg';
 
-//
+import clientAvatar from '/images/icons/avatar.png';
+
+export const clientTestimonials = [
+  {
+    clAvatar: clientAvatar,
+    clientName: 'Cooper Boone',
+    comment:
+      'Routes.Design team is exceptional! They quickly resolved remaining issues on our website with ease. Communication was smooth, and their responsiveness and reliability were outstanding. We eagerly anticipate continuing our collaboration with them.',
+  },
+
+  {
+    clAvatar: clientAvatar,
+    clientName: 'Suzanne Brosnan',
+    comment:
+      "Routes.Design is fantastic to work with—highly experienced, fast, and a great communicator. Both projects we've collaborated on were executed flawlessly. I highly recommend their professional products!",
+  },
+
+  {
+    clAvatar: clientAvatar,
+    clientName: 'John Law',
+    comment:
+      'Working with Routes.Design has been a pleasure. They grasped our website needs perfectly and delivered a site that significantly outperforms the previous one. Their valuable suggestions and patience with multiple reviews were much appreciated. I’m very satisfied and will definitely choose them for future projects.',
+  },
+
+  {
+    clAvatar: clientAvatar,
+    clientName: 'Emiliano Void',
+    comment:
+      'Routes.Design exceeded our expectations. Their responsiveness, attention to detail, and dedication made the entire process seamless. They delivered top-quality work, and we highly recommend their products.',
+  },
+
+  {
+    clAvatar: clientAvatar,
+    clientName: 'Susanna Mason',
+    comment:
+      'Stephen of Routes.Design Ltd designed two amazing sales videos for my company. He was provided with limited original digital resources but worked around the limitations and delivered two excellent sales videos for our products. Will definitely use Stephen again and would 100% recommend his company! Money absolutely well spent!',
+  },
+
+  {
+    clAvatar: clientAvatar,
+    clientName: 'Devid',
+    comment:
+      "Routes.Design Ltd is an outstanding website design company that I had the pleasure of working with. From start to finish, their team impressed me with their professionalism, creativity, and attention to detail. Here's why I highly recommend their services!",
+  },
+];
 
 export const professionalism = [
   {
@@ -112,7 +156,7 @@ export const professionalism = [
     para: 'Work with battle-tested professionals only.',
   },
   {
-    src: proDesigner,
+    src: designMatch,
     title: 'Designer Match',
     para: 'Each request goes to the most qualified designer for the job.',
   },
