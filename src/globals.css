@@ -143,18 +143,23 @@
   }
 
   .transitAll {
-    @apply transition-all duration-500 ease-in-out;
+    @apply transition-all duration-500 ease-in-out !important;
   }
 
   .scal105 {
-    @apply transform hover:scale-105 ease-in-out;
+    @apply transform hover:scale-105 ease-in-out !important;
   }
   .scal110 {
-    @apply transform hover:scale-110 ease-in-out;
+    @apply transform hover:scale-110 ease-in-out !important;
   }
 
   .whiteButton {
-    @apply bg-white py-4 px-8 rounded-full text-lg  text-primary transitAll scal110;
+    @apply bg-white py-4 px-8 rounded-full text-lg  text-primary transitAll scal110 !important;
+    font-family: 'Mona-Sans-SemiBold';
+  }
+
+  .whiteLink {
+    @apply bg-white text-primary py-4 px-8 rounded-full text-lg transition-all  transform duration-500 hover:scale-110 ease-in-out !important;
     font-family: 'Mona-Sans-SemiBold';
   }
 
