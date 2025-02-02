@@ -83,6 +83,21 @@ import sameday from '/images/icons/sameday.svg';
 import proDesigner from '/images/icons/ProDesigners.svg';
 import designMatch from '/images/icons/DesignerMatch.svg';
 
+//
+
+import visualDev from '/images/icons/VisualDev.svg';
+import posmAdapt from '/images/icons/POSMAdapt.svg';
+import digiAds from '/images/icons/DigitalAds.svg';
+import motionGraph from '/images/icons/GraphicVideo.svg';
+import emailDesign from '/images/icons/EmailDesign.svg';
+import PresDesign from '/images/icons/PresDesign.svg';
+
+//
+
+import motionAds from '/images/icons/MotionAds.svg';
+import staticImg from '/images/icons/staticImg.svg';
+import augmentedReality from '/images/icons/augmentedReality.svg';
+
 import clientAvatar from '/images/icons/avatar.png';
 
 export const clientTestimonials = [
@@ -126,6 +141,62 @@ export const clientTestimonials = [
     clientName: 'Devid',
     comment:
       "Routes.Design Ltd is an outstanding website design company that I had the pleasure of working with. From start to finish, their team impressed me with their professionalism, creativity, and attention to detail. Here's why I highly recommend their services!",
+  },
+];
+
+export const formatMaster = [
+  {
+    src: motionAds,
+    title: 'Animated / Motion Ads',
+    para: 'Bring your ads to life with captivating animation and illustrations. Motion design can also be applied with other formats like video.',
+  },
+  {
+    src: staticImg,
+    title: 'Static Image Ads',
+    para: 'From a single campaign to multichannel rollouts, design striking static ads that make a statement and leave a lasting impression.',
+  },
+  {
+    src: motionGraph,
+    title: 'Video Ads',
+    para: 'Move at a solid clip with full-service video Products that let you make an instant impact across a wide range of platforms and channels.',
+  },
+  {
+    src: augmentedReality,
+    title: 'Augmented Reality Ads',
+    para: 'Push the boundaries of creativity with world and front-facing AR applications for innovative immersive campaigns and experiences.',
+  },
+];
+
+export const comprehensive = [
+  {
+    src: visualDev,
+    title: 'Campaign Key Visual Development',
+    para: "Create a powerful, cohesive visual identity that becomes the cornerstone of your campaign, ensuring consistency across all touchpoints and capturing your brand's essence.",
+  },
+  {
+    src: posmAdapt,
+    title: 'Up to 5 Campaign POSM Adaptations',
+    para: 'Adapt your campaign visuals into up to 5 Point-of-Sale Materials (POSM), customized to engage customers at critical in-store and display touchpoints, seamlessly integrating with your campaign theme.',
+  },
+  {
+    src: digiAds,
+    title: 'Campaign Digital Ads',
+    para: "Design high-impact digital ads tailored for social media, display networks, and programmatic platforms, driving engagement and amplifying your campaign's reach across the digital landscape.",
+  },
+  {
+    src: motionGraph,
+    title: 'Motion Graphic Video',
+    para: 'Bring your campaign to life with dynamic motion graphic videos that tell your brand story, engage your audience, and deliver your message with flair and creativity.',
+  },
+  {
+    src: emailDesign,
+    title: 'Campaign Email Design',
+    para: "Craft visually stunning, conversion-focused email designs that align with your campaign's goals, driving engagement and delivering your message straight to the inbox.",
+  },
+  {
+    src: PresDesign,
+    title: 'Campaign Presentation Design',
+    para: 'Develop sleek, on-brand presentations to showcase your campaign strategy, results, or creative concepts, ensuring your ideas are communicated with impact and clarity.',
   },
 ];
 

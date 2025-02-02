@@ -149,6 +149,14 @@
   .scal105 {
     @apply transform hover:scale-105 ease-in-out;
   }
+  .scal110 {
+    @apply transform hover:scale-110 ease-in-out;
+  }
+
+  .whiteButton {
+    @apply bg-white py-4 px-8 rounded-full text-lg  text-primary transitAll scal110;
+    font-family: 'Mona-Sans-SemiBold';
+  }
 
   .bgChange {
     @apply transitAll scal105 bg-white text-black hover:bg-primary hover:text-white;

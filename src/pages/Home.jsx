@@ -381,9 +381,9 @@ const Home = () => {
         </div>
       </div>
 
-      {/* <div className="relative w-full h-full pt-6 pb-10">
+      <div className="relative w-full h-full pt-6 pb-10">
         <Testimonials />
-      </div> */}
+      </div>
     </div>
   );
 };
