@@ -10,6 +10,9 @@ import LogoMarquee from '../../components/LogoMarquee';
 import Professionalism from '../../components/Professionalism';
 import Testimonials from '../../components/Testimonials';
 import AIEnhanced from '../../components/AIEnhanced';
+import ProvenExpertise from '../../components/ProvenExpertise';
+import { Link } from 'react-router-dom';
+import CreativeCampaignPackage from '../../components/CreativeCampaignPackage';
 
 const CreativeCampaigns = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
@@ -153,7 +156,31 @@ const CreativeCampaigns = () => {
         <AIEnhanced />
       </div>
 
-      <div className="relative w-full h-full py-6 lg:py-10">
+      <div className="provenExpert relative w-full h-full py-6">
+        <div className="flexy max-w-full px-5 pb-6">
+          <div className="flexy flex-col space-y-2.5 text-center text-slate-800">
+            <h3 className="text-2xl uppercase monaSemibold">
+              PROVEN EXPERTISE
+            </h3>
+            <h1 className="text-3xl monaBold">
+              An extension of your creative team, an accelerator for your ad
+              design pipeline
+            </h1>
+          </div>
+        </div>
+
+        <ProvenExpertise />
+      </div>
+
+      <div className="relative w-full h-full py-4">
+        <Professionalism />
+      </div>
+
+      <div className="relative w-full h-full py-6">
+        <CreativeCampaignPackage />
+      </div>
+
+      <div className="relative w-full h-full py-6">
         <div className="flexy px-5 pb-6">
           <h1 className="monaBold text-center text-4xl">Got any questions?</h1>
         </div>
@@ -198,11 +225,7 @@ const CreativeCampaigns = () => {
         </div>
       </div>
 
-      <div className="relative w-full h-full py-6 lg:py-10">
-        <Professionalism />
-      </div>
-
-      <div className="relative w-full h-full pt-6 pb-10">
+      <div className="relative w-full h-full pb-6">
         <Testimonials />
       </div>
     </div>

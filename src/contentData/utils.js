@@ -200,6 +200,33 @@ export const comprehensive = [
   },
 ];
 
+export const provenExpert = [
+  {
+    id: 'numb1',
+    title: 'projects completed',
+    numbering: 809,
+    desc: 'Brand design products sold and counting',
+  },
+  {
+    id: 'numb2',
+    title: 'TOTAL CUSTOMERS',
+    numbering: 1109,
+    desc: 'Total customers used our creative campaign product',
+  },
+  {
+    id: 'numb3',
+    title: 'TOTAL CUSTOMERS',
+    numbering: 11594,
+    desc: 'Hours dedicated to creative campaigns product',
+  },
+  {
+    id: 'numb4',
+    title: 'CUSTOMER SATISFACTION',
+    numbering: '4.95',
+    desc: 'Average branding product approval rating',
+  },
+];
+
 export const professionalism = [
   {
     src: fixedRat,

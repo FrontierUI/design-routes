@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const AIEnhanced = () => {
   return (
     <div className="flexy bg-primary max-w-full mx-auto px-5 lg:px-12">
-      <div className="flex flex-wrap items-center w-full">
+      <div className="flex flex-wrap items-center w-full py-5 lg:py-12">
         <div className="w-full lg:w-1/2 text-white">
           <div className="w-full space-y-2 sm:max-w-md lg:max-w-2xl md:space-y-5">
             <h3 className="text-2xl monaSemibold uppercase">
@@ -29,9 +29,9 @@ const AIEnhanced = () => {
               image.
             </p>
 
-            <div className="pt-4 max-w-xs">
-              <Link to={'/'} className="whiteLink">
-                Book a call
+            <div className="justStartCenter max-w-xs">
+              <Link to={'/'} className="flexy">
+                <button className="whiteLink">Book a call</button>
               </Link>
             </div>
           </div>
@@ -40,7 +40,7 @@ const AIEnhanced = () => {
         <div className="w-full lg:w-1/2">
           <div className="w-full h-auto transitAll scal110">
             <img
-              src="/images/productsPages/Ads2.png"
+              src="/images/productsPages/AIGlass.png"
               className="img-flud"
               alt=""
             />

@@ -158,8 +158,23 @@
     font-family: 'Mona-Sans-SemiBold';
   }
 
+  .whiteLGButton {
+    @apply bg-white py-5 px-12 rounded-full text-2xl text-primary transitAll scal110 !important;
+    font-family: 'Mona-Sans-Bold';
+  }
+
   .whiteLink {
-    @apply bg-white text-primary py-4 px-8 rounded-full text-lg transition-all  transform duration-500 hover:scale-110 ease-in-out !important;
+    @apply bg-white text-primary py-3 px-8 rounded-full text-lg transition-all  transform duration-500 hover:scale-110 ease-in-out !important;
+    font-family: 'Mona-Sans-SemiBold';
+  }
+
+  .primaryLink {
+    @apply bg-primary text-white py-3 px-12 rounded-full text-lg transitAll scal110 !important;
+    font-family: 'Mona-Sans-SemiBold';
+  }
+
+  .primaryLGLink {
+    @apply bg-primary text-white py-4 px-12 rounded-full text-xl transitAll scal110 !important;
     font-family: 'Mona-Sans-SemiBold';
   }
 

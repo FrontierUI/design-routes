@@ -1,14 +1,14 @@
-import React from 'react';
+// import React from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectCoverflow, Pagination } from 'swiper';
+import { Autoplay, EffectCoverflow } from 'swiper';
 
 import 'swiper/css';
 import 'swiper/swiper.min.css';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 
 import { Star } from 'lucide-react';
@@ -38,6 +38,7 @@ const Testimonials = () => {
         // pagination={{ clickable: true }}
         modules={[Autoplay, EffectCoverflow]}
         breakpoints={{
+          // 1857: { slidesPerView: 3, spaceBetween: 45 },
           1024: { slidesPerView: 2, spaceBetween: 45 },
           640: { slidesPerView: 1, spaceBetween: 20 },
         }}
