@@ -7,6 +7,7 @@ import SignUp from './pages/auth/sign-up';
 import SignIn from './pages/auth/sign-in';
 import Footer from './components/Footer';
 import CreativeCampaigns from './pages/products/CreativeCampaign';
+import Pricing from './pages/Pricing';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route index path="/" element={<Home />} />
+        <Route path="/pricing" element={<Pricing />} />
         <Route
           path="/products/creative-campaigns"
           element={<CreativeCampaigns />}

@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CreativeCampaignPackage = () => {
@@ -7,7 +7,9 @@ const CreativeCampaignPackage = () => {
       <div className="relative w-full campPackBan flexy p-5 lg:p-14">
         <div
           className="absolute w-full h-full rounded-lg -z-[1] bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(/images/creativeCampBann.svg)' }}
+          style={{
+            backgroundImage: 'url(/images/productsPages/pricePackBlueBG.png)',
+          }}
         />
 
         <div className="packageTop flexStart flex-col w-full h-full py-4 space-y-4">
