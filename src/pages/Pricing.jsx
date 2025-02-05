@@ -7,11 +7,11 @@ const Pricing = () => {
     <div className="relative flexy flex-col w-full h-full">
       <div className="flexy flex-col w-full px-5 pt-20 lg:pt-28">
         <div className="flexy flex-col py-8 w-full space-y-5 text-center text-slate-800 lg:w-3/4">
-          <h3 className="text-xl monaBold uppercase">
+          <h3 className="text-xl font-monaBold uppercase">
             Routes Design subscription
           </h3>
           <div className="flexy flex-col space-y-2 leading-none">
-            <h1 className="text-4xl lg:text-7xl monaBold text-primary">
+            <h1 className="text-4xl lg:text-7xl font-monaBold text-primary">
               One subscription for all your creative needs
             </h1>
 

@@ -45,7 +45,7 @@ const CreativeCampaigns = () => {
           <div className="w-full flex flex-wrap items-center max-md:pt-24">
             <div className="w-full lg:w-1/2 lg:px-3">
               <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-3 md:space-y-5 text-white">
-                <h1 className="monaBold text-5xl">
+                <h1 className="font-monaBold text-5xl">
                   Creative Campaign Design Product
                 </h1>
 
@@ -88,11 +88,11 @@ const CreativeCampaigns = () => {
           <div className="flex flex-wrap items-center w-full">
             <div className="w-full lg:w-1/2">
               <div className="w-full space-y-2 sm:max-w-md lg:max-w-2xl md:space-y-5">
-                <h3 className="text-2xl monaSemibold uppercase">
+                <h3 className="text-2xl font-monaSemibold uppercase">
                   built for comms, strategy & marketing teams
                 </h3>
 
-                <h1 className="text-5xl monaBold">
+                <h1 className="text-5xl font-monaBold">
                   Ad creative for campaigns that perform
                 </h1>
 
@@ -128,10 +128,10 @@ const CreativeCampaigns = () => {
       <div className="comprehensive relative w-full h-full py-5 pt-10">
         <div className="flexy max-w-full px-5 pb-6">
           <div className="flexy flex-col space-y-2.5 text-center text-slate-800">
-            <h3 className="text-2xl uppercase monaSemibold">
+            <h3 className="text-2xl uppercase font-monaSemibold">
               MULTIFACETED SOLUTIONS
             </h3>
-            <h1 className="text-4xl monaBold">
+            <h1 className="text-4xl font-monaBold">
               Comprehensive Creative Campaign Product
             </h1>
           </div>
@@ -143,8 +143,10 @@ const CreativeCampaigns = () => {
       <div className="formatMastSect relative w-full h-full py-5 pb-5">
         <div className="flexy max-w-full px-5 pb-6">
           <div className="flexy flex-col space-y-2.5 text-center text-slate-800">
-            <h3 className="text-2xl uppercase monaSemibold">format mastery</h3>
-            <h1 className="text-4xl monaBold">
+            <h3 className="text-2xl uppercase font-monaSemibold">
+              format mastery
+            </h3>
+            <h1 className="text-4xl font-monaBold">
               Mix and match multiple ad formats for maximum impact
             </h1>
           </div>
@@ -160,10 +162,10 @@ const CreativeCampaigns = () => {
       <div className="provenExpert relative w-full h-full py-6">
         <div className="flexy max-w-full px-5 pb-6">
           <div className="flexy flex-col space-y-2.5 text-center text-slate-800">
-            <h3 className="text-2xl uppercase monaSemibold">
+            <h3 className="text-2xl uppercase font-monaSemibold">
               PROVEN EXPERTISE
             </h3>
-            <h1 className="text-3xl monaBold">
+            <h1 className="text-3xl font-monaBold">
               An extension of your creative team, an accelerator for your ad
               design pipeline
             </h1>
@@ -183,7 +185,9 @@ const CreativeCampaigns = () => {
 
       <div className="relative w-full h-full py-6">
         <div className="flexy px-5 pb-6">
-          <h1 className="monaBold text-center text-4xl">Got any questions?</h1>
+          <h1 className="font-monaBold text-center text-4xl">
+            Got any questions?
+          </h1>
         </div>
 
         <div className="itemsStart mb-2">
@@ -191,7 +195,7 @@ const CreativeCampaigns = () => {
             {faqQuestion.map((faq) => (
               <div key={faq.id} className="mb-4 last:mb-0">
                 <button
-                  className="w-full p-4 text-left text-lg monaSemibold focus:outline-none bg-gray-100 rounded-lg shadow-md flexBetween"
+                  className="w-full p-4 text-left text-lg font-monaSemibold focus:outline-none bg-gray-100 rounded-lg shadow-md flexBetween"
                   onClick={() =>
                     setActiveQuestion(activeQuestion === faq.id ? null : faq.id)
                   }

@@ -55,7 +55,7 @@ const SignUp = () => {
             <div className="w-full lg:ml-20">
               <button
                 type="submit"
-                className="w-full lg:w-3/4 py-2.5 bord transitAll scal105 text-white bg-primary monaSemibold text-lg"
+                className="w-full lg:w-3/4 py-2.5 bord transitAll scal105 text-white bg-primary font-monaSemibold text-lg"
               >
                 Sign Up
               </button>

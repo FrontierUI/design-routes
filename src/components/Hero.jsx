@@ -17,11 +17,11 @@ const Hero = () => {
         <div className="flexy flex-col space-y-2.5">
           <div className="flexy">
             <hr className="horLine hidden lg:block lg:mr-3" />
-            <h4 className="uppercase text-lg monaMedium">
+            <h4 className="uppercase text-lg font-monaMedium">
               Full service design agency
             </h4>
           </div>
-          <h1 className="text-5xl xl:text-6xl uppercase monaBold ">
+          <h1 className="text-5xl xl:text-6xl uppercase font-monaBold ">
             for agencies & for brands
           </h1>
           <p className="text-md">We are the extension of your creative team</p>
@@ -66,7 +66,7 @@ const Hero = () => {
           <Link
             to="/"
             target="_blank"
-            className="text-primary bg-white flexy text-xl monaBold py-2 px-10 rounded-full transition-all duration-500 hover:scale-105"
+            className="text-primary bg-white flexy text-xl font-monaBold py-2 px-10 rounded-full transition-all duration-500 hover:scale-105"
           >
             Book a call
           </Link>
@@ -125,7 +125,7 @@ const Hero = () => {
                 className="img-fluid w-5"
                 alt=""
               />
-              <span className="text-md lg:text-lg monaMedium">
+              <span className="text-md lg:text-lg font-monaMedium">
                 Unlimited design for a flat monthly fee.
               </span>
             </li>
@@ -135,7 +135,7 @@ const Hero = () => {
                 className="img-fluid w-5"
                 alt=""
               />
-              <span className="text-md lg:text-lg monaMedium">
+              <span className="text-md lg:text-lg font-monaMedium">
                 No lengthy hiring procedures.
               </span>
             </li>
@@ -145,7 +145,7 @@ const Hero = () => {
                 className="img-fluid w-5"
                 alt=""
               />
-              <span className="text-md lg:text-lg monaMedium">
+              <span className="text-md lg:text-lg font-monaMedium">
                 We will take care of all your creative needs.
               </span>
             </li>
@@ -155,7 +155,7 @@ const Hero = () => {
                 className="img-fluid w-5"
                 alt=""
               />
-              <span className="text-md lg:text-lg monaMedium">
+              <span className="text-md lg:text-lg font-monaMedium">
                 No inefficient freelancers.
               </span>
             </li>

@@ -21,7 +21,9 @@ const VideosCarousel = () => {
           <div className="col-span-12 lg:col-span-6 relative w-full h-full flex items-center justify-start">
             <div className="w-full h-full flex flex-col items-start justify-start space-y-5">
               <div className="flex flex-col items-start justify-start space-y-3">
-                <h2 className="monaBold text-4xl">Be Proud of your team</h2>
+                <h2 className="font-monaBold text-4xl">
+                  Be Proud of your team
+                </h2>
                 <p className="text-md monaRegular">
                   Routes.Design is a creative subscription service, trusted by
                   leading agencies and brands to deliver exceptional design

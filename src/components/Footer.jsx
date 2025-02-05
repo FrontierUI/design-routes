@@ -71,7 +71,7 @@ const Footer = () => {
 
           <div className="w-full relative flex flex-col items-start justify-start">
             <div className="flex flex-col items-start justify-start space-y-5">
-              <h3 className="text-2xl monaSemibold hover:text-gray-300">
+              <h3 className="text-2xl font-monaSemibold hover:text-gray-300">
                 Products
               </h3>
               <ul className="space-y-1.5">
@@ -111,7 +111,7 @@ const Footer = () => {
 
           <div className="w-full relative flex flex-col items-start justify-start">
             <div className="flex flex-col items-start justify-start space-y-5">
-              <h3 className="text-2xl monaSemibold hover:text-gray-300">
+              <h3 className="text-2xl font-monaSemibold hover:text-gray-300">
                 About Us
               </h3>
               <ul className="space-y-1.5">
@@ -138,7 +138,7 @@ const Footer = () => {
 
           <div className="w-full relative flex flex-col items-start justify-start">
             <div className="flex flex-col items-start justify-start space-y-5">
-              <h3 className="text-2xl monaSemibold hover:text-gray-300">
+              <h3 className="text-2xl font-monaSemibold hover:text-gray-300">
                 Contact Us
               </h3>
               <ul className="space-y-2">
@@ -163,7 +163,7 @@ const Footer = () => {
                     className="mt-3 flex items-center"
                     target="_blank"
                   >
-                    <button className="bg-white text-primary rounded-full py-2 px-6 monaSemibold transitAll scal105 text-lg">
+                    <button className="bg-white text-primary rounded-full py-2 px-6 font-monaSemibold transitAll scal105 text-lg">
                       Book a Call
                     </button>
                   </Link>
@@ -174,7 +174,7 @@ const Footer = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 w-full">
-          <div className="flexStart flex-col mt-4 monaMedium space-y-2">
+          <div className="flexStart flex-col mt-4 font-monaMedium space-y-2">
             <ul className="flexStart flex-col lg:flex-row lg:items-center lg:justify-between text-sm">
               <li className="mr-4">
                 <Link to="privacy-policy" className="hover:text-gray-300">

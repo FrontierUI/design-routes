@@ -30,7 +30,7 @@ const HomePortTopThumbCard = ({ image }) => {
               animate={{ y: 0 }}
               exit={{ y: 10 }}
               href={'/'}
-              className="bg-white monaSemibold text-sm z-10 px-3 py-2 rounded-full flex items-center gap-[0.5ch] hover:opacity-75"
+              className="bg-white font-monaSemibold text-sm z-10 px-3 py-2 rounded-full flex items-center gap-[0.5ch] hover:opacity-75"
             >
               <span>Explore Now</span>
               <Link2 className="h-4 w-4" />

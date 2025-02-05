@@ -134,8 +134,7 @@
     @apply !h-[2px] opacity-75 w-24 bg-black mr-2 hidden lg:block;
   }
   .smallBtn {
-    @apply py-2 px-6;
-    font-family: 'Mona-Sans-SemiBold';
+    @apply py-2 px-6 font-monaSemibold;
   }
 
   .bord {
@@ -155,33 +154,28 @@
   }
 
   .whiteButton {
-    @apply bg-white py-4 px-8 rounded-full text-lg  text-primary transitAll scal110 !important;
-    font-family: 'Mona-Sans-SemiBold';
+    @apply bg-white py-4 px-8 rounded-full text-lg  text-primary transitAll scal110 font-monaSemibold !important;
   }
 
   .whiteLGButton {
-    @apply bg-white py-5 px-12 rounded-full text-2xl text-primary transitAll scal110 !important;
+    @apply bg-white py-5 px-12 rounded-full text-2xl text-primary transitAll scal110 font-monaBold !important;
     font-family: 'Mona-Sans-Bold';
   }
 
   .whiteLink {
-    @apply bg-white text-primary py-3 px-8 rounded-full text-lg transition-all  transform duration-500 hover:scale-110 ease-in-out !important;
-    font-family: 'Mona-Sans-SemiBold';
+    @apply bg-white text-primary py-3 px-8 rounded-full text-lg transition-all  transform duration-500 hover:scale-110 ease-in-out font-monaSemibold !important;
   }
 
   .primaryLink {
-    @apply bg-primary text-white py-3 px-12 rounded-full text-lg transitAll scal110 !important;
-    font-family: 'Mona-Sans-SemiBold';
+    @apply bg-primary text-white py-3 px-12 rounded-full text-lg transitAll scal110 font-monaSemibold !important;
   }
 
   .primaryLGLink {
-    @apply bg-primary text-white py-4 px-12 rounded-full text-xl transitAll scal110 !important;
-    font-family: 'Mona-Sans-SemiBold';
+    @apply bg-primary text-white py-4 px-12 rounded-full text-xl transitAll scal110 font-monaSemibold !important;
   }
 
   .tpLGBtn {
-    @apply bg-transparent text-gray-800 border-[2.5px] border-gray-800 text-2xl rounded-full py-4 px-10 transitAll scal110 hover:bg-white hover:text-primary hover:border-white !important;
-    font-family: 'Mona-Sans-SemiBold' !important;
+    @apply bg-transparent text-gray-800 border-[2.5px] border-gray-800 text-2xl rounded-full py-4 px-10 transitAll scal110 hover:bg-white hover:text-primary hover:border-white font-monaBold !important;
   }
 
   .bgChange {
@@ -189,33 +183,27 @@
   }
 
   .tpLink {
-    @apply rounded-full py-3.5 px-8 uppercase scal105 transitAll border-2 border-white bg-transparent hover:bg-white hover:text-primary !important;
-    font-family: 'Mona-Sans-SemiBold';
+    @apply rounded-full py-3.5 px-8 uppercase scal105 transitAll border-2 border-white bg-transparent hover:bg-white hover:text-primary font-monaSemibold !important;
   }
 
   .interestedLink {
-    @apply rounded-full py-3.5 px-8 uppercase scal105 transitAll bg-white text-primary !important;
-    font-family: 'Mona-Sans-Bold';
+    @apply rounded-full py-3.5 px-8 uppercase scal105 transitAll bg-white text-primary font-monaBold !important;
   }
 
   .tabsBtn {
-    @apply rounded-full border-2 border-[#147df5]/75 text-stone-100 bg-[#147df5] text-xl py-3 px-8 transitAll scal105;
-    font-family: 'Mona-Sans-SemiBold';
+    @apply rounded-full border-2 border-[#147df5]/75 text-stone-100 bg-[#147df5] text-xl py-3 px-8 transitAll scal105 font-monaSemibold;
   }
 
   .body-1 {
-    @apply text-[16px] leading-[24px];
-    font-family: 'Mona-Sans-Regular';
+    @apply text-[16px] leading-[24px] font-monaRegular;
   }
 
   .body-2 {
-    @apply text-[14px] leading-[20px];
-    font-family: 'Mona-Sans-Regular';
+    @apply text-[14px] leading-[20px] font-monaRegular;
   }
 
   .body-2 {
-    @apply text-[14px] leading-[20px];
-    font-family: 'Mona-Sans-Regular';
+    @apply text-[14px] leading-[20px] font-monaRegular;
   }
 
   .form-item {
@@ -231,8 +219,7 @@
   }
 
   .form-label {
-    @apply w-full text-[#333F4E] body-1 !important;
-    font-family: 'Mona-Sans-Semibold' !important;
+    @apply w-full text-[#333F4E] body-1 font-monaSemibold !important;
   }
 
   .portfolioMarquee {

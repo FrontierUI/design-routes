@@ -15,7 +15,7 @@ const Services = () => {
               <img src={prods1.image} className="img-fluid rounded-lg" alt="" />
 
               <div className="pt-3 space-y-1">
-                <h2 className="monaBold text-xl">{prods1.title}</h2>
+                <h2 className="font-monaBold text-xl">{prods1.title}</h2>
                 <p className="text-sm">{prods1.descr}</p>
               </div>
             </div>
@@ -34,7 +34,7 @@ const Services = () => {
               <img src={prods2.image} className="img-fluid rounded-lg" alt="" />
 
               <div className="pt-3 space-y-1">
-                <h2 className="monaBold text-xl">{prods2.title}</h2>
+                <h2 className="font-monaBold text-xl">{prods2.title}</h2>
                 <p className="text-sm">{prods2.descr}</p>
               </div>
             </div>
@@ -53,7 +53,7 @@ const Services = () => {
               <img src={prods.image} className="img-fluid rounded-lg" alt="" />
 
               <div className="pt-3 space-y-1">
-                <h2 className="monaBold text-xl">{prods.title}</h2>
+                <h2 className="font-monaBold text-xl">{prods.title}</h2>
                 <p className="text-sm">{prods.descr}</p>
               </div>
             </div>

@@ -60,7 +60,9 @@ const Testimonials = () => {
                     alt=""
                   />
 
-                  <h4 className="monaMedium text-lg">{testt.clientName}</h4>
+                  <h4 className="font-monaMedium text-lg">
+                    {testt.clientName}
+                  </h4>
                 </div>
                 <div className="justStartCenter gap-x-1">
                   <Star className="w-5 h-5  text-yellow-400" />

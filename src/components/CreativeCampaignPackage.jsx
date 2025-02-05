@@ -15,7 +15,7 @@ const CreativeCampaignPackage = () => {
         <div className="packageTop flexStart flex-col w-full h-full py-4 space-y-4">
           <div className="packInfo flexStart lg:items-center flex-col lg:flex-row lg:justify-between w-full text-white space-y-4">
             <div className="packTitle flexStart flex-col items-center justify-center lg:items-start lg:justify-start w-full space-y-3">
-              <h1 className="text-5xl lg:text-7xl monaBold">
+              <h1 className="text-5xl lg:text-7xl font-monaBold">
                 Creative Campaign
               </h1>
               <p className="w-full text-base lg:text-lg lg:w-4/5">
@@ -27,7 +27,9 @@ const CreativeCampaignPackage = () => {
               <h1 className="text-8xl lg:text-9xl filsonHeavy leading-none">
                 $4,999
               </h1>
-              <h4 className="text-xl monaSemibold uppercase">per project</h4>
+              <h4 className="text-xl font-monaSemibold uppercase">
+                per project
+              </h4>
             </div>
           </div>
 
@@ -41,7 +43,7 @@ const CreativeCampaignPackage = () => {
                     width={28}
                     alt=""
                   />
-                  <span className="monaMedium text-md xl:text-xl">
+                  <span className="font-monaMedium text-md xl:text-xl">
                     Campaign concept development
                   </span>
                 </div>
@@ -54,7 +56,7 @@ const CreativeCampaignPackage = () => {
                     width={28}
                     alt=""
                   />
-                  <span className="monaMedium text-md xl:text-xl">
+                  <span className="font-monaMedium text-md xl:text-xl">
                     Campaign key visual development
                   </span>
                 </div>
@@ -67,7 +69,7 @@ const CreativeCampaignPackage = () => {
                     width={28}
                     alt=""
                   />
-                  <span className="monaMedium text-md xl:text-xl">
+                  <span className="font-monaMedium text-md xl:text-xl">
                     Upto 5 campaign posms adaptation
                   </span>
                 </div>
@@ -80,7 +82,7 @@ const CreativeCampaignPackage = () => {
                     width={28}
                     alt=""
                   />
-                  <span className="monaMedium text-md xl:text-xl">
+                  <span className="font-monaMedium text-md xl:text-xl">
                     Campaign email design
                   </span>
                 </div>
@@ -93,7 +95,7 @@ const CreativeCampaignPackage = () => {
                     width={28}
                     alt=""
                   />
-                  <span className="monaMedium text-md xl:text-xl">
+                  <span className="font-monaMedium text-md xl:text-xl">
                     Campaign digital ads & social media
                   </span>
                 </div>
@@ -106,7 +108,7 @@ const CreativeCampaignPackage = () => {
                     width={28}
                     alt=""
                   />
-                  <span className="monaMedium text-md xl:text-xl">
+                  <span className="font-monaMedium text-md xl:text-xl">
                     Motion graphic videos
                   </span>
                 </div>
@@ -119,7 +121,7 @@ const CreativeCampaignPackage = () => {
                     width={28}
                     alt=""
                   />
-                  <span className="monaMedium text-md xl:text-xl">
+                  <span className="font-monaMedium text-md xl:text-xl">
                     Production files
                   </span>
                 </div>
@@ -132,7 +134,7 @@ const CreativeCampaignPackage = () => {
                     width={28}
                     alt=""
                   />
-                  <span className="monaMedium text-md xl:text-xl">
+                  <span className="font-monaMedium text-md xl:text-xl">
                     24/7 timezone coverage
                   </span>
                 </div>
@@ -158,7 +160,7 @@ const CreativeCampaignPackage = () => {
 
         <div className="flexy flex-col w-full h-full relative z-[2]">
           <div className="flexy w-full text-center py-4 mt-4 text-slate-800">
-            <h1 className="text-center monaBold text-4xl lg:text-5xl">
+            <h1 className="text-center font-monaBold text-4xl lg:text-5xl">
               Creative Campaigns
             </h1>
           </div>
@@ -170,14 +172,16 @@ const CreativeCampaignPackage = () => {
 
               <div className="flexy relative flex-col space-y-5 w-full">
                 <div className="flexy flex-col space-y-2 py-2 mt-6 text-slate-800">
-                  <h2 className="text-4xl lg:text-4xl monaBold">Basic</h2>
-                  <span className="text-md monaMedium">Good for Startups</span>
+                  <h2 className="text-4xl lg:text-4xl font-monaBold">Basic</h2>
+                  <span className="text-md font-monaMedium">
+                    Good for Startups
+                  </span>
                 </div>
                 <div className="flexy flex-col w-full text-slate-800 space-y-2.5 py-6">
                   <h1 className="filsonHeavy text-5xl">
                     $1,599/<span className="text-xl">project</span>
                   </h1>
-                  <span className="text-md monaMedium">Fine Choice</span>
+                  <span className="text-md font-monaMedium">Fine Choice</span>
                   <div className="flexy">
                     <Link to={'/'} className="primaryLink">
                       Get Started
@@ -277,10 +281,10 @@ const CreativeCampaignPackage = () => {
 
               <div className="flexy relative flex-col space-y-5 w-full">
                 <div className="flexy flex-col space-y-2 py-2 mt-6 text-slate-800">
-                  <h2 className="text-4xl lg:text-4xl monaBold">
+                  <h2 className="text-4xl lg:text-4xl font-monaBold">
                     Professional
                   </h2>
-                  <span className="text-md monaMedium">
+                  <span className="text-md font-monaMedium">
                     Perfect for Small Businesses
                   </span>
                 </div>
@@ -288,7 +292,7 @@ const CreativeCampaignPackage = () => {
                   <h1 className="filsonHeavy text-5xl">
                     $2,999/<span className="text-xl">project</span>
                   </h1>
-                  <span className="text-md monaMedium">Best Choice</span>
+                  <span className="text-md font-monaMedium">Best Choice</span>
                   <div className="flexy">
                     <Link to={'/'} className="primaryLink">
                       Get Started
@@ -388,8 +392,10 @@ const CreativeCampaignPackage = () => {
 
               <div className="flexy relative flex-col space-y-5 w-full">
                 <div className="flexy flex-col space-y-2 py-2 mt-6 text-slate-800">
-                  <h2 className="text-4xl lg:text-4xl monaBold">Premium</h2>
-                  <span className="text-md monaMedium">
+                  <h2 className="text-4xl lg:text-4xl font-monaBold">
+                    Premium
+                  </h2>
+                  <span className="text-md font-monaMedium">
                     Excellent for Growing Businesses
                   </span>
                 </div>
@@ -397,7 +403,9 @@ const CreativeCampaignPackage = () => {
                   <h1 className="filsonHeavy text-5xl">
                     $4,999/<span className="text-xl">project</span>
                   </h1>
-                  <span className="text-md monaMedium">Recommended Choice</span>
+                  <span className="text-md font-monaMedium">
+                    Recommended Choice
+                  </span>
                   <div className="flexy">
                     <Link to={'/'} className="primaryLink">
                       Get Started

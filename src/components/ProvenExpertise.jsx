@@ -13,8 +13,10 @@ const ProvenExpertise = () => {
           >
             <div className="bgChange w-full h-full p-6 space-y-6 rounded-lg text-gray-800 hover:text-white duration-500">
               <div className="flex flex-col space-y-4">
-                <h2 className="text-xl monaSemibold uppercase">{prov.title}</h2>
-                <h1 className="text-5xl monaBold">{prov.numbering}</h1>
+                <h2 className="text-xl font-monaSemibold uppercase">
+                  {prov.title}
+                </h2>
+                <h1 className="text-5xl font-monaBold">{prov.numbering}</h1>
                 <p className="text-md mb-2">{prov.desc}</p>
               </div>
             </div>

@@ -59,7 +59,7 @@ const PricingTabs = () => {
           </button>
         ))}
       </div>
-      <div className="py-4 w-full">
+      <div className="pt-5 my-5 w-full">
         <TabContent id={activeTab} />
       </div>
     </div>

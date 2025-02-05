@@ -121,7 +121,7 @@ const Home = () => {
                 width={45}
                 alt=""
               />
-              <h3 className="text-lg monaSemibold leading-tight">
+              <h3 className="text-lg font-monaSemibold leading-tight">
                 {serviceDetail.title}
               </h3>
               <p>{serviceDetail.description}</p>
@@ -136,9 +136,9 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 text-white px-5 lg:px-12 z-10">
           <div className="relative w-full flex items-center justify-start lg:justify-end">
             <div className="flex flex-col items-start lg:items-end justify-center">
-              <h4 className="monaMedium text-lg">Without Routes</h4>
-              <h2 className="monaBold text-3xl">Old Way</h2>
-              <h4 className="monaMedium text-lg">Classic Landing Page</h4>
+              <h4 className="font-monaMedium text-lg">Without Routes</h4>
+              <h2 className="font-monaBold text-3xl">Old Way</h2>
+              <h4 className="font-monaMedium text-lg">Classic Landing Page</h4>
 
               <ul className="flex flex-col items-start lg:items-end justify-center mt-6 space-y-2">
                 <li className="flex items-start lg:items-center justify-center">
@@ -216,9 +216,9 @@ const Home = () => {
 
           <div className="relative w-full flex items-center justify-start lg:pl-10 max-sm:pt-6">
             <div className="flex flex-col items-start justify-center">
-              <h4 className="monaMedium text-lg">With Routes</h4>
-              <h2 className="monaBold text-3xl">New Way</h2>
-              <h4 className="monaMedium text-lg">Mobile Experience</h4>
+              <h4 className="font-monaMedium text-lg">With Routes</h4>
+              <h2 className="font-monaBold text-3xl">New Way</h2>
+              <h4 className="font-monaMedium text-lg">Mobile Experience</h4>
 
               <ul className="flex flex-col items-start justify-center mt-6 space-y-1">
                 <li className="flex items-start lg:items-center justify-center">
@@ -262,10 +262,10 @@ const Home = () => {
       <div className="services relative w-full h-full py-6 bg-white">
         <div className="w-full h-full flexy flex-col px-5 lg:px-12">
           <div className="flexy flex-col pb-4 space-y-2 text-center">
-            <p className="text-xl monaMedium">
+            <p className="text-xl font-monaMedium">
               Our Full Stack Creative Products
             </p>
-            <h2 className="text-2xl monaBold">
+            <h2 className="text-2xl font-monaBold">
               With any subscription, you gain access to all our creative
               products
             </h2>
@@ -278,7 +278,7 @@ const Home = () => {
         <div className="text-white w-full space-y-5">
           <div className="w-full flex items-start lg:items-center justify-start flex-col lg:flex-row xl:justify-between max-md:space-y-3 lg:px-7">
             <div className="flexStart">
-              <h1 className="monaSemibold text-2xl lg:text-3xl">
+              <h1 className="font-monaSemibold text-2xl lg:text-3xl">
                 Here's how to get started
               </h1>
             </div>
@@ -302,8 +302,10 @@ const Home = () => {
             />
 
             <div className="flexStart text-white flex-col w-full py-16 px-2 lg:px-10">
-              <h1 className="text-5xl monaBold tracking-wider">Interested?</h1>
-              <p className="my-2 w-auto monaMedium  lg:w-2/4 pt-1">
+              <h1 className="text-5xl font-monaBold tracking-wider">
+                Interested?
+              </h1>
+              <p className="my-2 w-auto font-monaMedium  lg:w-2/4 pt-1">
                 Just drop your contact info and we will get back to you as soon
                 as possible.
               </p>
@@ -324,10 +326,10 @@ const Home = () => {
                 <hr className="hrBlack" />
                 <h3>see how we compare</h3>
               </div>
-              <h1 className="monaSemibold text-3xl">
+              <h1 className="font-monaSemibold text-3xl">
                 What makes us different?
               </h1>
-              <p className="text-lg monaMedium">
+              <p className="text-lg font-monaMedium">
                 We will take care of all your creative needs. No inefficient
                 freelancers. No lengthy hiring procedures. No contracts. Just
                 your work getting done!
@@ -335,7 +337,7 @@ const Home = () => {
             </div>
 
             <div className="col-span-12 lg:col-span-7 flexStart w-full">
-              <ul className="grid grid-cols-1 md:grid-cols-2 space-y-2 text-black text-lg monaMedium w-full">
+              <ul className="grid grid-cols-1 md:grid-cols-2 space-y-2 text-black text-lg font-monaMedium w-full">
                 {srcFilesList.map((listing) => (
                   <li
                     key={listing.para}
