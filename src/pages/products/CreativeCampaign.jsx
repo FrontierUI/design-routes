@@ -13,6 +13,7 @@ import AIEnhanced from '../../components/AIEnhanced';
 import ProvenExpertise from '../../components/ProvenExpertise';
 // import { Link } from 'react-router-dom';
 import CreativeCampaignPackage from '../../components/CreativeCampaignPackage';
+import BrandIdentityPackage from '../../components/BrandIdentityPackage';
 
 const CreativeCampaigns = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
@@ -177,7 +178,7 @@ const CreativeCampaigns = () => {
       </div>
 
       <div className="relative w-full h-full py-6">
-        <CreativeCampaignPackage />
+        <BrandIdentityPackage />
       </div>
 
       <div className="relative w-full h-full py-6">

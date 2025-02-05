@@ -149,6 +149,7 @@
   .scal105 {
     @apply transform hover:scale-105 ease-in-out !important;
   }
+
   .scal110 {
     @apply transform hover:scale-110 ease-in-out !important;
   }
@@ -178,6 +179,11 @@
     font-family: 'Mona-Sans-SemiBold';
   }
 
+  .tpLGBtn {
+    @apply bg-transparent text-gray-800 border-[2.5px] border-gray-800 text-2xl rounded-full py-4 px-10 transitAll scal110 hover:bg-white hover:text-primary hover:border-white !important;
+    font-family: 'Mona-Sans-SemiBold' !important;
+  }
+
   .bgChange {
     @apply transitAll scal105 bg-white text-black hover:bg-primary hover:text-white;
   }
@@ -190,6 +196,11 @@
   .interestedLink {
     @apply rounded-full py-3.5 px-8 uppercase scal105 transitAll bg-white text-primary !important;
     font-family: 'Mona-Sans-Bold';
+  }
+
+  .tabsBtn {
+    @apply rounded-full border-2 border-[#147df5]/75 text-stone-100 bg-[#147df5] text-xl py-3 px-8 transitAll scal105;
+    font-family: 'Mona-Sans-SemiBold';
   }
 
   .body-1 {
