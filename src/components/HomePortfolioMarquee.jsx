@@ -6,14 +6,6 @@ import { Link } from 'react-router-dom';
 
 import { homePortFolioUp, homePortFolioBot } from '../contentData/utils';
 
-// import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/autoplay';
-
-// import { Autoplay } from 'swiper';
-
-// SwiperCore.use([Autoplay]);
-
 const HomePortfolioMarquee = () => {
   return (
     <div className="w-full flexy flex-col space-y-5">

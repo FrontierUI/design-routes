@@ -1,3 +1,10 @@
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+export const cn = (...inputs) => {
+  return twMerge(clsx(...inputs));
+};
+
 import CreativeCamp from '/images/icons/cc.svg';
 import BrandIdenDesNav from '/images/icons/brandIdenNav.svg';
 import Presentation from '/images/icons/presentNav.svg';
@@ -11,7 +18,7 @@ import DirCon from '/images/icons/dirCon.svg';
 import users from '/images/icons/persons.svg';
 import clock24 from '/images/icons/clock24.svg';
 import revisionHome from '/images/icons/revision.svg';
-import dollar from '/images/icons/dollar.svg';
+// import dollar from '/images/icons/dollar.svg';
 
 import web1 from '../assets/images/Sequence01_4.mp4';
 import web2 from '../assets/images/Sequence01_5.mp4';
@@ -55,6 +62,13 @@ import thumb8 from '/images/portfolio/homePort/thumbnail-8.jpg';
 import thumb9 from '/images/portfolio/homePort/thumbnail-9.jpg';
 import thumb10 from '/images/portfolio/homePort/thumbnail-10.jpg';
 
+import bidPortAroma from '/images/portfolio/brandIdentity/Aroma.jpg';
+import bidPortBeyound from '/images/portfolio/brandIdentity/Beyound.jpg';
+import bidPortSoguosto from '/images/portfolio/brandIdentity/Soguosto.jpg';
+import bidPortDAmore from '/images/portfolio/brandIdentity/DAmore.jpg';
+import bidPortGU7 from '/images/portfolio/brandIdentity/GU7.jpg';
+import bidPort250 from '/images/portfolio/brandIdentity/250.jpg';
+
 import CCamp from '/images/Creativecampaign.jpg';
 import bIden from '/images/brandingIden.jpg';
 import webUIX from '/images/WebsiteUIUX.jpg';
@@ -73,6 +87,10 @@ import trello from '/images/icons/trello.svg';
 import moneyBack from '/images/icons/moneyBack.svg';
 import cancel from '/images/icons/cancel.svg';
 import middle from '/images/icons/middle.svg';
+
+//
+
+import moneyReturn from '/images/icons/moneyReturn.svg';
 
 //
 
@@ -99,6 +117,19 @@ import staticImg from '/images/icons/staticImg.svg';
 import augmentedReality from '/images/icons/augmentedReality.svg';
 
 import clientAvatar from '/images/icons/avatar.png';
+
+//
+
+import brandDev from '/images/icons/BrandDev.svg';
+import brandDesign from '/images/icons/BrandDevDesign.svg';
+import scopeLogo from '/images/icons/scopeLogo.svg';
+import guideLines from '/images/icons/guideLines.svg';
+import book from '/images/icons/book.svg';
+import rebrand from '/images/icons/rebrand.svg';
+
+import researchStrategy from '/images/icons/researchStrategy.svg';
+import conceptualization from '/images/icons/Conceptualization.svg';
+import designExecution from '/images/icons/designExecution.svg';
 
 export const clientTestimonials = [
   {
@@ -164,6 +195,62 @@ export const formatMaster = [
     src: augmentedReality,
     title: 'Augmented Reality Ads',
     para: 'Push the boundaries of creativity with world and front-facing AR applications for innovative immersive campaigns and experiences.',
+  },
+];
+
+export const fullScope = [
+  {
+    src: brandDev,
+    title: 'Brand Development',
+    para: 'Starting from scratch? Craft a robust, one-of-a-kind foundation that ensures engagement and resonance across all platforms and audiences.',
+  },
+  {
+    src: brandDesign,
+    title: 'Brand Design',
+    para: 'From fundamentals like logos, colors, and typography to templates and custom image libraries, get the tools you need to get to market faster.',
+  },
+  {
+    src: scopeLogo,
+    title: 'Logo Design',
+    para: 'Need help updating existing logos or creating new ones? Create a rand of options, including static and animated logos suitable for a range of applications.',
+  },
+  {
+    src: guideLines,
+    title: 'Brand Guidelines',
+    para: 'Ensure brand consistency, capture your distinct voice and iconography all in one place for ease of use and scale.',
+  },
+  {
+    src: book,
+    title: 'Brand Story Development',
+    para: 'Your brand has a feel as well as a look. Develop a narrative that speaks to this essence and can be expressed time and again.',
+  },
+  {
+    src: rebrand,
+    title: 'Rebranding Services',
+    para: 'From a refresh to a full rebrand, revitalize your brand seamlessly with a global network of branding talent that brings diverse perspectives and signature expertise.',
+  },
+];
+
+export const designProcess = [
+  {
+    src: researchStrategy,
+    title: 'Research and Strategy',
+    para: "Before any work begins, we want to understand the business landscape you operate within. This involves studying market trends, gathering insights on customer preferences, and analyzing competitors. This initial phase provides us with a robust foundation, helping our brand design services to align your subsequent designs with both market demands and your brand's core essence.",
+  },
+  {
+    src: conceptualization,
+    title: 'Conceptualization',
+    para: 'With the insights from the first phase of our brand identity design services, our team of creative minds comes together to brainstorm. This phase is all about exploration, where we draft initial concepts, play with colors, typography, and visuals, and envision what the brand could look like in various scenarios.',
+  },
+  {
+    src: designExecution,
+    title: 'Design Execution',
+    para: 'Once the initial concepts are presented, we actively seek feedback to refine our designs. As part of our branding design services, we include iterative adjustments based on the insights we gather. We want the end result to not only look good but also resonate with the intended audience.',
+  },
+  {
+    src: brandDev,
+    title: 'Implementation',
+    para: "Once the designs have been polished and finalized, we reach the real-world application phase of our brand identity design services. This isn't just about placing a logo on a website. Your new identity should be at every customer touchpoint, from business cards to digital ads and beyond. Our brand design services team makes sure that your new identity seamlessly integrates across various mediums, maintaining consistency and reinforcing brand recognition.",
   },
 ];
 
@@ -301,7 +388,7 @@ export const Menus = [
         href: '/products/social-media-management',
       },
       {
-        name: 'Brand Identity Design',
+        name: 'Brand Identity & Design',
         icon: BrandIdenDesNav,
         href: '/products/brand-identity-designs',
       },
@@ -358,64 +445,108 @@ export const smallVids = [
 
 export const homePortFolioUp = [
   {
-    homePortUpId: 'thumb1',
-    src: thumb1,
+    imgSrc: thumb1,
     href: '/our-work/internation-industries-ltd',
   },
   {
-    homePortUpId: 'thumb2',
-    src: thumb2,
+    imgSrc: thumb2,
     href: '/our-work/dove-creative-campaign',
   },
   {
-    homePortUpId: 'thumb3',
-    src: thumb3,
+    imgSrc: thumb3,
     href: '/our-work/digitall-creative-campaign',
   },
   {
-    homePortUpId: 'thumb4',
-    src: thumb4,
+    imgSrc: thumb4,
     href: '/our-work/effy-creative-campaign',
   },
   {
-    homePortUpId: 'thumb5',
-    src: thumb5,
+    imgSrc: thumb5,
     href: '/our-work/grom-icecream-creative-campaign',
   },
 ];
 
 export const homePortFolioBot = [
   {
-    homePortBotId: 'thumb6',
-    src: thumb6,
+    imgSrc: thumb6,
     href: '/our-work/oudsire-ajmal-fragrance-creative-campaign',
   },
   {
-    homePortBotId: 'thumb7',
-    src: thumb7,
+    imgSrc: thumb7,
     href: '/our-work/rivermall-creative-campaign',
   },
   {
-    homePortBotId: 'thumb8',
-    src: thumb8,
+    imgSrc: thumb8,
     href: '/our-work/fruit-nation-chilled-nectar-creative-campaign',
   },
   {
-    homePortBotId: 'thumb9',
-    src: thumb9,
+    imgSrc: thumb9,
     href: '/our-work/digitall-creative-campaign',
   },
   {
-    homePortBotId: 'thumb10',
-    src: thumb10,
+    imgSrc: thumb10,
     href: '/our-work/yap-finance-creative-campaign',
+  },
+];
+
+export const brandPortFolioUp = [
+  {
+    imgSrc: bidPortDAmore,
+    href: '/our-work/damore-brand-identity-design',
+  },
+  {
+    imgSrc: bidPort250,
+    href: '/our-work/twofifty-brand-identity-design',
+  },
+  {
+    imgSrc: bidPortBeyound,
+    href: '/our-work/beyond-beverages-brand-identity-design',
+  },
+  {
+    imgSrc: bidPortGU7,
+    href: '/our-work/gearup7-campaign',
+  },
+  {
+    imgSrc: bidPortAroma,
+    href: '/our-work/aroma-brand-identity-design',
+  },
+  {
+    imgSrc: bidPortSoguosto,
+    href: '/our-work/sogusto-brand-identity-design',
+  },
+];
+
+export const brandPortFolioBot = [
+  {
+    imgSrc: bidPortDAmore,
+    href: '/our-work/damore-brand-identity-design',
+  },
+  {
+    imgSrc: bidPort250,
+    href: '/our-work/twofifty-brand-identity-design',
+  },
+  {
+    imgSrc: bidPortBeyound,
+    href: '/our-work/beyond-beverages-brand-identity-design',
+  },
+  {
+    imgSrc: bidPortGU7,
+    href: '/our-work/gearup7-campaign',
+  },
+  {
+    imgSrc: bidPortAroma,
+    href: '/our-work/aroma-brand-identity-design',
+  },
+  {
+    imgSrc: bidPortSoguosto,
+    href: '/our-work/sogusto-brand-identity-design',
   },
 ];
 
 export const homeServiceDetails = [
   {
     id: 'sd1',
-    icon: dollar,
+    icon: moneyReturn,
     title: '7 days money-back guarantee',
     description:
       'Enjoy peace of mind with our hassle-free 7-day money-back guarantee.',
@@ -454,7 +585,7 @@ export const prod1 = [
     id: 'brandIndityDesService',
     href: '/products/brand-identity-designs',
     image: bIden,
-    title: 'Brand Identity Design',
+    title: 'Brand Identity & Design',
     descr:
       'Our branding services encompass everything from logo design to brand strategy, ensuring a cohesive and compelling brand identity.',
   },

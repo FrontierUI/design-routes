@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+
 import CreativeCampaignPackage from './CreativeCampaignPackage';
 import BrandIdentityPackage from './BrandIdentityPackage';
+import SMMPackage from './SMMPackage';
 
 const tabs = [
   { id: 'creativeCampaign', title: 'Creative Campaign' },
@@ -10,18 +12,16 @@ const tabs = [
   { id: 'webDD', title: 'Web Design & Development' },
   { id: 'appDD', title: 'App Design & Development' },
   { id: 'presentationDesign', title: 'Presentation Design' },
-  { id: 'tab7', title: 'Tab 7' },
 ];
 
 const TabContent = ({ id }) => {
   const content = {
     creativeCampaign: <CreativeCampaignPackage />,
     brandIdentity: <BrandIdentityPackage />,
-    socialMM: <div>Content for Tab 3</div>,
+    socialMM: <SMMPackage />,
     webDD: <div>Content for Tab 4</div>,
     appDD: <div>Content for Tab 5</div>,
     presentationDesign: <div>Content for Tab 6</div>,
-    tab7: <div>Content for Tab 7</div>,
   };
 
   return (
@@ -43,7 +43,7 @@ const PricingTabs = () => {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   return (
-    <div className="flexy flex-col py-6 w-full max-w-full">
+    <div className="flexy flex-col py-6 w-full">
       <div className="flexy w-full flex-wrap gap-x-4 gap-y-4">
         {tabs.map((tab) => (
           <button

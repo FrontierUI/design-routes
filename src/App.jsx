@@ -8,6 +8,7 @@ import SignIn from './pages/auth/sign-in';
 import Footer from './components/Footer';
 import CreativeCampaigns from './pages/products/CreativeCampaign';
 import Pricing from './pages/Pricing';
+import BrandIdentiyDesign from './pages/products/BrandIdentiyDesign';
 
 const App = () => {
   return (
@@ -19,6 +20,10 @@ const App = () => {
         <Route
           path="/products/creative-campaigns"
           element={<CreativeCampaigns />}
+        />
+        <Route
+          path="/products/brand-identity-designs"
+          element={<BrandIdentiyDesign />}
         />
         <Route path="/auth/sign-up" element={<SignUp />} />
         <Route path="/auth/sign-in" element={<SignIn />} />

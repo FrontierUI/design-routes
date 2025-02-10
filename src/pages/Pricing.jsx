@@ -1,12 +1,13 @@
 // import React from 'react';
 
+import PricingTabpanel from '../components/PricingTabpanel';
 import PricingTabs from '../components/PricingTabs';
 
 const Pricing = () => {
   return (
     <div className="relative flexy flex-col w-full h-full">
       <div className="flexy flex-col w-full px-5 pt-20 lg:pt-28">
-        <div className="flexy flex-col py-8 w-full space-y-5 text-center text-slate-800 lg:w-3/4">
+        <div className="flexy flex-col py-8 w-full space-y-5 text-center text-slate-900 lg:w-3/4">
           <h3 className="text-xl font-monaBold uppercase">
             Routes Design subscription
           </h3>
@@ -25,7 +26,8 @@ const Pricing = () => {
       </div>
 
       <div className="flexy w-full">
-        <PricingTabs />
+        {/* <PricingTabs /> */}
+        <PricingTabpanel />
       </div>
     </div>
   );

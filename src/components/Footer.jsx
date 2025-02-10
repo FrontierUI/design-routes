@@ -198,7 +198,7 @@ const Footer = () => {
             </span>
           </div>
 
-          <div className="flexStart lg:items-center lg:justify-center gap-x-4 lg:pl-56">
+          <div className="flexStart lg:items-center lg:justify-center gap-x-4 lg:pl-56 max-lg:pt-3">
             <img
               src="/images/icons/upw.png"
               width={90}

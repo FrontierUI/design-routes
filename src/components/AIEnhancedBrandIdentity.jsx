@@ -2,7 +2,7 @@
 
 import { Link } from 'react-router-dom';
 
-const AIEnhanced = () => {
+const AIEnhancedBrandIdentity = () => {
   return (
     <div className="flexy bg-primary max-w-full mx-auto px-5 lg:px-12">
       <div className="flex flex-wrap items-center w-full py-5 lg:py-12">
@@ -12,7 +12,9 @@ const AIEnhanced = () => {
               FUTURE-READY EFFICIENCY
             </h3>
 
-            <h1 className="text-5xl font-monaBold">AI-Enhanced Ad Design</h1>
+            <h1 className="text-5xl font-monaBold">
+              AI-Enhanced Branding Services
+            </h1>
 
             <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">
               Leverage the power of AI to improve efficiency and cost savings in
@@ -51,4 +53,4 @@ const AIEnhanced = () => {
   );
 };
 
-export default AIEnhanced;
+export default AIEnhancedBrandIdentity;

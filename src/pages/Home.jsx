@@ -27,6 +27,10 @@ import Services from '../components/Services';
 import Strategies from '../components/Strategies';
 import Testimonials from '../components/Testimonials';
 import Professionalism from '../components/Professionalism';
+import WorkEthics from '../components/WorkEthics';
+import RoutesWay from '../components/RoutesWay';
+import PortfolioMarquee from '../components/PortfolioMarquee';
+import Marquee from 'react-fast-marquee';
 
 const Home = () => {
   // const images = [
@@ -104,160 +108,50 @@ const Home = () => {
         <VideosCarousel />
       </div>
 
-      <div className="relative w-full h-full bg-primary py-6 px-5">
-        <HomePortfolioMarquee />
-      </div>
-
-      <div className="w-full h-full py-10 px-5 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
-          {homeServiceDetails.map((serviceDetail) => (
-            <div
-              className="relative p-4 rounded-lg flex flex-col items-start justify-center transitAll scal105 hover:bg-primary space-y-2 hover:text-white shadow-drop-2"
-              key={serviceDetail.id}
-            >
-              <img
-                src={serviceDetail.icon}
-                className="img-fluid"
-                width={45}
-                alt=""
+      <div className="relative bg-primary w-full h-full max-lg:mt-9 imac:mt-10 py-5 px-5 flexy flex-col space-y-5">
+        <div className="relative flexy w-full h-full">
+          <Marquee
+            direction="right"
+            autoFill={true}
+            gradient={false}
+            delay={1}
+            speed={30}
+            pauseOnHover={false}
+          >
+            {[...homePortFolioUp].map((item) => (
+              <PortfolioMarquee
+                imgSrc={item.imgSrc}
+                href={item.href}
+                key={item.href}
               />
-              <h3 className="text-lg font-monaSemibold leading-tight">
-                {serviceDetail.title}
-              </h3>
-              <p>{serviceDetail.description}</p>
-            </div>
-          ))}
+            ))}
+          </Marquee>
+        </div>
+        <div className="relative flexy w-full h-full">
+          <Marquee
+            direction="left"
+            autoFill={true}
+            gradient={false}
+            delay={1}
+            speed={30}
+            pauseOnHover={false}
+          >
+            {[...homePortFolioBot].map((item) => (
+              <PortfolioMarquee
+                imgSrc={item.imgSrc}
+                href={item.href}
+                key={item.href}
+              />
+            ))}
+          </Marquee>
         </div>
       </div>
 
-      <div className="relative flexy w-full h-full py-10">
-        <div className="absolute bg-primary w-full h-full lg:h-[400px] -z-[1]" />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 text-white px-5 lg:px-12 z-10">
-          <div className="relative w-full flex items-center justify-start lg:justify-end">
-            <div className="flex flex-col items-start lg:items-end justify-center">
-              <h4 className="font-monaMedium text-lg">Without Routes</h4>
-              <h2 className="font-monaBold text-3xl">Old Way</h2>
-              <h4 className="font-monaMedium text-lg">Classic Landing Page</h4>
-
-              <ul className="flex flex-col items-start lg:items-end justify-center mt-6 space-y-2">
-                <li className="flex items-start lg:items-center justify-center">
-                  <span className="text-lg">Basic design for mobile</span>
-                  <img
-                    src="/images/icons/oldwayWrong.svg"
-                    className="img-fluid ml-2 w-6"
-                    alt=""
-                  />
-                </li>
-                <li className="flex items-start lg:items-center justify-center">
-                  <span className="text-lg">Long scroll navigation</span>
-                  <img
-                    src="/images/icons/oldwayWrong.svg"
-                    className="img-fluid ml-2 w-6"
-                    alt=""
-                  />
-                </li>
-                <li className="flex items-start lg:items-center justify-center">
-                  <span className="text-lg">Endless form</span>
-                  <img
-                    src="/images/icons/oldwayWrong.svg"
-                    className="img-fluid ml-2 w-6"
-                    alt=""
-                  />
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="relative flex items-start justify-start w-full h-full lg:p-8">
-            <div className="flex items-center justify-start rounded-lg w-full lg:w-[350px]">
-              <img
-                src="/images/OldPetz.png"
-                className="img-fluid w-full h-full rounded-lg"
-                alt=""
-              />
-            </div>
-          </div>
-
-          <div className="relative flex items-start justify-start w-full">
-            <div className="bg-transparent flexy w-full h-full">
-              <ReactPlayer
-                playing
-                url={'/images/PetzMz.mp4'}
-                loop={true}
-                muted={true}
-                width="100%"
-                height="100%"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '1rem',
-                  outline: 'none',
-                  border: 'none',
-                  backgroundColor: 'transparent',
-                }}
-                config={{
-                  file: {
-                    attributes: {
-                      style: {
-                        width: '100%',
-                        height: '100%',
-                        borderRadius: '1rem',
-                        outline: 'none',
-                        border: 'none',
-                        backgroundColor: 'transparent',
-                      },
-                    },
-                  },
-                }}
-              />
-            </div>
-          </div>
-
-          <div className="relative w-full flex items-center justify-start lg:pl-10 max-sm:pt-6">
-            <div className="flex flex-col items-start justify-center">
-              <h4 className="font-monaMedium text-lg">With Routes</h4>
-              <h2 className="font-monaBold text-3xl">New Way</h2>
-              <h4 className="font-monaMedium text-lg">Mobile Experience</h4>
-
-              <ul className="flex flex-col items-start justify-center mt-6 space-y-1">
-                <li className="flex items-start lg:items-center justify-center">
-                  <img
-                    src="/images/icons/newWayCheck.svg"
-                    className="img-fluid mr-2 w-6"
-                    alt=""
-                  />
-                  <span className="text-lg">User-friendly</span>
-                </li>
-                <li className="flex items-start lg:items-center justify-center">
-                  <img
-                    src="/images/icons/newWayCheck.svg"
-                    className="img-fluid mr-2 w-6"
-                    alt=""
-                  />
-                  <span className="text-lg">Addictive UI/UX</span>
-                </li>
-                <li className="flex items-start lg:items-center justify-center">
-                  <img
-                    src="/images/icons/newWayCheck.svg"
-                    className="img-fluid mr-2 w-6"
-                    alt=""
-                  />
-                  <span className="text-lg">Instant tap navigation</span>
-                </li>
-                <li className="flex items-start lg:items-center justify-center">
-                  <img
-                    src="/images/icons/newWayCheck.svg"
-                    className="img-fluid mr-2 w-6"
-                    alt=""
-                  />
-                  <span className="text-lg">Engaging experience</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div className="w-full h-full relative pt-10 pb-5">
+        <WorkEthics />
       </div>
+
+      <RoutesWay />
 
       <div className="services relative w-full h-full py-6 bg-white">
         <div className="w-full h-full flexy flex-col px-5 lg:px-12">
@@ -295,17 +189,17 @@ const Home = () => {
 
       <div className="interested relative w-full h-full lg:my-10 my-5">
         <div className="flexy flex-col px-5 lg:px-12 space-y-8">
-          <div className="relative w-full h-full flexy lg:max-h-[400px] max-sm:p-3 lg:p-10 overflow-hidden z-[2]">
+          <div className="relative w-full h-full flexy lg:max-h-[400px] max-sm:p-2 sm:p-10 overflow-hidden z-[2]">
             <div
-              className="absolute w-full h-full rounded-xl bg-no-repeat bg-cover bg-center -z-[1] transitAll scal105"
+              className="absolute w-full h-full rounded-xl bg-no-repeat bg-cover bg-center -z-[1]"
               style={{ backgroundImage: 'url(/images/interested.jpg)' }}
             />
 
-            <div className="flexStart text-white flex-col w-full py-16 px-2 lg:px-10">
-              <h1 className="text-5xl font-monaBold tracking-wider">
+            <div className="flexStart text-white flex-col w-full py-16 px-2 sm:px-10">
+              <h1 className="text-5xl sm:text-6xl font-monaBold tracking-wider">
                 Interested?
               </h1>
-              <p className="my-2 w-auto font-monaMedium  lg:w-2/4 pt-1">
+              <p className="my-2 w-auto font-monaMedium sm:w-3/5 pt-1">
                 Just drop your contact info and we will get back to you as soon
                 as possible.
               </p>
@@ -313,7 +207,7 @@ const Home = () => {
               <Link
                 to={'/'}
                 target="_blank"
-                className="relative lg:top-4 mt-4 interestedLink text-xl"
+                className="relative lg:top-4 mt-4 interestedLink text-lg sm:text-xl"
               >
                 book a call with a team
               </Link>
@@ -337,7 +231,7 @@ const Home = () => {
             </div>
 
             <div className="col-span-12 lg:col-span-7 flexStart w-full">
-              <ul className="grid grid-cols-1 md:grid-cols-2 space-y-2 text-black text-lg font-monaMedium w-full">
+              <ul className="grid grid-cols-1 md:grid-cols-2 space-y-2 text-slate-900 text-lg font-monaMedium w-full">
                 {srcFilesList.map((listing) => (
                   <li
                     key={listing.para}

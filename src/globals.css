@@ -36,8 +36,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-[#111] overflow-x-hidden;
-    font-family: 'Mona-Sans-Regular';
+    @apply bg-white text-slate-900 overflow-x-hidden font-monaRegular;
   }
 
   p,
@@ -153,13 +152,16 @@
     @apply transform hover:scale-110 ease-in-out !important;
   }
 
+  .transBorderBtn {
+    @apply bg-transparent border-[2.5px] border-white gap-x-2 flexy py-4 px-8 rounded-full text-xl  text-white transitAll scal110 font-monaSemibold !important;
+  }
+
   .whiteButton {
     @apply bg-white py-4 px-8 rounded-full text-lg  text-primary transitAll scal110 font-monaSemibold !important;
   }
 
   .whiteLGButton {
     @apply bg-white py-5 px-12 rounded-full text-2xl text-primary transitAll scal110 font-monaBold !important;
-    font-family: 'Mona-Sans-Bold';
   }
 
   .whiteLink {
@@ -179,7 +181,7 @@
   }
 
   .bgChange {
-    @apply transitAll scal105 bg-white text-black hover:bg-primary hover:text-white;
+    @apply transitAll scal105 bg-white text-slate-900 hover:bg-primary hover:text-white;
   }
 
   .tpLink {
@@ -191,7 +193,7 @@
   }
 
   .tabsBtn {
-    @apply rounded-full border-2 border-[#147df5]/75 text-stone-100 bg-[#147df5] text-xl py-3 px-8 transitAll scal105 font-monaSemibold;
+    @apply rounded-full border-2 border-[#339af0] text-stone-100 bg-[#339af0] text-xl py-2 px-6 transitAll scal105 font-monaSemibold;
   }
 
   .body-1 {
@@ -223,7 +225,7 @@
   }
 
   .portfolioMarquee {
-    @apply max-md:max-w-[21rem] lg:!max-w-[28rem] rounded-xl mx-2 overflow-hidden !important;
+    @apply relative max-lg:max-w-[21rem] lg:!max-w-[37rem] lg:h-full lg:min-h-[360px] lg:max-h-[380px] rounded-xl mx-2 overflow-hidden !important;
   }
 }
 
@@ -310,4 +312,12 @@
   background: url('/images/icons/downArrowWhite.png') no-repeat 1px top
     transparent;
   background-size: 20px 88%;
+}
+
+@media screen and (max-width: 1399px) {
+  .plansNumb48::before {
+    width: 17.5rem;
+    height: 15.9rem;
+    background-size: 97% 100%;
+  }
 }

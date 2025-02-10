@@ -161,7 +161,7 @@ const BrandIdentityPackage = () => {
         />
 
         <div className="flexy flex-col w-full h-full relative z-[2]">
-          <div className="flexy w-full text-center py-4 mt-4 text-slate-800">
+          <div className="flexy w-full text-center py-4 mt-4 text-slate-900">
             <h1 className="text-center font-monaBold text-4xl lg:text-5xl">
               Brand Identity & Design
             </h1>
@@ -173,13 +173,13 @@ const BrandIdentityPackage = () => {
               <hr className="w-full absolute top-[20.75rem] left-0 h-[1.5px] bg-gray-400" />
 
               <div className="flexy relative flex-col space-y-5 w-full">
-                <div className="flexy flex-col space-y-2 py-2 mt-6 text-slate-800">
+                <div className="flexy flex-col space-y-2 py-2 mt-6 text-slate-900">
                   <h2 className="text-4xl lg:text-4xl font-monaBold">Basic</h2>
                   <span className="text-md font-monaMedium">
                     Good for Startups
                   </span>
                 </div>
-                <div className="flexy flex-col w-full text-slate-800 space-y-2.5 py-6">
+                <div className="flexy flex-col w-full text-slate-900 space-y-2.5 py-6">
                   <h1 className="filsonHeavy text-5xl">
                     $1,999/<span className="text-xl">project</span>
                   </h1>
@@ -191,7 +191,7 @@ const BrandIdentityPackage = () => {
                   </div>
                 </div>
                 <div className="flexy w-full">
-                  <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-800">
+                  <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-900">
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
                         src="/images/icons/doublecheckPrim.svg"
@@ -274,7 +274,7 @@ const BrandIdentityPackage = () => {
               <hr className="w-full absolute top-[20.75rem] left-0 h-[1.5px] bg-gray-400" />
 
               <div className="flexy relative flex-col space-y-5 w-full">
-                <div className="flexy flex-col space-y-2 py-2 mt-6 text-slate-800">
+                <div className="flexy flex-col space-y-2 py-2 mt-6 text-slate-900">
                   <h2 className="text-4xl lg:text-4xl font-monaBold">
                     Professional
                   </h2>
@@ -282,7 +282,7 @@ const BrandIdentityPackage = () => {
                     Perfect for Small Businesses
                   </span>
                 </div>
-                <div className="flexy flex-col w-full text-slate-800 space-y-2.5 py-6">
+                <div className="flexy flex-col w-full text-slate-900 space-y-2.5 py-6">
                   <h1 className="filsonHeavy text-5xl">
                     $2,999/<span className="text-xl">project</span>
                   </h1>
@@ -294,7 +294,7 @@ const BrandIdentityPackage = () => {
                   </div>
                 </div>
                 <div className="flexy w-full">
-                  <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-800">
+                  <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-900">
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
                         src="/images/icons/doublecheckPrim.svg"
@@ -377,7 +377,7 @@ const BrandIdentityPackage = () => {
               <hr className="w-full absolute top-[20.75rem] left-0 h-[1.5px] bg-gray-400" />
 
               <div className="flexy relative flex-col space-y-5 w-full">
-                <div className="flexy flex-col space-y-2 py-2 mt-6 text-slate-800">
+                <div className="flexy flex-col space-y-2 py-2 mt-6 text-slate-900">
                   <h2 className="text-4xl lg:text-4xl font-monaBold">
                     Premium
                   </h2>
@@ -385,7 +385,7 @@ const BrandIdentityPackage = () => {
                     Excellent for Growing Businesses
                   </span>
                 </div>
-                <div className="flexy flex-col w-full text-slate-800 space-y-2.5 py-6">
+                <div className="flexy flex-col w-full text-slate-900 space-y-2.5 py-6">
                   <h1 className="filsonHeavy text-5xl">
                     $4,999/<span className="text-xl">project</span>
                   </h1>
@@ -399,7 +399,7 @@ const BrandIdentityPackage = () => {
                   </div>
                 </div>
                 <div className="flexy w-full">
-                  <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-800">
+                  <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-900">
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
                         src="/images/icons/doublecheckPrim.svg"

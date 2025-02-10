@@ -3,8 +3,14 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      screens: { sm: '640px', lg: '1024px', macbook: '1714px', imac: '1887px' },
-      colors: { primary: '#0000ff' },
+      screens: {
+        sm: '640px',
+        lg: '1024px',
+        macbook: '1744px',
+        imac: '1887px',
+        samsung: '2297px',
+      },
+      colors: { primary: '#0000ff', kala: '#000444' },
       fontFamily: {
         monaRegular: ['Mona-Sans-Regular', 'Regular'],
         monaMedium: ['Mona-Sans-Medium', 'Medium'],

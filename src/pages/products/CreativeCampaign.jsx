@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 
 import ComprehensiveCC from '../../components/ComprehensiveCC';
 import FormatMastery from '../../components/FormatMastery';
@@ -13,7 +13,12 @@ import AIEnhanced from '../../components/AIEnhanced';
 import ProvenExpertise from '../../components/ProvenExpertise';
 // import { Link } from 'react-router-dom';
 import CreativeCampaignPackage from '../../components/CreativeCampaignPackage';
+import SMMPackage from '../../components/SMMPackage';
 import BrandIdentityPackage from '../../components/BrandIdentityPackage';
+import { homePortFolioBot, homePortFolioUp } from '../../contentData/utils';
+import PortfolioMarquee from '../../components/PortfolioMarquee';
+import Marquee from 'react-fast-marquee';
+// import BrandIdentityPackage from '../../components/BrandIdentityPackage';
 
 const CreativeCampaigns = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
@@ -75,8 +80,43 @@ const CreativeCampaigns = () => {
         </div>
       </div>
 
-      <div className="relative w-full h-full py-5 px-5">
-        <HomePortfolioMarquee />
+      <div className="relative w-full h-full max-lg:mt-9 imac:mt-10 py-5 px-5 flexy flex-col space-y-5">
+        <div className="relative flexy w-full h-full">
+          <Marquee
+            direction="right"
+            autoFill={true}
+            gradient={false}
+            delay={1}
+            speed={30}
+            pauseOnHover={false}
+          >
+            {[...homePortFolioUp].map((item) => (
+              <PortfolioMarquee
+                imgSrc={item.imgSrc}
+                href={item.href}
+                key={item.href}
+              />
+            ))}
+          </Marquee>
+        </div>
+        <div className="relative flexy w-full h-full">
+          <Marquee
+            direction="left"
+            autoFill={true}
+            gradient={false}
+            delay={1}
+            speed={30}
+            pauseOnHover={false}
+          >
+            {[...homePortFolioBot].map((item) => (
+              <PortfolioMarquee
+                imgSrc={item.imgSrc}
+                href={item.href}
+                key={item.href}
+              />
+            ))}
+          </Marquee>
+        </div>
       </div>
 
       <div className="relative w-full h-full flexy px-5 py-5 overflow-hidden">
@@ -104,10 +144,10 @@ const CreativeCampaigns = () => {
                 </p>
 
                 <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">
-                  The need for compelling ad creative has never been greater.
-                  But, when your biggest challenge is getting to market, the
-                  best solution is plugging into Routes.Design flexible ad
-                  design Products.
+                  In a world where talent is hard to find, ours has no borders.
+                  Our global team of highly skilled ad designers can help with
+                  everything from market research and concept development to
+                  applying the latest AI, AR and 3D overlays.
                 </p>
               </div>
             </div>
@@ -127,7 +167,7 @@ const CreativeCampaigns = () => {
 
       <div className="comprehensive relative w-full h-full py-5 pt-10">
         <div className="flexy max-w-full px-5 pb-6">
-          <div className="flexy flex-col space-y-2.5 text-center text-slate-800">
+          <div className="flexy flex-col space-y-2.5 text-center text-slate-900">
             <h3 className="text-2xl uppercase font-monaSemibold">
               MULTIFACETED SOLUTIONS
             </h3>
@@ -142,7 +182,7 @@ const CreativeCampaigns = () => {
 
       <div className="formatMastSect relative w-full h-full py-5 pb-5">
         <div className="flexy max-w-full px-5 pb-6">
-          <div className="flexy flex-col space-y-2.5 text-center text-slate-800">
+          <div className="flexy flex-col space-y-2.5 text-center text-slate-900">
             <h3 className="text-2xl uppercase font-monaSemibold">
               format mastery
             </h3>
@@ -161,7 +201,7 @@ const CreativeCampaigns = () => {
 
       <div className="provenExpert relative w-full h-full py-6">
         <div className="flexy max-w-full px-5 pb-6">
-          <div className="flexy flex-col space-y-2.5 text-center text-slate-800">
+          <div className="flexy flex-col space-y-2.5 text-center text-slate-900">
             <h3 className="text-2xl uppercase font-monaSemibold">
               PROVEN EXPERTISE
             </h3>

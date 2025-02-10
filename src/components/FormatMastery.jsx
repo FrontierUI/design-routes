@@ -3,8 +3,8 @@ import { formatMaster } from '../contentData/utils';
 
 const FormatMastery = () => {
   return (
-    <div className="flexy px-5 lg:px-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 w-full gap-5">
+    <div className="flexy w-full h-full relative px-5 lg:px-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 w-full gap-x-5 gap-y-5">
         {formatMaster.map((master) => (
           <div
             key={master.title}

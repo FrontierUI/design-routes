@@ -117,7 +117,7 @@ const Hero = () => {
           <LogoMarquee />
         </div>
 
-        <div className="flexy py-5 text-left text-black">
+        <div className="flexy py-5 text-left text-slate-900">
           <ul className="grid grid-cols-1 lg:grid-cols-2 items-center gap-2">
             <li className="flex items-center justify-start gap-x-1.5">
               <img

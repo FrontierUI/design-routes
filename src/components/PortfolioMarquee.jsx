@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
-import { Link as Link5 } from 'lucide-react';
+import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const HomePortTopThumbCard = ({ imgSrc, href }) => {
+import { Link as Link5 } from 'lucide-react';
+
+const PortfolioMarquee = ({ imgSrc, href }) => {
   const [showOverlay, setShowOverlay] = useState(false);
 
   return (
@@ -45,4 +45,4 @@ const HomePortTopThumbCard = ({ imgSrc, href }) => {
   );
 };
 
-export default HomePortTopThumbCard;
+export default PortfolioMarquee;

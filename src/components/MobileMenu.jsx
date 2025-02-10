@@ -24,7 +24,7 @@ const MobileMenu = ({ Menus, isOpenMain }) => {
   return (
     <div>
       <button className="lg:hidden z-[999] relative" onClick={toggleDrawer}>
-        {isOpen ? <X /> : <Menu />}
+        {isOpen ? <X className="mt-2 mr-2" /> : <Menu className="mt-2 mr-2" />}
       </button>
 
       <motion.div

@@ -1,7 +1,7 @@
 // import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CreativeCampaignPackage = () => {
+const SMMPackage = () => {
   return (
     <div className="flexy flex-col space-y-5 max-w-full lg:px-12">
       <div className="relative w-full campPackBan flexy p-5 lg:p-14">
@@ -15,21 +15,19 @@ const CreativeCampaignPackage = () => {
         <div className="packageTop flexStart flex-col w-full h-full py-4 space-y-4">
           <div className="packInfo flexStart lg:items-center flex-col lg:flex-row lg:justify-between w-full text-white space-y-4">
             <div className="packTitle flexStart flex-col items-center justify-center lg:items-start lg:justify-start w-full space-y-3">
-              <h1 className="text-5xl lg:text-7xl font-monaBold">
-                Creative Campaign
+              <h1 className="text-5xl lg:text-[3.8rem] font-monaBold">
+                Social Media Management
               </h1>
-              <p className="w-full text-base lg:text-lg lg:w-4/5">
-                With innovative and compelling campaigns, captivate your unique
-                business goals and resonate with your target audience.
+              <p className="w-full text-base lg:text-lg lg:w-11/12">
+                Engage with your audience and manage content that drives
+                interaction and nurtures community.
               </p>
             </div>
             <div className="packPricing flex flex-col items-end justify-end">
               <h1 className="text-8xl lg:text-9xl filsonHeavy leading-none">
-                $4,999
+                $2,999
               </h1>
-              <h4 className="text-xl font-monaSemibold uppercase">
-                per project
-              </h4>
+              <h4 className="text-xl font-monaSemibold uppercase">per month</h4>
             </div>
           </div>
 
@@ -44,7 +42,7 @@ const CreativeCampaignPackage = () => {
                     alt=""
                   />
                   <span className="font-monaMedium text-md xl:text-xl">
-                    Campaign concept development
+                    Social media strategy development
                   </span>
                 </div>
               </li>
@@ -57,7 +55,7 @@ const CreativeCampaignPackage = () => {
                     alt=""
                   />
                   <span className="font-monaMedium text-md xl:text-xl">
-                    Campaign key visual development
+                    Content creation (posts, stories, videos)
                   </span>
                 </div>
               </li>
@@ -70,7 +68,7 @@ const CreativeCampaignPackage = () => {
                     alt=""
                   />
                   <span className="font-monaMedium text-md xl:text-xl">
-                    Upto 5 campaign posms adaptation
+                    Scheduling and posting
                   </span>
                 </div>
               </li>
@@ -83,7 +81,7 @@ const CreativeCampaignPackage = () => {
                     alt=""
                   />
                   <span className="font-monaMedium text-md xl:text-xl">
-                    Campaign email design
+                    Community management
                   </span>
                 </div>
               </li>
@@ -96,7 +94,7 @@ const CreativeCampaignPackage = () => {
                     alt=""
                   />
                   <span className="font-monaMedium text-md xl:text-xl">
-                    Campaign digital ads & social media
+                    Social media advertising
                   </span>
                 </div>
               </li>
@@ -109,20 +107,7 @@ const CreativeCampaignPackage = () => {
                     alt=""
                   />
                   <span className="font-monaMedium text-md xl:text-xl">
-                    Motion graphic videos
-                  </span>
-                </div>
-              </li>
-              <li className="flexStart">
-                <div className="flexy space-x-2.5">
-                  <img
-                    src="/images/icons/roundCheckWhite.svg"
-                    className="img-fluid"
-                    width={28}
-                    alt=""
-                  />
-                  <span className="font-monaMedium text-md xl:text-xl">
-                    Production files
+                    Analytics and reporting
                   </span>
                 </div>
               </li>
@@ -136,6 +121,19 @@ const CreativeCampaignPackage = () => {
                   />
                   <span className="font-monaMedium text-md xl:text-xl">
                     24/7 timezone coverage
+                  </span>
+                </div>
+              </li>
+              <li className="flexStart">
+                <div className="flexy space-x-2.5">
+                  <img
+                    src="/images/icons/roundCheckWhite.svg"
+                    className="img-fluid"
+                    width={28}
+                    alt=""
+                  />
+                  <span className="font-monaMedium text-md xl:text-xl">
+                    Turnaround times from 12 hours
                   </span>
                 </div>
               </li>
@@ -161,7 +159,7 @@ const CreativeCampaignPackage = () => {
         <div className="flexy flex-col w-full h-full relative z-[2]">
           <div className="flexy w-full text-center py-4 mt-4 text-slate-900">
             <h1 className="text-center font-monaBold text-4xl lg:text-5xl">
-              Creative Campaigns
+              Social Media Management
             </h1>
           </div>
 
@@ -179,7 +177,7 @@ const CreativeCampaignPackage = () => {
                 </div>
                 <div className="flexy flex-col w-full text-slate-900 space-y-2.5 py-6">
                   <h1 className="filsonHeavy text-5xl">
-                    $1,599/<span className="text-xl">project</span>
+                    $999/<span className="text-xl">project</span>
                   </h1>
                   <span className="text-md font-monaMedium">Fine Choice</span>
                   <div className="flexy">
@@ -196,8 +194,19 @@ const CreativeCampaignPackage = () => {
                         className="img-fluid w-5"
                         alt=""
                       />
+                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
+                        <span>24/7 timezone coverage</span>
+                        <span>(10 Post, 4 Stories, 1 Video, 1 Reel)</span>
+                      </div>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
                       <span className="text-md lg:text-lg">
-                        24/7 timezone coverage
+                        Analytics and reporting
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -207,27 +216,7 @@ const CreativeCampaignPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Campaign digital ads & social media
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Campaign Strategy Development
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Campaign key visual development
+                        Scheduling and posting
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -237,7 +226,7 @@ const CreativeCampaignPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Upto 5 campaign posms adaptation
+                        Competitor Analysis
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -247,7 +236,7 @@ const CreativeCampaignPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Production files
+                        Community management
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -257,7 +246,7 @@ const CreativeCampaignPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Campaign email design
+                        Social media strategy development
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -267,7 +256,28 @@ const CreativeCampaignPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Motion graphic videos
+                        Social media advertising
+                      </span>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckgrey.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
+                        <span>Social Media Ads Campaign Design</span>
+                        <span>(No Campaign)</span>
+                      </div>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckgrey.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <span className="text-md lg:text-lg">
+                        Turnaround times from 12 hours
                       </span>
                     </li>
                   </ul>
@@ -290,7 +300,7 @@ const CreativeCampaignPackage = () => {
                 </div>
                 <div className="flexy flex-col w-full text-slate-900 space-y-2.5 py-6">
                   <h1 className="filsonHeavy text-5xl">
-                    $2,999/<span className="text-xl">project</span>
+                    $1,999/<span className="text-xl">project</span>
                   </h1>
                   <span className="text-md font-monaMedium">Best Choice</span>
                   <div className="flexy">
@@ -307,8 +317,19 @@ const CreativeCampaignPackage = () => {
                         className="img-fluid w-5"
                         alt=""
                       />
+                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
+                        <span>24/7 timezone coverage</span>
+                        <span>(12 Post, 8 Stories, 3 Video, 3 Reel)</span>
+                      </div>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
                       <span className="text-md lg:text-lg">
-                        24/7 timezone coverage
+                        Analytics and reporting
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -318,7 +339,7 @@ const CreativeCampaignPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Campaign digital ads & social media
+                        Scheduling and posting
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -328,7 +349,7 @@ const CreativeCampaignPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Campaign Strategy Development
+                        Competitor Analysis
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -338,7 +359,7 @@ const CreativeCampaignPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Campaign key visual development
+                        Community management
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -348,37 +369,38 @@ const CreativeCampaignPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Upto 5 campaign posms adaptation
+                        Social media strategy development
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
-                        src="/images/icons/doublecheckgrey.svg"
+                        src="/images/icons/doublecheckPrim.svg"
                         className="img-fluid w-5"
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Production files
+                        Social media advertising
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
-                        src="/images/icons/doublecheckgrey.svg"
+                        src="/images/icons/doublecheckPrim.svg"
                         className="img-fluid w-5"
                         alt=""
                       />
-                      <span className="text-md lg:text-lg">
-                        Campaign email design
-                      </span>
+                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
+                        <span>Social Media Ads Campaign Design</span>
+                        <span>(1 Campaign Design & Launching)</span>
+                      </div>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
-                        src="/images/icons/doublecheckgrey.svg"
+                        src="/images/icons/doublecheckPrim.svg"
                         className="img-fluid w-5"
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Motion graphic videos
+                        Turnaround times from 12 hours
                       </span>
                     </li>
                   </ul>
@@ -401,7 +423,7 @@ const CreativeCampaignPackage = () => {
                 </div>
                 <div className="flexy flex-col w-full text-slate-900 space-y-2.5 py-6">
                   <h1 className="filsonHeavy text-5xl">
-                    $4,999/<span className="text-xl">project</span>
+                    $2,999/<span className="text-xl">project</span>
                   </h1>
                   <span className="text-md font-monaMedium">
                     Recommended Choice
@@ -420,8 +442,19 @@ const CreativeCampaignPackage = () => {
                         className="img-fluid w-5"
                         alt=""
                       />
+                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
+                        <span>24/7 timezone coverage</span>
+                        <span>(16 Post, 8 Stories, 3 Video, 5 Reel)</span>
+                      </div>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
                       <span className="text-md lg:text-lg">
-                        24/7 timezone coverage
+                        Analytics and reporting
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -431,7 +464,7 @@ const CreativeCampaignPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Campaign digital ads & social media
+                        Scheduling and posting
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -441,7 +474,7 @@ const CreativeCampaignPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Campaign Strategy Development
+                        Competitor Analysis
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -451,7 +484,7 @@ const CreativeCampaignPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Campaign key visual development
+                        Community management
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -461,7 +494,7 @@ const CreativeCampaignPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Upto 5 campaign posms adaptation
+                        Social media strategy development
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -471,7 +504,7 @@ const CreativeCampaignPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Production files
+                        Social media advertising
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -480,9 +513,10 @@ const CreativeCampaignPackage = () => {
                         className="img-fluid w-5"
                         alt=""
                       />
-                      <span className="text-md lg:text-lg">
-                        Campaign email design
-                      </span>
+                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
+                        <span>Social Media Ads Campaign Design</span>
+                        <span>(2 Campaign Design & Launching)</span>
+                      </div>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
@@ -491,7 +525,7 @@ const CreativeCampaignPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Motion graphic videos
+                        Turnaround times from 12 hours
                       </span>
                     </li>
                   </ul>
@@ -517,4 +551,4 @@ const CreativeCampaignPackage = () => {
   );
 };
 
-export default CreativeCampaignPackage;
+export default SMMPackage;
