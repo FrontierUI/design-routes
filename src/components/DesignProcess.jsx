@@ -8,7 +8,7 @@ const DesignProcess = () => {
         {designProcess.map((process) => (
           <div
             key={process.title}
-            className="flexStart flex-col shadow-drop-5 overflow-hidden rounded-lg w-full h-full"
+            className="flexStart shadow-drop-5 overflow-hidden rounded-lg w-full h-full"
           >
             <div className="bgChange w-full h-full p-6 space-y-6 rounded-lg">
               <div className="itemsStart flex-col relative space-y-5">

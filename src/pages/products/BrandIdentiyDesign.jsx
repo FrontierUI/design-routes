@@ -10,6 +10,8 @@ import FullScope from '../../components/FullScope';
 import AIEnhanced from '../../components/AIEnhanced';
 import AIEnhancedBrandIdentity from '../../components/AIEnhancedBrandIdentity';
 import DesignProcess from '../../components/DesignProcess';
+import ProvenExpertise from '../../components/ProvenExpertise';
+import Professionalism from '../../components/Professionalism';
 
 const BrandIdentiyDesign = () => {
   return (
@@ -193,6 +195,25 @@ const BrandIdentiyDesign = () => {
         </div>
 
         <DesignProcess />
+      </div>
+
+      <div className="provenExpert relative w-full h-full py-6">
+        <div className="flexy max-w-full px-5 pb-6">
+          <div className="flexy flex-col space-y-2.5 text-center text-slate-900">
+            <h3 className="text-2xl uppercase font-monaSemibold">
+              STRIKE UP THE BRAND
+            </h3>
+            <h1 className="text-3xl lg:text-4xl font-monaBold">
+              Branding product that maximize speed, value and impact
+            </h1>
+          </div>
+        </div>
+
+        <ProvenExpertise />
+      </div>
+
+      <div className="relative w-full h-full py-4">
+        <Professionalism />
       </div>
     </div>
   );
