@@ -1,24 +1,20 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Marquee from 'react-fast-marquee';
 
-import { Check, ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+
+import { homePortFolioBot, homePortFolioUp } from '../../contentData/utils';
 
 import ComprehensiveCC from '../../components/ComprehensiveCC';
 import FormatMastery from '../../components/FormatMastery';
-import HomePortfolioMarquee from '../../components/HomePortfolioMarquee';
 import LogoMarquee from '../../components/LogoMarquee';
 import Professionalism from '../../components/Professionalism';
 import Testimonials from '../../components/Testimonials';
 import AIEnhanced from '../../components/AIEnhanced';
 import ProvenExpertise from '../../components/ProvenExpertise';
-// import { Link } from 'react-router-dom';
 import CreativeCampaignPackage from '../../components/CreativeCampaignPackage';
-import SMMPackage from '../../components/SMMPackage';
-import BrandIdentityPackage from '../../components/BrandIdentityPackage';
-import { homePortFolioBot, homePortFolioUp } from '../../contentData/utils';
 import PortfolioMarquee from '../../components/PortfolioMarquee';
-import Marquee from 'react-fast-marquee';
-// import BrandIdentityPackage from '../../components/BrandIdentityPackage';
 
 const CreativeCampaigns = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
@@ -220,7 +216,7 @@ const CreativeCampaigns = () => {
       </div>
 
       <div className="relative w-full h-full py-6">
-        <BrandIdentityPackage />
+        <CreativeCampaignPackage />
       </div>
 
       <div className="relative w-full h-full py-6">

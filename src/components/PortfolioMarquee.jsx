@@ -20,12 +20,12 @@ const PortfolioMarquee = ({ imgSrc, href }) => {
         {showOverlay && (
           <motion.a
             href={href}
-            className="absolute inset-0 z-10 flexStart"
+            className="absolute inset-0 z-10 flexStart transitAll"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <div className="absolute bg-black pointer-events-none opacity-50 h-full w-full" />
+            <div className="absolute bg-black pointer-events-none opacity-50 h-full w-full transitAll" />
             <motion.a
               href={href}
               initial={{ y: 10 }}

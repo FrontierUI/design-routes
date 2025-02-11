@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { designProcess } from '../contentData/utils';
 
 const DesignProcess = () => {

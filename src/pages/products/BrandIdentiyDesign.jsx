@@ -1,19 +1,90 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
+import {
+  animate,
+  AnimatePresence,
+  motion,
+  useMotionValue,
+} from 'framer-motion';
 import Marquee from 'react-fast-marquee';
+import useMeasure from 'react-use-measure';
+
+import { Check, ChevronDown, ChevronUp } from 'lucide-react';
+
+import { brandPortFolioBot, brandPortFolioUp } from '../../contentData/utils';
 
 import LogoMarquee from '../../components/LogoMarquee';
 import PortfolioMarquee from '../../components/PortfolioMarquee';
-
-import { brandPortFolioBot, brandPortFolioUp } from '../../contentData/utils';
-import { Check } from 'lucide-react';
 import FullScope from '../../components/FullScope';
-import AIEnhanced from '../../components/AIEnhanced';
 import AIEnhancedBrandIdentity from '../../components/AIEnhancedBrandIdentity';
 import DesignProcess from '../../components/DesignProcess';
 import ProvenExpertise from '../../components/ProvenExpertise';
 import Professionalism from '../../components/Professionalism';
+import BrandIdentityPackage from '../../components/BrandIdentityPackage';
+import Testimonials from '../../components/Testimonials';
+import HomePortTopThumbCard from '../../components/HomePortTopThumbCard';
 
 const BrandIdentiyDesign = () => {
+  //
+
+  const FAST_DURATION = 25;
+
+  const SLOW_DURATION = 60;
+
+  const [activeQuestion, setActiveQuestion] = useState(null);
+
+  const [durtion, setDurtion] = useState(FAST_DURATION);
+
+  const [mustFinish, setMustFinish] = useState(false);
+  const [rerender, setRerender] = useState(false);
+
+  let [ref, { width }] = useMeasure();
+
+  const xTranslation = useMotionValue(0);
+
+  useEffect(() => {
+    let controls;
+    let finalPositions = -width / 2 - 8;
+
+    if (mustFinish) {
+      controls = animate(xTranslation, [xTranslation.get(), finalPositions], {
+        ease: 'linear',
+        duration: durtion * (1 - xTranslation.get() / finalPositions),
+        onComplete: () => {
+          setMustFinish(false);
+          setRerender(!rerender);
+        },
+        repeat: Infinity,
+        repeatType: 'loop',
+        repeatDelay: 0,
+      });
+    } else {
+      controls = animate(xTranslation, [0, finalPositions], {
+        ease: 'linear',
+        duration: durtion,
+        repeat: Infinity,
+        repeatType: 'loop',
+        repeatDelay: 0,
+      });
+    }
+
+    return controls?.stop;
+  }, [xTranslation, width, durtion, rerender, mustFinish]);
+
+  const faqQuestion = [
+    {
+      id: 1,
+      question: 'What services are included in the Creative Campaign Product?',
+      answer:
+        'The product includes the development of campaign key visuals, up to 5 Point-of-Sale Materials (POSM) adaptations, digital ads, motion graphic videos, email design, and campaign presentation design. These services help create cohesive and engaging campaigns across multiple channels.',
+    },
+    {
+      id: 2,
+      question: 'What services are included in the Creative Campaign Product?',
+      answer:
+        'The product includes the development of campaign key visuals, up to 5 Point-of-Sale Materials (POSM) adaptations, digital ads, motion graphic videos, email design, and campaign presentation design. These services help create cohesive and engaging campaigns across multiple channels.',
+    },
+  ];
+
   return (
     <div className="relative w-full h-full brandIdenDes">
       <div className="relative w-full h-full">
@@ -59,22 +130,27 @@ const BrandIdentiyDesign = () => {
 
       <div className="relative w-full h-full max-lg:mt-9 imac:mt-10 py-5 px-5 flexy flex-col space-y-5">
         <div className="relative flexy w-full h-full">
-          <Marquee
-            direction="right"
-            autoFill={true}
-            gradient={false}
-            delay={1}
-            speed={30}
-            pauseOnHover={false}
+          <motion.div
+            className="relative w-full h-full flex gap-x-2"
+            ref={ref}
+            style={{ x: xTranslation }}
+            onHoverStart={() => {
+              setMustFinish(true);
+              setDurtion(SLOW_DURATION);
+            }}
+            onHoverEnd={() => {
+              setMustFinish(true);
+              setDurtion(FAST_DURATION);
+            }}
           >
-            {[...brandPortFolioUp].map((item) => (
-              <PortfolioMarquee
+            {[...brandPortFolioUp, ...brandPortFolioBot].map((item) => (
+              <HomePortTopThumbCard
+                key={item.href}
                 imgSrc={item.imgSrc}
                 href={item.href}
-                key={item.href}
               />
             ))}
-          </Marquee>
+          </motion.div>
         </div>
         <div className="relative flexy w-full h-full">
           <Marquee
@@ -214,6 +290,61 @@ const BrandIdentiyDesign = () => {
 
       <div className="relative w-full h-full py-4">
         <Professionalism />
+      </div>
+
+      <div className="relative w-full h-full py-6">
+        <BrandIdentityPackage />
+      </div>
+
+      <div className="relative w-full h-full py-6">
+        <div className="flexy px-5 pb-6">
+          <h1 className="font-monaBold text-center text-4xl">
+            Got any questions?
+          </h1>
+        </div>
+
+        <div className="itemsStart mb-2">
+          <div className="w-full md:w-3/4 p-5 rounded-lg bg-gray-300">
+            {faqQuestion.map((faq) => (
+              <div key={faq.id} className="mb-4 last:mb-0">
+                <button
+                  className="w-full p-4 text-left text-lg font-monaSemibold focus:outline-none bg-gray-100 rounded-lg shadow-md flexBetween"
+                  onClick={() =>
+                    setActiveQuestion(activeQuestion === faq.id ? null : faq.id)
+                  }
+                >
+                  {faq.question}
+                  {activeQuestion === faq.id ? (
+                    <span className="p-1 text-xl flexy rounded-full bg-primary text-white">
+                      <ChevronUp />
+                    </span>
+                  ) : (
+                    <span className="p-1 text-xl flexy rounded-full bg-primary text-white">
+                      <ChevronDown />
+                    </span>
+                  )}
+                </button>
+
+                <AnimatePresence>
+                  {activeQuestion === faq.id && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="mt-3 ml-3 text-gray-900 w-4/5"
+                    >
+                      <p>{faq.answer}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="relative w-full h-full pb-6">
+        <Testimonials />
       </div>
     </div>
   );
