@@ -95,7 +95,7 @@ const BrandIdentiyDesign = () => {
           }}
         />
 
-        <div className="w-full  max-w-full items-center mx-auto px-5 lg:px-12">
+        <div className="w-full max-w-full items-center mx-auto px-5 lg:px-12">
           <div className="w-full flex flex-wrap items-center max-md:pt-24">
             <div className="w-full lg:w-1/2 lg:px-3">
               <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-3 md:space-y-5 text-slate-100">
@@ -130,7 +130,7 @@ const BrandIdentiyDesign = () => {
 
       <div className="relative w-full h-full max-lg:mt-9 imac:mt-10 py-5 px-5 flexy flex-col space-y-5">
         <div className="relative flexy w-full h-full">
-          <motion.div
+          {/* <motion.div
             className="relative w-full h-full flex gap-x-2"
             ref={ref}
             style={{ x: xTranslation }}
@@ -150,7 +150,23 @@ const BrandIdentiyDesign = () => {
                 href={item.href}
               />
             ))}
-          </motion.div>
+          </motion.div> */}
+          <Marquee
+            direction="right"
+            autoFill={true}
+            gradient={false}
+            delay={1}
+            speed={30}
+            pauseOnHover={false}
+          >
+            {[...brandPortFolioUp].map((item) => (
+              <PortfolioMarquee
+                key={item.href}
+                imgSrc={item.imgSrc}
+                href={item.href}
+              />
+            ))}
+          </Marquee>
         </div>
         <div className="relative flexy w-full h-full">
           <Marquee

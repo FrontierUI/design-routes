@@ -69,6 +69,13 @@ import bidPortDAmore from '/images/portfolio/brandIdentity/DAmore.jpg';
 import bidPortGU7 from '/images/portfolio/brandIdentity/GU7.jpg';
 import bidPort250 from '/images/portfolio/brandIdentity/250.jpg';
 
+import caregiv from '/images/portfolio/smm/caregiver.png';
+import fnTomato from '/images/portfolio/smm/FNTomato.png';
+import ill from '/images/portfolio/smm/Ill.png';
+import maz from '/images/portfolio/smm/Mazito.png';
+import oral from '/images/portfolio/smm/Oral.png';
+import shortCast from '/images/portfolio/smm/Shortcast.png';
+
 import CCamp from '/images/Creativecampaign.jpg';
 import bIden from '/images/brandingIden.jpg';
 import webUIX from '/images/WebsiteUIUX.jpg';
@@ -130,6 +137,12 @@ import rebrand from '/images/icons/rebrand.svg';
 import researchStrategy from '/images/icons/researchStrategy.svg';
 import conceptualization from '/images/icons/Conceptualization.svg';
 import designExecution from '/images/icons/designExecution.svg';
+
+import orgCont from '/images/icons/orgCont.svg';
+import smPostDesign from '/images/icons/smPostDesign.svg';
+import smColletral from '/images/icons/smColletral.svg';
+import smResponse from '/images/icons/smResponse.svg';
+import smConcept from '/images/icons/smcd.svg';
 
 export const clientTestimonials = [
   {
@@ -195,6 +208,39 @@ export const formatMaster = [
     src: augmentedReality,
     title: 'Augmented Reality Ads',
     para: 'Push the boundaries of creativity with world and front-facing AR applications for innovative immersive campaigns and experiences.',
+  },
+];
+
+export const smmStrat = [
+  {
+    src: orgCont,
+    title: 'Organic Social Media Content',
+    para: 'Engage your audience with authentic and compelling content that boosts your organic reach and brand loyalty.',
+  },
+  {
+    src: motionGraph,
+    title: 'Social Media Video Content',
+    para: 'Optimize for algorithms and engagement across social media platforms, like Instagram, TikTok and YouTube. Livestream and UGC support is available.',
+  },
+  {
+    src: smPostDesign,
+    title: 'Social Media Post Design',
+    para: 'Capture attention with visually stunning post designs that reflect your brand’s identity and message.',
+  },
+  {
+    src: smColletral,
+    title: 'Social Media Collateral',
+    para: 'From profile banners to story graphics, ensure every aspect of your social media presence is on brand and impactful.',
+  },
+  {
+    src: smResponse,
+    title: 'Social Media Response Guide',
+    para: 'Equip your team with a comprehensive guide to maintain a consistent and engaging brand voice across all interactions.',
+  },
+  {
+    src: smConcept,
+    title: 'Social Media Concept Design',
+    para: 'Innovate and set yourself apart from the competition with unique concept designs that set trends and engage audiences in new ways.',
   },
 ];
 
@@ -541,6 +587,30 @@ export const brandPortFolioBot = [
     imgSrc: bidPortSoguosto,
     href: '/our-work/sogusto-brand-identity-design',
   },
+];
+
+export const smmPortfolioUp = [
+  { imgSrc: caregiv, href: '/our-work/caregiver-smm-campaign' },
+  { imgSrc: ill, href: '/our-work/internation-industries-ltd' },
+  { imgSrc: maz, href: '/our-work/mazito-web-app-design-development' },
+  { imgSrc: oral, href: '/our-work/oral-smm-campaign' },
+  { imgSrc: shortCast, href: '/our-work/shortcast-club-smm-campaign' },
+  {
+    imgSrc: fnTomato,
+    href: '/our-work/fruit-nation-lush-tomato-ketchup-campign',
+  },
+];
+
+export const smmPortfolioBot = [
+  {
+    imgSrc: fnTomato,
+    href: '/our-work/fruit-nation-lush-tomato-ketchup-campign',
+  },
+  { imgSrc: shortCast, href: '/our-work/shortcast-club-smm-campaign' },
+  { imgSrc: oral, href: '/our-work/oral-smm-campaign' },
+  { imgSrc: maz, href: '/our-work/mazito-web-app-design-development' },
+  { imgSrc: ill, href: '/our-work/internation-industries-ltd' },
+  { imgSrc: caregiv, href: '/our-work/caregiver-smm-campaign' },
 ];
 
 export const homeServiceDetails = [

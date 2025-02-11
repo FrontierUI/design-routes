@@ -229,6 +229,11 @@
   }
 }
 
+.masking {
+  -webkit-mask-image: linear-gradient(90deg, #0000 3%, #000 25% 75%, #0000 97%);
+  mask-image: linear-gradient(90deg, #0000 3%, #000 25% 75%, #0000 97%);
+}
+
 .swiper-3d .swiper-cube-shadow,
 .swiper-3d .swiper-slide,
 .swiper-3d .swiper-slide-shadow,
