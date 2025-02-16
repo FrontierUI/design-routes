@@ -49,7 +49,7 @@ const SMPlatforms = () => {
   ];
 
   return (
-    <div className="container mx-auto px-5 lg:px-12">
+    <div className="container mx-auto px-5 lg:px-12 smmPlatforms">
       <div className="flex flex-col md:flex-row gap-10">
         <div className="md:w-1/2 h-auto md:sticky top-32">
           <motion.div
