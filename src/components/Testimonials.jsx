@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCoverflow } from 'swiper';
@@ -11,7 +11,9 @@ import 'swiper/css/effect-coverflow';
 // import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 
-import { Star } from 'lucide-react';
+// import { Star } from 'lucide-react';
+
+import Star from '/images/icons/star.svg';
 
 import { clientTestimonials } from '../contentData/utils';
 
@@ -65,11 +67,11 @@ const Testimonials = () => {
                   </h4>
                 </div>
                 <div className="justStartCenter gap-x-1">
-                  <Star className="w-5 h-5  text-yellow-400" />
-                  <Star className="w-5 h-5  text-yellow-400" />
-                  <Star className="w-5 h-5  text-yellow-400" />
-                  <Star className="w-5 h-5  text-yellow-400" />
-                  <Star className="w-5 h-5  text-yellow-400" />
+                  <img src={Star} alt="" className="img-fluid w-5 h-5" />
+                  <img src={Star} alt="" className="img-fluid w-5 h-5" />
+                  <img src={Star} alt="" className="img-fluid w-5 h-5" />
+                  <img src={Star} alt="" className="img-fluid w-5 h-5" />
+                  <img src={Star} alt="" className="img-fluid w-5 h-5" />
                 </div>
               </div>
             </div>

@@ -1,188 +1,92 @@
 // import React from 'react';
 
+import { motion } from 'framer-motion';
+
 const SMPlatforms = () => {
+  const ssmPlat = [
+    {
+      title: 'Google Slides',
+      imgSrc: '/images/icons/InstagramSMM.png',
+      paraDesc:
+        'An oldie but a goodie. Our designers are experts in this leading presentation software, ensuring your presentations are visually compelling and easy to build on.',
+    },
+    {
+      title: 'Google Slides',
+      imgSrc: '/images/icons/keynote.png',
+      paraDesc:
+        'An oldie but a goodie. Our designers are experts in this leading presentation software, ensuring your presentations are visually compelling and easy to build on.',
+    },
+    {
+      title: 'Google Slides',
+      imgSrc: '/images/icons/othPlat.png',
+      paraDesc:
+        'An oldie but a goodie. Our designers are experts in this leading presentation software, ensuring your presentations are visually compelling and easy to build on.',
+    },
+    {
+      title: 'Google Slides',
+      imgSrc: '/images/icons/YoutubeSMM.png',
+      paraDesc:
+        'An oldie but a goodie. Our designers are experts in this leading presentation software, ensuring your presentations are visually compelling and easy to build on.',
+    },
+    {
+      title: 'Google Slides',
+      imgSrc: '/images/icons/LinkedInSMM.png',
+      paraDesc:
+        'An oldie but a goodie. Our designers are experts in this leading presentation software, ensuring your presentations are visually compelling and easy to build on.',
+    },
+    {
+      title: 'Google Slides',
+      imgSrc: '/images/icons/othPlat.png',
+      paraDesc:
+        'An oldie but a goodie. Our designers are experts in this leading presentation software, ensuring your presentations are visually compelling and easy to build on.',
+    },
+    {
+      title: 'Google Slides',
+      imgSrc: '/images/icons/YoutubeSMM.png',
+      paraDesc:
+        'An oldie but a goodie. Our designers are experts in this leading presentation software, ensuring your presentations are visually compelling and easy to build on.',
+    },
+  ];
+
   return (
-    <div className="toolsPlatform relative w-full h-full lg:py-10 py-6">
-      <div className="flexy w-full h-full px-5 lg:px-12">
-        <div className="flex items-start flex-col lg:flex-row gap-10">
-          <div className="w-full lg:w-1/2 lg:!sticky lg:top-40">
-            <div className="flex items-start justify-center flex-col space-y-2 lg:space-y-4 text-slate-900 w-11/12">
-              <h3 className="font-monaSemibold text-2xl uppercase">
-                platform mastery
-              </h3>
-              <h1 className="font-monaBold text-5xl">
-                Expertise across all Social Media platforms
-              </h1>
-              <p className="leading-tight">
-                From LinkedIn and Instagram to TikTok and YouTube, every social
-                media platform has its own distinct design requirements and
-                inherent user expectations. Rely on our in-depth expertise, as
-                well as the ability to version and scale any kind of social
-                media content, static, motion or video, across your key social
-                media channels.
-              </p>
-            </div>
-          </div>
+    <div className="container mx-auto px-5 lg:px-12">
+      <div className="flex flex-col md:flex-row gap-10">
+        <div className="md:w-1/2 h-auto md:sticky top-32">
+          <motion.div
+            // style={{ position: 'sticky' }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-blue-500 text-white p-6 rounded-xl shadow-lg"
+          >
+            <h2 className="text-2xl font-bold">Sticky Content</h2>
+            <p className="mt-4">
+              Yeh section sticky rehega jab tak right-side content end nahi
+              hota.
+            </p>
+          </motion.div>
+        </div>
 
-          <div className="w-full lg:w-1/2">
-            <div className="flexy flex-col space-y-7 lg:space-y-12">
-              <div className="flexStart flex-col md:flex-row md:justify-between w-full gap-x-3">
-                <div className="flexStart">
-                  <img
-                    src="/images/icons/LinkedInSMM.png"
-                    className="img-fluid object-cover"
-                    width={100}
-                    alt=""
-                  />
-                </div>
-                <div className="flexStart flex-col w-full text-slate-900 leading-tight">
-                  <h2 className="text-3xl font-monaBold">LinkedIn</h2>
-                  <p className="mt-2">
-                    Position your brand as an industry leader with professional
-                    and engaging content designed for LinkedIn’s
-                    business-focused community.
-                  </p>
-                </div>
+        <div className="md:w-1/2 space-y-5 md:space-y-7">
+          {ssmPlat.map((plat, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-slate-50 flexStart flex-col lg:flex-row rounded-xl shadow-md p-5 gap-4"
+            >
+              <div className="flexStart">
+                <img src={plat.imgSrc} className="img-fluid" alt="" />
               </div>
 
-              <div className="flexStart flex-col md:flex-row md:justify-between w-full gap-x-3">
-                <div className="flexStart">
-                  <img
-                    src="/images/icons/LinkedInSMM.png"
-                    className="img-fluid object-cover"
-                    width={100}
-                    alt=""
-                  />
-                </div>
-                <div className="flexStart flex-col w-full text-slate-900 leading-tight">
-                  <h2 className="text-3xl font-monaBold">LinkedIn</h2>
-                  <p className="mt-2">
-                    Position your brand as an industry leader with professional
-                    and engaging content designed for LinkedIn’s
-                    business-focused community.
-                  </p>
-                </div>
+              <div className="flexStart flex-col">
+                <h3 className="text-xl font-semibold">{plat.title}</h3>
+                <p className="mt-2">{plat.paraDesc}</p>
               </div>
-
-              <div className="flexStart flex-col md:flex-row md:justify-between w-full gap-x-3">
-                <div className="flexStart">
-                  <img
-                    src="/images/icons/LinkedInSMM.png"
-                    className="img-fluid object-cover"
-                    width={100}
-                    alt=""
-                  />
-                </div>
-                <div className="flexStart flex-col w-full text-slate-900 leading-tight">
-                  <h2 className="text-3xl font-monaBold">LinkedIn</h2>
-                  <p className="mt-2">
-                    Position your brand as an industry leader with professional
-                    and engaging content designed for LinkedIn’s
-                    business-focused community.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flexStart flex-col md:flex-row md:justify-between w-full gap-x-3">
-                <div className="flexStart">
-                  <img
-                    src="/images/icons/LinkedInSMM.png"
-                    className="img-fluid object-cover"
-                    width={100}
-                    alt=""
-                  />
-                </div>
-                <div className="flexStart flex-col w-full text-slate-900 leading-tight">
-                  <h2 className="text-3xl font-monaBold">LinkedIn</h2>
-                  <p className="mt-2">
-                    Position your brand as an industry leader with professional
-                    and engaging content designed for LinkedIn’s
-                    business-focused community.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flexStart flex-col md:flex-row md:justify-between w-full gap-x-3">
-                <div className="flexStart">
-                  <img
-                    src="/images/icons/LinkedInSMM.png"
-                    className="img-fluid object-cover"
-                    width={100}
-                    alt=""
-                  />
-                </div>
-
-                <div className="flexStart flex-col w-full text-slate-900 leading-tight">
-                  <h2 className="text-3xl font-monaBold">LinkedIn</h2>
-                  <p className="mt-2">
-                    Position your brand as an industry leader with professional
-                    and engaging content designed for LinkedIn’s
-                    business-focused community.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flexStart flex-col md:flex-row md:justify-between w-full gap-x-3">
-                <div className="flexStart">
-                  <img
-                    src="/images/icons/LinkedInSMM.png"
-                    className="img-fluid object-cover"
-                    width={100}
-                    alt=""
-                  />
-                </div>
-
-                <div className="flexStart flex-col w-full text-slate-900 leading-tight">
-                  <h2 className="text-3xl font-monaBold">LinkedIn</h2>
-                  <p className="mt-2">
-                    Position your brand as an industry leader with professional
-                    and engaging content designed for LinkedIn’s
-                    business-focused community.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flexStart flex-col md:flex-row md:justify-between w-full gap-x-3">
-                <div className="flexStart">
-                  <img
-                    src="/images/icons/LinkedInSMM.png"
-                    className="img-fluid object-cover"
-                    width={100}
-                    alt=""
-                  />
-                </div>
-
-                <div className="flexStart flex-col w-full text-slate-900 leading-tight">
-                  <h2 className="text-3xl font-monaBold">LinkedIn</h2>
-                  <p className="mt-2">
-                    Position your brand as an industry leader with professional
-                    and engaging content designed for LinkedIn’s
-                    business-focused community.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flexStart flex-col md:flex-row md:justify-between w-full gap-x-3">
-                <div className="flexStart">
-                  <img
-                    src="/images/icons/LinkedInSMM.png"
-                    className="img-fluid object-cover"
-                    width={100}
-                    alt=""
-                  />
-                </div>
-
-                <div className="flexStart flex-col w-full text-slate-900 leading-tight">
-                  <h2 className="text-3xl font-monaBold">LinkedIn</h2>
-                  <p className="mt-2">
-                    Position your brand as an industry leader with professional
-                    and engaging content designed for LinkedIn’s
-                    business-focused community.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>

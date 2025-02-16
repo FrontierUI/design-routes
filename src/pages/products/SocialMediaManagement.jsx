@@ -1,4 +1,5 @@
-// import React from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
 
 import { Check } from 'lucide-react';
@@ -11,6 +12,7 @@ import FormatMastery from '../../components/FormatMastery';
 import SMMStrategies from '../../components/SMMStrategies';
 import SMMAIEnhanced from '../../components/SMMAIEnhanced';
 import SMPlatforms from '../../components/SMPlatforms';
+// import SMPlatforms from '../../components/SMPlatforms';
 
 const SocialMediaManagement = () => {
   return (
@@ -184,7 +186,9 @@ const SocialMediaManagement = () => {
         <FormatMastery />
       </div>
 
-      <SMPlatforms />
+      <div className=" w-full h-full flexy py-6 lg:py-10">
+        <SMPlatforms />
+      </div>
 
       <div className="enhanced relative w-full h-full py-6">
         <SMMAIEnhanced />

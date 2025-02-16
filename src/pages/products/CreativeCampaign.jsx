@@ -226,12 +226,16 @@ const CreativeCampaigns = () => {
           </h1>
         </div>
 
+        {/* #f5f5ff */}
         <div className="itemsStart mb-2">
-          <div className="w-full md:w-3/4 p-5 rounded-lg bg-gray-300">
+          <div className="w-full md:w-3/4 p-5 rounded-lg bg-slate-50">
             {faqQuestion.map((faq) => (
-              <div key={faq.id} className="mb-4 last:mb-0">
+              <div
+                key={faq.id}
+                className="mb-4 last:mb-0 bg-slate-100 rounded-lg border-2 border-primary"
+              >
                 <button
-                  className="w-full p-4 text-left text-lg font-monaSemibold focus:outline-none bg-gray-100 rounded-lg shadow-md flexBetween"
+                  className="w-full p-4 text-left text-lg font-monaSemibold focus:outline-none bg-slate-100 rounded-lg shadow-md flexBetween"
                   onClick={() =>
                     setActiveQuestion(activeQuestion === faq.id ? null : faq.id)
                   }
@@ -254,7 +258,7 @@ const CreativeCampaigns = () => {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="mt-3 ml-3 text-gray-900 w-4/5"
+                      className="mt-3 ml-3 text-gray-900 w-4/5 pb-3"
                     >
                       <p>{faq.answer}</p>
                     </motion.div>
