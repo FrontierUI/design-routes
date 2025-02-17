@@ -10,18 +10,17 @@ import useMeasure from 'react-use-measure';
 
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 
-import { brandPortFolioBot, brandPortFolioUp } from '../../contentData/utils';
+import { brandPortFolioBot, brandPortFolioUp } from '@/contentData/utils';
 
-import LogoMarquee from '../../components/LogoMarquee';
-import PortfolioMarquee from '../../components/PortfolioMarquee';
-import FullScope from '../../components/FullScope';
-import AIEnhancedBrandIdentity from '../../components/AIEnhancedBrandIdentity';
-import DesignProcess from '../../components/DesignProcess';
-import ProvenExpertise from '../../components/ProvenExpertise';
-import Professionalism from '../../components/Professionalism';
-import BrandIdentityPackage from '../../components/BrandIdentityPackage';
-import Testimonials from '../../components/Testimonials';
-import HomePortTopThumbCard from '../../components/HomePortTopThumbCard';
+import LogoMarquee from '@/components/LogoMarquee';
+import PortfolioMarquee from '@/components/PortfolioMarquee';
+import FullScope from '@/components/FullScope';
+import AIEnhancedBrandIdentity from '@/components/AIEnhancedBrandIdentity';
+import DesignProcess from '@/components/DesignProcess';
+import ProvenExpertise from '@/components/ProvenExpertise';
+import Professionalism from '@/components/Professionalism';
+import BrandIdentityPackage from '@/components/BrandIdentityPackage';
+import Testimonials from '@/components/Testimonials';
 
 const BrandIdentiyDesign = () => {
   //

@@ -195,6 +195,10 @@
     @apply rounded-full py-3.5 px-8 uppercase scal105 transitAll border-2 border-white bg-transparent hover:bg-white hover:text-primary font-monaSemibold !important;
   }
 
+  .tpBordPrim {
+    @apply rounded-full py-3.5 px-7 scal110 transitAll bg-transparent border-[2.5px] border-primary hover:shadow-drop-5 text-primary !important;
+  }
+
   .interestedLink {
     @apply rounded-full py-3.5 px-8 uppercase scal105 transitAll bg-white text-primary font-monaBold !important;
   }
@@ -233,6 +237,10 @@
 
   .portfolioMarquee {
     @apply relative max-lg:max-w-[21rem] lg:!max-w-[37rem] lg:h-full lg:min-h-[360px] lg:max-h-[380px] rounded-xl mx-2 overflow-hidden !important;
+  }
+
+  .sticked {
+    @apply w-full lg:w-1/2 lg:sticky lg:top-28 !important;
   }
 }
 

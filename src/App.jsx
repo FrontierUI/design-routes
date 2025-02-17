@@ -1,15 +1,16 @@
 // import { Routes } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import SignUp from './pages/auth/sign-up';
-import SignIn from './pages/auth/sign-in';
-import Footer from './components/Footer';
-import CreativeCampaigns from './pages/products/CreativeCampaign';
-import Pricing from './pages/Pricing';
-import BrandIdentiyDesign from './pages/products/BrandIdentiyDesign';
-import SocialMediaManagement from './pages/products/SocialMediaManagement';
+
+import Navbar from '@/components/Navbar';
+import Home from '@/pages/Home';
+import SignUp from '@/pages/auth/sign-up';
+import SignIn from '@/pages/auth/sign-in';
+import Footer from '@/components/Footer';
+import CreativeCampaigns from '@/pages/products/CreativeCampaign';
+import Pricing from '@/pages/Pricing';
+import BrandIdentiyDesign from '@/pages/products/BrandIdentiyDesign';
+import SocialMediaManagement from '@/pages/products/SocialMediaManagement';
 
 const App = () => {
   return (

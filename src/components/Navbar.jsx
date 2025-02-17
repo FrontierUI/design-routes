@@ -41,14 +41,14 @@ const Navbar = () => {
           >
             <button
               aria-label="get-a-demo"
-              className="bg-primary text-white px-6 py-2 shadow rounded-full itemsCenter"
+              className="bg-primary text-white lg:hover:shadow-drop-4 px-6 py-2 shadow rounded-full itemsCenter"
             >
               Get a Demo
             </button>
           </Link>
 
           <Link
-            className="flexy transitAll scal105 bg-primary text-white px-6 py-2 shadow rounded-full itemsCenter"
+            className="flexy transitAll scal105 lg:hover:shadow-drop-4 bg-primary text-white px-6 py-2 shadow rounded-full itemsCenter"
             to="/auth/sign-in"
           >
             Sign In

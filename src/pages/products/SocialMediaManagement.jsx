@@ -1,18 +1,23 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
+import { Link } from 'react-router-dom';
 
 import { Check } from 'lucide-react';
 
-import { smmPortfolioBot, smmPortfolioUp } from '../../contentData/utils';
+import { smmPortfolioBot, smmPortfolioUp } from '@/contentData/utils';
 
-import LogoMarquee from '../../components/LogoMarquee';
-import PortfolioMarquee from '../../components/PortfolioMarquee';
-import FormatMastery from '../../components/FormatMastery';
-import SMMStrategies from '../../components/SMMStrategies';
-import SMMAIEnhanced from '../../components/SMMAIEnhanced';
-import SMPlatforms from '../../components/SMPlatforms';
-// import SMPlatforms from '../../components/SMPlatforms';
+import PortfolioMarquee from '@/components/PortfolioMarquee';
+import FormatMastery from '@/components/FormatMastery';
+import SMMStrategies from '@/components/SMMStrategies';
+import SMMAIEnhanced from '@/components/SMMAIEnhanced';
+import SMPlatforms from '@/components/SMPlatforms';
+import ProvenExpertise from '@/components/ProvenExpertise';
+import Professionalism from '@/components/Professionalism';
+import SMMPackage from '@/components/SMMPackage';
+import Testimonials from '@/components/Testimonials';
+import LogoMarquee from '@/components/LogoMarquee';
+import SMMAccordion from '@/components/SMMAccordion';
 
 const SocialMediaManagement = () => {
   return (
@@ -186,7 +191,7 @@ const SocialMediaManagement = () => {
         <FormatMastery />
       </div>
 
-      <div className=" w-full h-full flexy py-6 lg:py-10">
+      <div className="relative w-full h-full flexy py-6">
         <SMPlatforms />
       </div>
 
@@ -195,22 +200,74 @@ const SocialMediaManagement = () => {
       </div>
 
       <div className="comprehensive relative w-full h-full py-5 pt-10">
-        <div className="flexy max-w-full px-5 pb-6">
-          <div className="flexy flex-col space-y-2.5 text-center text-slate-900 lg:w-2/3">
-            <h3 className="text-2xl uppercase font-monaSemibold">
-              Proven Impact
-            </h3>
-            <h1 className="text-4xl font-monaBold">
-              Data-driven success for our customers
-            </h1>
+        <div className="flexy flex-col max-w-full px-5 pb-6">
+          <div className="flexy flex-col space-y-5 text-center text-slate-900 w-full">
+            <div className="flexy flex-col space-y-2 text-center text-slate-900 lg:w-2/3">
+              <h3 className="text-2xl uppercase font-monaSemibold">
+                Proven Impact
+              </h3>
+              <h1 className="text-4xl font-monaBold">
+                Data-driven success for our customers
+              </h1>
 
-            <p className="pt-2">
-              Our track record speaks volumes. Dive into the metrics that
-              highlight our expertise and success in delivering social media
-              creative that makes a difference.
-            </p>
+              <p className="pt-2">
+                Our track record speaks volumes. Dive into the metrics that
+                highlight our expertise and success in delivering social media
+                creative that makes a difference.
+              </p>
+            </div>
+
+            <div className="flexy flex-wrap gap-x-5 gap-y-5 lg:flex-row w-full">
+              <Link
+                to={'javascipt:void(0)'}
+                className="flexy tpBordPrim gap-x-1.5"
+              >
+                <button className="font-monaSemibold text-lg">
+                  Comprehensive Services
+                </button>
+                <Check className="w-7 h-7" />
+              </Link>
+              <Link
+                to={'javascipt:void(0)'}
+                className="flexy tpBordPrim gap-x-1.5"
+              >
+                <button className="font-monaSemibold text-lg">
+                  Consistent Quality
+                </button>
+                <Check className="w-7 h-7" />
+              </Link>
+              <Link
+                to={'javascipt:void(0)'}
+                className="flexy tpBordPrim gap-x-1.5"
+              >
+                <button className="font-monaSemibold text-lg">
+                  Extension of your team
+                </button>
+                <Check className="w-7 h-7" />
+              </Link>
+            </div>
           </div>
         </div>
+
+        <ProvenExpertise />
+      </div>
+
+      <div className="relative w-full h-full py-6">
+        <Professionalism />
+      </div>
+
+      <div className="relative w-full h-full py-6">
+        <SMMPackage />
+      </div>
+
+      <div className="relative w-full flexy h-full py-6">
+        <div className="px-5 w-full lg:w-2/3">
+          <SMMAccordion />
+        </div>
+      </div>
+
+      <div className="relative w-full h-full pb-6">
+        <Testimonials />
       </div>
     </div>
   );

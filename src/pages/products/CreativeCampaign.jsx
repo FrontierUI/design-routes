@@ -4,17 +4,17 @@ import Marquee from 'react-fast-marquee';
 
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
-import { homePortFolioBot, homePortFolioUp } from '../../contentData/utils';
+import { homePortFolioBot, homePortFolioUp } from '@/contentData/utils';
 
-import ComprehensiveCC from '../../components/ComprehensiveCC';
-import FormatMastery from '../../components/FormatMastery';
-import LogoMarquee from '../../components/LogoMarquee';
-import Professionalism from '../../components/Professionalism';
-import Testimonials from '../../components/Testimonials';
-import AIEnhanced from '../../components/AIEnhanced';
-import ProvenExpertise from '../../components/ProvenExpertise';
-import CreativeCampaignPackage from '../../components/CreativeCampaignPackage';
-import PortfolioMarquee from '../../components/PortfolioMarquee';
+import ComprehensiveCC from '@/components/ComprehensiveCC';
+import FormatMastery from '@/components/FormatMastery';
+import LogoMarquee from '@/components/LogoMarquee';
+import Professionalism from '@/components/Professionalism';
+import Testimonials from '@/components/Testimonials';
+import AIEnhanced from '@/components/AIEnhanced';
+import ProvenExpertise from '@/components/ProvenExpertise';
+import CreativeCampaignPackage from '@/components/CreativeCampaignPackage';
+import PortfolioMarquee from '@/components/PortfolioMarquee';
 
 const CreativeCampaigns = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
