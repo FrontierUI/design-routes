@@ -421,7 +421,7 @@ export const Menus = [
   {
     // href: 'javascript:void(0)',
     name: 'Products',
-    gridCols: 2,
+    gridCols: 1,
     subMenu: [
       {
         name: 'Creative Campaigns',
@@ -429,14 +429,14 @@ export const Menus = [
         href: '/products/creative-campaigns',
       },
       {
-        name: 'Social Media Management',
-        icon: SocialMediaMan,
-        href: '/products/social-media-management',
-      },
-      {
         name: 'Brand Identity & Design',
         icon: BrandIdenDesNav,
         href: '/products/brand-identity-designs',
+      },
+      {
+        name: 'Social Media Management',
+        icon: SocialMediaMan,
+        href: '/products/social-media-management',
       },
       {
         name: 'Presentation Design',

@@ -11,7 +11,7 @@ import 'swiper/css/autoplay';
 
 import { Link } from 'react-router-dom';
 
-import { smallVids, largeVids } from '../contentData/utils';
+import { smallVids, largeVids } from '@/contentData/utils';
 
 const VideosCarousel = () => {
   return (

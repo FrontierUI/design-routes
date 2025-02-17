@@ -1,5 +1,5 @@
 // import React from 'react';
-import { professionalism } from '../contentData/utils';
+import { professionalism } from '@/contentData/utils';
 
 const Professionalism = () => {
   return (

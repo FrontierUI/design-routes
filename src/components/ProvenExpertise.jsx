@@ -1,6 +1,6 @@
 // import React from 'react';
 
-import { provenExpert } from '../contentData/utils';
+import { provenExpert } from '@/contentData/utils';
 
 const ProvenExpertise = () => {
   return (

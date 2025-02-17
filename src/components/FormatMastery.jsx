@@ -1,5 +1,5 @@
 // import React from 'react';
-import { formatMaster } from '../contentData/utils';
+import { formatMaster } from '@/contentData/utils';
 
 const FormatMastery = () => {
   return (

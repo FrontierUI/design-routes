@@ -1,7 +1,7 @@
 // import React from 'react';
 
 import Marquee from 'react-fast-marquee';
-import { clientsLogo } from '../contentData/utils';
+import { clientsLogo } from '@/contentData/utils';
 
 const LogoMarquee = () => {
   return (

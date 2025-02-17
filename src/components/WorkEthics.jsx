@@ -1,5 +1,5 @@
 // import React from 'react';
-import { homeServiceDetails } from '../contentData/utils';
+import { homeServiceDetails } from '@/contentData/utils';
 
 const WorkEthics = () => {
   return (

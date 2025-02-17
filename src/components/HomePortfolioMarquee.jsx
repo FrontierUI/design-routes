@@ -4,7 +4,7 @@ import Marquee from 'react-fast-marquee';
 import { Link } from 'react-router-dom';
 // import { motion } from 'framer-motion';
 
-import { homePortFolioUp, homePortFolioBot } from '../contentData/utils';
+import { homePortFolioUp, homePortFolioBot } from '@/contentData/utils';
 
 const HomePortfolioMarquee = () => {
   return (

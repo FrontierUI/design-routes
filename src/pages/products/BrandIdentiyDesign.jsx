@@ -1,12 +1,8 @@
-import { useEffect, useState } from 'react';
-import {
-  animate,
-  AnimatePresence,
-  motion,
-  useMotionValue,
-} from 'framer-motion';
+import { useState } from 'react';
+
+import { AnimatePresence, motion } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
-import useMeasure from 'react-use-measure';
+// import useMeasure from 'react-use-measure';
 
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -25,49 +21,49 @@ import Testimonials from '@/components/Testimonials';
 const BrandIdentiyDesign = () => {
   //
 
-  const FAST_DURATION = 25;
-
-  const SLOW_DURATION = 60;
-
   const [activeQuestion, setActiveQuestion] = useState(null);
 
-  const [durtion, setDurtion] = useState(FAST_DURATION);
+  // const FAST_DURATION = 25;
 
-  const [mustFinish, setMustFinish] = useState(false);
-  const [rerender, setRerender] = useState(false);
+  // const SLOW_DURATION = 60;
 
-  let [ref, { width }] = useMeasure();
+  // const [durtion, setDurtion] = useState(FAST_DURATION);
 
-  const xTranslation = useMotionValue(0);
+  // const [mustFinish, setMustFinish] = useState(false);
+  // const [rerender, setRerender] = useState(false);
 
-  useEffect(() => {
-    let controls;
-    let finalPositions = -width / 2 - 8;
+  // let [ref, { width }] = useMeasure();
 
-    if (mustFinish) {
-      controls = animate(xTranslation, [xTranslation.get(), finalPositions], {
-        ease: 'linear',
-        duration: durtion * (1 - xTranslation.get() / finalPositions),
-        onComplete: () => {
-          setMustFinish(false);
-          setRerender(!rerender);
-        },
-        repeat: Infinity,
-        repeatType: 'loop',
-        repeatDelay: 0,
-      });
-    } else {
-      controls = animate(xTranslation, [0, finalPositions], {
-        ease: 'linear',
-        duration: durtion,
-        repeat: Infinity,
-        repeatType: 'loop',
-        repeatDelay: 0,
-      });
-    }
+  // const xTranslation = useMotionValue(0);
 
-    return controls?.stop;
-  }, [xTranslation, width, durtion, rerender, mustFinish]);
+  // useEffect(() => {
+  //   let controls;
+  //   let finalPositions = -width / 2 - 8;
+
+  //   if (mustFinish) {
+  //     controls = animate(xTranslation, [xTranslation.get(), finalPositions], {
+  //       ease: 'linear',
+  //       duration: durtion * (1 - xTranslation.get() / finalPositions),
+  //       onComplete: () => {
+  //         setMustFinish(false);
+  //         setRerender(!rerender);
+  //       },
+  //       repeat: Infinity,
+  //       repeatType: 'loop',
+  //       repeatDelay: 0,
+  //     });
+  //   } else {
+  //     controls = animate(xTranslation, [0, finalPositions], {
+  //       ease: 'linear',
+  //       duration: durtion,
+  //       repeat: Infinity,
+  //       repeatType: 'loop',
+  //       repeatDelay: 0,
+  //     });
+  //   }
+
+  //   return controls?.stop;
+  // }, [xTranslation, width, durtion, rerender, mustFinish]);
 
   const faqQuestion = [
     {
@@ -129,27 +125,6 @@ const BrandIdentiyDesign = () => {
 
       <div className="relative w-full h-full max-lg:mt-9 imac:mt-10 py-5 px-5 flexy flex-col space-y-5">
         <div className="relative flexy w-full h-full">
-          {/* <motion.div
-            className="relative w-full h-full flex gap-x-2"
-            ref={ref}
-            style={{ x: xTranslation }}
-            onHoverStart={() => {
-              setMustFinish(true);
-              setDurtion(SLOW_DURATION);
-            }}
-            onHoverEnd={() => {
-              setMustFinish(true);
-              setDurtion(FAST_DURATION);
-            }}
-          >
-            {[...brandPortFolioUp, ...brandPortFolioBot].map((item) => (
-              <HomePortTopThumbCard
-                key={item.href}
-                imgSrc={item.imgSrc}
-                href={item.href}
-              />
-            ))}
-          </motion.div> */}
           <Marquee
             direction="right"
             autoFill={true}

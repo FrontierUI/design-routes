@@ -15,7 +15,7 @@ import 'swiper/css/autoplay';
 
 import Star from '/images/icons/star.svg';
 
-import { clientTestimonials } from '../contentData/utils';
+import { clientTestimonials } from '@/contentData/utils';
 
 const Testimonials = () => {
   return (

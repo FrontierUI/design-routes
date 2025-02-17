@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import BrandLogo from '../assets/images/routeslogo.svg';
-import { Menus } from '../contentData/utils';
+import { Menus } from '@/contentData/utils';
 import DesktopMenu from './DesktopMenu';
 import MobileMenu from './MobileMenu';
 

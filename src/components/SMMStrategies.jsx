@@ -1,5 +1,5 @@
 import React from 'react';
-import { smmStrat } from '../contentData/utils';
+import { smmStrat } from '@/contentData/utils';
 
 const SMMStrategies = () => {
   return (

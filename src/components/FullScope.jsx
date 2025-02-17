@@ -1,5 +1,5 @@
 import React from 'react';
-import { fullScope } from '../contentData/utils';
+import { fullScope } from '@/contentData/utils';
 
 const FullScope = () => {
   return (

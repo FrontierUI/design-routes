@@ -20,7 +20,7 @@ import {
   homePortFolioBot,
   srcFilesList,
   professionalism,
-} from '../contentData/utils';
+} from '@/contentData/utils';
 import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import Services from '../components/Services';

@@ -1,5 +1,5 @@
 // import React from 'react';
-import { comprehensive } from '../contentData/utils';
+import { comprehensive } from '@/contentData/utils';
 
 const ComprehensiveCC = () => {
   return (

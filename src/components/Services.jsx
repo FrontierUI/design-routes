@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { prod1, prod2, prod3 } from '../contentData/utils';
+import { prod1, prod2, prod3 } from '@/contentData/utils';
 
 const Services = () => {
   return (
