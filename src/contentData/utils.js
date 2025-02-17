@@ -76,6 +76,13 @@ import maz from '/images/portfolio/smm/Mazito.png';
 import oral from '/images/portfolio/smm/Oral.png';
 import shortCast from '/images/portfolio/smm/Shortcast.png';
 
+import alj from '/images/portfolio/presentDesign/ALJ.jpg';
+import darent from '/images/portfolio/presentDesign/Darent.jpg';
+import freshbar from '/images/portfolio/presentDesign/Freshbar.jpg';
+import get1 from '/images/portfolio/presentDesign/Getz.jpg';
+import hnak from '/images/portfolio/presentDesign/HNAK.jpg';
+import timhorton from '/images/portfolio/presentDesign/timhorton.jpg';
+
 import CCamp from '/images/Creativecampaign.jpg';
 import bIden from '/images/brandingIden.jpg';
 import webUIX from '/images/WebsiteUIUX.jpg';
@@ -589,6 +596,8 @@ export const brandPortFolioBot = [
   },
 ];
 
+// SMM Portfolio
+
 export const smmPortfolioUp = [
   { imgSrc: caregiv, href: '/our-work/caregiver-smm-campaign' },
   { imgSrc: ill, href: '/our-work/internation-industries-ltd' },
@@ -611,6 +620,62 @@ export const smmPortfolioBot = [
   { imgSrc: maz, href: '/our-work/mazito-web-app-design-development' },
   { imgSrc: ill, href: '/our-work/internation-industries-ltd' },
   { imgSrc: caregiv, href: '/our-work/caregiver-smm-campaign' },
+];
+
+// Presentation Design
+
+export const pdPortfolioUp = [
+  {
+    imgSrc: alj,
+    href: '/our-work/alj-toyota-lubricants-presentation-design',
+  },
+  {
+    imgSrc: darent,
+    href: '/our-work/darent-real-state-presentation-design',
+  },
+  {
+    imgSrc: freshbar,
+    href: '/our-work/freshbar-beverages-presentation-design',
+  },
+  {
+    imgSrc: get1,
+    href: '/our-work/getz-pharmaceuticals-presentation-design',
+  },
+  {
+    imgSrc: hnak,
+    href: '/our-work/hnak-audio-electronics-presentation-design',
+  },
+  {
+    imgSrc: timhorton,
+    href: '/our-work/tim-hortons-restaurants-presentation-design',
+  },
+];
+
+export const pdPortfolioBot = [
+  {
+    imgSrc: timhorton,
+    href: '/our-work/tim-hortons-restaurants-presentation-design',
+  },
+  {
+    imgSrc: hnak,
+    href: '/our-work/hnak-audio-electronics-presentation-design',
+  },
+  {
+    imgSrc: get1,
+    href: '/our-work/getz-pharmaceuticals-presentation-design',
+  },
+  {
+    imgSrc: freshbar,
+    href: '/our-work/freshbar-beverages-presentation-design',
+  },
+  {
+    imgSrc: darent,
+    href: '/our-work/darent-real-state-presentation-design',
+  },
+  {
+    imgSrc: alj,
+    href: '/our-work/alj-toyota-lubricants-presentation-design',
+  },
 ];
 
 export const homeServiceDetails = [

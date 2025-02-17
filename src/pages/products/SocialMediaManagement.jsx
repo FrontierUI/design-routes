@@ -9,15 +9,15 @@ import { smmPortfolioBot, smmPortfolioUp } from '@/contentData/utils';
 
 import PortfolioMarquee from '@/components/PortfolioMarquee';
 import FormatMastery from '@/components/FormatMastery';
+import LogoMarquee from '@/components/LogoMarquee';
 import SMMStrategies from '@/components/SMMStrategies';
 import SMMAIEnhanced from '@/components/SMMAIEnhanced';
 import SMPlatforms from '@/components/SMPlatforms';
 import ProvenExpertise from '@/components/ProvenExpertise';
 import Professionalism from '@/components/Professionalism';
 import SMMPackage from '@/components/SMMPackage';
-import Testimonials from '@/components/Testimonials';
-import LogoMarquee from '@/components/LogoMarquee';
 import SMMAccordion from '@/components/SMMAccordion';
+import Testimonials from '@/components/Testimonials';
 
 const SocialMediaManagement = () => {
   return (
@@ -151,7 +151,7 @@ const SocialMediaManagement = () => {
             <div className="w-full lg:w-1/2">
               <div className="w-full h-auto transitAll scal110">
                 <img
-                  src="/images/productsPages/BrandingImage.png"
+                  src="/images/productsPages/socialmedia.png"
                   className="img-flud"
                   alt=""
                 />

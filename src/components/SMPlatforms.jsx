@@ -95,26 +95,83 @@ const SMPlatforms = () => {
     //   </div>
     // </div>
 
-    <section className="max-w-full px-5 lg:px-12 w-full h-full">
-      <div className="grid grid-cols-1 lg:grid-cols-2 max-lg:gap-y-5 lg:gap-x-10">
-        <div className="w-full lg:sticky flexStart lg:top-28 flex-col space-y-4">
-          <h3 className="text-2xl uppercase font-monaSemibold">
-            Platform Mastery
-          </h3>
-          <h1 className="text-5xl font-monaBold">
-            Expertise across all Social Media platforms
-          </h1>
-          <p>
-            From LinkedIn and Instagram to TikTok and YouTube, every social
-            media platform has its own distinct design requirements and inherent
-            user expectations. Rely on our in-depth expertise, as well as the
-            ability to version and scale any kind of social media content,
-            static, motion or video, across your key social media channels.
-          </p>
+    <section className="px-5 lg:px-12 w-full h-full">
+      <div className="relative grid grid-cols-1 lg:grid-cols-2 max-lg:gap-y-5 lg:gap-x-10 w-full h-full">
+        <div className="sticky top-0 w-full flexStart">
+          <div className="flexStart flex-col space-y-4">
+            <h3 className="text-2xl uppercase font-monaSemibold">
+              Platform Mastery
+            </h3>
+            <h1 className="text-5xl font-monaBold">
+              Expertise across all Social Media platforms
+            </h1>
+            <p>
+              From LinkedIn and Instagram to TikTok and YouTube, every social
+              media platform has its own distinct design requirements and
+              inherent user expectations. Rely on our in-depth expertise, as
+              well as the ability to version and scale any kind of social media
+              content, static, motion or video, across your key social media
+              channels.
+            </p>
+          </div>
         </div>
 
         <div className="flexStart w-full md:static">
           <div className="flexStart flex-col lg:h-auto space-y-5 lg:space-y-7">
+            <div className="flexStart h-full flex-col lg:flex-row gap-2">
+              <div className="flexStart">
+                <img
+                  src="/images/icons/YoutubeSMM.png"
+                  className="img-fluid w-[100px]"
+                  alt=""
+                />
+              </div>
+              <div className="flexStart flex-col">
+                <h2 className="text-2xl font-monaBold">YouTube</h2>
+                <p>
+                  Optimize viewer interaction with tailored creatives designed
+                  for YouTube's diverse audience and video-friendly platform
+                  features.
+                </p>
+              </div>
+            </div>
+
+            <div className="flexStart h-full flex-col lg:flex-row gap-2">
+              <div className="flexStart">
+                <img
+                  src="/images/icons/YoutubeSMM.png"
+                  className="img-fluid w-[100px]"
+                  alt=""
+                />
+              </div>
+              <div className="flexStart flex-col">
+                <h2 className="text-2xl font-monaBold">YouTube</h2>
+                <p>
+                  Optimize viewer interaction with tailored creatives designed
+                  for YouTube's diverse audience and video-friendly platform
+                  features.
+                </p>
+              </div>
+            </div>
+
+            <div className="flexStart h-full flex-col lg:flex-row gap-2">
+              <div className="flexStart">
+                <img
+                  src="/images/icons/YoutubeSMM.png"
+                  className="img-fluid w-[100px]"
+                  alt=""
+                />
+              </div>
+              <div className="flexStart flex-col">
+                <h2 className="text-2xl font-monaBold">YouTube</h2>
+                <p>
+                  Optimize viewer interaction with tailored creatives designed
+                  for YouTube's diverse audience and video-friendly platform
+                  features.
+                </p>
+              </div>
+            </div>
+
             <div className="flexStart h-full flex-col lg:flex-row gap-2">
               <div className="flexStart">
                 <img

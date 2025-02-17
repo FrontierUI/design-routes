@@ -8,7 +8,11 @@ const AccordionContext = React.createContext({});
 const useAccordion = () => React.useContext(AccordionContext);
 
 export function AccordionContainer({ children, className }) {
-  return <div className={cn('grid grid-cols-1', className)}>{children}</div>;
+  return (
+    <div className={cn('grid grid-cols-1 min-w-full', className)}>
+      {children}
+    </div>
+  );
 }
 
 export function AccordionWrapper({ children }) {
@@ -52,10 +56,10 @@ export function AccordionItem({ children, value }) {
   const { isActive } = useAccordion();
   return (
     <div
-      className={`rounded-lg transitAll overflow-hidden mb-2 ${
+      className={`rounded-lg transitAll overflow-hidden mb-2 border-2 ${
         isActive
-          ? 'active border-2  border-primary  bg-gray-50'
-          : 'bg-gray-50 border-2 hover:border-primary'
+          ? 'active  border-primary bg-gray-50'
+          : 'bg-gray-50 border-slate-400'
       }`}
       value={value}
     >

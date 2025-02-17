@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+// import { useState } from 'react';
+// import { motion, AnimatePresence } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
 
-import { ChevronDown, ChevronUp } from 'lucide-react';
+// import { ChevronDown, ChevronUp } from 'lucide-react';
 
 import { homePortFolioBot, homePortFolioUp } from '@/contentData/utils';
 
@@ -15,25 +15,9 @@ import AIEnhanced from '@/components/AIEnhanced';
 import ProvenExpertise from '@/components/ProvenExpertise';
 import CreativeCampaignPackage from '@/components/CreativeCampaignPackage';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
+import CCAccordion from '@/components/CCAccordion';
 
 const CreativeCampaigns = () => {
-  const [activeQuestion, setActiveQuestion] = useState(null);
-
-  const faqQuestion = [
-    {
-      id: 1,
-      question: 'What services are included in the Creative Campaign Product?',
-      answer:
-        'The product includes the development of campaign key visuals, up to 5 Point-of-Sale Materials (POSM) adaptations, digital ads, motion graphic videos, email design, and campaign presentation design. These services help create cohesive and engaging campaigns across multiple channels.',
-    },
-    {
-      id: 2,
-      question: 'What services are included in the Creative Campaign Product?',
-      answer:
-        'The product includes the development of campaign key visuals, up to 5 Point-of-Sale Materials (POSM) adaptations, digital ads, motion graphic videos, email design, and campaign presentation design. These services help create cohesive and engaging campaigns across multiple channels.',
-    },
-  ];
-
   return (
     <div className="relative w-full h-full creativeCampaigns">
       <div className="relative w-full h-full">
@@ -219,54 +203,15 @@ const CreativeCampaigns = () => {
         <CreativeCampaignPackage />
       </div>
 
-      <div className="relative w-full h-full py-6">
+      <div className="relative flexy flex-col w-full h-full py-6">
         <div className="flexy px-5 pb-6">
           <h1 className="font-monaBold text-center text-4xl">
             Got any questions?
           </h1>
         </div>
 
-        {/* #f5f5ff */}
-        <div className="itemsStart mb-2">
-          <div className="w-full md:w-3/4 p-5 rounded-lg bg-slate-50">
-            {faqQuestion.map((faq) => (
-              <div
-                key={faq.id}
-                className="mb-4 last:mb-0 bg-slate-100 rounded-lg border-2 border-primary"
-              >
-                <button
-                  className="w-full p-4 text-left text-lg font-monaSemibold focus:outline-none bg-slate-100 rounded-lg shadow-md flexBetween"
-                  onClick={() =>
-                    setActiveQuestion(activeQuestion === faq.id ? null : faq.id)
-                  }
-                >
-                  {faq.question}
-                  {activeQuestion === faq.id ? (
-                    <span className="p-1 text-xl flexy rounded-full bg-primary text-white">
-                      <ChevronUp />
-                    </span>
-                  ) : (
-                    <span className="p-1 text-xl flexy rounded-full bg-primary text-white">
-                      <ChevronDown />
-                    </span>
-                  )}
-                </button>
-
-                <AnimatePresence>
-                  {activeQuestion === faq.id && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="mt-3 ml-3 text-gray-900 w-4/5 pb-3"
-                    >
-                      <p>{faq.answer}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div>
+        <div className="flexy px-5 lg:min-w-[66.666667%] lg:max-w-[66.6670%]">
+          <CCAccordion />
         </div>
       </div>
 

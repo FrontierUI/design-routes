@@ -17,6 +17,7 @@ import ProvenExpertise from '@/components/ProvenExpertise';
 import Professionalism from '@/components/Professionalism';
 import BrandIdentityPackage from '@/components/BrandIdentityPackage';
 import Testimonials from '@/components/Testimonials';
+import BIDAccordion from '@/components/BIDAccordion';
 
 const BrandIdentiyDesign = () => {
   //
@@ -286,50 +287,15 @@ const BrandIdentiyDesign = () => {
         <BrandIdentityPackage />
       </div>
 
-      <div className="relative w-full h-full py-6">
+      <div className="relative flexy flex-col w-full h-full py-6">
         <div className="flexy px-5 pb-6">
           <h1 className="font-monaBold text-center text-4xl">
             Got any questions?
           </h1>
         </div>
 
-        <div className="itemsStart mb-2">
-          <div className="w-full md:w-3/4 p-5 rounded-lg bg-gray-300">
-            {faqQuestion.map((faq) => (
-              <div key={faq.id} className="mb-4 last:mb-0">
-                <button
-                  className="w-full p-4 text-left text-lg font-monaSemibold focus:outline-none bg-gray-100 rounded-lg shadow-md flexBetween"
-                  onClick={() =>
-                    setActiveQuestion(activeQuestion === faq.id ? null : faq.id)
-                  }
-                >
-                  {faq.question}
-                  {activeQuestion === faq.id ? (
-                    <span className="p-1 text-xl flexy rounded-full bg-primary text-white">
-                      <ChevronUp />
-                    </span>
-                  ) : (
-                    <span className="p-1 text-xl flexy rounded-full bg-primary text-white">
-                      <ChevronDown />
-                    </span>
-                  )}
-                </button>
-
-                <AnimatePresence>
-                  {activeQuestion === faq.id && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="mt-3 ml-3 text-gray-900 w-4/5"
-                    >
-                      <p>{faq.answer}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div>
+        <div className="flexy px-5 lg:min-w-[66.666667%] lg:max-w-[66.6670%]">
+          <BIDAccordion />
         </div>
       </div>
 
