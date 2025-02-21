@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import { motion } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
 import { Link } from 'react-router-dom';
@@ -20,6 +20,23 @@ import SMMAccordion from '@/components/SMMAccordion';
 import Testimonials from '@/components/Testimonials';
 
 const SocialMediaManagement = () => {
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      const element = document.querySelector('#root > main');
+      if (element) {
+        element.classList.remove('overflow-x-hidden');
+      }
+    }, 2000);
+
+    return () => {
+      clearTimeout(timeoutId);
+      const element = document.querySelector('#root > main');
+      if (element) {
+        element.classList.add('overflow-x-hidden');
+      }
+    };
+  }, []);
+
   return (
     <div className="relative w-full h-full smmProduct">
       <div className="relative w-full h-full">

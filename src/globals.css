@@ -107,29 +107,29 @@
   }
 
   .flexy {
-    @apply flex items-center justify-center;
+    @apply flex items-center justify-center !important;
   }
   .itemsCenter {
-    @apply flex items-center;
+    @apply flex items-center !important;
   }
   .flexBetween {
-    @apply flex items-center justify-between;
+    @apply flex items-center justify-between !important;
   }
 
   .flexStart {
-    @apply flex items-start justify-start;
+    @apply flex items-start justify-start !important;
   }
 
   .justStartCenter {
-    @apply flex items-center justify-start;
+    @apply flex items-center justify-start !important;
   }
 
   .itemsStart {
-    @apply flex items-start justify-center;
+    @apply flex items-start justify-center !important;
   }
 
   .itemsEnd {
-    @apply flex items-end justify-end;
+    @apply flex items-end justify-end !important;
   }
 
   .horLine {
@@ -249,6 +249,11 @@
   mask-image: linear-gradient(90deg, #0000 3%, #000 25% 75%, #0000 97%);
 }
 
+.startItem {
+  display: flex;
+  align-items: start;
+}
+
 .swiper-3d .swiper-cube-shadow,
 .swiper-3d .swiper-slide,
 .swiper-3d .swiper-slide-shadow,
@@ -334,10 +339,38 @@
   background-size: 20px 88%;
 }
 
+.platformCont {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
 @media screen and (max-width: 1399px) {
   .plansNumb48::before {
     width: 17.5rem;
     height: 15.9rem;
     background-size: 97% 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .my-scroll-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: max-content;
+  }
+
+  .sticky-child {
+    flex: 1 1 auto;
+    width: 50%;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .controls-panel {
+    display: flex;
+    flex-direction: column;
   }
 }
