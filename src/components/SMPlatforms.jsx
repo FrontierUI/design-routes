@@ -49,52 +49,6 @@ const SMPlatforms = () => {
   ];
 
   return (
-    // <div className="w-full mx-auto px-5 lg:px-12 smmPlatforms">
-    //   <div className="flex items-start flex-col lg:flex-row max-lg:space-y-5 gap-10 relative">
-    //     <div className="sticked">
-    //       <motion.div
-    //         initial={{ opacity: 0, y: 20 }}
-    //         animate={{ opacity: 1, y: 0 }}
-    //         transition={{ duration: 0.5 }}
-    //         className="bg-blue-500 text-white p-6 rounded-xl shadow-lg"
-    //       >
-    //         <h2 className="text-2xl font-bold">Sticky Content</h2>
-    //         <p className="mt-4">
-    //           Yeh section sticky rehega jab tak right-side content end nahi
-    //           hota.
-    //         </p>
-    //       </motion.div>
-    //     </div>
-
-    //     <div className="lg:w-1/2 flex flex-col lg:h-auto space-y-5 lg:space-y-7">
-    //       {ssmPlat.map((plat, index) => (
-    //         <motion.div
-    //           key={index}
-    //           initial={{ opacity: 0, y: 20 }}
-    //           whileInView={{ opacity: 1, y: 0 }}
-    //           viewport={{ once: true }}
-    //           transition={{ duration: 0.5, delay: index * 0.1 }}
-    //           className="bg-slate-100/[0.05] flexStart flex-col lg:flex-row rounded-xl shadow-md p-5 gap-4"
-    //         >
-    //           <div className="flexStart">
-    //             <img
-    //               src={plat.imgSrc}
-    //               width={200}
-    //               className="img-fluid"
-    //               alt=""
-    //             />
-    //           </div>
-
-    //           <div className="flexStart flex-col">
-    //             <h3 className="text-xl font-semibold">{plat.title}</h3>
-    //             <p className="mt-2">{plat.paraDesc}</p>
-    //           </div>
-    //         </motion.div>
-    //       ))}
-    //     </div>
-    //   </div>
-    // </div>
-
     <section className="px-5 lg:px-12">
       <div className="my-scroll-container">
         <div className="sticky-child flexStart flex-col space-y-4 md:sticky md:top-32 ">
