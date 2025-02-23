@@ -9,9 +9,9 @@ import LogoMarquee from '@/components/LogoMarquee';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
 import ProvenExpertise from '@/components/ProvenExpertise';
 import Professionalism from '@/components/Professionalism';
-import SMMPackage from '@/components/SMMPackage';
 import SMMAccordion from '@/components/SMMAccordion';
 import Testimonials from '@/components/Testimonials';
+import PresentationPackage from '@/components/PresentationPackage';
 
 const PresentationDesign = () => {
   return (
@@ -164,7 +164,7 @@ const PresentationDesign = () => {
       </div>
 
       <div className="relative w-full h-full py-6">
-        <SMMPackage />
+        <PresentationPackage />
       </div>
 
       <div className="relative w-full flexy h-full py-6">
