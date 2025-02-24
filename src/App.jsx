@@ -11,8 +11,8 @@ import CreativeCampaigns from '@/pages/products/CreativeCampaign';
 import Pricing from '@/pages/Pricing';
 import BrandIdentiyDesign from '@/pages/products/BrandIdentiyDesign';
 import SocialMediaManagement from '@/pages/products/SocialMediaManagement';
-// import SocialMediaManagement from '@/pages/products/';
 import PresentationDesign from '@/pages/products/PresentationDesign';
+import WebDesignDev from '@/pages/products/WebDesignDev';
 
 const App = () => {
   return (
@@ -36,6 +36,10 @@ const App = () => {
         <Route
           path="/products/presentation-designs"
           element={<PresentationDesign />}
+        />
+        <Route
+          path="/products/web-design-and-development"
+          element={<WebDesignDev />}
         />
         <Route path="/auth/sign-up" element={<SignUp />} />
         <Route path="/auth/sign-in" element={<SignIn />} />

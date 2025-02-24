@@ -83,6 +83,15 @@ import get1 from '/images/portfolio/presentDesign/Getz.jpg';
 import hnak from '/images/portfolio/presentDesign/HNAK.jpg';
 import timhorton from '/images/portfolio/presentDesign/timhorton.jpg';
 
+import drKate from '/images/portfolio/wdd/DrkateWebpage.png';
+import gu7Web from '/images/portfolio/wdd/GU7webpage.png';
+import levelup from '/images/portfolio/wdd/levelupwebpage.png';
+import webMazito from '/images/portfolio/wdd/Mazitowebpage.png';
+import webshop from '/images/portfolio/wdd/shopcowebpage.png';
+import websis from '/images/portfolio/wdd/SISwebpage.png';
+import wehi from '/images/portfolio/wdd/wehiwebpage.png';
+import wesave from '/images/portfolio/wdd/Wesavewithwebpage.png';
+
 import CCamp from '/images/Creativecampaign.jpg';
 import bIden from '/images/brandingIden.jpg';
 import webUIX from '/images/WebsiteUIUX.jpg';
@@ -151,6 +160,14 @@ import smColletral from '/images/icons/smColletral.svg';
 import smResponse from '/images/icons/smResponse.svg';
 import smConcept from '/images/icons/smcd.svg';
 
+import webStrategy from '/images/icons/webStrategy.svg';
+import webDesign from '/images/icons/webDesign.svg';
+import landingPage from '/images/icons/landingPage.svg';
+import webflowDev from '/images/icons/webflowDev.svg';
+import webillustration from '/images/icons/webillustration.svg';
+import webuiux from '/images/icons/webuiux.svg';
+import webConte from '/images/icons/webConte.svg';
+
 export const clientTestimonials = [
   {
     clAvatar: clientAvatar,
@@ -215,6 +232,49 @@ export const formatMaster = [
     src: augmentedReality,
     title: 'Augmented Reality Ads',
     para: 'Push the boundaries of creativity with world and front-facing AR applications for innovative immersive campaigns and experiences.',
+  },
+];
+
+export const wddStrategies = [
+  {
+    src: webStrategy,
+    title: 'Website Strategy',
+    para: 'Our marketing consulting team can help you craft channel and campaign plans that drive traffic to your website.',
+  },
+  {
+    src: webDesign,
+    title: 'Website Design',
+    para: 'Routes.Design creates conversion-focused websites and landing pages that are tailored to your campaign goals.',
+  },
+  {
+    src: landingPage,
+    title: 'Landing Page Designs',
+    para: 'A UX/UI audit optimizes digital products by identifying design Landing page templates and designs created from scratch to maximize conversions of your products or services.',
+  },
+  {
+    src: webflowDev,
+    title: 'Webflow Development',
+    para: 'Utilize Webflow to efficiently develop responsive, animated websites and landing pages that engage and convert.',
+  },
+  {
+    src: webillustration,
+    title: 'Website Illustrations',
+    para: 'Our illustrators craft unique, custom designs to add a creative touch that sets your website and landing pages apart.',
+  },
+  {
+    src: webuiux,
+    title: 'UX/UI Audit',
+    para: 'Utilize Webflow to efficiently develop responsive, animated websites and landing pages that engage and convert.',
+  },
+  {
+    src: brandDev,
+    title: 'Design Systems',
+    para: 'Compilation and development of a design system taking into account your brand’s requirements and objectives.',
+  },
+  {
+    src: webConte,
+    title: 'Content Development',
+    para: 'Our copywriters develop compelling, clear content that communicates your message and drives conversions.',
   },
 ];
 
@@ -593,6 +653,42 @@ export const brandPortFolioBot = [
   {
     imgSrc: bidPortSoguosto,
     href: '/our-work/sogusto-brand-identity-design',
+  },
+];
+
+// Web Design & Development Portfolio
+
+export const webPortfolioUp = [
+  { imgSrc: drKate, href: '/our-work/drkate-web-design-and-development' },
+  { imgSrc: gu7Web, href: '/our-work/gearup7-campaign' },
+  { imgSrc: levelup, href: '/our-work/levelup-web-design-and-development' },
+  { imgSrc: webMazito, href: '/our-work/mazito-web-app-design-development' },
+  { imgSrc: webshop, href: '/our-work/shopco-web-design-and-development' },
+  {
+    imgSrc: websis,
+    href: '/our-work/splendour-in-stone-web-design-and-development',
+  },
+  { imgSrc: wehi, href: '/our-work/wehi-web-design-and-development' },
+  {
+    imgSrc: wesave,
+    href: '/our-work/wesaveforless-web-app-design-development',
+  },
+];
+
+export const webPortfolioBot = [
+  { imgSrc: drKate, href: '/our-work/drkate-web-design-and-development' },
+  { imgSrc: gu7Web, href: '/our-work/gearup7-campaign' },
+  { imgSrc: levelup, href: '/our-work/levelup-web-design-and-development' },
+  { imgSrc: webMazito, href: '/our-work/mazito-web-app-design-development' },
+  { imgSrc: webshop, href: '/our-work/shopco-web-design-and-development' },
+  {
+    imgSrc: websis,
+    href: '/our-work/splendour-in-stone-web-design-and-development',
+  },
+  { imgSrc: wehi, href: '/our-work/wehi-web-design-and-development' },
+  {
+    imgSrc: wesave,
+    href: '/our-work/wesaveforless-web-app-design-development',
   },
 ];
 
