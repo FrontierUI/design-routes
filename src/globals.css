@@ -239,9 +239,21 @@
     @apply relative max-lg:max-w-[21rem] lg:!max-w-[37rem] lg:h-full lg:min-h-[360px] lg:max-h-[380px] rounded-xl mx-2 overflow-hidden !important;
   }
 
-  .sticked {
+  /* .sticked {
     @apply w-full lg:w-1/2 lg:sticky lg:top-28 !important;
-  }
+  } */
+
+  /* .parallax-tilt {
+    @apply w-full transform-3d;
+  } */
+}
+
+.parallax-effect {
+  transform-style: preserve-3d;
+}
+
+.innerEffect {
+  transform: translateZ(50px);
 }
 
 .masking {

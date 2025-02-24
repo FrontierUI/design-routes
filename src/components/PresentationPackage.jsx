@@ -177,7 +177,7 @@ const PresentationPackage = () => {
                 </div>
                 <div className="flexy flex-col w-full text-slate-900 space-y-2.5 py-6">
                   <h1 className="filsonHeavy text-5xl">
-                    $999/<span className="text-xl">project</span>
+                    $1,199/<span className="text-xl">project</span>
                   </h1>
                   <span className="text-md font-monaMedium">Fine Choice</span>
                   <div className="flexy">

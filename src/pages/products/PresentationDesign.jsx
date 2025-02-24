@@ -1,4 +1,4 @@
-// import React from 'react';
+import { useEffect } from 'react';
 
 import Marquee from 'react-fast-marquee';
 import { Check } from 'lucide-react';
@@ -7,13 +7,33 @@ import { pdPortfolioBot, pdPortfolioUp } from '@/contentData/utils';
 
 import LogoMarquee from '@/components/LogoMarquee';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
-import ProvenExpertise from '@/components/ProvenExpertise';
 import Professionalism from '@/components/Professionalism';
-import SMMAccordion from '@/components/SMMAccordion';
 import Testimonials from '@/components/Testimonials';
 import PresentationPackage from '@/components/PresentationPackage';
+import PDAccordion from '@/components/PDAccordion';
+import TailoredPD from '@/components/TailoredPD';
+import PDCounter from '@/components/PDCounter';
+import PDPitchDecks from '@/components/PDPitchDecks';
+import PDPlatforms from '@/components/PDPlatforms';
 
 const PresentationDesign = () => {
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      const element = document.querySelector('#root > main');
+      if (element) {
+        element.classList.remove('overflow-x-hidden');
+      }
+    }, 2000);
+
+    return () => {
+      clearTimeout(timeoutId);
+      const element = document.querySelector('#root > main');
+      if (element) {
+        element.classList.add('overflow-x-hidden');
+      }
+    };
+  }, []);
+
   return (
     <div className="relative w-full h-full presentDes">
       <div className="relative w-full h-full pdHero">
@@ -149,7 +169,7 @@ const PresentationDesign = () => {
             <div className="w-full lg:w-1/2">
               <div className="w-full h-auto transitAll scal110">
                 <img
-                  src="/images/productsPages/presentationHero.png"
+                  src="/images/productsPages/hassleFree.png"
                   className="img-flud"
                   alt=""
                 />
@@ -157,6 +177,57 @@ const PresentationDesign = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="tailored relative w-full h-full py-6">
+        <div className="flexy flex-col space-y-2 pt-3 pb-6 px-5 text-center">
+          <h2 className="font-monaSemibold text-2xl uppercase">
+            Tailored Business Solutions
+          </h2>
+          <h1 className="font-monaBold text-5xl">
+            Extensive Presentation Design services
+          </h1>
+        </div>
+
+        <TailoredPD />
+      </div>
+
+      <div className="relative w-full h-full py-6">
+        <div className="flexy flex-col w-full px-5 lg:px-12">
+          <div className="flexy flex-col w-full pb-6 text-center space-y-2">
+            <h2 className="text-2xl font-monaMedium">FORMAT FLUENCY</h2>
+            <h1 className="text-4xl font-monaBold">
+              Expertise across all Presentation Design platforms
+            </h1>
+            <p className="lg:w-3/4">
+              Our presentation designers can do it all. With expertise across
+              all major presentation design platforms, we can adapt to your
+              preferred tools and integrate with your creative workflows.
+              Whether you’re a PowerPoint aficionado or Google Slides devotee,
+              we’ll design in your platform of choice to deliver a powerful,
+              high-impact presentation.
+            </p>
+          </div>
+
+          <PDCounter />
+        </div>
+      </div>
+
+      <div className="tailored relative w-full h-full py-6">
+        <div className="flexy flex-col space-y-2 pt-3 pb-6 px-5 text-center">
+          <h2 className="font-monaSemibold text-2xl uppercase">
+            Tailored Pitch Deck Solutions
+          </h2>
+          <h1 className="font-monaBold text-5xl">
+            Extensive Pitch Deck Design Services
+          </h1>
+        </div>
+
+        <PDPitchDecks />
+      </div>
+
+      <div className="relative w-full h-full flexy py-6">
+        <PDPlatforms />
       </div>
 
       <div className="relative w-full h-full py-6">
@@ -169,7 +240,7 @@ const PresentationDesign = () => {
 
       <div className="relative w-full flexy h-full py-6">
         <div className="px-5 w-full lg:w-2/3">
-          <SMMAccordion />
+          <PDAccordion />
         </div>
       </div>
 

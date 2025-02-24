@@ -173,7 +173,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 w-full">
+        <div className="w-full flex flex-col lg:flex-row items-start justify-start lg:justify-between max-lg:space-y-2">
           <div className="flexStart flex-col mt-4 font-monaMedium space-y-2">
             <ul className="flexStart flex-col lg:flex-row lg:items-center lg:justify-between text-sm">
               <li className="mr-4">
@@ -198,7 +198,7 @@ const Footer = () => {
             </span>
           </div>
 
-          <div className="flexStart lg:items-center lg:justify-center gap-x-4 lg:pl-56 max-lg:pt-3">
+          <div className="flexStart lg:items-center lg:justify-between gap-x-4 pt-4 relative lg:right-32">
             <img
               src="/images/icons/upw.png"
               width={90}

@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-// import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 import Marquee from 'react-fast-marquee';
 import { Link } from 'react-router-dom';
 

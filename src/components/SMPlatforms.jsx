@@ -1,57 +1,12 @@
 // import React from 'react';
 
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 
 const SMPlatforms = () => {
-  const ssmPlat = [
-    {
-      title: 'Google Slides',
-      imgSrc: '/images/icons/InstagramSMM.png',
-      paraDesc:
-        'An oldie but a goodie. Our designers are experts in this leading presentation software, ensuring your presentations are visually compelling and easy to build on.',
-    },
-    {
-      title: 'Google Slides',
-      imgSrc: '/images/icons/keynote.png',
-      paraDesc:
-        'An oldie but a goodie. Our designers are experts in this leading presentation software, ensuring your presentations are visually compelling and easy to build on.',
-    },
-    {
-      title: 'Google Slides',
-      imgSrc: '/images/icons/othPlat.png',
-      paraDesc:
-        'An oldie but a goodie. Our designers are experts in this leading presentation software, ensuring your presentations are visually compelling and easy to build on.',
-    },
-    {
-      title: 'Google Slides',
-      imgSrc: '/images/icons/keynote.png',
-      paraDesc:
-        'An oldie but a goodie. Our designers are experts in this leading presentation software, ensuring your presentations are visually compelling and easy to build on.',
-    },
-    {
-      title: 'Google Slides',
-      imgSrc: '/images/icons/LinkedInSMM.png',
-      paraDesc:
-        'An oldie but a goodie. Our designers are experts in this leading presentation software, ensuring your presentations are visually compelling and easy to build on.',
-    },
-    {
-      title: 'Google Slides',
-      imgSrc: '/images/icons/othPlat.png',
-      paraDesc:
-        'An oldie but a goodie. Our designers are experts in this leading presentation software, ensuring your presentations are visually compelling and easy to build on.',
-    },
-    {
-      title: 'Google Slides',
-      imgSrc: '/images/icons/FacebookSMM.png',
-      paraDesc:
-        'An oldie but a goodie. Our designers are experts in this leading presentation software, ensuring your presentations are visually compelling and easy to build on.',
-    },
-  ];
-
   return (
-    <section className="px-5 lg:px-12">
+    <section className="">
       <div className="my-scroll-container">
-        <div className="sticky-child flexStart flex-col space-y-4 md:sticky md:top-32 ">
+        <div className="sticky-child flexStart flex-col space-y-4 md:sticky md:top-32 gap-10">
           <div className="itemsStart flex-col space-y-4 md:w-11/12">
             <h3 className="text-2xl uppercase font-monaSemibold">
               Platform Mastery
@@ -72,21 +27,94 @@ const SMPlatforms = () => {
 
         <div className="sticky-child controls-panel">
           <div className="content-wrapper w-full md:static">
-            <div className="flexStart flex-col space-y-5 md:space-y-7">
-              {ssmPlat.map(({ title, imgSrc, paraDesc }, index) => (
-                <div
-                  key={index}
-                  className="flexStart h-full flex-col md:flex-row gap-2"
-                >
-                  <div className="flexStart">
-                    <img src={imgSrc} className="img-fluid w-[100px]" alt="" />
-                  </div>
-                  <div className="flexStart flex-col">
-                    <h2 className="text-2xl font-monaBold">{title}</h2>
-                    <p>{paraDesc}</p>
-                  </div>
+            <div className="flexStart flex-col space-y-6 md:space-y-12">
+              <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
+                <div className="flexStart">
+                  <img
+                    src="/images/icons/LinkedInSMM.png"
+                    className="img-fluid w-[9rem] h-[9rem] object-cover"
+                    alt=""
+                  />
                 </div>
-              ))}
+                <div className="flexStart flex-col space-y-1">
+                  <h2 className="text-3xl font-monaBold">LinkedIn</h2>
+                  <p className="lg:w-10/12">
+                    Position your brand as an industry leader with professional
+                    and engaging content designed for LinkedIn’s
+                    business-focused community.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
+                <div className="flexStart">
+                  <img
+                    src="/images/icons/YoutubeSMM.png"
+                    className="img-fluid w-[9rem] h-[9rem] object-cover"
+                    alt=""
+                  />
+                </div>
+                <div className="flexStart flex-col space-y-1">
+                  <h2 className="text-3xl font-monaBold">YouTube</h2>
+                  <p className="lg:w-10/12">
+                    Optimize viewer interaction with tailored creatives designed
+                    for YouTube's diverse audience and video-friendly platform
+                    features.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
+                <div className="flexStart lg:pl-2">
+                  <img
+                    src="/images/icons/InstagramSMM.png"
+                    className="img-fluid w-[6.5rem] h-[6.5rem] object-contain"
+                    alt=""
+                  />
+                </div>
+                <div className="flexStart flex-col space-y-1">
+                  <h2 className="text-3xl font-monaBold">Instagram</h2>
+                  <p className="lg:w-10/12">
+                    Captivate Instagram’s visually-driven audience with stunning
+                    graphics and innovative content formats.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
+                <div className="flexStart lg:pl-2">
+                  <img
+                    src="/images/icons/FacebookSMM.png"
+                    className="img-fluid w-[7rem] h-[7rem] object-cover"
+                    alt=""
+                  />
+                </div>
+                <div className="flexStart flex-col space-y-1">
+                  <h2 className="text-3xl font-monaBold">Facebook</h2>
+                  <p className="lg:w-10/12">
+                    Maximize engagement with custom creative tailored for
+                    Facebook’s unique audience and platform Products.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
+                <div className="flexStart lg:pl-2">
+                  <img
+                    src="/images/icons/othPlat.png"
+                    className="img-fluid w-[12rem] h-[12rem] object-contain"
+                    alt=""
+                  />
+                </div>
+                <div className="flexStart flex-col space-y-1">
+                  <h2 className="text-3xl font-monaBold">Other platforms</h2>
+                  <p className="lg:w-10/12">
+                    Have another platform in mind? We’re here for it. With a
+                    global team of presentation designers to tap into, we have
+                    skills across the board and can cater to any preference.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
