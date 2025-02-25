@@ -1,105 +1,24 @@
-// import React from 'react';
+import { Link } from 'react-router-dom';
+import Marquee from 'react-fast-marquee';
 
-import { useEffect, useState } from 'react';
-import useMeasure from 'react-use-measure';
-import {
-  animate,
-  useMotionValue,
-  motion,
-  AnimatePresence,
-} from 'framer-motion';
-
-import Hero from '../components/Hero';
-import HomePortfolioMarquee from '../components/HomePortfolioMarquee';
-// import HomePortTopThumbCard from '../components/HomePortTopThumbCard';
-import VideosCarousel from '../components/VideosCarousel';
+import Hero from '@/components/Hero';
+import VideosCarousel from '@/components/VideosCarousel';
 
 import {
-  homeServiceDetails,
   homePortFolioUp,
   homePortFolioBot,
   srcFilesList,
-  professionalism,
 } from '@/contentData/utils';
-import { Link } from 'react-router-dom';
-import ReactPlayer from 'react-player';
-import Services from '../components/Services';
-import Strategies from '../components/Strategies';
-import Testimonials from '../components/Testimonials';
-import Professionalism from '../components/Professionalism';
-import WorkEthics from '../components/WorkEthics';
-import RoutesWay from '../components/RoutesWay';
-import PortfolioMarquee from '../components/PortfolioMarquee';
-import Marquee from 'react-fast-marquee';
+
+import Services from '@/components/Services';
+import Strategies from '@/components/Strategies';
+import Testimonials from '@/components/Testimonials';
+import Professionalism from '@/components/Professionalism';
+import WorkEthics from '@/components/WorkEthics';
+import RoutesWay from '@/components/RoutesWay';
+import PortfolioMarquee from '@/components/PortfolioMarquee';
 
 const Home = () => {
-  // const images = [
-  //   '/images/portfolio/homePort/thumbnail-1.jpg',
-  //   '/images/portfolio/homePort/thumbnail-2.jpg',
-  //   '/images/portfolio/homePort/thumbnail-3.jpg',
-  //   '/images/portfolio/homePort/thumbnail-4.jpg',
-  //   '/images/portfolio/homePort/thumbnail-5.jpg',
-  // ];
-
-  // const [currentIndex, setCurrentIndex] = useState(0);
-
-  // const nextSlide = () => {
-  //   setCurrentIndex((prevIndex) =>
-  //     prevIndex === portfolioData.length - 1 ? 0 : prevIndex + 1
-  //   );
-  // };
-
-  // const prevSlide = () => {
-  //   setCurrentIndex((prevIndex) =>
-  //     prevIndex === 0 ? portfolioData.length - 1 : prevIndex - 1
-  //   );
-  // };
-
-  // const upperMarqueePort = [
-  //   '/images/portfolio/homePort/thumbnail-1.jpg',
-  //   '/images/portfolio/homePort/thumbnail-2.jpg',
-  //   '/images/portfolio/homePort/thumbnail-3.jpg',
-  //   '/images/portfolio/homePort/thumbnail-4.jpg',
-  //   '/images/portfolio/homePort/thumbnail-5.jpg',
-  // ];
-
-  // const FAST_DURATION = 25;
-  // const SLOW_DURATION = 75;
-
-  // const [duration, setDuration] = useState(FAST_DURATION);
-  // const [mustFinish, setMustFinish] = useState(false);
-  // const [rerender, setRerender] = useState(false);
-
-  // let [ref, { width }] = useMeasure();
-
-  // const xTranlation = useMotionValue(0);
-
-  // useEffect(() => {
-  //   let controls;
-  //   let finalPosition = -width / 2 - 3;
-
-  //   if (mustFinish) {
-  //     controls = animate(xTranlation, [xTranlation.get(), finalPosition], {
-  //       ease: 'linear',
-  //       duration: duration * (1 - xTranlation.get() / finalPosition),
-  //       onComplete: () => {
-  //         setMustFinish(false);
-  //         setRerender(!rerender);
-  //       },
-  //     });
-  //   } else {
-  //     controls = animate(xTranlation, [0, finalPosition], {
-  //       ease: 'linear',
-  //       duration: duration,
-  //       repeat: Infinity,
-  //       repeatType: 'loop',
-  //       repeatDelay: 0,
-  //     });
-  //   }
-
-  //   return controls?.stop;
-  // }, [xTranlation, width, duration, rerender, mustFinish]);
-
   return (
     <div className="relative w-full h-full">
       <Hero />

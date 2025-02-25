@@ -14,6 +14,7 @@ import SocialMediaManagement from '@/pages/products/SocialMediaManagement';
 import PresentationDesign from '@/pages/products/PresentationDesign';
 import WebDesignDev from '@/pages/products/WebDesignDev';
 import AppDesignDev from '@/pages/products/AppDesignDev';
+import ForAgencies from '@/pages/verticals/ForAgencies';
 
 const App = () => {
   return (
@@ -46,6 +47,7 @@ const App = () => {
           path="/products/presentation-designs"
           element={<PresentationDesign />}
         />
+        <Route path="/vertical/for-agencies" element={<ForAgencies />} />
         <Route path="/auth/sign-up" element={<SignUp />} />
         <Route path="/auth/sign-in" element={<SignIn />} />
       </Routes>

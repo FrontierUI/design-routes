@@ -231,7 +231,7 @@ const SocialMediaManagement = () => {
         <SMMAIEnhanced />
       </div>
 
-      <div className="comprehensive relative w-full h-full py-5 pt-10">
+      <div className="comprehensive relative w-full h-full py-6">
         <div className="flexy flex-col max-w-full px-5 pb-6">
           <div className="flexy flex-col space-y-5 text-center text-slate-900 w-full">
             <div className="flexy flex-col space-y-2 text-center text-slate-900 lg:w-2/3">
