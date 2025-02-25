@@ -1,42 +1,38 @@
 // import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BrandIdentityPackage = () => {
+const WebPricePackage = () => {
   return (
     <div className="flexy flex-col space-y-5 max-w-full lg:px-12">
       <div className="relative w-full campPackBan flexy p-5 lg:p-14">
         <div
           className="absolute w-full h-full rounded-lg -z-[1] bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage:
-              'url(/images/productsPages/packLightPackageBg.png)',
+            backgroundImage: 'url(/images/productsPages/lightBGE2.png)',
           }}
         />
 
         <div className="packageTop flexStart flex-col w-full h-full py-4 space-y-4">
           <div className="packInfo flexStart lg:items-center flex-col lg:flex-row lg:justify-between w-full text-gray-800 space-y-4">
             <div className="packTitle flexStart flex-col items-center justify-center lg:items-start lg:justify-start w-full space-y-3">
-              <h1 className="text-5xl lg:text-7xl font-monaBold">
-                Brand Identity & Design
+              <h1 className="text-5xl lg:text-[3.25rem] font-monaBold">
+                Web Design & Development
               </h1>
-              <p className="w-full text-base lg:text-lg lg:w-4/5">
-                Our branding services encompass everything from logo design to
-                brand strategy, ensuring a cohesive and compelling brand
-                identity.
+              <p className="w-full text-base lg:text-lg lg:w-9/12">
+                User-friendly, and optimized for performance, our websites are
+                built to enhance user experience and drive conversions.
               </p>
             </div>
             <div className="packPricing flex flex-col items-end justify-end">
-              <h1 className="text-8xl lg:text-[7rem] filsonHeavy leading-none">
+              <h1 className="text-8xl lg:text-9xl filsonHeavy leading-none">
                 $4,999
               </h1>
-              <h4 className="text-xl font-monaSemibold uppercase">
-                per project
-              </h4>
+              <h4 className="text-xl font-monaSemibold uppercase">per month</h4>
             </div>
           </div>
 
           <div className="packageListItem flexStart text-gray-800">
-            <ul className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-40 gap-y-4">
+            <ul className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-28 gap-y-4">
               <li className="flexStart">
                 <div className="flexy space-x-2.5">
                   <img
@@ -46,7 +42,7 @@ const BrandIdentityPackage = () => {
                     alt=""
                   />
                   <span className="font-monaMedium text-md xl:text-xl">
-                    Brand development
+                    Custom UI/UX
                   </span>
                 </div>
               </li>
@@ -59,7 +55,7 @@ const BrandIdentityPackage = () => {
                     alt=""
                   />
                   <span className="font-monaMedium text-md xl:text-xl">
-                    Logo and identity design
+                    Responsive web development
                   </span>
                 </div>
               </li>
@@ -72,7 +68,8 @@ const BrandIdentityPackage = () => {
                     alt=""
                   />
                   <span className="font-monaMedium text-md xl:text-xl">
-                    Brand visual identity
+                    CMS integration (Webflow, WordPress, Shopify, Squarespace
+                    etc.)
                   </span>
                 </div>
               </li>
@@ -85,7 +82,7 @@ const BrandIdentityPackage = () => {
                     alt=""
                   />
                   <span className="font-monaMedium text-md xl:text-xl">
-                    Brand guidelines creation
+                    E-commerce solutions
                   </span>
                 </div>
               </li>
@@ -98,7 +95,7 @@ const BrandIdentityPackage = () => {
                     alt=""
                   />
                   <span className="font-monaMedium text-md xl:text-xl">
-                    Rebranding services
+                    Website maintenance and support
                   </span>
                 </div>
               </li>
@@ -111,7 +108,7 @@ const BrandIdentityPackage = () => {
                     alt=""
                   />
                   <span className="font-monaMedium text-md xl:text-xl">
-                    Brand collateral design
+                    SEO-Friendly development
                   </span>
                 </div>
               </li>
@@ -154,7 +151,7 @@ const BrandIdentityPackage = () => {
 
       <div className="relative flexy w-full h-full max-md:px-5">
         <div
-          className="absolute hidden top-8 lg:block w-full h-full max-w-[50rem] bg-contain bg-center bg-no-repeat"
+          className="absolute hidden lg:block top-8  w-full h-full max-w-[50rem] bg-contain bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url(/images/productsPages/pricePackBG.svg)',
           }}
@@ -163,7 +160,7 @@ const BrandIdentityPackage = () => {
         <div className="flexy flex-col w-full h-full relative z-[2]">
           <div className="flexy w-full text-center py-4 mt-4 text-slate-900">
             <h1 className="text-center font-monaBold text-4xl lg:text-5xl">
-              Brand Identity & Design
+              Web Design & Development
             </h1>
           </div>
 
@@ -181,7 +178,7 @@ const BrandIdentityPackage = () => {
                 </div>
                 <div className="flexy flex-col w-full text-slate-900 space-y-2.5 py-6">
                   <h1 className="filsonHeavy text-5xl">
-                    $1,999/<span className="text-xl">project</span>
+                    $1,799/<span className="text-xl">project</span>
                   </h1>
                   <span className="text-md font-monaMedium">Fine Choice</span>
                   <div className="flexy">
@@ -191,7 +188,7 @@ const BrandIdentityPackage = () => {
                   </div>
                 </div>
                 <div className="flexy w-full">
-                  <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-900">
+                  <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-900 p-3">
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
                         src="/images/icons/doublecheckPrim.svg"
@@ -199,7 +196,7 @@ const BrandIdentityPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        24/7 timezone coverage
+                        Turnaround times from 12 hours
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -208,8 +205,27 @@ const BrandIdentityPackage = () => {
                         className="img-fluid w-5"
                         alt=""
                       />
+                      <span className="text-md lg:text-lg">Theme based</span>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
+                        <span>Website Pages</span>
+                        <span>(7 pages)</span>
+                      </div>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
                       <span className="text-md lg:text-lg">
-                        Competitor Analysis
+                        Responsive web development
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -218,7 +234,10 @@ const BrandIdentityPackage = () => {
                         className="img-fluid w-5"
                         alt=""
                       />
-                      <span className="text-md lg:text-lg">Logo Design</span>
+                      <span className="text-md lg:text-lg leading-none">
+                        CMS integration (Webflow, WordPress, Shopify,
+                        Squarespace, etc.)
+                      </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
@@ -226,7 +245,10 @@ const BrandIdentityPackage = () => {
                         className="img-fluid w-5"
                         alt=""
                       />
-                      <span className="text-md lg:text-lg">Brand Kit</span>
+                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
+                        <span>Project Coverage Duration</span>
+                        <span>(5 days)</span>
+                      </div>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
@@ -235,16 +257,8 @@ const BrandIdentityPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Brand guidelines creation
+                        SEO-Friendly development
                       </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckgrey.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">Source Files</span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
@@ -253,7 +267,7 @@ const BrandIdentityPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Brand Story Development
+                        Payment Integration
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -262,7 +276,29 @@ const BrandIdentityPackage = () => {
                         className="img-fluid w-5"
                         alt=""
                       />
-                      <span className="text-md lg:text-lg">Brand Strategy</span>
+                      <span className="text-md lg:text-lg">
+                        Website maintenance and support
+                      </span>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckgrey.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <span className="text-md lg:text-lg">
+                        E-commerce solutions
+                      </span>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckgrey.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <span className="text-md lg:text-lg">
+                        Custom UI/UX Design
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -294,7 +330,7 @@ const BrandIdentityPackage = () => {
                   </div>
                 </div>
                 <div className="flexy w-full">
-                  <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-900">
+                  <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-900 p-3">
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
                         src="/images/icons/doublecheckPrim.svg"
@@ -302,7 +338,68 @@ const BrandIdentityPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        24/7 timezone coverage
+                        Turnaround times from 12 hours
+                      </span>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <span className="text-md lg:text-lg">Theme based</span>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
+                        <span>Website Pages</span>
+                        <span>(15 pages)</span>
+                      </div>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <span className="text-md lg:text-lg">
+                        Responsive web development
+                      </span>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <span className="text-md lg:text-lg leading-none">
+                        CMS integration (Webflow, WordPress, Shopify,
+                        Squarespace, etc.)
+                      </span>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
+                        <span>Project Coverage Duration</span>
+                        <span>(8 days)</span>
+                      </div>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <span className="text-md lg:text-lg">
+                        SEO-Friendly development
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -312,24 +409,8 @@ const BrandIdentityPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Competitor Analysis
+                        Payment Integration
                       </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">Logo Design</span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">Brand Kit</span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
@@ -338,16 +419,8 @@ const BrandIdentityPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Brand guidelines creation
+                        Website maintenance and support
                       </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">Source Files</span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
@@ -356,7 +429,7 @@ const BrandIdentityPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Brand Story Development
+                        E-commerce solutions
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -365,7 +438,9 @@ const BrandIdentityPackage = () => {
                         className="img-fluid w-5"
                         alt=""
                       />
-                      <span className="text-md lg:text-lg">Brand Strategy</span>
+                      <span className="text-md lg:text-lg">
+                        Custom UI/UX Design
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -399,7 +474,7 @@ const BrandIdentityPackage = () => {
                   </div>
                 </div>
                 <div className="flexy w-full">
-                  <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-900">
+                  <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-900 p-3">
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
                         src="/images/icons/doublecheckPrim.svg"
@@ -407,7 +482,68 @@ const BrandIdentityPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        24/7 timezone coverage
+                        Turnaround times from 12 hours
+                      </span>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <span className="text-md lg:text-lg">Theme based</span>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
+                        <span>Website Pages</span>
+                        <span>(25+ pages)</span>
+                      </div>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <span className="text-md lg:text-lg">
+                        Responsive web development
+                      </span>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <span className="text-md lg:text-lg leading-none">
+                        CMS integration (Webflow, WordPress, Shopify,
+                        Squarespace, etc.)
+                      </span>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
+                        <span>Project Coverage Duration</span>
+                        <span>(15 days)</span>
+                      </div>
+                    </li>
+                    <li className="flex items-center justify-start gap-x-2.5">
+                      <img
+                        src="/images/icons/doublecheckPrim.svg"
+                        className="img-fluid w-5"
+                        alt=""
+                      />
+                      <span className="text-md lg:text-lg">
+                        SEO-Friendly development
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -417,24 +553,8 @@ const BrandIdentityPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Competitor Analysis
+                        Payment Integration
                       </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">Logo Design</span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">Brand Kit</span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
@@ -443,16 +563,8 @@ const BrandIdentityPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Brand guidelines creation
+                        Website maintenance and support
                       </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">Source Files</span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
                       <img
@@ -461,7 +573,7 @@ const BrandIdentityPackage = () => {
                         alt=""
                       />
                       <span className="text-md lg:text-lg">
-                        Brand Story Development
+                        E-commerce solutions
                       </span>
                     </li>
                     <li className="flex items-center justify-start gap-x-2.5">
@@ -470,7 +582,9 @@ const BrandIdentityPackage = () => {
                         className="img-fluid w-5"
                         alt=""
                       />
-                      <span className="text-md lg:text-lg">Brand Strategy</span>
+                      <span className="text-md lg:text-lg">
+                        Custom UI/UX Design
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -495,4 +609,4 @@ const BrandIdentityPackage = () => {
   );
 };
 
-export default BrandIdentityPackage;
+export default WebPricePackage;

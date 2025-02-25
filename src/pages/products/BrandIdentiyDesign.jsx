@@ -1,10 +1,10 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
-import { AnimatePresence, motion } from 'framer-motion';
+// import { AnimatePresence, motion } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
 // import useMeasure from 'react-use-measure';
 
-import { Check, ChevronDown, ChevronUp } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 import { brandPortFolioBot, brandPortFolioUp } from '@/contentData/utils';
 
@@ -22,7 +22,7 @@ import BIDAccordion from '@/components/BIDAccordion';
 const BrandIdentiyDesign = () => {
   //
 
-  const [activeQuestion, setActiveQuestion] = useState(null);
+  // const [activeQuestion, setActiveQuestion] = useState(null);
 
   // const FAST_DURATION = 25;
 
@@ -65,21 +65,6 @@ const BrandIdentiyDesign = () => {
 
   //   return controls?.stop;
   // }, [xTranslation, width, durtion, rerender, mustFinish]);
-
-  const faqQuestion = [
-    {
-      id: 1,
-      question: 'What services are included in the Creative Campaign Product?',
-      answer:
-        'The product includes the development of campaign key visuals, up to 5 Point-of-Sale Materials (POSM) adaptations, digital ads, motion graphic videos, email design, and campaign presentation design. These services help create cohesive and engaging campaigns across multiple channels.',
-    },
-    {
-      id: 2,
-      question: 'What services are included in the Creative Campaign Product?',
-      answer:
-        'The product includes the development of campaign key visuals, up to 5 Point-of-Sale Materials (POSM) adaptations, digital ads, motion graphic videos, email design, and campaign presentation design. These services help create cohesive and engaging campaigns across multiple channels.',
-    },
-  ];
 
   return (
     <div className="relative w-full h-full brandIdenDes">

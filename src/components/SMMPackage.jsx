@@ -150,7 +150,7 @@ const SMMPackage = () => {
 
       <div className="relative flexy w-full h-full max-md:px-5">
         <div
-          className="absolute hidden top-8 lg:block w-full h-full max-w-[40rem] bg-contain bg-center bg-no-repeat"
+          className="absolute hidden top-8 lg:block w-full h-full max-w-[50rem] bg-contain bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url(/images/productsPages/pricePackBG.svg)',
           }}

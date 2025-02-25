@@ -506,11 +506,6 @@ export const Menus = [
         href: '/products/social-media-management',
       },
       {
-        name: 'Presentation Design',
-        icon: Presentation,
-        href: '/products/presentation-designs',
-      },
-      {
         name: 'Web Design & Development',
         icon: WebDesDevNav,
         href: '/products/web-design-and-development',
@@ -519,6 +514,11 @@ export const Menus = [
         name: 'App Design & Development',
         icon: AppDesDevNav,
         href: '/products/app-design-and-development',
+      },
+      {
+        name: 'Presentation Design',
+        icon: Presentation,
+        href: '/products/presentation-designs',
       },
     ],
   },

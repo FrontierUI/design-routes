@@ -150,7 +150,7 @@ const PresentationPackage = () => {
 
       <div className="relative flexy w-full h-full max-md:px-5">
         <div
-          className="absolute hidden top-8 lg:block w-full h-full max-w-[40rem] bg-contain bg-center bg-no-repeat"
+          className="absolute hidden top-8 lg:block w-full h-full max-w-[50rem] bg-contain bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url(/images/productsPages/pricePackBG.svg)',
           }}
@@ -159,7 +159,7 @@ const PresentationPackage = () => {
         <div className="flexy flex-col w-full h-full relative z-[2]">
           <div className="flexy w-full text-center py-4 mt-4 text-slate-900">
             <h1 className="text-center font-monaBold text-4xl lg:text-5xl">
-              Social Media Management
+              Presentation Design
             </h1>
           </div>
 

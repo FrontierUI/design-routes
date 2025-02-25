@@ -8,6 +8,10 @@ import LogoMarquee from '@/components/LogoMarquee';
 import WebStrategies from '@/components/WebStrategies';
 import AIEnhancedWDD from '@/components/AIEnhancedWDD';
 import Professionalism from '@/components/Professionalism';
+import WebPricePackage from '@/components/WebPricePackage';
+import WebDDAccordion from '@/components/WebDDAccordion';
+import Testimonials from '@/components/Testimonials';
+import WebDDCounter from '@/components/WebDDCounter';
 
 const WebDesignDev = () => {
   return (
@@ -154,12 +158,44 @@ const WebDesignDev = () => {
         <WebStrategies />
       </div>
 
+      <div className="relative w-full h-full py-6">
+        <div className="flexy flex-col w-full px-5 lg:px-12">
+          <div className="flexy flex-col w-full pb-6 text-center space-y-2">
+            <h2 className="text-2xl font-monaSemibold">SUCCESS METRICS</h2>
+            <h1 className="text-4xl font-monaBold">
+              Choose a web design agency with a proven track record
+            </h1>
+            <p className="lg:w-3/4">
+              Don’t go with any old web design company. Let data inform your
+              decision and choose a web design partner proven to deliver
+              results. With thousands of projects under our belt and happy
+              customers across the board, you can trust in us.
+            </p>
+          </div>
+          <WebDDCounter />
+        </div>
+      </div>
+
       <div className="enhanced relative w-full h-full py-6">
         <AIEnhancedWDD />
       </div>
 
       <div className="relative w-full h-full py-4">
         <Professionalism />
+      </div>
+
+      <div className="relative w-full h-full py-6">
+        <WebPricePackage />
+      </div>
+
+      <div className="relative w-full flexy h-full py-6">
+        <div className="px-5 w-full lg:w-2/3">
+          <WebDDAccordion />
+        </div>
+      </div>
+
+      <div className="relative w-full h-full pb-6">
+        <Testimonials />
       </div>
     </div>
   );
