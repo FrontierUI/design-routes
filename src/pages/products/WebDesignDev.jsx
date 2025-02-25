@@ -1,5 +1,5 @@
-// import React from 'react';
 import Marquee from 'react-fast-marquee';
+import Tilt from 'react-parallax-tilt';
 
 import { webPortfolioBot, webPortfolioUp } from '@/contentData/utils';
 
@@ -10,8 +10,8 @@ import AIEnhancedWDD from '@/components/AIEnhancedWDD';
 import Professionalism from '@/components/Professionalism';
 import WebPricePackage from '@/components/WebPricePackage';
 import WebDDAccordion from '@/components/WebDDAccordion';
-import Testimonials from '@/components/Testimonials';
 import WebDDCounter from '@/components/WebDDCounter';
+import Testimonials from '@/components/Testimonials';
 
 const WebDesignDev = () => {
   return (
@@ -44,14 +44,21 @@ const WebDesignDev = () => {
               </div>
             </div>
 
-            <div className="w-full lg:w-1/2">
-              <div className="w-full relative top-6 p-4 h-auto transitAll scal105">
+            <div className="w-full lg:w-1/2 relative lg:top-12">
+              <Tilt
+                tiltMaxAngleX={12}
+                tiltMaxAngleY={12}
+                transitionSpeed={800}
+                gyroscope={true}
+                scale={1.04}
+                lassName="w-full p-5 h-auto"
+              >
                 <img
                   src="/images/productsPages/webHero.png"
                   className="img-fluid"
                   alt=""
                 />
-              </div>
+              </Tilt>
             </div>
           </div>
         </div>
@@ -130,14 +137,21 @@ const WebDesignDev = () => {
               </div>
             </div>
 
-            <div className="w-full lg:w-1/2">
-              <div className="w-full h-auto transitAll scal110">
+            <div className="w-full lg:w-1/2 relative">
+              <Tilt
+                tiltMaxAngleX={12}
+                tiltMaxAngleY={12}
+                transitionSpeed={800}
+                gyroscope={true}
+                scale={1.05}
+                lassName="w-full p-8 h-auto"
+              >
                 <img
                   src="/images/productsPages/websitemiddle.png"
-                  className="img-flud"
+                  className="img-fluid"
                   alt=""
                 />
-              </div>
+              </Tilt>
             </div>
           </div>
         </div>
@@ -188,7 +202,13 @@ const WebDesignDev = () => {
         <WebPricePackage />
       </div>
 
-      <div className="relative w-full flexy h-full py-6">
+      <div className="relative flexy flex-col w-full h-full py-6">
+        <div className="flexy px-5 pb-6">
+          <h1 className="font-monaBold text-center text-4xl">
+            Got any questions?
+          </h1>
+        </div>
+
         <div className="px-5 w-full lg:w-2/3">
           <WebDDAccordion />
         </div>

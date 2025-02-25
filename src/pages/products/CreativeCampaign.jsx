@@ -1,8 +1,6 @@
-// import { useState } from 'react';
-// import { motion, AnimatePresence } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
 
-// import { ChevronDown, ChevronUp } from 'lucide-react';
+import Tilt from 'react-parallax-tilt';
 
 import { homePortFolioBot, homePortFolioUp } from '@/contentData/utils';
 
@@ -47,14 +45,21 @@ const CreativeCampaigns = () => {
               </div>
             </div>
 
-            <div className="w-full lg:w-1/2">
-              <div className="w-full p-4 h-auto transitAll scal105">
+            <div className="w-full lg:w-1/2 relative lg:top-6">
+              <Tilt
+                tiltMaxAngleX={12}
+                tiltMaxAngleY={12}
+                transitionSpeed={800}
+                gyroscope={true}
+                scale={1.04}
+                lassName="w-full p-12 h-auto"
+              >
                 <img
                   src="/images/productsPages/Campaign.png"
                   className="img-fluid"
                   alt=""
                 />
-              </div>
+              </Tilt>
             </div>
           </div>
         </div>
@@ -132,14 +137,21 @@ const CreativeCampaigns = () => {
               </div>
             </div>
 
-            <div className="w-full lg:w-1/2">
-              <div className="w-full h-auto transitAll scal110">
+            <div className="w-full lg:w-1/2 relative">
+              <Tilt
+                tiltMaxAngleX={13}
+                tiltMaxAngleY={13}
+                transitionSpeed={800}
+                gyroscope={true}
+                scale={1.08}
+                lassName="w-full p-8 h-auto"
+              >
                 <img
                   src="/images/productsPages/Ads2.png"
-                  className="img-flud"
+                  className="img-fluid"
                   alt=""
                 />
-              </div>
+              </Tilt>
             </div>
           </div>
         </div>

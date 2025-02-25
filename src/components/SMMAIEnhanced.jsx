@@ -1,5 +1,6 @@
-// import React from 'react';
 import { Link } from 'react-router-dom';
+
+import Tilt from 'react-parallax-tilt';
 
 const SMMAIEnhanced = () => {
   return (
@@ -38,14 +39,21 @@ const SMMAIEnhanced = () => {
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2">
-          <div className="w-full h-auto transitAll scal110">
+        <div className="w-full lg:w-1/2 relative top-4">
+          <Tilt
+            tiltMaxAngleX={10}
+            tiltMaxAngleY={10}
+            transitionSpeed={800}
+            gyroscope={true}
+            scale={1.05}
+            lassName="w-full p-4 h-auto"
+          >
             <img
               src="/images/productsPages/AIGlass.png"
-              className="img-flud"
+              className="img-fluid"
               alt=""
             />
-          </div>
+          </Tilt>
         </div>
       </div>
     </div>

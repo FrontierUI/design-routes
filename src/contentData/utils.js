@@ -92,6 +92,13 @@ import websis from '/images/portfolio/wdd/SISwebpage.png';
 import wehi from '/images/portfolio/wdd/wehiwebpage.png';
 import wesave from '/images/portfolio/wdd/Wesavewithwebpage.png';
 
+import dmart from '/images/portfolio/appdesdev/Dmart.png';
+import elegant from '/images/portfolio/appdesdev/ElegantFurniture.png';
+import fash from '/images/portfolio/appdesdev/FashionBlogs.png';
+import mazitoApp from '/images/portfolio/appdesdev/mazitoAppPage.png';
+import ubl from '/images/portfolio/appdesdev/UBLFintech.png';
+import savewith from '/images/portfolio/appdesdev/wesavewith.png';
+
 import CCamp from '/images/Creativecampaign.jpg';
 import bIden from '/images/brandingIden.jpg';
 import webUIX from '/images/WebsiteUIUX.jpg';
@@ -168,6 +175,12 @@ import webillustration from '/images/icons/webillustration.svg';
 import webuiux from '/images/icons/webuiux.svg';
 import webConte from '/images/icons/webConte.svg';
 
+import resLayout from '/images/icons/responsiveLayout.svg';
+import adaptive from '/images/icons/adaptive.svg';
+import crossPlat from '/images/icons/crossPlat.svg';
+import apiData from '/images/icons/apiData.svg';
+import performOpt from '/images/icons/performOpt.svg';
+
 export const clientTestimonials = [
   {
     clAvatar: clientAvatar,
@@ -232,6 +245,39 @@ export const formatMaster = [
     src: augmentedReality,
     title: 'Augmented Reality Ads',
     para: 'Push the boundaries of creativity with world and front-facing AR applications for innovative immersive campaigns and experiences.',
+  },
+];
+
+export const appDevStrategies = [
+  {
+    src: resLayout,
+    title: 'Responsive Layout',
+    para: 'Design the app with flexible grid systems (e.g., CSS Grid, Flexbox) and media queries to ensure compatibility across all devices (mobile, tablet, desktop).',
+  },
+  {
+    src: adaptive,
+    title: 'Adaptive UI Components',
+    para: 'Implement reusable and adaptive components (e.g., buttons, forms, menus) that adjust automatically based on screen size and user input methods (touch vs. click).',
+  },
+  {
+    src: motionGraph,
+    title: 'Optimized Images & Media',
+    para: 'Use responsive image techniques (e.g., srcset, lazy loading) to ensure the app loads appropriate media files based on device resolution, improving performance.',
+  },
+  {
+    src: crossPlat,
+    title: 'Cross-Platform Functionality',
+    para: 'Build a cross-platform solution (React Native or Flutter for mobile, React/Angular/Vue for web) that offers a consistent user experience, ensuring all features work seamlessly on multiple platforms.',
+  },
+  {
+    src: apiData,
+    title: 'API & Data Management',
+    para: 'Design RESTful APIs or GraphQL queries that can handle requests from various devices with different data needs, optimizing the backend to support fast load times and responsiveness.',
+  },
+  {
+    src: performOpt,
+    title: 'Performance Optimization',
+    para: 'Implement strategies like code splitting, minification, and caching to improve performance, ensuring the app remains fast and responsive even under heavy load across different devices.',
   },
 ];
 
@@ -771,6 +817,48 @@ export const pdPortfolioBot = [
   {
     imgSrc: alj,
     href: '/our-work/alj-toyota-lubricants-presentation-design',
+  },
+];
+
+export const appPortfolioUp = [
+  {
+    imgSrc: dmart,
+    href: '/our-work/dmart-ecommerce-app-uiuix-design',
+  },
+  { imgSrc: elegant, href: '/our-work/elegent-ecommerce-app-uiuix-design' },
+  { imgSrc: fash, href: '/our-work/fashion-ecommerce-app-uiuix-design' },
+  {
+    imgSrc: mazitoApp,
+    href: '/our-work/mazito-web-and-app-design-development',
+  },
+  {
+    imgSrc: ubl,
+    href: '/our-work/ubl-finance-service-app-uiuix-design',
+  },
+  {
+    imgSrc: savewith,
+    href: '/our-work/wesaveforless-web-app-design-development',
+  },
+];
+
+export const appPortfolioBot = [
+  {
+    imgSrc: dmart,
+    href: '/our-work/dmart-ecommerce-app-uiuix-design',
+  },
+  { imgSrc: elegant, href: '/our-work/elegent-ecommerce-app-uiuix-design' },
+  { imgSrc: fash, href: '/our-work/fashion-ecommerce-app-uiuix-design' },
+  {
+    imgSrc: mazitoApp,
+    href: '/our-work/mazito-web-and-app-design-development',
+  },
+  {
+    imgSrc: ubl,
+    href: '/our-work/ubl-finance-service-app-uiuix-design',
+  },
+  {
+    imgSrc: savewith,
+    href: '/our-work/wesaveforless-web-app-design-development',
   },
 ];
 

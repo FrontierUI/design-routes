@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Tilt from 'react-parallax-tilt';
 
-const AIEnhancedWDD = () => {
+const AIEnhancedAPP = () => {
   return (
     <div className="flexy bg-primary max-w-full mx-auto px-5 lg:px-12">
       <div className="flex flex-wrap items-center w-full py-5 lg:py-12">
@@ -15,22 +15,23 @@ const AIEnhancedWDD = () => {
             </h3>
 
             <h1 className="text-5xl font-monaBold">
-              AI-Enhanced Web Design & Development
+              AI-Enhanced App Design & Development
             </h1>
 
             <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">
-              Leverage the power of AI to improve efficiency and cost savings in
-              our design services. Routes.Design AI-enhanced workflows
-              streamline the creation of web design and creative, delivering
-              results up to 60% faster
+              At Routes.Design, we combine cutting-edge AI technology with
+              expert design services to enhance efficiency and cost savings. Our
+              AI-powered workflows streamline the creation of app UI/UX and web
+              design, delivering results up to 60% faster without compromising
+              quality.
             </p>
 
             <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">
-              This ensures that every project is handled with precision,
-              enhancing both the quality and speed of your content production.
-              Experience unparalleled efficiency and innovation with our
-              AI-driven design solutions, tailored to elevate your brand’s
-              online presence.
+              This precision ensures that each project meets the highest
+              standards, improving both the speed and effectiveness of your
+              content production. Experience unmatched innovation and efficiency
+              with our AI-driven solutions, crafted to elevate your brand’s
+              online presence while achieving your business goals.
             </p>
 
             <div className="justStartCenter max-w-xs">
@@ -62,4 +63,4 @@ const AIEnhancedWDD = () => {
   );
 };
 
-export default AIEnhancedWDD;
+export default AIEnhancedAPP;

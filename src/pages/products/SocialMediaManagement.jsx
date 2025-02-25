@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import Marquee from 'react-fast-marquee';
 import { Link } from 'react-router-dom';
+import Marquee from 'react-fast-marquee';
+import Tilt from 'react-parallax-tilt';
 
 import { Check } from 'lucide-react';
 
@@ -49,13 +50,14 @@ const SocialMediaManagement = () => {
             <div className="w-full lg:w-1/2 lg:px-3">
               <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-3 md:space-y-5 text-slate-100">
                 <h1 className="font-monaBold text-5xl">
-                  Brand Identity Design Product
+                  Scalable Social Media Management
                 </h1>
 
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
-                  From brand exploration and development to refreshes and
-                  rebrands, our world-class brand designers create cohesive,
-                  scalable brand experiences. Learn more and book a call today.
+                  Enhance your social media presence and capture attention with
+                  Routes.Design tailored social media management Product. Our
+                  expert designers will craft impactful content, from posts to
+                  collateral, elevating your brand message.
                 </p>
 
                 <div className="justStartCenter">
@@ -64,14 +66,21 @@ const SocialMediaManagement = () => {
               </div>
             </div>
 
-            <div className="w-full lg:w-1/2">
-              <div className="w-full relative top-6 p-4 h-auto transitAll scal105">
+            <div className="w-full lg:w-1/2 relative lg:top-5">
+              <Tilt
+                tiltMaxAngleX={12}
+                tiltMaxAngleY={12}
+                transitionSpeed={800}
+                gyroscope={true}
+                scale={1.04}
+                lassName="w-full p-5 h-auto"
+              >
                 <img
                   src="/images/productsPages/smmHero.png"
                   className="img-fluid"
                   alt=""
                 />
-              </div>
+              </Tilt>
             </div>
           </div>
         </div>
@@ -164,14 +173,21 @@ const SocialMediaManagement = () => {
               </div>
             </div>
 
-            <div className="w-full lg:w-1/2">
-              <div className="w-full h-auto transitAll scal110">
+            <div className="w-full lg:w-1/2 relative">
+              <Tilt
+                tiltMaxAngleX={12}
+                tiltMaxAngleY={12}
+                transitionSpeed={800}
+                gyroscope={true}
+                scale={1.05}
+                lassName="w-full p-8 h-auto"
+              >
                 <img
                   src="/images/productsPages/socialmedia.png"
-                  className="img-flud"
+                  className="img-fluid"
                   alt=""
                 />
-              </div>
+              </Tilt>
             </div>
           </div>
         </div>
@@ -276,7 +292,12 @@ const SocialMediaManagement = () => {
         <SMMPackage />
       </div>
 
-      <div className="relative w-full flexy h-full py-6">
+      <div className="relative flexy flex-col w-full h-full py-6">
+        <div className="flexy px-5 pb-6">
+          <h1 className="font-monaBold text-center text-4xl">
+            Got any questions?
+          </h1>
+        </div>
         <div className="px-5 w-full lg:w-2/3">
           <SMMAccordion />
         </div>

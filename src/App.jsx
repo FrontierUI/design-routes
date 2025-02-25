@@ -13,6 +13,7 @@ import BrandIdentiyDesign from '@/pages/products/BrandIdentiyDesign';
 import SocialMediaManagement from '@/pages/products/SocialMediaManagement';
 import PresentationDesign from '@/pages/products/PresentationDesign';
 import WebDesignDev from '@/pages/products/WebDesignDev';
+import AppDesignDev from '@/pages/products/AppDesignDev';
 
 const App = () => {
   return (
@@ -34,12 +35,16 @@ const App = () => {
           element={<SocialMediaManagement />}
         />
         <Route
-          path="/products/presentation-designs"
-          element={<PresentationDesign />}
-        />
-        <Route
           path="/products/web-design-and-development"
           element={<WebDesignDev />}
+        />
+        <Route
+          path="/products/app-design-and-development"
+          element={<AppDesignDev />}
+        />
+        <Route
+          path="/products/presentation-designs"
+          element={<PresentationDesign />}
         />
         <Route path="/auth/sign-up" element={<SignUp />} />
         <Route path="/auth/sign-in" element={<SignIn />} />

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-
 import Marquee from 'react-fast-marquee';
+import Tilt from 'react-parallax-tilt';
+
 import { Check } from 'lucide-react';
 
 import { pdPortfolioBot, pdPortfolioUp } from '@/contentData/utils';
@@ -65,14 +66,21 @@ const PresentationDesign = () => {
               </div>
             </div>
 
-            <div className="w-full lg:w-1/2">
-              <div className="w-full relative top-6 p-4 h-auto transitAll scal105">
+            <div className="w-full lg:w-1/2 relative lg:top-10">
+              <Tilt
+                tiltMaxAngleX={12}
+                tiltMaxAngleY={12}
+                transitionSpeed={800}
+                gyroscope={true}
+                scale={1.04}
+                lassName="w-full p-5 h-auto"
+              >
                 <img
                   src="/images/productsPages/presentationHero.png"
                   className="img-fluid"
                   alt=""
                 />
-              </div>
+              </Tilt>
             </div>
           </div>
         </div>
@@ -166,14 +174,21 @@ const PresentationDesign = () => {
               </div>
             </div>
 
-            <div className="w-full lg:w-1/2">
-              <div className="w-full h-auto transitAll scal110">
+            <div className="w-full lg:w-1/2 relative">
+              <Tilt
+                tiltMaxAngleX={12}
+                tiltMaxAngleY={12}
+                transitionSpeed={800}
+                gyroscope={true}
+                scale={1.08}
+                lassName="w-full p-8 h-auto"
+              >
                 <img
                   src="/images/productsPages/hassleFree.png"
-                  className="img-flud"
+                  className="img-fluid"
                   alt=""
                 />
-              </div>
+              </Tilt>
             </div>
           </div>
         </div>
@@ -238,7 +253,12 @@ const PresentationDesign = () => {
         <PresentationPackage />
       </div>
 
-      <div className="relative w-full flexy h-full py-6">
+      <div className="relative flexy flex-col w-full h-full py-6">
+        <div className="flexy px-5 pb-6">
+          <h1 className="font-monaBold text-center text-4xl">
+            Got any questions?
+          </h1>
+        </div>
         <div className="px-5 w-full lg:w-2/3">
           <PDAccordion />
         </div>

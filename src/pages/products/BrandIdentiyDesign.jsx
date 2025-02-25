@@ -1,8 +1,5 @@
-// import { useState } from 'react';
-
-// import { AnimatePresence, motion } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
-// import useMeasure from 'react-use-measure';
+import Tilt from 'react-parallax-tilt';
 
 import { Check } from 'lucide-react';
 
@@ -20,52 +17,6 @@ import Testimonials from '@/components/Testimonials';
 import BIDAccordion from '@/components/BIDAccordion';
 
 const BrandIdentiyDesign = () => {
-  //
-
-  // const [activeQuestion, setActiveQuestion] = useState(null);
-
-  // const FAST_DURATION = 25;
-
-  // const SLOW_DURATION = 60;
-
-  // const [durtion, setDurtion] = useState(FAST_DURATION);
-
-  // const [mustFinish, setMustFinish] = useState(false);
-  // const [rerender, setRerender] = useState(false);
-
-  // let [ref, { width }] = useMeasure();
-
-  // const xTranslation = useMotionValue(0);
-
-  // useEffect(() => {
-  //   let controls;
-  //   let finalPositions = -width / 2 - 8;
-
-  //   if (mustFinish) {
-  //     controls = animate(xTranslation, [xTranslation.get(), finalPositions], {
-  //       ease: 'linear',
-  //       duration: durtion * (1 - xTranslation.get() / finalPositions),
-  //       onComplete: () => {
-  //         setMustFinish(false);
-  //         setRerender(!rerender);
-  //       },
-  //       repeat: Infinity,
-  //       repeatType: 'loop',
-  //       repeatDelay: 0,
-  //     });
-  //   } else {
-  //     controls = animate(xTranslation, [0, finalPositions], {
-  //       ease: 'linear',
-  //       duration: durtion,
-  //       repeat: Infinity,
-  //       repeatType: 'loop',
-  //       repeatDelay: 0,
-  //     });
-  //   }
-
-  //   return controls?.stop;
-  // }, [xTranslation, width, durtion, rerender, mustFinish]);
-
   return (
     <div className="relative w-full h-full brandIdenDes">
       <div className="relative w-full h-full">
@@ -96,14 +47,21 @@ const BrandIdentiyDesign = () => {
               </div>
             </div>
 
-            <div className="w-full lg:w-1/2">
-              <div className="w-full relative top-6 p-4 h-auto transitAll scal105">
+            <div className="w-full lg:w-1/2 relative lg:top-8">
+              <Tilt
+                tiltMaxAngleX={12}
+                tiltMaxAngleY={12}
+                transitionSpeed={800}
+                gyroscope={true}
+                scale={1.04}
+                lassName="w-full p-5 h-auto"
+              >
                 <img
                   src="/images/productsPages/GM2.png"
                   className="img-fluid"
                   alt=""
                 />
-              </div>
+              </Tilt>
             </div>
           </div>
         </div>
@@ -195,14 +153,21 @@ const BrandIdentiyDesign = () => {
               </div>
             </div>
 
-            <div className="w-full lg:w-1/2">
-              <div className="w-full h-auto transitAll scal110">
+            <div className="w-full lg:w-1/2 relative">
+              <Tilt
+                tiltMaxAngleX={12}
+                tiltMaxAngleY={12}
+                transitionSpeed={800}
+                gyroscope={true}
+                scale={1.08}
+                lassName="w-full p-8 h-auto"
+              >
                 <img
                   src="/images/productsPages/BrandingImage.png"
-                  className="img-flud"
+                  className="img-fluid"
                   alt=""
                 />
-              </div>
+              </Tilt>
             </div>
           </div>
         </div>
@@ -278,7 +243,6 @@ const BrandIdentiyDesign = () => {
             Got any questions?
           </h1>
         </div>
-
         <div className="flexy px-5 lg:min-w-[66.666667%] lg:max-w-[66.6670%]">
           <BIDAccordion />
         </div>
