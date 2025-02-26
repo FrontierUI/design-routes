@@ -158,9 +158,16 @@
   .scal110 {
     @apply transform hover:scale-110 ease-in-out !important;
   }
+  .scal120 {
+    @apply transform hover:scale-[1.20] ease-in-out !important;
+  }
 
   .transBorderBtn {
     @apply bg-transparent border-[2.5px] border-white gap-x-2 flexy py-4 px-8 rounded-full text-xl  text-white transitAll scal110 font-monaSemibold !important;
+  }
+
+  .transBtnHoverFill {
+    @apply bg-transparent border-[2.5px] border-white gap-x-2 flexy py-4 px-8 rounded-full text-xl  text-white transitAll scal120 font-monaSemibold hover:bg-white hover:text-primary !important;
   }
 
   .whiteButton {

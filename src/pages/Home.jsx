@@ -89,7 +89,7 @@ const Home = () => {
 
       <div className="strategy relative w-full h-full p-5 bg-primary">
         <div className="text-white w-full space-y-5">
-          <div className="w-full flex items-start lg:items-center justify-start flex-col lg:flex-row xl:justify-between max-md:space-y-3 lg:px-7">
+          <div className="w-full flex items-start lg:items-center justify-start flex-col lg:flex-row xl:justify-between max-md:space-y-3 lg:px-7 pt-5 pb-3">
             <div className="flexStart">
               <h1 className="font-monaSemibold text-2xl lg:text-3xl">
                 Here's how to get started
