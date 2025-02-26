@@ -9,9 +9,9 @@ const About = () => {
   return (
     <div className="relative w-full h-full aboutUs">
       <div className="relative w-full h-full">
-        <div className="w-full flexy flex-col px-5 py-10 pt-16 lg:pt-20 lg:my-20">
+        <div className="w-full flexy flex-col px-5 py-10 pt-16 lg:pt-20 lg:mt-28 lg:mb-16">
           <div className="flexy flex-col lg:w-2/3 space-y-5 text-center">
-            <h1 className="text-5xl lg:text-7xl font-monaBold">
+            <h1 className="text-5xl lg:text-7xl font-monaExtra">
               Design That Delivers
             </h1>
             <p className="text-lg">
@@ -49,6 +49,37 @@ const About = () => {
         <LogoMarquee />
       </div>
 
+      <div className="count relative w-full h-full py-6">
+        <div className="w-full px-5 lg:px-12">
+          <div className="itemsStart lg:!justify-between flex-col lg:flex-row max-lg:gap-y-6 lg:gap-x-10">
+            <div className="relative founded flexStart flex-col space-y-4 lg:space-y-20 lg:pt-10">
+              <div className="flex flex-col items-start">
+                <h3 className="font-monaBold text-3xl">Founded</h3>
+                <h1 className="font-monaBlack text-8xl">2018</h1>
+              </div>
+              <div className="flex flex-col items-start">
+                <h3 className="font-monaBold text-3xl">Clients</h3>
+                <h1 className="font-monaBlack text-8xl">147</h1>
+              </div>
+              <div className="flex flex-col items-start">
+                <h3 className="font-monaBold text-3xl">Projects</h3>
+                <h1 className="font-monaBlack text-8xl">591</h1>
+              </div>
+            </div>
+
+            <div className="relative w-full h-full">
+              <div className="flexy w-full h-full transitAll scal105 max-h-full max-w-full md:min-h-[30rem] md:max-h-min">
+                <img
+                  src="/images/RoutesEIcons.png"
+                  className="img-fluid max-w-full min-h-full w-full h-full object-cover"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="services relative w-full h-full py-6 bg-white">
         <div className="w-full h-full flex flex-col px-5 lg:px-12">
           <div className="justStartCenter pb-3 flex-col lg:!justify-between lg:flex-row">
@@ -62,9 +93,9 @@ const About = () => {
         </div>
       </div>
 
-      <div className="strategy relative w-full h-full p-5 bg-primary">
+      <div className="strategy relative w-full h-full mt-5 p-5 bg-primary">
         <div className="text-white w-full space-y-5">
-          <div className="w-full flex items-start lg:items-center justify-start flex-col lg:flex-row xl:justify-between max-md:space-y-3 lg:px-7 pt-5 pb-3">
+          <div className="w-full flex items-start lg:items-center justify-start flex-col lg:flex-row lg:justify-between max-md:space-y-3 lg:px-7 pt-5 pb-3">
             <div className="flexStart">
               <h1 className="font-monaSemibold text-2xl lg:text-3xl">
                 Here's how to get started

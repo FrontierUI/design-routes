@@ -12,11 +12,13 @@ export default {
       },
       colors: { primary: '#0000ff', kala: '#000444' },
       fontFamily: {
-        monaRegular: ['Mona-Sans-Regular', 'Regular'],
-        monaMedium: ['Mona-Sans-Medium', 'Medium'],
-        monaSemibold: ['Mona-Sans-Semibold', 'Semibold'],
+        monaRegular: ['Mona-Sans-Regular', 'regular'],
+        monaMedium: ['Mona-Sans-Medium', 'medium'],
+        monaSemibold: ['Mona-Sans-Semibold', 'semibold'],
         monaBold: ['Mona-Sans-Bold', 'Bold'],
-        filsonHeavy: ['FilsonPro-Heavy', 'ExtraBold'],
+        monaExtra: ['Mona-Sans-ExtraBold', 'extrabold'],
+        monaBlack: ['Mona-Sans-Black', 'Black'],
+        filsonHeavy: ['FilsonPro-Heavy', 'extrabold'],
       },
       boxShadow: {
         'drop-1': '0px 10px 30px 0px rgba(66, 71, 97, 0.1)',
