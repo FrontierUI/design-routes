@@ -7,9 +7,9 @@ import Services from '@/components/Services';
 import Professionalism from '@/components/Professionalism';
 import Testimonials from '@/components/Testimonials';
 
-const ForAgencies = () => {
+const SME = () => {
   return (
-    <div className="relative w-full h-full forAgencies">
+    <div className="relative w-full h-full forBrands">
       <div className="relative w-full h-full">
         <div
           className="absolute top-0 w-full h-full -z-[1] bg-cover bg-no-repeat"
@@ -19,54 +19,20 @@ const ForAgencies = () => {
         <div className="w-full  max-w-full items-center mx-auto px-5 lg:px-12">
           <div className="w-full flex flex-wrap items-center max-md:pt-24">
             <div className="w-full lg:w-1/2">
-              <div className="w-full flex-col sm:max-w-md lg:max-w-[40rem] space-y-3 md:space-y-5 text-white">
+              <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-3 md:space-y-5 text-white">
                 <h3 className="text-2xl font-monaSemibold uppercase">
                   Who is it for?
                 </h3>
 
                 <h1 className="font-monaBold text-4xl lg:text-5xl">
-                  Multiply your agency output without Multiplying your overhead
-                  costs
+                  Flat-rate Design Products to Help you grow your business
                 </h1>
 
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
-                  Overwhelmed? Overworked? Not anymore! Our vetted designers can
-                  take care of your own or your clients requests, allowing you
-                  to focus on what matters.
+                  Don't break your budget or settle for sloppy design that harms
+                  your business Knock your competitors out of the park while
+                  saving money.
                 </p>
-
-                <ul className="flexStart flex-col space-y-2">
-                  <li className="gap-x-3 justStartCenter">
-                    <img
-                      src="/images/icons/roundCheckWhite.svg"
-                      className="img-fluid w-[25px]"
-                      alt=""
-                    />
-                    <span className="text-md">
-                      Save time and money on creative production
-                    </span>
-                  </li>
-                  <li className="gap-x-3 justStartCenter">
-                    <img
-                      src="/images/icons/roundCheckWhite.svg"
-                      className="img-fluid w-[25px]"
-                      alt=""
-                    />
-                    <span className="text-md">
-                      Save time and money on creative production
-                    </span>
-                  </li>
-                  <li className="gap-x-3 justStartCenter">
-                    <img
-                      src="/images/icons/roundCheckWhite.svg"
-                      className="img-fluid w-[25px]"
-                      alt=""
-                    />
-                    <span className="text-md">
-                      Save time and money on creative production
-                    </span>
-                  </li>
-                </ul>
 
                 <div className="justStartCenter">
                   <button className="whiteButton">Get Started</button>
@@ -84,7 +50,7 @@ const ForAgencies = () => {
                 lassName="w-full p-8 lg:p-12 h-auto"
               >
                 <img
-                  src="/images/productsPages/forAgencies.png"
+                  src="/images/productsPages/SmallMediumBusinesses.png"
                   className="img-fluid"
                   alt=""
                 />
@@ -100,16 +66,13 @@ const ForAgencies = () => {
 
       <div className="relative w-full h-full flexy py-6">
         <div className="flexy flex-col w-full px-5 lg:px-12">
-          <div className="flexy flex-col pb-6 space-y-4">
-            <h3 className="uppercase text-2xl font-monaSemibold">
-              Inefficient Agencies and Freelancers Create Drag
-            </h3>
-            <h1 className="text-5xl font-monaBold">
-              Agency Barriers to Scaling Creative
+          <div className="flexy flex-col pb-6 space-y-1 lg:w-3/4 text-center">
+            <h1 className="text-3xl font-monaBold">
+              Perfect for Small and Medium-Sized Businesses
             </h1>
-            <p className="text-xl">
-              Traditional creative agencies are more likely to work their way
-              than your way.
+            <p className="text-lg">
+              No client or task is too big or too small for us. If you want your
+              business to look better and create more, you're in the right spot.
             </p>
           </div>
 
@@ -124,11 +87,11 @@ const ForAgencies = () => {
             >
               <div className="flexStart w-full rounded-lg relative innerEffect">
                 <img
-                  src="/images/productsPages/slow.jpg"
+                  src="/images/productsPages/presentTemplate.png"
                   className="img-fluid w-full h-full object-cover"
                   alt=""
                 />
-                <div className="absolute text-white p-6 flex flex-col space-y-2 sm:space-y-4">
+                <div className="absolute text-slate-600 p-6 flex flex-col space-y-2 sm:space-y-4">
                   <h2 className="text-4xl font-monaBold">Slow</h2>
                   <p className="text-xl">Update uploading</p>
                 </div>
@@ -145,11 +108,11 @@ const ForAgencies = () => {
             >
               <div className="flexStart w-full rounded-lg relative innerEffect">
                 <img
-                  src="/images/productsPages/rigid.jpg"
+                  src="/images/productsPages/customPowerPoint.png"
                   className="img-fluid w-full h-full object-cover"
                   alt=""
                 />
-                <div className="absolute text-slate-600 p-6 flex flex-col space-y-2 sm:space-y-4">
+                <div className="absolute text-white p-6 flex flex-col space-y-2 sm:space-y-4">
                   <h2 className="text-4xl font-monaBold">Rigid</h2>
                   <p className="text-xl">Abort course correction</p>
                 </div>
@@ -166,95 +129,13 @@ const ForAgencies = () => {
             >
               <div className="flexStart w-full rounded-lg relative innerEffect">
                 <img
-                  src="/images/productsPages/overruns.jpg"
-                  className="img-fluid w-full h-full object-cover"
-                  alt=""
-                />
-                <div className="absolute text-white p-6 flex flex-col space-y-2 sm:space-y-4">
-                  <h2 className="text-4xl font-monaBold">Cost Overruns</h2>
-                  <p className="text-xl">Limitaions exceeded</p>
-                </div>
-              </div>
-            </Tilt>
-          </div>
-        </div>
-      </div>
-
-      <div className="relative w-full h-full flexy py-6">
-        <div className="flexy flex-col w-full px-5 lg:px-12">
-          <div className="flexy flex-col pb-6 space-y-4 text-center">
-            <h3 className="uppercase text-2xl font-monaSemibold">
-              Inefficient Agencies and Freelancers Create Drag
-            </h3>
-            <h1 className="text-5xl font-monaBold">
-              Agency Barriers to Scaling Creative
-            </h1>
-            <p className="text-xl">
-              Traditional creative agencies are more likely to work their way
-              than your way.
-            </p>
-          </div>
-
-          <div className="w-full h-full grid grid-cols-12 gap-6">
-            <Tilt
-              tiltMaxAngleX={5}
-              tiltMaxAngleY={5}
-              transitionSpeed={800}
-              gyroscope={true}
-              scale={1.03}
-              className="col-span-12 xl:col-span-4 parallax-effect rounded-lg shadow-drop-5 w-full h-full overflow-hidden"
-            >
-              <div className="flexStart w-full rounded-lg relative innerEffect">
-                <img
-                  src="/images/productsPages/niche.png"
-                  className="img-fluid w-full h-full object-cover"
-                  alt=""
-                />
-                <div className="absolute text-white p-6 flex flex-col space-y-2 sm:space-y-4">
-                  <h2 className="text-4xl font-monaBold">Niche</h2>
-                  <p className="text-xl">Expert mode only</p>
-                </div>
-              </div>
-            </Tilt>
-
-            <Tilt
-              tiltMaxAngleX={5}
-              tiltMaxAngleY={5}
-              transitionSpeed={800}
-              gyroscope={true}
-              scale={1.03}
-              className="col-span-12 xl:col-span-4 parallax-effect rounded-lg shadow-drop-5 w-full h-full overflow-hidden"
-            >
-              <div className="flexStart w-full rounded-lg relative innerEffect">
-                <img
-                  src="/images/productsPages/Individual.png"
+                  src="/images/productsPages/salesreport.png"
                   className="img-fluid w-full h-full object-cover"
                   alt=""
                 />
                 <div className="absolute text-slate-600 p-6 flex flex-col space-y-2 sm:space-y-4">
-                  <h2 className="text-4xl font-monaBold">Individual</h2>
-                  <p className="text-xl">Replication Failed</p>
-                </div>
-              </div>
-            </Tilt>
-
-            <Tilt
-              tiltMaxAngleX={5}
-              tiltMaxAngleY={5}
-              transitionSpeed={800}
-              gyroscope={true}
-              scale={1.03}
-              className="col-span-12 xl:col-span-4 parallax-effect rounded-lg shadow-drop-5 w-full h-full overflow-hidden"
-            >
-              <div className="flexStart w-full rounded-lg relative innerEffect">
-                <img
-                  src="/images/productsPages/Recalculating.png"
-                  className="img-fluid w-full h-full object-cover"
-                  alt=""
-                />
-                <div className="absolute text-white p-6 flex flex-col space-y-2 sm:space-y-4">
-                  <h2 className="text-4xl font-monaBold">High touch</h2>
-                  <p className="text-xl">Recalculating</p>
+                  <h2 className="text-4xl font-monaBold">Cost Overruns</h2>
+                  <p className="text-xl">Limitaions exceeded</p>
                 </div>
               </div>
             </Tilt>
@@ -266,16 +147,15 @@ const ForAgencies = () => {
         <div className="w-full h-full flex flex-col px-5 lg:px-12">
           <div className="flexy flex-col pb-6 space-y-2 text-center">
             <h2 className="text-3xl font-monaBold">
-              Only Creative as a Product Sets You Free! Work the way you need to
-              work
+              Only Creative as a Product Sets You Free!
             </h2>
-            <p className="text-xl">
+            <p className="text-lg">
               Access a global talent pool with a full range of creative Products
               with turnarounds as fast as 12 to 24hours.
             </p>
           </div>
 
-          <div className="justStartCenter pb-6 flex-col lg:!justify-between lg:flex-row">
+          <div className="justStartCenter pb-3 flex-col lg:!justify-between lg:flex-row">
             <h1 className="text-4xl font-monaBold">Our Services</h1>
             <Link to={'/'} className="tpBordPrim text-xl font-monaSemibold">
               Our Works
@@ -331,4 +211,4 @@ const ForAgencies = () => {
   );
 };
 
-export default ForAgencies;
+export default SME;

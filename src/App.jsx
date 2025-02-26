@@ -15,6 +15,8 @@ import PresentationDesign from '@/pages/products/PresentationDesign';
 import WebDesignDev from '@/pages/products/WebDesignDev';
 import AppDesignDev from '@/pages/products/AppDesignDev';
 import ForAgencies from '@/pages/verticals/ForAgencies';
+import ForBrands from '@/pages/verticals/ForBrands';
+import SME from './pages/verticals/SME';
 
 const App = () => {
   return (
@@ -48,6 +50,11 @@ const App = () => {
           element={<PresentationDesign />}
         />
         <Route path="/vertical/for-agencies" element={<ForAgencies />} />
+        <Route path="/vertical/for-brands" element={<ForBrands />} />
+        <Route
+          path="/vertical/small-and-medium-sized-enterprise"
+          element={<SME />}
+        />
         <Route path="/auth/sign-up" element={<SignUp />} />
         <Route path="/auth/sign-in" element={<SignIn />} />
       </Routes>
