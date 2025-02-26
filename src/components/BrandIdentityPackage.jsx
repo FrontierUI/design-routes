@@ -16,7 +16,7 @@ const BrandIdentityPackage = () => {
         <div className="packageTop flexStart flex-col w-full h-full py-4 space-y-4">
           <div className="packInfo flexStart lg:items-center flex-col lg:flex-row lg:justify-between w-full text-gray-800 space-y-4">
             <div className="packTitle flexStart flex-col items-center justify-center lg:items-start lg:justify-start w-full space-y-3">
-              <h1 className="text-5xl lg:text-7xl font-monaBold">
+              <h1 className="text-5xl lg:text-6xl font-monaBold">
                 Brand Identity & Design
               </h1>
               <p className="w-full text-base lg:text-lg lg:w-4/5">

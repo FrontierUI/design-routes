@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import CreativeCampaignPackage from './CreativeCampaignPackage';
-import BrandIdentityPackage from './BrandIdentityPackage';
-import SMMPackage from './SMMPackage';
+import CreativeCampaignPackage from '@/components/CreativeCampaignPackage';
+import BrandIdentityPackage from '@/components/BrandIdentityPackage';
+import SMMPackage from '@/components/SMMPackage';
+import WebPricePackage from '@/components/WebPricePackage';
+import AppPricePackage from '@/components/AppPricePackage';
+import PresentationPackage from '@/components/PresentationPackage';
 
 const tabs = [
   { id: 'creativeCampaign', title: 'Creative Campaign' },
@@ -18,10 +21,13 @@ const TabContent = ({ id }) => {
   const content = {
     creativeCampaign: <CreativeCampaignPackage />,
     brandIdentity: <BrandIdentityPackage />,
+
     socialMM: <SMMPackage />,
-    webDD: <div>Content for Tab 4</div>,
-    appDD: <div>Content for Tab 5</div>,
-    presentationDesign: <div>Content for Tab 6</div>,
+    webDD: <WebPricePackage />,
+
+    appDD: <AppPricePackage />,
+
+    presentationDesign: <PresentationPackage />,
   };
 
   return (

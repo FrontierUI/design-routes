@@ -1,8 +1,11 @@
-// import React from 'react';
-import CreativeCampaignPackage from './CreativeCampaignPackage';
-import BrandIdentityPackage from './BrandIdentityPackage';
-import TabsPricing from './TabsPricing';
-import SMMPackage from './SMMPackage';
+import TabsPricing from '@/components/TabsPricing';
+
+import CreativeCampaignPackage from '@/components/CreativeCampaignPackage';
+import BrandIdentityPackage from '@/components/BrandIdentityPackage';
+import SMMPackage from '@/components/SMMPackage';
+import WebPricePackage from '@/components/WebPricePackage';
+import AppPricePackage from '@/components/AppPricePackage';
+import PresentationPackage from '@/components/PresentationPackage';
 
 const PricingTabpanel = () => {
   const tabs = [
@@ -20,6 +23,21 @@ const PricingTabpanel = () => {
       title: 'Social Media Management',
       value: 'socialMM',
       content: <SMMPackage />,
+    },
+    {
+      title: 'Web Design & Development',
+      value: 'webDD',
+      content: <WebPricePackage />,
+    },
+    {
+      title: 'App Design & Development',
+      value: 'appDD',
+      content: <AppPricePackage />,
+    },
+    {
+      title: 'Presentaion Design',
+      value: 'PresentDesign',
+      content: <PresentationPackage />,
     },
   ];
 
