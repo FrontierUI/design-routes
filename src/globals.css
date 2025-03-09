@@ -222,12 +222,12 @@
     @apply rounded-full border-2 border-[#339af0] text-stone-100 bg-[#339af0] text-xl py-2 px-6 transitAll scal105 font-monaSemibold;
   }
 
-  .body-1 {
-    @apply text-[16px] leading-[24px] font-monaRegular;
+  .portfolioMarquee {
+    @apply relative max-lg:max-w-[21rem] lg:!max-w-[37rem] lg:h-full lg:min-h-[360px] lg:max-h-[380px] rounded-xl mx-2 overflow-hidden !important;
   }
 
-  .body-2 {
-    @apply text-[14px] leading-[20px] font-monaRegular;
+  .body-1 {
+    @apply text-[16px] leading-[24px] font-monaRegular;
   }
 
   .body-2 {
@@ -247,11 +247,27 @@
   }
 
   .form-label {
-    @apply w-full text-[#333F4E] body-1 font-monaSemibold !important;
+    @apply w-full text-slate-700 body-1 font-monaSemibold !important;
   }
 
-  .portfolioMarquee {
-    @apply relative max-lg:max-w-[21rem] lg:!max-w-[37rem] lg:h-full lg:min-h-[360px] lg:max-h-[380px] rounded-xl mx-2 overflow-hidden !important;
+  .contact-focus {
+    @apply outline-none ring-offset-transparent focus:ring-transparent focus:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+  }
+
+  .contact-item {
+    @apply flex flex-col items-start justify-center rounded-lg w-full h-[78px] border border-slate-800 shadow-none space-y-1 px-4 py-2 !important;
+  }
+
+  .contact-textarea {
+    @apply flex flex-col items-start justify-center rounded-lg w-full h-32 border border-slate-800 shadow-none space-y-1 px-4 py-2 !important;
+  }
+
+  .contact-input {
+    @apply border-none bg-transparent contact-focus placeholder:text-gray-500 p-0 w-full shadow-none body-1 !important;
+  }
+
+  .contact-label {
+    @apply text-xl font-monaSemibold !important;
   }
 
   /* .sticked {

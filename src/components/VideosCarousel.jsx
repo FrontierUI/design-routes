@@ -37,7 +37,7 @@ const VideosCarousel = () => {
                 </p>
                 <div className="flexy">
                   <Link
-                    to="/"
+                    to="/pricing"
                     className="bord smallBtn transitAll scal105 text-primary"
                   >
                     Our Plans

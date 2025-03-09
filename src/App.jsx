@@ -3,14 +3,16 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-import SignUp from '@/pages/auth/sign-up';
-import SignIn from '@/pages/auth/sign-in';
-import CreativeCampaigns from '@/pages/products/CreativeCampaign';
-
 import Home from '@/pages/Home';
 import Pricing from '@/pages/Pricing';
 import About from '@/pages/About';
+import OurWork from '@/pages/OurWork';
+import BookACall from '@/pages/BookACall';
 
+import SignUp from '@/pages/auth/sign-up';
+import SignIn from '@/pages/auth/sign-in';
+
+import CreativeCampaigns from '@/pages/products/CreativeCampaign';
 import BrandIdentiyDesign from '@/pages/products/BrandIdentiyDesign';
 import SocialMediaManagement from '@/pages/products/SocialMediaManagement';
 import PresentationDesign from '@/pages/products/PresentationDesign';
@@ -60,6 +62,9 @@ const App = () => {
         />
 
         <Route path="/about-us" element={<About />} />
+        <Route path="/book-a-call" element={<BookACall />} />
+        <Route path="/our-work" element={<OurWork />} />
+
         <Route path="/auth/sign-up" element={<SignUp />} />
         <Route path="/auth/sign-in" element={<SignIn />} />
       </Routes>

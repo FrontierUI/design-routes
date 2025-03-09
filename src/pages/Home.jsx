@@ -96,7 +96,7 @@ const Home = () => {
               </h1>
             </div>
             <div className="flexy">
-              <Link to={'/'} className="tpLink">
+              <Link to={'/pricing'} className="tpLink">
                 see our plans
               </Link>
             </div>
@@ -124,7 +124,7 @@ const Home = () => {
               </p>
 
               <Link
-                to={'/'}
+                to={'https://koalendar.com/e/meet-with-routes-design'}
                 target="_blank"
                 className="relative lg:top-4 mt-4 interestedLink text-lg sm:text-xl"
               >

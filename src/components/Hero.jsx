@@ -64,8 +64,7 @@ const Hero = () => {
 
         <div className="flexy relative mt-5">
           <Link
-            to="/"
-            target="_blank"
+            to="/book-a-call"
             className="text-primary bg-white flexy text-xl font-monaBold py-2 px-10 rounded-full transition-all duration-500 hover:scale-105"
           >
             Book a call

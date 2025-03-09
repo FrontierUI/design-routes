@@ -34,14 +34,14 @@ const Navbar = () => {
 
         <div className="itemsCenter gap-x-5">
           <Link
-            className="flexy lg:transitAll lg:scal105 !hidden lg:!block"
-            to="/"
+            className="!hidden lg:!block items-center justify-center lg:transitAll lg:scal105"
+            to="https://koalendar.com/e/meet-with-routes-design"
             onClick={() => toggleDrawer()}
             target="_blank"
           >
             <button
               aria-label="get-a-demo"
-              className="bg-primary text-white lg:hover:shadow-drop-4 px-6 py-2 shadow rounded-full itemsCenter"
+              className="bg-primary !hidden md:!block text-white lg:hover:shadow-drop-4 px-6 py-2 shadow rounded-full itemsCenter"
             >
               Get a Demo
             </button>

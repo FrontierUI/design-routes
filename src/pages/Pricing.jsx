@@ -32,6 +32,7 @@ const Pricing = () => {
         </div>
       </div>
 
+
       <div className="flexy w-full">
         <PricingTabs />
       </div>
@@ -105,7 +106,7 @@ const Pricing = () => {
               </p>
 
               <Link
-                to={'/'}
+                to={'https://koalendar.com/e/meet-with-routes-design'}
                 target="_blank"
                 className="relative lg:top-4 mt-4 interestedLink text-lg sm:text-xl"
               >
