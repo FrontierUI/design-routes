@@ -1,14 +1,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import CreativeCampaignPackage from '@/components/CreativeCampaignPackage';
-import BrandIdentityPackage from '@/components/BrandIdentityPackage';
-import SMMPackage from '@/components/SMMPackage';
-import WebPricePackage from '@/components/WebPricePackage';
-import AppPricePackage from '@/components/AppPricePackage';
-import PresentationPackage from '@/components/PresentationPackage';
+import AllPortfolio from './AllPortfolio';
+import PortfolioCC from './PortfolioCC';
 
 const tabs = [
+  { id: 'allPortfolio', title: 'All Portfolio' },
   { id: 'creativeCampaign', title: 'Creative Campaign' },
   { id: 'brandIdentity', title: 'Brand Identity & Design' },
   { id: 'socialMM', title: 'Social Media Management' },
@@ -19,12 +16,8 @@ const tabs = [
 
 const TabContent = ({ id }) => {
   const content = {
-    creativeCampaign: <CreativeCampaignPackage />,
-    brandIdentity: <BrandIdentityPackage />,
-    socialMM: <SMMPackage />,
-    webDD: <WebPricePackage />,
-    appDD: <AppPricePackage />,
-    presentationDesign: <PresentationPackage />,
+    allPortfolio: <AllPortfolio />,
+    creativeCampaign: <PortfolioCC />,
   };
 
   return (
@@ -42,11 +35,11 @@ const TabContent = ({ id }) => {
   );
 };
 
-const PricingTabs = () => {
+const PortfolioTabs = () => {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   return (
-    <div className="flexy flex-col py-6 w-full">
+    <div className="flexy flex-col pt-6 pb-3 w-full">
       <div className="flexy w-full flex-wrap gap-x-4 gap-y-4">
         {tabs.map((tab) => (
           <button
@@ -62,11 +55,12 @@ const PricingTabs = () => {
           </button>
         ))}
       </div>
-      <div className="pt-5 my-5 w-full">
+
+      <div className="pt-5 mt-5 w-full">
         <TabContent id={activeTab} />
       </div>
     </div>
   );
 };
 
-export default PricingTabs;
+export default PortfolioTabs;

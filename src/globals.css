@@ -132,6 +132,10 @@
     @apply flex items-end justify-end !important;
   }
 
+  .ourWorkTitles {
+    @apply w-full flex flex-wrap flex-col lg:flex-row items-start lg:justify-between gap-8 mt-12;
+  }
+
   .horLine {
     @apply h-[1px] w-32 bg-white;
   }
@@ -219,7 +223,7 @@
   }
 
   .tabsBtn {
-    @apply rounded-full border-2 border-[#339af0] text-stone-100 bg-[#339af0] text-xl py-2 px-6 transitAll scal105 font-monaSemibold;
+    @apply rounded-full border-2 border-[#557fff] text-stone-100 bg-[#557fff] text-xl py-2 px-6 transitAll scal105 font-monaSemibold hover:bg-primary hover:border-primary;
   }
 
   .portfolioMarquee {
