@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Tilt from 'react-parallax-tilt';
 
-const AllPortfolio = () => {
+const PortfolioPD = () => {
   return (
     <div className="flexy w-full h-full">
       <div className="mx-auto grid grid-cols-12 gap-6 lg:gap-10">
@@ -20,13 +20,36 @@ const AllPortfolio = () => {
             className="relative flexStart w-full innerEffect rounded-lg"
           >
             <img
-              src="/images/workPort/cc-yap1.png"
+              src="/images/workPort/pd-alj.png"
               className="img-fluid"
               alt=""
             />
             <div className="absolute text-white p-8 flex">
+              <h2 className="text-3xl font-monaBold">AJL - Lubricants LTD</h2>
+            </div>
+          </Link>
+        </Tilt>
+
+        <Tilt
+          tiltMaxAngleX={3}
+          tiltMaxAngleY={3}
+          transitionSpeed={800}
+          gyroscope={true}
+          scale={1.01}
+          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-4 parallax-effect rounded-lg"
+        >
+          <Link
+            to={'/'}
+            className="relative flexStart w-full innerEffect rounded-lg"
+          >
+            <img
+              src="/images/workPort/pd-darent.png"
+              className="img-fluid"
+              alt=""
+            />
+            <div className="absolute text-slate-800 p-8 flex">
               <h2 className="text-3xl font-monaBold">
-                YAP - Unlock Surprises with Every Purchase
+                Darent - Find top-notch properties in KSA
               </h2>
             </div>
           </Link>
@@ -45,13 +68,13 @@ const AllPortfolio = () => {
             className="relative flexStart w-full innerEffect rounded-lg"
           >
             <img
-              src="/images/workPort/adduiux-dmart.png"
+              src="/images/workPort/pd-freshbar.png"
               className="img-fluid"
               alt=""
             />
-            <div className="absolute text-white p-8 flex">
+            <div className="absolute text-gray-600 p-8 flex">
               <h2 className="text-3xl font-monaBold">
-                DMART - Your product & our Rapid Delivery
+                Freshbar - Secret, of Health
               </h2>
             </div>
           </Link>
@@ -95,13 +118,13 @@ const AllPortfolio = () => {
             className="relative flexStart w-full innerEffect rounded-lg"
           >
             <img
-              src="/images/workPort/cc-digitall.png"
+              src="/images/workPort/pd-timhorton.png"
               className="img-fluid"
               alt=""
             />
-            <div className="absolute text-[#333333] p-8 flex">
+            <div className="absolute text-gray-500 p-8 flex">
               <h2 className="text-3xl font-monaBold">
-                DIGITALL - Empowering Business
+                Tim Hortons - Flavorful Journey
               </h2>
             </div>
           </Link>
@@ -120,14 +143,12 @@ const AllPortfolio = () => {
             className="relative flexStart w-full innerEffect rounded-lg"
           >
             <img
-              src="/images/workPort/bid-beyond.png"
+              src="/images/workPort/pd-vita.png"
               className="img-fluid"
               alt=""
             />
-            <div className="absolute text-white p-8 flex">
-              <h2 className="text-3xl font-monaBold">
-                BEYOND - Boost your Progression
-              </h2>
+            <div className="absolute text-slate-700 p-8 flex">
+              <h2 className="text-3xl font-monaBold">VITA - Launch</h2>
             </div>
           </Link>
         </Tilt>
@@ -145,63 +166,13 @@ const AllPortfolio = () => {
             className="relative flexStart w-full innerEffect rounded-lg"
           >
             <img
-              src="/images/workPort/bid-damor.png"
-              className="img-fluid"
-              alt=""
-            />
-            <div className="absolute text-primary p-8 flex">
-              <h2 className="text-3xl font-monaBold">
-                Damore - Luxurious Brand Identity Design
-              </h2>
-            </div>
-          </Link>
-        </Tilt>
-
-        <Tilt
-          tiltMaxAngleX={3}
-          tiltMaxAngleY={3}
-          transitionSpeed={800}
-          gyroscope={true}
-          scale={1.01}
-          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-4 parallax-effect rounded-lg"
-        >
-          <Link
-            to={'/'}
-            className="relative flexStart w-full innerEffect rounded-lg"
-          >
-            <img
-              src="/images/workPort/fnLushTomatoSocialMM.png"
-              className="img-fluid"
-              alt=""
-            />
-            <div className="absolute text-gray-600 p-8 flex">
-              <h2 className="text-3xl font-monaBold">
-                LUSH - Every Bite, Feels Right
-              </h2>
-            </div>
-          </Link>
-        </Tilt>
-
-        <Tilt
-          tiltMaxAngleX={3}
-          tiltMaxAngleY={3}
-          transitionSpeed={800}
-          gyroscope={true}
-          scale={1.01}
-          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-4 parallax-effect rounded-lg"
-        >
-          <Link
-            to={'/'}
-            className="relative flexStart w-full innerEffect rounded-lg"
-          >
-            <img
-              src="/images/workPort/wdd-shopco.png"
+              src="/images/workPort/pd-getz.png"
               className="img-fluid"
               alt=""
             />
             <div className="absolute text-slate-700 p-8 flex">
               <h2 className="text-3xl font-monaBold">
-                SHOPCO - Find clothes that match your style
+                Getz - We care for your Health
               </h2>
             </div>
           </Link>
@@ -211,4 +182,4 @@ const AllPortfolio = () => {
   );
 };
 
-export default AllPortfolio;
+export default PortfolioPD;

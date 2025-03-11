@@ -13,82 +13,7 @@ const PortfolioCC = () => {
           transitionSpeed={800}
           gyroscope={true}
           scale={1.01}
-          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-5 parallax-effect rounded-lg"
-        >
-          <Link
-            to={'/'}
-            className="relative flexStart w-full innerEffect rounded-lg"
-          >
-            <img
-              src="/images/workPort/cc-yap1.png"
-              className="img-fluid"
-              alt=""
-            />
-            <div className="absolute text-white p-8 flex">
-              <h2 className="text-3xl font-monaBold">
-                YAP - Unlock Surprises with Every Purchase
-              </h2>
-            </div>
-          </Link>
-        </Tilt>
-
-        <Tilt
-          tiltMaxAngleX={3}
-          tiltMaxAngleY={3}
-          transitionSpeed={800}
-          gyroscope={true}
-          scale={1.01}
-          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-5 parallax-effect rounded-lg"
-        >
-          <Link
-            to={'/'}
-            className="relative flexStart w-full innerEffect rounded-lg"
-          >
-            <img
-              src="/images/workPort/adduiux-dmart.png"
-              className="img-fluid"
-              alt=""
-            />
-            <div className="absolute text-white p-8 flex">
-              <h2 className="text-3xl font-monaBold">
-                DMART - Your product & our Rapid Delivery
-              </h2>
-            </div>
-          </Link>
-        </Tilt>
-
-        <Tilt
-          tiltMaxAngleX={3}
-          tiltMaxAngleY={3}
-          transitionSpeed={800}
-          gyroscope={true}
-          scale={1.01}
-          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-5 parallax-effect rounded-lg"
-        >
-          <Link
-            to={'/'}
-            className="relative flexStart w-full innerEffect rounded-lg"
-          >
-            <img
-              src="/images/workPort/pd-hnak.png"
-              className="img-fluid"
-              alt=""
-            />
-            <div className="absolute text-white p-8 flex">
-              <h2 className="text-3xl font-monaBold">
-                HNAK - A Beautiful Launch Story
-              </h2>
-            </div>
-          </Link>
-        </Tilt>
-
-        <Tilt
-          tiltMaxAngleX={3}
-          tiltMaxAngleY={3}
-          transitionSpeed={800}
-          gyroscope={true}
-          scale={1.01}
-          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-5 parallax-effect rounded-lg"
+          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-4 parallax-effect rounded-lg"
         >
           <Link
             to={'/'}
@@ -113,20 +38,45 @@ const PortfolioCC = () => {
           transitionSpeed={800}
           gyroscope={true}
           scale={1.01}
-          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-5 parallax-effect rounded-lg"
+          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-4 parallax-effect rounded-lg"
         >
           <Link
             to={'/'}
             className="relative flexStart w-full innerEffect rounded-lg"
           >
             <img
-              src="/images/workPort/bid-beyond.png"
+              src="/images/workPort/cc-dove.png"
+              className="img-fluid"
+              alt=""
+            />
+            <div className="absolute text-black p-8 flex">
+              <h2 className="text-3xl font-monaBold">
+                DOVE - Even Tone Campaign
+              </h2>
+            </div>
+          </Link>
+        </Tilt>
+
+        <Tilt
+          tiltMaxAngleX={3}
+          tiltMaxAngleY={3}
+          transitionSpeed={800}
+          gyroscope={true}
+          scale={1.01}
+          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-4 parallax-effect rounded-lg"
+        >
+          <Link
+            to={'/'}
+            className="relative flexStart w-full innerEffect rounded-lg"
+          >
+            <img
+              src="/images/workPort/cc-effy.png"
               className="img-fluid"
               alt=""
             />
             <div className="absolute text-white p-8 flex">
               <h2 className="text-3xl font-monaBold">
-                BEYOND - Boost your Progression
+                EFFY - Supporting your Energy Renovation Journey
               </h2>
             </div>
           </Link>
@@ -138,20 +88,20 @@ const PortfolioCC = () => {
           transitionSpeed={800}
           gyroscope={true}
           scale={1.01}
-          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-5 parallax-effect rounded-lg"
+          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-4 parallax-effect rounded-lg"
         >
           <Link
             to={'/'}
             className="relative flexStart w-full innerEffect rounded-lg"
           >
             <img
-              src="/images/workPort/bid-damor.png"
+              src="/images/workPort/cc-icecream.png"
               className="img-fluid"
               alt=""
             />
-            <div className="absolute text-primary p-8 flex">
+            <div className="absolute text-white p-8 flex">
               <h2 className="text-3xl font-monaBold">
-                Damore - Luxurious Brand Identity Design
+                Grom &amp; Talenti - The Italian Gelato Delight
               </h2>
             </div>
           </Link>
@@ -163,20 +113,20 @@ const PortfolioCC = () => {
           transitionSpeed={800}
           gyroscope={true}
           scale={1.01}
-          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-5 parallax-effect rounded-lg"
+          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-4 parallax-effect rounded-lg"
         >
           <Link
             to={'/'}
             className="relative flexStart w-full innerEffect rounded-lg"
           >
             <img
-              src="/images/workPort/fnLushTomatoSocialMM.png"
+              src="/images/workPort/cc-iill.png"
               className="img-fluid"
               alt=""
             />
-            <div className="absolute text-gray-600 p-8 flex">
+            <div className="absolute text-white p-8 flex">
               <h2 className="text-3xl font-monaBold">
-                SHOPCO - Every Bite, Feels Right
+                IIL - Hollow Structural Section
               </h2>
             </div>
           </Link>
@@ -188,20 +138,95 @@ const PortfolioCC = () => {
           transitionSpeed={800}
           gyroscope={true}
           scale={1.01}
-          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-5 parallax-effect rounded-lg"
+          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-4 parallax-effect rounded-lg"
         >
           <Link
             to={'/'}
             className="relative flexStart w-full innerEffect rounded-lg"
           >
             <img
-              src="/images/workPort/wdd-shopco.png"
+              src="/images/workPort/cc-oudsire.png"
               className="img-fluid"
               alt=""
             />
-            <div className="absolute text-slate-700 p-8 flex">
+            <div className="absolute text-white p-8 flex">
               <h2 className="text-3xl font-monaBold">
-                SHOPCO - Find clothes that match your style
+                Ajmal Perfumes - OUDESIRE Launch
+              </h2>
+            </div>
+          </Link>
+        </Tilt>
+
+        <Tilt
+          tiltMaxAngleX={3}
+          tiltMaxAngleY={3}
+          transitionSpeed={800}
+          gyroscope={true}
+          scale={1.01}
+          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-4 parallax-effect rounded-lg"
+        >
+          <Link
+            to={'/'}
+            className="relative flexStart w-full innerEffect rounded-lg"
+          >
+            <img
+              src="/images/workPort/cc-yap1.png"
+              className="img-fluid"
+              alt=""
+            />
+            <div className="absolute text-white p-8 flex">
+              <h2 className="text-3xl font-monaBold">
+                YAP - Unlock Surprises with Every Purchase
+              </h2>
+            </div>
+          </Link>
+        </Tilt>
+
+        <Tilt
+          tiltMaxAngleX={3}
+          tiltMaxAngleY={3}
+          transitionSpeed={800}
+          gyroscope={true}
+          scale={1.01}
+          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-4 parallax-effect rounded-lg"
+        >
+          <Link
+            to={'/'}
+            className="relative flexStart w-full innerEffect rounded-lg"
+          >
+            <img
+              src="/images/workPort/cc-thandhai.png"
+              className="img-fluid"
+              alt=""
+            />
+            <div className="absolute text-white p-8 flex">
+              <h2 className="text-3xl font-monaBold">
+                Fruit Nation - Product Launch Campaign
+              </h2>
+            </div>
+          </Link>
+        </Tilt>
+
+        <Tilt
+          tiltMaxAngleX={3}
+          tiltMaxAngleY={3}
+          transitionSpeed={800}
+          gyroscope={true}
+          scale={1.01}
+          className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-4 parallax-effect rounded-lg"
+        >
+          <Link
+            to={'/'}
+            className="relative flexStart w-full innerEffect rounded-lg"
+          >
+            <img
+              src="/images/workPort/cc-red.png"
+              className="img-fluid"
+              alt=""
+            />
+            <div className="absolute text-white p-8 flex">
+              <h2 className="text-3xl font-monaBold">
+                River Mall - Awareness Campaign
               </h2>
             </div>
           </Link>

@@ -3,6 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import AllPortfolio from './AllPortfolio';
 import PortfolioCC from './PortfolioCC';
+import PortfolioBID from './PortfolioBID';
+import PortfolioSMM from './PortfolioSMM';
+import PortfolioPD from './PortfolioPD';
+import PortfolioWDD from './PortfolioWDD';
+import PortfolioAppDD from './PortfolioAppDD';
 
 const tabs = [
   { id: 'allPortfolio', title: 'All Portfolio' },
@@ -18,6 +23,11 @@ const TabContent = ({ id }) => {
   const content = {
     allPortfolio: <AllPortfolio />,
     creativeCampaign: <PortfolioCC />,
+    brandIdentity: <PortfolioBID />,
+    socialMM: <PortfolioSMM />,
+    webDD: <PortfolioWDD />,
+    appDD: <PortfolioAppDD />,
+    presentationDesign: <PortfolioPD />,
   };
 
   return (
