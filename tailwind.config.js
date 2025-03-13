@@ -6,12 +6,13 @@ export default {
       screens: {
         sm: '640px',
         lg: '1024px',
-        macbook: '1744px',
+        macbook: '1724px',
         imac: '1887px',
         samsung: '2297px',
       },
       colors: { primary: '#0000ff', kala: '#000444' },
       fontFamily: {
+        monaLight: ['Mona-Sans-Light', 'light'],
         monaRegular: ['Mona-Sans-Regular', 'regular'],
         monaMedium: ['Mona-Sans-Medium', 'medium'],
         monaSemibold: ['Mona-Sans-Semibold', 'semibold'],

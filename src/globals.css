@@ -15,6 +15,10 @@
   src: url('./assets/fonts/Mona-Sans-Regular.ttf') format('truetype');
 }
 @font-face {
+  font-family: 'Mona-Sans-Light';
+  src: url('./assets/fonts/Mona-Sans-Light.ttf') format('truetype');
+}
+@font-face {
   font-family: 'Mona-Sans-SemiBold';
   src: url('./assets/fonts/Mona-Sans-SemiBold.ttf') format('truetype');
 }
@@ -45,6 +49,10 @@
   }
 }
 
+.monaLight {
+  font-family: 'Mona-Sans-Light';
+  font-weight: 300;
+}
 .monaRegular {
   font-family: 'Mona-Sans-Regular';
   font-weight: 400;
@@ -274,6 +282,46 @@
     @apply text-xl font-monaSemibold !important;
   }
 
+  .service-form-focus {
+    @apply outline-none ring-offset-transparent focus:ring-transparent focus:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+  }
+
+  .service-form {
+    @apply w-full gap-5 grid grid-cols-12;
+  }
+
+  .service-formItem {
+    @apply col-span-12 md:col-span-6 w-full flexStart flex-col space-y-1.5;
+  }
+
+  .service-formSelect {
+    @apply col-span-12 w-full flexStart flex-col space-y-1.5;
+  }
+
+  .service-formLabel {
+    @apply text-xl text-white font-monaMedium;
+  }
+
+  .service-formInput {
+    @apply bg-white/85 rounded-md service-form-focus py-2 px-4 w-full placeholder:text-gray-400;
+  }
+
+  .service-select {
+    @apply bg-white/85 rounded-md service-form-focus py-2.5 px-4 w-full text-xl;
+  }
+
+  .service-selectOpt {
+    @apply bg-white/85 rounded-md service-form-focus w-full text-lg;
+  }
+
+  .service-formBtn {
+    @apply col-span-12 md:col-span-4 w-full flexStart;
+  }
+
+  .service-button {
+    @apply rounded-full py-2 px-6 bg-white/85 text-primary font-monaSemibold text-xl uppercase;
+  }
+
   /* .sticked {
     @apply w-full lg:w-1/2 lg:sticky lg:top-28 !important;
   } */
@@ -398,6 +446,14 @@
     width: 17.5rem;
     height: 15.9rem;
     background-size: 97% 100%;
+  }
+}
+
+@media screen and (min-width: 1694px) {
+  .plansNumb48::before {
+    width: 23.75rem;
+    height: 13.5rem;
+    background-size: 96.75% 99%;
   }
 }
 

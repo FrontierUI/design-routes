@@ -32,12 +32,11 @@ const Pricing = () => {
         </div>
       </div>
 
-
       <div className="flexy w-full">
         <PricingTabs />
       </div>
 
-      <div className="relative bg-primary w-full h-full max-lg:mt-9 imac:mt-10 py-5 px-5 flexy flex-col space-y-5">
+      <div className="relative bg-primary w-full h-full max-lg:mt-9 imac:mt-10 py-5 lg:py-8 px-5 flexy flex-col space-y-5">
         <div className="relative flexy w-full h-full">
           <Marquee
             direction="right"

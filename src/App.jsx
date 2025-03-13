@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import Home from '@/pages/Home';
 import Pricing from '@/pages/Pricing';
 import About from '@/pages/About';
-import OurWork from '@/pages/OurWork';
+import OurWork from '@/pages/our-work/OurWork';
 import BookACall from '@/pages/BookACall';
 
 import SignUp from '@/pages/auth/sign-up';
