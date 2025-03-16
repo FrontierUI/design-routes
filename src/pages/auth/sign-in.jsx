@@ -3,20 +3,20 @@
 const SignIn = () => {
   return (
     <div className="relative flex min-h-screen">
-      <section className="bg-primary h-screen hidden lg:w-1/2 lg:flex items-center justify-center">
-        <div className="w-full">
-          <img src="/images/sin.png" className="img-fluid" alt="" />
+      <section className="bg-primary h-screen relative hidden lg:w-1/2 lg:flex items-center justify-center z-[2]">
+        <div
+          className="absolute top-0 w-full h-screen bg-cover bg-center bg-no-repeat z-[1]"
+          style={{ backgroundImage: 'url(/images/authE.svg)' }}
+        />
+        <div className="w-full relative top-16 p-12 z-[2]">
+          <img src="/images/login.svg" className="img-fluid" alt="" />
         </div>
       </section>
 
-      <section className="w-full h-full lg:w-1/2 relative flex flex-col items-center justify-center px-3.5 py-8 lg:py-0">
-        <div className="w-full flex flex-col items-start justify-start  space-y-5 lg:px-8 pt-48 lg:pt-28">
-          <div className="w-full hidden lg:block items-start justify-start">
-            <img
-              src="/images/routeslogo.svg"
-              className="img-fluid w-32 lg:w-40"
-              alt=""
-            />
+      <section className="w-full h-full lg:w-1/2 relative flex flex-col items-center justify-center px-5 py-8 lg:pb-0 lg:pt-20">
+        <div className="w-full flex flex-col items-center justify-start  space-y-5 lg:px-8 pt-40 lg:pt-32">
+          <div className="w-full flexStart pl-1">
+            <h1 className="font-monaBold text-4xl">Sign In</h1>
           </div>
 
           <form className="w-full flex flex-col items-center justify-center  space-y-5">

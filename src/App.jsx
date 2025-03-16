@@ -1,3 +1,4 @@
+import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import Navbar from '@/components/Navbar';
@@ -27,6 +28,7 @@ const App = () => {
   return (
     <main className="relative max-w-full w-full h-full overflow-x-hidden">
       <Navbar />
+
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="/pricing" element={<Pricing />} />

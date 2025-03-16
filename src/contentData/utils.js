@@ -20,16 +20,16 @@ import clock24 from '/images/icons/clock24.svg';
 import revisionHome from '/images/icons/revision.svg';
 // import dollar from '/images/icons/dollar.svg';
 
-import web1 from '../assets/images/Sequence01_4.mp4';
-import web2 from '../assets/images/Sequence01_5.mp4';
-import web3 from '../assets/images/Sequence01_6.mp4';
-import web4 from '../assets/images/Sequence01_7.mp4';
-import web5 from '../assets/images/SequenceNew.mp4';
+import web1 from '/images/Sequence01_4.mp4';
+import web2 from '/images/Sequence01_5.mp4';
+import web3 from '/images/Sequence01_6.mp4';
+import web4 from '/images/Sequence01_7.mp4';
+import web5 from '/images/SequenceNew.mp4';
 
-import lgSeq1 from '../assets/images/Sequence01.mp4';
-import lgSeq2 from '../assets/images/Sequence01_1.mp4';
-import lgSeq3 from '../assets/images/Sequence01_2.mp4';
-import lgSeq4 from '../assets/images/Sequence01_3.mp4';
+import lgSeq1 from '/images/Sequence01.mp4';
+import lgSeq2 from '/images/Sequence01_1.mp4';
+import lgSeq3 from '/images/Sequence01_2.mp4';
+import lgSeq4 from '/images/Sequence01_3.mp4';
 
 import air from '/images/clientLogo/workair.png';
 import asc from '/images/clientLogo/workasc.png';

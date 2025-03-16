@@ -40,7 +40,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-slate-900 overflow-x-hidden font-monaRegular;
+    @apply bg-white text-slate-900 overflow-x-hidden font-monaRegular scroll-smooth;
   }
 
   p,
@@ -84,16 +84,6 @@
 
 .borderRad1 {
   border-radius: 1rem !important;
-}
-
-@media screen and (max-width: 640px) {
-  .bgPrimSm {
-    height: 90svh !important;
-  }
-
-  .marginT2r {
-    margin-top: 2rem;
-  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -310,8 +300,8 @@
     @apply bg-white/85 rounded-md service-form-focus py-2.5 px-4 w-full text-xl;
   }
 
-  .service-selectOpt {
-    @apply bg-white/85 rounded-md service-form-focus w-full text-lg;
+  .service-select .service-selectOpt {
+    @apply bg-white/75 rounded-md service-form-focus w-full text-lg text-gray-900/85;
   }
 
   .service-formBtn {
@@ -319,7 +309,7 @@
   }
 
   .service-button {
-    @apply rounded-full py-2 px-6 bg-white/85 text-primary font-monaSemibold text-xl uppercase;
+    @apply rounded-full py-2 px-6 bg-white/85 text-primary font-monaSemibold text-xl uppercase transitAll scal105;
   }
 
   /* .sticked {
