@@ -13,7 +13,7 @@ const ServicesForm = () => {
 
       <div className="flexy relative w-full h-full lg:py-6 px-5 lg:px-12">
         <div className="w-full h-full grid grid-cols-12 gap-10">
-          <div className="col-span-12 lg:col-span-6 relative flexStart flex-col w-4/5 md:w-full space-y-5 lg:space-y-12 text-white">
+          <div className="col-span-12 lg:col-span-6 relative flexStart flex-col w-4/5 sm:w-full space-y-5 lg:space-y-12 text-white">
             <div className="flexStart flex-col space-y-5 w-full">
               <h3 className="font-monaSemibold text-2xl">Connect with Us</h3>
               <div className="flexStart flex-col leading-loose">
@@ -62,7 +62,7 @@ const ServicesForm = () => {
             </Link>
           </div>
 
-          <div className="col-span-12 lg:col-span-6 relative w-4/5 md:w-full h-full">
+          <div className="col-span-12 lg:col-span-6 relative w-4/5 sm:w-full h-full">
             <form className="service-form">
               <div className="service-formItem">
                 <label className="service-formLabel">Full Name</label>

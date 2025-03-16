@@ -1,33 +1,11 @@
-// import React from 'react';
-
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player';
 
-import vid from '/images/860x500.mp4';
 import LogoMarquee from './LogoMarquee';
-// import Video from './Video';
 
-import {
-  useInView,
-  useTypewriterEffect,
-  useCounterEffect,
-  usePageLoader,
-} from '../contentData/hooks';
+import vid from '/images/860x500.mp4';
 
 const Hero = () => {
-  // let vidStyles = 'rounded-2xl';
-
-  // const loading = usePageLoader();
-
-  const [typeRef, typeInView] = useInView();
-  const title = useTypewriterEffect('Design That Delivers', 200, typeInView);
-
-  // const [counterRef, counterInView] = useInView();
-  // const projects = useCounterEffect(4195, 2000, counterInView);
-  // const rating = useCounterEffect(4.9, 2000, counterInView);
-  // const success = useCounterEffect(97, 2000, counterInView);
-
   return (
     <section className="relative w-full h-full z-[1]">
       <div className="relative w-full h-full flexy flex-col">

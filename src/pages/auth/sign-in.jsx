@@ -1,4 +1,4 @@
-// import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SignIn = () => {
   return (
@@ -14,7 +14,7 @@ const SignIn = () => {
       </section>
 
       <section className="w-full h-full lg:w-1/2 relative flex flex-col items-center justify-center px-5 py-8 lg:pb-0 lg:pt-20">
-        <div className="w-full flex flex-col items-center justify-start  space-y-5 lg:px-8 pt-40 lg:pt-32">
+        <div className="w-full flex flex-col items-center justify-start  space-y-5 lg:px-8 pt-28 lg:pt-5 lapy:pt-16">
           <div className="w-full flexStart pl-1">
             <h1 className="font-monaBold text-4xl">Sign In</h1>
           </div>
@@ -36,6 +36,39 @@ const SignIn = () => {
                 placeholder="Enter Your Password"
               />
             </div>
+            <div className="form-forget">
+              <div className="flexy gap-x-1">
+                <input type="checkbox" />
+                <span className="text-[15px]">Remember me</span>
+              </div>
+              <Link
+                to={'/auth/forgot-password'}
+                className="flex text-primary font-monaSemibold"
+              >
+                Forget Password
+              </Link>
+            </div>
+
+            <div className="form-oauth">
+              <div className="form-oauthLabel">
+                <hr className="form-lhr" />
+                <span className="text-md text-slate-600">
+                  Or Sign in with Google
+                </span>
+                <hr className="form-hr" />
+              </div>
+
+              <Link to={'/'} className="form-oauthBtn">
+                <img
+                  src="/images/googleAuth.svg"
+                  className="img-fluid"
+                  width={40}
+                  alt=""
+                />
+                <span className="text-lg font-medium">Sign in with Google</span>
+              </Link>
+            </div>
+
             <div className="w-full flexy">
               <button
                 type="submit"
@@ -45,6 +78,13 @@ const SignIn = () => {
               </button>
             </div>
           </form>
+
+          <div className="flexy gap-x-2 w-full">
+            <span>Don't have an account?</span>
+            <Link to={'/auth/sign-up'} className="text-primary font-semibold">
+              Sign Up
+            </Link>
+          </div>
         </div>
       </section>
     </div>

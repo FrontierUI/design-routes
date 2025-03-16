@@ -240,6 +240,30 @@
     @apply flex w-full h-[78px] flex-col justify-center rounded-lg border border-[#F2F5F9] px-4 py-2 shadow-drop-1 space-y-2 !important;
   }
 
+  .form-oauth {
+    @apply flexy flex-col relative justify-center w-full space-y-2;
+  }
+
+  .form-lhr {
+    @apply hidden md:block absolute left-0 bg-slate-200 h-[1px] w-[34%];
+  }
+
+  .form-hr {
+    @apply hidden md:block absolute right-0 bg-slate-200 h-[1px] w-[34%];
+  }
+
+  .form-oauthLabel {
+    @apply flexy gap-x-3 w-full relative;
+  }
+
+  .form-oauthBtn {
+    @apply flexy gap-x-3 w-full lg:w-4/5 h-full rounded-full border border-slate-300 cursor-pointer p-1;
+  }
+
+  .form-forget {
+    @apply flex items-center justify-between w-full px-2;
+  }
+
   .form-input-focus {
     @apply outline-none ring-offset-transparent focus:ring-transparent focus:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
   }

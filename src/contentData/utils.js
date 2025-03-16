@@ -118,11 +118,7 @@ import moneyBack from '/images/icons/moneyBack.svg';
 import cancel from '/images/icons/cancel.svg';
 import middle from '/images/icons/middle.svg';
 
-//
-
 import moneyReturn from '/images/icons/moneyReturn.svg';
-
-//
 
 import fixedRat from '/images/icons/fixedRate.png';
 import unlimitedReq from '/images/icons/UnlimitedReq.svg';
@@ -131,8 +127,6 @@ import sameday from '/images/icons/sameday.svg';
 import proDesigner from '/images/icons/ProDesigners.svg';
 import designMatch from '/images/icons/DesignerMatch.svg';
 
-//
-
 import visualDev from '/images/icons/VisualDev.svg';
 import posmAdapt from '/images/icons/POSMAdapt.svg';
 import digiAds from '/images/icons/DigitalAds.svg';
@@ -140,15 +134,11 @@ import motionGraph from '/images/icons/GraphicVideo.svg';
 import emailDesign from '/images/icons/EmailDesign.svg';
 import PresDesign from '/images/icons/PresDesign.svg';
 
-//
-
 import motionAds from '/images/icons/MotionAds.svg';
 import staticImg from '/images/icons/staticImg.svg';
 import augmentedReality from '/images/icons/augmentedReality.svg';
 
 import clientAvatar from '/images/icons/avatar.png';
-
-//
 
 import brandDev from '/images/icons/BrandDev.svg';
 import brandDesign from '/images/icons/BrandDevDesign.svg';
