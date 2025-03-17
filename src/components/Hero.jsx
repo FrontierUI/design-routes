@@ -5,6 +5,8 @@ import LogoMarquee from './LogoMarquee';
 
 import vid from '/images/860x500.mp4';
 
+import Typewriter from './Typewriter';
+
 const Hero = () => {
   return (
     <section className="relative w-full h-full z-[1]">
@@ -19,7 +21,11 @@ const Hero = () => {
                 </h4>
               </div>
               <h1 className="text-5xl xl:text-6xl uppercase font-monaBold">
-                Design That Delivers
+                {/* Design That Delivers */}
+                <Typewriter
+                  text="Design That Delivers"
+                  speed={150}
+                />
               </h1>
               <p className="text-md">
                 We are the extension of your creative team

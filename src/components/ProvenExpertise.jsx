@@ -1,6 +1,7 @@
 // import React from 'react';
 
 import { provenExpert } from '@/contentData/utils';
+import Counter from './Counter';
 
 const ProvenExpertise = () => {
   return (
