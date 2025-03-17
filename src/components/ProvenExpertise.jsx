@@ -16,7 +16,15 @@ const ProvenExpertise = () => {
                 <h2 className="text-xl font-monaSemibold uppercase">
                   {prov.title}
                 </h2>
-                <h1 className="text-5xl font-monaBold">{prov.numbering}</h1>
+                {/* <h1 className="text-5xl font-monaBold">{prov.numbering}</h1> */}
+                <h1 className="text-5xl font-monaBold">
+                  <Counter
+                    start={0}
+                    end={prov.numbering}
+                    duration={2000}
+                    decimals={prov.numbering.toString().includes(".") ? (prov.numbering.toString().split('.'))[1].length : 0}
+                  />
+                </h1>
                 <p className="text-md mb-2">{prov.desc}</p>
               </div>
             </div>
