@@ -4,14 +4,14 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-import Home from '@/pages/Home';
-import Pricing from '@/pages/Pricing';
-import About from '@/pages/About';
-import OurWork from '@/pages/our-work/OurWork';
-import BookACall from '@/pages/BookACall';
+// import Home from '@/pages/Home';
+// import Pricing from '@/pages/Pricing';
+// import About from '@/pages/About';
+// import OurWork from '@/pages/our-work/OurWork';
+// import BookACall from '@/pages/BookACall';
 
-import SignUp from '@/pages/auth/sign-up';
-import SignIn from '@/pages/auth/sign-in';
+// import SignUp from '@/pages/auth/sign-up';
+// import SignIn from '@/pages/auth/sign-in';
 
 // import CreativeCampaigns from '@/pages/products/CreativeCampaign';
 // import BrandIdentiyDesign from '@/pages/products/BrandIdentiyDesign';
@@ -25,6 +25,15 @@ import SignIn from '@/pages/auth/sign-in';
 // import SME from '@/pages/verticals/SME';
 
 // Lazy-loaded components
+const Home = lazy(() => import('@/pages/Home'));
+const Pricing = lazy(() => import('@/pages/Pricing'));
+const About = lazy(() => import('@/pages/About'));
+const OurWork = lazy(() => import('@/pages/our-work/OurWork'));
+const BookACall = lazy(() => import('@/pages/BookACall'));
+
+const SignUp = lazy(() => import('@/pages/auth/sign-up'));
+const SignIn = lazy(() => import('@/pages/auth/sign-in'));
+
 const CreativeCampaigns = lazy(() => import('@/pages/products/CreativeCampaign'));
 const BrandIdentiyDesign = lazy(() => import('@/pages/products/BrandIdentiyDesign'));
 const SocialMediaManagement = lazy(() => import('@/pages/products/SocialMediaManagement'));
