@@ -8,7 +8,7 @@ const SignUp = () => {
           className="absolute top-0 w-full h-full bg-cover bg-center bg-no-repeat z-[1]"
           style={{ backgroundImage: 'url(/images/authE.svg)' }}
         />
-        <div className="w-full relative top-8 lapy:top-10 p-12 z-[2]">
+        <div className="w-full relative top-0 lapy:top-10 p-12 z-[2]">
           <img src="/images/regi.svg" className="img-fluid" alt="" />
         </div>
       </section>
