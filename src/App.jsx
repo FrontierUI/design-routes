@@ -4,56 +4,25 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-// import Home from '@/pages/Home';
-// import Pricing from '@/pages/Pricing';
-// import About from '@/pages/About';
-// import OurWork from '@/pages/our-work/OurWork';
-// import BookACall from '@/pages/BookACall';
+import Home from '@/pages/Home';
+import Pricing from '@/pages/Pricing';
+import About from '@/pages/About';
+import OurWork from '@/pages/our-work/OurWork';
+import BookACall from '@/pages/BookACall';
 
-// import SignUp from '@/pages/auth/sign-up';
-// import SignIn from '@/pages/auth/sign-in';
+import SignUp from '@/pages/auth/sign-up';
+import SignIn from '@/pages/auth/sign-in';
 
-// import CreativeCampaigns from '@/pages/products/CreativeCampaign';
-// import BrandIdentiyDesign from '@/pages/products/BrandIdentiyDesign';
-// import SocialMediaManagement from '@/pages/products/SocialMediaManagement';
-// import PresentationDesign from '@/pages/products/PresentationDesign';
-// import WebDesignDev from '@/pages/products/WebDesignDev';
-// import AppDesignDev from '@/pages/products/AppDesignDev';
+import CreativeCampaigns from '@/pages/products/CreativeCampaign';
+import BrandIdentiyDesign from '@/pages/products/BrandIdentiyDesign';
+import SocialMediaManagement from '@/pages/products/SocialMediaManagement';
+import PresentationDesign from '@/pages/products/PresentationDesign';
+import WebDesignDev from '@/pages/products/WebDesignDev';
+import AppDesignDev from '@/pages/products/AppDesignDev';
 
-// import ForAgencies from '@/pages/verticals/ForAgencies';
-// import ForBrands from '@/pages/verticals/ForBrands';
-// import SME from '@/pages/verticals/SME';
-
-// Essentials Pages
-const Home = lazy(() => import('@/pages/Home'));
-const Pricing = lazy(() => import('@/pages/Pricing'));
-const About = lazy(() => import('@/pages/About'));
-const OurWork = lazy(() => import('@/pages/our-work/OurWork'));
-const BookACall = lazy(() => import('@/pages/BookACall'));
-
-const SignUp = lazy(() => import('@/pages/auth/sign-up'));
-const SignIn = lazy(() => import('@/pages/auth/sign-in'));
-
-// Products
-const CreativeCampaigns = lazy(() =>
-  import('@/pages/products/CreativeCampaign')
-);
-const BrandIdentiyDesign = lazy(() =>
-  import('@/pages/products/BrandIdentiyDesign')
-);
-const SocialMediaManagement = lazy(() =>
-  import('@/pages/products/SocialMediaManagement')
-);
-const PresentationDesign = lazy(() =>
-  import('@/pages/products/PresentationDesign')
-);
-const WebDesignDev = lazy(() => import('@/pages/products/WebDesignDev'));
-const AppDesignDev = lazy(() => import('@/pages/products/AppDesignDev'));
-
-// Verticals
-const ForAgencies = lazy(() => import('@/pages/verticals/ForAgencies'));
-const ForBrands = lazy(() => import('@/pages/verticals/ForBrands'));
-const SME = lazy(() => import('@/pages/verticals/SME'));
+import ForAgencies from '@/pages/verticals/ForAgencies';
+import ForBrands from '@/pages/verticals/ForBrands';
+import SME from '@/pages/verticals/SME';
 
 const LoadingFallback = () => {
   return (

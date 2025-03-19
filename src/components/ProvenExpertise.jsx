@@ -1,7 +1,8 @@
 // import React from 'react';
 
 import { provenExpert } from '@/contentData/utils';
-import CounterNumbers from './CounterNumbers';
+
+import CounterNumbers from '@/components/CounterNumbers';
 
 const ProvenExpertise = () => {
   return (
@@ -17,20 +18,16 @@ const ProvenExpertise = () => {
                 <h2 className="text-xl font-monaSemibold uppercase">
                   {prov.title}
                 </h2>
-
-                <h1 className="text-5xl font-monaBold">
-                  <CounterNumbers
-                    start={0}
-                    end={prov.numbering}
-                    duration={2000}
-                    decimals={
-                      prov.numbering.toString().includes('.')
-                        ? prov.numbering.toString().split('.')[1].length
-                        : 0
-                    }
-                  />
-                </h1>
-
+                <CounterNumbers
+                  start={0}
+                  end={prov.numbering}
+                  duration={2000}
+                  decimals={
+                    prov.numbering.toString().includes('.')
+                      ? prov.numbering.toString().split('.')[1].length
+                      : 0
+                  }
+                />
                 <p className="text-md mb-2">{prov.desc}</p>
               </div>
             </div>

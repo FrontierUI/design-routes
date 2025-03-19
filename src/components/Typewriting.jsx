@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const Typewriter = ({ text, speed = 100 }) => {
-  const containerRef = useRef(null);
-  const typingRef = useRef(null);
-
+const Typewriting = ({ text, speed = 100 }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isVisible, setIsVisible] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
+  const containerRef = useRef(null);
+  const typingRef = useRef(null);
 
+  // Parse the text with tags into plain text and formatted parts
   const parseText = (input) => {
     const parts = [];
     let plainText = '';
@@ -22,7 +22,6 @@ const Typewriter = ({ text, speed = 100 }) => {
         parts.push({ text: beforeText });
         plainText += beforeText;
       }
-
       parts.push({ text: match[2], tag: match[1] });
       plainText += match[2];
       currentIndex = regex.lastIndex;
@@ -44,20 +43,24 @@ const Typewriter = ({ text, speed = 100 }) => {
       (entries) => {
         const entry = entries[0];
         if (entry.isIntersecting) {
+          // Element is entering viewport
           if (!isVisible) {
             setIsVisible(true);
             if (isCompleted) {
+              // Reset and prepare to restart
               setDisplayedText('');
               setIsCompleted(false);
             }
           }
         } else if (isCompleted) {
+          // Element is leaving viewport and animation is complete
           setIsVisible(false);
-          setDisplayedText('');
+          setDisplayedText(''); // Reset to empty when out of view
         }
       },
       { threshold: 0.5 }
     );
+
     if (containerRef.current) observer.observe(containerRef.current);
     return () => {
       if (containerRef.current) observer.unobserve(containerRef.current);
@@ -117,4 +120,4 @@ const Typewriter = ({ text, speed = 100 }) => {
   );
 };
 
-export default Typewriter;
+export default Typewriting;

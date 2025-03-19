@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
-import LogoMarquee from './LogoMarquee';
+import LogoMarquee from '@/components/LogoMarquee';
+import Typewriting from '@/components/Typewriting';
 
 import vid from '/images/860x500.mp4';
-import Typewriter from './Typewriter';
 
 const Hero = () => {
   return (
@@ -19,9 +19,7 @@ const Hero = () => {
                   Full service design agency
                 </h4>
               </div>
-              <h1 className="text-5xl xl:text-6xl font-monaBold">
-                <Typewriter text={'Design That Delivers'} speed={300} />
-              </h1>
+              <Typewriting text="Design That Delivers" speed={300} />
               <p className="text-md">
                 We are the extension of your creative team
               </p>
