@@ -4,30 +4,14 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-// import Home from '@/pages/Home';
-// import Pricing from '@/pages/Pricing';
-// import About from '@/pages/About';
-// import OurWork from '@/pages/our-work/OurWork';
-// import BookACall from '@/pages/BookACall';
-
 const Home = lazy(() => import('@/pages/Home'));
 const About = lazy(() => import('@/pages/About'));
 const Pricing = lazy(() => import('@/pages/Pricing'));
 const OurWork = lazy(() => import('@/pages/OurWork'));
 const BookACall = lazy(() => import('@/pages/BookACall'));
 
-// import SignUp from '@/pages/auth/sign-up';
-// import SignIn from '@/pages/auth/sign-in';
-
 const SignIn = lazy(() => import('@/pages/auth/sign-in'));
 const SignUp = lazy(() => import('@/pages/auth/sign-up'));
-
-// import CreativeCampaigns from '@/pages/products/CreativeCampaign';
-// import BrandIdentiyDesign from '@/pages/products/BrandIdentiyDesign';
-// import SocialMediaManagement from '@/pages/products/SocialMediaManagement';
-// import PresentationDesign from '@/pages/products/PresentationDesign';
-// import WebDesignDev from '@/pages/products/WebDesignDev';
-// import AppDesignDev from '@/pages/products/AppDesignDev';
 
 const CreativeCampaigns = lazy(() =>
   import('@/pages/products/CreativeCampaigns')
@@ -43,10 +27,6 @@ const PresentationDesign = lazy(() =>
 const SocialMediaManagement = lazy(() =>
   import('@/pages/products/SocialMediaManagement')
 );
-
-// import ForAgencies from '@/pages/verticals/ForAgencies';
-// import ForBrands from '@/pages/verticals/ForBrands';
-// import SME from '@/pages/verticals/SME';
 
 const SME = lazy(() => import('@/pages/verticals/SME'));
 const ForBrands = lazy(() => import('@/pages/verticals/ForBrands'));
