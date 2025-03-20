@@ -14,7 +14,7 @@ const SignIn = lazy(() => import('@/pages/auth/sign-in'));
 const SignUp = lazy(() => import('@/pages/auth/sign-up'));
 
 const CreativeCampaigns = lazy(() =>
-  import('@/pages/products/CreativeCampaigns')
+  import('@/pages/products/CreativeCampaign')
 );
 const AppDesignDev = lazy(() => import('@/pages/products/AppDesignDev'));
 const BrandIdentiyDesign = lazy(() =>
