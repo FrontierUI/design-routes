@@ -101,7 +101,7 @@ const SignUp = () => {
           style={{ backgroundImage: 'url(/images/authE.svg)' }}
         />
         <div className="w-full relative top-0 lapy:top-10 p-12 z-[2]">
-          <img src="/images/regi.svg" className="img-fluid" alt="" />
+          <img src="/images/register.png" className="img-fluid" alt="" />
         </div>
       </section>
 

@@ -72,7 +72,7 @@ const ForgotPassword = () => {
           style={{ backgroundImage: 'url(/images/authE.svg)' }}
         />
         <div className="w-full relative top-16 p-12 z-[2]">
-          <img src="/images/login.svg" className="img-fluid" alt="" />
+          <img src="/images/forgetPassword.png" className="img-fluid" alt="" />
         </div>
       </section>
 
