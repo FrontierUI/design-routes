@@ -25,12 +25,14 @@ const PortfolioPage = () => {
   return (
     <div className="relative w-full h-full caseStudies">
       <div className="flexy w-full h-full py-6 px-5 lg:px-12">
-        <div className="flexy w-full relative mt-24">
-          <img
-            src="/images/casestudyPort/SMM/Mazito/Mainimageapp.png"
-            className="img-fluid w-full h-full object-cover rounded-lg"
-            alt=""
-          />
+        <div className="flexy w-full h-full rounded-lg relative mt-24 overflow-hidden">
+          <div className="flexy w-full h-full transitAll scal102 rounded-lg">
+            <img
+              src="/images/casestudyPort/SMM/Mazito/Mainimageapp.png"
+              className="img-fluid w-full h-full object-cover rounded-lg"
+              alt=""
+            />
+          </div>
         </div>
       </div>
 
