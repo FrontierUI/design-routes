@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import PortfolioPage from './pages/PortfolioPage';
 
 const Home = lazy(() => import('@/pages/Home'));
 const About = lazy(() => import('@/pages/About'));
@@ -96,6 +97,8 @@ const App = () => {
           <Route path="/auth/sign-up" element={<SignUp />} />
           <Route path="/auth/sign-in" element={<SignIn />} />
           <Route path="/verify/:token" element={<Verify />} />
+
+          <Route path="/portfolio-page" element={<PortfolioPage />} />
         </Routes>
 
         <Footer />
@@ -105,3 +108,5 @@ const App = () => {
 };
 
 export default App;
+
+// portfolio-page

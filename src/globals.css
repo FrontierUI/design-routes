@@ -153,6 +153,10 @@
     @apply transition-all duration-500 ease-in-out !important;
   }
 
+  .scal102 {
+    @apply transform hover:scale-[1.02] ease-in-out !important;
+  }
+
   .scal105 {
     @apply transform hover:scale-105 ease-in-out !important;
   }
@@ -226,6 +230,10 @@
 
   .portfolioMarquee {
     @apply relative max-lg:max-w-[21rem] lg:!max-w-[37rem] lg:h-full lg:min-h-[360px] lg:max-h-[380px] rounded-xl mx-2 overflow-hidden !important;
+  }
+
+  .routes-tag {
+    @apply text-sm border border-gray-600 text-gray-600 py-1 px-3 rounded-full transitAll scal102 cursor-pointer;
   }
 
   .body-1 {
