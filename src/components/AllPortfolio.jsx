@@ -76,7 +76,7 @@ const AllPortfolio = () => {
             />
             <div className="absolute text-white p-8 flex">
               <h2 className="text-3xl font-monaBold">
-                HNAK - A Beautiful Launch Story
+                HNAK - Enrich Your Space with Divine Sound
               </h2>
             </div>
           </Link>

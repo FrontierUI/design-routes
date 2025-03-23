@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import PortfolioPage from './pages/PortfolioPage';
 
 const Home = lazy(() => import('@/pages/Home'));
 const About = lazy(() => import('@/pages/About'));
@@ -11,9 +10,11 @@ const Pricing = lazy(() => import('@/pages/Pricing'));
 const OurWork = lazy(() => import('@/pages/OurWork'));
 const BookACall = lazy(() => import('@/pages/BookACall'));
 
+const PortfolioPage = lazy(() => import('@/pages/PortfolioPage'));
+
 const SignIn = lazy(() => import('@/pages/auth/sign-in'));
 const SignUp = lazy(() => import('@/pages/auth/sign-up'));
-const Verify = lazy(() => import('./pages/auth/Verify'));
+const Verify = lazy(() => import('@/pages/auth/Verify'));
 
 const CreativeCampaigns = lazy(() =>
   import('@/pages/products/CreativeCampaign')
@@ -108,5 +109,3 @@ const App = () => {
 };
 
 export default App;
-
-// portfolio-page

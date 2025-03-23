@@ -56,7 +56,7 @@ const PortfolioPage = () => {
 
             <div className="sticky-child controls-panel">
               <div className="content-wrapper w-full md:static">
-                <div className="lg:w-11/12 text-[16.5px]">
+                <div className="lg:w-11/12 flex flex-col space-y-2 text-[16.5px]">
                   <p className="leading-snug">
                     We manage the social media presence for Mazito, a vibrant
                     pet community platform. Our approach focuses on fostering a
@@ -68,6 +68,13 @@ const PortfolioPage = () => {
                     maintaining a fun and welcoming brand voice. The goal is to
                     position Mazito as the go-to platform for pet owners to
                     connect, share experiences, and celebrate their pets.
+                  </p>
+
+                  <p>
+                    The distinctive logo and refined packaging highlight the
+                    artisanal quality of the chocolates, positioning 250 F as a
+                    top choice for chocolate lovers and ensuring it stands out
+                    in a competitive market.
                   </p>
                 </div>
               </div>
