@@ -888,7 +888,6 @@ export const portfolioCase = [
       'An old age home dedicated to providing compassionate care and support for elderly individuals. Our approach focuses on showcasing the warmth and community spirit of Caregiver, highlighting the various services and activities available to residents. Through heartwarming stories, testimonials from families, and informative content on elder care, we aim to create a sense of trust and connection with the audience. Our goal is to position Caregiver as a nurturing environment where seniors can thrive, while also fostering a supportive online community for families seeking quality care for their loved ones.',
 
     tags: ['UI/UX', 'Web Development', 'App Design'],
-
     headerImage: '/images/casestudyPort/Website/Wesavewith/Mainimage-min.png',
     bottomImg: '/images/casestudyPort/Website/Wesavewith/Mainimage-min.png',
 
