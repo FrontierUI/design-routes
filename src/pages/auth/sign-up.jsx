@@ -1,6 +1,98 @@
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Toast from '../../components/Toast';
+import axios from 'axios';
+import { getCookie, checkRole } from '../../func';
 
 const SignUp = () => {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const [toasts, setToasts] = useState([]);
+
+  useEffect(() => {
+    if (getCookie('token') !== undefined && getCookie('token') !== null) {
+      //user is already loggedin
+      if (checkRole(getCookie('token')) === 'admin')
+        navigate(`/dashboard`, { replace: true });
+      else navigate(`/dashboard`, { replace: true });
+    }
+  }, []);
+
+  const addToast = (type, message) => {
+    const id = Date.now();
+    setToasts((prev) => [...prev, { id, message, type }]);
+  };
+
+  const removeToast = (id) => {
+    setToasts((prev) => prev.filter((toast) => toast.id !== id));
+  };
+
+  const registerUser = (e) => {
+    e.preventDefault();
+
+    if (
+      email.trim() !== '' &&
+      password.trim() !== '' &&
+      username.trim() !== ''
+    ) {
+      const json = JSON.stringify({
+        name: username.trim(),
+        email: email.trim(),
+        password: password.trim(),
+      });
+
+      axios
+        .post(
+          `${import.meta.env.VITE_BASE_API}/api.php?action=register`,
+          JSON.stringify({ params: json }),
+          {
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+          }
+        )
+        .then((response) => {
+          if (response.data.success === 'true') {
+            // Replace handleMessage with addToast
+            addToast('success', response.data.message);
+
+            setTimeout(() => {
+              navigate(`/auth/sign-in`, { replace: true });
+            }, 3000);
+          } else {
+            // Replace handleMessage with addToast
+            addToast('error', response.data.message);
+          }
+        })
+        .catch((error) => {
+          console.error(`Error: ${error}`);
+        });
+    } else {
+      if (
+        email.trim() === '' &&
+        password.trim() === '' &&
+        username.trim() === ''
+      )
+        // Replace handleMessage with addToast
+        addToast(
+          'error',
+          'Please provide username, email, and password to register'
+        );
+      else if (username.trim() === '')
+        // Replace handleMessage with addToast
+        addToast('error', 'Please provide username to register');
+      else if (email.trim() === '')
+        // Replace handleMessage with addToast
+        addToast('error', 'Please provide email to register');
+      else if (password.trim() === '')
+        // Replace handleMessage with addToast
+        addToast('error', 'Please provide password to register');
+    }
+  };
+
   return (
     <div className="flex min-h-screen relative">
       <section className="bg-primary lg:h-[110vh] lapy:h-screen relative hidden lg:w-1/2 lg:flex items-center justify-center z-[2]">
@@ -19,13 +111,27 @@ const SignUp = () => {
             <h1 className="font-monaBold text-4xl">Sign Up</h1>
           </div>
 
-          <form className="w-full flex flex-col items-center justify-center  space-y-5">
+          {toasts.map((toast) => (
+            <Toast
+              key={toast.id}
+              message={toast.message}
+              type={toast.type}
+              onClose={() => removeToast(toast.id)}
+            />
+          ))}
+
+          <form
+            className="w-full flex flex-col items-center justify-center  space-y-5"
+            onSubmit={registerUser}
+          >
             <div className="form-item w-full">
               <label className="form-label">Full Name</label>
               <input
                 type="text"
                 className="form-input"
                 placeholder="Enter Your Name"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <div className="form-item w-full">
@@ -34,6 +140,8 @@ const SignUp = () => {
                 type="email"
                 className="form-input"
                 placeholder="Enter Your Email Address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="form-item w-full">
@@ -42,6 +150,8 @@ const SignUp = () => {
                 type="password"
                 className="form-input"
                 placeholder="Enter Your Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
 
@@ -70,15 +180,15 @@ const SignUp = () => {
                 type="submit"
                 className="w-full lg:w-4/5 py-2.5 bord transitAll scal105 text-white bg-primary font-monaSemibold text-lg"
               >
-                Sign In
+                Sign Up
               </button>
             </div>
           </form>
 
           <div className="flexy gap-x-2 w-full">
-            <span>Don't have an account?</span>
-            <Link to={'/auth/sign-up'} className="text-primary font-semibold">
-              Sign Up
+            <span>Already have an account?</span>
+            <Link to={'/auth/sign-in'} className="text-primary font-semibold">
+              Sign In
             </Link>
           </div>
         </div>

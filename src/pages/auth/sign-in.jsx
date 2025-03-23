@@ -1,4 +1,10 @@
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import axios from 'axios';
+
+import { getCookie, setCookie, checkRole } from '../../func';
+
+import Toast from '../../components/Toast';
 
 // emails
 
@@ -12,6 +18,92 @@ import { Link } from 'react-router-dom';
 //  passw =--> g0:HO@=EYS
 
 const SignIn = () => {
+  const location = useLocation();
+
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [toasts, setToasts] = useState([]);
+
+  useEffect(() => {
+    if (getCookie('token') !== undefined && getCookie('token') !== null) {
+      //user is already loggedin
+      if (checkRole(getCookie('token')) === 'admin')
+        navigate(`/dashboard`, { replace: true });
+      else navigate(`/dashboard`, { replace: true });
+    }
+  }, []);
+
+  const addToast = (type, message) => {
+    const id = Date.now();
+    setToasts((prev) => [...prev, { id, message, type }]);
+  };
+
+  const removeToast = (id) => {
+    setToasts((prev) => prev.filter((toast) => toast.id !== id));
+  };
+
+  const validateUser = (e) => {
+    e.preventDefault();
+
+    if (email.trim() !== '' && password.trim() !== '') {
+      const json = JSON.stringify({
+        email: email.trim(),
+        password: password.trim(),
+      });
+
+      axios
+        .post(
+          `${import.meta.env.VITE_BASE_API}/api.php?action=login`,
+          JSON.stringify({ params: json }),
+          { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+        )
+        .then((response) => {
+          if (response.data.success === 'true') {
+            addToast('success', response.data.message);
+
+            setTimeout(() => {
+              if (typeof location.state?.from !== 'undefined') {
+                setCookie('token', response.data.token, 1);
+
+                window.localStorage.setItem('isLoggedIn', 'true');
+                window.localStorage.setItem(
+                  'loginSecret',
+                  response.data.sceret
+                );
+
+                navigate(location.state?.from, { replace: true });
+              } else {
+                setCookie('token', response.data.token, 1);
+                if (checkRole(response.data.token) === 'admin')
+                  navigate(`/dashboard`, { replace: true });
+                else navigate(`/dashboard`, { replace: true });
+
+                window.localStorage.setItem('isLoggedIn', 'true');
+                window.localStorage.setItem(
+                  'loginSecret',
+                  response.data.sceret
+                );
+              }
+            }, 2000);
+          } else {
+            addToast('error', response.data.message);
+          }
+        })
+        .catch((error) => {
+          console.error(`Error: ${error}`);
+        });
+    } else {
+      if (email.trim() === '' && password.trim() === '')
+        addToast('error', 'Please provide email and password to signin');
+      else if (email.trim())
+        addToast('error', 'Please provide email to signin');
+      else if (password.trim() === '')
+        addToast('error', 'Please provide password to signin');
+    }
+  };
+
   return (
     <div className="relative flex min-h-screen">
       <section className="bg-primary h-screen relative hidden lg:w-1/2 lg:flex items-center justify-center z-[2]">
@@ -30,13 +122,27 @@ const SignIn = () => {
             <h1 className="font-monaBold text-4xl">Sign In</h1>
           </div>
 
-          <form className="w-full flex flex-col items-center justify-center  space-y-5">
+          {toasts.map((toast) => (
+            <Toast
+              key={toast.id}
+              message={toast.message}
+              type={toast.type}
+              onClose={() => removeToast(toast.id)}
+            />
+          ))}
+
+          <form
+            className="w-full flex flex-col items-center justify-center  space-y-5"
+            onSubmit={validateUser}
+          >
             <div className="form-item w-full">
               <label className="form-label">Email Address</label>
               <input
                 type="email"
                 className="form-input"
                 placeholder="Enter Your Email Address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="form-item w-full">
@@ -45,6 +151,8 @@ const SignIn = () => {
                 type="password"
                 className="form-input"
                 placeholder="Enter Your Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="form-forget">

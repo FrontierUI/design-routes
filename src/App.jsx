@@ -10,6 +10,8 @@ const Pricing = lazy(() => import('@/pages/Pricing'));
 const OurWork = lazy(() => import('@/pages/OurWork'));
 const BookACall = lazy(() => import('@/pages/BookACall'));
 
+const Verify = lazy(() => import('./pages/auth/Verify'));
+const ResetPassword = lazy(() => import('./pages/auth/ResetPassword'));
 const SignIn = lazy(() => import('@/pages/auth/sign-in'));
 const SignUp = lazy(() => import('@/pages/auth/sign-up'));
 
