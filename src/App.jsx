@@ -12,7 +12,7 @@ const BookACall = lazy(() => import('@/pages/BookACall'));
 
 const SignIn = lazy(() => import('@/pages/auth/sign-in'));
 const SignUp = lazy(() => import('@/pages/auth/sign-up'));
-const Verify = lazy(() => import('@/pages/auth/verify'));
+const Verify = lazy(() => import('./pages/auth/Verify'));
 
 const CreativeCampaigns = lazy(() =>
   import('@/pages/products/CreativeCampaign')
