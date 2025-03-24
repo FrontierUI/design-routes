@@ -51,22 +51,22 @@ const About = () => {
       </div>
 
       <div className="count relative w-full h-full py-6">
-        <div className="w-full px-5 lg:px-12">
-          <div className="itemsStart lg:!justify-between flex-col lg:flex-row max-lg:gap-y-6 lg:gap-x-10">
-            <div className="relative founded flexStart flex-col space-y-4 lg:space-y-20 lg:pt-10 lg:max-w-[260px]">
-              <div className="flex flex-col items-start">
+        <div className="w-full lg:px-12">
+          <div className="flex items-center lg:items-start justify-center lg:!justify-between flex-col lg:flex-row max-lg:gap-y-6 lg:gap-x-10">
+            <div className="relative founded flex items-center md:items-start justify-center md:justify-start flex-col space-y-7 lg:space-y-10 lapy:space-y-20 lg:pt-10 lg:max-w-[260px]">
+              <div className="flex flex-col items-center lg:items-start">
                 <h3 className="font-monaBold text-3xl">Founded</h3>
                 <h1 className="font-filsonHeavy text-8xl">
                   <CounterNumbers start={0} end={2018} duration={2000} />
                 </h1>
               </div>
-              <div className="flex flex-col items-start">
+              <div className="flex flex-col items-center lg:items-start">
                 <h3 className="font-monaBold text-3xl">Clients</h3>
                 <h1 className="font-filsonHeavy text-8xl">
                   <CounterNumbers start={0} end={204} duration={2000} />
                 </h1>
               </div>
-              <div className="flex flex-col items-start">
+              <div className="flex flex-col items-center lg:items-start">
                 <h3 className="font-monaBold text-3xl">Projects</h3>
                 <h1 className="font-filsonHeavy text-8xl">
                   <CounterNumbers start={0} end={771} duration={2000} />
@@ -74,11 +74,11 @@ const About = () => {
               </div>
             </div>
 
-            <div className="relative w-full h-full flex items-center justify-center lg:items-end lg:justify-end transitAll scal102">
-              <div className="flexy w-full lg:w-[1100px] h-full max-h-full lg:max-w-[1120px] md:min-h-[30rem] md:max-h-min ">
+            <div className="relative w-full h-full flex items-center justify-center lg:items-end lg:justify-end">
+              <div className="flexy w-full lg:w-[950px] max-lg:w-[1050px] lapy:w-[1100px] h-full max-h-full max-lapy:max-w-[1150px] md:min-h-[30rem] transitAll scal102">
                 <img
                   src="/images/RoutesEIcons.png"
-                  className="img-fluid max-w-full min-h-full w-full h-full object-cover"
+                  className="img-fluid min-h-96 lg:min-h-full w-full h-full object-cover"
                   alt=""
                 />
               </div>
