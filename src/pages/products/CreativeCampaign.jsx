@@ -4,6 +4,7 @@ import Tilt from 'react-parallax-tilt';
 
 import { homePortFolioBot, homePortFolioUp } from '@/contentData/utils';
 
+import Typewriting from '@/components/Typewriting';
 import ComprehensiveCC from '@/components/ComprehensiveCC';
 import FormatMastery from '@/components/FormatMastery';
 import LogoMarquee from '@/components/LogoMarquee';
@@ -27,9 +28,12 @@ const CreativeCampaigns = () => {
         <div className="w-full  max-w-full items-center mx-auto px-5 lg:px-12">
           <div className="w-full flex flex-wrap items-center max-md:pt-24">
             <div className="w-full lg:w-1/2 lg:px-3">
-              <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-3 md:space-y-5 text-white">
+              <div className="w-full flex-col sm:max-w-md lg:max-w-xl macbook:max-w-2xl space-y-3 md:space-y-5 text-white">
                 <h1 className="font-monaBold text-5xl">
-                  Creative Campaign Design Product
+                  <Typewriting
+                    text="Creative Campaign Design Product"
+                    speed={150}
+                  />
                 </h1>
 
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
@@ -118,7 +122,10 @@ const CreativeCampaigns = () => {
                 </h3>
 
                 <h1 className="text-5xl font-monaBold">
-                  Ad creative for campaigns that perform
+                  <Typewriting
+                    text="Ad creative for campaigns that perform"
+                    speed={80}
+                  />
                 </h1>
 
                 <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">
@@ -164,7 +171,10 @@ const CreativeCampaigns = () => {
               MULTIFACETED SOLUTIONS
             </h3>
             <h1 className="text-4xl font-monaBold">
-              Comprehensive Creative Campaign Product
+              <Typewriting
+                text="Comprehensive Creative Campaign Product"
+                speed={60}
+              />
             </h1>
           </div>
         </div>
@@ -197,10 +207,12 @@ const CreativeCampaigns = () => {
             <h3 className="text-2xl uppercase font-monaSemibold">
               PROVEN EXPERTISE
             </h3>
-            <h1 className="text-3xl font-monaBold">
-              An extension of your creative team, an accelerator for your ad
-              design pipeline
-            </h1>
+            <h2 className="text-3xl font-monaBold">
+              <Typewriting
+                text="An extension of your creative team, an accelerator for your ad design pipeline"
+                speed={50}
+              />
+            </h2>
           </div>
         </div>
 

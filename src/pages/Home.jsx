@@ -10,6 +10,7 @@ import {
   srcFilesList,
 } from '@/contentData/utils';
 
+import Typewriting from '@/components/Typewriting';
 import Services from '@/components/Services';
 import Strategies from '@/components/Strategies';
 import Testimonials from '@/components/Testimonials';
@@ -17,7 +18,7 @@ import Professionalism from '@/components/Professionalism';
 import WorkEthics from '@/components/WorkEthics';
 import RoutesWay from '@/components/RoutesWay';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
-import ServicesForm from '../components/ServicesForm';
+import ServicesForm from '@/components/ServicesForm';
 
 const Home = () => {
   return (
@@ -79,9 +80,12 @@ const Home = () => {
             <p className="text-xl font-monaMedium">
               Our Full Stack Creative Products
             </p>
-            <h2 className="text-2xl font-monaBold">
-              With any subscription, you gain access to all our creative
-              products
+            <h2 className="text-2xl font-monaBold leading-none">
+              <Typewriting
+                text="With any subscription, you gain access to all our creative
+              products"
+                speed={70}
+              />
             </h2>
           </div>
 
@@ -94,7 +98,7 @@ const Home = () => {
           <div className="w-full flex items-start lg:items-center justify-start flex-col lg:flex-row lg:justify-between max-md:space-y-3 lg:px-7 pt-5 pb-3">
             <div className="flexStart">
               <h1 className="font-monaSemibold text-2xl lg:text-3xl">
-                Here's how to get started
+                <Typewriting text="Here's how to get started" speed={50} />
               </h1>
             </div>
             <div className="flexy">
@@ -139,10 +143,10 @@ const Home = () => {
             <div className="col-span-12 lg:col-span-5 flexStart flex-col space-y-4">
               <div className="flex items-center justify-start">
                 <hr className="hrBlack" />
-                <h3>see how we compare</h3>
+                <h3 className="font-monaMedium">see how we compare</h3>
               </div>
               <h1 className="font-monaSemibold text-3xl">
-                What makes us different?
+                <Typewriting text="What makes us different?" speed={80} />
               </h1>
               <p className="text-lg">
                 We will take care of all your creative needs. No inefficient

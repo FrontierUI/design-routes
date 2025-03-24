@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import Tilt from 'react-parallax-tilt';
 
+import Typewriting from '@/components/Typewriting';
+
 const AIEnhanced = () => {
   return (
     <div className="flexy bg-primary max-w-full mx-auto px-5 lg:px-12">
@@ -14,7 +16,9 @@ const AIEnhanced = () => {
               FUTURE-READY EFFICIENCY
             </h3>
 
-            <h1 className="text-5xl font-monaBold">AI-Enhanced Ad Design</h1>
+            <h1 className="text-5xl font-monaBold">
+              <Typewriting text="AI-Enhanced Ad Design" speed={100} />
+            </h1>
 
             <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">
               Leverage the power of AI to improve efficiency and cost savings in

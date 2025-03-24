@@ -451,7 +451,7 @@ export const provenExpert = [
   },
   {
     id: 'numb3',
-    title: 'TOTAL CUSTOMERS',
+    title: 'TOTAL HOURS',
     numbering: 11594,
     desc: 'Hours dedicated to creative campaigns product',
   },

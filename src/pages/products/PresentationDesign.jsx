@@ -6,6 +6,7 @@ import { Check } from 'lucide-react';
 
 import { pdPortfolioBot, pdPortfolioUp } from '@/contentData/utils';
 
+import Typewriting from '@/components/Typewriting';
 import LogoMarquee from '@/components/LogoMarquee';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
 import Professionalism from '@/components/Professionalism';
@@ -50,7 +51,7 @@ const PresentationDesign = () => {
             <div className="w-full lg:w-1/2 lg:px-3">
               <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-3 md:space-y-5 text-slate-100">
                 <h1 className="font-monaBold text-5xl">
-                  Presentation Design Product
+                  <Typewriting text="Presentation Design Product" speed={150} />
                 </h1>
 
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
@@ -140,7 +141,10 @@ const PresentationDesign = () => {
                 </h3>
 
                 <h1 className="text-5xl font-monaBold">
-                  Elevate your Presentations and sales decks with Routes
+                  <Typewriting
+                    text="Elevate your Presentations and sales decks with Routes"
+                    speed={50}
+                  />
                 </h1>
 
                 <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">
@@ -200,7 +204,10 @@ const PresentationDesign = () => {
             Tailored Business Solutions
           </h2>
           <h1 className="font-monaBold text-5xl">
-            Extensive Presentation Design services
+            <Typewriting
+              text="Extensive Presentation Design services"
+              speed={70}
+            />
           </h1>
         </div>
 
@@ -212,7 +219,10 @@ const PresentationDesign = () => {
           <div className="flexy flex-col w-full pb-6 text-center space-y-2">
             <h2 className="text-2xl font-monaMedium">FORMAT FLUENCY</h2>
             <h1 className="text-4xl font-monaBold">
-              Expertise across all Presentation Design platforms
+              <Typewriting
+                text="Expertise across all Presentation Design platforms"
+                speed={50}
+              />
             </h1>
             <p className="lg:w-3/4">
               Our presentation designers can do it all. With expertise across

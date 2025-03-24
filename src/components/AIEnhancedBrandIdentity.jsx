@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import Tilt from 'react-parallax-tilt';
 
+import Typewriting from '@/components/Typewriting';
+
 const AIEnhancedBrandIdentity = () => {
   return (
     <div className="flexy bg-primary max-w-full mx-auto px-5 lg:px-12">
@@ -15,7 +17,7 @@ const AIEnhancedBrandIdentity = () => {
             </h3>
 
             <h1 className="text-5xl font-monaBold">
-              AI-Enhanced Branding Services
+              <Typewriting text="AI-Enhanced Branding Services" speed={100} />
             </h1>
 
             <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">

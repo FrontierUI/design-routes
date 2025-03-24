@@ -1,9 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Typewriting from '@/components/Typewriting';
 import LogoMarquee from '@/components/LogoMarquee';
 import Services from '@/components/Services';
 import Strategies from '@/components/Strategies';
+import CounterNumbers from '@/components/CounterNumbers';
 
 const About = () => {
   return (
@@ -12,7 +13,7 @@ const About = () => {
         <div className="w-full flexy flex-col px-5 py-10 pt-16 lg:pt-20 lg:mt-28 lg:mb-16">
           <div className="flexy flex-col lg:w-2/3 space-y-5 text-center">
             <h1 className="text-5xl lg:text-7xl font-monaExtra">
-              Design That Delivers
+              <Typewriting text="Design That Delivers" speed={150} />
             </h1>
             <p className="text-lg">
               We specialize in delivering innovative solutions tailored to meet
@@ -52,23 +53,29 @@ const About = () => {
       <div className="count relative w-full h-full py-6">
         <div className="w-full px-5 lg:px-12">
           <div className="itemsStart lg:!justify-between flex-col lg:flex-row max-lg:gap-y-6 lg:gap-x-10">
-            <div className="relative founded flexStart flex-col space-y-4 lg:space-y-20 lg:pt-10">
+            <div className="relative founded flexStart flex-col space-y-4 lg:space-y-20 lg:pt-10 lg:max-w-[260px]">
               <div className="flex flex-col items-start">
                 <h3 className="font-monaBold text-3xl">Founded</h3>
-                <h1 className="font-monaBlack text-8xl">2018</h1>
+                <h1 className="font-filsonHeavy text-8xl">
+                  <CounterNumbers start={0} end={2018} duration={2000} />
+                </h1>
               </div>
               <div className="flex flex-col items-start">
                 <h3 className="font-monaBold text-3xl">Clients</h3>
-                <h1 className="font-monaBlack text-8xl">147</h1>
+                <h1 className="font-filsonHeavy text-8xl">
+                  <CounterNumbers start={0} end={204} duration={2000} />
+                </h1>
               </div>
               <div className="flex flex-col items-start">
                 <h3 className="font-monaBold text-3xl">Projects</h3>
-                <h1 className="font-monaBlack text-8xl">591</h1>
+                <h1 className="font-filsonHeavy text-8xl">
+                  <CounterNumbers start={0} end={771} duration={2000} />
+                </h1>
               </div>
             </div>
 
-            <div className="relative w-full h-full">
-              <div className="flexy w-full h-full transitAll scal105 max-h-full max-w-full md:min-h-[30rem] md:max-h-min">
+            <div className="relative w-full h-full flex items-center justify-center lg:items-end lg:justify-end transitAll scal102">
+              <div className="flexy w-full lg:w-[1100px] h-full max-h-full lg:max-w-[1120px] md:min-h-[30rem] md:max-h-min ">
                 <img
                   src="/images/RoutesEIcons.png"
                   className="img-fluid max-w-full min-h-full w-full h-full object-cover"
@@ -98,7 +105,7 @@ const About = () => {
           <div className="w-full flex items-start lg:items-center justify-start flex-col lg:flex-row lg:justify-between max-md:space-y-3 lg:px-7 pt-5 pb-3">
             <div className="flexStart">
               <h1 className="font-monaSemibold text-2xl lg:text-3xl">
-                Here's how to get started
+                <Typewriting text="Here's how to get started" speed={80} />
               </h1>
             </div>
             <div className="flexy">

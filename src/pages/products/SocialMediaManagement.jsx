@@ -7,13 +7,14 @@ import { Check } from 'lucide-react';
 
 import { smmPortfolioBot, smmPortfolioUp } from '@/contentData/utils';
 
+import Typewriting from '@/components/Typewriting';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
 import FormatMastery from '@/components/FormatMastery';
 import LogoMarquee from '@/components/LogoMarquee';
 import SMMStrategies from '@/components/SMMStrategies';
 import SMMAIEnhanced from '@/components/SMMAIEnhanced';
 import SMPlatforms from '@/components/SMPlatforms';
-import ProvenExpertise from '@/components/ProvenExpertise';
+import SMMCounter from '@/components/SMMCounter';
 import Professionalism from '@/components/Professionalism';
 import SMMPackage from '@/components/SMMPackage';
 import SMMAccordion from '@/components/SMMAccordion';
@@ -50,7 +51,10 @@ const SocialMediaManagement = () => {
             <div className="w-full lg:w-1/2 lg:px-3">
               <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-3 md:space-y-5 text-slate-100">
                 <h1 className="font-monaBold text-5xl">
-                  Scalable Social Media Management
+                  <Typewriting
+                    text="Scalable Social Media Management"
+                    speed={150}
+                  />
                 </h1>
 
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
@@ -139,7 +143,10 @@ const SocialMediaManagement = () => {
                 </h3>
 
                 <h1 className="text-5xl font-monaBold">
-                  Strategic social media creative
+                  <Typewriting
+                    text="Strategic social media creative"
+                    speed={100}
+                  />
                 </h1>
 
                 <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">
@@ -200,7 +207,10 @@ const SocialMediaManagement = () => {
               SOCIAL MEDIA FLUENCY
             </h3>
             <h1 className="text-5xl font-monaBold">
-              End-to-end social media management
+              <Typewriting
+                text="End-to-end social media management"
+                speed={70}
+              />
             </h1>
           </div>
         </div>
@@ -215,7 +225,10 @@ const SocialMediaManagement = () => {
               format Flexibility
             </h3>
             <h1 className="text-5xl font-monaBold">
-              Dynamic formats for social engagement
+              <Typewriting
+                text="Dynamic formats for social engagement"
+                speed={70}
+              />
             </h1>
           </div>
         </div>
@@ -239,7 +252,10 @@ const SocialMediaManagement = () => {
                 Proven Impact
               </h3>
               <h1 className="text-4xl font-monaBold">
-                Data-driven success for our customers
+                <Typewriting
+                  text="Data-driven success for our customers"
+                  speed={70}
+                />
               </h1>
 
               <p className="pt-2">
@@ -281,7 +297,7 @@ const SocialMediaManagement = () => {
           </div>
         </div>
 
-        <ProvenExpertise />
+        <SMMCounter />
       </div>
 
       <div className="relative w-full h-full py-6">

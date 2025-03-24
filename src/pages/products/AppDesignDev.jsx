@@ -3,15 +3,16 @@ import Tilt from 'react-parallax-tilt';
 
 import { appPortfolioBot, appPortfolioUp } from '@/contentData/utils';
 
-import PortfolioMarquee from '@/components/PortfolioMarquee';
+import Typewriting from '@/components/Typewriting';
 import LogoMarquee from '@/components/LogoMarquee';
-
+import PortfolioMarquee from '@/components/PortfolioMarquee';
 import Professionalism from '@/components/Professionalism';
 import Testimonials from '@/components/Testimonials';
 import APPStrategies from '@/components/APPStrategies';
 import AIEnhancedAPP from '@/components/AIEnhancedAPP';
 import AppPricePackage from '@/components/AppPricePackage';
 import AppDDAccordion from '@/components/AppDDAccordion';
+import AppDDCounter from '../../components/AppDDCounter';
 
 const AppDesignDev = () => {
   return (
@@ -28,7 +29,10 @@ const AppDesignDev = () => {
               <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-3 md:space-y-5 text-slate-100">
                 <h3 className="text-2xl font-monaSemibold">Professional</h3>
                 <h1 className="font-monaBold text-5xl">
-                  App UI/UX Design & Development Product
+                  <Typewriting
+                    text="App UI/UX Design & Development Product"
+                    speed={150}
+                  />
                 </h1>
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
                   App and product design is at the core of many of our products.
@@ -112,8 +116,10 @@ const AppDesignDev = () => {
             <div className="w-full lg:w-1/2">
               <div className="w-full space-y-2 sm:max-w-md lg:max-w-2xl md:space-y-5">
                 <h1 className="text-5xl font-monaBold">
-                  We're always-on to deliver the design you want when you need
-                  it
+                  <Typewriting
+                    text="We're always-on to deliver the design you want when you need it"
+                    speed={70}
+                  />
                 </h1>
 
                 <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">
@@ -156,7 +162,10 @@ const AppDesignDev = () => {
               Amazing User experience
             </h3>
             <h1 className="text-5xl font-monaBold">
-              Full-stack App design & development Product
+              <Typewriting
+                text="Full-stack App design & development Product"
+                speed={70}
+              />
             </h1>
           </div>
         </div>
@@ -166,6 +175,28 @@ const AppDesignDev = () => {
 
       <div className="enhanced relative w-full h-full py-6">
         <AIEnhancedAPP />
+      </div>
+
+      <div className="relative w-full h-full py-6">
+        <div className="flexy flex-col w-full px-5 lg:px-12">
+          <div className="flexy flex-col w-full pb-6 text-center space-y-2">
+            <h2 className="text-2xl font-monaSemibold">SUCCESS METRICS</h2>
+            <h1 className="text-4xl font-monaBold">
+              <Typewriting
+                text="Choose an App Design & Development Agency with a Proven Track Record"
+                speed={60}
+              />
+            </h1>
+            <p className="lg:w-3/4">
+              Don’t go with any old APP design & development company. Let data
+              inform your decision and choose a APP design & development n
+              partner proven to deliver results. With thousands of projects
+              under our belt and happy customers across the board, you can trust
+              in us.
+            </p>
+          </div>
+          <AppDDCounter />
+        </div>
       </div>
 
       <div className="relative w-full h-full py-4">

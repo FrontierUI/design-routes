@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Tilt from 'react-parallax-tilt';
 import { ArrowUpRight } from 'lucide-react';
 
+import Typewriting from '@/components/Typewriting';
 import LogoMarquee from '@/components/LogoMarquee';
 import Services from '@/components/Services';
 import Professionalism from '@/components/Professionalism';
@@ -25,8 +26,10 @@ const ForAgencies = () => {
                 </h3>
 
                 <h1 className="font-monaBold text-4xl lg:text-5xl">
-                  Multiply your agency output without Multiplying your overhead
-                  costs
+                  <Typewriting
+                    text="Multiply your agency output without Multiplying your overhead costs"
+                    speed={120}
+                  />
                 </h1>
 
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
@@ -105,7 +108,10 @@ const ForAgencies = () => {
               Inefficient Agencies and Freelancers Create Drag
             </h3>
             <h1 className="text-5xl font-monaBold">
-              Agency Barriers to Scaling Creative
+              <Typewriting
+                text="Agency Barriers to Scaling Creative"
+                speed={100}
+              />
             </h1>
             <p className="text-xl">
               Traditional creative agencies are more likely to work their way
@@ -187,7 +193,10 @@ const ForAgencies = () => {
               Inefficient Agencies and Freelancers Create Drag
             </h3>
             <h1 className="text-5xl font-monaBold">
-              Agency Barriers to Scaling Creative
+              <Typewriting
+                text="Agency Barriers to Scaling Creative"
+                speed={100}
+              />
             </h1>
             <p className="text-xl">
               Traditional creative agencies are more likely to work their way
@@ -266,8 +275,10 @@ const ForAgencies = () => {
         <div className="w-full h-full flex flex-col px-5 lg:px-12">
           <div className="flexy flex-col pb-6 space-y-2 text-center">
             <h2 className="text-3xl font-monaBold">
-              Only Creative as a Product Sets You Free! Work the way you need to
-              work
+              <Typewriting
+                text="Only Creative as a Product Sets You Free! Work the way you need to work"
+                speed={60}
+              />
             </h2>
             <p className="text-xl">
               Access a global talent pool with a full range of creative Products

@@ -5,16 +5,17 @@ import { Check } from 'lucide-react';
 
 import { brandPortFolioBot, brandPortFolioUp } from '@/contentData/utils';
 
+import Typewriting from '@/components/Typewriting';
 import LogoMarquee from '@/components/LogoMarquee';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
 import FullScope from '@/components/FullScope';
 import AIEnhancedBrandIdentity from '@/components/AIEnhancedBrandIdentity';
 import DesignProcess from '@/components/DesignProcess';
-import ProvenExpertise from '@/components/ProvenExpertise';
 import Professionalism from '@/components/Professionalism';
 import BrandIdentityPackage from '@/components/BrandIdentityPackage';
-import Testimonials from '@/components/Testimonials';
+import BIDCounter from '@/components/BIDCounter';
 import BIDAccordion from '@/components/BIDAccordion';
+import Testimonials from '@/components/Testimonials';
 
 const BrandIdentiyDesign = () => {
   return (
@@ -32,7 +33,10 @@ const BrandIdentiyDesign = () => {
             <div className="w-full lg:w-1/2 lg:px-3">
               <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-3 md:space-y-5 text-slate-100">
                 <h1 className="font-monaBold text-5xl">
-                  Brand Identity Design Product
+                  <Typewriting
+                    text="Brand Identity Design Product"
+                    speed={150}
+                  />
                 </h1>
 
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
@@ -120,7 +124,10 @@ const BrandIdentiyDesign = () => {
                 </h3>
 
                 <h1 className="text-5xl font-monaBold">
-                  Strategic branding for every business
+                  <Typewriting
+                    text="Brand Identity Design Product"
+                    speed={100}
+                  />
                 </h1>
 
                 <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">
@@ -180,7 +187,7 @@ const BrandIdentiyDesign = () => {
               MULTIFACETED SOLUTIONS
             </h3>
             <h1 className="text-5xl font-monaBold">
-              Full-scope Branding Product
+              <Typewriting text="Full-scope Branding Product" speed={100} />
             </h1>
           </div>
         </div>
@@ -221,12 +228,15 @@ const BrandIdentiyDesign = () => {
               STRIKE UP THE BRAND
             </h3>
             <h1 className="text-3xl lg:text-4xl font-monaBold">
-              Branding product that maximize speed, value and impact
+              <Typewriting
+                text="Branding product that maximize speed, value and impact"
+                speed={70}
+              />
             </h1>
           </div>
         </div>
 
-        <ProvenExpertise />
+        <BIDCounter />
       </div>
 
       <div className="relative w-full h-full py-4">

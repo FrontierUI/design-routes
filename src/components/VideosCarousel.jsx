@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 import { Autoplay, EffectCoverflow } from 'swiper';
 import ReactPlayer from 'react-player';
 
@@ -9,9 +9,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 
-import { Link } from 'react-router-dom';
-
 import { smallVids, largeVids } from '@/contentData/utils';
+import Typewriting from '@/components/Typewriting';
 
 const VideosCarousel = () => {
   return (
@@ -22,7 +21,10 @@ const VideosCarousel = () => {
             <div className="w-full h-full flex flex-col items-start justify-start space-y-5">
               <div className="flex flex-col items-start justify-start space-y-3">
                 <h2 className="font-monaBold text-4xl">
-                  Be Proud of your team
+                  <Typewriting
+                    text="Be Proud of your creative team"
+                    speed={100}
+                  />
                 </h2>
                 <p className="text-md monaRegular">
                   Routes.Design is a creative subscription service, trusted by

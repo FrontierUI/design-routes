@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Tilt from 'react-parallax-tilt';
 import { ArrowUpRight } from 'lucide-react';
 
+import Typewriting from '@/components/Typewriting';
 import LogoMarquee from '@/components/LogoMarquee';
 import Services from '@/components/Services';
 import Professionalism from '@/components/Professionalism';
@@ -25,7 +26,10 @@ const ForBrands = () => {
                 </h3>
 
                 <h1 className="font-monaBold text-4xl lg:text-5xl">
-                  Position your Brand for Rapid Growth
+                  <Typewriting
+                    text="Position your Brand for Rapid Growth"
+                    speed={150}
+                  />
                 </h1>
 
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
@@ -100,9 +104,12 @@ const ForBrands = () => {
       <div className="relative w-full h-full flexy py-6">
         <div className="flexy flex-col w-full px-5 lg:px-12">
           <div className="flexy flex-col pb-6 space-y-4 lg:w-3/4 text-center">
-            <h1 className="text-3xl font-monaBold">
-              A Single Subscription to Replace Your Company’s Design Departments
-            </h1>
+            <h2 className="text-3xl font-monaBold">
+              <Typewriting
+                text="A Single Subscription to Replace Your Company’s Design Departments"
+                speed={70}
+              />
+            </h2>
             <p className="text-lg">
               With one subscription, we handle all your business's design needs
               across every department. Your projects will be overseen by a
@@ -189,7 +196,10 @@ const ForBrands = () => {
         <div className="w-full h-full flex flex-col px-5 lg:px-12">
           <div className="flexy flex-col pb-6 space-y-2 text-center">
             <h2 className="text-3xl font-monaBold">
-              Only Creative as a Product Sets You Free!
+              <Typewriting
+                text="Only Creative as a Product Sets You Free!"
+                speed={70}
+              />
             </h2>
             <p className="text-lg">
               Access a global talent pool with a full range of creative Products

@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react';
-import { getCookie, setCookie, checkRole } from '../../func';
 import { Link, useNavigate, useLocation, useParams } from 'react-router-dom';
-import Toast from '../../components/Toast';
 import axios from 'axios';
+
+import { getCookie, setCookie, checkRole } from '../../func';
+import Toast from '../../components/Toast';
 
 const Verify = () => {
   const location = useLocation();
-  const navigate = useNavigate();
-  const [email, setEmail] = useState('');
+
   const params = useParams();
 
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState('');
   const [toasts, setToasts] = useState([]);
 
   useEffect(() => {

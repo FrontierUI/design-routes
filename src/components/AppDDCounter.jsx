@@ -1,26 +1,26 @@
 import CounterNumbers from '@/components/CounterNumbers';
 
-const WebDDCounter = () => {
+const AppDDCounter = () => {
   const expertise = [
     {
       title: 'projects completed',
-      counter: 594,
-      desc: 'Web Design & Development services sold and counting',
+      counter: 153,
+      desc: 'App Design & Development services sold and counting',
     },
     {
       title: 'total customers',
-      counter: 325,
-      desc: 'Total customers used our Web Design & Development product',
+      counter: 41,
+      desc: 'Total customers used our App Design & Development product',
     },
     {
       title: 'total hours',
-      counter: 4759,
-      desc: 'Hours dedicated to Web Design & Development product',
+      counter: 3971,
+      desc: 'Hours dedicated to App Design & Development product',
     },
     {
       title: 'CUSTOMER SATISFACTION',
-      counter: '4.5',
-      desc: 'Average Web Design & Development product approval rating',
+      counter: '4.95',
+      desc: 'Average App Design & Development product approval rating',
     },
   ];
 
@@ -57,4 +57,4 @@ const WebDDCounter = () => {
   );
 };
 
-export default WebDDCounter;
+export default AppDDCounter;

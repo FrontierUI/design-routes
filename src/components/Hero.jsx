@@ -19,7 +19,9 @@ const Hero = () => {
                   Full service design agency
                 </h4>
               </div>
-              <Typewriting text="Design That Delivers" speed={300} />
+              <h1 className="text-5xl lg:text-7xl font-monaBold">
+                <Typewriting text="Design That Delivers" speed={150} />
+              </h1>
               <p className="text-md">
                 We are the extension of your creative team
               </p>

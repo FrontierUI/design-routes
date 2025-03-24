@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { Phone } from 'lucide-react';
 
+import Typewriting from '@/components/Typewriting';
+
 const ServicesForm = () => {
   return (
     <div className="relative w-full h-full py-6 lg:py-12 bg-primary">
@@ -16,10 +18,10 @@ const ServicesForm = () => {
           <div className="col-span-12 lg:col-span-6 relative flexStart flex-col w-4/5 sm:w-full space-y-5 lg:space-y-12 text-white">
             <div className="flexStart flex-col space-y-5 w-full">
               <h3 className="font-monaSemibold text-2xl">Connect with Us</h3>
-              <div className="flexStart flex-col leading-loose">
+              <div className="flexStart flex-col space-y-2">
                 <h2 className="font-monaLight text-5xl">We're Ready to</h2>
                 <h2 className="font-monaLight text-5xl">
-                  Explore Opportunities
+                  <Typewriting text="Explore Opportunities" speed={70} />
                 </h2>
               </div>
             </div>

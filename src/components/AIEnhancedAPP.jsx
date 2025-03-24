@@ -1,8 +1,8 @@
-// import React from 'react';
-
 import { Link } from 'react-router-dom';
 
 import Tilt from 'react-parallax-tilt';
+
+import Typewriting from '@/components/Typewriting';
 
 const AIEnhancedAPP = () => {
   return (
@@ -15,7 +15,10 @@ const AIEnhancedAPP = () => {
             </h3>
 
             <h1 className="text-5xl font-monaBold">
-              AI-Enhanced App Design & Development
+              <Typewriting
+                text="AI-Enhanced App Design & Development"
+                speed={100}
+              />
             </h1>
 
             <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">

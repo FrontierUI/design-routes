@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Tilt from 'react-parallax-tilt';
 import { ArrowUpRight } from 'lucide-react';
 
+import Typewriting from '@/components/Typewriting';
 import LogoMarquee from '@/components/LogoMarquee';
 import Services from '@/components/Services';
 import Professionalism from '@/components/Professionalism';
@@ -25,7 +26,10 @@ const SME = () => {
                 </h3>
 
                 <h1 className="font-monaBold text-4xl lg:text-5xl">
-                  Flat-rate Design Products to Help you grow your business
+                  <Typewriting
+                    text="Flat-rate Design Products to Help you grow your business"
+                    speed={120}
+                  />
                 </h1>
 
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
@@ -68,7 +72,10 @@ const SME = () => {
         <div className="flexy flex-col w-full px-5 lg:px-12">
           <div className="flexy flex-col pb-6 space-y-1 lg:w-3/4 text-center">
             <h1 className="text-3xl font-monaBold">
-              Perfect for Small and Medium-Sized Businesses
+              <Typewriting
+                text="Perfect for Small and Medium-Sized Businesses"
+                speed={70}
+              />
             </h1>
             <p className="text-lg">
               No client or task is too big or too small for us. If you want your
@@ -147,7 +154,10 @@ const SME = () => {
         <div className="w-full h-full flex flex-col px-5 lg:px-12">
           <div className="flexy flex-col pb-6 space-y-2 text-center">
             <h2 className="text-3xl font-monaBold">
-              Only Creative as a Product Sets You Free!
+              <Typewriting
+                text="Only Creative as a Product Sets You Free!"
+                speed={70}
+              />
             </h2>
             <p className="text-lg">
               Access a global talent pool with a full range of creative Products

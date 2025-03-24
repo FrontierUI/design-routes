@@ -40,7 +40,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-slate-900 overflow-x-hidden font-monaRegular scroll-smooth;
+    @apply bg-white text-slate-900 overflow-x-hidden font-monaRegular scroll-smooth !important;
   }
 
   p,

@@ -1,6 +1,4 @@
-import React from 'react';
-
-// import { useSpring, animated } from 'react-spring';
+import CounterNumbers from '@/components/CounterNumbers';
 
 const PDCounter = () => {
   const expertise = [
@@ -21,7 +19,7 @@ const PDCounter = () => {
     },
     {
       title: 'CUSTOMER SATISFACTION',
-      counter: 4.95,
+      counter: '4.75',
       desc: 'Average branding product approval rating',
     },
   ];
@@ -39,7 +37,16 @@ const PDCounter = () => {
                 {expert.title}
               </h2>
               <h1 className="text-5xl font-monaBold">
-                <Number n={expert.counter} />
+                <CounterNumbers
+                  start={0}
+                  end={expert.counter}
+                  duration={2000}
+                  decimals={
+                    expert.counter.toString().includes('.')
+                      ? expert.counter.toString().split('.')[1].length
+                      : 0
+                  }
+                />
               </h1>
               <p className="text-md mb-2">{expert.desc}</p>
             </div>

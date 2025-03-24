@@ -3,6 +3,7 @@ import Tilt from 'react-parallax-tilt';
 
 import { webPortfolioBot, webPortfolioUp } from '@/contentData/utils';
 
+import Typewriting from '@/components/Typewriting';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
 import LogoMarquee from '@/components/LogoMarquee';
 import WebStrategies from '@/components/WebStrategies';
@@ -30,7 +31,10 @@ const WebDesignDev = () => {
               <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-3 md:space-y-5 text-slate-100">
                 <h3 className="text-2xl font-monaSemibold">Professional</h3>
                 <h1 className="font-monaBold text-5xl">
-                  Web UI/UX Design & Development Product
+                  <Typewriting
+                    text="Web UI/UX Design & Development Product"
+                    speed={150}
+                  />
                 </h1>
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
                   Shine online with Routes.Design web design & development. Plug
@@ -118,7 +122,10 @@ const WebDesignDev = () => {
                 </h3>
 
                 <h1 className="text-5xl font-monaBold">
-                  Get streamlined web design that converts
+                  <Typewriting
+                    text="Get streamlined web design that converts"
+                    speed={80}
+                  />
                 </h1>
 
                 <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">
@@ -165,7 +172,10 @@ const WebDesignDev = () => {
               RESPONSIVE SOLUTIONS
             </h3>
             <h1 className="text-5xl font-monaBold">
-              Full Stack Web Design & Development Services
+              <Typewriting
+                text="Full Stack Web Design & Development Services"
+                speed={80}
+              />
             </h1>
           </div>
         </div>
@@ -173,12 +183,19 @@ const WebDesignDev = () => {
         <WebStrategies />
       </div>
 
+      <div className="enhanced relative w-full h-full py-6">
+        <AIEnhancedWDD />
+      </div>
+
       <div className="relative w-full h-full py-6">
         <div className="flexy flex-col w-full px-5 lg:px-12">
           <div className="flexy flex-col w-full pb-6 text-center space-y-2">
             <h2 className="text-2xl font-monaSemibold">SUCCESS METRICS</h2>
             <h1 className="text-4xl font-monaBold">
-              Choose a web design agency with a proven track record
+              <Typewriting
+                text="Choose a web design agency with a proven track record"
+                speed={70}
+              />
             </h1>
             <p className="lg:w-3/4">
               Don’t go with any old web design company. Let data inform your
@@ -189,10 +206,6 @@ const WebDesignDev = () => {
           </div>
           <WebDDCounter />
         </div>
-      </div>
-
-      <div className="enhanced relative w-full h-full py-6">
-        <AIEnhancedWDD />
       </div>
 
       <div className="relative w-full h-full py-4">

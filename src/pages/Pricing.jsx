@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import { homePortFolioUp, homePortFolioBot } from '@/contentData/utils';
 
+import Typewriting from '@/components/Typewriting';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
 import PricingTabs from '@/components/PricingTabs';
 import PricingAccordion from '@/components/PricingAccordion';
@@ -16,7 +17,7 @@ const Pricing = () => {
       <div className="flexy flex-col w-full px-5 pt-20 lg:pt-28">
         <div className="flexy flex-col py-8 w-full space-y-5 text-center text-slate-900 lg:w-3/4">
           <h3 className="text-xl font-monaBold uppercase">
-            Routes Design subscription
+            <Typewriting text="Routes Design subscription" speed={80} />
           </h3>
           <div className="flexy flex-col space-y-2 leading-none">
             <h1 className="text-4xl lg:text-7xl font-monaBold text-primary">
