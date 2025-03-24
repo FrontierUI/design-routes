@@ -51,7 +51,7 @@ const About = () => {
       </div>
 
       <div className="count relative w-full h-full py-6">
-        <div className="w-full lg:px-12">
+        <div className="w-full md:px-12">
           <div className="flex items-center lg:items-start justify-center lg:!justify-between flex-col lg:flex-row max-lg:gap-y-6 lg:gap-x-10">
             <div className="relative founded flex items-center md:items-start justify-center md:justify-start flex-col space-y-7 lg:space-y-10 lapy:space-y-20 lg:pt-10 lg:max-w-[260px]">
               <div className="flex flex-col items-center lg:items-start">
