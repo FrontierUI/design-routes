@@ -99,7 +99,8 @@ const App = () => {
           <Route path="/auth/sign-in" element={<SignIn />} />
           <Route path="/verify/:token" element={<Verify />} />
 
-          <Route path="/portfolio-page" element={<PortfolioPage />} />
+          {/* <Route path="/portfolio-page" element={<PortfolioPage />} /> */}
+          <Route path="/portfolio-page/:slug" element={<PortfolioPage />} />
         </Routes>
 
         <Footer />
