@@ -1,7 +1,7 @@
 // import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CreativeCampaignPackage = () => {
+const CreativeCampaignPackage = ({Packages}) => {
   return (
     <div className="flexy flex-col space-y-5 max-w-full lg:px-12">
       <div className="relative w-full campPackBan flexy p-5 lg:p-14">
@@ -16,16 +16,15 @@ const CreativeCampaignPackage = () => {
           <div className="packInfo flexStart lg:items-center flex-col lg:flex-row lg:justify-between w-full text-white space-y-4">
             <div className="packTitle flexStart flex-col items-center justify-center lg:items-start lg:justify-start w-full space-y-3">
               <h1 className="text-5xl lg:text-7xl font-monaBold">
-                Creative Campaign
+                {Packages[0].package_name}
               </h1>
               <p className="w-full text-base lg:text-lg lg:w-4/5">
-                With innovative and compelling campaigns, captivate your unique
-                business goals and resonate with your target audience.
+                {Packages[0].package_details}
               </p>
             </div>
             <div className="packPricing flex flex-col items-end justify-end">
               <h1 className="text-8xl lg:text-9xl filsonHeavy leading-none">
-                $4,999
+                ${Packages[0].package_price}
               </h1>
               <h4 className="text-xl font-monaSemibold uppercase">
                 per project
@@ -35,7 +34,24 @@ const CreativeCampaignPackage = () => {
 
           <div className="packageListItem flexStart text-white">
             <ul className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-40 gap-y-4">
-              <li className="flexStart">
+              {
+                [...JSON.parse(Packages[0].featured_extras)].map(({feature, included}, i)=>(
+                  <li className="flexStart" key={i}>
+                    <div className="flexy space-x-2.5">
+                      <img
+                        src={included ? "/images/icons/roundCheckWhite.svg" : "/images/icons/doublecheckgrey.svg"}
+                        className="img-fluid"
+                        width={28}
+                        alt=""
+                      />
+                      <span className="font-monaMedium text-md xl:text-xl">
+                      {feature}
+                      </span>
+                    </div>
+                  </li>
+                ))
+              }
+              {/* <li className="flexStart">
                 <div className="flexy space-x-2.5">
                   <img
                     src="/images/icons/roundCheckWhite.svg"
@@ -138,7 +154,7 @@ const CreativeCampaignPackage = () => {
                     24/7 timezone coverage
                   </span>
                 </div>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -166,7 +182,53 @@ const CreativeCampaignPackage = () => {
           </div>
 
           <div className="grid grid-cols-12 gap-x-7 gap-y-6 w-full items-center justify-center">
-            <div className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg">
+            {
+              Packages.filter(p=>p.package_name !== Packages[0].package_name).map((pkg, index)=>(
+                <div className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg" key={index}>
+                  <hr className="w-full absolute top-[8.5rem] left-0 h-[1.5px] bg-gray-400" />
+                  <hr className="w-full absolute top-[20.75rem] left-0 h-[1.5px] bg-gray-400" />
+
+                  <div className="flexy relative flex-col space-y-5 w-full">
+                    <div className="flexy flex-col space-y-2 py-2 mt-6 text-slate-900">
+                      <h2 className="text-4xl lg:text-4xl font-monaBold">{pkg.package_name}</h2>
+                      <span className="text-md font-monaMedium">
+                        {pkg.package_details}
+                      </span>
+                    </div>
+                    <div className="flexy flex-col w-full text-slate-900 space-y-2.5 py-6">
+                      <h1 className="filsonHeavy text-5xl">
+                        ${pkg.package_price}/<span className="text-xl">project</span>
+                      </h1>
+                      <span className="text-md font-monaMedium">Fine Choice</span>
+                      <div className="flexy">
+                        <Link to={'/'} className="primaryLink">
+                          Get Started
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="flexy w-full">
+                      <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-900">
+                        {
+                          [...JSON.parse(pkg.featured_extras)].map(({feature, included}, i)=>(
+                            <li className="flex items-center justify-start gap-x-2.5" key={i}>
+                              <img
+                                src={included ? "/images/icons/doublecheckPrim.svg" : "/images/icons/doublecheckgrey.svg"}
+                                className="img-fluid w-5"
+                                alt=""
+                              />
+                              <span className="text-md lg:text-lg">
+                                {feature}
+                              </span>
+                            </li>
+                          ))
+                        }
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+            {/* <div className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg">
               <hr className="w-full absolute top-[8.5rem] left-0 h-[1.5px] bg-gray-400" />
               <hr className="w-full absolute top-[20.75rem] left-0 h-[1.5px] bg-gray-400" />
 
@@ -497,7 +559,7 @@ const CreativeCampaignPackage = () => {
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="flexy flex-col space-y-3 mt-6">

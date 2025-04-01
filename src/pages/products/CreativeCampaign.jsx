@@ -15,9 +15,47 @@ import ProvenExpertise from '@/components/ProvenExpertise';
 import CreativeCampaignPackage from '@/components/CreativeCampaignPackage';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
 import CCAccordion from '@/components/CCAccordion';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const CreativeCampaigns = () => {
+  const [productDetails, setProductDetails] = useState({});
+  const [productsPackages, setProductsPackages] = useState({});
+
+  useEffect(() => {
+    fetchProductDetails();
+
+    return () => {
+      setProductDetails({});
+      setProductsPackages([]);
+    };
+  }, []);
+
+  const fetchProductDetails = () => {
+    const json = JSON.stringify({ slug: "creative-campaign" });
+
+    axios.post( `${import.meta.env.VITE_BASE_API}/api.php?action=get_service_details`,
+      JSON.stringify({ params: json }),
+      {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    )
+    .then((response) => {
+      if (response.data.success === 'true') {
+        setProductDetails(response.data.service_details);
+        setProductsPackages(response.data.service_packages);
+      }
+    })
+    .catch((error) => {
+      console.error(`Error: ${error}`);
+    });
+  }
+
   return (
+    productDetails.service_sub_title !== undefined 
+    ?
     <div className="relative w-full h-full creativeCampaigns">
       <div className="relative w-full h-full">
         <div
@@ -31,16 +69,13 @@ const CreativeCampaigns = () => {
               <div className="w-full flex-col sm:max-w-md lg:max-w-xl macbook:max-w-2xl space-y-3 md:space-y-5 text-white">
                 <h1 className="font-monaBold text-5xl">
                   <Typewriting
-                    text="Creative Campaign Design Product"
+                    text={productDetails?.service_sub_title}
                     speed={150}
                   />
                 </h1>
 
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
-                  From high-volume, multi-channel campaigns to testing and
-                  exploration, get the outstanding creative campaign Products
-                  you need. Plug-in a fully-stacked design team and start
-                  fueling your ad campaigns today.
+                  {productDetails?.service_description}
                 </p>
 
                 <div className="justStartCenter">
@@ -59,7 +94,7 @@ const CreativeCampaigns = () => {
                 lassName="w-full p-12 h-auto"
               >
                 <img
-                  src="/images/productsPages/Campaign.png"
+                  src={productDetails?.service_images}
                   className="img-fluid"
                   alt=""
                 />
@@ -224,7 +259,7 @@ const CreativeCampaigns = () => {
       </div>
 
       <div className="relative w-full h-full py-6">
-        <CreativeCampaignPackage />
+        <CreativeCampaignPackage Packages={productsPackages}/>
       </div>
 
       <div className="relative flexy flex-col w-full h-full py-6">
@@ -241,6 +276,18 @@ const CreativeCampaigns = () => {
 
       <div className="relative w-full h-full pb-6">
         <Testimonials />
+      </div>
+    </div>
+    :
+    <div className="loading flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="relative">
+        <div className="w-32 h-32 animate-bounce">
+          <img
+            src="/images/routeslogo.svg"
+            alt="Loading"
+            className="w-32 h-32 animate-pulse"
+          />
+        </div>
       </div>
     </div>
   );
