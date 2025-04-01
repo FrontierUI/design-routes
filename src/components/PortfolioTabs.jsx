@@ -137,7 +137,7 @@ const PortfolioTabs = () => {
                       className="lg:col-span-6 col-span-12 relative w-full h-full overflow-hidden shadow-drop-4 parallax-effect rounded-lg"
                     >
                       <Link
-                        to={`/portfolio-page/${brand_slug}`}
+                        to={`/our-work/${brand_slug}`}
                         className="relative flexStart w-full innerEffect rounded-lg"
                       >
                         <img
