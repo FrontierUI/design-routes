@@ -74,7 +74,7 @@ const PresentationDesign = () => {
         <div
           className="absolute top-0 w-full h-screen -z-[1] bg-cover bg-no-repeat"
           style={{
-            backgroundImage: 'url(/images/productsPages/lightBGE2.png)',
+            backgroundImage: `url(${import.meta.env.VITE_BASE_API}/images/productsPages/lightBGE2.png)`,
           }}
         />
 
@@ -106,7 +106,7 @@ const PresentationDesign = () => {
                 lassName="w-full p-5 h-auto"
               >
                 <img
-                  src={productDetails?.service_images}
+                  src={import.meta.env.VITE_BASE_API+productDetails?.service_images}
                   className="img-fluid"
                   alt=""
                 />
@@ -217,7 +217,7 @@ const PresentationDesign = () => {
                 lassName="w-full p-8 h-auto"
               >
                 <img
-                  src="/images/productsPages/hassleFree.png"
+                  src={`${import.meta.env.VITE_BASE_API}/images/productsPages/hassleFree.png`}
                   className="img-fluid"
                   alt=""
                 />

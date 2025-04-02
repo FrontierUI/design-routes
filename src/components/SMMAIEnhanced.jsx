@@ -54,7 +54,7 @@ const SMMAIEnhanced = () => {
             lassName="w-full p-4 h-auto"
           >
             <img
-              src="/images/productsPages/AIGlass.png"
+              src={`${import.meta.env.VITE_BASE_API}/images/productsPages/AIGlass.png`}
               className="img-fluid"
               alt=""
             />

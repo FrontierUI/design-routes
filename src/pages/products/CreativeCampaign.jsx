@@ -60,7 +60,7 @@ const CreativeCampaigns = () => {
       <div className="relative w-full h-full">
         <div
           className="absolute top-0 w-full h-screen -z-[1] bg-cover bg-no-repeat"
-          style={{ backgroundImage: 'url(/images/creativeCampBann.svg)' }}
+          style={{ backgroundImage: `url(${import.meta.env.VITE_BASE_API}/images/productsPages/creativeCampBann.svg)` }}
         />
 
         <div className="w-full  max-w-full items-center mx-auto px-5 lg:px-12">
@@ -94,7 +94,7 @@ const CreativeCampaigns = () => {
                 lassName="w-full p-12 h-auto"
               >
                 <img
-                  src={productDetails?.service_images}
+                  src={import.meta.env.VITE_BASE_API+productDetails?.service_images}
                   className="img-fluid"
                   alt=""
                 />
@@ -189,7 +189,7 @@ const CreativeCampaigns = () => {
                 lassName="w-full p-8 h-auto"
               >
                 <img
-                  src="/images/productsPages/Ads2.png"
+                  src={`${import.meta.env.VITE_BASE_API}/images/productsPages/Ads2.png`}
                   className="img-fluid"
                   alt=""
                 />

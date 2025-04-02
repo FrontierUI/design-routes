@@ -31,7 +31,7 @@ const PDPlatforms = () => {
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
                   <img
-                    src="/images/icons/powerPoint.png"
+                    src={`${import.meta.env.VITE_BASE_API}/images/icons/powerPoint.png`}
                     className="img-fluid w-52 object-cover"
                     alt=""
                   />
@@ -56,7 +56,7 @@ const PDPlatforms = () => {
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
                   <img
-                    src="/images/icons/googleSlides.png"
+                    src={`${import.meta.env.VITE_BASE_API}/images/icons/googleSlides.png`}
                     className="img-fluid w-52 object-cover"
                     alt=""
                   />
@@ -77,7 +77,7 @@ const PDPlatforms = () => {
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
                   <img
-                    src="/images/icons/keynote.png"
+                    src={`${import.meta.env.VITE_BASE_API}/images/icons/keynote.png`}
                     className="img-fluid w-52 object-cover"
                     alt=""
                   />
@@ -101,7 +101,7 @@ const PDPlatforms = () => {
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
                   <img
-                    src="/images/icons/figma-1.png"
+                    src={`${import.meta.env.VITE_BASE_API}/images/icons/figma-1.png`}
                     className="img-fluid w-52 object-cover"
                     alt=""
                   />
@@ -125,7 +125,7 @@ const PDPlatforms = () => {
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
                   <img
-                    src="/images/icons/othPlat.png"
+                    src={`${import.meta.env.VITE_BASE_API}/images/icons/othPlat.png`}
                     className="img-fluid w-52 object-cover"
                     alt=""
                   />

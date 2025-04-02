@@ -91,7 +91,7 @@ const AppDesignDev = () => {
                 lassName="w-full p-4 h-auto"
               >
                 <img
-                  src={productDetails?.service_images}
+                  src={import.meta.env.VITE_BASE_API+productDetails?.service_images}
                   className="img-fluid"
                   alt=""
                 />
@@ -179,7 +179,7 @@ const AppDesignDev = () => {
                 lassName="w-full p-8 h-auto"
               >
                 <img
-                  src="/images/productsPages/websitemiddle.png"
+                  src={`${import.meta.env.VITE_BASE_API}/images/productsPages/websitemiddle.png`}
                   className="img-fluid"
                   alt=""
                 />
