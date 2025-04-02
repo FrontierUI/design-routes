@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
 import Tilt from 'react-parallax-tilt';
@@ -21,7 +22,12 @@ import SMMAccordion from '@/components/SMMAccordion';
 import Testimonials from '@/components/Testimonials';
 
 const SocialMediaManagement = () => {
+  const [productDetails, setProductDetails] = useState({});
+  const [productsPackages, setProductsPackages] = useState({});  
+
   useEffect(() => {
+    fetchProductDetails();
+
     const timeoutId = setTimeout(() => {
       const element = document.querySelector('#root > main');
       if (element) {
@@ -35,10 +41,36 @@ const SocialMediaManagement = () => {
       if (element) {
         element.classList.add('overflow-x-hidden');
       }
+      setProductDetails({});
+      setProductsPackages([]);
     };
   }, []);
 
+  const fetchProductDetails = () => {
+    const json = JSON.stringify({ slug: "social-media-management" });
+
+    axios.post( `${import.meta.env.VITE_BASE_API}/api.php?action=get_service_details`,
+      JSON.stringify({ params: json }),
+      {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    )
+    .then((response) => {
+      if (response.data.success === 'true') {
+        setProductDetails(response.data.service_details);
+        setProductsPackages(response.data.service_packages);
+      }
+    })
+    .catch((error) => {
+      console.error(`Error: ${error}`);
+    });
+  }
+
   return (
+    productDetails.service_sub_title !== undefined 
+    ?
     <div className="relative w-full h-full smmProduct">
       <div className="relative w-full h-full">
         <div
@@ -52,16 +84,13 @@ const SocialMediaManagement = () => {
               <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-3 md:space-y-5 text-slate-100">
                 <h1 className="font-monaBold text-5xl">
                   <Typewriting
-                    text="Scalable Social Media Management"
+                    text={productDetails?.service_sub_title}
                     speed={150}
                   />
                 </h1>
 
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
-                  Enhance your social media presence and capture attention with
-                  Routes.Design tailored social media management Product. Our
-                  expert designers will craft impactful content, from posts to
-                  collateral, elevating your brand message.
+                  {productDetails?.service_description}
                 </p>
 
                 <div className="justStartCenter">
@@ -80,7 +109,7 @@ const SocialMediaManagement = () => {
                 lassName="w-full p-5 h-auto"
               >
                 <img
-                  src="/images/productsPages/smmHero.png"
+                  src={productDetails?.service_images}
                   className="img-fluid"
                   alt=""
                 />
@@ -305,7 +334,7 @@ const SocialMediaManagement = () => {
       </div>
 
       <div className="relative w-full h-full py-6">
-        <SMMPackage />
+        <SMMPackage  Packages={productsPackages}/>
       </div>
 
       <div className="relative flexy flex-col w-full h-full py-6">
@@ -321,6 +350,18 @@ const SocialMediaManagement = () => {
 
       <div className="relative w-full h-full pb-6">
         <Testimonials />
+      </div>
+    </div>
+    :
+    <div className="loading flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="relative">
+        <div className="w-32 h-32 animate-bounce">
+          <img
+            src="/images/routeslogo.svg"
+            alt="Loading"
+            className="w-32 h-32 animate-pulse"
+          />
+        </div>
       </div>
     </div>
   );

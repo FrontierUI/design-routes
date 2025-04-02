@@ -16,9 +16,47 @@ import BrandIdentityPackage from '@/components/BrandIdentityPackage';
 import BIDCounter from '@/components/BIDCounter';
 import BIDAccordion from '@/components/BIDAccordion';
 import Testimonials from '@/components/Testimonials';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const BrandIdentiyDesign = () => {
+  const [productDetails, setProductDetails] = useState({});
+  const [productsPackages, setProductsPackages] = useState({});
+
+  useEffect(() => {
+    fetchProductDetails();
+
+    return () => {
+      setProductDetails({});
+      setProductsPackages([]);
+    };
+  }, []);
+
+  const fetchProductDetails = () => {
+    const json = JSON.stringify({ slug: "brand-identity-design" });
+
+    axios.post( `${import.meta.env.VITE_BASE_API}/api.php?action=get_service_details`,
+      JSON.stringify({ params: json }),
+      {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    )
+    .then((response) => {
+      if (response.data.success === 'true') {
+        setProductDetails(response.data.service_details);
+        setProductsPackages(response.data.service_packages);
+      }
+    })
+    .catch((error) => {
+      console.error(`Error: ${error}`);
+    });
+  }
+
   return (
+    productDetails.service_sub_title !== undefined 
+    ?
     <div className="relative w-full h-full brandIdenDes">
       <div className="relative w-full h-full">
         <div
@@ -34,15 +72,13 @@ const BrandIdentiyDesign = () => {
               <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-3 md:space-y-5 text-slate-100">
                 <h1 className="font-monaBold text-5xl">
                   <Typewriting
-                    text="Brand Identity Design Product"
+                    text={productDetails?.service_sub_title}
                     speed={150}
                   />
                 </h1>
 
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
-                  From brand exploration and development to refreshes and
-                  rebrands, our world-class brand designers create cohesive,
-                  scalable brand experiences. Learn more and book a call today.
+                  {productDetails?.service_description}
                 </p>
 
                 <div className="justStartCenter">
@@ -61,7 +97,7 @@ const BrandIdentiyDesign = () => {
                 lassName="w-full p-5 h-auto"
               >
                 <img
-                  src="/images/productsPages/GM2.png"
+                  src={productDetails?.service_images}
                   className="img-fluid"
                   alt=""
                 />
@@ -244,7 +280,7 @@ const BrandIdentiyDesign = () => {
       </div>
 
       <div className="relative w-full h-full py-6">
-        <BrandIdentityPackage />
+        <BrandIdentityPackage Packages={productsPackages}/>
       </div>
 
       <div className="relative flexy flex-col w-full h-full py-6">
@@ -260,6 +296,18 @@ const BrandIdentiyDesign = () => {
 
       <div className="relative w-full h-full pb-6">
         <Testimonials />
+      </div>
+    </div>
+    :
+    <div className="loading flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="relative">
+        <div className="w-32 h-32 animate-bounce">
+          <img
+            src="/images/routeslogo.svg"
+            alt="Loading"
+            className="w-32 h-32 animate-pulse"
+          />
+        </div>
       </div>
     </div>
   );

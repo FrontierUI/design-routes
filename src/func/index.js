@@ -149,6 +149,18 @@ const validatePhone = (text) => {
   return regex.test(text);
 };
 
+const currencyformator = (price) => {
+  // // Format the price above to USD using the locale, style, and currency.
+  // let USDollar = new Intl.NumberFormat('en-US', {
+  //   style: 'currency',
+  //   currency: 'USD',
+  // });
+
+  // return USDollar.format(price);
+
+  return new Intl.NumberFormat().format(price);
+}
+
 export {
   appendScript,
   removeScript,
@@ -167,4 +179,5 @@ export {
   validateEmail,
   validateUrl,
   validatePhone,
+  currencyformator
 };

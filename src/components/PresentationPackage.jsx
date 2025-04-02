@@ -1,5 +1,6 @@
 // import React from 'react';
 import { Link } from 'react-router-dom';
+import { currencyformator } from '../func';
 
 const PresentationPackage = ({Packages}) => {
   return (
@@ -16,15 +17,15 @@ const PresentationPackage = ({Packages}) => {
           <div className="packInfo flexStart lg:items-center flex-col lg:flex-row lg:justify-between w-full text-gray-800 space-y-4">
             <div className="packTitle flexStart flex-col items-center justify-center lg:items-start lg:justify-start w-full space-y-3">
               <h1 className="text-5xl lg:text-[3.8rem] font-monaBold">
-              {Packages[0].package_name}
+              {Packages[0]?.package_name}
               </h1>
               <p className="w-full text-base lg:text-lg lg:w-9/12">
-                {Packages[0].package_details}
+                {Packages[0]?.package_details}
               </p>
             </div>
             <div className="packPricing flex flex-col items-end justify-end">
               <h1 className="text-8xl lg:text-9xl filsonHeavy leading-none">
-                ${Packages[0].package_price}
+                ${currencyformator(Packages[0]?.package_price)}
               </h1>
               <h4 className="text-xl font-monaSemibold uppercase">per month</h4>
             </div>
@@ -33,7 +34,7 @@ const PresentationPackage = ({Packages}) => {
           <div className="packageListItem flexStart text-gray-800">
             <ul className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-40 gap-y-4">
               {
-                [...JSON.parse(Packages[0].featured_extras)].map(({feature, included}, i)=>(
+                [...JSON.parse(Packages[0]?.featured_extras)].map(({feature, included}, i)=>(
                   <li className="flexStart" key={i}>
                     <div className="flexy space-x-2.5">
                       <img
@@ -195,9 +196,13 @@ const PresentationPackage = ({Packages}) => {
                     </div>
                     <div className="flexy flex-col w-full text-slate-900 space-y-2.5 py-6">
                       <h1 className="filsonHeavy text-5xl">
-                        ${pkg.package_price}/<span className="text-xl">project</span>
+                        ${currencyformator(pkg.package_price)}/<span className="text-xl">project</span>
                       </h1>
-                      <span className="text-md font-monaMedium">Fine Choice</span>
+                      <span className="text-md font-monaMedium">
+                        {index === 0 && 'Fine Choice'}
+                        {index === 1 && 'Best Choice'}
+                        {index === 2 && 'Recommended Choice'}
+                      </span>
                       <div className="flexy">
                         <Link to={'/'} className="primaryLink">
                           Get Started
@@ -226,7 +231,6 @@ const PresentationPackage = ({Packages}) => {
                 </div>
               ))
             }
-
             {/* <div className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg">
               <hr className="w-full absolute top-[8.5rem] left-0 h-[1.5px] bg-gray-400" />
               <hr className="w-full absolute top-[20.75rem] left-0 h-[1.5px] bg-gray-400" />

@@ -13,9 +13,47 @@ import WebPricePackage from '@/components/WebPricePackage';
 import WebDDAccordion from '@/components/WebDDAccordion';
 import WebDDCounter from '@/components/WebDDCounter';
 import Testimonials from '@/components/Testimonials';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const WebDesignDev = () => {
+  const [productDetails, setProductDetails] = useState({});
+  const [productsPackages, setProductsPackages] = useState({});
+
+  useEffect(() => {
+    fetchProductDetails();
+
+    return () => {
+      setProductDetails({});
+      setProductsPackages([]);
+    };
+  }, []);
+
+  const fetchProductDetails = () => {
+    const json = JSON.stringify({ slug: "web-design-and-development" });
+
+    axios.post( `${import.meta.env.VITE_BASE_API}/api.php?action=get_service_details`,
+      JSON.stringify({ params: json }),
+      {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    )
+    .then((response) => {
+      if (response.data.success === 'true') {
+        setProductDetails(response.data.service_details);
+        setProductsPackages(response.data.service_packages);
+      }
+    })
+    .catch((error) => {
+      console.error(`Error: ${error}`);
+    });
+  }
+
   return (
+    productDetails.service_sub_title !== undefined 
+    ?
     <div className="relative w-full h-full wddProduct">
       <div className="relative w-full h-full">
         <div
@@ -32,15 +70,12 @@ const WebDesignDev = () => {
                 <h3 className="text-2xl font-monaSemibold">Professional</h3>
                 <h1 className="font-monaBold text-5xl">
                   <Typewriting
-                    text="Web UI/UX Design & Development Product"
+                    text={productDetails?.service_sub_title}
                     speed={150}
                   />
                 </h1>
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
-                  Shine online with Routes.Design web design & development. Plug
-                  into a team of world-class web designers and developer elevate
-                  your website with designs that blend aesthetics and
-                  functionality, leading to the conversions you crave.
+                  {productDetails?.service_description}
                 </p>
 
                 <div className="justStartCenter">
@@ -59,7 +94,7 @@ const WebDesignDev = () => {
                 lassName="w-full p-5 h-auto"
               >
                 <img
-                  src="/images/productsPages/webHero.png"
+                  src={productDetails?.service_images}
                   className="img-fluid"
                   alt=""
                 />
@@ -213,7 +248,7 @@ const WebDesignDev = () => {
       </div>
 
       <div className="relative w-full h-full py-6">
-        <WebPricePackage />
+        <WebPricePackage Packages={productsPackages}/>
       </div>
 
       <div className="relative flexy flex-col w-full h-full py-6">
@@ -230,6 +265,18 @@ const WebDesignDev = () => {
 
       <div className="relative w-full h-full pb-6">
         <Testimonials />
+      </div>
+    </div>
+    :
+    <div className="loading flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="relative">
+        <div className="w-32 h-32 animate-bounce">
+          <img
+            src="/images/routeslogo.svg"
+            alt="Loading"
+            className="w-32 h-32 animate-pulse"
+          />
+        </div>
       </div>
     </div>
   );

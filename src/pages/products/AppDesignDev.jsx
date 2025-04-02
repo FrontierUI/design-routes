@@ -13,9 +13,47 @@ import AIEnhancedAPP from '@/components/AIEnhancedAPP';
 import AppPricePackage from '@/components/AppPricePackage';
 import AppDDAccordion from '@/components/AppDDAccordion';
 import AppDDCounter from '../../components/AppDDCounter';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const AppDesignDev = () => {
+  const [productDetails, setProductDetails] = useState({});
+  const [productsPackages, setProductsPackages] = useState({});
+
+  useEffect(() => {
+    fetchProductDetails();
+
+    return () => {
+      setProductDetails({});
+      setProductsPackages([]);
+    };
+  }, []);
+
+  const fetchProductDetails = () => {
+    const json = JSON.stringify({ slug: "app-design-and-development" });
+
+    axios.post( `${import.meta.env.VITE_BASE_API}/api.php?action=get_service_details`,
+      JSON.stringify({ params: json }),
+      {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    )
+    .then((response) => {
+      if (response.data.success === 'true') {
+        setProductDetails(response.data.service_details);
+        setProductsPackages(response.data.service_packages);
+      }
+    })
+    .catch((error) => {
+      console.error(`Error: ${error}`);
+    });
+  }
+
   return (
+    productDetails.service_sub_title !== undefined 
+    ?
     <div className="relative w-full h-full AppProduct">
       <div className="relative w-full h-full">
         <div
@@ -30,16 +68,12 @@ const AppDesignDev = () => {
                 <h3 className="text-2xl font-monaSemibold">Professional</h3>
                 <h1 className="font-monaBold text-5xl">
                   <Typewriting
-                    text="App UI/UX Design & Development Product"
+                    text={productDetails?.service_sub_title}
                     speed={150}
                   />
                 </h1>
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
-                  App and product design is at the core of many of our products.
-                  Almost every one of our multi-disciplinary team will tend to
-                  work on a product project at some point in its design cycle.
-                  Our aim is always simple, to design and deliver intuitive apps
-                  which engage our clients audience and exceed their goals.
+                  {productDetails?.service_description}
                 </p>
                 <div className="justStartCenter">
                   <button className="whiteButton">Get Started</button>
@@ -57,7 +91,7 @@ const AppDesignDev = () => {
                 lassName="w-full p-4 h-auto"
               >
                 <img
-                  src="/images/productsPages/appHero.png"
+                  src={productDetails?.service_images}
                   className="img-fluid"
                   alt=""
                 />
@@ -204,7 +238,7 @@ const AppDesignDev = () => {
       </div>
 
       <div className="relative w-full h-full py-6">
-        <AppPricePackage />
+        <AppPricePackage Packages={productsPackages}/>
       </div>
 
       <div className="relative flexy flex-col w-full h-full py-6">
@@ -221,6 +255,18 @@ const AppDesignDev = () => {
 
       <div className="relative w-full h-full pb-6">
         <Testimonials />
+      </div>
+    </div>
+    :
+    <div className="loading flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="relative">
+        <div className="w-32 h-32 animate-bounce">
+          <img
+            src="/images/routeslogo.svg"
+            alt="Loading"
+            className="w-32 h-32 animate-pulse"
+          />
+        </div>
       </div>
     </div>
   );
