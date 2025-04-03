@@ -12,7 +12,7 @@ const Services = () => {
             className="overflow-hidden rounded-lg w-full transition duration-300 shadow-drop-4 py-1.5"
           >
             <div className="p-6 w-full h-full rounded-lg overflow-hidden transitAll scal105 hover:bg-primary bg-white hover:text-white text-slate-900">
-              <img src={prods1.image} className="img-fluid rounded-lg" alt="" />
+              <img src={import.meta.env.VITE_BASE_API+prods1.image} className="img-fluid rounded-lg" alt="" />
 
               <div className="flexStart flex-col pt-3 space-y-1">
                 <h2 className="font-monaBold text-xl">{prods1.title}</h2>
@@ -31,7 +31,7 @@ const Services = () => {
             className="overflow-hidden rounded-lg w-full  transition duration-300 shadow-drop-4 py-1.5"
           >
             <div className="p-6 w-full h-full rounded-lg overflow-hidden transitAll scal105 hover:bg-primary bg-white hover:text-white text-slate-900">
-              <img src={prods2.image} className="img-fluid rounded-lg" alt="" />
+              <img src={import.meta.env.VITE_BASE_API+prods2.image} className="img-fluid rounded-lg" alt="" />
 
               <div className="pt-3 space-y-1">
                 <h2 className="font-monaBold text-xl">{prods2.title}</h2>
@@ -50,7 +50,7 @@ const Services = () => {
             className="overflow-hidden rounded-lg w-full  transition duration-300 shadow-drop-4 py-1.5"
           >
             <div className="p-6 w-full h-full rounded-lg overflow-hidden transitAll scal105 hover:bg-primary bg-white hover:text-white text-slate-900">
-              <img src={prods.image} className="img-fluid rounded-lg" alt="" />
+              <img src={import.meta.env.VITE_BASE_API+prods.image} className="img-fluid rounded-lg" alt="" />
 
               <div className="pt-3 space-y-1">
                 <h2 className="font-monaBold text-xl">{prods.title}</h2>
