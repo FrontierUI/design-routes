@@ -21,7 +21,8 @@ import PDPlatforms from '@/components/PDPlatforms';
 
 const PresentationDesign = () => {
   const [productDetails, setProductDetails] = useState({});
-  const [productsPackages, setProductsPackages] = useState({});  
+  const [productsPackages, setProductsPackages] = useState({});
+  const [portfolios, setPortfolios] = useState([]);
 
   useEffect(() => {
     fetchProductDetails();
@@ -45,7 +46,7 @@ const PresentationDesign = () => {
   }, []);
 
   const fetchProductDetails = () => {
-    const json = JSON.stringify({ slug: "presentation-design" });
+    const json = JSON.stringify({ slug: "presentation-designs" });
 
     axios.post( `${import.meta.env.VITE_BASE_API}/api.php?action=get_service_details`,
       JSON.stringify({ params: json }),
@@ -59,6 +60,7 @@ const PresentationDesign = () => {
       if (response.data.success === 'true') {
         setProductDetails(response.data.service_details);
         setProductsPackages(response.data.service_packages);
+        setPortfolios(response.data.portfolios);
       }
     })
     .catch((error) => {
@@ -126,11 +128,18 @@ const PresentationDesign = () => {
             speed={30}
             pauseOnHover={false}
           >
-            {[...pdPortfolioUp].map((item) => (
+            {/* {[...pdPortfolioUp].map((item) => (
               <PortfolioMarquee
                 key={item.href}
                 imgSrc={item.imgSrc}
                 href={item.href}
+              />
+            ))} */}
+            {[...portfolios].map((item,index) => (
+              <PortfolioMarquee
+                imgSrc={import.meta.env.VITE_BASE_API+item.header_image}
+                href={`/our-work/${item.brand_slug}`}
+                key={index}
               />
             ))}
           </Marquee>
@@ -145,11 +154,18 @@ const PresentationDesign = () => {
             speed={30}
             pauseOnHover={false}
           >
-            {[...pdPortfolioBot].map((item) => (
+            {/* {[...pdPortfolioBot].map((item) => (
               <PortfolioMarquee
                 key={item.href}
                 imgSrc={item.imgSrc}
                 href={item.href}
+              />
+            ))} */}
+            {[...portfolios].map((item,index) => (
+              <PortfolioMarquee
+                imgSrc={import.meta.env.VITE_BASE_API+item.header_image}
+                href={`/our-work/${item.brand_slug}`}
+                key={index}
               />
             ))}
           </Marquee>

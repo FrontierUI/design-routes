@@ -23,7 +23,8 @@ import Testimonials from '@/components/Testimonials';
 
 const SocialMediaManagement = () => {
   const [productDetails, setProductDetails] = useState({});
-  const [productsPackages, setProductsPackages] = useState({});  
+  const [productsPackages, setProductsPackages] = useState({});
+  const [portfolios, setPortfolios] = useState([]); 
 
   useEffect(() => {
     fetchProductDetails();
@@ -61,6 +62,7 @@ const SocialMediaManagement = () => {
       if (response.data.success === 'true') {
         setProductDetails(response.data.service_details);
         setProductsPackages(response.data.service_packages);
+        setPortfolios(response.data.portfolios);
       }
     })
     .catch((error) => {
@@ -129,11 +131,18 @@ const SocialMediaManagement = () => {
             speed={30}
             pauseOnHover={false}
           >
-            {[...smmPortfolioUp].map((item) => (
+            {/* {[...smmPortfolioUp].map((item) => (
               <PortfolioMarquee
                 imgSrc={item.imgSrc}
                 href={item.href}
                 key={item.href}
+              />
+            ))} */}
+            {[...portfolios].map((item,index) => (
+              <PortfolioMarquee
+                imgSrc={import.meta.env.VITE_BASE_API+item.header_image}
+                href={`/our-work/${item.brand_slug}`}
+                key={index}
               />
             ))}
           </Marquee>
@@ -147,11 +156,18 @@ const SocialMediaManagement = () => {
             speed={30}
             pauseOnHover={false}
           >
-            {[...smmPortfolioBot].map((item) => (
+            {/* {[...smmPortfolioBot].map((item) => (
               <PortfolioMarquee
                 imgSrc={item.imgSrc}
                 href={item.href}
                 key={item.href}
+              />
+            ))} */}
+            {[...portfolios].map((item,index) => (
+              <PortfolioMarquee
+                imgSrc={import.meta.env.VITE_BASE_API+item.header_image}
+                href={`/our-work/${item.brand_slug}`}
+                key={index}
               />
             ))}
           </Marquee>

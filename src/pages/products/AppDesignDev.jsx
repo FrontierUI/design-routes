@@ -19,6 +19,7 @@ import axios from 'axios';
 const AppDesignDev = () => {
   const [productDetails, setProductDetails] = useState({});
   const [productsPackages, setProductsPackages] = useState({});
+  const [portfolios, setPortfolios] = useState([]);
 
   useEffect(() => {
     fetchProductDetails();
@@ -44,6 +45,7 @@ const AppDesignDev = () => {
       if (response.data.success === 'true') {
         setProductDetails(response.data.service_details);
         setProductsPackages(response.data.service_packages);
+        setPortfolios(response.data.portfolios);
       }
     })
     .catch((error) => {
@@ -111,11 +113,18 @@ const AppDesignDev = () => {
             speed={30}
             pauseOnHover={false}
           >
-            {[...appPortfolioUp].map((item) => (
+            {/* {[...appPortfolioUp].map((item) => (
               <PortfolioMarquee
                 imgSrc={item.imgSrc}
                 href={item.href}
                 key={item.href}
+              />
+            ))} */}
+            {[...portfolios].map((item,index) => (
+              <PortfolioMarquee
+                imgSrc={import.meta.env.VITE_BASE_API+item.header_image}
+                href={`/our-work/${item.brand_slug}`}
+                key={index}
               />
             ))}
           </Marquee>
@@ -129,11 +138,18 @@ const AppDesignDev = () => {
             speed={30}
             pauseOnHover={false}
           >
-            {[...appPortfolioBot].map((item) => (
+            {/* {[...appPortfolioBot].map((item) => (
               <PortfolioMarquee
                 imgSrc={item.imgSrc}
                 href={item.href}
                 key={item.href}
+              />
+            ))} */}
+            {[...portfolios].map((item,index) => (
+              <PortfolioMarquee
+                imgSrc={import.meta.env.VITE_BASE_API+item.header_image}
+                href={`/our-work/${item.brand_slug}`}
+                key={index}
               />
             ))}
           </Marquee>
