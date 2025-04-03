@@ -16,11 +16,11 @@ import Tilt from 'react-parallax-tilt';
 const tabs = [
   { id: 'allPortfolio', title: 'All Portfolio', },
   { id: 'creativeCampaign', title: 'Creative Campaigns' },
-  { id: 'brandIdentity', title: 'Brand Identity & Design' },
+  { id: 'brandIdentity', title: 'Brand Identity Designs' },
   { id: 'socialMM', title: 'Social Media Management' },
-  { id: 'webDD', title: 'Web Design & Development' },
-  { id: 'appDD', title: 'App Design & Development' },
-  { id: 'presentationDesign', title: 'Presentation Design' },
+  { id: 'webDD', title: 'Web Design and Development' },
+  { id: 'appDD', title: 'App Design and Development' },
+  { id: 'presentationDesign', title: 'Presentation Designs' },
 ];
 
 const TabContent = ({ id }) => {
