@@ -86,7 +86,7 @@ const PortfolioTabs = () => {
     )
     .then((response) => {
       if (response.data.success === 'true') {
-        console.log(response.data.portfolios);
+        // console.log(response.data.portfolios);
         setPortfolios(response.data.portfolios);
       }
     })

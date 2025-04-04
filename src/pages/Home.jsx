@@ -1,26 +1,82 @@
-import { Link } from 'react-router-dom';
-import Marquee from 'react-fast-marquee';
+import { Link } from "react-router-dom";
+import Marquee from "react-fast-marquee";
 
-import Hero from '@/components/Hero';
-import VideosCarousel from '@/components/VideosCarousel';
+import Hero from "@/components/Hero";
+import VideosCarousel from "@/components/VideosCarousel";
 
 import {
   homePortFolioUp,
   homePortFolioBot,
   srcFilesList,
-} from '@/contentData/utils';
+} from "@/contentData/utils";
 
-import Typewriting from '@/components/Typewriting';
-import Services from '@/components/Services';
-import Strategies from '@/components/Strategies';
-import Testimonials from '@/components/Testimonials';
-import Professionalism from '@/components/Professionalism';
-import WorkEthics from '@/components/WorkEthics';
-import RoutesWay from '@/components/RoutesWay';
-import PortfolioMarquee from '@/components/PortfolioMarquee';
-import ServicesForm from '@/components/ServicesForm';
+import Typewriting from "@/components/Typewriting";
+import Services from "@/components/Services";
+import Strategies from "@/components/Strategies";
+import Testimonials from "@/components/Testimonials";
+import Professionalism from "@/components/Professionalism";
+import WorkEthics from "@/components/WorkEthics";
+import RoutesWay from "@/components/RoutesWay";
+import PortfolioMarquee from "@/components/PortfolioMarquee";
+import ServicesForm from "@/components/ServicesForm";
+import { useEffect, useMemo, useState } from "react";
+import axios from "axios";
 
 const Home = () => {
+  const [portfolios, setPortfolios] = useState([]);
+
+  useEffect(() => {
+    fetchPortfoliosForHome();
+
+    return () => {
+      setPortfolios([]);
+    };
+  }, []);
+
+  const fetchPortfoliosForHome = () => {
+    const json = JSON.stringify({ limit: 1000 });
+
+    axios
+      .post(
+        `${
+          import.meta.env.VITE_BASE_API
+        }/api.php?action=get_portfolio_for_home`,
+        JSON.stringify({ params: json }),
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      )
+      .then((response) => {
+        if (response.data.success === "true") {
+          console.log(response.data.portfolios);
+          setPortfolios(response.data.portfolios);
+        }
+      })
+      .catch((error) => {
+        console.error(`Error: ${error}`);
+      });
+  };
+
+  // More flexible chunk function
+  const splitIntoChunks = (array, numberOfChunks = 2) => {
+    const chunkSize = Math.ceil(array.length / numberOfChunks);
+    return Array.from({ length: numberOfChunks }, (_, index) =>
+      array.slice(index * chunkSize, (index + 1) * chunkSize)
+    );
+  };
+
+  // Get specific chunk (0-based index)
+  const getChunk = (array, chunkIndex = 0, totalChunks = 2) => {
+    const chunks = splitIntoChunks(array, totalChunks);
+    return chunks[chunkIndex] || [];
+  };
+
+  // Usage with useMemo
+  const firstChunk = useMemo(() => getChunk(portfolios, 0), [portfolios]);
+  const secondChunk = useMemo(() => getChunk(portfolios, 1), [portfolios]);
+
   return (
     <div className="relative w-full h-full">
       <Hero />
@@ -39,11 +95,18 @@ const Home = () => {
             speed={30}
             pauseOnHover={false}
           >
-            {[...homePortFolioUp].map((item) => (
+            {/* {[...homePortFolioUp].map((item) => (
               <PortfolioMarquee
                 imgSrc={item.imgSrc}
                 href={item.href}
                 key={item.href}
+              />
+            ))} */}
+            {[...firstChunk].map((item,index) => (
+              <PortfolioMarquee
+                imgSrc={import.meta.env.VITE_BASE_API+item.header_image}
+                href={`/our-work/${item.brand_slug}`}
+                key={index}
               />
             ))}
           </Marquee>
@@ -57,11 +120,18 @@ const Home = () => {
             speed={30}
             pauseOnHover={false}
           >
-            {[...homePortFolioBot].map((item) => (
+            {/* {[...homePortFolioBot].map((item) => (
               <PortfolioMarquee
                 imgSrc={item.imgSrc}
                 href={item.href}
                 key={item.href}
+              />
+            ))} */}
+            {[...secondChunk].map((item,index) => (
+              <PortfolioMarquee
+                imgSrc={import.meta.env.VITE_BASE_API+item.header_image}
+                href={`/our-work/${item.brand_slug}`}
+                key={index}
               />
             ))}
           </Marquee>
@@ -102,7 +172,7 @@ const Home = () => {
               </h1>
             </div>
             <div className="flexy">
-              <Link to={'/pricing'} className="tpLink">
+              <Link to={"/pricing"} className="tpLink">
                 see our plans
               </Link>
             </div>
@@ -117,7 +187,7 @@ const Home = () => {
           <div className="relative w-full h-full flexy lg:max-h-[400px] max-sm:p-2 sm:p-10 overflow-hidden z-[2]">
             <div
               className="absolute w-full h-full rounded-xl bg-no-repeat bg-cover bg-center -z-[1]"
-              style={{ backgroundImage: 'url(/images/interested.jpg)' }}
+              style={{ backgroundImage: "url(/images/interested.jpg)" }}
             />
 
             <div className="flexStart text-white flex-col w-full py-16 px-2 sm:px-10">
@@ -130,7 +200,7 @@ const Home = () => {
               </p>
 
               <Link
-                to={'https://koalendar.com/e/meet-with-routes-design'}
+                to={"https://koalendar.com/e/meet-with-routes-design"}
                 target="_blank"
                 className="relative lg:top-4 mt-4 interestedLink text-lg sm:text-xl"
               >
