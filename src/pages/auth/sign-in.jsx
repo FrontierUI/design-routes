@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { GoogleOAuthProvider, useGoogleLogin } from "@react-oauth/google";
+import axios from "axios";
 
-import { getCookie, setCookie, checkRole } from '../../func';
+import { getCookie, setCookie, checkRole } from "../../func";
 
-import Toast from '../../components/Toast';
+import Toast from "../../components/Toast";
 
 // emails
 
@@ -17,19 +18,88 @@ import Toast from '../../components/Toast';
 //  email =--> verify@routes.desgin
 //  passw =--> g0:HO@=EYS
 
+// Google Login Button Component
+const GoogleLoginButton = ({addToast, removeToast, location, navigate}) => {
+  const login = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      const json = JSON.stringify({
+        access_token: tokenResponse.access_token,
+      });
+
+      axios
+        .post(
+          `${import.meta.env.VITE_BASE_API}/api.php?action=google_login`,
+          JSON.stringify({ params: json }),
+          { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
+        )
+        .then((response) => {
+          if (response.data.success === "true") {
+            addToast("success", response.data.message);
+
+            setTimeout(() => {
+              if (typeof location.state?.from !== "undefined") {
+                setCookie("token", response.data.token, 1);
+
+                window.localStorage.setItem("isLoggedIn", "true");
+                window.localStorage.setItem(
+                  "loginSecret",
+                  response.data.secret
+                );
+
+                navigate(location.state?.from, { replace: true });
+              } else {
+                setCookie("token", response.data.token, 1);
+                if (checkRole(response.data.token) === "admin")
+                  navigate(`/dashboard`, { replace: true });
+                else navigate(`/dashboard`, { replace: true });
+
+                window.localStorage.setItem("isLoggedIn", "true");
+                window.localStorage.setItem(
+                  "loginSecret",
+                  response.data.secret
+                );
+              }
+            }, 2000);
+          } else {
+            addToast("error", response.data.message);
+          }
+        })
+        .catch((error) => {
+          console.error(`Error: ${error}`);
+        });
+    },
+    onError: (error) => {
+      console.error("Google Login Error:", error);
+    },
+    scope: 'profile email',
+  });
+
+  return (
+    <div className="form-oauthBtn" onClick={() => login()}>
+      <img
+        src="/images/googleAuth.svg"
+        className="img-fluid"
+        width={40}
+        alt=""
+      />
+      <span className="text-lg font-medium">Sign in with Google</span>
+    </div>
+  );
+};
+
 const SignIn = () => {
   const location = useLocation();
 
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("admin@routes.design");
+  const [password, setPassword] = useState("@12benten@12");
   const [toasts, setToasts] = useState([]);
 
   useEffect(() => {
-    if (getCookie('token') !== undefined && getCookie('token') !== null) {
+    if (getCookie("token") !== undefined && getCookie("token") !== null) {
       //user is already loggedin
-      if (checkRole(getCookie('token')) === 'admin')
+      if (checkRole(getCookie("token")) === "admin")
         navigate(`/dashboard`, { replace: true });
       else navigate(`/dashboard`, { replace: true });
     }
@@ -47,7 +117,7 @@ const SignIn = () => {
   const validateUser = (e) => {
     e.preventDefault();
 
-    if (email.trim() !== '' && password.trim() !== '') {
+    if (email.trim() !== "" && password.trim() !== "") {
       const json = JSON.stringify({
         email: email.trim(),
         password: password.trim(),
@@ -57,50 +127,50 @@ const SignIn = () => {
         .post(
           `${import.meta.env.VITE_BASE_API}/api.php?action=login`,
           JSON.stringify({ params: json }),
-          { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+          { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
         )
         .then((response) => {
-          if (response.data.success === 'true') {
-            addToast('success', response.data.message);
+          if (response.data.success === "true") {
+            addToast("success", response.data.message);
 
             setTimeout(() => {
-              if (typeof location.state?.from !== 'undefined') {
-                setCookie('token', response.data.token, 1);
+              if (typeof location.state?.from !== "undefined") {
+                setCookie("token", response.data.token, 1);
 
-                window.localStorage.setItem('isLoggedIn', 'true');
+                window.localStorage.setItem("isLoggedIn", "true");
                 window.localStorage.setItem(
-                  'loginSecret',
-                  response.data.sceret
+                  "loginSecret",
+                  response.data.secret
                 );
 
                 navigate(location.state?.from, { replace: true });
               } else {
-                setCookie('token', response.data.token, 1);
-                if (checkRole(response.data.token) === 'admin')
+                setCookie("token", response.data.token, 1);
+                if (checkRole(response.data.token) === "admin")
                   navigate(`/dashboard`, { replace: true });
                 else navigate(`/dashboard`, { replace: true });
 
-                window.localStorage.setItem('isLoggedIn', 'true');
+                window.localStorage.setItem("isLoggedIn", "true");
                 window.localStorage.setItem(
-                  'loginSecret',
-                  response.data.sceret
+                  "loginSecret",
+                  response.data.secret
                 );
               }
             }, 2000);
           } else {
-            addToast('error', response.data.message);
+            addToast("error", response.data.message);
           }
         })
         .catch((error) => {
           console.error(`Error: ${error}`);
         });
     } else {
-      if (email.trim() === '' && password.trim() === '')
-        addToast('error', 'Please provide email and password to signin');
+      if (email.trim() === "" && password.trim() === "")
+        addToast("error", "Please provide email and password to signin");
       else if (email.trim())
-        addToast('error', 'Please provide email to signin');
-      else if (password.trim() === '')
-        addToast('error', 'Please provide password to signin');
+        addToast("error", "Please provide email to signin");
+      else if (password.trim() === "")
+        addToast("error", "Please provide password to signin");
     }
   };
 
@@ -109,7 +179,7 @@ const SignIn = () => {
       <section className="bg-primary h-screen relative hidden lg:w-1/2 lg:flex items-center justify-center z-[2]">
         <div
           className="absolute top-0 w-full h-screen bg-cover bg-center bg-no-repeat z-[1]"
-          style={{ backgroundImage: 'url(/images/authE.svg)' }}
+          style={{ backgroundImage: "url(/images/authE.svg)" }}
         />
         <div className="w-full relative top-16 p-12 z-[2]">
           <img src="/images/login.png" className="img-fluid" alt="" />
@@ -161,7 +231,7 @@ const SignIn = () => {
                 <span className="text-[15px]">Remember me</span>
               </div>
               <Link
-                to={'/auth/forgot-password'}
+                to={"/auth/forgot-password"}
                 className="flex text-primary font-monaSemibold"
               >
                 Forget Password
@@ -177,7 +247,7 @@ const SignIn = () => {
                 <hr className="form-hr" />
               </div>
 
-              <Link to={'/'} className="form-oauthBtn">
+              {/* <Link to={'/'} className="form-oauthBtn">
                 <img
                   src="/images/googleAuth.svg"
                   className="img-fluid"
@@ -185,7 +255,11 @@ const SignIn = () => {
                   alt=""
                 />
                 <span className="text-lg font-medium">Sign in with Google</span>
-              </Link>
+              </Link> */}
+
+              <GoogleOAuthProvider clientId="1003705889448-lbljd7fb2aeelnavgbuev859u9re9pom.apps.googleusercontent.com">
+                <GoogleLoginButton addToast={addToast} removeToast={removeToast} location={location} navigate={navigate}/>
+              </GoogleOAuthProvider>
             </div>
 
             <div className="w-full flexy">
@@ -200,7 +274,7 @@ const SignIn = () => {
 
           <div className="flexy gap-x-2 w-full">
             <span>Don't have an account?</span>
-            <Link to={'/auth/sign-up'} className="text-primary font-semibold">
+            <Link to={"/auth/sign-up"} className="text-primary font-semibold">
               Sign Up
             </Link>
           </div>
