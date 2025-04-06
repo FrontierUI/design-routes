@@ -92,8 +92,8 @@ const SignIn = () => {
 
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("admin@routes.design");
-  const [password, setPassword] = useState("@12benten@12");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [toasts, setToasts] = useState([]);
 
   useEffect(() => {
