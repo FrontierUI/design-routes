@@ -11,9 +11,15 @@ import PricingTabs from '@/components/PricingTabs';
 import PricingAccordion from '@/components/PricingAccordion';
 import Testimonials from '@/components/Testimonials';
 
+import { Helmet } from 'react-helmet-async';
+
 const Pricing = () => {
   return (
     <div className="relative flexy flex-col w-full h-full">
+      <Helmet>
+        <title>Flexible Subscription Plans for Your Business Growth | Routes.Design</title>
+        <meta name="description" content="Explore Routes.Design's flexible subscription plans tailored to support your business growth with unlimited design services at a flat monthly fee." />
+      </Helmet>
       <div className="flexy flex-col w-full px-5 pt-20 lg:pt-28">
         <div className="flexy flex-col py-8 w-full space-y-5 text-center text-slate-900 lg:w-3/4">
           <h3 className="text-xl font-monaBold uppercase">

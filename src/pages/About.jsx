@@ -6,9 +6,15 @@ import Services from '@/components/Services';
 import Strategies from '@/components/Strategies';
 import CounterNumbers from '@/components/CounterNumbers';
 
+import { Helmet } from 'react-helmet-async';
+
 const About = () => {
   return (
     <div className="relative w-full h-full aboutUs">
+      <Helmet>
+        <title>About Routes.Design: Your Partner in Exceptional Design Services</title>
+        <meta name="description" content="Learn about Routes.Design, a dedicated team of professionals offering top-tier design services to help brands and agencies achieve their creative goals." />
+      </Helmet>
       <div className="relative w-full h-full">
         <div className="w-full flexy flex-col px-5 py-10 pt-16 lg:pt-20 lg:mt-28 lg:mb-16">
           <div className="flexy flex-col lg:w-2/3 space-y-5 text-center">

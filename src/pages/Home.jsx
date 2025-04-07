@@ -22,6 +22,8 @@ import ServicesForm from "@/components/ServicesForm";
 import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 
+import { Helmet } from 'react-helmet-async';
+
 const Home = () => {
   const [portfolios, setPortfolios] = useState([]);
 
@@ -79,6 +81,10 @@ const Home = () => {
 
   return (
     <div className="relative w-full h-full">
+      <Helmet>
+        <title>Routes.Design — Top Design Agency for the Modern World | Unlimited Creative Solutions for All Businesses</title>
+        <meta name="description" content="Discover Routes.Design — the USA’s go-to creative partner for unlimited, high-speed design solutions. Powered by a global team, we deliver premium branding, UI/UX, and digital assets on-demand. Future-ready design, delivered daily." />
+      </Helmet>
       <Hero />
 
       <div className="w-full h-full px-5 lg:px-12">

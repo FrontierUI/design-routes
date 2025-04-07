@@ -8,9 +8,15 @@ import Services from '@/components/Services';
 import Professionalism from '@/components/Professionalism';
 import Testimonials from '@/components/Testimonials';
 
+import { Helmet } from 'react-helmet-async';
+
 const ForAgencies = () => {
   return (
     <div className="relative w-full h-full forAgencies">
+      <Helmet>
+        <title>Design Solutions Tailored for Agencies | Routes.Design</title>
+        <meta name="description" content="Discover how Routes.Design partners with agencies to provide scalable and reliable design services, acting as an extension of your creative team." />
+      </Helmet>
       <div className="relative w-full h-full">
         <div
           className="absolute top-0 w-full h-full -z-[1] bg-cover bg-no-repeat"

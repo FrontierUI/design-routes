@@ -2,9 +2,15 @@ import React from 'react';
 
 import Testimonials from '@/components/Testimonials';
 
+import { Helmet } from 'react-helmet-async';
+
 const BookACall = () => {
   return (
     <div className="relative w-full h-full bookAcall">
+      <Helmet>
+        <title>Schedule a Consultation with Routes.Design</title>
+        <meta name="description" content="Book a call with Routes.Design to discuss how our design services can elevate your brand and meet your creative needs." />
+      </Helmet>
       <div className="relative w-full h-full">
         <div
           className="absolute top-0 w-full h-full -z-[1] bg-cover bg-no-repeat"

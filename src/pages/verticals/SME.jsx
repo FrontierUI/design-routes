@@ -8,9 +8,15 @@ import Services from '@/components/Services';
 import Professionalism from '@/components/Professionalism';
 import Testimonials from '@/components/Testimonials';
 
+import { Helmet } from 'react-helmet-async';
+
 const SME = () => {
   return (
     <div className="relative w-full h-full forBrands">
+      <Helmet>
+        <title>Affordable Design Services for Small and Medium-Sized Enterprises | Routes.Design</title>
+        <meta name="description" content="Grow your business with Routes.Design's flat-rate design products, offering high-quality creative solutions without breaking your budget." />
+      </Helmet>
       <div className="relative w-full h-full">
         <div
           className="absolute top-0 w-full h-full -z-[1] bg-cover bg-no-repeat"

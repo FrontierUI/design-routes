@@ -4,9 +4,15 @@ import { Link } from 'react-router-dom';
 import PortfolioTabs from '@/components/PortfolioTabs';
 import Testimonials from '@/components/Testimonials';
 
+import { Helmet } from 'react-helmet-async';
+
 const OurWork = () => {
   return (
     <div className="relative w-full h-full ourWork">
+      <Helmet>
+        <title>Our Portfolio: Showcasing Creative Excellence | Routes.Design</title>
+        <meta name="description" content="Browse our portfolio to see how Routes.Design has helped brands and agencies with innovative and impactful design solutions." />
+      </Helmet>
       <div className="relative w-full h-full py-6">
         <div className="flexy w-full h-full px-5 lg:px-12 pt-12 pb-6 lg:mt-12">
           <div className="ourWorkTitles">
