@@ -10,8 +10,11 @@ const PortfolioPage = () => {
   const [portfoliosDetails, setPortfoliosDetails] = useState({});
 
   useEffect(() => {
-
-    if (params.slug !== undefined && params.slug !== null && params.slug.toString().trim() !== '')
+    if (
+      params.slug !== undefined &&
+      params.slug !== null &&
+      params.slug.toString().trim() !== ''
+    )
       fetchPortfoliosDetails(params.slug);
     else {
       navigate(`/our-work`, { replace: true });
@@ -36,24 +39,26 @@ const PortfolioPage = () => {
   const fetchPortfoliosDetails = (slug) => {
     const json = JSON.stringify({ brand_slug: slug });
 
-    axios.post( `${import.meta.env.VITE_BASE_API}/api.php?action=get_portfolio_details`,
-      JSON.stringify({ params: json }),
-      {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      }
-    )
-    .then((response) => {
-      if (response.data.success === 'true') {
-        console.log(response.data.portfolio);
-        setPortfoliosDetails(response.data.portfolio);
-      }
-    })
-    .catch((error) => {
-      console.error(`Error: ${error}`);
-    });
-  }
+    axios
+      .post(
+        `${import.meta.env.VITE_BASE_API}/api.php?action=get_portfolio_details`,
+        JSON.stringify({ params: json }),
+        {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        }
+      )
+      .then((response) => {
+        if (response.data.success === 'true') {
+          console.log(response.data.portfolio);
+          setPortfoliosDetails(response.data.portfolio);
+        }
+      })
+      .catch((error) => {
+        console.error(`Error: ${error}`);
+      });
+  };
 
   return (
     <div className="relative w-full h-full caseStudies">
@@ -65,7 +70,11 @@ const PortfolioPage = () => {
               className="img-fluid w-full h-full object-cover rounded-lg"
               alt=""
             /> */}
-            <img src={portfoliosDetails?.header_image} className="img-fluid w-full h-full object-cover rounded-lg" alt="" />
+            <img
+              src={portfoliosDetails?.header_image}
+              className="img-fluid w-full h-full object-cover rounded-lg"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -85,11 +94,9 @@ const PortfolioPage = () => {
                   <span className="routes-tag">Brand Identity</span>
                   <span className="routes-tag">Web Design</span>
                   <span className="routes-tag">Social Media</span> */}
-                  {
-                    portfoliosDetails.tags?.map((tag)=>(
-                      <span className="routes-tag">{tag}</span>
-                    ))
-                  }
+                  {portfoliosDetails.tags?.map((tag) => (
+                    <span className="routes-tag">{tag}</span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -127,10 +134,8 @@ const PortfolioPage = () => {
       <div className="relative w-full h-full pb-6">
         <div className="flexy w-full h-full px-5 lg:px-12 py-6">
           <div className="mx-auto grid grid-flow-dense grid-cols-12 gap-5">
-            {
-              portfoliosDetails.images?.map((image, index)=>(
-                image.type==="focus"
-                ?
+            {portfoliosDetails.images?.map((image, index) =>
+              image.type === 'focus' ? (
                 <Tilt
                   key={index}
                   tiltMaxAngleX={1}
@@ -146,10 +151,14 @@ const PortfolioPage = () => {
                       className="w-full h-full object-contain rounded-lg"
                       alt=""
                     /> */}
-                    <img src={image.url} className="w-full h-full object-contain rounded-lg" alt="" />
+                    <img
+                      src={image.url}
+                      className="w-full h-full object-contain rounded-lg"
+                      alt=""
+                    />
                   </div>
                 </Tilt>
-                :
+              ) : (
                 <Tilt
                   key={index}
                   tiltMaxAngleX={2}
@@ -165,11 +174,15 @@ const PortfolioPage = () => {
                       className="w-full h-full object-contain rounded-lg"
                       alt=""
                     /> */}
-                    <img src={image.url} className="w-full h-full object-contain rounded-lg" alt="" />
+                    <img
+                      src={image.url}
+                      className="w-full h-full object-contain rounded-lg"
+                      alt=""
+                    />
                   </div>
                 </Tilt>
-              ))
-            }
+              )
+            )}
             {/* <Tilt
               tiltMaxAngleX={1}
               tiltMaxAngleY={1}
@@ -274,7 +287,11 @@ const PortfolioPage = () => {
                   className="w-full h-full object-contain rounded-lg"
                   alt=""
                 /> */}
-                <img src={portfoliosDetails?.bottom_image} className="w-full h-full object-contain rounded-lg" alt="" />
+                <img
+                  src={portfoliosDetails?.bottom_image}
+                  className="w-full h-full object-contain rounded-lg"
+                  alt=""
+                />
               </div>
             </div>
           </div>
