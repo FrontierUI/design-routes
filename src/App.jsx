@@ -11,6 +11,7 @@ const OurWork = lazy(() => import('@/pages/OurWork'));
 const BookACall = lazy(() => import('@/pages/BookACall'));
 
 const PortfolioPage = lazy(() => import('@/pages/PortfolioPage'));
+const Thankyou = lazy(() => import('@/pages/Thankyou'));
 
 const SignIn = lazy(() => import('@/pages/auth/sign-in'));
 const SignUp = lazy(() => import('@/pages/auth/sign-up'));
@@ -94,6 +95,7 @@ const App = () => {
           <Route path="/about-us" element={<About />} />
           <Route path="/book-a-call" element={<BookACall />} />
           <Route path="/our-work" element={<OurWork />} />
+          <Route path="/thankyou" element={<Thankyou />} />
 
           <Route path="/auth/sign-up" element={<SignUp />} />
           <Route path="/auth/sign-in" element={<SignIn />} />

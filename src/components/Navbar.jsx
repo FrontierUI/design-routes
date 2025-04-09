@@ -6,6 +6,7 @@ import { Menus } from '@/contentData/utils';
 
 import DesktopMenu from './DesktopMenu';
 import MobileMenu from './MobileMenu';
+import Avatar from './Avatar';
 
 const Navbar = () => {
   const [isOpenMain, setIsOpenMain] = useState(false);
@@ -48,12 +49,14 @@ const Navbar = () => {
             </button>
           </Link>
 
-          <Link
+          {/* <Link
             className="flexy transitAll scal105 lg:hover:shadow-drop-4 bg-primary text-white px-6 py-2 shadow rounded-full itemsCenter"
             to="/auth/sign-in"
           >
             Sign In
-          </Link>
+          </Link> */}
+
+          <Avatar />
 
           <div className="lg:hidden">
             <MobileMenu Menus={Menus} isOpenMain={isOpenMain} />
