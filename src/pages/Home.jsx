@@ -1,26 +1,26 @@
-import { Link } from "react-router-dom";
-import Marquee from "react-fast-marquee";
+import { Link } from 'react-router-dom';
+import Marquee from 'react-fast-marquee';
 
-import Hero from "@/components/Hero";
-import VideosCarousel from "@/components/VideosCarousel";
+import Hero from '@/components/Hero';
+import VideosCarousel from '@/components/VideosCarousel';
 
 import {
   homePortFolioUp,
   homePortFolioBot,
   srcFilesList,
-} from "@/contentData/utils";
+} from '@/contentData/utils';
 
-import Typewriting from "@/components/Typewriting";
-import Services from "@/components/Services";
-import Strategies from "@/components/Strategies";
-import Testimonials from "@/components/Testimonials";
-import Professionalism from "@/components/Professionalism";
-import WorkEthics from "@/components/WorkEthics";
-import RoutesWay from "@/components/RoutesWay";
-import PortfolioMarquee from "@/components/PortfolioMarquee";
-import ServicesForm from "@/components/ServicesForm";
-import { useEffect, useMemo, useState } from "react";
-import axios from "axios";
+import Typewriting from '@/components/Typewriting';
+import Services from '@/components/Services';
+import Strategies from '@/components/Strategies';
+import Testimonials from '@/components/Testimonials';
+import Professionalism from '@/components/Professionalism';
+import WorkEthics from '@/components/WorkEthics';
+import RoutesWay from '@/components/RoutesWay';
+import PortfolioMarquee from '@/components/PortfolioMarquee';
+import ServicesForm from '@/components/ServicesForm';
+import { useEffect, useMemo, useState } from 'react';
+import axios from 'axios';
 
 import { Helmet } from 'react-helmet-async';
 
@@ -46,12 +46,12 @@ const Home = () => {
         JSON.stringify({ params: json }),
         {
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            'Content-Type': 'application/x-www-form-urlencoded',
           },
         }
       )
       .then((response) => {
-        if (response.data.success === "true") {
+        if (response.data.success === 'true') {
           console.log(response.data.portfolios);
           setPortfolios(response.data.portfolios);
         }
@@ -82,8 +82,14 @@ const Home = () => {
   return (
     <div className="relative w-full h-full">
       <Helmet>
-        <title>Routes.Design — Top Design Agency for the Modern World | Unlimited Creative Solutions for All Businesses</title>
-        <meta name="description" content="Discover Routes.Design — the USA’s go-to creative partner for unlimited, high-speed design solutions. Powered by a global team, we deliver premium branding, UI/UX, and digital assets on-demand. Future-ready design, delivered daily." />
+        <title>
+          Routes.Design — Top Design Agency for the Modern World | Unlimited
+          Creative Solutions for All Businesses
+        </title>
+        <meta
+          name="description"
+          content="Discover Routes.Design — the USA’s go-to creative partner for unlimited, high-speed design solutions. Powered by a global team, we deliver premium branding, UI/UX, and digital assets on-demand. Future-ready design, delivered daily."
+        />
       </Helmet>
       <Hero />
 
@@ -108,9 +114,9 @@ const Home = () => {
                 key={item.href}
               />
             ))} */}
-            {[...firstChunk].map((item,index) => (
+            {[...firstChunk].map((item, index) => (
               <PortfolioMarquee
-                imgSrc={import.meta.env.VITE_BASE_API+item.header_image}
+                imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
                 href={`/our-work/${item.brand_slug}`}
                 key={index}
               />
@@ -133,9 +139,9 @@ const Home = () => {
                 key={item.href}
               />
             ))} */}
-            {[...secondChunk].map((item,index) => (
+            {[...secondChunk].map((item, index) => (
               <PortfolioMarquee
-                imgSrc={import.meta.env.VITE_BASE_API+item.header_image}
+                imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
                 href={`/our-work/${item.brand_slug}`}
                 key={index}
               />
@@ -178,7 +184,7 @@ const Home = () => {
               </h1>
             </div>
             <div className="flexy">
-              <Link to={"/pricing"} className="tpLink">
+              <Link to={'/pricing'} className="tpLink">
                 see our plans
               </Link>
             </div>
@@ -193,7 +199,7 @@ const Home = () => {
           <div className="relative w-full h-full flexy lg:max-h-[400px] max-sm:p-2 sm:p-10 overflow-hidden z-[2]">
             <div
               className="absolute w-full h-full rounded-xl bg-no-repeat bg-cover bg-center -z-[1]"
-              style={{ backgroundImage: "url(/images/interested.jpg)" }}
+              style={{ backgroundImage: 'url(/images/interested.jpg)' }}
             />
 
             <div className="flexStart text-white flex-col w-full py-16 px-2 sm:px-10">
@@ -206,7 +212,7 @@ const Home = () => {
               </p>
 
               <Link
-                to={"https://koalendar.com/e/meet-with-routes-design"}
+                to={'https://koalendar.com/e/meet-with-routes-design'}
                 target="_blank"
                 className="relative lg:top-4 mt-4 interestedLink text-lg sm:text-xl"
               >

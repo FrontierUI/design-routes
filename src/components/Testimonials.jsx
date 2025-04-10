@@ -66,12 +66,22 @@ const Testimonials = () => {
                     {testt.clientName}
                   </h4>
                 </div>
-                <div className="justStartCenter gap-x-1">
-                  <img src={Star} alt="" className="img-fluid w-5 h-5" />
-                  <img src={Star} alt="" className="img-fluid w-5 h-5" />
-                  <img src={Star} alt="" className="img-fluid w-5 h-5" />
-                  <img src={Star} alt="" className="img-fluid w-5 h-5" />
-                  <img src={Star} alt="" className="img-fluid w-5 h-5" />
+                <div className="justStartCenter gap-x-3">
+                  <div className="justStartCenter gap-x-1">
+                    <img src={Star} alt="" className="img-fluid w-5 h-5" />
+                    <img src={Star} alt="" className="img-fluid w-5 h-5" />
+                    <img src={Star} alt="" className="img-fluid w-5 h-5" />
+                    <img src={Star} alt="" className="img-fluid w-5 h-5" />
+                    <img src={Star} alt="" className="img-fluid w-5 h-5" />
+                  </div>
+                  <span>on</span>
+                  <div className="flex">
+                    <img
+                      src="/images/icons/trustpilotsmall.svg"
+                      className="img-fluid"
+                      alt=""
+                    />
+                  </div>
                 </div>
               </div>
             </div>

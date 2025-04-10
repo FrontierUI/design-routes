@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Phone } from 'lucide-react';
+import { ChevronDown, Phone } from 'lucide-react';
 
 import Typewriting from '@/components/Typewriting';
 
@@ -102,14 +102,13 @@ const ServicesForm = () => {
                 />
               </div>
 
-              <div className="service-formSelect">
+              <div className="service-formSelect relative">
                 <label htmlFor="prodServices" className="service-formLabel">
                   Select your service
                 </label>
                 <select
                   id="prodServices"
                   name="prodServices"
-                  required
                   className="service-select w-full"
                 >
                   <option value="" className="service-selectOpt">
@@ -140,6 +139,9 @@ const ServicesForm = () => {
                     Presentation Design
                   </option>
                 </select>
+                <div className="absolute bottom-2 -right-1 hidden lg:flex items-center">
+                  <ChevronDown className="w-6 h-6" />
+                </div>
               </div>
 
               <div className="service-formSelect">
