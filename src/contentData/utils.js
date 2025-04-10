@@ -913,7 +913,7 @@ export const prod2 = [
     id: 'appDesDevService',
     href: '/products/app-design-and-development',
     image: uixApp,
-    title: 'Web Design & Development',
+    title: 'App Design & Development',
     descr:
       'Bring your ideas to life with intuitive and engaging mobile applications. We ensure your app delivers a seamless user experience across all devices.',
   },

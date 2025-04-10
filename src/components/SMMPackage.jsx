@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { currencyformator } from '../func';
 
-const SMMPackage = ({Packages}) => {
+const SMMPackage = ({ Packages }) => {
   return (
     <div className="flexy flex-col space-y-5 max-w-full lg:px-12">
       <div className="relative w-full campPackBan flexy p-5 lg:p-14">
@@ -33,23 +33,27 @@ const SMMPackage = ({Packages}) => {
 
           <div className="packageListItem flexStart text-white">
             <ul className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-40 gap-y-4">
-              {
-                [...JSON.parse(Packages[0].featured_extras)].map(({feature, included}, i)=>(
+              {[...JSON.parse(Packages[0].featured_extras)].map(
+                ({ feature, included }, i) => (
                   <li className="flexStart" key={i}>
                     <div className="flexy space-x-2.5">
                       <img
-                        src={included ? "/images/icons/roundCheckWhite.svg" : "/images/icons/doublecheckgrey.svg"}
+                        src={
+                          included
+                            ? '/images/icons/roundCheckWhite.svg'
+                            : '/images/icons/doublecheckgrey.svg'
+                        }
                         className="img-fluid"
                         width={28}
                         alt=""
                       />
                       <span className="font-monaMedium text-md xl:text-xl">
-                      {feature}
+                        {feature}
                       </span>
                     </div>
                   </li>
-                ))
-              }
+                )
+              )}
               {/* <li className="flexStart">
                 <div className="flexy space-x-2.5">
                   <img
@@ -181,56 +185,71 @@ const SMMPackage = ({Packages}) => {
           </div>
 
           <div className="grid grid-cols-12 gap-x-7 gap-y-6 w-full items-center justify-center">
-            {
-              Packages.filter(p=>p.package_name !== Packages[0].package_name).map((pkg, index)=>(
-                <div className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg">
-                  <hr className="w-full absolute top-[8.5rem] left-0 h-[1.5px] bg-gray-400" />
-                  <hr className="w-full absolute top-[20.75rem] left-0 h-[1.5px] bg-gray-400" />
+            {Packages.filter(
+              (p) => p.package_name !== Packages[0].package_name
+            ).map((pkg, index) => (
+              <div className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg">
+                <hr className="w-full absolute top-[8.5rem] left-0 h-[1.5px] bg-gray-400" />
+                <hr className="w-full absolute top-[20.75rem] left-0 h-[1.5px] bg-gray-400" />
 
-                  <div className="flexy relative flex-col space-y-5 w-full">
-                    <div className="flexy flex-col space-y-2 py-2 mt-6 text-slate-900">
-                      <h2 className="text-4xl lg:text-4xl font-monaBold">{pkg.package_name}</h2>
-                      <span className="text-md font-monaMedium">
-                        {pkg.package_details}
-                      </span>
-                    </div>
-                    <div className="flexy flex-col w-full text-slate-900 space-y-2.5 py-6">
-                      <h1 className="filsonHeavy text-5xl">
-                        ${currencyformator(pkg.package_price)}/<span className="text-xl">project</span>
-                      </h1>
-                      <span className="text-md font-monaMedium">
-                        {index === 0 && 'Fine Choice'}
-                        {index === 1 && 'Best Choice'}
-                        {index === 2 && 'Recommended Choice'}
-                      </span>
-                      <div className="flexy">
-                        <Link to={'/'} className="primaryLink">
-                          Get Started
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="flexy w-full">
-                      <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-900">
-                        {
-                          [...JSON.parse(pkg.featured_extras)].map(({feature, included}, i)=>(
-                            <li className="flex items-center justify-start gap-x-2.5" key={i}>
-                              <img
-                                src={included ? "/images/icons/doublecheckPrim.svg" : "/images/icons/doublecheckgrey.svg"}
-                                className="img-fluid w-5"
-                                alt=""
-                              />
-                              <span className="text-md lg:text-lg">
-                                {feature}
-                              </span>
-                            </li>
-                          ))
-                        }
-                      </ul>
+                <div className="flexy relative flex-col space-y-5 w-full">
+                  <div className="flexy flex-col space-y-2 py-2 mt-6 text-slate-900">
+                    <h2 className="text-4xl lg:text-4xl font-monaBold">
+                      {pkg.package_name}
+                    </h2>
+                    <span className="text-md font-monaMedium">
+                      {pkg.package_details}
+                    </span>
+                  </div>
+                  <div className="flexy flex-col w-full text-slate-900 space-y-2.5 py-6">
+                    <h1 className="filsonHeavy text-5xl">
+                      ${currencyformator(pkg.package_price)}/
+                      <span className="text-xl">project</span>
+                    </h1>
+                    <span className="text-md font-monaMedium">
+                      {index === 0 && 'Fine Choice'}
+                      {index === 1 && 'Best Choice'}
+                      {index === 2 && 'Recommended Choice'}
+                    </span>
+                    <div className="flexy">
+                      <Link to={'/'} className="primaryLink">
+                        Get Started
+                      </Link>
                     </div>
                   </div>
+                  <div className="flexy w-full">
+                    <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-900">
+                      {[...JSON.parse(pkg.featured_extras)].map(
+                        ({ feature, included }, i) => (
+                          <li
+                            className="flex items-center justify-start gap-x-2.5"
+                            key={i}
+                          >
+                            <img
+                              src={
+                                included
+                                  ? '/images/icons/doublecheckPrim.svg'
+                                  : '/images/icons/doublecheckgrey.svg'
+                              }
+                              className="img-fluid w-5"
+                              alt=""
+                            />
+                            <div className="flex flex-col space-y-1">
+                              <span className="text-md lg:text-lg leading-none">
+                                {feature}
+                              </span>
+                              <span className="text-md lg:text-lg leading-none">
+                                (16 Post, 8 Stories, 3 Video, 5 Reel)
+                              </span>
+                            </div>
+                          </li>
+                        )
+                      )}
+                    </ul>
+                  </div>
                 </div>
-              ))
-            }
+              </div>
+            ))}
             {/* <div className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg">
               <hr className="w-full absolute top-[8.5rem] left-0 h-[1.5px] bg-gray-400" />
               <hr className="w-full absolute top-[20.75rem] left-0 h-[1.5px] bg-gray-400" />
