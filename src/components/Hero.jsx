@@ -26,8 +26,8 @@ const Hero = () => {
               transform: 'scaleX(-1)',
             }}
           />
-          <div className="flexy flex-col px-5 text-white relative lg:-top-5 lapy:-top-10 text-center !overflow-x-hidden">
-            <div className="flexy flex-col space-y-2.5">
+          <div className="flexy flex-col px-5 text-white relative lg:-top-5 lapy:-top-10 text-center !overflow-hidden">
+            <div className="flexy flex-col w-full overflow-hidden space-y-2.5">
               <div className="flexy">
                 <hr className="horLine hidden lg:block lg:mr-3" />
                 <h4 className="uppercase text-lg font-monaMedium">
@@ -42,8 +42,8 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flexy relative w-full gap-x-3 mt-4 right-4 lg:right-0">
-              <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out relative lg:left-5 left-3 mx-2 lg:mx-3">
+            <div className="flexy relative max-sm:right-5 w-full max-w-[23rem] min-w-[20rem] gap-x-5 mt-5">
+              <div className="flexy grow-1 flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out relative max-lg:left-6 left-5">
                 <img
                   src="/images/creativeCloud.png"
                   className="w-16 h-16 object-cover img-fluid"
@@ -51,7 +51,7 @@ const Hero = () => {
                 />
                 <p className="pt-1.5">Creative Cloud</p>
               </div>
-              <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out mx-2 lg:mx-3">
+              <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out ">
                 <img
                   src="/images/figma.png"
                   className="w-16 h-16 object-cover img-fluid"
@@ -59,15 +59,15 @@ const Hero = () => {
                 />
                 <p className="pt-1.5">Figma</p>
               </div>
-              <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out mx-2 lg:mx-3">
+              <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out ">
                 <img
-                  src="/images/vscode.png"
+                  src="/images/Webflow.png"
                   className="w-16 h-16 object-cover img-fluid"
                   alt=""
                 />
-                <p className="pt-1.5">VS Code</p>
+                <p className="pt-1.5">Webflow</p>
               </div>
-              <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out mx-2 lg:mx-3">
+              <div className="flexy flex-col space-y-1 cursor-pointer transition-all hover:scale-105 duration-500 ease-in-out ">
                 <img
                   src="/images/meta.png"
                   className="w-16 h-16 object-cover img-fluid"

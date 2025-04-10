@@ -24,7 +24,7 @@ const Navbar = () => {
             onClick={() => toggleDrawer()}
             className="transform duration-300 xl:hover:scale-105 transition-all"
           >
-            <img src={BrandLogo} className="w-32 lg:w-36" alt="" />
+            <img src={BrandLogo} className="max-lg:w-40 lg:w-36" alt="" />
           </Link>
         </div>
 
@@ -34,16 +34,16 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="itemsCenter gap-x-5">
+        <div className="itemsCenter gap-x-3 lg:gap-x-5">
           <Link
-            className="!hidden lg:!block items-center justify-center lg:transitAll lg:scal105"
+            className="flex items-center justify-center lg:transitAll lg:scal105"
             to="https://koalendar.com/e/meet-with-routes-design"
             onClick={() => toggleDrawer()}
             target="_blank"
           >
             <button
               aria-label="get-a-demo"
-              className="bg-primary !hidden md:!block text-white lg:hover:shadow-drop-4 px-6 py-2 shadow rounded-full itemsCenter"
+              className="bg-primary flex text-white lg:hover:shadow-drop-4 px-6 py-2 shadow rounded-full itemsCenter"
             >
               Get a Demo
             </button>
@@ -56,7 +56,7 @@ const Navbar = () => {
             Sign In
           </Link> */}
 
-          <Avatar />
+          {/* <Avatar /> */}
 
           <div className="lg:hidden">
             <MobileMenu Menus={Menus} isOpenMain={isOpenMain} />
