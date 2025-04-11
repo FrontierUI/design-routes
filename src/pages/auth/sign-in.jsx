@@ -49,15 +49,16 @@ const GoogleLoginButton = ({addToast, removeToast, location, navigate}) => {
                 navigate(location.state?.from, { replace: true });
               } else {
                 setCookie("token", response.data.token, 1);
-                if (checkRole(response.data.token) === "admin")
-                  navigate(`/dashboard`, { replace: true });
-                else navigate(`/dashboard`, { replace: true });
 
                 window.localStorage.setItem("isLoggedIn", "true");
                 window.localStorage.setItem(
                   "loginSecret",
                   response.data.secret
                 );
+
+                if (checkRole(response.data.token) === "admin")
+                  navigate(`/dashboard`, { replace: true });
+                else navigate(`/dashboard`, { replace: true });                
               }
             }, 2000);
           } else {
