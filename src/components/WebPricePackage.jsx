@@ -696,7 +696,7 @@ const WebPricePackage = ({ Packages }) => {
             </div> */}
           </div>
 
-          <div className="flexy flex-col space-y-3 mt-6">
+          {/* <div className="flexy flex-col space-y-3 mt-6">
             <span className="text-lg">
               Get your own customized package now!
             </span>
@@ -706,7 +706,7 @@ const WebPricePackage = ({ Packages }) => {
                 Customized Package
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
