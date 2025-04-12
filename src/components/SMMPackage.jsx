@@ -1,6 +1,7 @@
 // import React from 'react';
-import { Link } from 'react-router-dom';
-import { currencyformator } from '../func';
+import { Link } from "react-router-dom";
+import { currencyformator } from "../func";
+import CheckoutModalWrapper from "./CheckoutModalWrapper";
 
 const SMMPackage = ({ Packages }) => {
   return (
@@ -9,7 +10,7 @@ const SMMPackage = ({ Packages }) => {
         <div
           className="absolute w-full h-full rounded-lg -z-[1] bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/images/productsPages/pricePackBlueBG.png)',
+            backgroundImage: "url(/images/productsPages/pricePackBlueBG.png)",
           }}
         />
 
@@ -40,8 +41,8 @@ const SMMPackage = ({ Packages }) => {
                       <img
                         src={
                           included
-                            ? '/images/icons/roundCheckWhite.svg'
-                            : '/images/icons/doublecheckgrey.svg'
+                            ? "/images/icons/roundCheckWhite.svg"
+                            : "/images/icons/doublecheckgrey.svg"
                         }
                         className="img-fluid"
                         width={28}
@@ -162,9 +163,20 @@ const SMMPackage = ({ Packages }) => {
           </div>
 
           <div className="w-full pt-4 max-w-full md:max-w-xs flexy lg:justify-start">
-            <Link to={'/'} className="flexy w-full lg:w-72">
+            {/* <Link to={'/'} className="flexy w-full lg:w-72">
               <button className="whiteLGButton w-full">Get Started</button>
-            </Link>
+            </Link> */}
+            <CheckoutModalWrapper
+              orderData={{
+                service: "Social Media Management",
+                package_id: Packages[0]?.package_id,
+                package_name: Packages[0]?.package_name,
+                order_amount: Packages[0]?.package_price,
+                user_id: "user123",
+                order_details: Packages[0]?.package_details,
+              }}
+              type={"white"}
+            />
           </div>
         </div>
       </div>
@@ -173,7 +185,7 @@ const SMMPackage = ({ Packages }) => {
         <div
           className="absolute hidden top-8 lg:block w-full h-full max-w-[50rem] bg-contain bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/images/productsPages/pricePackBG.svg)',
+            backgroundImage: "url(/images/productsPages/pricePackBG.svg)",
           }}
         />
 
@@ -207,14 +219,25 @@ const SMMPackage = ({ Packages }) => {
                       <span className="text-xl">project</span>
                     </h1>
                     <span className="text-md font-monaMedium">
-                      {index === 0 && 'Fine Choice'}
-                      {index === 1 && 'Best Choice'}
-                      {index === 2 && 'Recommended Choice'}
+                      {index === 0 && "Fine Choice"}
+                      {index === 1 && "Best Choice"}
+                      {index === 2 && "Recommended Choice"}
                     </span>
                     <div className="flexy">
-                      <Link to={'/'} className="primaryLink">
+                      {/* <Link to={"/"} className="primaryLink">
                         Get Started
-                      </Link>
+                      </Link> */}
+                      <CheckoutModalWrapper
+                        orderData={{
+                          service: "Social Media Management",
+                          package_id: pkg?.package_id,
+                          package_name: pkg?.package_name,
+                          order_amount: pkg?.package_price,
+                          user_id: "user123",
+                          order_details: pkg?.package_details,
+                        }}
+                        type={"blue"}
+                      />
                     </div>
                   </div>
                   <div className="flexy w-full">
@@ -228,8 +251,8 @@ const SMMPackage = ({ Packages }) => {
                             <img
                               src={
                                 included
-                                  ? '/images/icons/doublecheckPrim.svg'
-                                  : '/images/icons/doublecheckgrey.svg'
+                                  ? "/images/icons/doublecheckPrim.svg"
+                                  : "/images/icons/doublecheckgrey.svg"
                               }
                               className="img-fluid w-5"
                               alt=""
@@ -626,7 +649,7 @@ const SMMPackage = ({ Packages }) => {
             </span>
 
             <div className="flexy w-full max-w-sm">
-              <Link to={'/'} className="primaryLGLink flexy w-full">
+              <Link to={"/"} className="primaryLGLink flexy w-full">
                 Customized Package
               </Link>
             </div>
