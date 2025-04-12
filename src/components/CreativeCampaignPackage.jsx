@@ -66,6 +66,7 @@ const CreativeCampaignPackage = ({ Packages }) => {
             </Link> */}
             <CheckoutModalWrapper
                 orderData={{
+                  service: "Creative Campaign",
                   package_id: Packages[0]?.package_id,
                   package_name: Packages[0]?.package_name,
                   order_amount: Packages[0]?.package_price,
@@ -129,6 +130,7 @@ const CreativeCampaignPackage = ({ Packages }) => {
                       </Link> */}
                       <CheckoutModalWrapper
                         orderData={{
+                          service: "Creative Campaign",
                           package_id: pkg.package_id,
                           package_name: pkg.package_name,
                           order_amount: pkg.package_price,

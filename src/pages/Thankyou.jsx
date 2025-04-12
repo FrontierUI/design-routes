@@ -1,6 +1,37 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
+import { useLocation, useNavigate } from "react-router-dom";
+import { currencyformator } from "../func";
 
 const Thankyou = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const { orderData, paymentResult } = location.state || {};
+
+  if (!orderData || !paymentResult) {
+    navigate('/', { replace: true});
+  }
+
+  const CurrentDate = () => {
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    });
+
+    return formattedDate;
+  };
+
+  const GetUserName = (type="upper") => {
+    if (window.localStorage.getItem("loginSecret")) {
+      var userDetails = JSON.parse(
+        atob(atob(window.localStorage.getItem("loginSecret")))
+      );
+      return type === "upper" ? (userDetails.name.charAt(0).toUpperCase() + userDetails.name.slice(1)) : (userDetails.name);
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -23,9 +54,9 @@ const Thankyou = () => {
                 />
               </div>
               <div className="flexy flex-col space-y-8 w-full lg:w-3/4 text-center py-10">
-                <h1 className="text-5xl font-monaBold">Thank you Username</h1>
+                <h1 className="text-5xl font-monaBold">Thank you {GetUserName()}</h1>
                 <p className="text-xl">
-                  Thank you username for buy our product
+                  Thank you {GetUserName("lower")} for buying our product
                 </p>
               </div>
             </div>
@@ -40,7 +71,7 @@ const Thankyou = () => {
             <div className="w-full lg:w-3/5 flexy flex-col py-5 space-y-6">
               <div className="flexy text-center">
                 <h3 className="text-xl lg:text-2xl font-monaSemibold">
-                  Username | We received your order we will contact at shortly
+                {GetUserName()} | We received your order we will contact at shortly
                 </h3>
               </div>
 
@@ -48,19 +79,21 @@ const Thankyou = () => {
                 <div className="lg:p-5 flex flex-wrap items-center justify-start gap-3 lg:gap-5 w-full">
                   <div className="flex flex-col space-y-2">
                     <p className="font-monaLight">Order Id</p>
-                    <p className="font-monaMedium">dasi03sassad</p>
+                    <p className="font-monaMedium">{paymentResult?.order_id}</p>
                   </div>
 
                   <div className="justStartCenter py-2 border-x border-gray-300">
                     <div className="flex flex-col space-y-2 px-2 lg:px-5">
                       <p className="font-monaLight">Date</p>
-                      <p className="font-monaMedium">June 21 2025</p>
+                      <p className="font-monaMedium">{CurrentDate()}</p>
                     </div>
                   </div>
 
                   <div className="flex flex-col space-y-2">
                     <p className="font-monaLight">Total</p>
-                    <p className="font-monaMedium">$1111</p>
+                    <p className="font-monaMedium">
+                      ${currencyformator(orderData?.order_amount)}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -78,13 +111,15 @@ const Thankyou = () => {
                     </li>
 
                     <li className="flex flex-wrap items-center justify-between border-y border-dashed border-gray-400 py-2">
-                      <p>SMM Basic</p>
-                      <span>$1547.14</span>
+                      <p>
+                        {orderData?.service + " - " + orderData?.package_name}
+                      </p>
+                      <span>${currencyformator(orderData?.order_amount)}</span>
                     </li>
 
                     <li className="flex flex-wrap items-center justify-between pt-1">
                       <p>Total</p>
-                      <span>$1547.14</span>
+                      <span>${currencyformator(orderData?.order_amount)}</span>
                     </li>
                   </ul>
                 </div>

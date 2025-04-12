@@ -1,13 +1,29 @@
 import React, { useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import axios from "axios";
+
+import Toast from "./Toast";
+import { useNavigate } from "react-router-dom";
 
 const CheckoutModal = ({ orderData, type }) => {
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const [toasts, setToasts] = useState([]);
+
   const stripe = useStripe();
   const elements = useElements();
+
+  const addToast = (type, message) => {
+    const id = Date.now();
+    setToasts((prev) => [...prev, { id, message, type }]);
+  };
+
+  const removeToast = (id) => {
+    setToasts((prev) => prev.filter((toast) => toast.id !== id));
+  };
 
   // Open/close modal
   const toggleModal = () => {
@@ -44,9 +60,11 @@ const CheckoutModal = ({ orderData, type }) => {
       }
 
       var json = JSON.stringify({
+        service: orderData.service,
         package_id: orderData.package_id,
         package_name: orderData.package_name,
         order_amount: orderData.order_amount,
+        method: "stripe",
         payment_method_id: paymentMethod.id,
         user_id: orderData.user_id,
         order_details: orderData.order_details,
@@ -62,6 +80,10 @@ const CheckoutModal = ({ orderData, type }) => {
           if (response.data.success === "true") {
             addToast("success", response.data.message);
             toggleModal(); // Close modal on success
+
+            setTimeout(() => {
+              navigate('/thankyou', { replace: true, state: { orderData, paymentResult: { payment_intent_id: response.data.payment_intent_id, message: response.data.message, order_id: response.data.order_id }, } });
+            }, 2000);
           } else {
             addToast("error", response.data.message);
           }
@@ -114,8 +136,20 @@ const CheckoutModal = ({ orderData, type }) => {
               </button>
             </div>
 
+            {toasts.map((toast) => (
+              <Toast
+                key={toast.id}
+                message={toast.message}
+                type={toast.type}
+                onClose={() => removeToast(toast.id)}
+              />
+            ))}
+
             {/* Order Summary */}
             <div className="mb-6">
+              <p className="text-gray-700 mb-2">
+                <span className="font-bold">Service:</span> {orderData.service}
+              </p>
               <p className="text-gray-700 mb-2">
                 <span className="font-bold">Package:</span>{" "}
                 {orderData.package_name}
