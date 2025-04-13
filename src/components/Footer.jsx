@@ -182,12 +182,15 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="mr-4">
-                <Link to="/terms-conditions" className="hover:text-gray-300">
+                <Link
+                  to="/terms-and-conditions"
+                  className="hover:text-gray-300"
+                >
                   Terms Conditions
                 </Link>
               </li>
               <li>
-                <Link to="/refunds-policy" className="hover:text-gray-300">
+                <Link to="/refund-policy" className="hover:text-gray-300">
                   Refunds Policy
                 </Link>
               </li>
