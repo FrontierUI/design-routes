@@ -22,10 +22,6 @@ const VideosCarousel = () => {
               <div className="flex flex-col items-start justify-start space-y-3">
                 <h2 className="font-monaBold text-4xl">
                   Be Proud of your creative team
-                  {/* <Typewriting
-                    text="Be Proud of your creative team"
-                    speed={100}
-                  /> */}
                 </h2>
                 <p className="text-md monaRegular">
                   Routes.Design is a creative subscription service, trusted by

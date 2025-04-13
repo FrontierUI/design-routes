@@ -177,17 +177,17 @@ const Footer = () => {
           <div className="flexStart flex-col mt-4 font-monaMedium space-y-2">
             <ul className="flexStart flex-col lg:flex-row lg:items-center lg:justify-between text-sm">
               <li className="mr-4">
-                <Link to="privacy-policy" className="hover:text-gray-300">
+                <Link to="/privacy-policy" className="hover:text-gray-300">
                   Privacy Policy
                 </Link>
               </li>
               <li className="mr-4">
-                <Link to="terms-conditions" className="hover:text-gray-300">
+                <Link to="/terms-conditions" className="hover:text-gray-300">
                   Terms Conditions
                 </Link>
               </li>
               <li>
-                <Link to="refunds-policy" className="hover:text-gray-300">
+                <Link to="/refunds-policy" className="hover:text-gray-300">
                   Refunds Policy
                 </Link>
               </li>

@@ -1,7 +1,5 @@
-// import React from 'react';
-import { Link } from "react-router-dom";
-import { currencyformator } from "../func";
-import CheckoutModalWrapper from "./CheckoutModalWrapper";
+import { currencyformator } from '../func';
+import CheckoutModalWrapper from './CheckoutModalWrapper';
 
 const SMMPackage = ({ Packages }) => {
   return (
@@ -10,7 +8,7 @@ const SMMPackage = ({ Packages }) => {
         <div
           className="absolute w-full h-full rounded-lg -z-[1] bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url(/images/productsPages/pricePackBlueBG.png)",
+            backgroundImage: 'url(/images/productsPages/pricePackBlueBG.png)',
           }}
         />
 
@@ -41,8 +39,8 @@ const SMMPackage = ({ Packages }) => {
                       <img
                         src={
                           included
-                            ? "/images/icons/roundCheckWhite.svg"
-                            : "/images/icons/doublecheckgrey.svg"
+                            ? '/images/icons/roundCheckWhite.svg'
+                            : '/images/icons/doublecheckgrey.svg'
                         }
                         className="img-fluid"
                         width={28}
@@ -55,127 +53,20 @@ const SMMPackage = ({ Packages }) => {
                   </li>
                 )
               )}
-              {/* <li className="flexStart">
-                <div className="flexy space-x-2.5">
-                  <img
-                    src="/images/icons/roundCheckWhite.svg"
-                    className="img-fluid"
-                    width={28}
-                    alt=""
-                  />
-                  <span className="font-monaMedium text-md xl:text-xl">
-                    Social media strategy development
-                  </span>
-                </div>
-              </li>
-              <li className="flexStart">
-                <div className="flexy space-x-2.5">
-                  <img
-                    src="/images/icons/roundCheckWhite.svg"
-                    className="img-fluid"
-                    width={28}
-                    alt=""
-                  />
-                  <span className="font-monaMedium text-md xl:text-xl">
-                    Content creation (posts, stories, videos)
-                  </span>
-                </div>
-              </li>
-              <li className="flexStart">
-                <div className="flexy space-x-2.5">
-                  <img
-                    src="/images/icons/roundCheckWhite.svg"
-                    className="img-fluid"
-                    width={28}
-                    alt=""
-                  />
-                  <span className="font-monaMedium text-md xl:text-xl">
-                    Scheduling and posting
-                  </span>
-                </div>
-              </li>
-              <li className="flexStart">
-                <div className="flexy space-x-2.5">
-                  <img
-                    src="/images/icons/roundCheckWhite.svg"
-                    className="img-fluid"
-                    width={28}
-                    alt=""
-                  />
-                  <span className="font-monaMedium text-md xl:text-xl">
-                    Community management
-                  </span>
-                </div>
-              </li>
-              <li className="flexStart">
-                <div className="flexy space-x-2.5">
-                  <img
-                    src="/images/icons/roundCheckWhite.svg"
-                    className="img-fluid"
-                    width={28}
-                    alt=""
-                  />
-                  <span className="font-monaMedium text-md xl:text-xl">
-                    Social media advertising
-                  </span>
-                </div>
-              </li>
-              <li className="flexStart">
-                <div className="flexy space-x-2.5">
-                  <img
-                    src="/images/icons/roundCheckWhite.svg"
-                    className="img-fluid"
-                    width={28}
-                    alt=""
-                  />
-                  <span className="font-monaMedium text-md xl:text-xl">
-                    Analytics and reporting
-                  </span>
-                </div>
-              </li>
-              <li className="flexStart">
-                <div className="flexy space-x-2.5">
-                  <img
-                    src="/images/icons/roundCheckWhite.svg"
-                    className="img-fluid"
-                    width={28}
-                    alt=""
-                  />
-                  <span className="font-monaMedium text-md xl:text-xl">
-                    24/7 timezone coverage
-                  </span>
-                </div>
-              </li>
-              <li className="flexStart">
-                <div className="flexy space-x-2.5">
-                  <img
-                    src="/images/icons/roundCheckWhite.svg"
-                    className="img-fluid"
-                    width={28}
-                    alt=""
-                  />
-                  <span className="font-monaMedium text-md xl:text-xl">
-                    Turnaround times from 12 hours
-                  </span>
-                </div>
-              </li> */}
             </ul>
           </div>
 
           <div className="w-full pt-4 max-w-full md:max-w-xs flexy lg:justify-start">
-            {/* <Link to={'/'} className="flexy w-full lg:w-72">
-              <button className="whiteLGButton w-full">Get Started</button>
-            </Link> */}
             <CheckoutModalWrapper
               orderData={{
-                service: "Social Media Management",
+                service: 'Social Media Management',
                 package_id: Packages[0]?.package_id,
                 package_name: Packages[0]?.package_name,
                 order_amount: Packages[0]?.package_price,
-                user_id: "user123",
+                user_id: 'user123',
                 order_details: Packages[0]?.package_details,
               }}
-              type={"white"}
+              type={'white'}
             />
           </div>
         </div>
@@ -185,7 +76,7 @@ const SMMPackage = ({ Packages }) => {
         <div
           className="absolute hidden top-8 lg:block w-full h-full max-w-[50rem] bg-contain bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url(/images/productsPages/pricePackBG.svg)",
+            backgroundImage: 'url(/images/productsPages/pricePackBG.svg)',
           }}
         />
 
@@ -200,7 +91,10 @@ const SMMPackage = ({ Packages }) => {
             {Packages.filter(
               (p) => p.package_name !== Packages[0].package_name
             ).map((pkg, index) => (
-              <div className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg">
+              <div
+                key={index}
+                className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg"
+              >
                 <hr className="w-full absolute top-[8.5rem] left-0 h-[1.5px] bg-gray-400" />
                 <hr className="w-full absolute top-[20.75rem] left-0 h-[1.5px] bg-gray-400" />
 
@@ -219,24 +113,21 @@ const SMMPackage = ({ Packages }) => {
                       <span className="text-xl">project</span>
                     </h1>
                     <span className="text-md font-monaMedium">
-                      {index === 0 && "Fine Choice"}
-                      {index === 1 && "Best Choice"}
-                      {index === 2 && "Recommended Choice"}
+                      {index === 0 && 'Fine Choice'}
+                      {index === 1 && 'Best Choice'}
+                      {index === 2 && 'Recommended Choice'}
                     </span>
                     <div className="flexy">
-                      {/* <Link to={"/"} className="primaryLink">
-                        Get Started
-                      </Link> */}
                       <CheckoutModalWrapper
                         orderData={{
-                          service: "Social Media Management",
+                          service: 'Social Media Management',
                           package_id: pkg?.package_id,
                           package_name: pkg?.package_name,
                           order_amount: pkg?.package_price,
-                          user_id: "user123",
+                          user_id: 'user123',
                           order_details: pkg?.package_details,
                         }}
-                        type={"blue"}
+                        type={'blue'}
                       />
                     </div>
                   </div>
@@ -251,8 +142,8 @@ const SMMPackage = ({ Packages }) => {
                             <img
                               src={
                                 included
-                                  ? "/images/icons/doublecheckPrim.svg"
-                                  : "/images/icons/doublecheckgrey.svg"
+                                  ? '/images/icons/doublecheckPrim.svg'
+                                  : '/images/icons/doublecheckgrey.svg'
                               }
                               className="img-fluid w-5"
                               alt=""
@@ -273,387 +164,7 @@ const SMMPackage = ({ Packages }) => {
                 </div>
               </div>
             ))}
-            {/* <div className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg">
-              <hr className="w-full absolute top-[8.5rem] left-0 h-[1.5px] bg-gray-400" />
-              <hr className="w-full absolute top-[20.75rem] left-0 h-[1.5px] bg-gray-400" />
-
-              <div className="flexy relative flex-col space-y-5 w-full">
-                <div className="flexy flex-col space-y-2 py-2 mt-6 text-slate-900">
-                  <h2 className="text-4xl lg:text-4xl font-monaBold">Basic</h2>
-                  <span className="text-md font-monaMedium">
-                    Good for Startups
-                  </span>
-                </div>
-                <div className="flexy flex-col w-full text-slate-900 space-y-2.5 py-6">
-                  <h1 className="filsonHeavy text-5xl">
-                    $999/<span className="text-xl">project</span>
-                  </h1>
-                  <span className="text-md font-monaMedium">Fine Choice</span>
-                  <div className="flexy">
-                    <Link to={'/'} className="primaryLink">
-                      Get Started
-                    </Link>
-                  </div>
-                </div>
-                <div className="flexy w-full">
-                  <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-900">
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
-                        <span>24/7 timezone coverage</span>
-                        <span>(10 Post, 4 Stories, 1 Video, 1 Reel)</span>
-                      </div>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Analytics and reporting
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Scheduling and posting
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckgrey.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Competitor Analysis
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckgrey.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Community management
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckgrey.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Social media strategy development
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckgrey.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Social media advertising
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckgrey.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
-                        <span>Social Media Ads Campaign Design</span>
-                        <span>(No Campaign)</span>
-                      </div>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckgrey.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Turnaround times from 12 hours
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg">
-              <hr className="w-full absolute top-[8.5rem] left-0 h-[1.5px] bg-gray-400" />
-              <hr className="w-full absolute top-[20.75rem] left-0 h-[1.5px] bg-gray-400" />
-
-              <div className="flexy relative flex-col space-y-5 w-full">
-                <div className="flexy flex-col space-y-2 py-2 mt-6 text-slate-900">
-                  <h2 className="text-4xl lg:text-4xl font-monaBold">
-                    Professional
-                  </h2>
-                  <span className="text-md font-monaMedium">
-                    Perfect for Small Businesses
-                  </span>
-                </div>
-                <div className="flexy flex-col w-full text-slate-900 space-y-2.5 py-6">
-                  <h1 className="filsonHeavy text-5xl">
-                    $1,999/<span className="text-xl">project</span>
-                  </h1>
-                  <span className="text-md font-monaMedium">Best Choice</span>
-                  <div className="flexy">
-                    <Link to={'/'} className="primaryLink">
-                      Get Started
-                    </Link>
-                  </div>
-                </div>
-                <div className="flexy w-full">
-                  <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-900">
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
-                        <span>24/7 timezone coverage</span>
-                        <span>(12 Post, 8 Stories, 3 Video, 3 Reel)</span>
-                      </div>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Analytics and reporting
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Scheduling and posting
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Competitor Analysis
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Community management
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Social media strategy development
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Social media advertising
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
-                        <span>Social Media Ads Campaign Design</span>
-                        <span>(1 Campaign Design & Launching)</span>
-                      </div>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Turnaround times from 12 hours
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg">
-              <hr className="w-full absolute top-[8.5rem] left-0 h-[1.5px] bg-gray-400" />
-              <hr className="w-full absolute top-[20.75rem] left-0 h-[1.5px] bg-gray-400" />
-
-              <div className="flexy relative flex-col space-y-5 w-full">
-                <div className="flexy flex-col space-y-2 py-2 mt-6 text-slate-900">
-                  <h2 className="text-4xl lg:text-4xl font-monaBold">
-                    Premium
-                  </h2>
-                  <span className="text-md font-monaMedium">
-                    Excellent for Growing Businesses
-                  </span>
-                </div>
-                <div className="flexy flex-col w-full text-slate-900 space-y-2.5 py-6">
-                  <h1 className="filsonHeavy text-5xl">
-                    $2,999/<span className="text-xl">project</span>
-                  </h1>
-                  <span className="text-md font-monaMedium">
-                    Recommended Choice
-                  </span>
-                  <div className="flexy">
-                    <Link to={'/'} className="primaryLink">
-                      Get Started
-                    </Link>
-                  </div>
-                </div>
-                <div className="flexy w-full">
-                  <ul className="flex items-start justify-center flex-col space-y-3 py-4 text-slate-900">
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
-                        <span>24/7 timezone coverage</span>
-                        <span>(16 Post, 8 Stories, 3 Video, 5 Reel)</span>
-                      </div>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Analytics and reporting
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Scheduling and posting
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Competitor Analysis
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Community management
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Social media strategy development
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Social media advertising
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <div className="flex flex-col space-y-0 text-md lg:text-lg">
-                        <span>Social Media Ads Campaign Design</span>
-                        <span>(2 Campaign Design & Launching)</span>
-                      </div>
-                    </li>
-                    <li className="flex items-center justify-start gap-x-2.5">
-                      <img
-                        src="/images/icons/doublecheckPrim.svg"
-                        className="img-fluid w-5"
-                        alt=""
-                      />
-                      <span className="text-md lg:text-lg">
-                        Turnaround times from 12 hours
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div> */}
           </div>
-
-          {/* <div className="flexy flex-col space-y-3 mt-6">
-            <span className="text-lg">
-              Get your own customized package now!
-            </span>
-
-            <div className="flexy w-full max-w-sm">
-              <Link to={"/"} className="primaryLGLink flexy w-full">
-                Customized Package
-              </Link>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>

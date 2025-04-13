@@ -3,7 +3,7 @@ import { prod1, prod2, prod3 } from '@/contentData/utils';
 
 const Services = () => {
   return (
-    <div className="w-full h-full grid grid-cols-1 xl:grid-cols-3 xl:gap-x-5 max-lg:gap-y-5">
+    <div className="w-full imac:w-[70%] h-full mx-auto grid grid-cols-1 xl:grid-cols-3 xl:gap-x-5 max-lg:gap-y-5">
       <div className="flex flex-col gap-y-5 w-full h-full">
         {prod1.map((prods1) => (
           <Link

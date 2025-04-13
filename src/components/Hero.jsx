@@ -88,7 +88,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flexy relative -mt-20 lg:-mt-32 lapy:-mt-48 w-full h-full lg:w-2/3 2xl:w-[65%] rounded-xl max-lg:px-5">
+        <div className="flexy relative -mt-20 lg:-mt-32 lapy:-mt-48 w-full h-full lg:w-2/3 2xl:w-[65%] macbook:w-3/5 imac:w-1/2 rounded-xl max-lg:px-5">
           <ReactPlayer
             playing
             loop={true}

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-import axios from "axios";
+import React, { useState } from 'react';
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import axios from 'axios';
 
-import Toast from "./Toast";
-import { useNavigate } from "react-router-dom";
+import Toast from './Toast';
+import { useNavigate } from 'react-router-dom';
 
 const CheckoutModal = ({ orderData, type }) => {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ const CheckoutModal = ({ orderData, type }) => {
     e.preventDefault();
 
     if (!stripe || !elements) {
-      setError("Stripe is not initialized.");
+      setError('Stripe is not initialized.');
       return;
     }
 
@@ -49,7 +49,7 @@ const CheckoutModal = ({ orderData, type }) => {
       // Create payment method
       const { error: paymentMethodError, paymentMethod } =
         await stripe.createPaymentMethod({
-          type: "card",
+          type: 'card',
           card: cardElement,
         });
 
@@ -64,7 +64,7 @@ const CheckoutModal = ({ orderData, type }) => {
         package_id: orderData.package_id,
         package_name: orderData.package_name,
         order_amount: orderData.order_amount,
-        method: "stripe",
+        method: 'stripe',
         payment_method_id: paymentMethod.id,
         user_id: orderData.user_id,
         order_details: orderData.order_details,
@@ -74,25 +74,35 @@ const CheckoutModal = ({ orderData, type }) => {
         .post(
           `${import.meta.env.VITE_BASE_API}/api.php?action=save_order`,
           JSON.stringify({ params: json }),
-          { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
+          { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
         )
         .then((response) => {
-          if (response.data.success === "true") {
-            addToast("success", response.data.message);
+          if (response.data.success === 'true') {
+            addToast('success', response.data.message);
             toggleModal(); // Close modal on success
 
             setTimeout(() => {
-              navigate('/thankyou', { replace: true, state: { orderData, paymentResult: { payment_intent_id: response.data.payment_intent_id, message: response.data.message, order_id: response.data.order_id }, } });
+              navigate('/thankyou', {
+                replace: true,
+                state: {
+                  orderData,
+                  paymentResult: {
+                    payment_intent_id: response.data.payment_intent_id,
+                    message: response.data.message,
+                    order_id: response.data.order_id,
+                  },
+                },
+              });
             }, 2000);
           } else {
-            addToast("error", response.data.message);
+            addToast('error', response.data.message);
           }
         })
         .catch((error) => {
           console.error(`Error: ${error}`);
         });
     } catch (err) {
-      setError("An error occurred. Please try again.");
+      setError('An error occurred. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -101,15 +111,15 @@ const CheckoutModal = ({ orderData, type }) => {
   return (
     <div>
       {/* Buy Now Button */}
-      {type === "white" && (
+      {type === 'white' && (
         <button
-          className="flexy w-full lg:w-72 whiteLGButton w-full"
+          className="flexy w-full lg:w-72 whiteLGButton"
           onClick={toggleModal}
         >
           Get Started
         </button>
       )}
-      {type === "blue" && (
+      {type === 'blue' && (
         <button className="primaryLink" onClick={toggleModal}>
           Get Started
         </button>
@@ -151,7 +161,7 @@ const CheckoutModal = ({ orderData, type }) => {
                 <span className="font-bold">Service:</span> {orderData.service}
               </p>
               <p className="text-gray-700 mb-2">
-                <span className="font-bold">Package:</span>{" "}
+                <span className="font-bold">Package:</span>{' '}
                 {orderData.package_name}
               </p>
               <p className="text-gray-700 mb-2">
@@ -159,7 +169,7 @@ const CheckoutModal = ({ orderData, type }) => {
                 {orderData.order_amount}
               </p>
               <p className="text-gray-700 mb-2">
-                <span className="font-bold">Details:</span>{" "}
+                <span className="font-bold">Details:</span>{' '}
                 {orderData.order_details}
               </p>
             </div>
@@ -175,11 +185,11 @@ const CheckoutModal = ({ orderData, type }) => {
                     options={{
                       style: {
                         base: {
-                          fontSize: "16px",
-                          color: "#374151",
-                          "::placeholder": { color: "#9CA3AF" },
+                          fontSize: '16px',
+                          color: '#374151',
+                          '::placeholder': { color: '#9CA3AF' },
                         },
-                        invalid: { color: "#EF4444" },
+                        invalid: { color: '#EF4444' },
                       },
                     }}
                   />
@@ -197,11 +207,11 @@ const CheckoutModal = ({ orderData, type }) => {
                 disabled={!stripe || loading}
                 className={`w-full py-2 rounded-lg text-white transition ${
                   loading
-                    ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-blue-600 hover:bg-blue-700"
+                    ? 'bg-gray-400 cursor-not-allowed'
+                    : 'bg-blue-600 hover:bg-blue-700'
                 }`}
               >
-                {loading ? "Processing..." : `Pay $${orderData.order_amount}`}
+                {loading ? 'Processing...' : `Pay $${orderData.order_amount}`}
               </button>
             </form>
           </div>
