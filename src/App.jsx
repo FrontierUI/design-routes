@@ -18,6 +18,10 @@ const RefundPolicy = lazy(() => import('@/pages/RefundPolicy'));
 
 const SignIn = lazy(() => import('@/pages/auth/sign-in'));
 const SignUp = lazy(() => import('@/pages/auth/sign-up'));
+
+const ForgotPassword = lazy(() => import('@/pages/auth/ForgotPassword'));
+const ResetPassword = lazy(() => import('@/pages/auth/ResetPassword'));
+
 const Verify = lazy(() => import('@/pages/auth/Verify'));
 
 const CreativeCampaigns = lazy(() =>
@@ -105,6 +109,8 @@ const App = () => {
 
           <Route path="/auth/sign-up" element={<SignUp />} />
           <Route path="/auth/sign-in" element={<SignIn />} />
+          <Route path="/auth/forgot-password" element={<ForgotPassword />} />
+          <Route path="/auth/reset_password/:token" element={<ResetPassword />} />
           <Route path="/verify/:token" element={<Verify />} />
 
           <Route path="/our-work/:slug" element={<PortfolioPage />} />

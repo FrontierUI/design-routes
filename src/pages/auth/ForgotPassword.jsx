@@ -65,7 +65,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative flex min-h-screen">
       <section className="bg-primary h-screen relative hidden lg:w-1/2 lg:flex items-center justify-center z-[2]">
         <div
           className="absolute top-0 w-full h-screen bg-cover bg-center bg-no-repeat z-[1]"
