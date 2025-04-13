@@ -13,6 +13,8 @@ const BookACall = lazy(() => import('@/pages/BookACall'));
 const PortfolioPage = lazy(() => import('@/pages/PortfolioPage'));
 const Thankyou = lazy(() => import('@/pages/Thankyou'));
 const PrivacyPolicy = lazy(() => import('@/pages/PrivacyPolicy'));
+const TermsConditions = lazy(() => import('@/pages/TermsConditions'));
+const RefundPolicy = lazy(() => import('@/pages/RefundPolicy'));
 
 const SignIn = lazy(() => import('@/pages/auth/sign-in'));
 const SignUp = lazy(() => import('@/pages/auth/sign-up'));
@@ -98,6 +100,8 @@ const App = () => {
           <Route path="/our-work" element={<OurWork />} />
           <Route path="/thankyou" element={<Thankyou />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<TermsConditions />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
 
           <Route path="/auth/sign-up" element={<SignUp />} />
           <Route path="/auth/sign-in" element={<SignIn />} />
