@@ -1,6 +1,6 @@
-import { Helmet } from "react-helmet-async";
-import { useLocation, useNavigate } from "react-router-dom";
-import { currencyformator } from "../func";
+import { Helmet } from 'react-helmet-async';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { currencyformator } from '../func';
 
 const Thankyou = () => {
   const location = useLocation();
@@ -9,26 +9,28 @@ const Thankyou = () => {
   const { orderData, paymentResult } = location.state || {};
 
   if (!orderData || !paymentResult) {
-    navigate('/', { replace: true});
+    navigate('/', { replace: true });
   }
 
   const CurrentDate = () => {
     const today = new Date();
-    const formattedDate = today.toLocaleDateString("en-US", {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
+    const formattedDate = today.toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
     });
 
     return formattedDate;
   };
 
-  const GetUserName = (type="upper") => {
-    if (window.localStorage.getItem("loginSecret")) {
+  const GetUserName = (type = 'upper') => {
+    if (window.localStorage.getItem('loginSecret')) {
       var userDetails = JSON.parse(
-        atob(atob(window.localStorage.getItem("loginSecret")))
+        atob(atob(window.localStorage.getItem('loginSecret')))
       );
-      return type === "upper" ? (userDetails.name.charAt(0).toUpperCase() + userDetails.name.slice(1)) : (userDetails.name);
+      return type === 'upper'
+        ? userDetails.name.charAt(0).toUpperCase() + userDetails.name.slice(1)
+        : userDetails.name;
     }
   };
 
@@ -54,9 +56,11 @@ const Thankyou = () => {
                 />
               </div>
               <div className="flexy flex-col space-y-8 w-full lg:w-3/4 text-center py-10">
-                <h1 className="text-5xl font-monaBold">Thank you {GetUserName()}</h1>
+                <h1 className="text-5xl font-monaBold">
+                  Thank you {GetUserName()}
+                </h1>
                 <p className="text-xl">
-                  Thank you {GetUserName("lower")} for buying our product
+                  Thank you {GetUserName('lower')} for buying our product
                 </p>
               </div>
             </div>
@@ -71,7 +75,8 @@ const Thankyou = () => {
             <div className="w-full lg:w-3/5 flexy flex-col py-5 space-y-6">
               <div className="flexy text-center">
                 <h3 className="text-xl lg:text-2xl font-monaSemibold">
-                {GetUserName()} | We received your order we will contact at shortly
+                  {GetUserName()} | We received your order we will contact at
+                  shortly
                 </h3>
               </div>
 
@@ -112,7 +117,7 @@ const Thankyou = () => {
 
                     <li className="flex flex-wrap items-center justify-between border-y border-dashed border-gray-400 py-2">
                       <p>
-                        {orderData?.service + " - " + orderData?.package_name}
+                        {orderData?.service + ' - ' + orderData?.package_name}
                       </p>
                       <span>${currencyformator(orderData?.order_amount)}</span>
                     </li>
