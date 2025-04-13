@@ -1,14 +1,45 @@
-import { currencyformator } from '../func';
-import CheckoutModalWrapper from './CheckoutModalWrapper';
+// import React from 'react';
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { currencyformator, getCookie } from "../func";
+import CheckoutModalWrapper from "./CheckoutModalWrapper";
 
 const SMMPackage = ({ Packages }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userDetails, setUserDetails] = useState({});
+
+  useEffect(() => {
+    if (getCookie("token") !== undefined && getCookie("token") !== null) {
+      setIsLoggedIn(true);
+      var userDetails = JSON.parse(
+        atob(atob(window.localStorage.getItem("loginSecret")))
+      );
+      setUserDetails(userDetails);
+    }
+
+    // Respond to the `storage` event
+    function storageEventHandler(event) {
+      if (localStorage.getItem("isLoggedIn") !== null) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    }
+    // Hook up the event handler
+    window.addEventListener("storage", storageEventHandler);
+    return () => {
+      // Remove the handler when the component unmounts
+      window.removeEventListener("storage", storageEventHandler);
+    };
+  }, []);
+
   return (
     <div className="flexy flex-col space-y-5 max-w-full lg:px-12">
       <div className="relative w-full campPackBan flexy p-5 lg:p-14">
         <div
           className="absolute w-full h-full rounded-lg -z-[1] bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/images/productsPages/pricePackBlueBG.png)',
+            backgroundImage: "url(/images/productsPages/pricePackBlueBG.png)",
           }}
         />
 
@@ -39,8 +70,8 @@ const SMMPackage = ({ Packages }) => {
                       <img
                         src={
                           included
-                            ? '/images/icons/roundCheckWhite.svg'
-                            : '/images/icons/doublecheckgrey.svg'
+                            ? "/images/icons/roundCheckWhite.svg"
+                            : "/images/icons/doublecheckgrey.svg"
                         }
                         className="img-fluid"
                         width={28}
@@ -57,17 +88,26 @@ const SMMPackage = ({ Packages }) => {
           </div>
 
           <div className="w-full pt-4 max-w-full md:max-w-xs flexy lg:justify-start">
-            <CheckoutModalWrapper
-              orderData={{
-                service: 'Social Media Management',
-                package_id: Packages[0]?.package_id,
-                package_name: Packages[0]?.package_name,
-                order_amount: Packages[0]?.package_price,
-                user_id: 'user123',
-                order_details: Packages[0]?.package_details,
-              }}
-              type={'white'}
-            />
+            {/* <Link to={'/'} className="flexy w-full lg:w-72">
+              <button className="tpLGBtn w-full">Get Started</button>
+            </Link> */}
+            {isLoggedIn ? (
+              <CheckoutModalWrapper
+                orderData={{
+                  service: "Social Media Management",
+                  package_id: Packages[0]?.package_id,
+                  package_name: Packages[0]?.package_name,
+                  order_amount: Packages[0]?.package_price,
+                  user_id: userDetails?.id,
+                  order_details: Packages[0]?.package_details,
+                }}
+                type={"white"}
+              />
+            ) : (
+              <Link to="/auth/sign-in" state={{ from: '/products/social-media-management' }} className="flexy w-full lg:w-72">
+                <button className="tpLGBtn w-full">Get Started</button>
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -76,7 +116,7 @@ const SMMPackage = ({ Packages }) => {
         <div
           className="absolute hidden top-8 lg:block w-full h-full max-w-[50rem] bg-contain bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/images/productsPages/pricePackBG.svg)',
+            backgroundImage: "url(/images/productsPages/pricePackBG.svg)",
           }}
         />
 
@@ -113,22 +153,31 @@ const SMMPackage = ({ Packages }) => {
                       <span className="text-xl">project</span>
                     </h1>
                     <span className="text-md font-monaMedium">
-                      {index === 0 && 'Fine Choice'}
-                      {index === 1 && 'Best Choice'}
-                      {index === 2 && 'Recommended Choice'}
+                      {index === 0 && "Fine Choice"}
+                      {index === 1 && "Best Choice"}
+                      {index === 2 && "Recommended Choice"}
                     </span>
                     <div className="flexy">
-                      <CheckoutModalWrapper
-                        orderData={{
-                          service: 'Social Media Management',
-                          package_id: pkg?.package_id,
-                          package_name: pkg?.package_name,
-                          order_amount: pkg?.package_price,
-                          user_id: 'user123',
-                          order_details: pkg?.package_details,
-                        }}
-                        type={'blue'}
-                      />
+                      {/* <Link to={"/"} className="primaryLink">
+                        Get Started
+                      </Link> */}
+                      {isLoggedIn ? (
+                        <CheckoutModalWrapper
+                          orderData={{
+                            service: "Social Media Management",
+                            package_id: pkg?.package_id,
+                            package_name: pkg?.package_name,
+                            order_amount: pkg?.package_price,
+                            user_id: userDetails?.id,
+                            order_details: pkg?.package_details,
+                          }}
+                          type={"blue"}
+                        />
+                      ) : (
+                        <Link to="/auth/sign-in" state={{ from: '/products/social-media-management' }} className="primaryLink">
+                          Get Started
+                        </Link>
+                      )}
                     </div>
                   </div>
                   <div className="flexy w-full">
@@ -142,8 +191,8 @@ const SMMPackage = ({ Packages }) => {
                             <img
                               src={
                                 included
-                                  ? '/images/icons/doublecheckPrim.svg'
-                                  : '/images/icons/doublecheckgrey.svg'
+                                  ? "/images/icons/doublecheckPrim.svg"
+                                  : "/images/icons/doublecheckgrey.svg"
                               }
                               className="img-fluid w-5"
                               alt=""

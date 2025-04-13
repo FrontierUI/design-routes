@@ -1,15 +1,33 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-import BrandLogo from '/images/routeslogo.svg';
-import { Menus } from '@/contentData/utils';
+import BrandLogo from "/images/routeslogo.svg";
+import { Menus } from "@/contentData/utils";
 
-import DesktopMenu from './DesktopMenu';
-import MobileMenu from './MobileMenu';
-import Avatar from './Avatar';
+import DesktopMenu from "./DesktopMenu";
+import MobileMenu from "./MobileMenu";
+import Avatar from "./Avatar";
 
 const Navbar = () => {
   const [isOpenMain, setIsOpenMain] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Respond to the `storage` event
+    function storageEventHandler(event) {
+      if (localStorage.getItem("isLoggedIn") !== null) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    }
+    // Hook up the event handler
+    window.addEventListener("storage", storageEventHandler);
+    return () => {
+      // Remove the handler when the component unmounts
+      window.removeEventListener("storage", storageEventHandler);
+    };
+  }, []);
 
   const toggleDrawer = () => {
     setIsOpenMain(!isOpenMain);
@@ -49,14 +67,20 @@ const Navbar = () => {
             </button>
           </Link>
 
-          {/* <Link
-            className="flexy transitAll scal105 lg:hover:shadow-drop-4 bg-primary text-white px-6 py-2 shadow rounded-full itemsCenter"
-            to="/auth/sign-in"
-          >
-            Sign In
-          </Link> */}
+          {isLoggedIn ? (
+            <Avatar />
+          ) : (
+            <Link
+              className="flexy transitAll scal105 lg:hover:shadow-drop-4 bg-primary text-white px-6 py-2 shadow rounded-full itemsCenter"
+              to="/auth/sign-in"
+            >
+              Sign In
+            </Link>
+          )}
 
-          {/* <Avatar /> */}
+          {/*  */}
+
+          {/*  */}
 
           <div className="lg:hidden">
             <MobileMenu Menus={Menus} isOpenMain={isOpenMain} />

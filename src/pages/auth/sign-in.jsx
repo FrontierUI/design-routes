@@ -143,6 +143,7 @@ const SignIn = () => {
                   "loginSecret",
                   response.data.secret
                 );
+                window.dispatchEvent(new Event("storage"));
 
                 navigate(location.state?.from, { replace: true });
               } else {
@@ -156,6 +157,7 @@ const SignIn = () => {
                   "loginSecret",
                   response.data.secret
                 );
+                window.dispatchEvent(new Event("storage"));
               }
             }, 2000);
           } else {

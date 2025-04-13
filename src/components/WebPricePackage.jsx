@@ -1,9 +1,37 @@
 // import React from 'react';
 import { Link } from "react-router-dom";
-import { currencyformator } from "../func";
+import { currencyformator, getCookie } from "../func";
 import CheckoutModalWrapper from "./CheckoutModalWrapper";
+import { useEffect, useState } from "react";
 
 const WebPricePackage = ({ Packages }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userDetails, setUserDetails] = useState({});
+  useEffect(() => {
+    if (getCookie("token") !== undefined && getCookie("token") !== null) {
+      setIsLoggedIn(true);
+      var userDetails = JSON.parse(
+        atob(atob(window.localStorage.getItem("loginSecret")))
+      );
+      setUserDetails(userDetails);
+    }
+
+    // Respond to the `storage` event
+    function storageEventHandler(event) {
+      if (localStorage.getItem("isLoggedIn") !== null) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    }
+    // Hook up the event handler
+    window.addEventListener("storage", storageEventHandler);
+    return () => {
+      // Remove the handler when the component unmounts
+      window.removeEventListener("storage", storageEventHandler);
+    };
+  }, []);
+
   return (
     <div className="flexy flex-col space-y-5 max-w-full lg:px-12">
       <div className="relative w-full campPackBan flexy p-5 lg:p-14">
@@ -167,17 +195,23 @@ const WebPricePackage = ({ Packages }) => {
             {/* <Link to={"/"} className="flexy w-full lg:w-72">
               <button className="tpLGBtn w-full">Get Started</button>
             </Link> */}
-            <CheckoutModalWrapper
-              orderData={{
-                service: "Web Design And Development",
-                package_id: Packages[0]?.package_id,
-                package_name: Packages[0]?.package_name,
-                order_amount: Packages[0]?.package_price,
-                user_id: "user123",
-                order_details: Packages[0]?.package_details,
-              }}
-              type={"white"}
-            />
+            {isLoggedIn ? (
+              <CheckoutModalWrapper
+                orderData={{
+                  service: "Web Design And Development",
+                  package_id: Packages[0]?.package_id,
+                  package_name: Packages[0]?.package_name,
+                  order_amount: Packages[0]?.package_price,
+                  user_id: userDetails?.id,
+                  order_details: Packages[0]?.package_details,
+                }}
+                type={"white"}
+              />
+            ) : (
+              <Link to="/auth/sign-in" state={{ from: '/products/web-design-and-development' }} className="flexy w-full lg:w-72">
+                <button className="whiteLGButton w-full">Get Started</button>
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -201,7 +235,7 @@ const WebPricePackage = ({ Packages }) => {
             {Packages.filter(
               (p) => p.package_name !== Packages[0].package_name
             ).map((pkg, index) => (
-              <div className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg">
+              <div className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg" key={index}>
                 <hr className="w-full absolute top-[8.5rem] left-0 h-[1.5px] bg-gray-400" />
                 <hr className="w-full absolute top-[20.75rem] left-0 h-[1.5px] bg-gray-400" />
 
@@ -228,17 +262,23 @@ const WebPricePackage = ({ Packages }) => {
                       {/* <Link to={'/'} className="primaryLink">
                           Get Started
                         </Link> */}
-                      <CheckoutModalWrapper
-                        orderData={{
-                          service: "Web Design And Development",
-                          package_id: pkg?.package_id,
-                          package_name: pkg?.package_name,
-                          order_amount: pkg?.package_price,
-                          user_id: "user123",
-                          order_details: pkg?.package_details,
-                        }}
-                        type={"blue"}
-                      />
+                      {isLoggedIn ? (
+                        <CheckoutModalWrapper
+                          orderData={{
+                            service: "Web Design And Development",
+                            package_id: pkg?.package_id,
+                            package_name: pkg?.package_name,
+                            order_amount: pkg?.package_price,
+                            user_id: userDetails?.id,
+                            order_details: pkg?.package_details,
+                          }}
+                          type={"blue"}
+                        />
+                      ) : (
+                        <Link to="/auth/sign-in" state={{ from: '/products/web-design-and-development' }} className="primaryLink">
+                          Get Started
+                        </Link>
+                      )}
                     </div>
                   </div>
                   <div className="flexy w-full">

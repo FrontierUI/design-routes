@@ -1,9 +1,38 @@
 // import React from 'react';
 import { Link } from "react-router-dom";
-import { currencyformator } from "../func";
+import { currencyformator, getCookie } from "../func";
 import CheckoutModalWrapper from "./CheckoutModalWrapper";
+import { useEffect, useState } from "react";
 
 const CreativeCampaignPackage = ({ Packages }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userDetails, setUserDetails] = useState({});
+
+  useEffect(() => {
+    if (getCookie("token") !== undefined && getCookie("token") !== null) {
+      setIsLoggedIn(true);
+      var userDetails = JSON.parse(
+        atob(atob(window.localStorage.getItem("loginSecret")))
+      );
+      setUserDetails(userDetails);
+    }
+
+    // Respond to the `storage` event
+    function storageEventHandler(event) {
+      if (localStorage.getItem("isLoggedIn") !== null) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    }
+    // Hook up the event handler
+    window.addEventListener("storage", storageEventHandler);
+    return () => {
+      // Remove the handler when the component unmounts
+      window.removeEventListener("storage", storageEventHandler);
+    };
+  }, []);
+
   return (
     <div className="flexy flex-col space-y-5 max-w-full lg:px-12">
       <div className="relative w-full campPackBan flexy p-5 lg:p-14">
@@ -64,17 +93,27 @@ const CreativeCampaignPackage = ({ Packages }) => {
             {/* <Link to={"/"} className="flexy w-full lg:w-72 whiteLGButton w-full">              
               Get Started
             </Link> */}
-            <CheckoutModalWrapper
+            {isLoggedIn ? (
+              <CheckoutModalWrapper
                 orderData={{
                   service: "Creative Campaign",
                   package_id: Packages[0]?.package_id,
                   package_name: Packages[0]?.package_name,
                   order_amount: Packages[0]?.package_price,
-                  user_id: "user123",
+                  user_id: userDetails?.id,
                   order_details: Packages[0]?.package_details,
                 }}
-                type={'white'}
+                type={"white"}
               />
+            ) : (
+              <Link
+                to="/auth/sign-in"
+                state={{ from: "/products/creative-campaigns" }}
+                className="flexy w-full lg:w-72 whiteLGButton w-full"
+              >
+                Get Started
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -128,17 +167,23 @@ const CreativeCampaignPackage = ({ Packages }) => {
                       {/* <Link to={"/"} className="primaryLink">
                         Get Started
                       </Link> */}
-                      <CheckoutModalWrapper
-                        orderData={{
-                          service: "Creative Campaign",
-                          package_id: pkg.package_id,
-                          package_name: pkg.package_name,
-                          order_amount: pkg.package_price,
-                          user_id: "user123",
-                          order_details: pkg.package_details,
-                        }}
-                        type={'blue'}
-                      />
+                      {isLoggedIn ? (
+                        <CheckoutModalWrapper
+                          orderData={{
+                            service: "Creative Campaign",
+                            package_id: pkg.package_id,
+                            package_name: pkg.package_name,
+                            order_amount: pkg.package_price,
+                            user_id: userDetails?.id,
+                            order_details: pkg.package_details,
+                          }}
+                          type={"blue"}
+                        />
+                      ) : (
+                        <Link to="/auth/sign-in" state={{ from: '/products/creative-campaigns' }} className="primaryLink">
+                          Get Started
+                        </Link>
+                      )}
                     </div>
                   </div>
                   <div className="flexy w-full">
