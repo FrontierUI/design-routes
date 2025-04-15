@@ -43,6 +43,8 @@ const SME = lazy(() => import('@/pages/verticals/SME'));
 const ForBrands = lazy(() => import('@/pages/verticals/ForBrands'));
 const ForAgencies = lazy(() => import('@/pages/verticals/ForAgencies'));
 
+const UserDashboard = lazy(() => import('./pages/dashboard/UserDashboard'));
+
 const LoadingFallback = () => {
   return (
     <div className="loading flex items-center justify-center min-h-screen bg-gray-100">
@@ -110,10 +112,15 @@ const App = () => {
           <Route path="/auth/sign-up" element={<SignUp />} />
           <Route path="/auth/sign-in" element={<SignIn />} />
           <Route path="/auth/forgot-password" element={<ForgotPassword />} />
-          <Route path="/auth/reset_password/:token" element={<ResetPassword />} />
+          <Route
+            path="/auth/reset_password/:token"
+            element={<ResetPassword />}
+          />
           <Route path="/verify/:token" element={<Verify />} />
 
           <Route path="/our-work/:slug" element={<PortfolioPage />} />
+
+          <Route path="/dashboard/userIdd" element={<UserDashboard />} />
         </Routes>
 
         <Footer />

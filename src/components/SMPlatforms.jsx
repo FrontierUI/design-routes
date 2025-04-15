@@ -31,7 +31,9 @@ const SMPlatforms = () => {
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
                   <img
-                    src={`${import.meta.env.VITE_BASE_API}/images/icons/LinkedInSMM.png`}
+                    src={`${
+                      import.meta.env.VITE_BASE_API
+                    }/images/icons/LinkedInSMM.png`}
                     className="img-fluid w-[9rem] h-[9rem] object-cover"
                     alt=""
                   />
@@ -49,7 +51,9 @@ const SMPlatforms = () => {
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
                   <img
-                    src={`${import.meta.env.VITE_BASE_API}/images/icons/YoutubeSMM.png`}
+                    src={`${
+                      import.meta.env.VITE_BASE_API
+                    }/images/icons/YTSMM.png`}
                     className="img-fluid w-[9rem] h-[9rem] object-cover"
                     alt=""
                   />
@@ -67,7 +71,9 @@ const SMPlatforms = () => {
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart lg:pl-2">
                   <img
-                    src={`${import.meta.env.VITE_BASE_API}/images/icons/InstagramSMM.png`}
+                    src={`${
+                      import.meta.env.VITE_BASE_API
+                    }/images/icons/InstagramSMM.png`}
                     className="img-fluid w-[6.5rem] h-[6.5rem] object-contain"
                     alt=""
                   />
@@ -84,7 +90,9 @@ const SMPlatforms = () => {
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart lg:pl-2">
                   <img
-                    src={`${import.meta.env.VITE_BASE_API}/images/icons/FacebookSMM.png`}
+                    src={`${
+                      import.meta.env.VITE_BASE_API
+                    }/images/icons/FacebookSMM.png`}
                     className="img-fluid w-[7rem] h-[7rem] object-cover"
                     alt=""
                   />
@@ -101,7 +109,9 @@ const SMPlatforms = () => {
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart lg:pl-2">
                   <img
-                    src={`${import.meta.env.VITE_BASE_API}/images/icons/othPlat.png`}
+                    src={`${
+                      import.meta.env.VITE_BASE_API
+                    }/images/icons/othPlat.png`}
                     className="img-fluid w-[12rem] h-[12rem] object-contain"
                     alt=""
                   />
