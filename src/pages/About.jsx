@@ -7,6 +7,7 @@ import Strategies from '@/components/Strategies';
 import CounterNumbers from '@/components/CounterNumbers';
 
 import { Helmet } from 'react-helmet-async';
+import ChooseUs from '../components/ChooseUs';
 
 const About = () => {
   return (
@@ -109,6 +110,20 @@ const About = () => {
           </div>
 
           <Services />
+        </div>
+      </div>
+
+      <div className="relative w-full h-full py-5">
+        <div className="flexy relative w-full h-full px-5 lg:px-12">
+          <div className="flexy flex-col w-full h-full mx-auto space-y-6">
+            <div className="flexy text-center w-full">
+              <h1 className="text-3xl lg:text-5xl font-monaBold">
+                Why Choose Us
+              </h1>
+            </div>
+
+            <ChooseUs />
+          </div>
         </div>
       </div>
 

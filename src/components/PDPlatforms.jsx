@@ -12,15 +12,15 @@ const PDPlatforms = () => {
               Platform Mastery
             </h3>
             <h1 className="text-5xl font-monaBold">
-              Expertise across all Social Media platforms
+              Expertise across all Presentation Design platforms
             </h1>
             <p>
-              From LinkedIn and Instagram to TikTok and YouTube, every social
-              media platform has its own distinct design requirements and
-              inherent user expectations. Rely on our in-depth expertise, as
-              well as the ability to version and scale any kind of social media
-              content, static, motion or video, across your key social media
-              channels.
+              Our presentation designers can do it all. With expertise across
+              all major presentation design platforms, we can adapt to your
+              preferred tools and integrate with your creative workflows.
+              Whether you’re a PowerPoint aficionado or Google Slides devotee,
+              we’ll design in your platform of choice to deliver a powerful,
+              high-impact presentation.
             </p>
           </div>
         </div>
@@ -31,7 +31,9 @@ const PDPlatforms = () => {
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
                   <img
-                    src={`${import.meta.env.VITE_BASE_API}/images/icons/powerPoint.png`}
+                    src={`${
+                      import.meta.env.VITE_BASE_API
+                    }/images/icons/powerPoint.png`}
                     className="img-fluid w-52 object-cover"
                     alt=""
                   />
@@ -56,7 +58,9 @@ const PDPlatforms = () => {
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
                   <img
-                    src={`${import.meta.env.VITE_BASE_API}/images/icons/googleSlides.png`}
+                    src={`${
+                      import.meta.env.VITE_BASE_API
+                    }/images/icons/googleSlides.png`}
                     className="img-fluid w-52 object-cover"
                     alt=""
                   />
@@ -77,7 +81,9 @@ const PDPlatforms = () => {
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
                   <img
-                    src={`${import.meta.env.VITE_BASE_API}/images/icons/keynote.png`}
+                    src={`${
+                      import.meta.env.VITE_BASE_API
+                    }/images/icons/keynote.png`}
                     className="img-fluid w-52 object-cover"
                     alt=""
                   />
@@ -101,7 +107,9 @@ const PDPlatforms = () => {
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
                   <img
-                    src={`${import.meta.env.VITE_BASE_API}/images/icons/figma-1.png`}
+                    src={`${
+                      import.meta.env.VITE_BASE_API
+                    }/images/icons/figma-1.png`}
                     className="img-fluid w-52 object-cover"
                     alt=""
                   />
@@ -125,7 +133,9 @@ const PDPlatforms = () => {
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
                   <img
-                    src={`${import.meta.env.VITE_BASE_API}/images/icons/othPlat.png`}
+                    src={`${
+                      import.meta.env.VITE_BASE_API
+                    }/images/icons/othPlat.png`}
                     className="img-fluid w-52 object-cover"
                     alt=""
                   />

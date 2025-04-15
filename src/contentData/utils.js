@@ -136,6 +136,7 @@ import PresDesign from '/images/icons/PresDesign.svg';
 
 import motionAds from '/images/icons/MotionAds.svg';
 import staticImg from '/images/icons/staticImg.svg';
+import staticAds from '/images/icons/staticImgAds.svg';
 import augmentedReality from '/images/icons/augmentedReality.svg';
 
 import clientAvatar from '/images/icons/avatar.png';
@@ -170,6 +171,11 @@ import adaptive from '/images/icons/adaptive.svg';
 import crossPlat from '/images/icons/crossPlat.svg';
 import apiData from '/images/icons/apiData.svg';
 import performOpt from '/images/icons/performOpt.svg';
+
+import expTeam from '/images/icons/expertTeam.svg';
+import inno from '/images/icons/innovateSol.svg';
+import pa from '/images/icons/personalApproach.svg';
+import flexSpeed from '/images/icons/flexSpeed.svg';
 
 export const clientTestimonials = [
   {
@@ -235,6 +241,52 @@ export const formatMaster = [
     src: augmentedReality,
     title: 'Augmented Reality Ads',
     para: 'Push the boundaries of creativity with world and front-facing AR applications for innovative immersive campaigns and experiences.',
+  },
+];
+
+export const dynamicFormat = [
+  {
+    src: motionAds,
+    title: 'Animated / Motion Ads',
+    para: 'Bring your ads to life with captivating animation and illustrations. Motion design can also be applied with other formats like video.',
+  },
+  {
+    src: staticAds,
+    title: 'Static Imagery',
+    para: 'Create impactful static ads that convey your message clearly and effectively.',
+  },
+  {
+    src: motionGraph,
+    title: 'Video Content',
+    para: 'Leverage the power of video to tell your brand’s story with engaging and memorable content.',
+  },
+  {
+    src: augmentedReality,
+    title: 'Augmented Reality',
+    para: 'Explore the immersive social media creative with AR experiences that engage and amaze your audience.',
+  },
+];
+
+export const choossUs = [
+  {
+    src: expTeam,
+    title: 'Expert Team',
+    para: 'Our team consists of professionals with years of experience in various design fields.',
+  },
+  {
+    src: inno,
+    title: 'Innovative Solutions',
+    para: 'We keep up with the latest trends and technologies to implement the most modern and effective design approaches.',
+  },
+  {
+    src: pa,
+    title: 'Personalized Approach',
+    para: "We carefully study each client's needs to offer unique solutions that align with your business goals.",
+  },
+  {
+    src: flexSpeed,
+    title: 'Flexibility & Speed',
+    para: 'We understand the importance of timely project completion and are ready to adapt to your deadlines and requirements.',
   },
 ];
 

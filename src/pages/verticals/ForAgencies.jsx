@@ -15,7 +15,10 @@ const ForAgencies = () => {
     <div className="relative w-full h-full forAgencies">
       <Helmet>
         <title>Design Solutions Tailored for Agencies | Routes.Design</title>
-        <meta name="description" content="Discover how Routes.Design partners with agencies to provide scalable and reliable design services, acting as an extension of your creative team." />
+        <meta
+          name="description"
+          content="Discover how Routes.Design partners with agencies to provide scalable and reliable design services, acting as an extension of your creative team."
+        />
       </Helmet>
       <div className="relative w-full h-full">
         <div
@@ -61,9 +64,7 @@ const ForAgencies = () => {
                       className="img-fluid w-[25px]"
                       alt=""
                     />
-                    <span className="text-md">
-                      Save time and money on creative production
-                    </span>
+                    <span className="text-md">Scale up and down as needed</span>
                   </li>
                   <li className="gap-x-3 justStartCenter">
                     <img
@@ -72,7 +73,7 @@ const ForAgencies = () => {
                       alt=""
                     />
                     <span className="text-md">
-                      Save time and money on creative production
+                      Hit unrealistic client deadlines
                     </span>
                   </li>
                 </ul>
@@ -194,17 +195,11 @@ const ForAgencies = () => {
 
       <div className="relative w-full h-full flexy py-6">
         <div className="flexy flex-col w-full px-5 lg:px-12">
-          <div className="flexy flex-col pb-6 space-y-4 text-center">
-            <h3 className="uppercase text-2xl font-monaSemibold">
-              Inefficient Agencies and Freelancers Create Drag
-            </h3>
-            <h1 className="text-5xl font-monaBold">
-              <Typewriting
-                text="Agency Barriers to Scaling Creative"
-                speed={100}
-              />
+          <div className="flexy flex-col pb-6 space-y-2 text-center">
+            <h1 className="text-4xl font-monaBold">
+              <Typewriting text="Freelancer Friction Points" speed={100} />
             </h1>
-            <p className="text-xl">
+            <p className="text-lg">
               Traditional creative agencies are more likely to work their way
               than your way.
             </p>

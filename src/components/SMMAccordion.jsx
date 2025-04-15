@@ -27,7 +27,7 @@ const SMMAccordion = () => {
             How much does the Social Media Management product cost?
           </AccordionHeader>
           <AccordionPanel>
-            The service is available for a fixed monthly rate of $1199, which
+            The service is available for a fixed monthly rate of $2,999 which
             includes all listed services with no hidden costs.
           </AccordionPanel>
         </AccordionItem>
