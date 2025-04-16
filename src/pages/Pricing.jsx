@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 import { homePortFolioUp, homePortFolioBot } from '@/contentData/utils';
 
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Typewriting from '@/components/Typewriting';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
 import PricingTabs from '@/components/PricingTabs';
@@ -17,9 +19,15 @@ const Pricing = () => {
   return (
     <div className="relative flexy flex-col w-full h-full">
       <Helmet>
-        <title>Flexible Subscription Plans for Your Business Growth | Routes.Design</title>
-        <meta name="description" content="Explore Routes.Design's flexible subscription plans tailored to support your business growth with unlimited design services at a flat monthly fee." />
+        <title>
+          Flexible Subscription Plans for Your Business Growth | Routes.Design
+        </title>
+        <meta
+          name="description"
+          content="Explore Routes.Design's flexible subscription plans tailored to support your business growth with unlimited design services at a flat monthly fee."
+        />
       </Helmet>
+      <Navbar />
       <div className="flexy flex-col w-full px-5 pt-20 lg:pt-28">
         <div className="flexy flex-col py-8 w-full space-y-5 text-center text-slate-900 lg:w-3/4">
           <h3 className="text-xl font-monaBold uppercase">
@@ -126,6 +134,8 @@ const Pricing = () => {
       <div className="relative w-full h-full pb-6">
         <Testimonials />
       </div>
+
+      <Footer />
     </div>
   );
 };

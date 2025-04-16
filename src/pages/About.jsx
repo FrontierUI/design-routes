@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Typewriting from '@/components/Typewriting';
 import LogoMarquee from '@/components/LogoMarquee';
 import Services from '@/components/Services';
 import Strategies from '@/components/Strategies';
 import CounterNumbers from '@/components/CounterNumbers';
-
-import { Helmet } from 'react-helmet-async';
-import ChooseUs from '../components/ChooseUs';
+import ChooseUs from '@/components/ChooseUs';
 
 const About = () => {
   return (
@@ -21,6 +22,9 @@ const About = () => {
           content="Learn about Routes.Design, a dedicated team of professionals offering top-tier design services to help brands and agencies achieve their creative goals."
         />
       </Helmet>
+
+      <Navbar />
+
       <div className="relative w-full h-full">
         <div className="w-full flexy flex-col px-5 py-10 pt-16 lg:pt-20 lg:mt-28 lg:mb-16">
           <div className="flexy flex-col lg:w-2/3 space-y-5 text-center">
@@ -164,7 +168,7 @@ const About = () => {
               </p>
 
               <Link
-                to={'/'}
+                to={'https://koalendar.com/e/meet-with-routes-design'}
                 target="_blank"
                 className="relative lg:top-4 mt-4 interestedLink text-lg sm:text-xl"
               >
@@ -174,6 +178,8 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

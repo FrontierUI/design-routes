@@ -1,6 +1,9 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+
 const PrivacyPolicy = () => {
   return (
     <>
@@ -12,6 +15,7 @@ const PrivacyPolicy = () => {
         />
       </Helmet>
       <div className="relative w-full h-full">
+        <Navbar />
         <div className="flexy w-full h-full py-6 lg:pt-12 px-5 lg:px-12">
           <div className="itemsStart flex-col w-full mt-6 lg:mt-20 lg:mb-6">
             <div className="flexStart flex-col max-lg:mt-20">
@@ -721,6 +725,8 @@ const PrivacyPolicy = () => {
             </div>
           </div>
         </div>
+
+        <Footer />
       </div>
     </>
   );

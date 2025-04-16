@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+
 const RefundPolicy = () => {
   return (
     <>
@@ -11,6 +14,8 @@ const RefundPolicy = () => {
           content="Read Routes.Design's terms and conditions to understand how we collect, use, and protect your personal information."
         />
       </Helmet>
+
+      <Navbar />
 
       <div className="relative w-full h-full">
         <div className="flexy w-full h-full py-6 lg:pt-12 px-5 lg:px-12">
@@ -91,6 +96,8 @@ const RefundPolicy = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };

@@ -1,10 +1,13 @@
+import { useState, useEffect } from 'react';
 import Marquee from 'react-fast-marquee';
 import Tilt from 'react-parallax-tilt';
+import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 import { Check } from 'lucide-react';
 
-import { brandPortFolioBot, brandPortFolioUp } from '@/contentData/utils';
-
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Typewriting from '@/components/Typewriting';
 import LogoMarquee from '@/components/LogoMarquee';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
@@ -16,10 +19,6 @@ import BrandIdentityPackage from '@/components/BrandIdentityPackage';
 import BIDCounter from '@/components/BIDCounter';
 import BIDAccordion from '@/components/BIDAccordion';
 import Testimonials from '@/components/Testimonials';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-
-import { Helmet } from 'react-helmet-async';
 
 const BrandIdentiyDesign = () => {
   const [productDetails, setProductDetails] = useState({});
@@ -71,6 +70,7 @@ const BrandIdentiyDesign = () => {
           content="Create a cohesive and compelling brand identity with Routes.Design's branding services, encompassing logo design and brand strategy."
         />
       </Helmet>
+      <Navbar />
       {productDetails.service_sub_title !== undefined ? (
         <div className="relative w-full h-full brandIdenDes">
           <div className="relative w-full h-full">
@@ -137,13 +137,6 @@ const BrandIdentiyDesign = () => {
                 speed={30}
                 pauseOnHover={false}
               >
-                {/* {[...brandPortFolioUp].map((item) => (
-                <PortfolioMarquee
-                  key={item.href}
-                  imgSrc={item.imgSrc}
-                  href={item.href}
-                />
-              ))} */}
                 {[...portfolios].map((item, index) => (
                   <PortfolioMarquee
                     imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
@@ -162,13 +155,6 @@ const BrandIdentiyDesign = () => {
                 speed={30}
                 pauseOnHover={false}
               >
-                {/* {[...brandPortFolioBot].map((item) => (
-                <PortfolioMarquee
-                  imgSrc={item.imgSrc}
-                  href={item.href}
-                  key={item.href}
-                />
-              ))} */}
                 {[...portfolios].map((item, index) => (
                   <PortfolioMarquee
                     imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
@@ -209,7 +195,7 @@ const BrandIdentiyDesign = () => {
                     <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">
                       Our global team of brand experts, who’ve worked at top
                       brand design agencies and well-known brands, will help you
-                      grow and elevate your brand. Whether it's a logo or a
+                      grow and elevate your brand. Whether it’s a logo or a
                       complete brand development, we help you express what makes
                       your brand unique.
                     </p>
@@ -282,9 +268,9 @@ const BrandIdentiyDesign = () => {
                 <div className="mt-3 lg:w-3/5 leading-tight">
                   <p>
                     Branding design services start with a purpose. The primary
-                    goal is to effectively communicate the brand's values and
+                    goal is to effectively communicate the brand’s values and
                     essence. Our brand identity services make sure that the
-                    visual elements align with the brand's personality and speak
+                    visual elements align with the brand’s personality and speak
                     to the target audience. This helps to:
                   </p>
                 </div>
@@ -348,6 +334,7 @@ const BrandIdentiyDesign = () => {
           </div>
         </div>
       )}
+      <Footer />
     </>
   );
 };

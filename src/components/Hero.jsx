@@ -12,15 +12,11 @@ const Hero = () => {
       <div className="relative w-full h-full flexy flex-col">
         <div className="relative w-full h-screen bg-primary flexy flex-col">
           <div
-            className="hidden lg:block absolute w-[400px] h-[400px] -right-40 top-28 macbook:top-40 macbook:-right-[13rem] bg-center bg-no-repeat bg-contain z-10"
-            style={{ backgroundImage: 'url(/images/E-white.gif)' }}
-          />
-          <div
-            className="hidden lg:block absolute w-[430px] h-[430px] macbook:w-[530px] macbook:h-[530px] -right-48 top-32 macbook:top-40 macbook:-right-[15rem] bg-center bg-no-repeat bg-contain z-10"
+            className="hidden xl:block absolute w-[430px] h-[430px] macbook:w-[530px] macbook:h-[530px] -right-48 top-32 macbook:top-40 macbook:-right-[15rem] bg-center bg-no-repeat bg-contain z-10"
             style={{ backgroundImage: 'url(/images/ewhiteGif.gif)' }}
           />
           <div
-            className="hidden lg:block absolute w-[430px] h-[430px] macbook:w-[500px] macbook:h-[500px] -left-[17rem] bottom-20 macbook:bottom-16 macbook:-left-[20rem] bg-center bg-no-repeat bg-contain z-10"
+            className="hidden xl:block absolute w-[430px] h-[430px] macbook:w-[500px] macbook:h-[500px] -left-[17rem] bottom-20 macbook:bottom-16 macbook:-left-[20rem] bg-center bg-no-repeat bg-contain z-10"
             style={{
               backgroundImage: 'url(/images/icons/RoutesWhite.png)',
               transform: 'scaleX(-1)',

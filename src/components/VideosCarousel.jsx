@@ -1,6 +1,6 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import { Autoplay, EffectCoverflow } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import ReactPlayer from 'react-player';
 
 import 'swiper/css';
@@ -10,7 +10,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 
 import { smallVids, largeVids } from '@/contentData/utils';
-import Typewriting from '@/components/Typewriting';
 
 const VideosCarousel = () => {
   return (
@@ -51,20 +50,20 @@ const VideosCarousel = () => {
                   autoplay={{ delay: 1500 }}
                   freeMode={true}
                   spaceBetween={12}
-                  centeredSlides={true}
                   grabCursor={true}
                   modules={[Autoplay]}
+                  centeredSlides={true}
                   pagination={{ clickable: true }}
                   initialSlide={1}
                   breakpoints={{
                     1024: { slidesPerView: 3 },
                     640: { slidesPerView: 2 },
                   }}
-                  className="w-full h-full swiper_container"
+                  className="w-full max-lg:!h-[550px] lg:!h-[300px] lapy:!h-[400px] imac:!h-[610px] swiper_container"
                 >
                   {smallVids.map((smvid) => (
                     <SwiperSlide
-                      className="w-full !lg:h-full rounded-2xl"
+                      className="w-full max-lg:!h-[550px] !lg:!h-[300px] lapy:!h-[400px] imac:!h-[610px] !aspect-video !rounded-2xl"
                       key={smvid.smVidId}
                     >
                       <ReactPlayer
@@ -80,6 +79,8 @@ const VideosCarousel = () => {
                           borderRadius: '1rem',
                           outline: 'none',
                           border: 'none',
+                          aspectRatio: '16 / 9',
+                          objectFit: 'contain',
                         }}
                         config={{
                           file: {
@@ -90,6 +91,7 @@ const VideosCarousel = () => {
                                 borderRadius: '1rem',
                                 outline: 'none',
                                 border: 'none',
+                                objectFit: 'cover',
                               },
                             },
                           },

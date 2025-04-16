@@ -1,10 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import PortfolioTabs from '@/components/PortfolioTabs';
 import Testimonials from '@/components/Testimonials';
-
-import { Helmet } from 'react-helmet-async';
 
 const OurWork = () => {
   return (
@@ -18,6 +18,9 @@ const OurWork = () => {
           content="Browse our portfolio to see how Routes.Design has helped brands and agencies with innovative and impactful design solutions."
         />
       </Helmet>
+
+      <Navbar />
+
       <div className="relative w-full h-full py-6">
         <div className="flexy w-full h-full px-5 lg:px-12 pt-12 pb-6 lg:mt-12">
           <div className="ourWorkTitles">
@@ -70,6 +73,8 @@ const OurWork = () => {
       <div className="relative w-full h-full py-6">
         <Testimonials />
       </div>
+
+      <Footer />
     </div>
   );
 };

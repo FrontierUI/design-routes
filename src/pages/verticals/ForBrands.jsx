@@ -1,18 +1,20 @@
 import { Link } from 'react-router-dom';
 import Tilt from 'react-parallax-tilt';
 import { ArrowUpRight } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Typewriting from '@/components/Typewriting';
 import LogoMarquee from '@/components/LogoMarquee';
 import Services from '@/components/Services';
 import Professionalism from '@/components/Professionalism';
 import Testimonials from '@/components/Testimonials';
 
-import { Helmet } from 'react-helmet-async';
-
 const ForBrands = () => {
   return (
     <div className="relative w-full h-full forBrands">
+      <Navbar />
       <Helmet>
         <title>For Agencies & For Brands | Routes.Design</title>
         <meta name="description" content="" />
@@ -117,7 +119,7 @@ const ForBrands = () => {
               />
             </h2>
             <p className="text-lg">
-              With one subscription, we handle all your business's design needs
+              With one subscription, we handle all your business’s design needs
               across every department. Your projects will be overseen by a
               dedicated manager, and our expert team of graphic designers, web
               designers, UX/UI specialists, and motion designers will
@@ -215,7 +217,10 @@ const ForBrands = () => {
 
           <div className="justStartCenter pb-3 flex-col lg:!justify-between lg:flex-row">
             <h1 className="text-4xl font-monaBold">Our Services</h1>
-            <Link to={'/'} className="tpBordPrim text-xl font-monaSemibold">
+            <Link
+              to={'/our-work'}
+              className="tpBordPrim text-xl font-monaSemibold"
+            >
               Our Works
             </Link>
           </div>
@@ -238,8 +243,8 @@ const ForBrands = () => {
 
             <div className="flexStart flex-col w-full px-2 lg:px-10 py-16">
               <div className="flexy flex-col lg:!items-start lg:!justify-start w-full space-y-4">
-                <h2 className="text-xl font-monaMedium uppercase">
-                  Let's work together
+                <h2 className="text-xl tracking-wider font-monaMedium uppercase">
+                  Let’s work together
                 </h2>
                 <h1 className="text-5xl lg:text-7xl font-monaBold">
                   Contact Us
@@ -265,6 +270,8 @@ const ForBrands = () => {
       <div className="relative w-full h-full pb-6">
         <Testimonials />
       </div>
+
+      <Footer />
     </div>
   );
 };

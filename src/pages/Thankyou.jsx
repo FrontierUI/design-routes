@@ -1,6 +1,10 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation, useNavigate } from 'react-router-dom';
+
 import { currencyformator } from '../func';
+
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const Thankyou = () => {
   const location = useLocation();
@@ -43,6 +47,8 @@ const Thankyou = () => {
           content="Browse our portfolio to see how Routes.Design has helped brands and agencies with innovative and impactful design solutions."
         />
       </Helmet>
+
+      <Navbar />
 
       <div className="relative w-full h-full thnksHero">
         <div className="relative w-full h-full bg-primary text-white">
@@ -133,6 +139,8 @@ const Thankyou = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };

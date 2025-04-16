@@ -1,5 +1,7 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
+import { base64_decode } from './func';
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -61,11 +63,20 @@ const LoadingFallback = () => {
   );
 };
 
+// admin@routes.design
+// @12benten@12
+
 const App = () => {
+  // const user = true;
+
+  // useEffect(() => {
+  //   console.log(base64_decode(window.localStorage.getItem('loginSecret')));
+  // }, []);
+
   return (
     <Suspense fallback={<LoadingFallback />}>
       <main className="relative max-w-full w-full h-full overflow-x-hidden">
-        <Navbar />
+        {/* <Navbar /> */}
 
         <Routes>
           <Route index path="/" element={<Home />} />
@@ -120,10 +131,10 @@ const App = () => {
 
           <Route path="/our-work/:slug" element={<PortfolioPage />} />
 
-          <Route path="/dashboard/userIdd" element={<UserDashboard />} />
+          <Route path="/dashboard" element={<UserDashboard />} />
         </Routes>
 
-        <Footer />
+        {/* <Footer /> */}
       </main>
     </Suspense>
   );

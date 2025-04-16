@@ -1,22 +1,21 @@
-import Marquee from "react-fast-marquee";
-import Tilt from "react-parallax-tilt";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
+import Marquee from 'react-fast-marquee';
+import Tilt from 'react-parallax-tilt';
 
-import { webPortfolioBot, webPortfolioUp } from "@/contentData/utils";
-
-import Typewriting from "@/components/Typewriting";
-import PortfolioMarquee from "@/components/PortfolioMarquee";
-import LogoMarquee from "@/components/LogoMarquee";
-import WebStrategies from "@/components/WebStrategies";
-import AIEnhancedWDD from "@/components/AIEnhancedWDD";
-import Professionalism from "@/components/Professionalism";
-import WebPricePackage from "@/components/WebPricePackage";
-import WebDDAccordion from "@/components/WebDDAccordion";
-import WebDDCounter from "@/components/WebDDCounter";
-import Testimonials from "@/components/Testimonials";
-import { useState, useEffect } from "react";
-import axios from "axios";
-
-import { Helmet } from "react-helmet-async";
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Typewriting from '@/components/Typewriting';
+import PortfolioMarquee from '@/components/PortfolioMarquee';
+import LogoMarquee from '@/components/LogoMarquee';
+import WebStrategies from '@/components/WebStrategies';
+import AIEnhancedWDD from '@/components/AIEnhancedWDD';
+import Professionalism from '@/components/Professionalism';
+import WebPricePackage from '@/components/WebPricePackage';
+import WebDDAccordion from '@/components/WebDDAccordion';
+import WebDDCounter from '@/components/WebDDCounter';
+import Testimonials from '@/components/Testimonials';
 
 const WebDesignDev = () => {
   const [productDetails, setProductDetails] = useState({});
@@ -33,7 +32,7 @@ const WebDesignDev = () => {
   }, []);
 
   const fetchProductDetails = () => {
-    const json = JSON.stringify({ slug: "web-design-and-development" });
+    const json = JSON.stringify({ slug: 'web-design-and-development' });
 
     axios
       .post(
@@ -41,12 +40,12 @@ const WebDesignDev = () => {
         JSON.stringify({ params: json }),
         {
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            'Content-Type': 'application/x-www-form-urlencoded',
           },
         }
       )
       .then((response) => {
-        if (response.data.success === "true") {
+        if (response.data.success === 'true') {
           setProductDetails(response.data.service_details);
           setProductsPackages(response.data.service_packages);
           setPortfolios(response.data.portfolios);
@@ -60,9 +59,16 @@ const WebDesignDev = () => {
   return (
     <>
       <Helmet>
-        <title>Professional Web Design & Development Services | Routes.Design</title>
-        <meta name="description" content="Enhance your online presence with Routes.Design's web design and development services, delivering user-friendly and optimized websites for performance and conversions." />
+        <title>
+          Professional Web Design & Development Services | Routes.Design
+        </title>
+        <meta
+          name="description"
+          content="Enhance your online presence with Routes.Design's web design and development services, delivering user-friendly and optimized websites for performance and conversions."
+        />
       </Helmet>
+
+      <Navbar />
 
       {productDetails.service_sub_title !== undefined ? (
         <div className="relative w-full h-full wddProduct">
@@ -312,6 +318,8 @@ const WebDesignDev = () => {
           </div>
         </div>
       )}
+
+      <Footer />
     </>
   );
 };

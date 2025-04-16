@@ -25,6 +25,7 @@ import web2 from '/images/Sequence01_5.mp4';
 import web3 from '/images/Sequence01_6.mp4';
 import web4 from '/images/Sequence01_7.mp4';
 import web5 from '/images/SequenceNew.mp4';
+import web6 from '/images/webSeq6.mp4';
 
 import lgSeq1 from '/images/Sequence01.mp4';
 import lgSeq2 from '/images/Sequence01_1.mp4';
@@ -642,6 +643,7 @@ export const smallVids = [
   { smVidId: 'web5', src: web5 },
   { smVidId: 'web3', src: web3 },
   { smVidId: 'web4', src: web4 },
+  { smVidId: 'web6', src: web6 },
 ];
 
 export const homePortFolioUp = [

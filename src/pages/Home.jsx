@@ -1,15 +1,14 @@
+import { useEffect, useMemo, useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Marquee from 'react-fast-marquee';
 
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import VideosCarousel from '@/components/VideosCarousel';
-
-import {
-  homePortFolioUp,
-  homePortFolioBot,
-  srcFilesList,
-} from '@/contentData/utils';
-
+import { srcFilesList } from '@/contentData/utils';
 import Typewriting from '@/components/Typewriting';
 import Services from '@/components/Services';
 import Strategies from '@/components/Strategies';
@@ -19,10 +18,6 @@ import WorkEthics from '@/components/WorkEthics';
 import RoutesWay from '@/components/RoutesWay';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
 import ServicesForm from '@/components/ServicesForm';
-import { useEffect, useMemo, useState } from 'react';
-import axios from 'axios';
-
-import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
   const [portfolios, setPortfolios] = useState([]);
@@ -91,6 +86,9 @@ const Home = () => {
           content="Discover Routes.Design — the USA’s go-to creative partner for unlimited, high-speed design solutions. Powered by a global team, we deliver premium branding, UI/UX, and digital assets on-demand. Future-ready design, delivered daily."
         />
       </Helmet>
+
+      <Navbar />
+
       <Hero />
 
       <div className="w-full h-full px-5 lg:px-12">
@@ -268,6 +266,8 @@ const Home = () => {
       <div className="relative w-full h-full pt-6 pb-10">
         <Testimonials />
       </div>
+
+      <Footer />
     </div>
   );
 };

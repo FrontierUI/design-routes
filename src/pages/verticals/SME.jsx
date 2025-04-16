@@ -1,22 +1,32 @@
 import { Link } from 'react-router-dom';
 import Tilt from 'react-parallax-tilt';
+import { Helmet } from 'react-helmet-async';
+
 import { ArrowUpRight } from 'lucide-react';
 
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Typewriting from '@/components/Typewriting';
 import LogoMarquee from '@/components/LogoMarquee';
 import Services from '@/components/Services';
 import Professionalism from '@/components/Professionalism';
 import Testimonials from '@/components/Testimonials';
 
-import { Helmet } from 'react-helmet-async';
-
 const SME = () => {
   return (
     <div className="relative w-full h-full forBrands">
       <Helmet>
-        <title>Affordable Design Services for Small and Medium-Sized Enterprises | Routes.Design</title>
-        <meta name="description" content="Grow your business with Routes.Design's flat-rate design products, offering high-quality creative solutions without breaking your budget." />
+        <title>
+          Affordable Design Services for Small and Medium-Sized Enterprises |
+          Routes.Design
+        </title>
+        <meta
+          name="description"
+          content="Grow your business with Routes.Design's flat-rate design products, offering high-quality creative solutions without breaking your budget."
+        />
       </Helmet>
+      <Navbar />
+
       <div className="relative w-full h-full">
         <div
           className="absolute top-0 w-full h-full -z-[1] bg-cover bg-no-repeat"
@@ -39,7 +49,7 @@ const SME = () => {
                 </h1>
 
                 <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
-                  Don't break your budget or settle for sloppy design that harms
+                  Don’t break your budget or settle for sloppy design that harms
                   your business Knock your competitors out of the park while
                   saving money.
                 </p>
@@ -85,7 +95,7 @@ const SME = () => {
             </h1>
             <p className="text-lg">
               No client or task is too big or too small for us. If you want your
-              business to look better and create more, you're in the right spot.
+              business to look better and create more, you’re in the right spot.
             </p>
           </div>
 
@@ -173,7 +183,10 @@ const SME = () => {
 
           <div className="justStartCenter pb-3 flex-col lg:!justify-between lg:flex-row">
             <h1 className="text-4xl font-monaBold">Our Services</h1>
-            <Link to={'/'} className="tpBordPrim text-xl font-monaSemibold">
+            <Link
+              to={'/our-work'}
+              className="tpBordPrim text-xl font-monaSemibold"
+            >
               Our Works
             </Link>
           </div>
@@ -196,8 +209,8 @@ const SME = () => {
 
             <div className="flexStart flex-col w-full px-2 lg:px-10 py-16">
               <div className="flexy flex-col lg:!items-start lg:!justify-start w-full space-y-4">
-                <h2 className="text-xl font-monaMedium uppercase">
-                  Let's work together
+                <h2 className="text-xl tracking-wider font-monaMedium uppercase">
+                  Let’s work together
                 </h2>
                 <h1 className="text-5xl lg:text-7xl font-monaBold">
                   Contact Us
@@ -223,6 +236,8 @@ const SME = () => {
       <div className="relative w-full h-full pb-6">
         <Testimonials />
       </div>
+
+      <Footer />
     </div>
   );
 };

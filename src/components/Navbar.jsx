@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import BrandLogo from "/images/routeslogo.svg";
-import { Menus } from "@/contentData/utils";
+import BrandLogo from '/images/routeslogo.svg';
+import { Menus } from '@/contentData/utils';
 
-import DesktopMenu from "./DesktopMenu";
-import MobileMenu from "./MobileMenu";
-import Avatar from "./Avatar";
+import DesktopMenu from './DesktopMenu';
+import MobileMenu from './MobileMenu';
+import Avatar from './Avatar';
 
 const Navbar = () => {
   const [isOpenMain, setIsOpenMain] = useState(false);
@@ -15,17 +15,17 @@ const Navbar = () => {
   useEffect(() => {
     // Respond to the `storage` event
     function storageEventHandler(event) {
-      if (localStorage.getItem("isLoggedIn") !== null) {
+      if (localStorage.getItem('isLoggedIn') !== null) {
         setIsLoggedIn(true);
       } else {
         setIsLoggedIn(false);
       }
     }
     // Hook up the event handler
-    window.addEventListener("storage", storageEventHandler);
+    window.addEventListener('storage', storageEventHandler);
     return () => {
       // Remove the handler when the component unmounts
-      window.removeEventListener("storage", storageEventHandler);
+      window.removeEventListener('storage', storageEventHandler);
     };
   }, []);
 
@@ -54,14 +54,14 @@ const Navbar = () => {
 
         <div className="itemsCenter gap-x-3 lg:gap-x-5">
           <Link
-            className="flex items-center justify-center lg:transitAll lg:scal105"
+            className="hidden lg:flex items-center justify-center lg:transitAll lg:scal105"
             to="https://koalendar.com/e/meet-with-routes-design"
             onClick={() => toggleDrawer()}
             target="_blank"
           >
             <button
               aria-label="get-a-demo"
-              className="bg-primary flex text-white lg:hover:shadow-drop-4 px-6 py-2 shadow rounded-full itemsCenter"
+              className="bg-primary hidden lg:flex text-white lg:hover:shadow-drop-4 px-6 py-2 shadow rounded-full itemsCenter"
             >
               Get a Demo
             </button>
@@ -77,10 +77,6 @@ const Navbar = () => {
               Sign In
             </Link>
           )}
-
-          {/*  */}
-
-          {/*  */}
 
           <div className="lg:hidden">
             <MobileMenu Menus={Menus} isOpenMain={isOpenMain} />

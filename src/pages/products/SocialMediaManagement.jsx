@@ -6,8 +6,8 @@ import Tilt from 'react-parallax-tilt';
 
 import { Check } from 'lucide-react';
 
-// import { smmPortfolioBot, smmPortfolioUp } from '@/contentData/utils';
-
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Typewriting from '@/components/Typewriting';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
 import LogoMarquee from '@/components/LogoMarquee';
@@ -85,6 +85,7 @@ const SocialMediaManagement = () => {
           content="Engage your audience and drive interaction with Routes.Design's social media management services, tailored to enhance your brand's online presence."
         />
       </Helmet>
+      <Navbar />
       {productDetails.service_sub_title !== undefined ? (
         <div className="relative w-full h-full smmProduct">
           <div className="relative w-full h-full">
@@ -151,13 +152,6 @@ const SocialMediaManagement = () => {
                 speed={30}
                 pauseOnHover={false}
               >
-                {/* {[...smmPortfolioUp].map((item) => (
-                <PortfolioMarquee
-                  imgSrc={item.imgSrc}
-                  href={item.href}
-                  key={item.href}
-                />
-              ))} */}
                 {[...portfolios].map((item, index) => (
                   <PortfolioMarquee
                     imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
@@ -176,13 +170,6 @@ const SocialMediaManagement = () => {
                 speed={30}
                 pauseOnHover={false}
               >
-                {/* {[...smmPortfolioBot].map((item) => (
-                <PortfolioMarquee
-                  imgSrc={item.imgSrc}
-                  href={item.href}
-                  key={item.href}
-                />
-              ))} */}
                 {[...portfolios].map((item, index) => (
                   <PortfolioMarquee
                     imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
@@ -403,6 +390,8 @@ const SocialMediaManagement = () => {
           </div>
         </div>
       )}
+
+      <Footer />
     </>
   );
 };

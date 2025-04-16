@@ -1,9 +1,11 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 import Marquee from 'react-fast-marquee';
-
 import Tilt from 'react-parallax-tilt';
 
-import { homePortFolioBot, homePortFolioUp } from '@/contentData/utils';
-
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Typewriting from '@/components/Typewriting';
 import ComprehensiveCC from '@/components/ComprehensiveCC';
 import FormatMastery from '@/components/FormatMastery';
@@ -15,10 +17,6 @@ import ProvenExpertise from '@/components/ProvenExpertise';
 import CreativeCampaignPackage from '@/components/CreativeCampaignPackage';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
 import CCAccordion from '@/components/CCAccordion';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-
-import { Helmet } from 'react-helmet-async';
 
 const CreativeCampaigns = () => {
   const [productDetails, setProductDetails] = useState({});
@@ -68,6 +66,7 @@ const CreativeCampaigns = () => {
           content="Captivate your audience with Routes.Design's creative campaign services, delivering compelling and innovative solutions tailored to your business goals."
         />
       </Helmet>
+      <Navbar />
       {productDetails.service_sub_title !== undefined ? (
         <div className="relative w-full h-full creativeCampaigns">
           <div className="relative w-full h-full">
@@ -327,6 +326,8 @@ const CreativeCampaigns = () => {
           </div>
         </div>
       )}
+
+      <Footer />
     </>
   );
 };

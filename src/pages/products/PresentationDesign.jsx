@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Marquee from 'react-fast-marquee';
 import Tilt from 'react-parallax-tilt';
+import { Helmet } from 'react-helmet-async';
 
 import { Check } from 'lucide-react';
 
-import { pdPortfolioBot, pdPortfolioUp } from '@/contentData/utils';
-
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Typewriting from '@/components/Typewriting';
 import LogoMarquee from '@/components/LogoMarquee';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
@@ -18,8 +19,6 @@ import TailoredPD from '@/components/TailoredPD';
 import PDCounter from '@/components/PDCounter';
 import PDPitchDecks from '@/components/PDPitchDecks';
 import PDPlatforms from '@/components/PDPlatforms';
-
-import { Helmet } from 'react-helmet-async';
 
 const PresentationDesign = () => {
   const [productDetails, setProductDetails] = useState({});
@@ -81,6 +80,7 @@ const PresentationDesign = () => {
           content="Transform your ideas into visually engaging and persuasive presentations with Routes.Design's expert presentation design services."
         />
       </Helmet>
+      <Navbar />
       {productDetails.service_sub_title !== undefined ? (
         <div className="relative w-full h-full presentDes">
           <div className="relative w-full h-full pdHero">
@@ -357,6 +357,7 @@ const PresentationDesign = () => {
           </div>
         </div>
       )}
+      <Footer />
     </>
   );
 };
