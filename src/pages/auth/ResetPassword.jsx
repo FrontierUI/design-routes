@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import Toast from '../../components/Toast';
+
+import Toast from '@/components/Toast';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const ResetPassword = () => {
   const [password, setPassword] = useState('');
@@ -118,81 +121,87 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="flex min-h-screen relative">
-      <section className="bg-primary h-screen relative hidden lg:w-1/2 lg:flex items-center justify-center z-[2]">
-        <div
-          className="absolute top-0 w-full h-screen bg-cover bg-center bg-no-repeat z-[1]"
-          style={{ backgroundImage: 'url(/images/authE.svg)' }}
-        />
-        <div className="w-full relative top-16 p-12 z-[2]">
-          <img src="/images/login.svg" className="img-fluid" alt="" />
-        </div>
-      </section>
+    <>
+      <Navbar />
 
-      <section className="w-full h-full lg:w-1/2 relative flex flex-col items-center justify-center px-5 py-8 lg:pb-0 lg:pt-20">
-        <div className="w-full flex flex-col items-center justify-start  space-y-5 lg:px-8 pt-28 lg:pt-5 lapy:pt-16">
-          <div className="w-full flexStart pl-1 flex-col">
-            <h1 className="font-monaBold text-4xl">Reset Your Password</h1>
-            <h6>
-              Enter your email and we will send you a link to reset your
-              password.
-            </h6>
+      <div className="flex min-h-screen relative">
+        <section className="bg-primary h-screen relative hidden lg:w-1/2 lg:flex items-center justify-center z-[2]">
+          <div
+            className="absolute top-0 w-full h-screen bg-cover bg-center bg-no-repeat z-[1]"
+            style={{ backgroundImage: 'url(/images/authE.svg)' }}
+          />
+          <div className="w-full relative top-16 p-12 z-[2]">
+            <img src="/images/login.svg" className="img-fluid" alt="" />
           </div>
+        </section>
 
-          {toasts.map((toast) => (
-            <Toast
-              key={toast.id}
-              message={toast.message}
-              type={toast.type}
-              onClose={() => removeToast(toast.id)}
-            />
-          ))}
+        <section className="w-full h-full lg:w-1/2 relative flex flex-col items-center justify-center px-5 py-8 lg:pb-0 lg:pt-20">
+          <div className="w-full flex flex-col items-center justify-start  space-y-5 lg:px-8 pt-28 lg:pt-5 lapy:pt-16">
+            <div className="w-full flexStart pl-1 flex-col">
+              <h1 className="font-monaBold text-4xl">Reset Your Password</h1>
+              <h6>
+                Enter your email and we will send you a link to reset your
+                password.
+              </h6>
+            </div>
 
-          <form
-            className="w-full flex flex-col items-center justify-center  space-y-5"
-            onSubmit={resetPassword}
-          >
-            <div className="form-item w-full">
-              <label className="form-label">Password</label>
-              <input
-                type="password"
-                className="form-input"
-                placeholder="Enter Your Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+            {toasts.map((toast) => (
+              <Toast
+                key={toast.id}
+                message={toast.message}
+                type={toast.type}
+                onClose={() => removeToast(toast.id)}
               />
-            </div>
+            ))}
 
-            <div className="form-item w-full">
-              <label className="form-label">Confirm Password</label>
-              <input
-                type="password"
-                className="form-input"
-                placeholder="Re-enter Your Password"
-                value={confirmpassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              />
-            </div>
+            <form
+              className="w-full flex flex-col items-center justify-center  space-y-5"
+              onSubmit={resetPassword}
+            >
+              <div className="form-item w-full">
+                <label className="form-label">Password</label>
+                <input
+                  type="password"
+                  className="form-input"
+                  placeholder="Enter Your Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
 
-            <div className="w-full flexy">
-              <button
-                type="submit"
-                className="w-full lg:w-4/5 py-2.5 bord transitAll scal105 text-white bg-primary font-monaSemibold text-lg"
-              >
-                Set New Password
-              </button>
-            </div>
-          </form>
+              <div className="form-item w-full">
+                <label className="form-label">Confirm Password</label>
+                <input
+                  type="password"
+                  className="form-input"
+                  placeholder="Re-enter Your Password"
+                  value={confirmpassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+              </div>
 
-          <div className="flexy gap-x-2 w-full">
-            <span>Already have an account?</span>
-            <Link to={'/auth/sign-in'} className="text-primary font-semibold">
-              Sign In
-            </Link>
+              <div className="w-full flexy">
+                <button
+                  type="submit"
+                  className="w-full lg:w-4/5 py-2.5 bord transitAll scal105 text-white bg-primary font-monaSemibold text-lg"
+                >
+                  Set New Password
+                </button>
+              </div>
+            </form>
+
+            <div className="flexy gap-x-2 w-full">
+              <span>Already have an account?</span>
+              <Link to={'/auth/sign-in'} className="text-primary font-semibold">
+                Sign In
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+
+      <Footer />
+    </>
   );
 };
 

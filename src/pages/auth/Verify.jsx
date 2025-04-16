@@ -2,8 +2,11 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate, useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import { getCookie, setCookie, checkRole } from '../../func';
-import Toast from '../../components/Toast';
+import { getCookie, setCookie, checkRole } from '@/func';
+
+import Toast from '@/components/Toast';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const Verify = () => {
   const location = useLocation();
@@ -119,35 +122,43 @@ const Verify = () => {
   };
 
   return (
-    <div className="relative flex min-h-screen">
-      <section className="bg-primary h-screen relative hidden lg:w-1/2 lg:flex items-center justify-center z-[2]">
-        <div
-          className="absolute top-0 w-full h-screen bg-cover bg-center bg-no-repeat z-[1]"
-          style={{ backgroundImage: 'url(/images/authE.svg)' }}
-        />
-        <div className="w-full relative top-16 p-12 z-[2]">
-          <img src="/images/login.svg" className="img-fluid" alt="" />
-        </div>
-      </section>
+    <>
+      <Navbar />
 
-      <section className="w-full h-full lg:w-1/2 relative flex flex-col items-center justify-center px-5 py-8 lg:pb-0 lg:pt-20">
-        <div className="w-full flex flex-col items-center justify-start  space-y-5 lg:px-8 pt-28 lg:pt-5 lapy:pt-16">
-          <h5 className="font-monaBold text-4xl pt-28">
-            Verifying your email ...
-          </h5>
-          <p className="text-muted">We are verifying your email. Please Wait</p>
+      <div className="relative flex min-h-screen">
+        <section className="bg-primary h-screen relative hidden lg:w-1/2 lg:flex items-center justify-center z-[2]">
+          <div
+            className="absolute top-0 w-full h-screen bg-cover bg-center bg-no-repeat z-[1]"
+            style={{ backgroundImage: 'url(/images/authE.svg)' }}
+          />
+          <div className="w-full relative top-16 p-12 z-[2]">
+            <img src="/images/login.svg" className="img-fluid" alt="" />
+          </div>
+        </section>
 
-          {toasts.map((toast) => (
-            <Toast
-              key={toast.id}
-              message={toast.message}
-              type={toast.type}
-              onClose={() => removeToast(toast.id)}
-            />
-          ))}
-        </div>
-      </section>
-    </div>
+        <section className="w-full h-full lg:w-1/2 relative flex flex-col items-center justify-center px-5 py-8 lg:pb-0 lg:pt-20">
+          <div className="w-full flex flex-col items-center justify-start  space-y-5 lg:px-8 pt-28 lg:pt-5 lapy:pt-16">
+            <h5 className="font-monaBold text-4xl pt-28">
+              Verifying your email ...
+            </h5>
+            <p className="text-muted">
+              We are verifying your email. Please Wait
+            </p>
+
+            {toasts.map((toast) => (
+              <Toast
+                key={toast.id}
+                message={toast.message}
+                type={toast.type}
+                onClose={() => removeToast(toast.id)}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <Footer />
+    </>
   );
 };
 
