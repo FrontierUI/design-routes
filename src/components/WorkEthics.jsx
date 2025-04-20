@@ -1,5 +1,6 @@
 // import React from 'react';
 import { homeServiceDetails } from '@/contentData/utils';
+import LazyImage from './LazyImage';
 
 const WorkEthics = () => {
   return (
@@ -11,7 +12,8 @@ const WorkEthics = () => {
             className="flexStart flex-col shadow-drop-5 overflow-hidden rounded-lg w-full h-full"
           >
             <div className="bgChange w-full h-full p-6 space-y-6 rounded-lg leading-none">
-              <img src={servic.icon} className="img-fluid" width={48} alt="" />
+              {/* <img src={servic.icon} className="img-fluid" width={48} alt="" /> */}
+              <LazyImage src={servic.icon} className="img-fluid" width={48} alt="" />
               <div className="flex flex-col space-y-2 leading-none">
                 <h3 className="text-lg font-monaSemibold leading-none">
                   {servic.title}

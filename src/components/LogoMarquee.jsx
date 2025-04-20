@@ -2,6 +2,7 @@
 
 import Marquee from 'react-fast-marquee';
 import { clientsLogo } from '@/contentData/utils';
+import LazyImage from './LazyImage';
 
 const LogoMarquee = () => {
   return (
@@ -16,7 +17,8 @@ const LogoMarquee = () => {
       >
         {clientsLogo.map((cnLog) => (
           <div className="mx-4 flexy" key={cnLog.cLogoId}>
-            <img src={cnLog.src} className="img-fluid" alt="" />
+            {/* <img src={cnLog.src} className="img-fluid" alt="" /> */}
+            <LazyImage src={cnLog.src} className="img-fluid" alt="" />
           </div>
         ))}
       </Marquee>

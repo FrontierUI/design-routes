@@ -1,6 +1,7 @@
 // import React from 'react';
 
 import ReactPlayer from 'react-player';
+import LazyImage from './LazyImage';
 
 const RoutesWay = () => {
   return (
@@ -17,11 +18,12 @@ const RoutesWay = () => {
             <ul className="flex flex-col items-start lg:items-end justify-center mt-6 space-y-2">
               <li className="flex items-start lg:items-center justify-center">
                 <span className="text-lg">Basic design for mobile</span>
-                <img
+                {/* <img
                   src="/images/icons/oldwayWrong.svg"
                   className="img-fluid ml-2 w-6"
                   alt=""
-                />
+                /> */}
+                <LazyImage src="/images/icons/oldwayWrong.svg" className="img-fluid ml-2 w-6" alt="" />
               </li>
               <li className="flex items-start lg:items-center justify-center">
                 <span className="text-lg">Long scroll navigation</span>

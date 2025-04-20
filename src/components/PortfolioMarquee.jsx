@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { Link as Link5 } from 'lucide-react';
+import LazyImage from './LazyImage';
 
 const PortfolioMarquee = ({ imgSrc, href }) => {
   const [showOverlay, setShowOverlay] = useState(false);
@@ -40,7 +41,8 @@ const PortfolioMarquee = ({ imgSrc, href }) => {
         )}
       </AnimatePresence>
 
-      <img src={imgSrc} alt="image" className="img-fluid" />
+      {/* <img src={imgSrc} alt="image" className="img-fluid" /> */}
+      <LazyImage src={imgSrc} alt="image" className="img-fluid" />
     </motion.div>
   );
 };
