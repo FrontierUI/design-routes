@@ -76,12 +76,12 @@ const App = () => {
   //   window.localStorage.getItem(JSON.parse('loginSecret'))
   // );
 
-  useEffect(() => {
-    let userDetails = JSON.parse(
-      base64_decode(window.localStorage.getItem('loginSecret'))
-    );
-    console.log(userDetails.role);
-  }, []);
+  // useEffect(() => {
+  //   let userDetails = JSON.parse(
+  //     base64_decode(window.localStorage.getItem('loginSecret'))
+  //   );
+  //   console.log(userDetails.role);
+  // }, []);
 
   return (
     <Suspense fallback={<LoadingFallback />}>
