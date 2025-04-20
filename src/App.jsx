@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { json, Route, Routes } from 'react-router-dom';
 
 import { base64_decode } from './func';
 
@@ -20,10 +20,8 @@ const RefundPolicy = lazy(() => import('@/pages/RefundPolicy'));
 
 const SignIn = lazy(() => import('@/pages/auth/sign-in'));
 const SignUp = lazy(() => import('@/pages/auth/sign-up'));
-
 const ForgotPassword = lazy(() => import('@/pages/auth/ForgotPassword'));
 const ResetPassword = lazy(() => import('@/pages/auth/ResetPassword'));
-
 const Verify = lazy(() => import('@/pages/auth/Verify'));
 
 const CreativeCampaigns = lazy(() =>
@@ -46,6 +44,7 @@ const ForBrands = lazy(() => import('@/pages/verticals/ForBrands'));
 const ForAgencies = lazy(() => import('@/pages/verticals/ForAgencies'));
 
 const UserDashboard = lazy(() => import('./pages/dashboard/UserDashboard'));
+const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
 
 const LoadingFallback = () => {
   return (
@@ -63,15 +62,26 @@ const LoadingFallback = () => {
   );
 };
 
-// admin@routes.design
-// @12benten@12
-
 const App = () => {
   // const user = true;
 
-  // useEffect(() => {
-  //   console.log(base64_decode(window.localStorage.getItem('loginSecret')));
-  // }, []);
+  //
+  // admin@routes.design
+  // @12benten@12
+
+  //
+
+  // console.log(base64_decode(window.localStorage.getItem('loginSecret')));
+  // const loginSecret = base64_decode(
+  //   window.localStorage.getItem(JSON.parse('loginSecret'))
+  // );
+
+  useEffect(() => {
+    let userDetails = JSON.parse(
+      base64_decode(window.localStorage.getItem('loginSecret'))
+    );
+    console.log(userDetails.role);
+  }, []);
 
   return (
     <Suspense fallback={<LoadingFallback />}>
@@ -131,7 +141,8 @@ const App = () => {
 
           <Route path="/our-work/:slug" element={<PortfolioPage />} />
 
-          <Route path="/dashboard" element={<UserDashboard />} />
+          {/* <Route path="/dashboard" element={<UserDashboard />} /> */}
+          <Route path="/dashboard" element={<AdminDashboard />} />
         </Routes>
 
         {/* <Footer /> */}

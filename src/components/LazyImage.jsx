@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import "./LazyImage.css"; // Import CSS for skeleton styling
+import React, { useEffect, useRef } from 'react';
+import './LazyImage.css'; // Import CSS for skeleton styling
 
 const LazyImage = (props) => {
   const imgRef = useRef();
@@ -13,7 +13,7 @@ const LazyImage = (props) => {
           observer.disconnect(); // Stop observing once loaded
         }
       },
-      { rootMargin: "100px" } // Load 100px before entering viewport
+      { rootMargin: '100px' } // Load 100px before entering viewport
     );
 
     if (imgRef.current) {
@@ -32,7 +32,9 @@ const LazyImage = (props) => {
     <img
       ref={imgRef}
       {...props} // Spread all props to the img element
-      className={`${props.className} lazy-image ${isLoaded ? "loaded" : "loading"}`} // Apply loading or loaded class
+      className={`${props.className} lazy-image ${
+        isLoaded ? 'loaded' : 'loading'
+      }`} // Apply loading or loaded class
       onLoad={handleImageLoad} // Trigger when image loads
     />
   );
