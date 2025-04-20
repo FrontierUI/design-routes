@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AdminSidebar from '../../components/AdminSidebar';
 
 const AdminDashboard = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -7,7 +8,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="dashBoard flex relative w-full h-full">
-      <AdminDashboard isOpen={isOpen} toggleSidebar={toggleSidebar} />
+      <AdminSidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
 
       <div className="mainCont flex flex-grow flex-col min-w-0 min-h-screen">
         <div className="flex w-full">
