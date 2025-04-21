@@ -12,21 +12,57 @@ export const Menus = [
     name: 'Products',
     gridCols: 1,
     subMenu: [
-      { name: 'Creative Campaigns', icon: '/images/icons/cc.svg', href: '/products/creative-campaigns' },
-      { name: 'Brand Identity & Design', icon: '/images/icons/brandIdenNav.svg', href: '/products/brand-identity-designs' },
-      { name: 'Social Media Management', icon: '/images/icons/smmNav.svg', href: '/products/social-media-management' },
-      { name: 'Web Design & Development', icon: '/images/icons/webDevNav.svg', href: '/products/web-design-and-development' },
-      { name: 'App Design & Development', icon: '/images/icons/appDevNav.svg', href: '/products/app-design-and-development' },
-      { name: 'Presentation Design', icon: '/images/icons/presentNav.svg', href: '/products/presentation-designs' },
+      {
+        name: 'Creative Campaigns',
+        icon: '/images/icons/cc.svg',
+        href: '/products/creative-campaigns',
+      },
+      {
+        name: 'Brand Identity & Design',
+        icon: '/images/icons/brandIdenNav.svg',
+        href: '/products/brand-identity-designs',
+      },
+      {
+        name: 'Social Media Management',
+        icon: '/images/icons/smmNav.svg',
+        href: '/products/social-media-management',
+      },
+      {
+        name: 'Web Design & Development',
+        icon: '/images/icons/webDevNav.svg',
+        href: '/products/web-design-and-development',
+      },
+      {
+        name: 'App Design & Development',
+        icon: '/images/icons/appDevNav.svg',
+        href: '/products/app-design-and-development',
+      },
+      {
+        name: 'Presentation Design',
+        icon: '/images/icons/presentNav.svg',
+        href: '/products/presentation-designs',
+      },
     ],
   },
   {
     name: 'Vertical',
     gridCols: 1,
     subMenu: [
-      { name: 'Agencies', href: '/vertical/for-agencies', icon: '/images/icons/agenciess.svg' },
-      { name: 'Brands', href: '/vertical/for-brands', icon: '/images/icons/brandsNav.svg' },
-      { name: 'SMEs', href: '/vertical/small-and-medium-sized-enterprise', icon: '/images/icons/dirCon.svg' },
+      {
+        name: 'Agencies',
+        href: '/vertical/for-agencies',
+        icon: '/images/icons/agenciess.svg',
+      },
+      {
+        name: 'Brands',
+        href: '/vertical/for-brands',
+        icon: '/images/icons/brandsNav.svg',
+      },
+      {
+        name: 'SMEs',
+        href: '/vertical/small-and-medium-sized-enterprise',
+        icon: '/images/icons/dirCon.svg',
+      },
     ],
   },
   { name: 'Our Work', href: '/our-work' },
@@ -187,13 +223,15 @@ export const homeServiceDetails = [
     id: 'sd1',
     icon: '/images/icons/moneyReturn.svg',
     title: '7 days money-back guarantee',
-    description: 'Enjoy peace of mind with our hassle-free 7-day money-back guarantee.',
+    description:
+      'Enjoy peace of mind with our hassle-free 7-day money-back guarantee.',
   },
   {
     id: 'sd2',
     icon: '/images/icons/clock24.svg',
     title: 'Same-day Delivery',
-    description: 'Get your project delivered the same day without sacrificing quality.',
+    description:
+      'Get your project delivered the same day without sacrificing quality.',
   },
   {
     id: 'sd3',
@@ -215,14 +253,16 @@ export const prod1 = [
     href: '/products/creative-campaigns',
     image: '/images/Creativecampaign.jpg',
     title: 'Creative Campaigns',
-    descr: 'With innovative and compelling campaigns, captivate your unique business goals and resonate with your target audience.',
+    descr:
+      'With innovative and compelling campaigns, captivate your unique business goals and resonate with your target audience.',
   },
   {
     id: 'brandIndityDesService',
     href: '/products/brand-identity-designs',
     image: '/images/brandingIden.jpg',
     title: 'Brand Identity & Design',
-    descr: 'Our branding services encompass everything from logo design toOrm brand strategy, ensuring a cohesive and compelling brand identity.',
+    descr:
+      'Our branding services encompass everything from logo design toOrm brand strategy, ensuring a cohesive and compelling brand identity.',
   },
 ];
 
@@ -232,14 +272,16 @@ export const prod2 = [
     href: '/products/web-design-and-development',
     image: '/images/WebsiteUIUX.jpg',
     title: 'Web Design & Development',
-    descr: 'User-friendly, and optimized for performance, our websites are built to enhance user experience and drive conversions.',
+    descr:
+      'User-friendly, and optimized for performance, our websites are built to enhance user experience and drive conversions.',
   },
   {
     id: 'appDesDevService',
     href: '/products/app-design-and-development',
     image: '/images/AppUIUX.jpg',
     title: 'App Design & Development',
-    descr: 'Bring your ideas to life with intuitive and engaging mobile applications. We ensure your app delivers a seamless user experience across all devices.',
+    descr:
+      'Bring your ideas to life with intuitive and engaging mobile applications. We ensure your app delivers a seamless user experience across all devices.',
   },
 ];
 
@@ -249,14 +291,16 @@ export const prod3 = [
     href: '/products/social-media-management',
     image: '/images/SMM.jpg',
     title: 'Social Media Management',
-    descr: 'Engage with your audience and manage content that drives interaction and nurtures community.',
+    descr:
+      'Engage with your audience and manage content that drives interaction and nurtures community.',
   },
   {
     id: 'presentationDesService',
     href: '/products/presentation-designs',
     image: '/images/presentation.jpg',
     title: 'Presentation Design',
-    descr: 'Get your presentation design done, we transform your ideas into visually engaging and persuasive presentations.',
+    descr:
+      'Get your presentation design done, we transform your ideas into visually engaging and persuasive presentations.',
   },
 ];
 
@@ -278,32 +322,38 @@ export const clientTestimonials = [
   {
     clAvatar: '/images/icons/avatar.png',
     clientName: 'Cooper Boone',
-    comment: 'Routes.Design team is exceptional! They quickly resolved remaining issues on our website with ease. Communication was smooth, and their responsiveness and reliability were outstanding. We eagerly anticipate continuing our collaboration with them.',
+    comment:
+      'Routes.Design team is exceptional! They quickly resolved remaining issues on our website with ease. Communication was smooth, and their responsiveness and reliability were outstanding. We eagerly anticipate continuing our collaboration with them.',
   },
   {
     clAvatar: '/images/icons/avatar.png',
     clientName: 'Suzanne Brosnan',
-    comment: "Routes.Design is fantastic to work with—highly experienced, fast, and a great communicator. Both projects we've collaborated on were executed flawlessly. I highly recommend their professional products!",
+    comment:
+      "Routes.Design is fantastic to work with—highly experienced, fast, and a great communicator. Both projects we've collaborated on were executed flawlessly. I highly recommend their professional products!",
   },
   {
     clAvatar: '/images/icons/avatar.png',
     clientName: 'John Law',
-    comment: 'Working with Routes.Design has been a pleasure. They grasped our website needs perfectly and delivered a site that significantly outperforms the previous one. Their valuable suggestions and patience with multiple reviews were much appreciated. I’m very satisfied and will definitely choose them for future projects.',
+    comment:
+      'Working with Routes.Design has been a pleasure. They grasped our website needs perfectly and delivered a site that significantly outperforms the previous one. Their valuable suggestions and patience with multiple reviews were much appreciated. I’m very satisfied and will definitely choose them for future projects.',
   },
   {
     clAvatar: '/images/icons/avatar.png',
     clientName: 'Emiliano Void',
-    comment: 'Routes.Design exceeded our expectations. Their responsiveness, attention to detail, and dedication made the entire process seamless. They delivered top-quality work, and we highly recommend their products.',
+    comment:
+      'Routes.Design exceeded our expectations. Their responsiveness, attention to detail, and dedication made the entire process seamless. They delivered top-quality work, and we highly recommend their products.',
   },
   {
     clAvatar: '/images/icons/avatar.png',
     clientName: 'Susanna Mason',
-    comment: 'Stephen of Routes.Design Ltd designed two amazing sales videos for my company. He was provided with limited original digital resources but worked around the limitations and delivered two excellent sales videos for our products. Will definitely use Stephen again and would 100% recommend his company! Money absolutely well spent!',
+    comment:
+      'Stephen of Routes.Design Ltd designed two amazing sales videos for my company. He was provided with limited original digital resources but worked around the limitations and delivered two excellent sales videos for our products. Will definitely use Stephen again and would 100% recommend his company! Money absolutely well spent!',
   },
   {
     clAvatar: '/images/icons/avatar.png',
     clientName: 'Devid',
-    comment: "Routes.Design Ltd is an outstanding website design company that I had the pleasure of working with. From start to finish, their team impressed me with their professionalism, creativity, and attention to detail. Here's why I highly recommend their services!",
+    comment:
+      "Routes.Design Ltd is an outstanding website design company that I had the pleasure of working with. From start to finish, their team impressed me with their professionalism, creativity, and attention to detail. Here's why I highly recommend their services!",
   },
 ];
 
