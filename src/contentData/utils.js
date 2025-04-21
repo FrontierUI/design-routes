@@ -180,7 +180,7 @@ export const clientsLogo = [
 //   { src: '/images/portfolio/smm/Mazito.png', href: '/our-work/mazito-web-app-design-development' },
 //   { src: '/images/portfolio/smm/Ill.png', href: '/our-work/internation-industries-ltd' },
 //   { src: '/images/portfolio/smm/caregiver.png', href: '/our-work/caregiver-smm-campaign' },
-// ];
+// ]
 
 // export const pdPortfolioUp = [
 //   { src: '/images/portfolio/presentDesign/ALJ.jpg', href: '/our-work/alj-toyota-lubricants-presentation-design' },
