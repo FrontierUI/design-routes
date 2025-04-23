@@ -337,7 +337,7 @@
   }
 
   .service-select {
-    @apply bg-white rounded-md service-form-focus py-2.5 px-4 w-full text-xl;
+    @apply bg-white rounded-md service-form-focus py-2.5 px-4 w-full text-xl appearance-none;
   }
 
   .service-select .service-selectOpt {

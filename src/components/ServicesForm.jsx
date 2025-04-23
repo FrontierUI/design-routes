@@ -102,7 +102,7 @@ const ServicesForm = () => {
                 />
               </div>
 
-              <div className="service-formSelect relative">
+              <div className="relative w-full service-formSelect">
                 <label htmlFor="prodServices" className="service-formLabel">
                   Select your service
                 </label>
@@ -139,8 +139,8 @@ const ServicesForm = () => {
                     Presentation Design
                   </option>
                 </select>
-                <div className="absolute bottom-2 -right-1 hidden lg:flex items-center">
-                  <ChevronDown className="w-6 h-6" />
+                <div className="absolute bottom-[9px] right-2 flex items-center">
+                  <ChevronDown className="w-7 h-7" />
                 </div>
               </div>
 

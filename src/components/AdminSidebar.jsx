@@ -1,85 +1,46 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { NavLink } from 'react-router-dom';
+// import { useState } from 'react';
+// import { motion } from 'framer-motion';
+// import { NavLink } from 'react-router-dom';
 
-import { History, Home, NotepadText, Package, Ticket } from 'lucide-react';
+// import { History, Home, NotepadText, Package, Ticket } from 'lucide-react';
 
-import brand from '/images/routeslogo.svg';
+import routes from '../contentData/routes';
+import Links from './Links';
 
-const navLinks = [
-  { name: 'Dashboard', icon: <Home size={20} />, path: '/' },
-  {
-    name: 'View Order History',
-    icon: <History size={20} />,
-    path: '/view-order-history',
-  },
-  {
-    name: 'Order Details',
-    icon: <Package size={20} />,
-    path: '/order-details',
-  },
+import { CircleX } from 'lucide-react';
+// import brand from '/images/routeslogo.svg';
 
-  {
-    name: 'Submit Ticket',
-    icon: <Ticket size={20} />,
-    path: '/order-details',
-  },
-  {
-    name: 'Download Invoice',
-    icon: <NotepadText size={20} />,
-    path: '/order-details',
-  },
-  // Add more nav links as needed
-];
-
-const AdminSidebar = ({ isOpen, toggleSidebar }) => {
+const AdminSidebar = ({ open, onClose }) => {
   // const [isOpen, setIsOpen] = useState(true);
 
   // const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
-    <motion.div
-      animate={{ width: isOpen ? 256 : 70 }}
-      transition={{ duration: 0.3, ease: 'easeInOut' }}
-      className="h-screen shadow-lg flex flex-col"
+    <div
+      className={`sm:none duration-175 linear fixed !z-50 flex min-h-full flex-col bg-white pb-10 shadow-2xl shadow-white/5 transition-all dark:!bg-navy-800 dark:text-white md:!z-50 lg:!z-50 xl:!z-0 ${
+        open ? 'translate-x-0' : '-translate-x-96'
+      }`}
     >
-      <div className="flex items-center justify-between p-4">
-        <span className="text-lg font-bold">{isOpen ? 'Materio' : 'M'}</span>
-        <input
-          type="radio"
-          onClick={toggleSidebar}
-          className="cursor-pointer hidden md:block"
-        />
-      </div>
+      <span
+        className="absolute top-4 right-4 block cursor-pointer xl:hidden"
+        onClick={onClose}
+      >
+        <CircleX />
+      </span>
 
-      <nav className="flex-1 mt-4">
-        {navLinks.map(({ name, path, icon }) => (
-          <NavLink
-            to={path}
-            key={name}
-            className={({ isActive }) =>
-              `group flex items-center gap-4 p-3 transition-all duration-300 ease-in-out hover:bg-primary/10 relative ${
-                isActive ? 'text-white font-semibold' : 'text-gray-400'
-              }`
-            }
-          >
-            {({ isActive }) => (
-              <>
-                {isActive && (
-                  <motion.div
-                    layoutId="active-indicator"
-                    className="absolute right-0 top-0 h-full w-[3px] bg-primary"
-                    transition={{ duration: 0.3 }}
-                  />
-                )}
-                <div className="min-w-[20px]">{icon}</div>
-                {isOpen && <span className="whitespace-nowrap">{name}</span>}
-              </>
-            )}
-          </NavLink>
-        ))}
-      </nav>
-    </motion.div>
+      <div className={`mx-[56px] mt-[50px] flex items-center`}>
+        <div className="mt-1 ml-1 h-2.5 font-poppins text-[26px] font-bold uppercase text-navy-700 dark:text-white">
+          Horizon <span className="font-medium">FREE</span>
+        </div>
+      </div>
+      <div className="mt-[58px] mb-7 h-px bg-gray-300 dark:bg-white/30" />
+
+      <ul className="mb-auto pt-1">
+        <Links routes={routes} />
+      </ul>
+
+      {/* <div className="flex justify-center"><SidebarCard /></div> */}
+    </div>
   );
 };
 

@@ -59,6 +59,7 @@ const Home = () => {
   // More flexible chunk function
   const splitIntoChunks = (array, numberOfChunks = 2) => {
     const chunkSize = Math.ceil(array.length / numberOfChunks);
+
     return Array.from({ length: numberOfChunks }, (_, index) =>
       array.slice(index * chunkSize, (index + 1) * chunkSize)
     );
