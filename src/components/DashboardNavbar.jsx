@@ -12,20 +12,11 @@ const DashboardNavbar = (props) => {
     <nav className="sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl bg-white/10 p-2 backdrop-blur-xl">
       <div className="ml-[6px]">
         <div className="h-6 w-[224px] pt-1">
-          <a
-            className="text-sm font-normal text-navy-700 hover:underline dark:text-white dark:hover:text-white"
-            href=" "
-          >
+          <a className="text-sm font-normal" href=" ">
             Pages
-            <span className="mx-1 text-sm text-navy-700 hover:text-navy-700 dark:text-white">
-              {' '}
-              /{' '}
-            </span>
+            <span className="mx-1 text-sm "> / </span>
           </a>
-          <Link
-            className="text-sm font-normal capitalize text-gray-900 hover:underline "
-            to="#"
-          >
+          <Link className="text-sm font-normal capitalize" to="#">
             {brandText}
           </Link>
         </div>
@@ -36,7 +27,7 @@ const DashboardNavbar = (props) => {
         </p>
       </div>
 
-      <div className="relative mt-[3px] flex h-[61px] w-[355px] flex-grow items-center justify-around gap-2 rounded-full bg-white px-2 py-2 shadow-xl shadow-shadow-500  md:w-[365px] md:flex-grow-0 md:gap-1 xl:w-[365px] xl:gap-2">
+      <div className="relative mt-[3px] flex h-[61px] w-[355px] flex-grow items-center justify-around gap-2 rounded-full bg-white px-2 py-2 shadow-xl shadow-shadow-500  md:w-[365px] md:flex-grow-0 md:gap-1 xl:gap-2">
         <div className="flex h-full items-center rounded-full bg-lightPrimary text-gray-900 xl:w-[225px]">
           <p className="pl-3 pr-2 text-xl">
             <Search className="h-4 w-4 text-gray-700" />
@@ -44,7 +35,7 @@ const DashboardNavbar = (props) => {
           <input
             type="text"
             placeholder="Search..."
-            className="block h-full w-full rounded-full bg-lightPrimary text-sm font-monaMedium text-gray-800 outline-none placeholder:!text-gray-400 sm:w-fit"
+            className="block h-full w-full rounded-full bg-lightPrimary text-sm font-monaMedium text-gray-800 outline-none placeholder:!text-gray-400"
           />
         </div>
         <span

@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import DashIcon from './DashIcon';
 // chakra imports
 
-export function SidebarLinks(props) {
+export function Links(props) {
   // Chakra color mode
   let location = useLocation();
 
@@ -61,4 +61,4 @@ export function SidebarLinks(props) {
   return createLinks(routes);
 }
 
-export default SidebarLinks;
+export default Links;

@@ -9,6 +9,8 @@ import {
   // ClockFading,
 } from 'lucide-react';
 
+import Dashboard from '../views/dashboard/Dashboard';
+
 // Admin Imports
 // import MainDashboard from 'views/admin/default';
 // import NFTMarketplace from 'views/admin/marketplace';
@@ -31,46 +33,11 @@ import {
 const routes = [
   {
     name: 'Dashboard',
-    // layout: '/admin',
-    // path: 'default',
-    icon: <Home className="w-6 h-6" />,
-    // component: <MainDashboard />,
+    layout: '/dashboard',
+    path: 'default',
+    icon: Home,
+    component: <Dashboard />,
   },
-  {
-    name: 'NFT Marketplace',
-    // layout: '/admin',
-    // path: 'nft-marketplace',
-    icon: <History className="w-6 h-6" />,
-    // component: <NFTMarketplace />,
-    // secondary: true,
-  },
-  {
-    name: 'Data Tables',
-    // layout: '/admin',
-    icon: NotepadText,
-    // path: 'data-tables',
-    // component: <DataTables />,
-  },
-  {
-    name: 'Profile',
-    // layout: '/admin',
-    // path: 'profile',
-    icon: Package,
-    // component: <Profile />,
-  },
-  {
-    name: 'Sign In',
-    // layout: '/auth',
-    // path: 'sign-in',
-    icon: Ticket,
-    // component: <SignIn />,
-  },
-  // {},
-  // layout: '/rtl',
-  // component: <RTLDefault />,
-  // name: 'RTL Admin',
-  // path: 'rtl',
-  // icon: ClockFading,
 ];
 
 export default routes;

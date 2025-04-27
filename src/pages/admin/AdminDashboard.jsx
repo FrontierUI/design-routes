@@ -75,7 +75,7 @@ const AdminDashboard = (props) => {
           <div className="h-full">
             <DashboardNavbar
               onOpenSidenav={() => setOpen(true)}
-              logoText={'Horizon UI Tailwind React'}
+              logoText={'Routes Design'}
               brandText={currentRoute}
               secondary={getActiveNavbar(routes)}
               {...rest}
@@ -87,7 +87,7 @@ const AdminDashboard = (props) => {
 
                 <Route
                   path="/dashboard"
-                  element={<Navigate to="/admin/default" replace />}
+                  element={<Navigate to="/dashboard/default" replace />}
                 />
               </Routes>
             </div>
