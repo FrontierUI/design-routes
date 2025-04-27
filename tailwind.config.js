@@ -11,7 +11,7 @@ export default {
         imac: '1887px',
         samsung: '2297px',
       },
-      colors: { primary: '#0000ff', kala: '#000444' },
+      colors: { primary: '#0000ff', kala: '#000444', lightPrimary: '#f4f7fe' },
       fontFamily: {
         monaLight: ['Mona-Sans-Light', 'light'],
         monaRegular: ['Mona-Sans-Regular', 'regular'],

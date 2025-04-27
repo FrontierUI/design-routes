@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Route, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
 import AdminSidebar from '../../components/AdminSidebar';
 import routes from '../../contentData/routes';
+import DashboardNavbar from '../../components/DashboardNavbar';
 
 const AdminDashboard = (props) => {
   // const [isOpen, setIsOpen] = useState(true);
@@ -69,10 +70,29 @@ const AdminDashboard = (props) => {
 
       <AdminSidebar open={open} onClose={() => setOpen(false)} />
 
-      <div className="mainCont flex flex-grow flex-col min-w-0 min-h-screen">
-        <div className="flex w-full ">
-          <h1 className="text-3xl ">HEllo</h1>
-        </div>
+      <div className="w-full h-full bg-lightPrimary">
+        <main className="w-full h-full flex-none transition-all mx-3 md:pr-2 lg:ml-[313px]">
+          <div className="h-full">
+            <DashboardNavbar
+              onOpenSidenav={() => setOpen(true)}
+              logoText={'Horizon UI Tailwind React'}
+              brandText={currentRoute}
+              secondary={getActiveNavbar(routes)}
+              {...rest}
+            />
+
+            <div className="mx-auto mb-auto h-full min-h-[84vh] p-2 md:pr-2">
+              <Routes>
+                {getRoutes(routes)}
+
+                <Route
+                  path="/dashboard"
+                  element={<Navigate to="/admin/default" replace />}
+                />
+              </Routes>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
   );

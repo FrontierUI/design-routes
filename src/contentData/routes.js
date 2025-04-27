@@ -30,17 +30,17 @@ import {
 
 const routes = [
   {
-    name: 'Main Dashboard',
+    name: 'Dashboard',
     // layout: '/admin',
     // path: 'default',
-    icon: Home,
+    icon: <Home className="w-6 h-6" />,
     // component: <MainDashboard />,
   },
   {
     name: 'NFT Marketplace',
     // layout: '/admin',
     // path: 'nft-marketplace',
-    icon: History,
+    icon: <History className="w-6 h-6" />,
     // component: <NFTMarketplace />,
     // secondary: true,
   },
