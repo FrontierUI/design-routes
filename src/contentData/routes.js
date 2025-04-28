@@ -33,10 +33,10 @@ import Dashboard from '../views/dashboard/Dashboard';
 const routes = [
   {
     name: 'Dashboard',
-    layout: '/dashboard',
-    path: 'default',
+    //layout: '/dashboard',
+    //path: 'default',
     icon: Home,
-    component: <Dashboard />,
+    //component: <Dashboard />,
   },
 ];
 
