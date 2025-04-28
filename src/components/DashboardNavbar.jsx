@@ -35,11 +35,11 @@ const DashboardNavbar = (props) => {
           <input
             type="text"
             placeholder="Search..."
-            className="block h-full w-full rounded-full bg-lightPrimary text-sm font-monaMedium text-gray-800 outline-none placeholder:!text-gray-400"
+            className="block h-full w-full rounded-full bg-lightPrimary text-sm font-monaMedium text-gray-800 outline-none placeholder:!text-gray-400 sm:w-fit"
           />
         </div>
         <span
-          className="flex cursor-pointer text-xl text-gray-600 dark:text-white xl:hidden"
+          className="xl:hidden flex cursor-pointer text-xl text-gray-900"
           onClick={onOpenSidenav}
         >
           <AlignJustify className="h-5 w-5" />

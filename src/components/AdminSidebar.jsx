@@ -9,15 +9,14 @@ import Links from './Links';
 
 import { CircleX } from 'lucide-react';
 import brand from '/images/routeslogo.svg';
+import { Link } from 'react-router-dom';
 
 const AdminSidebar = ({ open, onClose }) => {
   // const [isOpen, setIsOpen] = useState(true);
 
-  // const toggleSidebar = () => setIsOpen(!isOpen);
-
   return (
     <div
-      className={`sm:none duration-175 linear fixed !z-50 flex min-h-full flex-col bg-white pb-10 shadow-2xl shadow-white/5 transition-all dark:!bg-navy-800 dark:text-white md:!z-50 lg:!z-50 xl:!z-0 ${
+      className={`sm:none duration-300 ease-in-out linear fixed !z-50 flex min-h-full flex-col bg-white pb-10 shadow-2xl shadow-white/5 transition-all md:!z-50 lg:!z-50 xl:!z-0 ${
         open ? 'translate-x-0' : '-translate-x-96'
       }`}
     >
@@ -29,9 +28,9 @@ const AdminSidebar = ({ open, onClose }) => {
       </span>
 
       <div className={`mx-[56px] mt-[50px] flex items-center`}>
-        <div className="mt-1 ml-1">
+        <Link to={'javascript:void(0)'} className="">
           <img src={brand} className="img-fluid w-36" alt="" />
-        </div>
+        </Link>
       </div>
 
       <div className="mt-[58px] mb-7 h-px bg-gray-300" />
