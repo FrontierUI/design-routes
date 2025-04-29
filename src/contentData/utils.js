@@ -5,6 +5,16 @@ export const cn = (...inputs) => {
   return twMerge(clsx(...inputs));
 };
 
+import overview from '/images/icons/overview.svg';
+import history from '/images/icons/history.svg';
+import invoice from '/images/icons/invoice.svg';
+import orderPack from '/images/icons/orderPack.svg';
+import mail from '/images/icons/mail.svg';
+import cog from '/images/icons/cog.svg';
+import helpCent from '/images/icons/helpCent.svg';
+import tracking from '/images/icons/tracking.svg';
+import ticket from '/images/icons/ticket.svg';
+
 // Menu configuration with icon paths
 export const Menus = [
   { name: 'Pricing', href: '/pricing' },
@@ -106,6 +116,26 @@ export const clientsLogo = [
   { cLogoId: 'rubies', src: '/images/clientLogo/workrubies.png' },
   { cLogoId: 'soyoung', src: '/images/clientLogo/worksoyoung.png' },
   { cLogoId: 'up', src: '/images/clientLogo/workup.png' },
+];
+
+export const dashboardSidebar = [
+  { hrefName: 'Overview', icon: overview, href: '/dashboard' },
+  {
+    hrefName: 'View Order History',
+    icon: history,
+    href: '/view-order-history',
+  },
+  { hrefName: 'Order Details', icon: orderPack, href: '/order-details' },
+  { hrefName: 'Download Invoice', icon: invoice, href: '/download-invoice' },
+  { hrefName: 'Submit Ticket', icon: ticket, href: '/submit-ticket' },
+  {
+    hrefName: 'Track Ticket Status',
+    icon: tracking,
+    href: '/track-ticket-status',
+  },
+  { hrefName: 'Settings', icon: cog, href: '/settings' },
+  { hrefName: 'Contacts', icon: mail, href: '/contacts' },
+  { hrefName: 'Help Center', icon: helpCent, href: '/help-center' },
 ];
 
 // export const homePortFolioUp = [

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
 import AdminSidebar from '../../components/AdminSidebar';
-import routes from '../../contentData/routes';
+// import routes from '../../contentData/routes';
+import dashSidebar from '../../contentData/dashSidebar';
 import DashboardNavbar from '../../components/DashboardNavbar';
 
 const AdminDashboard = (props) => {
@@ -13,7 +14,7 @@ const AdminDashboard = (props) => {
   const { ...rest } = props;
   const location = useLocation();
   const [open, setOpen] = useState(true);
-  const [currentRoute, setCurrentRoute] = useState('Main Dashboard');
+  const [currentRoute, setCurrentRoute] = useState('Overview');
 
   useEffect(() => {
     window.addEventListener('resize', () =>
@@ -22,31 +23,27 @@ const AdminDashboard = (props) => {
   }, []);
 
   useEffect(() => {
-    getActiveRoute(routes);
+    getActiveRoute(dashSidebar);
   }, [location.pathname]);
 
-  const getActiveRoute = (routes) => {
+  const getActiveRoute = (dashSidebar) => {
     let activeRoute = 'Main Dashboard';
 
-    for (let i = 0; i < routes.length; i++) {
+    for (let i = 0; i < dashSidebar.length; i++) {
       if (
-        window.location.href.indexOf(
-          routes[i].layout + '/' + routes[i].path
-        ) !== -1
+        window.location.href.indexOf(dashSidebar[i].href + '/dashboard') !== -1
       ) {
-        setCurrentRoute(routes[i].name);
+        setCurrentRoute(dashSidebar[i].hrefName);
       }
     }
     return activeRoute;
   };
 
-  const getActiveNavbar = (routes) => {
+  const getActiveNavbar = (dashBoard) => {
     let activeNavbar = false;
-    for (let i = 0; i < routes.length; i++) {
-      if (
-        window.location.href.indexOf(routes[i].layout + routes[i].path) !== -1
-      ) {
-        return routes[i].secondary;
+    for (let i = 0; i < dashBoard.length; i++) {
+      if (window.location.href.indexOf(dashBoard[i].href) !== -1) {
+        return dashBoard[i].secondary;
       }
     }
     return activeNavbar;
@@ -54,9 +51,9 @@ const AdminDashboard = (props) => {
 
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
-      if (prop.layout === '/admin') {
+      if (prop.layout === '/dashboard') {
         return (
-          <Route path={`/${prop.path}`} element={prop.component} key={key} />
+          <Route path={`/${prop.href}`} element={prop.component} key={key} />
         );
       } else {
         return null;
@@ -66,8 +63,6 @@ const AdminDashboard = (props) => {
 
   return (
     <div className="dashBoard flex relative w-full h-full">
-      {/* <AdminSidebar isOpen={isOpen} toggleSidebar={toggleSidebar} /> */}
-
       <AdminSidebar open={open} onClose={() => setOpen(false)} />
 
       <div className="w-full h-full bg-lightPrimary">
@@ -77,13 +72,13 @@ const AdminDashboard = (props) => {
               onOpenSidenav={() => setOpen(true)}
               logoText={'Routes Design'}
               brandText={currentRoute}
-              secondary={getActiveNavbar(routes)}
+              secondary={getActiveNavbar(dashSidebar)}
               {...rest}
             />
 
             <div className="mx-auto mb-auto h-full min-h-[88vh] p-2 md:pr-2">
               <Routes>
-                {getRoutes(routes)}
+                {getRoutes(dashSidebar)}
 
                 <Route
                   path="/dashboard"
