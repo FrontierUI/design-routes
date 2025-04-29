@@ -10,7 +10,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { CircleX } from 'lucide-react';
 import brand from '/images/routeslogo.svg';
 
-import dashSidebar from '../contentData/dashSidebar';
+import DashSidebar from '@/contentData/dashSidebar';
 // import DashIcon from './DashIcon';
 
 const AdminSidebar = ({ open, onClose }) => {
@@ -68,7 +68,7 @@ const AdminSidebar = ({ open, onClose }) => {
         ))} */}
 
       <ul className="mb-auto pt-1 flexy flex-col space-y-2 lg:space-y-4">
-        {dashSidebar.map((linkss) => (
+        {DashSidebar.map((linkss) => (
           <Link
             key={linkss.hrefName}
             className="relative w-full cursor-pointer"
