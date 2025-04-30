@@ -27,33 +27,38 @@ const AdminDashboard = (props) => {
   }, [location.pathname]);
 
   const getActiveRoute = (dashSidebar) => {
-    let activeRoute = 'Main Dashboard';
-
+    let activeRoute = 'Overview';
     for (let i = 0; i < dashSidebar.length; i++) {
       if (
-        window.location.href.indexOf(dashSidebar[i].href + '/dashboard') !== -1
+        window.location.href.indexOf(
+          dashSidebar[i].layout + '/' + dashSidebar[i].path
+        ) !== -1
       ) {
-        setCurrentRoute(dashSidebar[i].hrefName);
+        setCurrentRoute(dashSidebar[i].name);
       }
     }
     return activeRoute;
   };
 
-  const getActiveNavbar = (dashBoard) => {
+  const getActiveNavbar = (dashSidebar) => {
     let activeNavbar = false;
-    for (let i = 0; i < dashBoard.length; i++) {
-      if (window.location.href.indexOf(dashBoard[i].href) !== -1) {
-        return dashBoard[i].secondary;
+    for (let i = 0; i < dashSidebar.length; i++) {
+      if (
+        window.location.href.indexOf(
+          dashSidebar[i].layout + dashSidebar[i].path
+        ) !== -1
+      ) {
+        return dashSidebar[i].secondary;
       }
     }
     return activeNavbar;
   };
 
-  const getRoutes = (routes) => {
-    return routes.map((prop, key) => {
+  const getRoutes = (dashSidebar) => {
+    return dashSidebar.map((prop, key) => {
       if (prop.layout === '/dashboard') {
         return (
-          <Route path={`/${prop.href}`} element={prop.component} key={key} />
+          <Route path={`/${prop.path}`} element={prop.component} key={key} />
         );
       } else {
         return null;
@@ -66,7 +71,7 @@ const AdminDashboard = (props) => {
       <AdminSidebar open={open} onClose={() => setOpen(false)} />
 
       <div className="w-full h-full bg-lightPrimary">
-        <main className="mx-[12px] h-full flex-none transition-all md:pr-2 xl:ml-[313px]">
+        <main className="mx-[12px] h-full flex-none transition-all md:pr-2 xl:ml-[280px]">
           <div className="h-full">
             <DashboardNavbar
               onOpenSidenav={() => setOpen(true)}
@@ -82,7 +87,7 @@ const AdminDashboard = (props) => {
 
                 <Route
                   path="/dashboard"
-                  element={<Navigate to="/dashboard" replace />}
+                  element={<Navigate to="/dashboard/overview" replace />}
                 />
               </Routes>
             </div>

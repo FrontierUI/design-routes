@@ -138,21 +138,51 @@ export const dashboardSidebar = [
   { hrefName: 'Help Center', icon: helpCent, href: '/help-center' },
 ];
 
-// export const homePortFolioUp = [
-//   { src: '/images/portfolio/homePort/thumbnail-1.jpg', href: '/our-work/internation-industries-ltd' },
-//   { src: '/images/portfolio/homePort/thumbnail-2.jpg', href: '/our-work/dove-creative-campaign' },
-//   { src: '/images/portfolio/homePort/thumbnail-3.jpg', href: '/our-work/digitall-creative-campaign' },
-//   { src: '/images/portfolio/homePort/thumbnail-4.jpg', href: '/our-work/effy-creative-campaign' },
-//   { src: '/images/portfolio/homePort/thumbnail-5.jpg', href: '/our-work/grom-icecream-creative-campaign' },
-// ];
+export const homePortFolioUp = [
+  {
+    src: '/images/portfolio/homePort/thumbnail-1.jpg',
+    href: '/our-work/internation-industries-ltd',
+  },
+  {
+    src: '/images/portfolio/homePort/thumbnail-2.jpg',
+    href: '/our-work/dove-creative-campaign',
+  },
+  {
+    src: '/images/portfolio/homePort/thumbnail-3.jpg',
+    href: '/our-work/digitall-creative-campaign',
+  },
+  {
+    src: '/images/portfolio/homePort/thumbnail-4.jpg',
+    href: '/our-work/effy-creative-campaign',
+  },
+  {
+    src: '/images/portfolio/homePort/thumbnail-5.jpg',
+    href: '/our-work/grom-icecream-creative-campaign',
+  },
+];
 
-// export const homePortFolioBot = [
-//   { src: '/images/portfolio/homePort/thumbnail-6.jpg', href: '/our-work/oudsire-ajmal-fragrance-creative-campaign' },
-//   { src: '/images/portfolio/homePort/thumbnail-7.jpg', href: '/our-work/rivermall-creative-campaign' },
-//   { src: '/images/portfolio/homePort/thumbnail-8.jpg', href: '/our-work/fruit-nation-chilled-nectar-creative-campaign' },
-//   { src: '/images/portfolio/homePort/thumbnail-9.jpg', href: '/our-work/digitall-creative-campaign' },
-//   { src: '/images/portfolio/homePort/thumbnail-10.jpg', href: '/our-work/yap-finance-creative-campaign' },
-// ];
+export const homePortFolioBot = [
+  {
+    src: '/images/portfolio/homePort/thumbnail-6.jpg',
+    href: '/our-work/oudsire-ajmal-fragrance-creative-campaign',
+  },
+  {
+    src: '/images/portfolio/homePort/thumbnail-7.jpg',
+    href: '/our-work/rivermall-creative-campaign',
+  },
+  {
+    src: '/images/portfolio/homePort/thumbnail-8.jpg',
+    href: '/our-work/fruit-nation-chilled-nectar-creative-campaign',
+  },
+  {
+    src: '/images/portfolio/homePort/thumbnail-9.jpg',
+    href: '/our-work/digitall-creative-campaign',
+  },
+  {
+    src: '/images/portfolio/homePort/thumbnail-10.jpg',
+    href: '/our-work/yap-finance-creative-campaign',
+  },
+];
 
 // export const brandPortFolioUp = [
 //   { src: '/images/portfolio/brandIdentity/DAmore.jpg', href: '/our-work/damore-brand-identity-design' },

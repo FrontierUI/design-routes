@@ -5,22 +5,23 @@
 // import { History, Home, NotepadText, Package, Ticket } from 'lucide-react';
 
 import { Link, useLocation } from 'react-router-dom';
-// import Links from './Links';
+import Links from './Links';
 
 import { CircleX } from 'lucide-react';
 import brand from '/images/routeslogo.svg';
 
 import DashSidebar from '@/contentData/dashSidebar';
 // import DashIcon from './DashIcon';
+// import DashIcon from './DashIcon';
 
 const AdminSidebar = ({ open, onClose }) => {
   // const [isOpen, setIsOpen] = useState(true);
 
-  let location = useLocation();
+  // let location = useLocation();
 
-  const activeRoute = (routeName) => {
-    return location.pathname.includes(routeName);
-  };
+  // const activeRoute = (routeName) => {
+  //   return location.pathname.includes(routeName);
+  // };
 
   return (
     <div
@@ -35,17 +36,17 @@ const AdminSidebar = ({ open, onClose }) => {
         <CircleX />
       </span>
 
-      <div className={`mx-[56px] mt-[50px] flex items-center`}>
+      <div className={`mx-auto mt-8 flex items-center`}>
         <Link to={'javascript:void(0)'} className="">
           <img src={brand} className="img-fluid w-36" alt="" />
         </Link>
       </div>
 
-      <div className="mt-[58px] mb-7 h-px bg-gray-300" />
+      <div className="mt-[28px] mb-7 h-px bg-gray-300" />
 
-      {/* <ul className="mb-auto pt-1 flexy flex-col space-y-2 lg:space-y-4"></ul> */}
-
-      {/* <Links routes={routes} /> */}
+      <ul className="mb-auto pt-1 flex flex-col space-y-2 lg:space-y-4">
+        <Links dashSidebar={DashSidebar} />
+      </ul>
 
       {/* {dashboardSidebar.map((linky) => (
           <Link key={linky.hrefName} className="relative w-full cursor-pointer">
@@ -66,31 +67,6 @@ const AdminSidebar = ({ open, onClose }) => {
             ) : null}
           </Link>
         ))} */}
-
-      <ul className="mb-auto pt-1 flexy flex-col space-y-2 lg:space-y-4">
-        {DashSidebar.map((linkss) => (
-          <Link
-            key={linkss.hrefName}
-            className="relative w-full cursor-pointer"
-          >
-            <li className="flex items-center cursor-pointer px-8">
-              <img src={linkss.icon} className="w-6 h-6" alt="" />
-              <p
-                className={`leading-1 ml-4 flex ${
-                  activeRoute(linkss.href) === true
-                    ? 'font-bold text-gray-800'
-                    : 'font-medium text-gray-900'
-                }`}
-              >
-                {linkss.hrefName}
-              </p>
-            </li>
-            {activeRoute(linkss.href) ? (
-              <div className="absolute right-0 top-px h-8 w-1 rounded-lg bg-primary" />
-            ) : null}
-          </Link>
-        ))}
-      </ul>
 
       {/* <div className="flex justify-center"><SidebarCard /></div> */}
     </div>

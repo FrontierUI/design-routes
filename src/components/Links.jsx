@@ -1,25 +1,25 @@
 /* eslint-disable */
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import DashIcon from './DashIcon';
+import DashIcon from '@/components/DashIcon';
 // chakra imports
 
-export function Links(props) {
+export function SidebarLinks(props) {
   // Chakra color mode
   let location = useLocation();
 
-  const { routes } = props;
+  const { dashSidebar } = props;
 
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
     return location.pathname.includes(routeName);
   };
 
-  const createLinks = (routes) => {
-    return routes.map((route, index) => {
+  const createLinks = (dashSidebar) => {
+    return dashSidebar.map((route, index) => {
       if (route.layout === '/dashboard') {
         return (
-          <Link key={index} to={route.layout + '/dashboard' + route.path}>
+          <Link key={index} to={route.layout + '/' + route.path}>
             <div className="relative mb-3 flex hover:cursor-pointer">
               <li
                 className="my-[3px] flex cursor-pointer items-center px-8"
@@ -28,8 +28,8 @@ export function Links(props) {
                 <span
                   className={`${
                     activeRoute(route.path) === true
-                      ? 'font-bold text-gray-800 h-6 w-6'
-                      : 'font-medium text-gray-900 h-6 w-6'
+                      ? 'font-bold text-primary'
+                      : 'font-medium text-gray-900'
                   }`}
                 >
                   {route.icon ? route.icon : <DashIcon />}
@@ -37,7 +37,7 @@ export function Links(props) {
                 <p
                   className={`leading-1 ml-4 flex ${
                     activeRoute(route.path) === true
-                      ? 'font-bold text-gray-800'
+                      ? 'font-bold text-primary'
                       : 'font-medium text-gray-900'
                   }`}
                 >
@@ -54,7 +54,7 @@ export function Links(props) {
     });
   };
   // BRAND
-  return createLinks(routes);
+  return createLinks(dashSidebar);
 }
 
-export default Links;
+export default SidebarLinks;
