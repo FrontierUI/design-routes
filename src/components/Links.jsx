@@ -5,12 +5,10 @@ import DashIcon from '@/components/DashIcon';
 // chakra imports
 
 export function SidebarLinks(props) {
-  // Chakra color mode
   let location = useLocation();
 
   const { dashSidebar } = props;
 
-  // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
     return location.pathname.includes(routeName);
   };

@@ -27,7 +27,7 @@ const dashSidebar = [
   {
     name: 'Overview',
     icon: <LayoutDashboard className="w-6 h-6" />,
-    path: 'dashboard',
+    path: '',
     component: <Overview />,
     layout: '/dashboard',
   },

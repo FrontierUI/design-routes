@@ -4,25 +4,15 @@
 
 // import { History, Home, NotepadText, Package, Ticket } from 'lucide-react';
 
-import { Link, useLocation } from 'react-router-dom';
-import Links from './Links';
-
+import { Link } from 'react-router-dom';
 import { CircleX } from 'lucide-react';
-import brand from '/images/routeslogo.svg';
 
 import DashSidebar from '@/contentData/dashSidebar';
-// import DashIcon from './DashIcon';
-// import DashIcon from './DashIcon';
+import Links from './Links';
+
+import brand from '/images/routeslogo.svg';
 
 const AdminSidebar = ({ open, onClose }) => {
-  // const [isOpen, setIsOpen] = useState(true);
-
-  // let location = useLocation();
-
-  // const activeRoute = (routeName) => {
-  //   return location.pathname.includes(routeName);
-  // };
-
   return (
     <div
       className={`sm:none duration-300 ease-in-out linear fixed !z-50 flex min-h-full flex-col bg-white pb-10 shadow-2xl shadow-white/5 transition-all md:!z-50 lg:!z-50 xl:!z-0 ${
@@ -47,28 +37,6 @@ const AdminSidebar = ({ open, onClose }) => {
       <ul className="mb-auto pt-1 flex flex-col space-y-2 lg:space-y-4">
         <Links dashSidebar={DashSidebar} />
       </ul>
-
-      {/* {dashboardSidebar.map((linky) => (
-          <Link key={linky.hrefName} className="relative w-full cursor-pointer">
-            <li className="flex items-center cursor-pointer px-8">
-              <img src={linky.icon} className="w-6 h-6" alt="" />
-              <p
-                className={`leading-1 ml-4 flex ${
-                  activeRoute(linky.href) === true
-                    ? 'font-bold text-gray-800'
-                    : 'font-medium text-gray-900'
-                }`}
-              >
-                {linky.hrefName}
-              </p>
-            </li>
-            {activeRoute(linky.href) ? (
-              <div className="absolute right-0 top-px h-8 w-1 rounded-lg bg-primary" />
-            ) : null}
-          </Link>
-        ))} */}
-
-      {/* <div className="flex justify-center"><SidebarCard /></div> */}
     </div>
   );
 };
