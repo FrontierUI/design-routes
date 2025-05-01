@@ -21,9 +21,8 @@ const DashboardNavbar = (props) => {
 
   return (
     <nav
-      className={`sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl p-2 backdrop-blur-xl transition-all ${
-        scrolled ? 'bg-white/80 shadow-md' : 'bg-white/10'
-      }`}
+      className="
+        sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl p-2 backdrop-blur-xl transition-all bg-white/10"
     >
       <div className="ml-px">
         <div className="h-6 w-[224px] pt-1">
