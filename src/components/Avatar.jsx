@@ -1,11 +1,11 @@
-import { LogOut, Settings, User } from 'lucide-react';
-import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
+import { LogOut, Settings, User } from 'lucide-react';
+
 import { eraseCookie } from '../func';
 
 const Avatar = () => {
   const navigate = useNavigate();
-  const [isHovered, setIsHovered] = useState(false);
 
   const handleLogout = () => {
     eraseCookie('token');

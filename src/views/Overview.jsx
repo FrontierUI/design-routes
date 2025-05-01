@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Link } from 'react-router-dom';
 import DashboardBanner from '@/components/DashboardBanner';
 import { FileDown, Pencil } from 'lucide-react';

@@ -20,14 +20,14 @@ import {
   Mail,
 } from 'lucide-react';
 
-import Dashboard from '../views/dashboard/Dashboard';
 import Overview from '../views/Overview';
+import UserList from '../views/UserList';
 
 const dashSidebar = [
   {
     name: 'Overview',
     icon: <LayoutDashboard className="w-6 h-6" />,
-    path: '',
+    path: 'overview',
     component: <Overview />,
     layout: '/dashboard',
   },
@@ -35,56 +35,56 @@ const dashSidebar = [
     name: 'View Order History',
     icon: <History className="w-6 h-6" />,
     path: 'view-order-history',
-    component: <Dashboard />,
+    component: <UserList />,
     layout: '/dashboard',
   },
   {
     name: 'Order Details',
     icon: <Package className="w-6 h-6" />,
     path: 'order-details',
-    component: <Dashboard />,
+    component: <UserList />,
     layout: '/dashboard',
   },
   {
     name: 'Download Invoice',
     icon: <FileDown className="w-6 h-6" />,
     path: 'download-invoice',
-    component: <Dashboard />,
+    component: <UserList />,
     layout: '/dashboard',
   },
   {
     name: 'Submit Ticket',
     icon: <Ticket className="w-6 h-6" />,
     path: 'submit-ticket',
-    component: <Dashboard />,
+    component: <UserList />,
     layout: '/dashboard',
   },
   {
     name: 'Track Ticket Status',
     icon: <ClockFading />,
     path: 'track-ticket-status',
-    component: <Dashboard />,
+    component: <UserList />,
     layout: '/dashboard',
   },
   {
     name: 'Settings',
     icon: <Settings className="w-6 h-6" />,
     path: 'settings',
-    component: <Dashboard />,
+    component: <UserList />,
     layout: '/dashboard',
   },
   {
     name: 'Contacts',
     icon: <Mail className="w-6 h-6" />,
     path: 'contacts',
-    component: <Dashboard />,
+    component: <UserList />,
     layout: '/dashboard',
   },
   {
     name: 'Help Center',
     icon: <LifeBuoy className="w-6 h-6" />,
     path: 'help-center',
-    component: <Dashboard />,
+    component: <UserList />,
     layout: '/dashboard',
   },
 ];

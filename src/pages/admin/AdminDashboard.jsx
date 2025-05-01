@@ -86,7 +86,7 @@ const AdminDashboard = (props) => {
                 {getRoutes(dashSidebar)}
 
                 <Route
-                  path="/dashboard"
+                  path="/"
                   element={<Navigate to="/dashboard/overview" replace />}
                 />
               </Routes>
