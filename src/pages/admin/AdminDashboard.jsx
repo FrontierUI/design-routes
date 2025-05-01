@@ -67,12 +67,12 @@ const AdminDashboard = (props) => {
   };
 
   return (
-    <div className="dashBoard flex relative w-full h-full">
+    <div className="dashBoard flex w-full h-full">
       <AdminSidebar open={open} onClose={() => setOpen(false)} />
 
       <div className="w-full h-full bg-lightPrimary">
         <main className="mx-[12px] h-full flex-none transition-all md:pr-2 xl:ml-[280px]">
-          <div className="h-full">
+          <div className="relative w-full">
             <DashboardNavbar
               onOpenSidenav={() => setOpen(true)}
               logoText={'Routes Design'}
