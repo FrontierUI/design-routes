@@ -40,7 +40,7 @@ const Invoices = () => {
                 </option>
               </select>
               <div className="absolute right-1.5 flex items-center">
-                <ChevronDown className="w-6 h-6" />
+                <ChevronDown className="w-5 h-5" />
               </div>
             </div>
             <div className="relative flex items-center w-full">
@@ -57,7 +57,7 @@ const Invoices = () => {
                 </option>
               </select>
               <div className="absolute right-1.5 flex items-center">
-                <ChevronDown className="w-6 h-6" />
+                <ChevronDown className="w-5 h-5" />
               </div>
             </div>
           </div>
@@ -65,25 +65,25 @@ const Invoices = () => {
 
         <div className="bg-white rounded-lg p-3 lg:p-6 w-full">
           <div className="w-full h-full relative flex flex-wrap items-start justify-start md:justify-between gap-4">
-            <div className="flexStart flex-col space-y-2">
+            <div className="flexStart flex-col max-sm:w-2/5 space-y-2">
               <span className="font-monaLight text-sm">Invoice ID</span>
               <span className="font-monaLight text-sm text-green-500">
                 579975
               </span>
             </div>
-            <div className="flexStart flex-col space-y-2">
+            <div className="flex items-start justify-start max-sm:items-end flex-col max-sm:w-1/2 space-y-2">
               <span className="font-monaLight text-sm">Invoice Date</span>
               <span className="font-monaLight text-sm">
                 UTC 2024-12-26, 21:05
               </span>
             </div>
-            <div className="flexStart flex-col space-y-2">
+            <div className="flexStart flex-col max-sm:w-2/5 space-y-2">
               <span className="font-monaLight text-sm">Due Date</span>
               <span className="font-monaLight text-sm">
                 UTC 2024-12-27, 21:05
               </span>
             </div>
-            <div className="flexStart flex-col space-y-2">
+            <div className="flex items-start justify-start max-sm:items-end  flex-col max-sm:w-1/2 space-y-2">
               <span className="font-monaLight text-sm">Status</span>
               <button className="px-4 py-2 rounded-lg text-sm pointer-events-none bg-red-100 text-red-500">
                 Overdue

@@ -6,7 +6,7 @@ const DashboardBanner = () => {
   return (
     <div className="relative w-full h-full max-w-full z-[1]">
       <div
-        className="absolute w-full h-full top-0 bg-cover bg-no-repeat bg-center -z-[1] rounded-lg"
+        className="absolute w-full h-full top-0 bg-cover bg-no-repeat smScreenPos sm:bg-center -z-[1] rounded-lg"
         style={{ backgroundImage: 'url(/images/dashBann.svg)' }}
       ></div>
       <div className="flex flex-col p-5 lg:p-10 space-y-5 w-full">

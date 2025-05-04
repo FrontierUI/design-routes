@@ -516,6 +516,12 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .smScreenPos {
+    background-position: 90%;
+  }
+}
+
 .stickyScrolled {
   position: sticky;
   top: 1rem;
