@@ -1,10 +1,10 @@
-import React, { lazy, Suspense, useEffect } from 'react';
+import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { base64_decode } from './func';
+// import { base64_decode } from './func';
 
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+// import Navbar from '@/components/Navbar';
+// import Footer from '@/components/Footer';
 
 const Home = lazy(() => import('@/pages/Home'));
 const About = lazy(() => import('@/pages/About'));
@@ -43,8 +43,11 @@ const SME = lazy(() => import('@/pages/verticals/SME'));
 const ForBrands = lazy(() => import('@/pages/verticals/ForBrands'));
 const ForAgencies = lazy(() => import('@/pages/verticals/ForAgencies'));
 
-const UserDashboard = lazy(() => import('./pages/dashboard/UserDashboard'));
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
+
+// const UserDashboard = lazy(() => import('./pages/dashboard/UserDashboard'));
+// const Overview = lazy(() => import('./views/Overview'));
+// const UserList = lazy(() => import('./views/UserList'));
 
 const LoadingFallback = () => {
   return (
@@ -141,8 +144,7 @@ const App = () => {
 
           <Route path="/our-work/:slug" element={<PortfolioPage />} />
 
-          {/* <Route path="/dashboard" element={<UserDashboard />} /> */}
-          <Route path="/dashboard" element={<AdminDashboard />} />
+          <Route path="/dashboard/:page" element={<AdminDashboard />} />
         </Routes>
 
         {/* <Footer /> */}

@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import {
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useParams,
+} from 'react-router-dom';
 
 import AdminSidebar from '../../components/AdminSidebar';
-// import routes from '../../contentData/routes';
+
 import dashSidebar from '../../contentData/dashSidebar';
 import DashboardNavbar from '../../components/DashboardNavbar';
 
@@ -10,6 +16,8 @@ const AdminDashboard = (props) => {
   // const [isOpen, setIsOpen] = useState(true);
 
   // const toggleSidebar = () => setIsOpen(!isOpen);
+
+  const params = useParams();
 
   const { ...rest } = props;
   const location = useLocation();
@@ -55,15 +63,25 @@ const AdminDashboard = (props) => {
   };
 
   const getRoutes = (dashSidebar) => {
-    return dashSidebar.map((prop, key) => {
-      if (prop.layout === '/dashboard') {
-        return (
-          <Route path={`/${prop.path}`} element={prop.component} key={key} />
-        );
-      } else {
-        return null;
-      }
-    });
+    console.log('dashSidebar', dashSidebar);
+    if (
+      params.page !== undefined &&
+      params.page !== null &&
+      params.page.toString().trim() !== ''
+    ) {
+      //validateToken(params.token);
+      console.log('page', params.page);
+      return dashSidebar.map((prop) => {
+        if (prop.layout === '/dashboard' && prop.path === params.page) {
+          console.log('prop.component', prop.component);
+          return prop.component;
+        } else {
+          return null;
+        }
+      });
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -82,14 +100,14 @@ const AdminDashboard = (props) => {
             />
 
             <div className="mx-auto mb-auto w-full relative min-h-[88vh] p-2 md:pr-2">
-              <Routes>
-                {getRoutes(dashSidebar)}
+              {getRoutes(dashSidebar)}
 
+              {/* <Routes>
                 <Route
                   path="/"
                   element={<Navigate to="/dashboard/overview" replace />}
                 />
-              </Routes>
+              </Routes> */}
             </div>
           </div>
         </main>
