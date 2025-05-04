@@ -27,7 +27,7 @@ export function SidebarLinks(props) {
                   className={`${
                     activeRoute(route.path) === true
                       ? 'font-bold text-primary'
-                      : 'font-medium text-gray-900'
+                      : 'font-medium text-gray-700'
                   }`}
                 >
                   {route.icon ? route.icon : <DashIcon />}

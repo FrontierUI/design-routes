@@ -44,8 +44,8 @@ const DashboardNavbar = (props) => {
         </p>
       </div>
 
-      <div className="relative mt-[3px] flex h-[61px] w-[355px] flex-grow items-center justify-around gap-2 rounded-full bg-white px-2 py-2 shadow-xl shadow-shadow-500 md:w-[384px] md:flex-grow-0 md:gap-1 xl:gap-2">
-        <div className="flex h-full items-center rounded-full bg-lightPrimary text-gray-900 xl:w-[225px]">
+      <div className="relative mt-[3px] flex h-[61px] w-[355px] flex-grow items-center justify-around md:justify-between gap-2 rounded-full bg-white px-3 py-3 shadow-xl shadow-shadow-500 md:w-[384px] md:flex-grow-0 md:gap-1 xl:gap-2">
+        <div className="flex h-full items-center rounded-full bg-lightPrimary text-gray-900 xl:w-[300px]">
           <p className="pl-3 pr-2 text-xl">
             <Search className="h-4 w-4 text-gray-700" />
           </p>

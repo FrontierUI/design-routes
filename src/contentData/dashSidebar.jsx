@@ -20,8 +20,9 @@ import {
   Mail,
 } from 'lucide-react';
 
-import Overview from '../views/Overview';
-import UserList from '../views/UserList';
+import Overview from '@/views/Overview';
+import UserList from '@/views/UserList';
+import Invoices from '@/views/Invoices';
 
 const dashSidebar = [
   {
@@ -48,8 +49,8 @@ const dashSidebar = [
   {
     name: 'Download Invoice',
     icon: <FileDown className="w-6 h-6" />,
-    path: 'download-invoice',
-    component: <UserList />,
+    path: 'invoice',
+    component: <Invoices />,
     layout: '/dashboard',
   },
   {

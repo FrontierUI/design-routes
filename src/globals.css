@@ -352,6 +352,14 @@
     @apply rounded-full py-2 px-6 bg-white text-primary font-monaSemibold text-xl uppercase transitAll scal105;
   }
 
+  .invoice-select {
+    @apply bg-white rounded-md service-form-focus py-2 px-4 w-full appearance-none;
+  }
+
+  .invoice-select .invoice-selectOpt {
+    @apply bg-white rounded-md service-form-focus w-full text-gray-900/85;
+  }
+
   /* .sticked {
     @apply w-full lg:w-1/2 lg:sticky lg:top-28 !important;
   } */

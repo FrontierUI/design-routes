@@ -22,8 +22,8 @@ const Verify = () => {
     if (getCookie('token') !== undefined && getCookie('token') !== null) {
       //user is already loggedin
       if (checkRole(getCookie('token')) === 'admin')
-        navigate(`/dashboard`, { replace: true });
-      else navigate(`/dashboard`, { replace: true });
+        navigate(`/dashboard/overview`, { replace: true });
+      else navigate(`/dashboard/overview`, { replace: true });
     } else {
       if (
         params.token !== undefined &&
