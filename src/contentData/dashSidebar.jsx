@@ -15,7 +15,7 @@ import {
   Ticket,
   FileDown,
   LifeBuoy,
-  Settings,
+  Settings as Cogg,
   ClockFading,
   Mail,
 } from 'lucide-react';
@@ -23,6 +23,8 @@ import {
 import Overview from '@/views/Overview';
 import UserList from '@/views/UserList';
 import Invoices from '@/views/Invoices';
+import SubmitTicket from '@/views/SubmitTicket';
+import Settings from '../views/Settings';
 
 const dashSidebar = [
   {
@@ -57,7 +59,7 @@ const dashSidebar = [
     name: 'Submit Ticket',
     icon: <Ticket className="w-6 h-6" />,
     path: 'submit-ticket',
-    component: <UserList />,
+    component: <SubmitTicket />,
     layout: '/dashboard',
   },
   {
@@ -69,9 +71,9 @@ const dashSidebar = [
   },
   {
     name: 'Settings',
-    icon: <Settings className="w-6 h-6" />,
+    icon: <Cogg className="w-6 h-6" />,
     path: 'settings',
-    component: <UserList />,
+    component: <Settings />,
     layout: '/dashboard',
   },
   {

@@ -17,7 +17,7 @@ const DashboardBanner = () => {
         <Link
           to={'https://koalendar.com/e/meet-with-routes-design'}
           target="_blank"
-          className="py-3 bg-white rounded-full text-gray-900 font-monaSemibold text-lg lg:w-1/3 flexy"
+          className="py-3 bg-white rounded-full text-gray-900 font-monaSemibold text-lg lg:w-[27%] flexy transitAll scal102"
         >
           Book a call with a team
         </Link>

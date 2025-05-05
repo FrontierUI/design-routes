@@ -1,26 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import {
-  Navigate,
-  Route,
-  Routes,
-  useLocation,
-  useParams,
-} from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
 
-import AdminSidebar from '../../components/AdminSidebar';
+import AdminSidebar from '@/components/AdminSidebar';
 
-import dashSidebar from '../../contentData/dashSidebar';
-import DashboardNavbar from '../../components/DashboardNavbar';
+import dashSidebar from '@/contentData/dashSidebar';
+import DashboardNavbar from '@/components/DashboardNavbar';
 
 const AdminDashboard = (props) => {
-  // const [isOpen, setIsOpen] = useState(true);
-
-  // const toggleSidebar = () => setIsOpen(!isOpen);
+  const { ...rest } = props;
 
   const params = useParams();
-
-  const { ...rest } = props;
   const location = useLocation();
+
   const [open, setOpen] = useState(true);
   const [currentRoute, setCurrentRoute] = useState('Overview');
 
@@ -69,7 +60,6 @@ const AdminDashboard = (props) => {
       params.page !== null &&
       params.page.toString().trim() !== ''
     ) {
-      //validateToken(params.token);
       console.log('page', params.page);
       return dashSidebar.map((prop) => {
         if (prop.layout === '/dashboard' && prop.path === params.page) {

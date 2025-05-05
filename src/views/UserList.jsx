@@ -12,7 +12,7 @@ const UserList = () => {
         <DashboardBanner />
 
         <div className="flex flex-col space-y-5 lg:space-y-6">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-between gap-2 w-full h-full">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-between gap-4 w-full h-full">
             <h2 className="font-monaSemibold text-2xl">User List</h2>
             <div className="flex items-center gap-4 w-full lg:w-1/3">
               <input
@@ -23,7 +23,7 @@ const UserList = () => {
               <div className="flex items-center gap-2">
                 <p className="font-monaMedium text-xl">Filter</p>
                 <Link to={'javascript:void(0)'} className="flexy">
-                  <ListFilter className="w-7 h-7" />
+                  <ListFilter className="w-6 h-6" />
                 </Link>
               </div>
             </div>

@@ -24,7 +24,7 @@ const ProfileOverview = () => {
             <div className="flex items-start justify-end">
               <Link
                 to={'/dashboard/user-profile'}
-                className="flexy p-3 max-xs:w-5 max-xs:h-5 bg-primary text-white rounded-full"
+                className="flexy p-2.5 max-xs:w-5 max-xs:h-5 bg-primary text-white rounded-full"
               >
                 <Pencil className="sm:w-5 sm:h-5 h-4 w-4" />
               </Link>
