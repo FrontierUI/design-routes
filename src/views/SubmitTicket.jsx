@@ -38,7 +38,7 @@ const SubmitTicket = () => {
           {/* ticket kaa container ka map loop yahn se start hoga */}
 
           <div className="flexy relative w-full h-full bg-white p-5 lg:p-10 rounded-lg">
-            <div className="flex flex-col lg:flex-row items-center justify-start lg:justify-between w-full">
+            <div className="flex flex-col lg:flex-row items-center justify-start lg:justify-between w-full gap-6">
               <div className="flex items-center justify-between md:w-1/3 w-full">
                 <div className="flexStart flex-col space-y-1">
                   <span className="text-gray-600">Ticket:</span>
