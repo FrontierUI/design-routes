@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { CircleX } from 'lucide-react';
 
-import DashSidebar from '@/contentData/dashSidebar';
+import { dashSidebar } from '@/contentData/dashSidebar';
 import Links from './Links';
 
 import brand from '/images/routeslogo.svg';
@@ -29,7 +29,7 @@ const AdminSidebar = ({ open, onClose }) => {
       <div className="mt-[20px] mb-5 h-px bg-gray-300" />
 
       <ul className="mb-auto pt-1 flex flex-col space-y-2">
-        <Links dashSidebar={DashSidebar} />
+        <Links dashSidebar={dashSidebar} />
       </ul>
     </div>
   );

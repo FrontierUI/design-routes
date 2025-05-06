@@ -3,7 +3,7 @@ import { useLocation, useParams } from 'react-router-dom';
 
 import AdminSidebar from '@/components/AdminSidebar';
 
-import dashSidebar from '@/contentData/dashSidebar';
+import { dashSidebar } from '@/contentData/dashSidebar';
 import DashboardNavbar from '@/components/DashboardNavbar';
 
 const AdminDashboard = (props) => {

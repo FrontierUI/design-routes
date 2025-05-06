@@ -28,7 +28,7 @@ import Settings from '@/views/Settings';
 import OrderDetails from '@/views/OrderDetails';
 import TrackTicket from '../views/TrackTicket';
 
-const dashSidebar = [
+export const dashSidebar = [
   {
     name: 'Overview',
     icon: <LayoutDashboard className="w-6 h-6" />,
@@ -94,4 +94,20 @@ const dashSidebar = [
   },
 ];
 
-export default dashSidebar;
+export const adminDashSide = [
+  {
+    name: 'Overview',
+    icon: <LayoutDashboard className="w-6 h-6" />,
+    path: 'overview',
+    component: <Overview />,
+    layout: '/dashboard',
+  },
+
+  {
+    name: 'Overview',
+    icon: <LayoutDashboard className="w-6 h-6" />,
+    path: 'overview',
+    component: <Overview />,
+    layout: '/dashboard',
+  },
+];
