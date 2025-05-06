@@ -31,26 +31,26 @@ const ProfileOverview = () => {
             </div>
           </div>
           <div className="flex flex-col lg:flex-row items-center justify-center md:justify-between w-full gap-5 relative mt-6 md:mt-12">
-            <div className="flex rounded-lg border border-dashed border-gray-800 p-3 w-full">
+            <div className="flex rounded-lg border-2 border-dashed border-gray-300 p-3 w-full">
               <div className="flex flex-col w-full space-y-4 text-sm">
                 <div className="flex items-center justify-between gap-5">
-                  <p className="">Account Status</p>
+                  <p className="text-gray-600">Account Status</p>
                   <span>Active</span>
                 </div>
                 <div className="flex items-center justify-between gap-5">
-                  <p className="">Account Status</p>
+                  <p className="text-gray-600">Order in progress</p>
                   <span className="text-red-600">Active</span>
                 </div>
               </div>
             </div>
-            <div className="flex rounded-lg border border-dashed border-gray-800 p-3 w-full">
+            <div className="flex rounded-lg border-2 border-dashed border-gray-300 p-3 w-full">
               <div className="flex flex-col w-full space-y-4 text-sm">
                 <div className="flex items-center justify-between gap-5">
-                  <p className="">Account Status</p>
+                  <p className="text-gray-600">Account Status</p>
                   <span>Active</span>
                 </div>
                 <div className="flex items-center justify-between gap-5">
-                  <p className="">Account Status</p>
+                  <p className="text-gray-600">Account Status</p>
                   <span className="text-green-500">Active</span>
                 </div>
               </div>

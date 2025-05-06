@@ -24,7 +24,9 @@ import Overview from '@/views/Overview';
 import UserList from '@/views/UserList';
 import Invoices from '@/views/Invoices';
 import SubmitTicket from '@/views/SubmitTicket';
-import Settings from '../views/Settings';
+import Settings from '@/views/Settings';
+import OrderDetails from '@/views/OrderDetails';
+import TrackTicket from '../views/TrackTicket';
 
 const dashSidebar = [
   {
@@ -38,7 +40,7 @@ const dashSidebar = [
     name: 'View Order History',
     icon: <History className="w-6 h-6" />,
     path: 'view-order-history',
-    component: <UserList />,
+    component: <OrderDetails />,
     layout: '/dashboard',
   },
   {
@@ -66,7 +68,7 @@ const dashSidebar = [
     name: 'Track Ticket Status',
     icon: <ClockFading />,
     path: 'track-ticket-status',
-    component: <UserList />,
+    component: <TrackTicket />,
     layout: '/dashboard',
   },
   {

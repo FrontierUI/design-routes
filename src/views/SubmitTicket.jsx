@@ -13,11 +13,12 @@ const SubmitTicket = () => {
           <div className="flex items-center gap-5 w-full lg:w-1/3">
             <h2 className="text-2xl font-monaSemibold">Tickets</h2>
 
-            <Link to={'javascript:void(0)'} className="text-lg font-monaMedium">
+            <Link
+              to={'javascript:void(0)'}
+              className="text-lg font-monaMedium relative flexy"
+            >
               Active
-            </Link>
-            <Link to={'javascript:void(0)'} className="text-lg font-monaMedium">
-              Active
+              <hr className="absolute w-4/5 h-px bg-primary bottom-0" />
             </Link>
           </div>
           <div className="flex items-center gap-4 w-full lg:w-2/5">
@@ -33,37 +34,40 @@ const SubmitTicket = () => {
           </div>
         </div>
 
-        <div className="flexy relative w-full h-full bg-white p-5 lg:p-10 rounded-lg">
-          <div className="grid grid-cols-12 mx-auto w-full gap-5">
-            <div className="max-sm:col-span-6 max-lg:col-span-4 col-span-2 flexStart flex-col space-y-2">
-              <span className="font-monaLight text-gray-600">Ticket ID</span>
-              <span className="font-monaLight text-green-500">#TCK-13482</span>
-            </div>
-            <div className="max-sm:col-span-6 max-lg:col-span-4 col-span-2 flexStart flex-col space-y-2">
-              <span className="font-monaLight text-gray-600">Subject</span>
-              <span>Issue Premium Package</span>
-            </div>
-            <div className="max-sm:col-span-6 max-lg:col-span-4 col-span-2 flexStart flex-col space-y-2">
-              <span className="font-monaLight text-gray-600">
-                Order ID (if applicable)
-              </span>
-              <span className="font-monaLight text-green-500">#ORD-45021</span>
-            </div>
-            <div className="max-sm:col-span-6 max-lg:col-span-4 col-span-2 flexStart flex-col space-y-2">
-              <span className="font-monaLight text-gray-600">Submit on</span>
-              <span>Mar 15, 2025</span>
-            </div>
-            <div className="max-sm:col-span-6 max-lg:col-span-4 col-span-2 flexStart flex-col space-y-2">
-              <span className="font-monaLight text-gray-600">Status</span>
-              <button className="bg-blue-100 px-3 py-1.5 text-primary rounded-md">
-                Progress
-              </button>
-            </div>
-            <div className="max-sm:col-span-6 max-lg:col-span-4 col-span-2 flexStart flex-col space-y-2">
-              <span className="font-monaLight text-gray-600">Last Updated</span>
-              <span>Mar 16, 2025</span>
+        <div className="flex flex-col space-y-5 lg:space-y-8">
+          {/* ticket kaa container ka map loop yahn se start hoga */}
+
+          <div className="flexy relative w-full h-full bg-white p-5 lg:p-10 rounded-lg">
+            <div className="flex flex-col lg:flex-row items-center justify-start lg:justify-between w-full">
+              <div className="flex items-center justify-between md:w-1/3 w-full">
+                <div className="flexStart flex-col space-y-1">
+                  <span className="text-gray-600">Ticket:</span>
+                  <span className="text-green-500">7812115</span>
+                </div>
+                <div className="flexStart flex-col space-y-1">
+                  <span className="text-gray-600">Date</span>
+                  <span>2027/04/25</span>
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <Link
+                  to={'/'}
+                  className="bg-primary py-2 px-6 font-monaSemibold rounded-full text-white"
+                >
+                  Open
+                </Link>
+                <Link
+                  to={'/'}
+                  className="bg-lightPrimary py-2 px-6 font-monaSemibold rounded-full"
+                >
+                  Open
+                </Link>
+              </div>
             </div>
           </div>
+
+          {/* ticket kaa container ka map loop yahn se end hoga */}
         </div>
       </div>
     </div>
