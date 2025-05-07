@@ -1,5 +1,6 @@
 // import React from 'react';
 import { designProcess } from '@/contentData/utils';
+import LazyImage from './LazyImage';
 
 const DesignProcess = () => {
   return (
@@ -13,12 +14,13 @@ const DesignProcess = () => {
             <div className="bgChange w-full h-full p-6 space-y-6 rounded-lg">
               <div className="itemsStart flex-col relative space-y-5">
                 <div className="flexy gap-x-2.5 lg:gap-x-4">
-                  <img
+                  {/* <img
                     src={process.src}
                     className="img-fluid"
                     width={50}
                     alt=""
-                  />
+                  /> */}
+                  <LazyImage src={process.src} width={50} alt="" className="img-fluid" />
                   <h2 className="text-2xl lg:text-3xl font-monaSemibold">
                     {process.title}
                   </h2>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { fullScope } from '@/contentData/utils';
+import LazyImage from './LazyImage';
 
 const FullScope = () => {
   return (
@@ -11,7 +12,8 @@ const FullScope = () => {
             className="flexStart flex-col shadow-drop-5 overflow-hidden rounded-lg w-full h-full"
           >
             <div className="bgChange w-full h-full p-6 space-y-6 rounded-lg">
-              <img src={scop.src} className="img-fluid" width={48} alt="" />
+              {/* <img src={scop.src} className="img-fluid" width={48} alt="" /> */}
+              <LazyImage src={scop.src} width={48} alt="" className="img-fluid" />
               <div className="flex flex-col space-y-1">
                 <h2 className="text-2xl font-monaSemibold leading-tight">
                   {scop.title}
