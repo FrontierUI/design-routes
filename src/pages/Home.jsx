@@ -13,11 +13,12 @@ import Typewriting from '@/components/Typewriting';
 import Services from '@/components/Services';
 import Strategies from '@/components/Strategies';
 import Testimonials from '@/components/Testimonials';
+import ServicesForm from '@/components/ServicesForm';
 import Professionalism from '@/components/Professionalism';
 import WorkEthics from '@/components/WorkEthics';
 import RoutesWay from '@/components/RoutesWay';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
-import ServicesForm from '@/components/ServicesForm';
+import LazyImage from '@/components/LazyImage';
 
 const Home = () => {
   const [portfolios, setPortfolios] = useState([]);
@@ -106,13 +107,6 @@ const Home = () => {
             speed={30}
             pauseOnHover={false}
           >
-            {/* {[...homePortFolioUp].map((item) => (
-              <PortfolioMarquee
-                imgSrc={item.imgSrc}
-                href={item.href}
-                key={item.href}
-              />
-            ))} */}
             {[...firstChunk].map((item, index) => (
               <PortfolioMarquee
                 imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
@@ -131,13 +125,6 @@ const Home = () => {
             speed={30}
             pauseOnHover={false}
           >
-            {/* {[...homePortFolioBot].map((item) => (
-              <PortfolioMarquee
-                imgSrc={item.imgSrc}
-                href={item.href}
-                key={item.href}
-              />
-            ))} */}
             {[...secondChunk].map((item, index) => (
               <PortfolioMarquee
                 imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
@@ -243,7 +230,7 @@ const Home = () => {
                     key={listing.para}
                     className="flex items-center justify-start gap-x-2"
                   >
-                    <img
+                    <LazyImage
                       src={listing.src}
                       className="img-fluid"
                       width={38}

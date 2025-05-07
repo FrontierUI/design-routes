@@ -4,10 +4,10 @@
 
 const PDPlatforms = () => {
   return (
-    <section className="">
+    <section className="max-lg:px-5">
       <div className="my-scroll-container">
         <div className="sticky-child flexStart flex-col space-y-4 md:sticky md:top-32 gap-10">
-          <div className="itemsStart flex-col space-y-4 md:w-11/12">
+          <div className="flexStart flex-col space-y-4 md:w-11/12">
             <h3 className="text-2xl uppercase font-monaSemibold">
               Platform Mastery
             </h3>
@@ -25,16 +25,16 @@ const PDPlatforms = () => {
           </div>
         </div>
 
-        <div className="sticky-child controls-panel">
+        <div className="sticky-child controls-panel max-md:pt-6">
           <div className="content-wrapper w-full md:static">
-            <div className="flexStart flex-col space-y-6 md:space-y-12">
+            <div className="flexStart flex-col space-y-8 md:space-y-12">
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
                   <img
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/powerPoint.png`}
-                    className="img-fluid w-52 object-cover"
+                    className="img-fluid w-24 md:w-52 object-cover"
                     alt=""
                   />
                 </div>
@@ -47,7 +47,7 @@ const PDPlatforms = () => {
                       Microsoft PowerPoint
                     </h3>
                   </div>
-                  <p className="lg:w-10/12">
+                  <p className="w-10/12">
                     An oldie but a goodie. Our designers are experts in this
                     leading presentation software, ensuring your presentations
                     are visually compelling and easy to build on.
@@ -61,7 +61,7 @@ const PDPlatforms = () => {
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/googleSlides.png`}
-                    className="img-fluid w-52 object-cover"
+                    className="img-fluid w-24 md:w-52 object-cover"
                     alt=""
                   />
                 </div>
@@ -70,7 +70,7 @@ const PDPlatforms = () => {
                     <h3 className="text-xl font-monaSemibold">CLOUD-BASED</h3>
                     <h3 className="text-3xl font-monaBold">Google Slides</h3>
                   </div>
-                  <p className="lg:w-10/12">
+                  <p className="w-10/12">
                     A versatile staple, Google Slides is another platform our
                     designers know through and through, so they can build you
                     engaging, interactive presentations designs.
@@ -84,7 +84,7 @@ const PDPlatforms = () => {
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/keynote.png`}
-                    className="img-fluid w-52 object-cover"
+                    className="img-fluid w-24 md:w-52 object-cover"
                     alt=""
                   />
                 </div>
@@ -95,7 +95,7 @@ const PDPlatforms = () => {
                     </h3>
                     <h3 className="text-3xl font-monaBold">Keynote</h3>
                   </div>
-                  <p className="lg:w-10/12">
+                  <p className="w-10/12">
                     More of a Keynote connoisseur? Apple’s Keynote is another
                     one of our specialities. We’ll deliver stunning
                     presentations on the double, so you can communicate in
@@ -110,7 +110,7 @@ const PDPlatforms = () => {
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/figma-1.png`}
-                    className="img-fluid w-52 object-cover"
+                    className="img-fluid w-24 md:w-52 object-cover"
                     alt=""
                   />
                 </div>
@@ -121,7 +121,7 @@ const PDPlatforms = () => {
                     </h3>
                     <h3 className="text-3xl font-monaBold">Figma</h3>
                   </div>
-                  <p className="lg:w-10/12">
+                  <p className="w-10/12">
                     If you live in Figma, we’re right there with you. Our
                     designers are fluent in Figma and prepared to deliver
                     high-quality presentation designs using this collaborative
@@ -136,7 +136,7 @@ const PDPlatforms = () => {
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/othPlat.png`}
-                    className="img-fluid w-52 object-cover"
+                    className="img-fluid w-24 md:w-52 object-cover"
                     alt=""
                   />
                 </div>
@@ -145,7 +145,7 @@ const PDPlatforms = () => {
                     <h3 className="text-xl font-monaSemibold">FULL COVERAGE</h3>
                     <h3 className="text-3xl font-monaBold">Other Platforms</h3>
                   </div>
-                  <p className="lg:w-10/12">
+                  <p className="w-10/12">
                     Have another platform in mind? We’re here for it. With a
                     global team of presentation designers to tap into, we have
                     skills across the board and can cater to any preference.

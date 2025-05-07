@@ -16,7 +16,9 @@ const PDPitchDecks = () => {
         >
           <div className="flexStart w-full rounded-lg relative innerEffect">
             <img
-              src={`${import.meta.env.VITE_BASE_API}/images/productsPages/BusinessPresentations.png`}
+              src={`${
+                import.meta.env.VITE_BASE_API
+              }/images/productsPages/BusinessPresentations.png`}
               className="img-fluid w-full h-full object-cover"
               alt=""
             />
@@ -41,7 +43,9 @@ const PDPitchDecks = () => {
         >
           <div className="flexStart w-full rounded-lg relative innerEffect">
             <img
-              src={`${import.meta.env.VITE_BASE_API}/images/productsPages/pitchdecks.png`}
+              src={`${
+                import.meta.env.VITE_BASE_API
+              }/images/productsPages/pitchdecks.png`}
               className="img-fluid w-full h-full object-cover"
               alt=""
             />
@@ -66,7 +70,9 @@ const PDPitchDecks = () => {
         >
           <div className="flexStart w-full rounded-lg relative innerEffect">
             <img
-              src={`${import.meta.env.VITE_BASE_API}/images/productsPages/salesreport.png`}
+              src={`${
+                import.meta.env.VITE_BASE_API
+              }/images/productsPages/salesreport.png`}
               className="img-fluid w-full h-full object-cover"
               alt=""
             />
@@ -91,7 +97,9 @@ const PDPitchDecks = () => {
         >
           <div className="flexStart w-full rounded-lg relative innerEffect">
             <img
-              src={`${import.meta.env.VITE_BASE_API}/images/productsPages/investorDecks.png`}
+              src={`${
+                import.meta.env.VITE_BASE_API
+              }/images/productsPages/investorDecks.png`}
               className="img-fluid w-full h-full object-cover"
               alt=""
             />
@@ -118,7 +126,9 @@ const PDPitchDecks = () => {
         >
           <div className="flexStart w-full rounded-lg relative innerEffect">
             <img
-              src={`${import.meta.env.VITE_BASE_API}/images/productsPages/slideDecks.png`}
+              src={`${
+                import.meta.env.VITE_BASE_API
+              }/images/productsPages/slideDecks.png`}
               className="img-fluid w-full h-full object-cover"
               alt=""
             />

@@ -16,6 +16,7 @@ import AIEnhancedAPP from '@/components/AIEnhancedAPP';
 import AppPricePackage from '@/components/AppPricePackage';
 import AppDDAccordion from '@/components/AppDDAccordion';
 import AppDDCounter from '@/components/AppDDCounter';
+import LazyImage from '@/components/LazyImage';
 
 const AppDesignDev = () => {
   const [productDetails, setProductDetails] = useState({});
@@ -80,12 +81,12 @@ const AppDesignDev = () => {
             <div className="w-full max-w-full items-center mx-auto px-5 lg:px-12">
               <div className="w-full flex flex-wrap items-center max-md:pt-24">
                 <div className="w-full lg:w-1/2 lg:px-3">
-                  <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-3 md:space-y-5 text-slate-100">
+                  <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-5 text-slate-100 max-md:mt-2">
                     <h3 className="text-2xl font-monaSemibold">Professional</h3>
-                    <h1 className="font-monaBold text-5xl">
+                    <h1 className="font-monaBold text-5xl max-sm:min-h-36 sm:min-h-24">
                       <Typewriting
                         text={productDetails?.service_sub_title}
-                        speed={150}
+                        speed={80}
                       />
                     </h1>
                     <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
@@ -106,11 +107,10 @@ const AppDesignDev = () => {
                     scale={1.07}
                     lassName="w-full p-4 h-auto"
                   >
-                    <img
-                      src={
-                        import.meta.env.VITE_BASE_API +
-                        productDetails?.service_images
-                      }
+                    <LazyImage
+                      src={`${
+                        import.meta.env.VITE_BASE_API
+                      }/images/productsPages/appHero.png`}
                       className="img-fluid"
                       alt=""
                     />
@@ -130,13 +130,6 @@ const AppDesignDev = () => {
                 speed={30}
                 pauseOnHover={false}
               >
-                {/* {[...appPortfolioUp].map((item) => (
-              <PortfolioMarquee
-                imgSrc={item.imgSrc}
-                href={item.href}
-                key={item.href}
-              />
-            ))} */}
                 {[...portfolios].map((item, index) => (
                   <PortfolioMarquee
                     imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
@@ -155,13 +148,6 @@ const AppDesignDev = () => {
                 speed={30}
                 pauseOnHover={false}
               >
-                {/* {[...appPortfolioBot].map((item) => (
-              <PortfolioMarquee
-                imgSrc={item.imgSrc}
-                href={item.href}
-                key={item.href}
-              />
-            ))} */}
                 {[...portfolios].map((item, index) => (
                   <PortfolioMarquee
                     imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
@@ -177,12 +163,16 @@ const AppDesignDev = () => {
             <LogoMarquee />
           </div>
 
-          <div className="strategyMarketing relative w-full h-full bg-primary text-white py-5 lg:py-10">
+          <div className="strategyMarketing relative w-full h-full bg-primary text-white py-8 lg:py-10">
             <div className="flexy max-w-full mx-auto px-5 lg:px-12">
               <div className="flex flex-wrap items-center w-full">
                 <div className="w-full lg:w-1/2">
-                  <div className="w-full space-y-2 sm:max-w-md lg:max-w-2xl md:space-y-5">
-                    <h1 className="text-5xl font-monaBold">
+                  <div className="w-full space-y-5 sm:max-w-md lg:max-w-2xl">
+                    <h3 className="text-xl font-monaSemibold uppercase">
+                      Built for User Performance, & Digital Products
+                    </h3>
+
+                    <h1 className="text-5xl font-monaBold max-sm:min-h-60 sm:min-h-36 capitalize">
                       <Typewriting
                         text="We're always-on to deliver the design you want when you need it"
                         speed={70}
@@ -203,7 +193,7 @@ const AppDesignDev = () => {
                   </div>
                 </div>
 
-                <div className="w-full lg:w-1/2 relative">
+                <div className="w-full lg:w-1/2 relative max-sm:pt-6 lg:p-5">
                   <Tilt
                     tiltMaxAngleX={10}
                     tiltMaxAngleY={10}
@@ -212,10 +202,10 @@ const AppDesignDev = () => {
                     scale={1.05}
                     lassName="w-full p-8 h-auto"
                   >
-                    <img
+                    <LazyImage
                       src={`${
                         import.meta.env.VITE_BASE_API
-                      }/images/productsPages/websitemiddle.png`}
+                      }/images/productsPages/appmiddle.png`}
                       className="img-fluid"
                       alt=""
                     />

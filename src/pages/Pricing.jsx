@@ -1,9 +1,10 @@
-// import React from 'react';
-
-import Marquee from 'react-fast-marquee';
+import { useEffect, useMemo, useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import Marquee from 'react-fast-marquee';
 
-import { homePortFolioUp, homePortFolioBot } from '@/contentData/utils';
+// import { homePortFolioUp, homePortFolioBot } from '@/contentData/utils';
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -13,9 +14,57 @@ import PricingTabs from '@/components/PricingTabs';
 import PricingAccordion from '@/components/PricingAccordion';
 import Testimonials from '@/components/Testimonials';
 
-import { Helmet } from 'react-helmet-async';
-
 const Pricing = () => {
+  const [portfolios, setPortfolios] = useState([]);
+
+  useEffect(() => {
+    fetchPortfoliosForPricing();
+
+    return () => {
+      setPortfolios([]);
+    };
+  }, []);
+
+  const fetchPortfoliosForPricing = () => {
+    const json = JSON.stringify({ limit: 1000 });
+
+    axios
+      .post(
+        `${
+          import.meta.env.VITE_BASE_API
+        }/api.php?action=get_portfolio_for_home`,
+        JSON.stringify({ params: json }),
+        {
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        }
+      )
+      .then((response) => {
+        if (response.data.success === 'true') {
+          console.log(response.data.portfolios);
+          setPortfolios(response.data.portfolios);
+        }
+      })
+      .catch((error) => {
+        console.error(`Error: ${error}`);
+      });
+  };
+
+  const splitIntoChunks = (array, numberOfChunks = 2) => {
+    const chunkSize = Math.ceil(array.length / numberOfChunks);
+
+    return Array.from({ length: numberOfChunks }, (_, index) =>
+      array.slice(index * chunkSize, (index + 1) * chunkSize)
+    );
+  };
+
+  const getChunk = (array, chunkIndex = 0, totalChunks = 2) => {
+    const chunks = splitIntoChunks(array, totalChunks);
+    return chunks[chunkIndex] || [];
+  };
+
+  const firstChunk = useMemo(() => getChunk(portfolios, 0), [portfolios]);
+  const secondChunk = useMemo(() => getChunk(portfolios, 1), [portfolios]);
+
   return (
     <div className="relative flexy flex-col w-full h-full">
       <Helmet>
@@ -28,6 +77,7 @@ const Pricing = () => {
         />
       </Helmet>
       <Navbar />
+
       <div className="flexy flex-col w-full px-5 pt-20 lg:pt-28">
         <div className="flexy flex-col py-8 w-full space-y-5 text-center text-slate-900 lg:w-3/4">
           <h3 className="text-xl font-monaBold uppercase">
@@ -61,11 +111,11 @@ const Pricing = () => {
             speed={30}
             pauseOnHover={false}
           >
-            {[...homePortFolioUp].map((item) => (
+            {[...firstChunk].map((item, index) => (
               <PortfolioMarquee
-                imgSrc={item.imgSrc}
-                href={item.href}
-                key={item.href}
+                imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
+                href={`/our-work/${item.brand_slug}`}
+                key={index}
               />
             ))}
           </Marquee>
@@ -79,11 +129,11 @@ const Pricing = () => {
             speed={30}
             pauseOnHover={false}
           >
-            {[...homePortFolioBot].map((item) => (
+            {[...secondChunk].map((item, index) => (
               <PortfolioMarquee
-                imgSrc={item.imgSrc}
-                href={item.href}
-                key={item.href}
+                imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
+                href={`/our-work/${item.brand_slug}`}
+                key={index}
               />
             ))}
           </Marquee>

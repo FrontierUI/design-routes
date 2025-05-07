@@ -1,13 +1,3 @@
-// import overview from '/images/icons/overview.svg';
-// import history from '/images/icons/history.svg';
-// import invoice from '/images/icons/invoice.svg';
-// import orderPack from '/images/icons/orderPack.svg';
-// import mail from '/images/icons/mail.svg';
-// import cog from '/images/icons/cog.svg';
-// import helpCent from '/images/icons/helpCent.svg';
-// import tracking from '/images/icons/tracking.svg';
-// import ticket from '/images/icons/ticket.svg';
-
 import {
   LayoutDashboard,
   History,
@@ -26,9 +16,17 @@ import Invoices from '@/views/Invoices';
 import SubmitTicket from '@/views/SubmitTicket';
 import Settings from '@/views/Settings';
 import OrderDetails from '@/views/OrderDetails';
-import TrackTicket from '../views/TrackTicket';
+import TrackTicket from '@/views/TrackTicket';
 
-export const dashSidebar = [
+import { checkRole, getCookie } from '@/func';
+
+var role = '';
+if (getCookie('token') !== undefined && getCookie('token') !== null) {
+  role = checkRole(getCookie('token'));
+  console.log('role', role);
+}
+
+export const userDashSidebar = [
   {
     name: 'Overview',
     icon: <LayoutDashboard className="w-6 h-6" />,
@@ -94,7 +92,7 @@ export const dashSidebar = [
   },
 ];
 
-export const adminDashSide = [
+export const adminDashSidebar = [
   {
     name: 'Overview',
     icon: <LayoutDashboard className="w-6 h-6" />,
@@ -111,3 +109,6 @@ export const adminDashSide = [
     layout: '/dashboard',
   },
 ];
+
+export const dashSidebar =
+  role === 'admin' ? [...adminDashSidebar] : [...userDashSidebar];

@@ -9,15 +9,15 @@ import Typewriting from '@/components/Typewriting';
 const AIEnhanced = () => {
   return (
     <div className="flexy bg-primary max-w-full mx-auto px-5 lg:px-12">
-      <div className="flex flex-wrap items-center w-full py-5 lg:py-12">
+      <div className="flex flex-wrap items-center w-full py-8 lg:py-12">
         <div className="w-full lg:w-1/2 text-white">
-          <div className="w-full space-y-2 sm:max-w-md lg:max-w-2xl md:space-y-5">
+          <div className="w-full space-y-5 sm:max-w-md lg:max-w-2xl">
             <h3 className="text-2xl font-monaSemibold uppercase">
               FUTURE-READY EFFICIENCY
             </h3>
 
-            <h1 className="text-5xl font-monaBold">
-              <Typewriting text="AI-Enhanced Ad Design" speed={100} />
+            <h1 className="text-5xl font-monaBold capitalize max-md:min-h-28 min-h-12">
+              <Typewriting text="AI-Enhanced Ad Design" speed={60} />
             </h1>
 
             <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">
@@ -53,7 +53,9 @@ const AIEnhanced = () => {
             lassName="w-full p-4 h-auto"
           >
             <img
-              src={`${import.meta.env.VITE_BASE_API}/images/productsPages/AIGlass.png`}
+              src={`${
+                import.meta.env.VITE_BASE_API
+              }/images/productsPages/AIGlass.png`}
               className="img-fluid"
               alt=""
             />

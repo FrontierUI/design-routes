@@ -16,6 +16,7 @@ import WebPricePackage from '@/components/WebPricePackage';
 import WebDDAccordion from '@/components/WebDDAccordion';
 import WebDDCounter from '@/components/WebDDCounter';
 import Testimonials from '@/components/Testimonials';
+import LazyImage from '@/components/LazyImage';
 
 const WebDesignDev = () => {
   const [productDetails, setProductDetails] = useState({});
@@ -87,10 +88,10 @@ const WebDesignDev = () => {
                 <div className="w-full lg:w-1/2 lg:px-3">
                   <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-3 md:space-y-5 text-slate-100">
                     <h3 className="text-2xl font-monaSemibold">Professional</h3>
-                    <h1 className="font-monaBold text-5xl">
+                    <h1 className="font-monaBold text-5xl max-sm:min-h-48 sm:min-h-24">
                       <Typewriting
                         text={productDetails?.service_sub_title}
-                        speed={150}
+                        speed={80}
                       />
                     </h1>
                     <p className="mx-auto md:max-w-3xl leading-tight lg:text-lg">
@@ -112,11 +113,10 @@ const WebDesignDev = () => {
                     scale={1.04}
                     lassName="w-full p-5 h-auto"
                   >
-                    <img
-                      src={
-                        import.meta.env.VITE_BASE_API +
-                        productDetails?.service_images
-                      }
+                    <LazyImage
+                      src={`${
+                        import.meta.env.VITE_BASE_API
+                      }/images/productsPages/webHero.png`}
                       className="img-fluid"
                       alt=""
                     />
@@ -136,13 +136,6 @@ const WebDesignDev = () => {
                 speed={30}
                 pauseOnHover={false}
               >
-                {/* {[...webPortfolioUp].map((item) => (
-              <PortfolioMarquee
-                imgSrc={item.imgSrc}
-                href={item.href}
-                key={item.href}
-              />
-            ))} */}
                 {[...portfolios].map((item, index) => (
                   <PortfolioMarquee
                     imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
@@ -161,13 +154,6 @@ const WebDesignDev = () => {
                 speed={30}
                 pauseOnHover={false}
               >
-                {/* {[...webPortfolioBot].map((item) => (
-              <PortfolioMarquee
-                imgSrc={item.imgSrc}
-                href={item.href}
-                key={item.href}
-              />
-            ))} */}
                 {[...portfolios].map((item, index) => (
                   <PortfolioMarquee
                     imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
@@ -183,16 +169,16 @@ const WebDesignDev = () => {
             <LogoMarquee />
           </div>
 
-          <div className="strategyMarketing relative w-full h-full bg-primary text-white py-5 lg:py-10">
+          <div className="strategyMarketing relative w-full h-full bg-primary text-white py-8 lg:py-10">
             <div className="flexy max-w-full mx-auto px-5 lg:px-12">
               <div className="flex flex-wrap items-center w-full">
                 <div className="w-full lg:w-1/2">
-                  <div className="w-full space-y-2 sm:max-w-md lg:max-w-2xl md:space-y-5">
-                    <h3 className="text-2xl font-monaSemibold uppercase">
-                      BUILT FOR BRAND, PERFORMANCE & MARKETING TEAMS
+                  <div className="w-full sm:max-w-md lg:max-w-2xl space-y-5">
+                    <h3 className="text-xl font-monaSemibold uppercase">
+                      Built for Brand Performance, Sales, & Digital Products
                     </h3>
 
-                    <h1 className="text-5xl font-monaBold">
+                    <h1 className="text-5xl font-monaBold capitalize min-h-24 max-md:min-h-36">
                       <Typewriting
                         text="Get streamlined web design that converts"
                         speed={80}
@@ -216,7 +202,7 @@ const WebDesignDev = () => {
                   </div>
                 </div>
 
-                <div className="w-full lg:w-1/2 relative">
+                <div className="w-full lg:flex lg:items-end lg:justify-end lg:w-1/2 relative lg:p-10 max-lg:pt-6">
                   <Tilt
                     tiltMaxAngleX={12}
                     tiltMaxAngleY={12}
@@ -225,7 +211,7 @@ const WebDesignDev = () => {
                     scale={1.05}
                     lassName="w-full p-8 h-auto"
                   >
-                    <img
+                    <LazyImage
                       src={`${
                         import.meta.env.VITE_BASE_API
                       }/images/productsPages/websitemiddle.png`}

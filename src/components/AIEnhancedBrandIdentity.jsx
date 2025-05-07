@@ -16,8 +16,8 @@ const AIEnhancedBrandIdentity = () => {
               FUTURE-READY EFFICIENCY
             </h3>
 
-            <h1 className="text-5xl font-monaBold">
-              <Typewriting text="AI-Enhanced Branding Services" speed={100} />
+            <h1 className="text-5xl font-monaBold capitalize max-sm:min-h-36 min-h-24">
+              <Typewriting text="AI-Enhanced Branding Services" speed={60} />
             </h1>
 
             <p className="mx-auto text-base lg:text-lg sm:max-w-md md:max-w-3xl">
@@ -53,7 +53,9 @@ const AIEnhancedBrandIdentity = () => {
             lassName="w-full p-4 h-auto"
           >
             <img
-              src={`${import.meta.env.VITE_BASE_API}/images/productsPages/AIGlass.png`}
+              src={`${
+                import.meta.env.VITE_BASE_API
+              }/images/productsPages/AIGlass.png`}
               className="img-fluid"
               alt=""
             />

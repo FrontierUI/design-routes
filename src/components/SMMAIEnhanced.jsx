@@ -7,14 +7,14 @@ import Typewriting from '@/components/Typewriting';
 const SMMAIEnhanced = () => {
   return (
     <div className="flexy bg-primary max-w-full mx-auto px-5 lg:px-12">
-      <div className="flex flex-wrap items-center w-full py-5 lg:py-12">
+      <div className="flex flex-wrap items-center w-full py-8 lg:py-12">
         <div className="w-full lg:w-1/2 text-white">
-          <div className="w-full space-y-2 sm:max-w-md lg:max-w-2xl md:space-y-5">
+          <div className="w-full sm:max-w-md lg:max-w-2xl space-y-5">
             <h3 className="text-2xl font-monaSemibold uppercase">
               FUTURE-READY EFFICIENCY
             </h3>
 
-            <h1 className="text-5xl font-monaBold">
+            <h1 className="text-5xl font-monaBold capitalize max-sm:min-h-36 min-h-24">
               <Typewriting
                 text="AI-Enhanced Social Media Management"
                 speed={70}
@@ -54,7 +54,9 @@ const SMMAIEnhanced = () => {
             lassName="w-full p-4 h-auto"
           >
             <img
-              src={`${import.meta.env.VITE_BASE_API}/images/productsPages/AIGlass.png`}
+              src={`${
+                import.meta.env.VITE_BASE_API
+              }/images/productsPages/AIGlass.png`}
               className="img-fluid"
               alt=""
             />

@@ -4,7 +4,7 @@
 
 const SMPlatforms = () => {
   return (
-    <section className="">
+    <section className="max-md:px-5">
       <div className="my-scroll-container">
         <div className="sticky-child flexStart flex-col space-y-4 md:sticky md:top-32 gap-10">
           <div className="itemsStart flex-col space-y-4 md:w-11/12">
@@ -25,7 +25,7 @@ const SMPlatforms = () => {
           </div>
         </div>
 
-        <div className="sticky-child controls-panel">
+        <div className="sticky-child controls-panel max-md:pt-6">
           <div className="content-wrapper w-full md:static">
             <div className="flexStart flex-col space-y-6 md:space-y-12">
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
@@ -34,13 +34,13 @@ const SMPlatforms = () => {
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/LinkedInSMM.png`}
-                    className="img-fluid w-[9rem] h-[9rem] object-cover"
+                    className="img-fluid w-24 md:w-32 object-cover"
                     alt=""
                   />
                 </div>
                 <div className="flexStart flex-col space-y-1">
                   <h2 className="text-3xl font-monaBold">LinkedIn</h2>
-                  <p className="lg:w-10/12">
+                  <p className="w-10/12">
                     Position your brand as an industry leader with professional
                     and engaging content designed for LinkedIn’s
                     business-focused community.
@@ -54,13 +54,13 @@ const SMPlatforms = () => {
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/YTSMM.png`}
-                    className="img-fluid w-[9rem] h-[9rem] object-cover"
+                    className="img-fluid w-24 md:w-32 object-cover"
                     alt=""
                   />
                 </div>
                 <div className="flexStart flex-col space-y-1">
                   <h2 className="text-3xl font-monaBold">YouTube</h2>
-                  <p className="lg:w-10/12">
+                  <p className="w-10/12">
                     Optimize viewer interaction with tailored creatives designed
                     for YouTube's diverse audience and video-friendly platform
                     features.
@@ -74,13 +74,13 @@ const SMPlatforms = () => {
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/InstagramSMM.png`}
-                    className="img-fluid w-[6.5rem] h-[6.5rem] object-contain"
+                    className="img-fluid w-24 md:w-[6.5rem] object-contain"
                     alt=""
                   />
                 </div>
                 <div className="flexStart flex-col space-y-1">
                   <h2 className="text-3xl font-monaBold">Instagram</h2>
-                  <p className="lg:w-10/12">
+                  <p className="w-10/12">
                     Captivate Instagram’s visually-driven audience with stunning
                     graphics and innovative content formats.
                   </p>
@@ -93,13 +93,13 @@ const SMPlatforms = () => {
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/FacebookSMM.png`}
-                    className="img-fluid w-[7rem] h-[7rem] object-cover"
+                    className="img-fluid w-24 md:w-[7rem] object-cover"
                     alt=""
                   />
                 </div>
                 <div className="flexStart flex-col space-y-1">
                   <h2 className="text-3xl font-monaBold">Facebook</h2>
-                  <p className="lg:w-10/12">
+                  <p className="w-10/12">
                     Maximize engagement with custom creative tailored for
                     Facebook’s unique audience and platform Products.
                   </p>
@@ -112,13 +112,13 @@ const SMPlatforms = () => {
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/othPlat.png`}
-                    className="img-fluid w-[12rem] h-[12rem] object-contain"
+                    className="img-fluid w-24 md:w-[12rem] object-contain"
                     alt=""
                   />
                 </div>
                 <div className="flexStart flex-col space-y-1">
                   <h2 className="text-3xl font-monaBold">Other platforms</h2>
-                  <p className="lg:w-10/12">
+                  <p className="w-10/12">
                     Have another platform in mind? We’re here for it. With a
                     global team of presentation designers to tap into, we have
                     skills across the board and can cater to any preference.

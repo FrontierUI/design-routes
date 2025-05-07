@@ -17,6 +17,7 @@ import ProvenExpertise from '@/components/ProvenExpertise';
 import CreativeCampaignPackage from '@/components/CreativeCampaignPackage';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
 import CCAccordion from '@/components/CCAccordion';
+import LazyImage from '@/components/LazyImage';
 
 const CreativeCampaigns = () => {
   const [productDetails, setProductDetails] = useState({});
@@ -82,11 +83,11 @@ const CreativeCampaigns = () => {
             <div className="w-full max-w-full items-center mx-auto px-5 lg:px-12">
               <div className="w-full flex flex-wrap items-center max-md:pt-24">
                 <div className="w-full lg:w-1/2 lg:px-3">
-                  <div className="w-full flex-col sm:max-w-md lg:max-w-xl macbook:max-w-2xl space-y-3 md:space-y-5 text-white">
-                    <h1 className="font-monaBold text-5xl">
+                  <div className="w-full flex-col sm:max-w-md lg:max-w-xl macbook:max-w-2xl space-y-5 text-white">
+                    <h1 className="font-monaBold text-5xl max-sm:min-h-[200px] sm:min-h-24">
                       <Typewriting
                         text={productDetails?.service_sub_title}
-                        speed={150}
+                        speed={80}
                       />
                     </h1>
 
@@ -100,7 +101,7 @@ const CreativeCampaigns = () => {
                   </div>
                 </div>
 
-                <div className="w-full lg:w-1/2 relative lg:top-6">
+                <div className="w-full lg:w-1/2 relative lg:top-8 lg:p-5">
                   <Tilt
                     tiltMaxAngleX={12}
                     tiltMaxAngleY={12}
@@ -109,11 +110,10 @@ const CreativeCampaigns = () => {
                     scale={1.04}
                     lassName="w-full p-12 h-auto"
                   >
-                    <img
-                      src={
-                        import.meta.env.VITE_BASE_API +
-                        productDetails?.service_images
-                      }
+                    <LazyImage
+                      src={`${
+                        import.meta.env.VITE_BASE_API
+                      }/images/productsPages/Campaign.png`}
                       className="img-fluid"
                       alt=""
                     />
@@ -123,7 +123,7 @@ const CreativeCampaigns = () => {
             </div>
           </div>
 
-          <div className="relative w-full h-full max-lg:mt-9 imac:mt-10 py-5 px-5 flexy flex-col space-y-5">
+          <div className="relative w-full h-full imac:mt-24 max-sm:mt-5 py-5 px-5 flexy flex-col space-y-5">
             <div className="relative flexy w-full h-full">
               <Marquee
                 direction="right"
@@ -133,13 +133,6 @@ const CreativeCampaigns = () => {
                 speed={30}
                 pauseOnHover={false}
               >
-                {/* {[...homePortFolioUp].map((item) => (
-                <PortfolioMarquee
-                  imgSrc={item.imgSrc}
-                  href={item.href}
-                  key={item.href}
-                />
-              ))} */}
                 {[...portfolios].map((item, index) => (
                   <PortfolioMarquee
                     imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
@@ -158,13 +151,6 @@ const CreativeCampaigns = () => {
                 speed={30}
                 pauseOnHover={false}
               >
-                {/* {[...homePortFolioBot].map((item) => (
-                <PortfolioMarquee
-                  imgSrc={item.imgSrc}
-                  href={item.href}
-                  key={item.href}
-                />
-              ))} */}
                 {[...portfolios].map((item, index) => (
                   <PortfolioMarquee
                     imgSrc={import.meta.env.VITE_BASE_API + item.header_image}
@@ -180,16 +166,16 @@ const CreativeCampaigns = () => {
             <LogoMarquee />
           </div>
 
-          <div className="strategyMarketing relative w-full h-full bg-primary text-white py-5 lg:py-10">
+          <div className="strategyMarketing relative w-full h-full bg-primary text-white py-8 lg:py-10">
             <div className="flexy max-w-full mx-auto px-5 lg:px-12">
               <div className="flex flex-wrap items-center w-full">
                 <div className="w-full lg:w-1/2">
-                  <div className="w-full space-y-2 sm:max-w-md lg:max-w-2xl md:space-y-5">
+                  <div className="w-full space-y-5 sm:max-w-md lg:max-w-2xl">
                     <h3 className="text-2xl font-monaSemibold uppercase">
                       built for comms, strategy & marketing teams
                     </h3>
 
-                    <h1 className="text-5xl font-monaBold">
+                    <h1 className="text-5xl font-monaBold max-sm:min-h-36 min-h-24 capitalize">
                       <Typewriting
                         text="Ad creative for campaigns that perform"
                         speed={80}
@@ -221,7 +207,7 @@ const CreativeCampaigns = () => {
                     scale={1.08}
                     lassName="w-full p-8 h-auto"
                   >
-                    <img
+                    <LazyImage
                       src={`${
                         import.meta.env.VITE_BASE_API
                       }/images/productsPages/Ads2.png`}
@@ -317,8 +303,8 @@ const CreativeCampaigns = () => {
         <div className="loading flex items-center justify-center min-h-screen bg-gray-100">
           <div className="relative">
             <div className="w-32 h-32 animate-bounce">
-              <img
-                src="/images/routeslogo.svg"
+              <LazyImage
+                src={`/images/routeslogo.svg`}
                 alt="Loading"
                 className="w-32 h-32 animate-pulse"
               />

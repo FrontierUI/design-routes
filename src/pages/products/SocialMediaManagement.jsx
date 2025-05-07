@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
 import Tilt from 'react-parallax-tilt';
+import { Helmet } from 'react-helmet-async';
 
 import { Check } from 'lucide-react';
 
@@ -20,8 +21,7 @@ import Professionalism from '@/components/Professionalism';
 import SMMPackage from '@/components/SMMPackage';
 import SMMAccordion from '@/components/SMMAccordion';
 import Testimonials from '@/components/Testimonials';
-
-import { Helmet } from 'react-helmet-async';
+import LazyImage from '@/components/LazyImage';
 
 const SocialMediaManagement = () => {
   const [productDetails, setProductDetails] = useState({});
@@ -56,11 +56,7 @@ const SocialMediaManagement = () => {
       .post(
         `${import.meta.env.VITE_BASE_API}/api.php?action=get_service_details`,
         JSON.stringify({ params: json }),
-        {
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
-        }
+        { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
       )
       .then((response) => {
         if (response.data.success === 'true') {
@@ -101,11 +97,11 @@ const SocialMediaManagement = () => {
             <div className="w-full max-w-full items-center mx-auto px-5 lg:px-12">
               <div className="w-full flex flex-wrap items-center max-md:pt-24">
                 <div className="w-full lg:w-1/2 lg:px-3">
-                  <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-3 md:space-y-5 text-slate-100">
-                    <h1 className="font-monaBold text-5xl">
+                  <div className="w-full flex-col sm:max-w-md lg:max-w-xl space-y-5 max-md:mt-12 text-slate-100">
+                    <h1 className="font-monaBold text-5xl max-sm:min-h-[146px] min-h-[100px]">
                       <Typewriting
                         text={productDetails?.service_sub_title}
-                        speed={150}
+                        speed={80}
                       />
                     </h1>
 
@@ -128,11 +124,10 @@ const SocialMediaManagement = () => {
                     scale={1.04}
                     lassName="w-full p-5 h-auto"
                   >
-                    <img
-                      src={
-                        import.meta.env.VITE_BASE_API +
-                        productDetails?.service_images
-                      }
+                    <LazyImage
+                      src={`${
+                        import.meta.env.VITE_BASE_API
+                      }/images/productsPages/smmHero.png`}
                       className="img-fluid"
                       alt=""
                     />
@@ -142,7 +137,7 @@ const SocialMediaManagement = () => {
             </div>
           </div>
 
-          <div className="relative w-full h-full max-lg:mt-9 imac:mt-10 py-5 px-5 flexy flex-col space-y-5">
+          <div className="relative w-full h-full max-lg:mt-20 imac:mt-10 py-5 px-5 flexy flex-col space-y-5">
             <div className="relative flexy w-full h-full">
               <Marquee
                 direction="right"
@@ -185,19 +180,19 @@ const SocialMediaManagement = () => {
             <LogoMarquee />
           </div>
 
-          <div className="strategyMarketing relative w-full h-full bg-primary text-white py-5 lg:py-10">
+          <div className="strategyMarketing relative w-full h-full bg-primary text-white py-8 lg:py-10">
             <div className="flexy max-w-full mx-auto px-5 lg:px-12">
               <div className="flex flex-wrap items-center w-full">
                 <div className="w-full lg:w-1/2">
-                  <div className="w-full space-y-2 sm:max-w-md lg:max-w-2xl md:space-y-5">
+                  <div className="w-full sm:max-w-md lg:max-w-2xl space-y-5">
                     <h3 className="text-2xl font-monaSemibold uppercase">
-                      BUILT FOR COMMS, STRATEGY & MARKETING TEAMS
+                      Built for Digital Teams
                     </h3>
 
-                    <h1 className="text-5xl font-monaBold">
+                    <h1 className="text-5xl font-monaBold min-h-24">
                       <Typewriting
                         text="Strategic social media creative"
-                        speed={100}
+                        speed={80}
                       />
                     </h1>
 
@@ -232,16 +227,16 @@ const SocialMediaManagement = () => {
                   </div>
                 </div>
 
-                <div className="w-full lg:w-1/2 relative">
+                <div className="w-full lg:w-1/2 relative max-lg:top-5 max-lg:py-6 lg:p-5">
                   <Tilt
                     tiltMaxAngleX={12}
                     tiltMaxAngleY={12}
                     transitionSpeed={800}
                     gyroscope={true}
                     scale={1.05}
-                    lassName="w-full p-8 h-auto"
+                    lassName="w-full lg:p-8 h-auto"
                   >
-                    <img
+                    <LazyImage
                       src={`${
                         import.meta.env.VITE_BASE_API
                       }/images/productsPages/socialmedia.png`}

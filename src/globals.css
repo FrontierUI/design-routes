@@ -177,10 +177,9 @@
   }
 
   .transBorderBtn {
-    @apply bg-transparent border-[2.5px] border-white gap-x-2 flexy py-4 px-8 rounded-full text-xl  text-white transitAll scal110 font-monaSemibold !important;
+    @apply bg-transparent border-[2.5px] border-white gap-x-2 flexy py-4 px-5 lg:px-8 rounded-full text-xl  text-white transitAll scal110 font-monaSemibold !important;
   }
-
-  .transBtnHoverFill {
+  tpLGBtn .transBtnHoverFill {
     @apply bg-transparent border-[2.5px] border-white gap-x-2 flexy py-4 px-8 rounded-full text-xl  text-white transitAll scal120 font-monaSemibold hover:bg-white hover:text-primary !important;
   }
 
@@ -498,7 +497,8 @@
 @media screen and (min-width: 768px) {
   .my-scroll-container {
     display: flex;
-    justify-content: space-around;
+    width: 100%;
+    justify-content: space-between;
     align-items: flex-start;
     height: max-content;
   }
