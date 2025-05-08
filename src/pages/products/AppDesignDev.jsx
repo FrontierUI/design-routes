@@ -205,7 +205,7 @@ const AppDesignDev = () => {
                     <LazyImage
                       src={`${
                         import.meta.env.VITE_BASE_API
-                      }/images/productsPages/appmiddle.png`}
+                      }/images/productsPages/appmiddle.webp`}
                       className="img-fluid"
                       alt=""
                     />
