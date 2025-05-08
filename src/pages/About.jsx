@@ -9,6 +9,7 @@ import Services from '@/components/Services';
 import Strategies from '@/components/Strategies';
 import CounterNumbers from '@/components/CounterNumbers';
 import ChooseUs from '@/components/ChooseUs';
+import LazyImage from '@/components/LazyImage';
 
 const About = () => {
   return (
@@ -89,11 +90,10 @@ const About = () => {
                 </h1>
               </div>
             </div>
-            {/** just to redeploy */}
 
             <div className="relative w-full h-full flex items-center justify-center lg:items-end lg:justify-end">
               <div className="flexy w-full lg:w-[950px] max-lg:w-[1050px] lapy:w-[1100px] h-full max-h-full max-lapy:max-w-[1150px] md:min-h-[30rem] transitAll scal102">
-                <img
+                <LazyImage
                   src="/images/RoutesEIcons.png"
                   className="img-fluid min-h-96 lg:min-h-full w-full h-full object-cover"
                   alt=""

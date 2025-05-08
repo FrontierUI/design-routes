@@ -17,7 +17,6 @@ const LogoMarquee = () => {
       >
         {clientsLogo.map((cnLog) => (
           <div className="mx-4 flexy" key={cnLog.cLogoId}>
-            {/* <img src={cnLog.src} className="img-fluid" alt="" /> */}
             <LazyImage src={cnLog.src} className="img-fluid" alt="" />
           </div>
         ))}

@@ -1,6 +1,6 @@
-// import React from 'react';
-
 import Tilt from 'react-parallax-tilt';
+
+import LazyImage from './LazyImage';
 
 const PDPitchDecks = () => {
   return (
@@ -15,7 +15,7 @@ const PDPitchDecks = () => {
           className="col-span-12 lg:col-span-6 parallax-effect rounded-lg shadow-drop-5 w-full h-full overflow-hidden"
         >
           <div className="flexStart w-full rounded-lg relative innerEffect">
-            <img
+            <LazyImage
               src={`${
                 import.meta.env.VITE_BASE_API
               }/images/productsPages/BusinessPresentations.png`}
@@ -42,7 +42,7 @@ const PDPitchDecks = () => {
           className="col-span-12 lg:col-span-6 parallax-effect rounded-lg shadow-drop-5 w-full h-full overflow-hidden"
         >
           <div className="flexStart w-full rounded-lg relative innerEffect">
-            <img
+            <LazyImage
               src={`${
                 import.meta.env.VITE_BASE_API
               }/images/productsPages/pitchdecks.png`}
@@ -69,7 +69,7 @@ const PDPitchDecks = () => {
           className="col-span-12 xl:col-span-4 parallax-effect rounded-lg shadow-drop-5 w-full h-full overflow-hidden"
         >
           <div className="flexStart w-full rounded-lg relative innerEffect">
-            <img
+            <LazyImage
               src={`${
                 import.meta.env.VITE_BASE_API
               }/images/productsPages/salesreport.png`}
@@ -96,7 +96,7 @@ const PDPitchDecks = () => {
           className="col-span-12 xl:col-span-4 parallax-effect rounded-lg shadow-drop-5 w-full h-full overflow-hidden"
         >
           <div className="flexStart w-full rounded-lg relative innerEffect">
-            <img
+            <LazyImage
               src={`${
                 import.meta.env.VITE_BASE_API
               }/images/productsPages/investorDecks.png`}
@@ -125,7 +125,7 @@ const PDPitchDecks = () => {
           className="col-span-12 xl:col-span-4 parallax-effect rounded-lg shadow-drop-5 w-full h-full overflow-hidden"
         >
           <div className="flexStart w-full rounded-lg relative innerEffect">
-            <img
+            <LazyImage
               src={`${
                 import.meta.env.VITE_BASE_API
               }/images/productsPages/slideDecks.png`}

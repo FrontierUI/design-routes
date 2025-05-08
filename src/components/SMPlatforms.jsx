@@ -1,8 +1,4 @@
-// import React from 'react';
-
-import LazyImage from "./LazyImage";
-
-// import { motion } from 'framer-motion';
+import LazyImage from './LazyImage';
 
 const SMPlatforms = () => {
   return (
@@ -32,14 +28,13 @@ const SMPlatforms = () => {
             <div className="flexStart flex-col space-y-6 md:space-y-12">
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
-                  {/* <img
+                  <LazyImage
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/LinkedInSMM.png`}
-                    className="img-fluid w-24 md:w-32 object-cover"
                     alt=""
-                  /> */}
-                  <LazyImage src={`${ import.meta.env.VITE_BASE_API }/images/icons/LinkedInSMM.png`} alt="" className="img-fluid w-24 md:w-32 object-cover" />
+                    className="img-fluid w-24 md:w-32 object-cover"
+                  />
                 </div>
                 <div className="flexStart flex-col space-y-1">
                   <h2 className="text-3xl font-monaBold">LinkedIn</h2>
@@ -53,14 +48,13 @@ const SMPlatforms = () => {
 
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
-                  {/* <img
+                  <LazyImage
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/YTSMM.png`}
-                    className="img-fluid w-24 md:w-32 object-cover"
                     alt=""
-                  /> */}
-                  <LazyImage src={`${ import.meta.env.VITE_BASE_API }/images/icons/YTSMM.png`} alt="" className="img-fluid w-24 md:w-32 object-cover" />
+                    className="img-fluid w-24 md:w-32 object-cover"
+                  />
                 </div>
                 <div className="flexStart flex-col space-y-1">
                   <h2 className="text-3xl font-monaBold">YouTube</h2>
@@ -74,14 +68,13 @@ const SMPlatforms = () => {
 
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart lg:pl-2">
-                  {/* <img
+                  <LazyImage
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/InstagramSMM.png`}
-                    className="img-fluid w-24 md:w-[6.5rem] object-contain"
                     alt=""
-                  /> */}
-                  <LazyImage src={`${ import.meta.env.VITE_BASE_API }/images/icons/InstagramSMM.png`} alt="" className="img-fluid w-24 md:w-[6.5rem] object-contain" />
+                    className="img-fluid w-24 md:w-[6.5rem] object-contain"
+                  />
                 </div>
                 <div className="flexStart flex-col space-y-1">
                   <h2 className="text-3xl font-monaBold">Instagram</h2>
@@ -94,14 +87,13 @@ const SMPlatforms = () => {
 
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart lg:pl-2">
-                  {/* <img
+                  <LazyImage
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/FacebookSMM.png`}
-                    className="img-fluid w-24 md:w-[7rem] object-cover"
                     alt=""
-                  /> */}
-                  <LazyImage src={`${ import.meta.env.VITE_BASE_API }/images/icons/FacebookSMM.png`} alt="" className="img-fluid w-24 md:w-[7rem] object-cover" />
+                    className="img-fluid w-24 md:w-[7rem] object-cover"
+                  />
                 </div>
                 <div className="flexStart flex-col space-y-1">
                   <h2 className="text-3xl font-monaBold">Facebook</h2>
@@ -114,14 +106,13 @@ const SMPlatforms = () => {
 
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart lg:pl-2">
-                  {/* <img
+                  <LazyImage
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/othPlat.png`}
-                    className="img-fluid w-24 md:w-[12rem] object-contain"
                     alt=""
-                  /> */}
-                  <LazyImage src={`${ import.meta.env.VITE_BASE_API }/images/icons/othPlat.png`} alt="" className="img-fluid w-24 md:w-[12rem] object-contain" />
+                    className="img-fluid w-24 md:w-[12rem] object-contain"
+                  />
                 </div>
                 <div className="flexStart flex-col space-y-1">
                   <h2 className="text-3xl font-monaBold">Other platforms</h2>

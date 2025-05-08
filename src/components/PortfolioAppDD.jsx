@@ -1,7 +1,7 @@
-// import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Tilt from 'react-parallax-tilt';
+import LazyImage from './LazyImage';
 
 const PortfolioAppDD = () => {
   return (
@@ -19,7 +19,7 @@ const PortfolioAppDD = () => {
             to={'/'}
             className="relative flexStart w-full innerEffect rounded-lg"
           >
-            <img
+            <LazyImage
               src="/images/workPort/adduiux-ubl.png"
               className="img-fluid"
               alt=""
@@ -44,7 +44,7 @@ const PortfolioAppDD = () => {
             to={'/'}
             className="relative flexStart w-full innerEffect rounded-lg"
           >
-            <img
+            <LazyImage
               src="/images/workPort/adduiux-dmart.png"
               className="img-fluid"
               alt=""
@@ -69,7 +69,7 @@ const PortfolioAppDD = () => {
             to={'/'}
             className="relative flexStart w-full innerEffect rounded-lg"
           >
-            <img
+            <LazyImage
               src="/images/workPort/adduiux-3legant.png"
               className="img-fluid"
               alt=""
@@ -94,7 +94,7 @@ const PortfolioAppDD = () => {
             to={'/'}
             className="relative flexStart w-full innerEffect rounded-lg"
           >
-            <img
+            <LazyImage
               src="/images/workPort/adduiux-mazito.png"
               className="img-fluid"
               alt=""
@@ -119,7 +119,7 @@ const PortfolioAppDD = () => {
             to={'/'}
             className="relative flexStart w-full innerEffect rounded-lg"
           >
-            <img
+            <LazyImage
               src="/images/workPort/adduiux-wesave.png"
               className="img-fluid"
               alt=""
@@ -142,7 +142,7 @@ const PortfolioAppDD = () => {
             to={'/'}
             className="relative flexStart w-full innerEffect rounded-lg"
           >
-            <img
+            <LazyImage
               src="/images/workPort/adduiux-fashion.png"
               className="img-fluid"
               alt=""

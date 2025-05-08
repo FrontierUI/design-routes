@@ -20,8 +20,8 @@ const ServicesForm = () => {
               <h3 className="font-monaSemibold text-2xl">Connect with Us</h3>
               <div className="flexStart flex-col space-y-2">
                 <h2 className="font-monaLight text-5xl">We're Ready to</h2>
-                <h2 className="font-monaLight text-5xl">
-                  <Typewriting text="Explore Opportunities" speed={70} />
+                <h2 className="font-monaLight text-5xl min-h-12 max-sm:min-h-24">
+                  <Typewriting text="Explore Opportunities" speed={40} />
                 </h2>
               </div>
             </div>

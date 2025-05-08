@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Tilt from 'react-parallax-tilt';
 
 import Typewriting from '@/components/Typewriting';
+import LazyImage from './LazyImage';
 
 const AIEnhancedBrandIdentity = () => {
   return (
@@ -52,7 +53,7 @@ const AIEnhancedBrandIdentity = () => {
             scale={1.05}
             lassName="w-full p-4 h-auto"
           >
-            <img
+            <LazyImage
               src={`${
                 import.meta.env.VITE_BASE_API
               }/images/productsPages/AIGlass.png`}

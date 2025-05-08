@@ -140,11 +140,6 @@ const PortfolioPage = () => {
                     className="md:col-span-6 col-span-12 flexy rounded-lg overflow-hidden relative w-full h-full shadow-drop-5"
                   >
                     <div className="relative flexy scal102 transitAll parallax-effect w-full h-full rounded-lg">
-                      {/* <img
-                      src="/images/casestudyPort/SMM/Mazito/Horizontal1-min.png"
-                      className="w-full h-full object-contain rounded-lg"
-                      alt=""
-                    /> */}
                       <img
                         src={image.url}
                         className="w-full h-full object-contain rounded-lg"

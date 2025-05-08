@@ -41,7 +41,6 @@ const PortfolioMarquee = ({ imgSrc, href }) => {
         )}
       </AnimatePresence>
 
-      {/* <img src={imgSrc} alt="image" className="img-fluid" /> */}
       <LazyImage src={imgSrc} alt="image" className="img-fluid" />
     </motion.div>
   );

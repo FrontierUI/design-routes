@@ -1,6 +1,4 @@
-// import React from 'react';
-
-// import { motion } from 'framer-motion';
+import LazyImage from './LazyImage';
 
 const PDPlatforms = () => {
   return (
@@ -30,7 +28,7 @@ const PDPlatforms = () => {
             <div className="flexStart flex-col space-y-8 md:space-y-12">
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
-                  <img
+                  <LazyImage
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/powerPoint.png`}
@@ -57,7 +55,7 @@ const PDPlatforms = () => {
 
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
-                  <img
+                  <LazyImage
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/googleSlides.png`}
@@ -80,7 +78,7 @@ const PDPlatforms = () => {
 
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
-                  <img
+                  <LazyImage
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/keynote.png`}
@@ -106,7 +104,7 @@ const PDPlatforms = () => {
 
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
-                  <img
+                  <LazyImage
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/figma-1.png`}
@@ -132,7 +130,7 @@ const PDPlatforms = () => {
 
               <div className="flexStart md:justify-between w-full flex-col md:flex-row gap-4">
                 <div className="flexStart">
-                  <img
+                  <LazyImage
                     src={`${
                       import.meta.env.VITE_BASE_API
                     }/images/icons/othPlat.png`}

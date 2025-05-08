@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Marquee from 'react-fast-marquee';
 
-// import { homePortFolioUp, homePortFolioBot } from '@/contentData/utils';
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Typewriting from '@/components/Typewriting';

@@ -1,35 +1,34 @@
-// import React from 'react';
-import { Link } from "react-router-dom";
-import { currencyformator, getCookie } from "../func";
-import CheckoutModalWrapper from "./CheckoutModalWrapper";
-import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
+import { currencyformator, getCookie } from '@/func';
+import CheckoutModalWrapper from './CheckoutModalWrapper';
+import { useEffect, useState } from 'react';
 
 const PresentationPackage = ({ Packages }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userDetails, setUserDetails] = useState({});
 
   useEffect(() => {
-    if (getCookie("token") !== undefined && getCookie("token") !== null) {
+    if (getCookie('token') !== undefined && getCookie('token') !== null) {
       setIsLoggedIn(true);
       var userDetails = JSON.parse(
-        atob(atob(window.localStorage.getItem("loginSecret")))
+        atob(atob(window.localStorage.getItem('loginSecret')))
       );
       setUserDetails(userDetails);
     }
 
     // Respond to the `storage` event
     function storageEventHandler(event) {
-      if (localStorage.getItem("isLoggedIn") !== null) {
+      if (localStorage.getItem('isLoggedIn') !== null) {
         setIsLoggedIn(true);
       } else {
         setIsLoggedIn(false);
       }
     }
     // Hook up the event handler
-    window.addEventListener("storage", storageEventHandler);
+    window.addEventListener('storage', storageEventHandler);
     return () => {
       // Remove the handler when the component unmounts
-      window.removeEventListener("storage", storageEventHandler);
+      window.removeEventListener('storage', storageEventHandler);
     };
   }, []);
 
@@ -39,7 +38,7 @@ const PresentationPackage = ({ Packages }) => {
         <div
           className="absolute w-full h-full rounded-lg -z-[1] bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url(/images/productsPages/lightBGE2.png)",
+            backgroundImage: 'url(/images/productsPages/lightBGE2.png)',
           }}
         />
 
@@ -70,8 +69,8 @@ const PresentationPackage = ({ Packages }) => {
                       <img
                         src={
                           included
-                            ? "/images/icons/roundCheckGray.svg"
-                            : "/images/icons/doublecheckgrey.svg"
+                            ? '/images/icons/roundCheckGray.svg'
+                            : '/images/icons/doublecheckgrey.svg'
                         }
                         className="img-fluid"
                         width={28}
@@ -198,17 +197,21 @@ const PresentationPackage = ({ Packages }) => {
             {isLoggedIn ? (
               <CheckoutModalWrapper
                 orderData={{
-                  service: "Presentation Design",
+                  service: 'Presentation Design',
                   package_id: Packages[0]?.package_id,
                   package_name: Packages[0]?.package_name,
                   order_amount: Packages[0]?.package_price,
                   user_id: userDetails?.id,
                   order_details: Packages[0]?.package_details,
                 }}
-                type={"white"}
+                type={'white'}
               />
             ) : (
-              <Link to="/auth/sign-in" state={{ from: '/products/presentation-designs' }} className="flexy w-full lg:w-72">
+              <Link
+                to="/auth/sign-in"
+                state={{ from: '/products/presentation-designs' }}
+                className="flexy w-full lg:w-72"
+              >
                 <button className="whiteLGButton w-full">Get Started</button>
               </Link>
             )}
@@ -220,7 +223,7 @@ const PresentationPackage = ({ Packages }) => {
         <div
           className="absolute hidden top-8 lg:block w-full h-full max-w-[50rem] bg-contain bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url(/images/productsPages/pricePackBG.svg)",
+            backgroundImage: 'url(/images/productsPages/pricePackBG.svg)',
           }}
         />
 
@@ -235,7 +238,10 @@ const PresentationPackage = ({ Packages }) => {
             {Packages.filter(
               (p) => p.package_name !== Packages[0].package_name
             ).map((pkg, index) => (
-              <div className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg" key={index}>
+              <div
+                className="col-span-12 lg:col-span-4 relative w-full bg-white p-3.5 shadow-drop-5 rounded-lg"
+                key={index}
+              >
                 <hr className="w-full absolute top-[8.5rem] left-0 h-[1.5px] bg-gray-400" />
                 <hr className="w-full absolute top-[20.75rem] left-0 h-[1.5px] bg-gray-400" />
 
@@ -254,9 +260,9 @@ const PresentationPackage = ({ Packages }) => {
                       <span className="text-xl">project</span>
                     </h1>
                     <span className="text-md font-monaMedium">
-                      {index === 0 && "Fine Choice"}
-                      {index === 1 && "Best Choice"}
-                      {index === 2 && "Recommended Choice"}
+                      {index === 0 && 'Fine Choice'}
+                      {index === 1 && 'Best Choice'}
+                      {index === 2 && 'Recommended Choice'}
                     </span>
                     <div className="flexy">
                       {/* <Link to={"/"} className="primaryLink">
@@ -265,17 +271,21 @@ const PresentationPackage = ({ Packages }) => {
                       {isLoggedIn ? (
                         <CheckoutModalWrapper
                           orderData={{
-                            service: "Presentation Design",
+                            service: 'Presentation Design',
                             package_id: pkg?.package_id,
                             package_name: pkg?.package_name,
                             order_amount: pkg?.package_price,
                             user_id: userDetails?.id,
                             order_details: pkg?.package_details,
                           }}
-                          type={"blue"}
+                          type={'blue'}
                         />
                       ) : (
-                        <Link to="/auth/sign-in" state={{ from: '/products/presentation-designs' }} className="primaryLink">
+                        <Link
+                          to="/auth/sign-in"
+                          state={{ from: '/products/presentation-designs' }}
+                          className="primaryLink"
+                        >
                           Get Started
                         </Link>
                       )}
@@ -292,8 +302,8 @@ const PresentationPackage = ({ Packages }) => {
                             <img
                               src={
                                 included
-                                  ? "/images/icons/doublecheckPrim.svg"
-                                  : "/images/icons/doublecheckgrey.svg"
+                                  ? '/images/icons/doublecheckPrim.svg'
+                                  : '/images/icons/doublecheckgrey.svg'
                               }
                               className="img-fluid w-5"
                               alt=""
