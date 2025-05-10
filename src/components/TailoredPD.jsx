@@ -18,12 +18,13 @@ const TailoredPD = () => {
           className="col-span-12 xl:col-span-4 parallax-effect rounded-lg shadow-drop-5 w-full h-full overflow-hidden"
         >
           <div className="flexStart w-full rounded-lg relative innerEffect">
-            {/* <img
-              src="/images/productsPages/customPowerPoint.png"
-              className="img-fluid w-full h-full object-cover"
+            <LazyImage
+              src={`${
+                import.meta.env.VITE_BASE_API
+              }/images/icons/productsPages/customPowerPoint.png`}
               alt=""
-            /> */}
-            <LazyImage src={`${ import.meta.env.VITE_BASE_API }/images/icons/productsPages/customPowerPoint.png`} alt="" className="img-fluid w-full h-full object-cover" />
+              className="img-fluid w-full h-full object-cover"
+            />
             <div className="absolute text-white p-6 flex flex-col space-y-2 lg:space-y-4">
               <h2 className="text-2xl font-monaBold">
                 Custom PowerPoint Design
@@ -46,12 +47,13 @@ const TailoredPD = () => {
           className="col-span-12 xl:col-span-4 parallax-effect rounded-lg shadow-drop-5 w-full h-full overflow-hidden"
         >
           <div className="flexStart w-full rounded-lg relative innerEffect">
-            {/* <img
-              src="/images/productsPages/presentTemplate.png"
-              className="img-fluid w-full h-full object-cover"
+            <LazyImage
+              src={`${
+                import.meta.env.VITE_BASE_API
+              }/images/icons/productsPages/presentTemplate.png`}
               alt=""
-            /> */}
-            <LazyImage src={`${ import.meta.env.VITE_BASE_API }/images/icons/productsPages/presentTemplate.png`} alt="" className="img-fluid w-full h-full object-cover" />
+              className="img-fluid w-full h-full object-cover"
+            />
             <div className="absolute text-slate-600 p-6 flex flex-col space-y-2 lg:space-y-4">
               <h2 className="text-2xl font-monaBold">Presentation Templates</h2>
               <p>
@@ -72,12 +74,13 @@ const TailoredPD = () => {
           className="col-span-12 xl:col-span-4 parallax-effect rounded-lg shadow-drop-5 w-full h-full overflow-hidden"
         >
           <div className="flexStart w-full rounded-lg relative innerEffect">
-            {/* <img
-              src="/images/productsPages/customMotionGraphics.png"
-              className="img-fluid w-full h-full object-cover"
+            <LazyImage
+              src={`${
+                import.meta.env.VITE_BASE_API
+              }/images/icons/productsPages/customMotionGraphics.png`}
               alt=""
-            /> */}
-            <LazyImage src={`${ import.meta.env.VITE_BASE_API }/images/icons/productsPages/customMotionGraphics.png`} alt="" className="img-fluid w-full h-full object-cover" />
+              className="img-fluid w-full h-full object-cover"
+            />
             <div className="absolute text-white p-6 flex flex-col space-y-2 lg:space-y-4">
               <h2 className="text-2xl font-monaBold">
                 Custom & Motion Graphics
@@ -100,12 +103,13 @@ const TailoredPD = () => {
           className="col-span-12 lg:col-span-6 parallax-effect rounded-lg shadow-drop-5 w-full h-full overflow-hidden"
         >
           <div className="flexStart w-full rounded-lg relative innerEffect">
-            {/* <img
-              src="/images/productsPages/dataVisualization.png"
-              className="img-fluid w-full h-full object-cover"
+            <LazyImage
+              src={`${
+                import.meta.env.VITE_BASE_API
+              }/images/icons/productsPages/dataVisualization.png`}
               alt=""
-            /> */}
-            <LazyImage src={`${ import.meta.env.VITE_BASE_API }/images/icons/productsPages/dataVisualization.png`} alt="" className="img-fluid w-full h-full object-cover" />
+              className="img-fluid w-full h-full object-cover"
+            />
             <div className="absolute text-slate-600 p-6 flex flex-col space-y-2 lg:space-y-4 lg:w-10/12">
               <h2 className="text-2xl font-monaBold">Data Visualization</h2>
               <p>
@@ -126,12 +130,13 @@ const TailoredPD = () => {
           className="col-span-12 lg:col-span-6 parallax-effect rounded-lg shadow-drop-5 w-full h-full overflow-hidden"
         >
           <div className="flexStart w-full rounded-lg relative innerEffect">
-            {/* <img
-              src="/images/productsPages/infographics.png"
-              className="img-fluid w-full h-full object-cover"
+            <LazyImage
+              src={`${
+                import.meta.env.VITE_BASE_API
+              }/images/icons/productsPages/infographics.png`}
               alt=""
-            /> */}
-            <LazyImage src={`${ import.meta.env.VITE_BASE_API }/images/icons/productsPages/infographics.png`} alt="" className="img-fluid w-full h-full object-cover" />
+              className="img-fluid w-full h-full object-cover"
+            />
             <div className="absolute text-white p-6 flex flex-col space-y-2 lg:space-y-4 lg:w-10/12">
               <h2 className="text-2xl font-monaBold">Infographics</h2>
               <p>
