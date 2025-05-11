@@ -79,7 +79,7 @@ const AdminDashboard = (props) => {
       <AdminSidebar open={open} onClose={() => setOpen(false)} />
 
       <div className="w-full h-full bg-lightPrimary">
-        <main className="mx-[12px] h-full flex-none transition-all md:pr-2 xl:ml-[280px]">
+        <main className="mx-[12px] h-full flex-none transition-all md:pr-2 xl:ml-[290px] lapy:ml-[300px]">
           <div className="relative h-full w-full">
             <DashboardNavbar
               onOpenSidenav={() => setOpen(true)}

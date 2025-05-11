@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import DashboardBanner from '@/components/DashboardBanner';
-import { ListFilter } from 'lucide-react';
+import { Ban, CircleCheckBig, ListFilter } from 'lucide-react';
 
 const UserList = () => {
   return (
@@ -33,7 +33,10 @@ const UserList = () => {
             <table className="min-w-full">
               <thead className="bg-white whitespace-nowrap w-full">
                 <tr>
-                  <th className="rounded-l-lg p-4 text-left text-md font-monaMedium">
+                  <th className="rounded-l-lg p-4 lg:pl-8 text-left">
+                    <input type="checkbox" className="tableChecked" />
+                  </th>
+                  <th className="p-4 text-left text-md font-monaMedium">
                     User ID
                   </th>
                   <th className="p-4 lg:pl-7 text-left text-md font-monaMedium">
@@ -52,8 +55,11 @@ const UserList = () => {
               </thead>
 
               <tbody className="w-full whitespace-nowrap">
-                <tr className="w-full text-sm">
-                  <td className="rounded-l-lg p-4 text-left">122994</td>
+                <tr className="text-sm w-full transitAll hover:bg-teal-100">
+                  <td className="rounded-l-lg p-4 lg:pl-8 text-left">
+                    <input type="checkbox" className="tableChecked" />
+                  </td>
+                  <td className="p-4 text-left">122994</td>
                   <td className="p-4 max-sm:pr-10">
                     <div className="flex items-center gap-3">
                       <img
@@ -68,15 +74,22 @@ const UserList = () => {
                     johnwick2025@example.com
                   </td>
                   <td className="p-4 text-left">26/02/2026</td>
-                  <td className="rounded-r-lg p-4 text-left">
-                    <button className="bg-green-100 rounded-lg text-green-500 text-center py-2 px-10 pointer-events-none text-sm">
-                      Active
-                    </button>
+                  <td className="rounded-r-lg p-4 relative flex">
+                    <Link
+                      to={'javascript:void(0)'}
+                      className="bg-red-100 rounded-lg flexBetween text-red-500 text-center py-2 px-5 gap-4 w-2/3 pointer-events-none text-sm"
+                    >
+                      <span>Ban</span>
+                      <Ban className="w-4 h-4" />
+                    </Link>
                   </td>
                 </tr>
 
-                <tr>
-                  <td className="rounded-l-lg p-4 text-left">122994</td>
+                <tr className="text-sm w-full transitAll hover:bg-teal-100">
+                  <td className="rounded-l-lg p-4 lg:pl-8 text-left">
+                    <input type="checkbox" className="tableChecked" />
+                  </td>
+                  <td className=" p-4 text-left">122994</td>
                   <td className="p-4 max-sm:pr-12">
                     <div className="flex items-center gap-3">
                       <img
@@ -89,10 +102,14 @@ const UserList = () => {
                   </td>
                   <td className="text-left p-4 ">johnwick2025@example.com</td>
                   <td className="p-4 text-left">26/02/2026</td>
-                  <td className="rounded-r-lg p-4">
-                    <button className="bg-red-100 rounded-lg text-red-500 text-center py-2 px-8 pointer-events-none text-sm">
-                      Suspended
-                    </button>
+                  <td className="rounded-r-lg p-4 relative flex">
+                    <Link
+                      to={'javascript:void(0)'}
+                      className="bg-primary text-white rounded-lg flexBetween  text-center py-2 px-5 gap-4 w-2/3 pointer-events-none text-sm font-monaMedium"
+                    >
+                      <span>Active</span>
+                      <CircleCheckBig className="w-5 h-5" />
+                    </Link>
                   </td>
                 </tr>
               </tbody>

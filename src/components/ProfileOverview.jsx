@@ -15,8 +15,8 @@ const ProfileOverview = () => {
                 alt=""
               />
               <div className="flex flex-col leading-none">
-                <h2 className="font-monaBold text-2xl">Jane Name</h2>
-                <span className="font-monaLight text-md">
+                <h2 className="font-monaBold text-xl">Jane Name</h2>
+                <span className="font-monaLight text-sm">
                   jessica.hanson@example.com
                 </span>
               </div>

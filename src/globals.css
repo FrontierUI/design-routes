@@ -179,7 +179,7 @@
   .transBorderBtn {
     @apply bg-transparent border-[2.5px] border-white gap-x-2 flexy py-4 px-5 lg:px-8 rounded-full text-xl  text-white transitAll scal110 font-monaSemibold !important;
   }
-  tpLGBtn .transBtnHoverFill {
+  .transBtnHoverFill {
     @apply bg-transparent border-[2.5px] border-white gap-x-2 flexy py-4 px-8 rounded-full text-xl  text-white transitAll scal120 font-monaSemibold hover:bg-white hover:text-primary !important;
   }
 
@@ -357,6 +357,10 @@
 
   .invoice-select .invoice-selectOpt {
     @apply bg-white rounded-md service-form-focus w-full text-gray-900/85;
+  }
+
+  .tableChecked {
+    @apply w-4 h-4 cursor-pointer rounded-lg transition-all border-slate-200 checked:bg-primary checked:border-primary;
   }
 
   /* .sticked {

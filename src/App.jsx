@@ -66,25 +66,9 @@ const LoadingFallback = () => {
 };
 
 const App = () => {
-  // const user = true;
-
   //
   // admin@routes.design
   // @12benten@12
-
-  // 020219517310
-
-  // console.log(base64_decode(window.localStorage.getItem('loginSecret')));
-  // const loginSecret = base64_decode(
-  //   window.localStorage.getItem(JSON.parse('loginSecret'))
-  // );
-
-  // useEffect(() => {
-  //   let userDetails = JSON.parse(
-  //     base64_decode(window.localStorage.getItem('loginSecret'))
-  //   );
-  //   console.log(userDetails.role);
-  // }, []);
 
   return (
     <Suspense fallback={<LoadingFallback />}>
