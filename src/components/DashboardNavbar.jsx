@@ -34,7 +34,7 @@ const DashboardNavbar = (props) => {
             {brandText}
           </Link>
         </div>
-        <p className="shrink text-[33px] capitalize text-gray-900">
+        <p className="shrink mt-1 text-[33px] capitalize text-gray-900">
           <Link
             to="#"
             className="font-bold capitalize hover:text-primary tracking-wider"

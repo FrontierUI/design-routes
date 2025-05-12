@@ -27,6 +27,8 @@ import TrackTicket from '@/views/TrackTicket';
 
 import { checkRole, getCookie } from '@/func';
 import UserDetails from '../views/UserDetails';
+import AllOrders from '../views/AllOrders';
+import OrderHistory from '../views/OrderHistory';
 
 var role = '';
 if (getCookie('token') !== undefined && getCookie('token') !== null) {
@@ -130,17 +132,17 @@ export const adminDashSidebar = [
     layout: '/dashboard',
   },
   {
-    name: 'View All Users',
+    name: 'View All Orders',
     icon: <Package className="w-6 h-6" />,
-    path: 'view-all-users',
-    component: <UserDetails />,
+    path: 'view-all-orders',
+    component: <AllOrders />,
     layout: '/dashboard',
   },
   {
-    name: 'Users Order Details',
+    name: 'User Order Details',
     icon: <FileText className="w-6 h-6" />,
     path: 'user-order-details',
-    component: <UserDetails />,
+    component: <OrderHistory />,
     layout: '/dashboard',
   },
   {

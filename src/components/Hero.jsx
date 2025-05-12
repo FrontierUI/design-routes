@@ -5,6 +5,7 @@ import LogoMarquee from '@/components/LogoMarquee';
 import Typewriting from '@/components/Typewriting';
 
 import vid from '/images/860x500.mp4';
+// import vid from '/images/860x500avi.avi';
 
 const Hero = () => {
   return (

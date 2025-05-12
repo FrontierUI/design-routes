@@ -55,7 +55,7 @@ const UserList = () => {
               </thead>
 
               <tbody className="w-full whitespace-nowrap">
-                <tr className="text-sm w-full transitAll hover:bg-teal-100">
+                <tr className="text-sm w-full transitAll hover:bg-[#e3e2ff] rounded-lg">
                   <td className="rounded-l-lg p-4 lg:pl-8 text-left">
                     <input type="checkbox" className="tableChecked" />
                   </td>
@@ -74,7 +74,7 @@ const UserList = () => {
                     johnwick2025@example.com
                   </td>
                   <td className="p-4 text-left">26/02/2026</td>
-                  <td className="rounded-r-lg p-4 relative flex">
+                  <td className="rounded-r-lg p-4">
                     <Link
                       to={'javascript:void(0)'}
                       className="bg-red-100 rounded-lg flexBetween text-red-500 text-center py-2 px-5 gap-4 w-2/3 pointer-events-none text-sm"
@@ -102,7 +102,7 @@ const UserList = () => {
                   </td>
                   <td className="text-left p-4 ">johnwick2025@example.com</td>
                   <td className="p-4 text-left">26/02/2026</td>
-                  <td className="rounded-r-lg p-4 relative flex">
+                  <td className="rounded-r-lg p-4">
                     <Link
                       to={'javascript:void(0)'}
                       className="bg-primary text-white rounded-lg flexBetween  text-center py-2 px-5 gap-4 w-2/3 pointer-events-none text-sm font-monaMedium"
