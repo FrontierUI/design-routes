@@ -1,15 +1,15 @@
-import React, { act, useEffect, useState } from "react";
+import React, { act, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-import { Link } from "react-router-dom";
+import { ListFilter } from 'lucide-react';
+import DashboardBanner from '@/components/DashboardBanner';
 
-import DashboardBanner from "@/components/DashboardBanner";
-import { Ban, CircleCheckBig, ListFilter } from "lucide-react";
-import axios from "axios";
-import { formatDate, getCookie } from "../func";
+import { formatDate, getCookie } from '@/func';
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState('');
   const [totalUsers, setTotalUsers] = useState(0);
   const [offset, setOffset] = useState(0);
   const [limit, setLimit] = useState(50);
@@ -24,7 +24,7 @@ const UserList = () => {
 
   const fetchUsers = () => {
     const json = JSON.stringify({
-      authorization: getCookie("token"),
+      authorization: getCookie('token'),
       limit: limit,
       offset: offset,
     });
@@ -35,13 +35,12 @@ const UserList = () => {
         JSON.stringify({ params: json }),
         {
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            'Content-Type': 'application/x-www-form-urlencoded',
           },
         }
       )
       .then((response) => {
-        if (response.data.success === "true") {
-          // console.log(response.data.users);
+        if (response.data.success === 'true') {
           setUsers(response.data.users);
           setTotalUsers(response.data.total_users);
         }
@@ -53,7 +52,7 @@ const UserList = () => {
 
   const activateDeactivateUser = (user_id, action) => {
     const json = JSON.stringify({
-      authorization: getCookie("token"),
+      authorization: getCookie('token'),
       id: user_id,
       action: action.toString(),
     });
@@ -64,14 +63,10 @@ const UserList = () => {
           import.meta.env.VITE_BASE_API
         }/api.php?action=activate_deactivate_user`,
         JSON.stringify({ params: json }),
-        {
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-        }
+        { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
       )
       .then((response) => {
-        if (response.data.success === "true") {
+        if (response.data.success === 'true') {
           let tempUsers = [...users];
           tempUsers.find((user) => user.id === user_id).status = action;
           setUsers([...tempUsers]);
@@ -83,7 +78,7 @@ const UserList = () => {
   };
 
   const ProfilePicture = ({ PictureUrl }) => {
-    if (PictureUrl !== "" && PictureUrl !== null) {
+    if (PictureUrl !== '' && PictureUrl !== null) {
       return (
         <img
           src={`${import.meta.env.VITE_BASE_API}${PictureUrl}`}
@@ -159,12 +154,12 @@ const UserList = () => {
                 type="text"
                 className="py-2.5 pl-4 pr-2 placeholder:text-gray-400 text-sm rounded-full w-full outline-none bg-white"
                 placeholder="Search"
-                onChange={(e)=>setSearchText(e.target.value)}
+                onChange={(e) => setSearchText(e.target.value)}
                 value={searchText}
               />
               <div className="flex items-center gap-2">
                 <p className="font-monaMedium text-xl">Filter</p>
-                <Link to={"javascript:void(0)"} className="flexy">
+                <Link to={'javascript:void(0)'} className="flexy">
                   <ListFilter className="w-6 h-6" />
                 </Link>
               </div>
@@ -175,10 +170,7 @@ const UserList = () => {
             <table className="min-w-full">
               <thead className="bg-white whitespace-nowrap w-full">
                 <tr>
-                  {/* <th className="rounded-l-lg p-4 lg:pl-8 text-left">
-                    <input type="checkbox" className="tableChecked" />
-                  </th> */}
-                  <th className="p-4 text-left text-md font-monaMedium">
+                  <th className="rounded-l-lg p-4 text-left text-md font-monaMedium">
                     User ID
                   </th>
                   <th className="p-4 lg:pl-7 text-left text-md font-monaMedium">
@@ -201,27 +193,30 @@ const UserList = () => {
 
               {users.length > 0 ? (
                 <tbody className="w-full whitespace-nowrap">
-                  {((searchText.length === 0) ? [...users] : [...users.filter(user=> user.name.toLowerCase().includes(searchText.toLowerCase()))]).map((user, index) => {
+                  {(searchText.length === 0
+                    ? [...users]
+                    : [
+                        ...users.filter((user) =>
+                          user.name
+                            .toLowerCase()
+                            .includes(searchText.toLowerCase())
+                        ),
+                      ]
+                  ).map((user, index) => {
                     return (
                       <tr
                         className={
                           index % 2 === 0
-                            ? "text-sm w-full transitAll hover:bg-[#e3e2ff] rounded-lg"
-                            : "text-sm w-full transitAll hover:bg-teal-100"
+                            ? 'text-sm w-full transitAll hover:bg-[#e3e2ff] rounded-lg'
+                            : 'text-sm w-full transitAll hover:bg-teal-100'
                         }
                         key={index}
                       >
-                        {/* <td className="rounded-l-lg p-4 lg:pl-8 text-left">
-                          <input type="checkbox" className="tableChecked" />
-                        </td> */}
-                        <td className="p-4 text-left">{user.id}</td>
+                        <td className="rounded-l-lg p-4 text-left">
+                          {user.id}
+                        </td>
                         <td className="p-4 max-sm:pr-10">
                           <div className="flex items-center gap-3">
-                            {/* <img
-                              src="/images/icons/ProfAvatar.svg"
-                              className="w-10 h-10 img-fluid"
-                              alt=""
-                            /> */}
                             <ProfilePicture PictureUrl={user.profile_picture} />
                             <span className="text-left">{user.name}</span>
                           </div>
@@ -233,13 +228,6 @@ const UserList = () => {
                           {formatDate(user.created_at)}
                         </td>
                         <td className="rounded-r-lg p-4">
-                          {/* <Link
-                            to={"javascript:void(0)"}
-                            className="bg-red-100 rounded-lg flexBetween text-red-500 text-center py-2 px-5 gap-4 w-2/3 pointer-events-none text-sm"
-                          >
-                            <span>Ban</span>
-                            <Ban className="w-4 h-4" />
-                          </Link> */}
                           <StatusBadge
                             Verified={user.verified}
                             Status={user.status}
@@ -255,64 +243,6 @@ const UserList = () => {
                       </tr>
                     );
                   })}
-
-                  {/* <tr className="text-sm w-full transitAll hover:bg-[#e3e2ff] rounded-lg">
-                    <td className="rounded-l-lg p-4 lg:pl-8 text-left">
-                      <input type="checkbox" className="tableChecked" />
-                    </td>
-                    <td className="p-4 text-left">122994</td>
-                    <td className="p-4 max-sm:pr-10">
-                      <div className="flex items-center gap-3">
-                        <img
-                          src="/images/icons/ProfAvatar.svg"
-                          className="w-10 h-10 img-fluid"
-                          alt=""
-                        />
-                        <span className="text-left">Pablo Rivero Beltrán</span>
-                      </div>
-                    </td>
-                    <td className="text-left p-4 max-sm:pr-12">
-                      johnwick2025@example.com
-                    </td>
-                    <td className="p-4 text-left">26/02/2026</td>
-                    <td className="rounded-r-lg p-4">
-                      <Link
-                        to={"javascript:void(0)"}
-                        className="bg-red-100 rounded-lg flexBetween text-red-500 text-center py-2 px-5 gap-4 w-2/3 pointer-events-none text-sm"
-                      >
-                        <span>Ban</span>
-                        <Ban className="w-4 h-4" />
-                      </Link>
-                    </td>
-                  </tr>
-
-                  <tr className="text-sm w-full transitAll hover:bg-teal-100">
-                    <td className="rounded-l-lg p-4 lg:pl-8 text-left">
-                      <input type="checkbox" className="tableChecked" />
-                    </td>
-                    <td className=" p-4 text-left">122994</td>
-                    <td className="p-4 max-sm:pr-12">
-                      <div className="flex items-center gap-3">
-                        <img
-                          src="/images/icons/ProfAvatar.svg"
-                          className="w-10 h-10 img-fluid"
-                          alt=""
-                        />
-                        <span className="text-left">Pablo Rivero Beltrán</span>
-                      </div>
-                    </td>
-                    <td className="text-left p-4 ">johnwick2025@example.com</td>
-                    <td className="p-4 text-left">26/02/2026</td>
-                    <td className="rounded-r-lg p-4">
-                      <Link
-                        to={"javascript:void(0)"}
-                        className="bg-primary text-white rounded-lg flexBetween  text-center py-2 px-5 gap-4 w-2/3 pointer-events-none text-sm font-monaMedium"
-                      >
-                        <span>Active</span>
-                        <CircleCheckBig className="w-5 h-5" />
-                      </Link>
-                    </td>
-                  </tr> */}
                 </tbody>
               ) : (
                 <tbody className="w-full whitespace-nowrap">

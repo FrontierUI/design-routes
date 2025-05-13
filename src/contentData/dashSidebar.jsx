@@ -17,6 +17,8 @@ import {
   ArrowRightLeft,
 } from 'lucide-react';
 
+import { checkRole, getCookie } from '@/func';
+
 import Overview from '@/views/Overview';
 import UserList from '@/views/UserList';
 import Invoices from '@/views/Invoices';
@@ -25,10 +27,10 @@ import Settings from '@/views/Settings';
 import OrderDetails from '@/views/OrderDetails';
 import TrackTicket from '@/views/TrackTicket';
 
-import { checkRole, getCookie } from '@/func';
-import UserDetails from '../views/UserDetails';
-import AllOrders from '../views/AllOrders';
-import OrderHistory from '../views/OrderHistory';
+import UserDetails from '@/views/UserDetails';
+import AllOrders from '@/views/AllOrders';
+import OrderHistory from '@/views/OrderHistory';
+import UpdateOrderStatus from '@/views/UpdateOrderStatus';
 
 var role = '';
 if (getCookie('token') !== undefined && getCookie('token') !== null) {
@@ -149,7 +151,7 @@ export const adminDashSidebar = [
     name: 'Update Order Status',
     icon: <CircleFadingArrowUp className="w-6 h-6" />,
     path: 'update-order-status',
-    component: <UserDetails />,
+    component: <UpdateOrderStatus />,
     layout: '/dashboard',
   },
   {

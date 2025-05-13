@@ -363,6 +363,14 @@
     @apply w-4 h-4 cursor-pointer rounded-lg transition-all border-slate-200 checked:bg-primary checked:border-primary;
   }
 
+  .changeStatus-select {
+    @apply bg-white px-3 py-2 w-full service-form-focus rounded-md appearance-none max-w-40;
+  }
+
+  .changeStatus-select .changeStatus-option {
+    @apply bg-white rounded-md service-form-focus w-full text-gray-900/85;
+  }
+
   /* .sticked {
     @apply w-full lg:w-1/2 lg:sticky lg:top-28 !important;
   } */
