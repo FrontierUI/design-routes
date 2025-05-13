@@ -1,26 +1,27 @@
-import React from 'react';
+import React from "react";
 
-import { History, MoveUp, ScrollText, Ticket, TicketCheck } from 'lucide-react';
+import { History, MoveUp, ScrollText, Ticket, TicketCheck } from "lucide-react";
 
-const UsersOverviewDetails = () => {
+const UsersOverviewDetails = ({ UserStatistics }) => {
+  console.log("UserStatistics",UserStatistics);
   const overviewDetails = [
     {
       icon: <History className="w-7 h-7" />,
-      name: 'Order History',
-      orders: 11,
-      detaling: 'Previous History',
+      name: "Order History",
+      orders: UserStatistics?.total_orders,
+      detaling: "Previous Order History",
     },
     {
       icon: <TicketCheck className="w-7 h-7" />,
-      name: 'Ticket History',
-      orders: 4,
-      detaling: '3 Pending Tickets',
+      name: "Ticket History",
+      orders: UserStatistics?.total_tickets,
+      detaling: "Pending Tickets",
     },
     {
       icon: <ScrollText className="w-7 h-7" />,
-      name: 'Transaction History',
-      orders: 14,
-      detaling: 'Pending Transaction',
+      name: "Orders History",
+      orders: UserStatistics?.total_pending,
+      detaling: "Pending Orders",
     },
   ];
 

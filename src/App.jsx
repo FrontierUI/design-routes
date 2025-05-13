@@ -129,6 +129,7 @@ const App = () => {
           <Route path="/our-work/:slug" element={<PortfolioPage />} />
 
           <Route path="/dashboard/:page" element={<AdminDashboard />} />
+          <Route path="/dashboard/:page/:id" element={<AdminDashboard />} />
         </Routes>
 
         {/* <Footer /> */}

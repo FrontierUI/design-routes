@@ -45,6 +45,7 @@ export const userDashSidebar = [
     path: 'overview',
     component: <Overview />,
     layout: '/dashboard',
+    direct: true
   },
   {
     name: 'View Order History',
@@ -52,6 +53,7 @@ export const userDashSidebar = [
     path: 'view-order-history',
     component: <OrderDetails />,
     layout: '/dashboard',
+    direct: true
   },
   {
     name: 'Order Details',
@@ -59,6 +61,7 @@ export const userDashSidebar = [
     path: 'order-details',
     component: <UserList />,
     layout: '/dashboard',
+    direct: true
   },
   {
     name: 'Download Invoice',
@@ -66,6 +69,7 @@ export const userDashSidebar = [
     path: 'invoice',
     component: <Invoices />,
     layout: '/dashboard',
+    direct: true
   },
   {
     name: 'Submit Ticket',
@@ -73,6 +77,7 @@ export const userDashSidebar = [
     path: 'submit-ticket',
     component: <SubmitTicket />,
     layout: '/dashboard',
+    direct: true
   },
   {
     name: 'Track Ticket Status',
@@ -80,6 +85,7 @@ export const userDashSidebar = [
     path: 'track-ticket-status',
     component: <TrackTicket />,
     layout: '/dashboard',
+    direct: true
   },
   {
     name: 'Settings',
@@ -87,6 +93,7 @@ export const userDashSidebar = [
     path: 'settings',
     component: <Settings />,
     layout: '/dashboard',
+    direct: true
   },
   {
     name: 'Contacts',
@@ -94,6 +101,7 @@ export const userDashSidebar = [
     path: 'contacts',
     component: <UserList />,
     layout: '/dashboard',
+    direct: true
   },
   {
     name: 'Help Center',
@@ -101,6 +109,7 @@ export const userDashSidebar = [
     path: 'help-center',
     component: <UserList />,
     layout: '/dashboard',
+    direct: true
   },
 ];
 
@@ -111,6 +120,7 @@ export const adminDashSidebar = [
     path: 'overview',
     component: <Overview />,
     layout: '/dashboard',
+    direct: true
   },
   {
     name: 'User List',
@@ -118,6 +128,7 @@ export const adminDashSidebar = [
     path: 'users-list',
     component: <UserList />,
     layout: '/dashboard',
+    direct: true
   },
   {
     name: 'View User Details',
@@ -125,14 +136,15 @@ export const adminDashSidebar = [
     path: 'view-user-details',
     component: <UserDetails />,
     layout: '/dashboard',
+    direct: false
   },
-  {
-    name: 'Ban Or Suspend Users',
-    icon: <Ban className="w-6 h-6" />,
-    path: 'ban-or-suspend-users',
-    component: <UserDetails />,
-    layout: '/dashboard',
-  },
+  // {
+  //   name: 'Ban Or Suspend Users',
+  //   icon: <Ban className="w-6 h-6" />,
+  //   path: 'ban-or-suspend-users',
+  //   component: <UserDetails />,
+  //   layout: '/dashboard',
+  // },
   {
     name: 'View All Orders',
     icon: <Package className="w-6 h-6" />,
@@ -146,6 +158,7 @@ export const adminDashSidebar = [
     path: 'user-order-details',
     component: <OrderHistory />,
     layout: '/dashboard',
+    direct: false
   },
   {
     name: 'Update Order Status',
@@ -153,6 +166,7 @@ export const adminDashSidebar = [
     path: 'update-order-status',
     component: <UpdateOrderStatus />,
     layout: '/dashboard',
+    direct: false
   },
   {
     name: 'View All Tickets',
@@ -160,6 +174,7 @@ export const adminDashSidebar = [
     path: 'view-all-tickets',
     component: <UserDetails />,
     layout: '/dashboard',
+    direct: true
   },
   {
     name: 'Update Ticket Status',
@@ -167,6 +182,7 @@ export const adminDashSidebar = [
     path: 'update-ticket-status',
     component: <UserDetails />,
     layout: '/dashboard',
+    direct: false
   },
   {
     name: 'View Transactions',
@@ -174,6 +190,7 @@ export const adminDashSidebar = [
     path: 'view-transactions',
     component: <UserDetails />,
     layout: '/dashboard',
+    direct: true
   },
 ];
 
