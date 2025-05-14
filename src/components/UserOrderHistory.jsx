@@ -13,11 +13,11 @@ import {
   Upload,
   User,
   UserRoundCog,
-} from 'lucide-react';
-import React from 'react';
-import { Link } from 'react-router-dom';
+} from "lucide-react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-const UserOrderHistory = () => {
+const UserOrderHistory = ({ OrderDetails }) => {
   return (
     <div className="grid grid-cols-12 grid-flow-dense gap-6 w-full  mx-auto">
       <div className="col-span-12 md:col-span-6 w-full relative rounded-lg">
@@ -37,9 +37,9 @@ const UserOrderHistory = () => {
               <div className="flex flex-col space-y-0">
                 <div className="flex items-center gap-3">
                   <span>User ID</span>
-                  <span className="text-sm font-monaLight">487456</span>
+                  <span className="text-sm font-monaLight">{OrderDetails?.user_id}</span>
                 </div>
-                <h2 className="font-monaSemibold text-lg">User name Paayen</h2>
+                <h2 className="font-monaSemibold text-lg capitalize">{OrderDetails?.buyer_name}</h2>
               </div>
             </div>
 
@@ -135,7 +135,7 @@ const UserOrderHistory = () => {
                 <span>Invoice</span>
               </div>
               <Link
-                to={'javascript:void(0)'}
+                to={"javascript:void(0)"}
                 className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
               >
                 Resend Invoice
@@ -148,7 +148,7 @@ const UserOrderHistory = () => {
                 <span>Message</span>
               </div>
               <Link
-                to={'javascript:void(0)'}
+                to={"javascript:void(0)"}
                 className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
               >
                 Send Message
@@ -161,7 +161,7 @@ const UserOrderHistory = () => {
                 <span>Payment</span>
               </div>
               <Link
-                to={'javascript:void(0)'}
+                to={"javascript:void(0)"}
                 className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
               >
                 Refund
@@ -247,7 +247,7 @@ const UserOrderHistory = () => {
             </div>
 
             <Link
-              to={'javascript:void(0)'}
+              to={"javascript:void(0)"}
               className="flexBetween px-3 py-2 gap-4 bg-primary text-white rounded-lg"
             >
               Upload files

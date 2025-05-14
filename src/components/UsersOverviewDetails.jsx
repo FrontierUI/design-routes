@@ -3,7 +3,7 @@ import React from "react";
 import { History, MoveUp, ScrollText, Ticket, TicketCheck } from "lucide-react";
 
 const UsersOverviewDetails = ({ UserStatistics }) => {
-  console.log("UserStatistics",UserStatistics);
+  // console.log("UserStatistics",UserStatistics);
   const overviewDetails = [
     {
       icon: <History className="w-7 h-7" />,

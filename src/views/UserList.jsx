@@ -8,8 +8,8 @@ import DashboardBanner from '@/components/DashboardBanner';
 import { formatDate, getCookie } from '@/func';
 
 const UserList = () => {
-  const [users, setUsers] = useState([]);
   const [searchText, setSearchText] = useState('');
+  const [users, setUsers] = useState([]);
   const [totalUsers, setTotalUsers] = useState(0);
   const [offset, setOffset] = useState(0);
   const [limit, setLimit] = useState(50);
