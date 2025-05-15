@@ -213,7 +213,13 @@ const UserList = () => {
                         key={index}
                       >
                         <td className="rounded-l-lg p-4 text-left">
-                          <Link to={`/dashboard/view-user-details/${btoa(btoa(user.id))}`}>{user.id}</Link>
+                          <Link
+                            to={`/dashboard/view-user-details/${btoa(
+                              btoa(user.id)
+                            )}`}
+                          >
+                            {user.id}
+                          </Link>
                         </td>
                         <td className="p-4 max-sm:pr-10">
                           <div className="flex items-center gap-3">

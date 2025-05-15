@@ -67,7 +67,9 @@ const Counter = ({ end, duration = 2000, start = 0, decimals = 0 }) => {
 
   const formatNumber = (num) => {
     if (isCompleted) {
-      return Number(num).toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      return Number(num)
+        .toFixed(decimals)
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
     const validNum = Number.isFinite(num) ? num : 0;
     return validNum.toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -76,6 +78,7 @@ const Counter = ({ end, duration = 2000, start = 0, decimals = 0 }) => {
   return (
     <div ref={containerRef}>
       {formatNumber(count)}
+      {suffix}
     </div>
   );
 };

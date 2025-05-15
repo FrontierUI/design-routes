@@ -1,9 +1,9 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { ChevronDown, Phone } from 'lucide-react';
 
 import Typewriting from '@/components/Typewriting';
+import CounterNumbers from '@/components/CounterNumbers';
 
 const ServicesForm = () => {
   return (

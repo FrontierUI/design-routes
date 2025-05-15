@@ -1,15 +1,15 @@
-import DashboardBanner from "@/components/DashboardBanner";
-import UserProfileOverview from "@/components/UserProfileOverview";
-import UsersOverviewDetails from "@/components/UsersOverviewDetails";
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import DashboardBanner from '@/components/DashboardBanner';
+import UserProfileOverview from '@/components/UserProfileOverview';
+import UsersOverviewDetails from '@/components/UsersOverviewDetails';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 const UserDetails = () => {
   const { id } = useParams();
   const [userDetails, setUserDetails] = useState({});
   const [latestOrders, setLatestOrders] = useState([]);
-  const [userStatistics,setUserStatistics ] = useState({});
+  const [userStatistics, setUserStatistics] = useState({});
 
   useEffect(() => {
     if (id !== null && id !== undefined) fetchUserDetails();
@@ -20,7 +20,7 @@ const UserDetails = () => {
   }, []);
 
   const fetchUserDetails = () => {
-    const json = JSON.stringify({ id: "TWc9PQ==" });
+    const json = JSON.stringify({ id: 'TWc9PQ==' });
 
     axios
       .post(
@@ -28,14 +28,14 @@ const UserDetails = () => {
         JSON.stringify({ params: json }),
         {
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            'Content-Type': 'application/x-www-form-urlencoded',
           },
         }
       )
       .then((response) => {
-        if (response.data.success === "true") {
+        if (response.data.success === 'true') {
           setUserDetails(response.data.user);
-          setLatestOrders(response.data.latest_orders)
+          setLatestOrders(response.data.latest_orders);
           setUserStatistics(response.data.user_statistics);
         }
       })
@@ -49,9 +49,12 @@ const UserDetails = () => {
       <div className="relative w-full h-full flex flex-col space-y-5 lg:space-y-10 mt-8 mb-5 lg:mb-10">
         <DashboardBanner />
 
-        <UserProfileOverview UserDetails={userDetails} LatestOrders={latestOrders}/>
+        <UserProfileOverview
+          UserDetails={userDetails}
+          LatestOrders={latestOrders}
+        />
 
-        <UsersOverviewDetails UserStatistics={userStatistics}/>
+        <UsersOverviewDetails UserStatistics={userStatistics} />
       </div>
     </div>
   );
