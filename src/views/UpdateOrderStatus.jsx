@@ -1,13 +1,72 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-import { ChevronDown, Ellipsis, ListFilter } from 'lucide-react';
+import { ChevronDown, Ellipsis, ListFilter } from "lucide-react";
 
-import DashboardBanner from '@/components/DashboardBanner';
-import { formatDate, getCookie } from '@/func';
+import DashboardBanner from "@/components/DashboardBanner";
+import { formatDate, getCookie } from "@/func";
 
 const UpdateOrderStatus = () => {
+  const [searchText, setSearchText] = useState("");
+  const [orders, setOrders] = useState([]);
+  const [offset, setOffset] = useState(0);
+  const [limit, setLimit] = useState(50);
+
+  useEffect(() => {
+    fetchOrders();
+
+    return () => {
+      setOrders([]);
+    };
+  }, []);
+
+  const fetchOrders = () => {
+    const json = JSON.stringify({
+      token: getCookie("token"),
+      limit: limit,
+      offset: offset,
+    });
+
+    axios
+      .post(
+        `${import.meta.env.VITE_BASE_API}/api.php?action=get_orders`,
+        JSON.stringify({ params: json }),
+        { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
+      )
+      .then((response) => {
+        if (response.data.success === "true") {
+          setOrders(response.data.orders);
+        }
+      })
+      .catch((error) => {
+        console.error(`Error: ${error}`);
+      });
+  };
+
+  const StatusBedge = ({ Status }) => {
+    if (Status === "pending")
+      return (
+        <button className="bg-yellow-100 text-yellow-500 px-5 py-2 rounded-lg">
+          Pending
+        </button>
+      );
+    else if (Status === "inprogress")
+      return (
+        <button className="bg-blue-100 text-blue-500 px-5 py-2 rounded-lg">
+          In Progress
+        </button>
+      );
+    else if (Status === "completed")
+      <button className="bg-green-100 text-green-500 px-5 py-2 rounded-lg">
+        Completed
+      </button>;
+    else if (Status === "cancelled")
+      <button className="bg-red-100 text-red-500 px-5 py-2 rounded-lg">
+        Cancelled
+      </button>;
+  };
+
   return (
     <div className="relative w-full h-full updateOrderStatus">
       <div className="relative w-full h-full flex flex-col space-y-5 lg:space-y-10 mt-8 mb-5 lg:mb-10">
@@ -21,12 +80,12 @@ const UpdateOrderStatus = () => {
                 type="text"
                 className="py-2.5 pl-4 pr-2 placeholder:text-gray-400 text-sm rounded-full w-full outline-none bg-white"
                 placeholder="Search"
-                // onChange={(e) => setSearchText(e.target.value)}
-                // value={searchText}
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
               />
               <div className="flex items-center gap-2">
                 <p className="font-monaMedium text-xl">Filter</p>
-                <Link to={'javascript:void(0)'} className="flexy">
+                <Link to={"javascript:void(0)"} className="flexy">
                   <ListFilter className="w-6 h-6" />
                 </Link>
               </div>
@@ -58,47 +117,104 @@ const UpdateOrderStatus = () => {
                 </tr>
               </thead>
 
-              <tbody className="w-full whitespace-nowrap">
-                <tr className="w-full text-sm transitAll hover:bg-[#e3e2ff] rounded-lg">
-                  <td className="rounded-l-lg p-4 lg:pl-8 text-left">48745</td>
-                  <td className="p-4 text-left">Standard</td>
-                  <td className="p-4 text-left">UserName sdas</td>
-                  <td className="p-4 text-left">
-                    <button className="py-2 px-4 rounded-lg bg-blue-100 text-primary">
-                      In Progress
-                    </button>
-                  </td>
-                  <td className="p-4 text-left">
-                    <div className="relative flex items-center max-w-40">
-                      <select className="changeStatus-select">
-                        <option className="changeStatus-select">
-                          Choose Status
-                        </option>
-                        <option className="changeStatus-select">Pending</option>
-                        <option className="changeStatus-select">
-                          In Progress
-                        </option>
-                        <option className="changeStatus-select">
-                          Delivered
-                        </option>
-                        <option className="changeStatus-select">Ban</option>
-                      </select>
-                      <div className="absolute right-1.5 flex items-center">
-                        <ChevronDown className="w-5 h-5" />
-                      </div>
-                    </div>
-                  </td>
+              {orders.length > 0 ? (
+                <tbody className="w-full whitespace-nowrap">
+                  {(searchText.length === 0
+                    ? [...orders]
+                    : [
+                        ...orders.filter(
+                          (order) =>
+                            order.service_name
+                              .toLowerCase()
+                              .includes(searchText.toLowerCase()) ||
+                            order.package_name
+                              .toLowerCase()
+                              .includes(searchText.toLowerCase()) ||
+                            order.buyer_name
+                              .toLowerCase()
+                              .includes(searchText.toLowerCase()) ||
+                            order.order_id
+                              .toString()
+                              .toLowerCase()
+                              .includes(searchText.toLowerCase()) ||
+                            order.order_status
+                              .toLowerCase()
+                              .includes(searchText.toLowerCase())
+                        ),
+                      ]
+                  ).map((order, index) => (
+                    <tr
+                      className="w-full text-sm transitAll hover:bg-[#e3e2ff] rounded-lg"
+                      key={index}
+                    >
+                      <td className="rounded-l-lg p-4 lg:pl-8 text-left">
+                        <Link
+                          className="text-blue-500 text-bold"
+                          to={`/dashboard/user-order-details/${btoa(
+                            btoa(order.order_id)
+                          )}`}
+                        >
+                          {order.order_id}
+                        </Link>
+                      </td>
+                      <td className="p-4 text-left">
+                        <span className="text-green-500">
+                          {order.service_name}
+                        </span>
+                        <br /> {order.package_name}
+                      </td>
+                      <td className="p-4 text-left capitalize">
+                        {order.buyer_name}
+                      </td>
+                      <td className="p-4 text-left">
+                        <StatusBedge Status={order.order_status} />
+                      </td>
+                      <td className="p-4 text-left">
+                        <div className="relative flex items-center max-w-40">
+                          <select className="changeStatus-select">
+                            <option className="changeStatus-select">
+                              Choose Status
+                            </option>
+                            <option className="changeStatus-select">
+                              Pending
+                            </option>
+                            <option className="changeStatus-select">
+                              In Progress
+                            </option>
+                            <option className="changeStatus-select">
+                              Delivered
+                            </option>
+                            <option className="changeStatus-select">Ban</option>
+                          </select>
+                          <div className="absolute right-1.5 flex items-center">
+                            <ChevronDown className="w-5 h-5" />
+                          </div>
+                        </div>
+                      </td>
 
-                  <td className="p-4 text-left rounded-r-lg">
-                    <div className="flexBetween gap-4">
-                      <button className="bg-primary text-white py-2 px-4 rounded-lg font-monaMedium">
-                        Update
-                      </button>
-                      <Ellipsis className="w-6 h-6" />
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
+                      <td className="p-4 text-left rounded-r-lg">
+                        <div className="flexBetween gap-4">
+                          <button className="bg-primary text-white py-2 px-4 rounded-lg font-monaMedium">
+                            Update
+                          </button>
+                          {/* <Ellipsis className="w-6 h-6" /> */}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              ) : (
+                <tbody className="w-full whitespace-nowrap">
+                  <tr className="w-full text-sm transitAll hover:bg-[#e3e2ff] rounded-lg">
+                    <td
+                      className="p-4 text-left rounded-r-lg text-center"
+                      colSpan={6}
+                    >
+                      No order created yet
+                    </td>
+                  </tr>
+                </tbody>
+              )}
             </table>
           </div>
         </div>
