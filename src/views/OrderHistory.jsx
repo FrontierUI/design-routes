@@ -3,11 +3,12 @@ import UserOrderHistory from "../components/UserOrderHistory";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { formatDate, getCookie } from "@/func";
+import { getCookie } from "@/func";
 
 const OrderHistory = () => {
   const { id } = useParams();
   const [orderDetails, setOrderDetails] = useState({});
+  const [orderDeliverables, setOrderDeliveables] = useState([]);
 
   useEffect(() => {
     if (id !== null && id !== undefined) fetchOrderDetails(atob(atob(id)));
@@ -36,6 +37,7 @@ const OrderHistory = () => {
       .then((response) => {
         if (response.data.success === "true") {
           setOrderDetails(response.data.order_details);
+          setOrderDeliveables(response.data.order_deliverables);
         }
       })
       .catch((error) => {
@@ -48,7 +50,7 @@ const OrderHistory = () => {
       <div className="relative w-full h-full flex flex-col space-y-5 lg:space-y-10 mt-8 mb-5 lg:mb-10">
         <DashboardBanner />
 
-        <UserOrderHistory OrderDetails={orderDetails}/>
+        <UserOrderHistory OrderDetails={orderDetails} OrderDeliverables={orderDeliverables}/>
       </div>
     </div>
   );

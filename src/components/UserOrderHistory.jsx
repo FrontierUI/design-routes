@@ -13,11 +13,13 @@ import {
   Upload,
   User,
   UserRoundCog,
-} from 'lucide-react';
-import React from 'react';
-import { Link } from 'react-router-dom';
+} from "lucide-react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-const UserOrderHistory = ({ OrderDetails }) => {
+import { formatDate } from "@/func";
+
+const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
   return (
     <div className="grid grid-cols-12 grid-flow-dense gap-6 w-full  mx-auto">
       <div className="col-span-12 md:col-span-6 w-full relative rounded-lg">
@@ -50,14 +52,14 @@ const UserOrderHistory = ({ OrderDetails }) => {
             <div className="flex flex-col space-y-5 w-full">
               <div className="flexBetween gap-5 w-full">
                 <p>Signup Method:</p>
-                <span className="bg-green-100 text-green-500 py-2 px-4 rounded-lg">
-                  Google
+                <span className="bg-green-100 text-green-500 py-2 px-4 rounded-lg capitalize">
+                  {OrderDetails?.registration_method}
                 </span>
               </div>
               <div className="flexBetween gap-5 w-full">
-                <p>JoinAt:</p>
+                <p>Join At:</p>
                 <span className="bg-green-100 text-green-500 py-2 px-4 rounded-lg">
-                  Feb 10, 2028
+                  {formatDate(OrderDetails?.join_at)}
                 </span>
               </div>
             </div>
@@ -83,25 +85,25 @@ const UserOrderHistory = ({ OrderDetails }) => {
             <div className="flexBetween gap-5 w-full">
               <span>Order ID:</span>
               <span className="bg-green-100 text-green-500 py-2 px-4 rounded-lg">
-                ORD-22945
+                {OrderDetails?.order_id}
               </span>
             </div>
             <div className="flexBetween gap-5 w-full">
               <span>Placed on:</span>
               <span className="bg-green-100 text-green-500 py-2 px-4 rounded-lg">
-                March 5, 2028
+                {formatDate(OrderDetails?.order_date)}
               </span>
             </div>
             <div className="flexBetween gap-5 w-full">
               <span>Amount</span>
               <span className="bg-green-100 text-green-500 py-2 px-4 rounded-lg">
-                $ 4500
+                $ {OrderDetails?.order_price}
               </span>
             </div>
             <div className="flexBetween gap-5 w-full">
               <span>Method</span>
-              <span className="bg-green-100 text-green-500 py-2 px-4 rounded-lg">
-                Stripe
+              <span className="bg-green-100 text-green-500 py-2 px-4 rounded-lg capitalize">
+                {OrderDetails?.payment_method}
               </span>
             </div>
           </div>
@@ -139,7 +141,7 @@ const UserOrderHistory = ({ OrderDetails }) => {
                 <span>Invoice</span>
               </div>
               <Link
-                to={'javascript:void(0)'}
+                to={"javascript:void(0)"}
                 className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
               >
                 Resend Invoice
@@ -152,7 +154,7 @@ const UserOrderHistory = ({ OrderDetails }) => {
                 <span>Message</span>
               </div>
               <Link
-                to={'javascript:void(0)'}
+                to={"javascript:void(0)"}
                 className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
               >
                 Send Message
@@ -165,7 +167,7 @@ const UserOrderHistory = ({ OrderDetails }) => {
                 <span>Payment</span>
               </div>
               <Link
-                to={'javascript:void(0)'}
+                to={"javascript:void(0)"}
                 className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
               >
                 Refund
@@ -194,7 +196,7 @@ const UserOrderHistory = ({ OrderDetails }) => {
                   <button className="py-2 px-6 rounded-lg bg-green-100 text-green-500">
                     User
                   </button>
-                  <span className="text-xs">Mar 5, 2028 – 3:42 PM</span>
+                  <span className="text-xs">{formatDate(OrderDetails?.order_date)}</span>
                 </div>
               </div>
             </li>
@@ -207,7 +209,7 @@ const UserOrderHistory = ({ OrderDetails }) => {
                   <button className="py-2 px-6 rounded-lg bg-blue-100 text-primary">
                     System
                   </button>
-                  <span className="text-xs">Mar 5, 2028 – 3:42 PM</span>
+                  <span className="text-xs">{formatDate(OrderDetails?.order_date)}</span>
                 </div>
               </div>
             </li>
@@ -220,12 +222,12 @@ const UserOrderHistory = ({ OrderDetails }) => {
                   <button className="py-2 px-6 rounded-lg bg-blue-100 text-primary">
                     Admin
                   </button>
-                  <span className="text-xs">Mar 5, 2028 – 3:42 PM</span>
+                  <span className="text-xs">{OrderDeliverables[OrderDeliverables.length-1]["upload_date"]}</span>
                 </div>
               </div>
             </li>
 
-            <li className="flexBetween w-full gap-4">
+            {/* <li className="flexBetween w-full gap-4">
               <div className="flex items-center w-1/2 md:w-1/3">
                 <span>Revision Requested</span>
               </div>
@@ -237,7 +239,7 @@ const UserOrderHistory = ({ OrderDetails }) => {
                   <span className="text-xs">Mar 5, 2028 – 3:42 PM</span>
                 </div>
               </div>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
@@ -251,7 +253,7 @@ const UserOrderHistory = ({ OrderDetails }) => {
             </div>
 
             <Link
-              to={'javascript:void(0)'}
+              to={"javascript:void(0)"}
               className="flexBetween px-3 py-2 gap-4 bg-primary text-white rounded-lg"
             >
               Upload files
@@ -260,7 +262,23 @@ const UserOrderHistory = ({ OrderDetails }) => {
           </div>
           <hr className="bg-gray-200 h-px w-full" />
 
-          <ul className="flex flex-col space-y-5 py-4">
+          {OrderDeliverables?.length > 0 ? (
+            <ul className="flex flex-col space-y-5 py-4">
+              {OrderDeliverables.map((deliverable, index) => (
+                <li className="p-2 sm:p-4 w-full bg-[#e3e2ff] rounded-lg flexBetween" key={index}>
+                  <span>{deliverable.original_file_name}</span>
+                  <Ellipsis className="w-6" />
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <ul className="flex flex-col space-y-5 py-4">
+              <li className="p-2 sm:p-4 w-full bg-[#e3e2ff] rounded-lg flexBetween">
+                <span>Nothing delivered yet</span>
+              </li>
+            </ul>
+          )}
+          {/* <ul className="flex flex-col space-y-5 py-4">
             <li className="p-2 sm:p-4 w-full bg-[#e3e2ff] rounded-lg flexBetween">
               <span>File Name.zip</span>
               <Ellipsis className="w-6" />
@@ -269,7 +287,7 @@ const UserOrderHistory = ({ OrderDetails }) => {
               <span>File Name.zip</span>
               <Ellipsis className="w-6" />
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div>
