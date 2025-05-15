@@ -222,7 +222,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                   <button className="py-2 px-6 rounded-lg bg-blue-100 text-primary">
                     Admin
                   </button>
-                  <span className="text-xs">{OrderDeliverables[OrderDeliverables.length-1]["upload_date"]}</span>
+                  <span className="text-xs">{OrderDeliverables[OrderDeliverables.length-1]?.upload_date}</span>
                 </div>
               </div>
             </li>
