@@ -8,6 +8,7 @@ import {
   PackageCheck,
   Receipt,
   ReceiptText,
+  RefreshCw,
   Settings2,
   Undo2,
   Upload,
@@ -64,12 +65,12 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
               </div>
             </div>
           </div>
-          <div className="flex items-end justify-end pt-3">
+          {/* <div className="flex items-end justify-end pt-3">
             <Link className="px-3 py-2 flexBetween gap-4 rounded-lg bg-primary text-white w-3/5 md:w-1/3">
-              Download PDF
+              Download Invoice
               <FileDown className="w-6" />
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -125,7 +126,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
               </div>
               <div className="relative flex items-center w-full">
                 <select className="invoice-select border border-gray-400">
-                  <option className="invoice-selectOpt">Select Product</option>
+                  <option className="invoice-selectOpt">Select Status</option>
                   <option className="invoice-selectOpt">Delivered</option>
                   <option className="invoice-selectOpt">Pending</option>
                   <option className="invoice-selectOpt">Cancelled</option>
@@ -136,7 +137,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
               </div>
             </div>
 
-            <div className="flexBetween gap-5 w-full relative">
+            {/* <div className="flexBetween gap-5 w-full relative">
               <div className="flex items-center w-2/5">
                 <span>Invoice</span>
               </div>
@@ -147,9 +148,9 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                 Resend Invoice
                 <ReceiptText className="w-6" />
               </Link>
-            </div>
+            </div> */}
 
-            <div className="flexBetween gap-5 w-full relative">
+            {/* <div className="flexBetween gap-5 w-full relative">
               <div className="flex items-center w-2/5">
                 <span>Message</span>
               </div>
@@ -160,18 +161,24 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                 Send Message
                 <MessageCircleMore className="w-6" />
               </Link>
-            </div>
+            </div> */}
 
             <div className="flexBetween gap-5 w-full relative">
-              <div className="flex items-center w-2/5">
-                <span>Payment</span>
-              </div>
               <Link
                 to={'javascript:void(0)'}
                 className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
               >
-                Refund
-                <Undo2 className="w-6" />
+                Update
+                <RefreshCw className="w-6" />
+              </Link>
+            </div>
+            <div className="flexBetween gap-5 w-full relative">
+              <Link
+                to={'javascript:void(0)'}
+                className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
+              >
+                Download Invoice
+                <ReceiptText className="w-6" />
               </Link>
             </div>
           </div>
