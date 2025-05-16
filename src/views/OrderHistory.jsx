@@ -1,9 +1,9 @@
-import DashboardBanner from "@/components/DashboardBanner";
-import UserOrderHistory from "../components/UserOrderHistory";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { getCookie } from "@/func";
+import DashboardBanner from '@/components/DashboardBanner';
+import UserOrderHistory from '../components/UserOrderHistory';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { getCookie } from '@/func';
 
 const OrderHistory = () => {
   const { id } = useParams();
@@ -20,7 +20,7 @@ const OrderHistory = () => {
 
   const fetchOrderDetails = (order_id) => {
     const json = JSON.stringify({
-      token: getCookie("token"),
+      token: getCookie('token'),
       order_id: order_id,
     });
 
@@ -30,12 +30,12 @@ const OrderHistory = () => {
         JSON.stringify({ params: json }),
         {
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            'Content-Type': 'application/x-www-form-urlencoded',
           },
         }
       )
       .then((response) => {
-        if (response.data.success === "true") {
+        if (response.data.success === 'true') {
           setOrderDetails(response.data.order_details);
           setOrderDeliveables(response.data.order_deliverables);
         }
@@ -50,7 +50,10 @@ const OrderHistory = () => {
       <div className="relative w-full h-full flex flex-col space-y-5 lg:space-y-10 mt-8 mb-5 lg:mb-10">
         <DashboardBanner />
 
-        <UserOrderHistory OrderDetails={orderDetails} OrderDeliverables={orderDeliverables}/>
+        <UserOrderHistory
+          OrderDetails={orderDetails}
+          OrderDeliverables={orderDeliverables}
+        />
       </div>
     </div>
   );

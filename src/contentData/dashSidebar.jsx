@@ -88,6 +88,14 @@ export const userDashSidebar = [
     direct: true,
   },
   {
+    name: 'Invoices',
+    icon: <ReceiptText className="w-6 h-6" />,
+    path: 'invoices',
+    component: <Invoices />,
+    layout: '/dashboard',
+    direct: true,
+  },
+  {
     name: 'Settings',
     icon: <Cogg className="w-6 h-6" />,
     path: 'settings',
@@ -95,6 +103,7 @@ export const userDashSidebar = [
     layout: '/dashboard',
     direct: true,
   },
+
   {
     name: 'Contacts',
     icon: <Mail className="w-6 h-6" />,

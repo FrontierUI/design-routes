@@ -13,11 +13,11 @@ import {
   Upload,
   User,
   UserRoundCog,
-} from "lucide-react";
-import React from "react";
-import { Link } from "react-router-dom";
+} from 'lucide-react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { formatDate } from "@/func";
+import { formatDate } from '@/func';
 
 const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
   return (
@@ -141,7 +141,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                 <span>Invoice</span>
               </div>
               <Link
-                to={"javascript:void(0)"}
+                to={'javascript:void(0)'}
                 className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
               >
                 Resend Invoice
@@ -154,7 +154,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                 <span>Message</span>
               </div>
               <Link
-                to={"javascript:void(0)"}
+                to={'javascript:void(0)'}
                 className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
               >
                 Send Message
@@ -167,7 +167,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                 <span>Payment</span>
               </div>
               <Link
-                to={"javascript:void(0)"}
+                to={'javascript:void(0)'}
                 className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
               >
                 Refund
@@ -196,7 +196,9 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                   <button className="py-2 px-6 rounded-lg bg-green-100 text-green-500">
                     User
                   </button>
-                  <span className="text-xs">{formatDate(OrderDetails?.order_date)}</span>
+                  <span className="text-xs">
+                    {formatDate(OrderDetails?.order_date)}
+                  </span>
                 </div>
               </div>
             </li>
@@ -209,7 +211,9 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                   <button className="py-2 px-6 rounded-lg bg-blue-100 text-primary">
                     System
                   </button>
-                  <span className="text-xs">{formatDate(OrderDetails?.order_date)}</span>
+                  <span className="text-xs">
+                    {formatDate(OrderDetails?.order_date)}
+                  </span>
                 </div>
               </div>
             </li>
@@ -222,7 +226,12 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                   <button className="py-2 px-6 rounded-lg bg-blue-100 text-primary">
                     Admin
                   </button>
-                  <span className="text-xs">{OrderDeliverables[OrderDeliverables.length-1]?.upload_date}</span>
+                  <span className="text-xs">
+                    {
+                      OrderDeliverables[OrderDeliverables.length - 1]
+                        ?.upload_date
+                    }
+                  </span>
                 </div>
               </div>
             </li>
@@ -253,7 +262,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
             </div>
 
             <Link
-              to={"javascript:void(0)"}
+              to={'javascript:void(0)'}
               className="flexBetween px-3 py-2 gap-4 bg-primary text-white rounded-lg"
             >
               Upload files
@@ -265,7 +274,10 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
           {OrderDeliverables?.length > 0 ? (
             <ul className="flex flex-col space-y-5 py-4">
               {OrderDeliverables.map((deliverable, index) => (
-                <li className="p-2 sm:p-4 w-full bg-[#e3e2ff] rounded-lg flexBetween" key={index}>
+                <li
+                  className="p-2 sm:p-4 w-full bg-[#e3e2ff] rounded-lg flexBetween"
+                  key={index}
+                >
                   <span>{deliverable.original_file_name}</span>
                   <Ellipsis className="w-6" />
                 </li>
