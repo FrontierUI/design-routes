@@ -15,6 +15,7 @@ import {
   FileText,
   CircleFadingArrowUp,
   ArrowRightLeft,
+  TicketPlus,
 } from 'lucide-react';
 
 import { checkRole, getCookie } from '@/func';
@@ -31,6 +32,7 @@ import UserDetails from '@/views/UserDetails';
 import AllOrders from '@/views/AllOrders';
 import OrderHistory from '@/views/OrderHistory';
 import UpdateOrderStatus from '@/views/UpdateOrderStatus';
+import TicketID from '../views/TicketID';
 
 var role = '';
 if (getCookie('token') !== undefined && getCookie('token') !== null) {
@@ -78,6 +80,14 @@ export const userDashSidebar = [
     component: <SubmitTicket />,
     layout: '/dashboard',
     direct: true,
+  },
+  {
+    name: 'Ticket user id',
+    icon: <TicketPlus className="w-6 h-6" />,
+    path: 'update-ticket-status',
+    component: <TicketID />,
+    layout: '/dashboard',
+    direct: false,
   },
   {
     name: 'Track Ticket Status',
@@ -186,6 +196,14 @@ export const adminDashSidebar = [
     direct: true,
   },
   {
+    name: 'Ticket user id',
+    icon: <TicketPlus className="w-6 h-6" />,
+    path: 'update-ticket-status',
+    component: <TicketID />,
+    layout: '/dashboard',
+    direct: false,
+  },
+  {
     name: 'Update Ticket Status',
     icon: <History className="w-6 h-6" />,
     path: 'update-ticket-status',
@@ -193,6 +211,7 @@ export const adminDashSidebar = [
     layout: '/dashboard',
     direct: false,
   },
+
   {
     name: 'View Transactions',
     icon: <ArrowRightLeft className="w-6 h-6" />,
