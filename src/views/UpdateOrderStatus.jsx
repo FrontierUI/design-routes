@@ -90,13 +90,23 @@ const UpdateOrderStatus = () => {
         </button>
       );
     else if (Status === "completed")
-      <button className="bg-green-100 text-green-500 px-5 py-2 rounded-lg">
-        Completed
-      </button>;
+      return (
+        <button className="bg-green-100 text-green-500 px-5 py-2 rounded-lg">
+          Completed
+        </button>
+      );
+    else if (Status === "delivered")
+      return (
+        <button className="bg-green-100 text-green-500 px-5 py-2 rounded-lg">
+          Delivered
+        </button>
+      );
     else if (Status === "cancelled")
-      <button className="bg-red-100 text-red-500 px-5 py-2 rounded-lg">
-        Cancelled
-      </button>;
+      return (
+        <button className="bg-red-100 text-red-500 px-5 py-2 rounded-lg">
+          Cancelled
+        </button>
+      );
   };
 
   const handleStatusChange = (id, newStatus) => {
