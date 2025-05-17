@@ -1,9 +1,11 @@
-import DashboardBanner from '@/components/DashboardBanner';
-import UserOrderHistory from '../components/UserOrderHistory';
-import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
+
 import { getCookie } from '@/func';
+
+import DashboardBanner from '@/components/DashboardBanner';
+import UserOrderHistory from '@/components/UserOrderHistory';
 
 const OrderHistory = () => {
   const { id } = useParams();

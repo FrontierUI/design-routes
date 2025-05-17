@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import TicketID from './views/TicketID';
 
 // import { base64_decode } from './func';
 
@@ -131,6 +132,7 @@ const App = () => {
 
           <Route path="/dashboard/:page" element={<AdminDashboard />} />
           <Route path="/dashboard/:page/:id" element={<AdminDashboard />} />
+          {/* <Route path="/dasboard/ticket/create" element={<TicketID />} /> */}
         </Routes>
 
         {/* <Footer /> */}
