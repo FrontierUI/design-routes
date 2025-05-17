@@ -1,17 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-import { ChevronDown, Ellipsis, ListFilter } from 'lucide-react';
+import { ChevronDown, Ellipsis, ListFilter } from "lucide-react";
 
-import DashboardBanner from '@/components/DashboardBanner';
-import { formatDate, getCookie } from '@/func';
+import DashboardBanner from "@/components/DashboardBanner";
+import { getCookie } from "@/func";
+import Toast from "@/components/Toast";
 
 const UpdateOrderStatus = () => {
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
   const [orders, setOrders] = useState([]);
   const [offset, setOffset] = useState(0);
   const [limit, setLimit] = useState(50);
+
+  // const [selectedStatuses, setSelectedStatuses] = useState(
+  //   ordersData.reduce((acc, order) => {
+  //     acc[order.id] = order.status;
+  //     return acc;
+  //   }, {})
+  // );
+  const [selectedStatuses, setSelectedStatuses] = useState([]);
+  const [toasts, setToasts] = useState([]);
 
   useEffect(() => {
     fetchOrders();
@@ -21,9 +31,31 @@ const UpdateOrderStatus = () => {
     };
   }, []);
 
+  useEffect(() => {
+    setSelectedStatuses(
+      orders.reduce((acc, order) => {
+        acc[order.order_id] = order.order_status;
+        return acc;
+      }, {})
+    );
+  }, [orders]);
+
+  useEffect(() => {
+    console.log("selectedStatuses", selectedStatuses);
+  }, [selectedStatuses]);
+
+  const addToast = (type, message) => {
+    const id = Date.now();
+    setToasts((prev) => [...prev, { id, message, type }]);
+  };
+
+  const removeToast = (id) => {
+    setToasts((prev) => prev.filter((toast) => toast.id !== id));
+  };
+
   const fetchOrders = () => {
     const json = JSON.stringify({
-      token: getCookie('token'),
+      token: getCookie("token"),
       limit: limit,
       offset: offset,
     });
@@ -32,10 +64,10 @@ const UpdateOrderStatus = () => {
       .post(
         `${import.meta.env.VITE_BASE_API}/api.php?action=get_orders`,
         JSON.stringify({ params: json }),
-        { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+        { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
       )
       .then((response) => {
-        if (response.data.success === 'true') {
+        if (response.data.success === "true") {
           setOrders(response.data.orders);
         }
       })
@@ -45,30 +77,84 @@ const UpdateOrderStatus = () => {
   };
 
   const StatusBedge = ({ Status }) => {
-    if (Status === 'pending')
+    if (Status === "pending")
       return (
         <button className="bg-yellow-100 text-yellow-500 px-5 py-2 rounded-lg">
           Pending
         </button>
       );
-    else if (Status === 'inprogress')
+    else if (Status === "in progres")
       return (
         <button className="bg-blue-100 text-blue-500 px-5 py-2 rounded-lg">
           In Progress
         </button>
       );
-    else if (Status === 'completed')
+    else if (Status === "completed")
       <button className="bg-green-100 text-green-500 px-5 py-2 rounded-lg">
         Completed
       </button>;
-    else if (Status === 'cancelled')
+    else if (Status === "cancelled")
       <button className="bg-red-100 text-red-500 px-5 py-2 rounded-lg">
         Cancelled
       </button>;
   };
 
+  const handleStatusChange = (id, newStatus) => {
+    setSelectedStatuses((prev) => ({
+      ...prev,
+      [id]: newStatus,
+    }));
+  };
+
+  const updateOrderStatus = (id, newStatus) => {
+    const json = JSON.stringify({
+      token: getCookie("token"),
+      order_id: id,
+      status: newStatus,
+    });
+
+    axios
+      .post(
+        `${import.meta.env.VITE_BASE_API}/api.php?action=update_order`,
+        JSON.stringify({ params: json }),
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      )
+      .then((response) => {
+        if (response.data.success === "true") {
+          addToast("success", response.data.message);
+        }
+      })
+      .catch((error) => {
+        console.error(`Error: ${error}`);
+      });
+  };
+
+  const handleUpdate = (id) => {
+    setOrders((prevOrders) =>
+      prevOrders.map((order) =>
+        order.order_id === id
+          ? { ...order, order_status: selectedStatuses[id] }
+          : order
+      )
+    );
+    //console.log(`Order ${id} updated to status: ${selectedStatuses[id]}`);
+    updateOrderStatus(id, selectedStatuses[id]);
+  };
+
   return (
     <div className="relative w-full h-full updateOrderStatus">
+      {toasts.map((toast) => (
+        <Toast
+          key={toast.id}
+          message={toast.message}
+          type={toast.type}
+          onClose={() => removeToast(toast.id)}
+        />
+      ))}
       <div className="relative w-full h-full flex flex-col space-y-5 lg:space-y-10 mt-8 mb-5 lg:mb-10">
         <DashboardBanner />
 
@@ -85,7 +171,7 @@ const UpdateOrderStatus = () => {
               />
               <div className="flex items-center gap-2">
                 <p className="font-monaMedium text-xl">Filter</p>
-                <Link to={'javascript:void(0)'} className="flexy">
+                <Link to={"javascript:void(0)"} className="flexy">
                   <ListFilter className="w-6 h-6" />
                 </Link>
               </div>
@@ -171,20 +257,40 @@ const UpdateOrderStatus = () => {
                       </td>
                       <td className="p-4 text-left">
                         <div className="relative flex items-center max-w-40">
-                          <select className="changeStatus-select">
+                          <select
+                            className="changeStatus-select"
+                            value={selectedStatuses[order.order_id]}
+                            onChange={(e) =>
+                              handleStatusChange(order.order_id, e.target.value)
+                            }
+                          >
                             <option className="changeStatus-select">
                               Choose Status
                             </option>
-                            <option className="changeStatus-select">
+                            <option
+                              className="changeStatus-select"
+                              value={"pending"}
+                            >
                               Pending
                             </option>
-                            <option className="changeStatus-select">
+                            <option
+                              className="changeStatus-select"
+                              value={"in progres"}
+                            >
                               In Progress
                             </option>
-                            <option className="changeStatus-select">
+                            <option
+                              className="changeStatus-select"
+                              value={"delivered"}
+                            >
                               Delivered
                             </option>
-                            <option className="changeStatus-select">Ban</option>
+                            <option
+                              className="changeStatus-select"
+                              value={"cancelled"}
+                            >
+                              Cancelled
+                            </option>
                           </select>
                           <div className="absolute right-1.5 flex items-center">
                             <ChevronDown className="w-5 h-5" />
@@ -194,7 +300,19 @@ const UpdateOrderStatus = () => {
 
                       <td className="p-4 text-left rounded-r-lg">
                         <div className="flexBetween gap-4">
-                          <button className="bg-primary text-white py-2 px-4 rounded-lg font-monaMedium">
+                          <button
+                            className={`bg-primary text-white py-2 px-4 rounded-lg font-monaMedium${
+                              selectedStatuses[order.order_id] ===
+                              order.order_status
+                                ? " opacity-50 cursor-not-allowed"
+                                : ""
+                            }`}
+                            onClick={() => handleUpdate(order.order_id)}
+                            disabled={
+                              selectedStatuses[order.order_id] ===
+                              order.order_status
+                            }
+                          >
                             Update
                           </button>
                           {/* <Ellipsis className="w-6 h-6" /> */}

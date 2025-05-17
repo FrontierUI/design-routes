@@ -14,15 +14,80 @@ import {
   Upload,
   User,
   UserRoundCog,
-} from 'lucide-react';
-import React from 'react';
-import { Link } from 'react-router-dom';
+} from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Toast from "@/components/Toast";
 
-import { formatDate } from '@/func';
+import { formatDate, getCookie } from "@/func";
+import axios from "axios";
 
 const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
+  const [status, setStatus] = useState("");
+  const [enableUpdateButton, setEnableUpdateButton] = useState(false);
+  const [toasts, setToasts] = useState([]);
+
+  const orderStatus = OrderDetails?.order_status;
+
+  useEffect(() => {
+    if (status !== orderStatus) setEnableUpdateButton(true);
+    else setEnableUpdateButton(false);
+  }, [status]);
+
+  const addToast = (type, message) => {
+    const id = Date.now();
+    setToasts((prev) => [...prev, { id, message, type }]);
+  };
+
+  const removeToast = (id) => {
+    setToasts((prev) => prev.filter((toast) => toast.id !== id));
+  };
+
+  const handleChange = (e) => {
+    const newStatus = e.target.value;
+    if (newStatus !== "") setStatus(newStatus);
+    // You can also call an API or trigger any side effect here
+  };
+
+  const updateOrderStatus = () => {
+    if (status !== orderStatus) {
+      const json = JSON.stringify({
+        token: getCookie("token"),
+        order_id: OrderDetails.order_id,
+        status: status,
+      });
+
+      axios
+        .post(
+          `${import.meta.env.VITE_BASE_API}/api.php?action=update_order`,
+          JSON.stringify({ params: json }),
+          {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+          }
+        )
+        .then((response) => {
+          if (response.data.success === "true") {
+            addToast("success", response.data.message);
+          }
+        })
+        .catch((error) => {
+          console.error(`Error: ${error}`);
+        });
+    }
+  };
+
   return (
     <div className="grid grid-cols-12 grid-flow-dense gap-6 w-full  mx-auto">
+      {toasts.map((toast) => (
+        <Toast
+          key={toast.id}
+          message={toast.message}
+          type={toast.type}
+          onClose={() => removeToast(toast.id)}
+        />
+      ))}
       <div className="col-span-12 md:col-span-6 w-full relative rounded-lg">
         <div className="sm:p-5 p-3 bg-white rounded-lg flex flex-col relative w-full space-y-4">
           <div className="flex items-center gap-4">
@@ -125,11 +190,30 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                 <span>Status</span>
               </div>
               <div className="relative flex items-center w-full">
-                <select className="invoice-select border border-gray-400">
-                  <option className="invoice-selectOpt">Select Status</option>
-                  <option className="invoice-selectOpt">Delivered</option>
-                  <option className="invoice-selectOpt">Pending</option>
-                  <option className="invoice-selectOpt">Cancelled</option>
+                <select
+                  className="invoice-select border border-gray-400"
+                  value={status !== "" ? status : OrderDetails?.order_status}
+                  onChange={handleChange}
+                >
+                  <option
+                    className="invoice-selectOpt"
+                    value={""}
+                    onClick={() => setEnableUpdateButton(false)}
+                  >
+                    Select Status
+                  </option>
+                  <option className="invoice-selectOpt" value={"pending"}>
+                    Pending
+                  </option>
+                  <option className="invoice-selectOpt" value={"in progres"}>
+                    In Progress
+                  </option>
+                  <option className="invoice-selectOpt" value={"delivered"}>
+                    Delivered
+                  </option>
+                  <option className="invoice-selectOpt" value={"cancelled"}>
+                    Cancelled
+                  </option>
                 </select>
                 <div className="absolute right-1.5 flex items-center">
                   <ChevronDown className="w-5 h-5" />
@@ -164,17 +248,22 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
             </div> */}
 
             <div className="flexBetween gap-5 w-full relative">
-              <Link
-                to={'javascript:void(0)'}
-                className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
+              <button
+                className={`min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg${
+                  status !== "" && enableUpdateButton
+                    ? ""
+                    : " opacity-50 cursor-not-allowed"
+                }`}
+                disabled={status === "" || !enableUpdateButton}
+                onClick={updateOrderStatus}
               >
                 Update
                 <RefreshCw className="w-6" />
-              </Link>
+              </button>
             </div>
             <div className="flexBetween gap-5 w-full relative">
               <Link
-                to={'javascript:void(0)'}
+                to={"javascript:void(0)"}
                 className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
               >
                 Download Invoice
@@ -269,7 +358,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
             </div>
 
             <Link
-              to={'javascript:void(0)'}
+              to={"javascript:void(0)"}
               className="flexBetween px-3 py-2 gap-4 bg-primary text-white rounded-lg"
             >
               Upload files
