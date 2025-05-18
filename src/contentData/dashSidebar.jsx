@@ -206,12 +206,12 @@ export const adminDashSidebar = [
     direct: true,
   },
   {
-    name: 'Ticket username id',
+    name: 'Ticket Details',
     icon: <TicketPlus className="w-6 h-6" />,
-    path: 'ticketId',
+    path: 'ticket-details',
     component: <TicketID />,
     layout: '/dashboard',
-    direct: true,
+    direct: false,
   },
   {
     name: 'Update Ticket Status',
@@ -223,12 +223,12 @@ export const adminDashSidebar = [
   },
 
   {
-    name: 'Invoices UserName ID',
+    name: 'Invoice Details',
     icon: <ReceiptText className="w-6 h-6" />,
-    path: 'invoiceid',
+    path: 'invoice-details',
     component: <InvoiceId />,
     layout: '/dashboard',
-    direct: true,
+    direct: false,
   },
   {
     name: 'View Transactions',

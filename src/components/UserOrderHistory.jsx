@@ -263,7 +263,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
             </div>
             <div className="flexBetween gap-5 w-full relative">
               <Link
-                to={'/dashboard/invoiceId'}
+                to={'/dashboard/invoice-details'}
                 className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
               >
                 Download Invoice
