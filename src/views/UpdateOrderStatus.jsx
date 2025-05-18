@@ -1,25 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-import { ChevronDown, Ellipsis, ListFilter } from "lucide-react";
+import { ChevronDown, Ellipsis, ListFilter } from 'lucide-react';
 
-import DashboardBanner from "@/components/DashboardBanner";
-import { getCookie } from "@/func";
-import Toast from "@/components/Toast";
+import DashboardBanner from '@/components/DashboardBanner';
+import { getCookie } from '@/func';
+import Toast from '@/components/Toast';
 
 const UpdateOrderStatus = () => {
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState('');
   const [orders, setOrders] = useState([]);
   const [offset, setOffset] = useState(0);
   const [limit, setLimit] = useState(50);
 
-  // const [selectedStatuses, setSelectedStatuses] = useState(
-  //   ordersData.reduce((acc, order) => {
-  //     acc[order.id] = order.status;
-  //     return acc;
-  //   }, {})
-  // );
   const [selectedStatuses, setSelectedStatuses] = useState([]);
   const [toasts, setToasts] = useState([]);
 
@@ -41,7 +35,7 @@ const UpdateOrderStatus = () => {
   }, [orders]);
 
   useEffect(() => {
-    console.log("selectedStatuses", selectedStatuses);
+    console.log('selectedStatuses', selectedStatuses);
   }, [selectedStatuses]);
 
   const addToast = (type, message) => {
@@ -55,7 +49,7 @@ const UpdateOrderStatus = () => {
 
   const fetchOrders = () => {
     const json = JSON.stringify({
-      token: getCookie("token"),
+      token: getCookie('token'),
       limit: limit,
       offset: offset,
     });
@@ -64,10 +58,10 @@ const UpdateOrderStatus = () => {
       .post(
         `${import.meta.env.VITE_BASE_API}/api.php?action=get_orders`,
         JSON.stringify({ params: json }),
-        { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
+        { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
       )
       .then((response) => {
-        if (response.data.success === "true") {
+        if (response.data.success === 'true') {
           setOrders(response.data.orders);
         }
       })
@@ -77,31 +71,31 @@ const UpdateOrderStatus = () => {
   };
 
   const StatusBedge = ({ Status }) => {
-    if (Status === "pending")
+    if (Status === 'pending')
       return (
         <button className="bg-yellow-100 text-yellow-500 px-5 py-2 rounded-lg">
           Pending
         </button>
       );
-    else if (Status === "in progres")
+    else if (Status === 'in progres')
       return (
         <button className="bg-blue-100 text-blue-500 px-5 py-2 rounded-lg">
           In Progress
         </button>
       );
-    else if (Status === "completed")
+    else if (Status === 'completed')
       return (
         <button className="bg-green-100 text-green-500 px-5 py-2 rounded-lg">
           Completed
         </button>
       );
-    else if (Status === "delivered")
+    else if (Status === 'delivered')
       return (
         <button className="bg-green-100 text-green-500 px-5 py-2 rounded-lg">
           Delivered
         </button>
       );
-    else if (Status === "cancelled")
+    else if (Status === 'cancelled')
       return (
         <button className="bg-red-100 text-red-500 px-5 py-2 rounded-lg">
           Cancelled
@@ -118,7 +112,7 @@ const UpdateOrderStatus = () => {
 
   const updateOrderStatus = (id, newStatus) => {
     const json = JSON.stringify({
-      token: getCookie("token"),
+      token: getCookie('token'),
       order_id: id,
       status: newStatus,
     });
@@ -127,15 +121,11 @@ const UpdateOrderStatus = () => {
       .post(
         `${import.meta.env.VITE_BASE_API}/api.php?action=update_order`,
         JSON.stringify({ params: json }),
-        {
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-        }
+        { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
       )
       .then((response) => {
-        if (response.data.success === "true") {
-          addToast("success", response.data.message);
+        if (response.data.success === 'true') {
+          addToast('success', response.data.message);
         }
       })
       .catch((error) => {
@@ -181,7 +171,7 @@ const UpdateOrderStatus = () => {
               />
               <div className="flex items-center gap-2">
                 <p className="font-monaMedium text-xl">Filter</p>
-                <Link to={"javascript:void(0)"} className="flexy">
+                <Link to={'javascript:void(0)'} className="flexy">
                   <ListFilter className="w-6 h-6" />
                 </Link>
               </div>
@@ -279,25 +269,25 @@ const UpdateOrderStatus = () => {
                             </option>
                             <option
                               className="changeStatus-select"
-                              value={"pending"}
+                              value={'pending'}
                             >
                               Pending
                             </option>
                             <option
                               className="changeStatus-select"
-                              value={"in progres"}
+                              value={'in progres'}
                             >
                               In Progress
                             </option>
                             <option
                               className="changeStatus-select"
-                              value={"delivered"}
+                              value={'delivered'}
                             >
                               Delivered
                             </option>
                             <option
                               className="changeStatus-select"
-                              value={"cancelled"}
+                              value={'cancelled'}
                             >
                               Cancelled
                             </option>
@@ -314,8 +304,8 @@ const UpdateOrderStatus = () => {
                             className={`bg-primary text-white py-2 px-4 rounded-lg font-monaMedium${
                               selectedStatuses[order.order_id] ===
                               order.order_status
-                                ? " opacity-50 cursor-not-allowed"
-                                : ""
+                                ? ' opacity-50 cursor-not-allowed'
+                                : ''
                             }`}
                             onClick={() => handleUpdate(order.order_id)}
                             disabled={
@@ -334,10 +324,7 @@ const UpdateOrderStatus = () => {
               ) : (
                 <tbody className="w-full whitespace-nowrap">
                   <tr className="w-full text-sm transitAll hover:bg-[#e3e2ff] rounded-lg">
-                    <td
-                      className="p-4 text-left rounded-r-lg text-center"
-                      colSpan={6}
-                    >
+                    <td className="p-4 text-left rounded-r-lg" colSpan={6}>
                       No order created yet
                     </td>
                   </tr>
