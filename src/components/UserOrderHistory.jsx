@@ -14,16 +14,16 @@ import {
   Upload,
   User,
   UserRoundCog,
-} from "lucide-react";
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Toast from "@/components/Toast";
+} from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Toast from '@/components/Toast';
 
-import { formatDate, getCookie } from "@/func";
-import axios from "axios";
+import { formatDate, getCookie } from '@/func';
+import axios from 'axios';
 
 const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState('');
   const [enableUpdateButton, setEnableUpdateButton] = useState(false);
   const [toasts, setToasts] = useState([]);
 
@@ -45,14 +45,14 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
 
   const handleChange = (e) => {
     const newStatus = e.target.value;
-    if (newStatus !== "") setStatus(newStatus);
+    if (newStatus !== '') setStatus(newStatus);
     // You can also call an API or trigger any side effect here
   };
 
   const updateOrderStatus = () => {
     if (status !== orderStatus) {
       const json = JSON.stringify({
-        token: getCookie("token"),
+        token: getCookie('token'),
         order_id: OrderDetails.order_id,
         status: status,
       });
@@ -63,13 +63,13 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
           JSON.stringify({ params: json }),
           {
             headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
+              'Content-Type': 'application/x-www-form-urlencoded',
             },
           }
         )
         .then((response) => {
-          if (response.data.success === "true") {
-            addToast("success", response.data.message);
+          if (response.data.success === 'true') {
+            addToast('success', response.data.message);
           }
         })
         .catch((error) => {
@@ -192,26 +192,26 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
               <div className="relative flex items-center w-full">
                 <select
                   className="invoice-select border border-gray-400"
-                  value={status !== "" ? status : OrderDetails?.order_status}
+                  value={status !== '' ? status : OrderDetails?.order_status}
                   onChange={handleChange}
                 >
                   <option
                     className="invoice-selectOpt"
-                    value={""}
+                    value={''}
                     onClick={() => setEnableUpdateButton(false)}
                   >
                     Select Status
                   </option>
-                  <option className="invoice-selectOpt" value={"pending"}>
+                  <option className="invoice-selectOpt" value={'pending'}>
                     Pending
                   </option>
-                  <option className="invoice-selectOpt" value={"in progres"}>
+                  <option className="invoice-selectOpt" value={'in progres'}>
                     In Progress
                   </option>
-                  <option className="invoice-selectOpt" value={"delivered"}>
+                  <option className="invoice-selectOpt" value={'delivered'}>
                     Delivered
                   </option>
-                  <option className="invoice-selectOpt" value={"cancelled"}>
+                  <option className="invoice-selectOpt" value={'cancelled'}>
                     Cancelled
                   </option>
                 </select>
@@ -250,11 +250,11 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
             <div className="flexBetween gap-5 w-full relative">
               <button
                 className={`min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg${
-                  status !== "" && enableUpdateButton
-                    ? ""
-                    : " opacity-50 cursor-not-allowed"
+                  status !== '' && enableUpdateButton
+                    ? ''
+                    : ' opacity-50 cursor-not-allowed'
                 }`}
-                disabled={status === "" || !enableUpdateButton}
+                disabled={status === '' || !enableUpdateButton}
                 onClick={updateOrderStatus}
               >
                 Update
@@ -263,7 +263,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
             </div>
             <div className="flexBetween gap-5 w-full relative">
               <Link
-                to={"javascript:void(0)"}
+                to={'/dashboard/invoiceId'}
                 className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
               >
                 Download Invoice
@@ -358,7 +358,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
             </div>
 
             <Link
-              to={"javascript:void(0)"}
+              to={'javascript:void(0)'}
               className="flexBetween px-3 py-2 gap-4 bg-primary text-white rounded-lg"
             >
               Upload files

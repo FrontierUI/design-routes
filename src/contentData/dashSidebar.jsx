@@ -33,6 +33,7 @@ import AllOrders from '@/views/AllOrders';
 import OrderHistory from '@/views/OrderHistory';
 import UpdateOrderStatus from '@/views/UpdateOrderStatus';
 import TicketID from '../views/TicketID';
+import InvoiceId from '../views/InvoiceId';
 
 var role = '';
 if (getCookie('token') !== undefined && getCookie('token') !== null) {
@@ -104,6 +105,15 @@ export const userDashSidebar = [
     component: <Invoices />,
     layout: '/dashboard',
     direct: true,
+  },
+
+  {
+    name: 'Invoices id',
+    icon: <ReceiptText className="w-6 h-6" />,
+    path: 'invoiceid',
+    component: <InvoiceId />,
+    layout: '/dashboard',
+    direct: false,
   },
   {
     name: 'Settings',
@@ -196,12 +206,12 @@ export const adminDashSidebar = [
     direct: true,
   },
   {
-    name: 'Ticket user id',
+    name: 'Ticket username id',
     icon: <TicketPlus className="w-6 h-6" />,
-    path: 'update-ticket-status',
+    path: 'ticketId',
     component: <TicketID />,
     layout: '/dashboard',
-    direct: false,
+    direct: true,
   },
   {
     name: 'Update Ticket Status',
@@ -209,9 +219,17 @@ export const adminDashSidebar = [
     path: 'update-ticket-status',
     component: <TrackTicket />,
     layout: '/dashboard',
-    direct: false,
+    direct: true,
   },
 
+  {
+    name: 'Invoices UserName ID',
+    icon: <ReceiptText className="w-6 h-6" />,
+    path: 'invoiceid',
+    component: <InvoiceId />,
+    layout: '/dashboard',
+    direct: true,
+  },
   {
     name: 'View Transactions',
     icon: <ArrowRightLeft className="w-6 h-6" />,
