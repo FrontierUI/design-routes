@@ -16,6 +16,7 @@ import {
   CircleFadingArrowUp,
   ArrowRightLeft,
   TicketPlus,
+  Tickets,
 } from 'lucide-react';
 
 import { checkRole, getCookie } from '@/func';
@@ -34,6 +35,8 @@ import OrderHistory from '@/views/OrderHistory';
 import UpdateOrderStatus from '@/views/UpdateOrderStatus';
 import TicketID from '../views/TicketID';
 import InvoiceId from '../views/InvoiceId';
+import CreateTicket from '../views/CreateTicket';
+import ViewAllTickets from '../views/ViewAllTickets';
 
 var role = '';
 if (getCookie('token') !== undefined && getCookie('token') !== null) {
@@ -83,9 +86,17 @@ export const userDashSidebar = [
     direct: true,
   },
   {
-    name: 'Ticket user id',
+    name: 'Ticket Details ID',
     icon: <TicketPlus className="w-6 h-6" />,
-    path: 'update-ticket-status',
+    path: 'ticket-details-id',
+    component: <TicketID />,
+    layout: '/dashboard',
+    direct: false,
+  },
+  {
+    name: 'Create Ticket',
+    icon: <TicketPlus className="w-6 h-6" />,
+    path: 'ticket-details-id/create',
     component: <TicketID />,
     layout: '/dashboard',
     direct: false,
@@ -199,9 +210,9 @@ export const adminDashSidebar = [
   },
   {
     name: 'View All Tickets',
-    icon: <Package className="w-6 h-6" />,
+    icon: <Tickets className="w-6 h-6" />,
     path: 'view-all-tickets',
-    component: <SubmitTicket />,
+    component: <ViewAllTickets />,
     layout: '/dashboard',
     direct: true,
   },

@@ -27,7 +27,7 @@ const TrackTicket = () => {
               className="py-2.5 pl-4 pr-2 placeholder:text-gray-400 text-sm rounded-full w-full outline-none bg-white"
               placeholder="Search"
             />
-            <button className="px-3 py-2 flexBetween text-white bg-primary rounded-full whitespace-nowrap">
+            <button className="px-4 py-2 flexBetween text-white bg-primary rounded-full whitespace-nowrap">
               <span className="pr-1 lg:pr-5 text-lg">Create Ticket</span>
               <Plus className="w-6 h-6" />
             </button>
