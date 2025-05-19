@@ -22,12 +22,21 @@ import Toast from '@/components/Toast';
 import { formatDate, getCookie } from '@/func';
 import axios from 'axios';
 
+let user_id = null;
+
 const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
   const [status, setStatus] = useState('');
   const [enableUpdateButton, setEnableUpdateButton] = useState(false);
   const [toasts, setToasts] = useState([]);
 
   const orderStatus = OrderDetails?.order_status;
+
+  useEffect(()=>{
+    if(getCookie("token") !== undefined && getCookie("token") !== null){
+      //console.log(atob(atob(getCookie("token"))).split("|")[0]);
+      user_id = atob(atob(getCookie("token"))).split("|")[0];
+    }
+  },[]);
 
   useEffect(() => {
     if (status !== orderStatus) setEnableUpdateButton(true);
@@ -263,7 +272,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
             </div>
             <div className="flexBetween gap-5 w-full relative">
               <Link
-                to={'/dashboard/invoice-details'}
+                to={`/dashboard/invoice-details/${btoa(btoa(OrderDetails?.order_id+"||"+(atob(atob(getCookie("token"))).split("|")[0])))}`}
                 className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
               >
                 Download Invoice

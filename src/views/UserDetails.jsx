@@ -20,7 +20,7 @@ const UserDetails = () => {
   }, []);
 
   const fetchUserDetails = () => {
-    const json = JSON.stringify({ id: 'TWc9PQ==' });
+    const json = JSON.stringify({ id: id });
 
     axios
       .post(

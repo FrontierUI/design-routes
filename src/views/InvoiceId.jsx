@@ -1,16 +1,99 @@
-import DashboardBanner from '@/components/DashboardBanner';
+import DashboardBanner from "@/components/DashboardBanner";
 
-import brand from '/images/routeslogo.svg';
-import { FileDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import brand from "/images/routeslogo.svg";
+import { FileDown } from "lucide-react";
+import { Link, useParams } from "react-router-dom";
+import { formatDate, getCookie } from "@/func";
+import { useEffect, useState, useRef } from "react";
+import axios from "axios";
+
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 const InvoiceId = () => {
+  const divRef = useRef();
+  const { id } = useParams();
+  const [orderDetails, setOrderDetails] = useState({});
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  useEffect(() => {
+    if (id !== null && id !== undefined) {
+      fetchOrderDetails(atob(atob(id)).split("||")[0]);
+    }
+
+    return () => {
+      setOrderDetails({});
+      setIsDownloading(false);
+    };
+  }, []);
+
+  const fetchOrderDetails = (id) => {
+    const json = JSON.stringify({ token: getCookie("token"), order_id: id });
+
+    axios
+      .post(
+        `${import.meta.env.VITE_BASE_API}/api.php?action=get_order_details`,
+        JSON.stringify({ params: json }),
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      )
+      .then((response) => {
+        if (response.data.success === "true") {
+          setOrderDetails(response.data.order_details);
+        }
+      })
+      .catch((error) => {
+        console.error(`Error: ${error}`);
+      });
+  };
+
+  const handleDownload = () => {
+    setIsDownloading(true); // Hide button
+
+    setTimeout(() => {
+      const input = divRef.current;
+
+      html2canvas(input, { scale: 2 }).then((canvas) => {
+        const imgData = canvas.toDataURL("image/png");
+        const pdf = new jsPDF("p", "mm", "a4");
+
+        const imgWidth = 210;
+        const pageHeight = 297;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        let heightLeft = imgHeight;
+        let position = 0;
+
+        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+
+        while (heightLeft > 0) {
+          position = heightLeft - imgHeight;
+          pdf.addPage();
+          pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+          heightLeft -= pageHeight;
+        }
+
+        pdf.save("download.pdf");
+      }, 1500);
+
+      setTimeout(() => {
+        setIsDownloading(false); // Show button again after download
+      }, 500);
+    });
+  };
+
   return (
     <div className="relative w-full h-full ticketId">
       <div className="relative w-full h-full flex flex-col space-y-5 lg:space-y-10 mt-8 mb-5 lg:mb-10">
         <DashboardBanner />
 
-        <div className="flex flex-col w-full h-full relative rounded-lg bg-white">
+        <div
+          ref={divRef}
+          className="flex flex-col w-full h-full relative rounded-lg bg-white"
+        >
           <div className="bg-primary h-3 w-full rounded-t-lg" />
 
           <div className="flex relative w-full h-full p-3 lg:p-6">
@@ -21,7 +104,9 @@ const InvoiceId = () => {
                 </div>
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-between gap-3 w-full">
                   <h2>Invoice Number</h2>
-                  <h2>Invoice ID</h2>
+                  <h2>
+                    Inv-{orderDetails?.order_id?.toString().padStart(5, "0")}
+                  </h2>
                 </div>
               </div>
 
@@ -30,20 +115,23 @@ const InvoiceId = () => {
                   <p className="font-monaLight">
                     Projec Desc:
                     <span className="ml-2 font-monaMedium">
-                      Product Name / Package
+                      {orderDetails?.service_name} /{" "}
+                      {orderDetails?.package_name}
                     </span>
                   </p>
                 </div>
                 <div className="flex items-center pb-4 lg:py-4">
                   <p className="font-monaLight">
-                    Date:
-                    <span className="ml-2 font-monaMedium">Jan 26, 2027</span>
+                    Date Paid:
+                    <span className="ml-2 font-monaMedium">
+                      {formatDate(orderDetails?.order_date)}
+                    </span>
                   </p>
 
-                  <p className="font-monaLight ml-4">
+                  {/* <p className="font-monaLight ml-4">
                     Due Date:
                     <span className="ml-2 font-monaMedium">Feb 7, 2027</span>
-                  </p>
+                  </p> */}
                 </div>
               </div>
 
@@ -52,25 +140,30 @@ const InvoiceId = () => {
                   <p className="font-monaLight">
                     From:
                     <span className="ml-2 text-xl font-monaBold">
-                      Usman Ghani
+                      Routes.Design
                     </span>
                   </p>
                   <div className="flex flex-col space-y-1.5">
-                    <span>+923179655442</span>
-                    <span>usman.ghani@routes.design</span>
+                    <span>+18179484842</span>
+                    <span>contact@routes.design</span>
                   </div>
                 </div>
 
                 <div className="flexStart flex-col space-y-4 pb-4 lg:py-4">
                   <p className="font-monaLight">
                     To:
-                    <span className="ml-2 text-xl font-monaBold">
-                      Arsalan Paayen
+                    <span className="ml-2 text-xl font-monaBold capitalize">
+                      {orderDetails?.buyer_name}
                     </span>
                   </p>
                   <div className="flex lg:items-end flex-col space-y-1.5">
-                    <span>+923179655442</span>
-                    <span>sheikchilli@routes.design</span>
+                    {orderDetails?.buyer_phone !== "" &&
+                    orderDetails?.buyer_phone !== null ? (
+                      <span>{orderDetails?.buyer_phone}</span>
+                    ) : (
+                      "n/a"
+                    )}
+                    <span>{orderDetails?.buyer_email}</span>
                   </div>
                 </div>
               </div>
@@ -92,10 +185,16 @@ const InvoiceId = () => {
                 {/* yeh map lloop pr run hoga */}
                 <div className="w-full flex flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-between gap-3 border-b border-gray-300">
                   <div className="flex lg:py-4">
-                    <span className="font-monaSemibold">App Design</span>
+                    <span className="font-monaSemibold">
+                      <span className="text-green-500">Service: </span>
+                      {orderDetails?.service_name}
+                      <br />
+                      <span className="text-green-500">Package:</span>
+                      {orderDetails?.package_name}
+                    </span>
                   </div>
                   <div className="flex pb-4 lg:py-4">
-                    <span className="font-monaSemibold">$3999</span>
+                    <span className="font-monaSemibold">{`$${orderDetails?.order_price}`}</span>
                   </div>
                 </div>
               </div>
@@ -106,15 +205,21 @@ const InvoiceId = () => {
                     <p className="font-monaMedium text-gray-400">
                       SubTotal:
                       <span className="ml-4 text-gray-900 font-monaBold">
-                        $3900
+                        {`$${orderDetails?.order_price}`}
                       </span>
                     </p>
                   </div>
 
-                  <Link className="bg-primary flexBetween gap-3 text-white rounded-lg px-4 py-2 font-monaSemibold">
-                    Download PDF
-                    <FileDown className="w-6" />
-                  </Link>
+                  {!isDownloading && (
+                    <button
+                      id="btnDownload"
+                      className="bg-primary flexBetween gap-3 text-white rounded-lg px-4 py-2 font-monaSemibold"
+                      onClick={handleDownload}
+                    >
+                      Download PDF
+                      <FileDown className="w-6" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
