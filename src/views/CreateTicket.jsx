@@ -62,11 +62,11 @@ const CreateTicket = () => {
                 </div>
 
                 <div className="ticket-fileAttach mt-20 max-lg:mt-24">
-                  <button className="ticket-formLabel flexy gap-4 cursor-pointer">
+                  <button className="ticket-formLabel flexy gap-3 cursor-pointer">
                     <FilePlus2 className="w-8 h-8 text-gray-500" />
                     File Attach
                   </button>
-                  <div className="flexBetween w-full md:w-1/2 text-sm">
+                  <div className="flexBetween flex-wrap gap-3 w-full md:w-1/2 text-sm">
                     <div className="flex-1 ">
                       filename.psd
                       <span className="pl-2 text-gray-500 text-xs">

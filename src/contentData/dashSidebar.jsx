@@ -119,7 +119,7 @@ export const userDashSidebar = [
   },
 
   {
-    name: 'Invoices id',
+    name: 'Invoice Details',
     icon: <ReceiptText className="w-6 h-6" />,
     path: 'invoiceid',
     component: <InvoiceId />,
