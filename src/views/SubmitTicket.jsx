@@ -1,9 +1,51 @@
-import { Link } from 'react-router-dom';
-import { Plus, SquarePen } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { Plus, SquarePen } from "lucide-react";
 
-import DashboardBanner from '@/components/DashboardBanner';
+import DashboardBanner from "@/components/DashboardBanner";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+import { formatDate, getCookie } from "../func";
 
 const SubmitTicket = () => {
+  const [tickets, setTickets] = useState([]);
+
+  useEffect(() => {
+    fetchTickets();
+
+    return () => {
+      setTickets([]);
+    };
+  }, []);
+
+  const fetchTickets = () => {
+    const json = JSON.stringify({
+      token: getCookie("token"),
+      limit: 10,
+      offset: 0,
+    });
+
+    axios
+      .post(
+        `${import.meta.env.VITE_BASE_API}/api.php?action=get_tickets`,
+        JSON.stringify({ params: json }),
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      )
+      .then((response) => {
+        if (response.data.success === "true") {
+          // console.log(response.data.tickets);
+          setTickets(response.data.tickets);
+        }
+      })
+      .catch((error) => {
+        console.error(`Error: ${error}`);
+      });
+  };
+
   return (
     <div className="relative w-full h-full viewAllTickets">
       <div className="relative w-full h-full flex flex-col space-y-5 lg:space-y-10 mt-8 mb-5 lg:mb-10">
@@ -28,13 +70,13 @@ const SubmitTicket = () => {
                 className="py-2.5 pl-4 pr-2 placeholder:text-gray-400 text-sm rounded-full w-full outline-none bg-white"
                 placeholder="Search"
               />
-              <Link
+              {/* <Link
                 to={'/dashboard/create-ticket'}
                 className="px-4 py-2 flexBetween text-white bg-primary rounded-full whitespace-nowrap max-lg:w-2/3"
               >
                 <span className="pr-1 lg:pr-5 text-lg">Create Ticket</span>
                 <Plus className="w-6 h-6" />
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -64,7 +106,43 @@ const SubmitTicket = () => {
               </thead>
 
               <tbody className="w-full whitespace-nowrap">
-                <tr className="w-full text-sm transitAll hover:bg-[#e3e2ff] rounded-lg">
+                {tickets?.map((ticket, index) => (
+                  <tr
+                    className="w-full text-sm transitAll hover:bg-[#e3e2ff] rounded-lg"
+                    key={index}
+                  >
+                    <td className="rounded-l-lg p-4 lg:pl-8 text-left">
+                      {ticket?.ticket_id !== "" && `st-`}
+                      {ticket?.ticket_id?.toString().padStart(5, "0")}
+                    </td>
+                    <td className="p-4 text-left">Standard</td>
+                    <td className="p-4 text-left">
+                      <button className="py-2 px-4 rounded-lg bg-blue-100 text-primary">
+                        In Progress
+                      </button>
+                    </td>
+                    <td className="p-4 text-left">
+                      {formatDate(ticket?.created_at)}
+                    </td>
+                    <td className="p-4 text-left">
+                      {ticket?.updated_at !== ""
+                        ? `${formatDate(ticket?.updated_at)}`
+                        : "--"}
+                    </td>
+                    <td className="rounded-r-lg p-4 text-left">
+                      <Link
+                        to={`/dashboard/ticket-details/${btoa(
+                          btoa(ticket?.ticket_id)
+                        )}`}
+                        className="flexBetween rounded-lg gap-2 px-4 py-2 bg-primary text-white"
+                      >
+                        Edit
+                        <SquarePen className="w-6" />
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+                {/* <tr className="w-full text-sm transitAll hover:bg-[#e3e2ff] rounded-lg">
                   <td className="rounded-l-lg p-4 lg:pl-8 text-left">78945</td>
                   <td className="p-4 text-left">Standard</td>
                   <td className="p-4 text-left">
@@ -83,7 +161,7 @@ const SubmitTicket = () => {
                       <SquarePen className="w-6" />
                     </Link>
                   </td>
-                </tr>
+                </tr> */}
               </tbody>
             </table>
           </div>

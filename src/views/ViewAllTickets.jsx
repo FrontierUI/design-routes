@@ -61,6 +61,7 @@ const ViewAllTickets = () => {
                   <div className="flexStart flex-col space-y-1">
                     <span className="text-gray-600">Ticket:</span>
                     <span className="text-green-500">
+                      {ticket?.ticket_id !== "" && `st-`}
                       {ticket?.ticket_id?.toString().padStart(5, "0")}
                     </span>
                   </div>
