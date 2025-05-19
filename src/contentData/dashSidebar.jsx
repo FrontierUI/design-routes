@@ -96,8 +96,8 @@ export const userDashSidebar = [
   {
     name: 'Create Ticket',
     icon: <TicketPlus className="w-6 h-6" />,
-    path: 'ticket-details-id/create',
-    component: <TicketID />,
+    path: 'create-ticket',
+    component: <CreateTicket />,
     layout: '/dashboard',
     direct: false,
   },

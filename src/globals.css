@@ -311,6 +311,50 @@
     @apply text-xl font-monaSemibold !important;
   }
 
+  .ticket-form {
+    @apply w-full gap-7 grid grid-cols-12;
+  }
+
+  .ticket-formItem {
+    @apply col-span-12 md:col-span-6 w-full flexStart flex-col space-y-1.5;
+  }
+
+  .ticket-subject {
+    @apply col-span-12 relative w-full flexStart flex-col space-y-1.5;
+  }
+
+  .ticket-details {
+    @apply col-span-12 relative w-full flexStart flex-col space-y-1.5;
+  }
+
+  .ticket-fileAttach {
+    @apply col-span-12 relative w-full flexStart flex-col space-y-3;
+  }
+
+  .ticket-formLabel {
+    @apply text-lg font-monaMedium;
+  }
+
+  .ticket-formInput {
+    @apply bg-transparent rounded-md ticket-form-focus py-2 px-4 w-full placeholder:text-gray-400 border border-gray-400 !important;
+  }
+
+  .ticket-select {
+    @apply bg-white relative rounded-md ticket-form-focus py-2 px-4 w-full appearance-none border border-gray-400;
+  }
+
+  .ticket-select .ticket-selectOpt {
+    @apply bg-white rounded-md ticket-form-focus w-full text-gray-900;
+  }
+
+  .ticket-btn {
+    @apply w-full col-span-6 md:col-span-3 flex;
+  }
+
+  .ticket-form-focus {
+    @apply outline-none ring-offset-transparent focus:ring-transparent focus:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+  }
+
   .service-form-focus {
     @apply outline-none ring-offset-transparent focus:ring-transparent focus:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
   }

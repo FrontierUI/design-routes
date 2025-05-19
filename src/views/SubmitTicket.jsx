@@ -29,7 +29,7 @@ const SubmitTicket = () => {
                 placeholder="Search"
               />
               <Link
-                to={'/dasboard/ticketId'}
+                to={'/dasboard/ticket-details-id/create-ticket'}
                 className="px-4 py-2 flexBetween text-white bg-primary rounded-full whitespace-nowrap max-lg:w-2/3"
               >
                 <span className="pr-1 lg:pr-5 text-lg">Create Ticket</span>

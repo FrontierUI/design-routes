@@ -1,9 +1,7 @@
-import React from 'react';
-
 import DashboardBanner from '@/components/DashboardBanner';
 
 import brand from '/images/routeslogo.svg';
-import { Download, FileDown } from 'lucide-react';
+import { FileDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const InvoiceId = () => {
