@@ -27,7 +27,7 @@ export function SidebarLinks(props) {
                   className={`${
                     activeRoute(route.path) === true
                       ? 'font-bold text-primary'
-                      : 'font-medium text-gray-700'
+                      : 'font-medium text-gray-700 duration-300 hover:text-primary'
                   }`}
                 >
                   {route.icon ? route.icon : <DashIcon />}
@@ -36,7 +36,7 @@ export function SidebarLinks(props) {
                   className={`leading-1 ml-4 flex ${
                     activeRoute(route.path) === true
                       ? 'font-bold text-primary'
-                      : 'font-medium text-gray-900'
+                      : 'font-medium text-gray-900 duration-300 hover:text-primary hover:font-bold'
                   }`}
                 >
                   {route.name}
