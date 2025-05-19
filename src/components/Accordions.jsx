@@ -56,7 +56,7 @@ export function AccordionItem({ children, value }) {
   const { isActive } = useAccordion();
   return (
     <div
-      className={`rounded-lg transitAll overflow-hidden mb-2 border-2 ${
+      className={`rounded-lg transitAll overflow-hidden mb-2 border ${
         isActive
           ? 'active  border-primary bg-gray-50'
           : 'bg-gray-50 border-slate-400'

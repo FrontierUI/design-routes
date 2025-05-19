@@ -288,10 +288,10 @@ export const homeServiceDetails = [
   },
   {
     id: 'sd2',
-    icon: '/images/icons/clock24.svg',
-    title: 'Same-day Delivery',
+    icon: '/images/icons/quicky.svg',
+    title: 'Quick Turnarounds',
     description:
-      'Get your project delivered the same day without sacrificing quality.',
+      'Get your creative projects delivered fast, without compromising on quality.',
   },
   {
     id: 'sd3',
@@ -372,7 +372,7 @@ export const srcFilesList = [
   { para: 'Art Director', src: '/images/icons/artDir.svg' },
   { para: 'Project Manager', src: '/images/icons/projectManager.svg' },
   { para: 'Real-time collabration', src: '/images/icons/collab.svg' },
-  { para: 'Trello Project Management', src: '/images/icons/trello.svg' },
+  { para: 'Slack Project Management', src: '/images/icons/slacky.svg' },
   { para: '7-day money-back guarantee', src: '/images/icons/moneyBack.svg' },
   { para: 'Cancel anytime', src: '/images/icons/cancel.svg' },
   { para: 'Middle+/Senior Designer', src: '/images/icons/middle.svg' },
@@ -729,8 +729,8 @@ export const professionalism = [
   },
   {
     src: '/images/icons/sameday.svg',
-    title: 'Same-day Delivery',
-    para: 'Get your design back same day.',
+    title: 'Quick Turnarounds',
+    para: 'Without compromising on quality.',
   },
   {
     src: '/images/icons/ProDesigners.svg',

@@ -93,7 +93,7 @@ const Home = () => {
 
       <Hero />
 
-      <div className="w-full h-full px-5 lg:px-12">
+      <div className="w-full h-full px-5 lg:px-12 macbook:px-20">
         <VideosCarousel />
       </div>
 

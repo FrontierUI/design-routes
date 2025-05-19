@@ -29,7 +29,7 @@ const ServicesForm = () => {
             <div className="flexStart flex-col space-y-6 lg:space-y-12 w-full">
               <div className="flexStart flex-col lg:flex-row w-full max-lg:gap-y-5 lg:gap-x-10">
                 <div className="flexStart flex-col w-full lg:w-10/12">
-                  <h1 className="font-monaBold text-6xl">55%</h1>
+                  <h1 className="font-monaBold text-6xl">3+</h1>
                   <h3 className="font-monaRegular text-xl">
                     Years in Business
                   </h3>
@@ -47,7 +47,7 @@ const ServicesForm = () => {
                   </h3>
                 </div>
                 <div className="flexStart flex-col w-full">
-                  <h1 className="font-monaBold text-6xl">96%</h1>
+                  <h1 className="font-monaBold text-6xl">89%</h1>
                   <h3 className="font-monaRegular text-xl">
                     Repeat Customer Rate
                   </h3>

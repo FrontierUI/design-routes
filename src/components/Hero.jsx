@@ -12,16 +12,20 @@ const Hero = () => {
     <section className="relative w-full h-full z-[1]">
       <div className="relative w-full h-full flexy flex-col">
         <div className="relative w-full h-screen bg-primary flexy flex-col">
-          <div
+          {/* <div
             className="hidden xl:block absolute w-[430px] h-[430px] macbook:w-[530px] macbook:h-[530px] -right-48 top-32 macbook:top-40 macbook:-right-[15rem] bg-center bg-no-repeat bg-contain z-10"
             style={{ backgroundImage: 'url(/images/ewhiteGif.gif)' }}
-          />
+          /> */}
           <div
             className="hidden xl:block absolute w-[430px] h-[430px] macbook:w-[500px] macbook:h-[500px] -left-[17rem] bottom-20 macbook:bottom-16 macbook:-left-[20rem] bg-center bg-no-repeat bg-contain z-10"
             style={{
               backgroundImage: 'url(/images/icons/RoutesWhite.png)',
               transform: 'scaleX(-1)',
             }}
+          />
+          <div
+            className="hidden xl:block absolute w-[380px] h-[380px] macbook:w-[500px] macbook:h-[500px] -right-[10rem] bottom-32 macbook:bottom-16 macbook:-right-[20rem] bg-center bg-no-repeat bg-contain z-10"
+            style={{ backgroundImage: 'url(/images/icons/RoutesWhite.png)' }}
           />
           <div className="flexy flex-col px-5 text-white relative lg:-top-5 lapy:-top-10 text-center !overflow-hidden">
             <div className="flexy flex-col w-full overflow-hidden space-y-2.5">
@@ -31,10 +35,10 @@ const Hero = () => {
                   Full service design agency
                 </h4>
               </div>
-              <h1 className="text-5xl lg:text-7xl font-monaBold">
-                <Typewriting text="Design That Delivers" speed={150} />
+              <h1 className="text-5xl lg:text-7xl macbook:text-8xl font-monaBold">
+                <Typewriting text="Design that Delivers" speed={150} />
               </h1>
-              <p className="text-md">
+              <p className="text-xl">
                 We are the extension of your creative team
               </p>
             </div>
@@ -127,7 +131,7 @@ const Hero = () => {
           />
         </div>
 
-        <div className="flexy py-5 overflow-hidden">
+        <div className="flexy py-5 mt-3 overflow-hidden">
           <LogoMarquee />
         </div>
 

@@ -210,8 +210,7 @@ const Footer = () => {
             />
             <img
               src="/images/icons/bark.svg"
-              width={90}
-              className="img-fluid"
+              className="img-fluid w-[90px] macbook:w-[80px]"
               alt=""
             />
           </div>

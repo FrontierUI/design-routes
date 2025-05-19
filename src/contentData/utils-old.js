@@ -1000,7 +1000,7 @@ export const srcFilesList = [
   { para: 'Art Director', src: artDirectory },
   { para: 'Project Manager', src: projectManager },
   { para: 'Real-time collabration', src: collabor },
-  { para: 'Trello Project Management', src: trello },
+  { para: 'Slack Project Management', src: trello },
   { para: '7-day money-back guarantee', src: moneyBack },
   { para: 'Cancel anytime', src: cancel },
   { para: 'Middle+/Senior Designer', src: middle },
