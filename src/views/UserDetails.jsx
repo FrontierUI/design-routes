@@ -16,6 +16,8 @@ const UserDetails = () => {
 
     return () => {
       setUserDetails({});
+      setLatestOrders([]);
+      setUserStatistics([]);
     };
   }, []);
 
