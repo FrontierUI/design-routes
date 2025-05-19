@@ -66,7 +66,7 @@ const CreateTicket = () => {
                     <FilePlus2 className="w-8 h-8 text-gray-500" />
                     File Attach
                   </button>
-                  <div className="flexBetween w-full md:w-1/2 text-sm pt-4">
+                  <div className="flexBetween w-full md:w-1/2 text-sm">
                     <div className="flex-1 ">
                       filename.psd
                       <span className="pl-2 text-gray-500 text-xs">
