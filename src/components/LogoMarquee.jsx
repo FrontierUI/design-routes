@@ -5,8 +5,9 @@ import { clientsLogo } from '@/contentData/utils';
 import LazyImage from './LazyImage';
 
 const LogoMarquee = () => {
-  {
-    /* {clientsLogo.map((cnLog) => (
+  return (
+    <div className="client-logo w-full overflow-x-hidden masking min-h-20">
+      {/* {clientsLogo.map((cnLog) => (
     <div className="mx-4 flexy" key={cnLog.cLogoId}>
       <LazyImage
         src={cnLog.src}
@@ -14,18 +15,17 @@ const LogoMarquee = () => {
         alt=""
       />
     </div>
-  ))} */
-  }
-
-  return (
-    <div className="client-logo w-full overflow-x-hidden min-h-[78px] masking">
+  ))} */}
       <Marquee
         direction="right"
         autoFill={true}
         delay={1}
         speed={25}
+        gradient={true}
+        gradientColor="#000"
+        gradientWidth={100}
         pauseOnHover={false}
-        className="w-full"
+        className="w-full gap-4 flex items-center bg-transparent"
       >
         <div className="flexy mx-4">
           <LazyImage

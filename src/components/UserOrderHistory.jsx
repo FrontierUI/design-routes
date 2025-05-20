@@ -1,26 +1,22 @@
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 import {
   CalendarClock,
   ChevronDown,
   Ellipsis,
-  FileDown,
-  MessageCircleMore,
   Package,
   PackageCheck,
-  Receipt,
   ReceiptText,
   RefreshCw,
   Settings2,
-  Undo2,
   Upload,
   User,
-  UserRoundCog,
 } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import Toast from '@/components/Toast';
 
 import { formatDate, getCookie } from '@/func';
-import axios from 'axios';
+import Toast from '@/components/Toast';
 
 let user_id = null;
 
@@ -31,12 +27,12 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
 
   const orderStatus = OrderDetails?.order_status;
 
-  useEffect(()=>{
-    if(getCookie("token") !== undefined && getCookie("token") !== null){
+  useEffect(() => {
+    if (getCookie('token') !== undefined && getCookie('token') !== null) {
       //console.log(atob(atob(getCookie("token"))).split("|")[0]);
-      user_id = atob(atob(getCookie("token"))).split("|")[0];
+      user_id = atob(atob(getCookie('token'))).split('|')[0];
     }
-  },[]);
+  }, []);
 
   useEffect(() => {
     if (status !== orderStatus) setEnableUpdateButton(true);
@@ -272,7 +268,13 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
             </div>
             <div className="flexBetween gap-5 w-full relative">
               <Link
-                to={`/dashboard/invoice-details/${btoa(btoa(OrderDetails?.order_id+"||"+(atob(atob(getCookie("token"))).split("|")[0])))}`}
+                to={`/dashboard/invoice-details/${btoa(
+                  btoa(
+                    OrderDetails?.order_id +
+                      '||' +
+                      atob(atob(getCookie('token'))).split('|')[0]
+                  )
+                )}`}
                 className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
               >
                 Download Invoice

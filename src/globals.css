@@ -433,10 +433,29 @@
 }
 
 .masking {
-  /* -webkit-mask-image: linear-gradient(90deg, #0000 3%, #000 25% 75%, #0000 97%);
-  mask-image: linear-gradient(90deg, #0000 3%, #000 25% 75%, #0000 97%); */
-
   -webkit-mask-image: linear-gradient(
+    90deg,
+    #0000 3%,
+    #000 25% 75%,
+    #0000 97%
+  ) !important;
+  mask-image: linear-gradient(
+    90deg,
+    #0000 3%,
+    #000 25% 75%,
+    #0000 97%
+  ) !important;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  /* -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
     black 10%,
@@ -457,7 +476,7 @@
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
+  mask-size: 100% 100%; */
 }
 
 .startItem {
@@ -473,6 +492,10 @@
 .swiper-3d .swiper-slide-shadow-right,
 .swiper-3d .swiper-slide-shadow-top {
   border-radius: 1rem !important;
+}
+
+.client-logo {
+  background: transparent;
 }
 
 .client-logo img {

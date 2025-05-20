@@ -63,7 +63,7 @@ const Navbar = () => {
               aria-label="get-a-demo"
               className="bg-primary hidden lg:flex text-white lg:hover:shadow-drop-4 px-6 py-2 shadow rounded-full itemsCenter"
             >
-              Get a Demo
+              Get a demo
             </button>
           </Link>
 
@@ -74,7 +74,7 @@ const Navbar = () => {
               className="flexy transitAll scal105 lg:hover:shadow-drop-4 bg-primary text-white px-6 py-2 shadow rounded-full itemsCenter"
               to="/auth/sign-in"
             >
-              Sign In
+              Sign in
             </Link>
           )}
 

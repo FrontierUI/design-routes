@@ -175,7 +175,7 @@ const CreativeCampaigns = () => {
                       built for comms, strategy & marketing teams
                     </h3>
 
-                    <h1 className="text-5xl font-monaBold max-sm:min-h-36 min-h-24 capitalize">
+                    <h1 className="text-5xl font-monaBold max-sm:min-h-36 min-h-24">
                       <Typewriting
                         text="Ad creative for campaigns that perform"
                         speed={80}

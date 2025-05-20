@@ -172,7 +172,7 @@ const AppDesignDev = () => {
                       Built for User Performance, & Digital Products
                     </h3>
 
-                    <h1 className="text-5xl font-monaBold max-sm:min-h-60 sm:min-h-36 capitalize">
+                    <h1 className="text-5xl font-monaBold max-sm:min-h-60 sm:min-h-36">
                       <Typewriting
                         text="We're always-on to deliver the design you want when you need it"
                         speed={70}

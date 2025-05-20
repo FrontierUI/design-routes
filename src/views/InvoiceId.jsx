@@ -1,14 +1,14 @@
-import DashboardBanner from "@/components/DashboardBanner";
+import DashboardBanner from '@/components/DashboardBanner';
 
-import brand from "/images/routeslogo.svg";
-import { FileDown } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
-import { formatDate, getCookie } from "@/func";
-import { useEffect, useState, useRef } from "react";
-import axios from "axios";
+import brand from '/images/routeslogo.svg';
+import { FileDown } from 'lucide-react';
+import { Link, useParams } from 'react-router-dom';
+import { formatDate, getCookie } from '@/func';
+import { useEffect, useState, useRef } from 'react';
+import axios from 'axios';
 
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 const InvoiceId = () => {
   const divRef = useRef();
@@ -18,7 +18,7 @@ const InvoiceId = () => {
 
   useEffect(() => {
     if (id !== null && id !== undefined) {
-      fetchOrderDetails(atob(atob(id)).split("||")[0]);
+      fetchOrderDetails(atob(atob(id)).split('||')[0]);
     }
 
     return () => {
@@ -28,7 +28,7 @@ const InvoiceId = () => {
   }, []);
 
   const fetchOrderDetails = (id) => {
-    const json = JSON.stringify({ token: getCookie("token"), order_id: id });
+    const json = JSON.stringify({ token: getCookie('token'), order_id: id });
 
     axios
       .post(
@@ -36,12 +36,12 @@ const InvoiceId = () => {
         JSON.stringify({ params: json }),
         {
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            'Content-Type': 'application/x-www-form-urlencoded',
           },
         }
       )
       .then((response) => {
-        if (response.data.success === "true") {
+        if (response.data.success === 'true') {
           setOrderDetails(response.data.order_details);
         }
       })
@@ -57,8 +57,8 @@ const InvoiceId = () => {
       const input = divRef.current;
 
       html2canvas(input, { scale: 2 }).then((canvas) => {
-        const imgData = canvas.toDataURL("image/png");
-        const pdf = new jsPDF("p", "mm", "a4");
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF('p', 'mm', 'a4');
 
         const imgWidth = 210;
         const pageHeight = 297;
@@ -66,17 +66,17 @@ const InvoiceId = () => {
         let heightLeft = imgHeight;
         let position = 0;
 
-        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
         heightLeft -= pageHeight;
 
         while (heightLeft > 0) {
           position = heightLeft - imgHeight;
           pdf.addPage();
-          pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+          pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
           heightLeft -= pageHeight;
         }
 
-        pdf.save("download.pdf");
+        pdf.save('download.pdf');
       }, 1500);
 
       setTimeout(() => {
@@ -105,7 +105,7 @@ const InvoiceId = () => {
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-between gap-3 w-full">
                   <h2>Invoice Number</h2>
                   <h2>
-                    Inv-{orderDetails?.order_id?.toString().padStart(5, "0")}
+                    Inv-{orderDetails?.order_id?.toString().padStart(5, '0')}
                   </h2>
                 </div>
               </div>
@@ -115,7 +115,7 @@ const InvoiceId = () => {
                   <p className="font-monaLight">
                     Projec Desc:
                     <span className="ml-2 font-monaMedium">
-                      {orderDetails?.service_name} /{" "}
+                      {orderDetails?.service_name} /{' '}
                       {orderDetails?.package_name}
                     </span>
                   </p>
@@ -157,11 +157,11 @@ const InvoiceId = () => {
                     </span>
                   </p>
                   <div className="flex lg:items-end flex-col space-y-1.5">
-                    {orderDetails?.buyer_phone !== "" &&
+                    {orderDetails?.buyer_phone !== '' &&
                     orderDetails?.buyer_phone !== null ? (
                       <span>{orderDetails?.buyer_phone}</span>
                     ) : (
-                      "n/a"
+                      'n/a'
                     )}
                     <span>{orderDetails?.buyer_email}</span>
                   </div>

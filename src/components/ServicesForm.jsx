@@ -17,11 +17,11 @@ const ServicesForm = () => {
         <div className="w-full h-full grid grid-cols-12 gap-10">
           <div className="col-span-12 lg:col-span-6 relative flexStart flex-col w-4/5 sm:w-full space-y-5 lg:space-y-12 text-white">
             <div className="flexStart flex-col space-y-5 w-full">
-              <h3 className="font-monaSemibold text-2xl">Connect with Us</h3>
+              <h3 className="font-monaSemibold text-2xl">Connect with us</h3>
               <div className="flexStart flex-col space-y-2">
-                <h2 className="font-monaLight text-5xl">We're Ready to</h2>
+                <h2 className="font-monaLight text-5xl">We're ready to</h2>
                 <h2 className="font-monaLight text-5xl min-h-12 max-sm:min-h-24">
-                  <Typewriting text="Explore Opportunities" speed={40} />
+                  <Typewriting text="explore opportunities" speed={40} />
                 </h2>
               </div>
             </div>
@@ -29,27 +29,27 @@ const ServicesForm = () => {
             <div className="flexStart flex-col space-y-6 lg:space-y-12 w-full">
               <div className="flexStart flex-col lg:flex-row w-full max-lg:gap-y-5 lg:gap-x-10">
                 <div className="flexStart flex-col w-full lg:w-10/12">
-                  <h1 className="font-monaBold text-6xl">3+</h1>
+                  <h1 className="font-monaBold text-6xl">5+</h1>
                   <h3 className="font-monaRegular text-xl">
-                    Years in Business
+                    Years in business
                   </h3>
                 </div>
                 <div className="flexStart flex-col w-full">
                   <h1 className="font-monaBold text-6xl">300+</h1>
-                  <h3 className="font-monaRegular text-xl">Clients Served</h3>
+                  <h3 className="font-monaRegular text-xl">Clients served</h3>
                 </div>
               </div>
               <div className="flexStart flex-col lg:flex-row w-full max-lg:gap-y-5 lg:gap-x-10">
                 <div className="flexStart flex-col w-full lg:w-10/12">
-                  <h1 className="font-monaBold text-6xl">1200+</h1>
+                  <h1 className="font-monaBold text-6xl">800+</h1>
                   <h3 className="font-monaRegular text-xl">
-                    Successfull Projects
+                    Successfull projects
                   </h3>
                 </div>
                 <div className="flexStart flex-col w-full">
                   <h1 className="font-monaBold text-6xl">89%</h1>
                   <h3 className="font-monaRegular text-xl">
-                    Repeat Customer Rate
+                    Repeat customer rate
                   </h3>
                 </div>
               </div>
@@ -60,32 +60,32 @@ const ServicesForm = () => {
               className="flexy gap-x-2 transitAll scal105 py-2.5 px-6 rounded-full font-monaSemibold text-xl bg-white text-primary"
             >
               <Phone className="w-6 h-6" />
-              <span className="pr-1">Call Us</span>
+              <span className="pr-1">Call us</span>
             </Link>
           </div>
 
           <div className="col-span-12 lg:col-span-6 relative w-4/5 sm:w-full h-full">
             <form className="service-form">
               <div className="service-formItem">
-                <label className="service-formLabel">Full Name</label>
+                <label className="service-formLabel">Full name</label>
                 <input
                   required
-                  placeholder="Enter your Name"
+                  placeholder="Enter your name"
                   type="text"
                   className="service-formInput"
                 />
               </div>
               <div className="service-formItem">
-                <label className="service-formLabel">Email Address</label>
+                <label className="service-formLabel">Email address</label>
                 <input
                   required
-                  placeholder="Enter your Email"
+                  placeholder="Enter your email"
                   type="email"
                   className="service-formInput"
                 />
               </div>
               <div className="service-formItem">
-                <label className="service-formLabel">Company Name</label>
+                <label className="service-formLabel">Company name</label>
                 <input
                   placeholder="https://yourcompany.xyz"
                   type="text"
@@ -96,7 +96,7 @@ const ServicesForm = () => {
                 <label className="service-formLabel">Phone</label>
                 <input
                   required
-                  placeholder="+008 654 231"
+                  placeholder="+1 (310) 555-4099"
                   type="tel"
                   className="service-formInput"
                 />

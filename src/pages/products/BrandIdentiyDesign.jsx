@@ -179,7 +179,7 @@ const BrandIdentiyDesign = () => {
                       Built for Brands & Startups
                     </h3>
 
-                    <h1 className="text-5xl font-monaBold max-sm:min-h-[148px] sm:min-h-[100px] capitalize">
+                    <h1 className="text-5xl font-monaBold max-sm:min-h-[148px] sm:min-h-[100px]">
                       <Typewriting
                         text="Strategic branding for every business"
                         speed={80}

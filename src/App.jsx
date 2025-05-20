@@ -132,7 +132,6 @@ const App = () => {
 
           <Route path="/dashboard/:page" element={<AdminDashboard />} />
           <Route path="/dashboard/:page/:id" element={<AdminDashboard />} />
-          {/* <Route path="/dasboard/ticket/create" element={<TicketID />} /> */}
         </Routes>
 
         {/* <Footer /> */}

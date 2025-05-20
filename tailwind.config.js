@@ -7,7 +7,7 @@ export default {
         sm: '640px',
         lg: '1024px',
         lapy: '1389px',
-        macbook: '1724px',
+        macbook: '1714px',
         imac: '1887px',
         samsung: '2297px',
       },

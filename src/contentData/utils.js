@@ -289,14 +289,14 @@ export const homeServiceDetails = [
   {
     id: 'sd2',
     icon: '/images/icons/quicky.svg',
-    title: 'Quick Turnarounds',
+    title: 'Quick turnarounds',
     description:
       'Get your creative projects delivered fast, without compromising on quality.',
   },
   {
     id: 'sd3',
     icon: '/images/icons/revision.svg',
-    title: 'Unlimited Requests & Revisions',
+    title: 'Unlimited requests & revisions',
     description: 'Request as many changes as you need until you’re satisfied.',
   },
   {
@@ -322,7 +322,7 @@ export const prod1 = [
     image: '/images/brandingIden.jpg',
     title: 'Brand Identity & Design',
     descr:
-      'Our branding services encompass everything from logo design toOrm brand strategy, ensuring a cohesive and compelling brand identity.',
+      'Our branding services encompass everything from logo design to brand strategy, ensuring a cohesive and compelling brand identity.',
   },
 ];
 
@@ -369,13 +369,13 @@ export const srcFilesList = [
   { para: 'Unlimited revisions', src: '/images/icons/request.svg' },
   { para: 'Unlimited brand profiles', src: '/images/icons/brandProfiles.svg' },
   { para: 'Native source files', src: '/images/icons/src.svg' },
-  { para: 'Art Director', src: '/images/icons/artDir.svg' },
-  { para: 'Project Manager', src: '/images/icons/projectManager.svg' },
+  { para: 'Art director', src: '/images/icons/artDir.svg' },
+  { para: 'Project manager', src: '/images/icons/projectManager.svg' },
   { para: 'Real-time collabration', src: '/images/icons/collab.svg' },
-  { para: 'Slack Project Management', src: '/images/icons/slacky.svg' },
+  { para: 'Slack project management', src: '/images/icons/slacky.svg' },
   { para: '7-day money-back guarantee', src: '/images/icons/moneyBack.svg' },
   { para: 'Cancel anytime', src: '/images/icons/cancel.svg' },
-  { para: 'Middle+/Senior Designer', src: '/images/icons/middle.svg' },
+  { para: 'Mid/senior designer', src: '/images/icons/middle.svg' },
 ];
 
 export const clientTestimonials = [

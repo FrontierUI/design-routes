@@ -144,9 +144,9 @@ const Home = () => {
 
       <div className="services relative w-full h-full py-6 bg-white">
         <div className="w-full h-full flexy flex-col px-5 lg:px-12">
-          <div className="flexy flex-col pb-4 space-y-2 text-center">
+          <div className="flexy flex-col pb-4 lg:pb-6 macbook:pb-8 space-y-2 text-center">
             <p className="text-xl font-monaMedium">
-              Our Full Stack Creative Products
+              Our full stack creative products
             </p>
             <h2 className="text-2xl font-monaBold leading-none">
               <Typewriting

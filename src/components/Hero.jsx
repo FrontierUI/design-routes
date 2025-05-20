@@ -27,7 +27,7 @@ const Hero = () => {
             className="hidden xl:block absolute w-[380px] h-[380px] macbook:w-[500px] macbook:h-[500px] -right-[10rem] bottom-32 macbook:bottom-16 macbook:-right-[20rem] bg-center bg-no-repeat bg-contain z-10"
             style={{ backgroundImage: 'url(/images/icons/RoutesWhite.png)' }}
           />
-          <div className="flexy flex-col px-5 text-white relative lg:-top-5 lapy:-top-10 text-center !overflow-hidden">
+          <div className="flexy flex-col px-5 text-white relative lg:-top-2 lapy:-top-10 text-center !overflow-hidden">
             <div className="flexy flex-col w-full overflow-hidden space-y-2.5">
               <div className="flexy">
                 <hr className="horLine hidden lg:block lg:mr-3" />
@@ -35,12 +35,15 @@ const Hero = () => {
                   Full service design agency
                 </h4>
               </div>
-              <h1 className="text-5xl lg:text-7xl macbook:text-8xl font-monaBold">
-                <Typewriting text="Design that Delivers" speed={150} />
+              <h1 className="text-5xl lg:text-7xl macbook:8xl font-monaBold">
+                <Typewriting text="Your go-to source" speed={150} />
               </h1>
-              <p className="text-xl">
+              <h1 className="text-5xl lg:text-7xl macbook:8xl font-monaBold">
+                <Typewriting text="for 100+ creative resources" speed={150} />
+              </h1>
+              {/* <p className="text-xl">
                 We are the extension of your creative team
-              </p>
+              </p> */}
             </div>
 
             <div className="flexy relative max-sm:right-5 w-full max-w-[23rem] min-w-[20rem] gap-x-5 mt-5">
@@ -89,7 +92,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flexy relative -mt-20 lg:-mt-32 lapy:-mt-48 w-full h-full lg:w-2/3 2xl:w-[65%] macbook:w-3/5 imac:w-1/2 rounded-xl max-lg:px-5">
+        <div className="flexy relative -mt-20 lg:-mt-28 lapy:-mt-40 w-full h-full lg:w-2/3 2xl:w-[65%] macbook:w-3/5 imac:w-1/2 rounded-xl max-lg:px-5">
           <ReactPlayer
             playing
             loop={true}

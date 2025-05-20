@@ -11,9 +11,9 @@ const RoutesWay = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 text-white px-5 lg:px-12 z-10">
         <div className="relative w-full flex items-center justify-start lg:justify-end">
           <div className="flex flex-col items-start lg:items-end justify-center">
-            <h4 className="font-monaMedium text-lg">Without Routes</h4>
-            <h2 className="font-monaBold text-3xl">Old Way</h2>
-            <h4 className="font-monaMedium text-lg">Classic Landing Page</h4>
+            <h4 className="font-monaMedium text-lg">Without Routes.Design</h4>
+            <h2 className="font-monaBold text-3xl">Old way</h2>
+            <h4 className="font-monaMedium text-lg">Classic landing page</h4>
 
             <ul className="flex flex-col items-start lg:items-end justify-center mt-6 space-y-2">
               <li className="flex items-start lg:items-center justify-center">
@@ -92,9 +92,9 @@ const RoutesWay = () => {
 
         <div className="relative w-full flex items-center justify-start lg:pl-10 max-sm:pt-6">
           <div className="flex flex-col items-start justify-center">
-            <h4 className="font-monaMedium text-lg">With Routes</h4>
-            <h2 className="font-monaBold text-3xl">New Way</h2>
-            <h4 className="font-monaMedium text-lg">Mobile Experience</h4>
+            <h4 className="font-monaMedium text-lg">With Routes.Design</h4>
+            <h2 className="font-monaBold text-3xl">New way</h2>
+            <h4 className="font-monaMedium text-lg">Mobile experience</h4>
 
             <ul className="flex flex-col items-start justify-center mt-6 space-y-1">
               <li className="flex items-start lg:items-center justify-center">

@@ -1,7 +1,15 @@
 import React from 'react';
 
 import DashboardBanner from '@/components/DashboardBanner';
-import { ChevronDown, Edit, FilePlus2, Trash2 } from 'lucide-react';
+import {
+  ChevronDown,
+  Edit,
+  FilePlus2,
+  Send,
+  SendHorizontal,
+  Trash2,
+} from 'lucide-react';
+
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -26,9 +34,8 @@ const TicketID = () => {
           <div className="flex relative w-full h-full p-3 lg:p-6">
             <div className="relative space-y-5 lg:space-y-7 w-full h-full py-5 lg:px-2">
               <div className="flex flex-wrap w-full gap-5">
-                {/* <div className="max-w-full lg:w-[55%] rounded-lg"> */}
-                <div className="max-w-full rounded-lg">
-                  <form className="border-2 border-dashed border-gray-400 rounded-lg overflow-hidden shadow">
+                <div className="max-w-full w-full lapy:w-[55%] rounded-lg">
+                  <div className="border-2 border-dashed border-gray-400 rounded-lg overflow-hidden shadow w-full lg:min-h-[560px]">
                     <div className="p-5 pt-8 flex flex-wrap w-full">
                       <div className="relative flexStart flex-col space-y-2 w-full lg:w-1/3 pb-8">
                         <div className="flex items-center gap-2">
@@ -131,25 +138,72 @@ const TicketID = () => {
                         </div>
                       </div>
 
-                      <div className="relative flexStart flex-col space-y-2 w-full pb-8">
-                        <h3 className="font-monaSemibold text-lg">Response</h3>
-                        <ReactQuill className="w-full min-h-full rounded-xl" />
-                      </div>
-
-                      <div className="relative pb-5 mt-20 max-lg:mt-24">
-                        <button className="py-2 px-4 rounded-lg bg-primary text-white font-monaSemibold text-lg">
+                      <div className="relative w-full pb-4">
+                        <button className="px-4 py-2 bg-primary text-white rounded-lg text-xl font-monaSemibold">
                           Save
                         </button>
                       </div>
                     </div>
-                  </form>
+                  </div>
                 </div>
 
-                {/* <div className="max-w-full lg:w-[43%] rounded-lg">
-                  <div className="border border-dashed border-gray-400 rounded-lg overflow-hidden shadow w-full">
-                    <div className="flexStart flex-col space-y-5 lg:space-y-10 p-5 pt-8"></div>
+                <div className="max-w-full w-full lapy:w-[43%] rounded-lg">
+                  <div className="border-2 border-dashed border-gray-400 rounded-lg overflow-hidden shadow w-full lg:min-h-[560px]">
+                    <div className="flexStart flex-col space-y-10 p-5 pt-8 w-full">
+                      <div className="flexStart flex-col space-y-1">
+                        <h2 className="text-xl font-monaSemibold">
+                          Discussion
+                        </h2>
+                        <p className="text-sm">
+                          Comment histories for this ticket will be available
+                          here.
+                        </p>
+                      </div>
+
+                      <div className="flexStart flex-col space-y-8 w-full">
+                        <div className="flex gap-3 w-full">
+                          <div className="flex avatar">
+                            <img
+                              src="/images/icons/ProfAvatar.svg"
+                              className="img-fluid w-12"
+                              alt=""
+                            />
+                          </div>
+                          <div className="flexStart flex-col space-y-1.5">
+                            <h3 className="text-lg font-monaSemibold">
+                              Ustaad
+                            </h3>
+                            <span className="py-2 px-3 rounded-tr-lg rounded-b-lg bg-blue-200">
+                              paayen ye username response
+                            </span>
+                            <span className="text-xs">time spam 4:10pm</span>
+                          </div>
+                        </div>
+                        <div className="flex lg:items-end lg:justify-end gap-3 w-full">
+                          <div className="flex lg:items-end flex-col space-y-1.5">
+                            <span className="py-2  px-3 rounded-t-lg rounded-bl-lg bg-blue-200">
+                              paayen ye admin response
+                            </span>
+                            <span className="text-xs">time spam 4:10pm</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="relative flex items-center gap-2 pb-8 w-full h-full">
+                        <ReactQuill
+                          theme="snow"
+                          className="max-sm:w-10/12 w-[95%] lapy:w-[88%] sm:min-h-24 sm:h-24"
+                        />
+
+                        <div className="absolute bottom-8 sm:-bottom-1 right-0">
+                          <div className="flexy bg-primary text-white rounded-full p-2">
+                            <SendHorizontal className="w-6" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div> */}
+                </div>
               </div>
             </div>
           </div>
