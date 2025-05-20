@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 import {
   CalendarClock,
@@ -13,24 +13,25 @@ import {
   Settings2,
   Upload,
   User,
-} from 'lucide-react';
+} from "lucide-react";
 
-import { formatDate, getCookie } from '@/func';
-import Toast from '@/components/Toast';
+import { formatDate, getCookie, checkRole } from "@/func";
+import Toast from "@/components/Toast";
 
 let user_id = null;
 
 const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState("");
   const [enableUpdateButton, setEnableUpdateButton] = useState(false);
   const [toasts, setToasts] = useState([]);
 
   const orderStatus = OrderDetails?.order_status;
 
   useEffect(() => {
-    if (getCookie('token') !== undefined && getCookie('token') !== null) {
+    if (getCookie("token") !== undefined && getCookie("token") !== null) {
       //console.log(atob(atob(getCookie("token"))).split("|")[0]);
-      user_id = atob(atob(getCookie('token'))).split('|')[0];
+      user_id = atob(atob(getCookie("token"))).split("|")[0];
+      //console.log(checkRole(getCookie("token")))
     }
   }, []);
 
@@ -50,14 +51,14 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
 
   const handleChange = (e) => {
     const newStatus = e.target.value;
-    if (newStatus !== '') setStatus(newStatus);
+    if (newStatus !== "") setStatus(newStatus);
     // You can also call an API or trigger any side effect here
   };
 
   const updateOrderStatus = () => {
     if (status !== orderStatus) {
       const json = JSON.stringify({
-        token: getCookie('token'),
+        token: getCookie("token"),
         order_id: OrderDetails.order_id,
         status: status,
       });
@@ -68,13 +69,13 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
           JSON.stringify({ params: json }),
           {
             headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
+              "Content-Type": "application/x-www-form-urlencoded",
             },
           }
         )
         .then((response) => {
-          if (response.data.success === 'true') {
-            addToast('success', response.data.message);
+          if (response.data.success === "true") {
+            addToast("success", response.data.message);
           }
         })
         .catch((error) => {
@@ -93,7 +94,13 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
           onClose={() => removeToast(toast.id)}
         />
       ))}
-      <div className="col-span-12 md:col-span-6 w-full relative rounded-lg">
+      <div
+        className={
+          checkRole(getCookie("token")) === "admin"
+            ? "col-span-12 md:col-span-6 w-full relative rounded-lg"
+            : "col-span-12 md:col-span-6 w-full relative rounded-lg"
+        }
+      >
         <div className="sm:p-5 p-3 bg-white rounded-lg flex flex-col relative w-full space-y-4">
           <div className="flex items-center gap-4">
             <User className="w-6 text-gray-400" />
@@ -144,7 +151,13 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
         </div>
       </div>
 
-      <div className="col-span-12 md:col-span-3 w-full relative bg-white rounded-lg">
+      <div
+        className={
+          checkRole(getCookie("token")) === "admin"
+            ? "col-span-12 md:col-span-3 w-full relative bg-white rounded-lg"
+            : "col-span-12 md:col-span-6 w-full relative bg-white rounded-lg"
+        }
+      >
         <div className="sm:p-4 p-2 flex flex-col relative w-full space-y-4">
           <div className="flex items-center gap-4">
             <Package className="w-6 text-gray-400" />
@@ -177,56 +190,74 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                 {OrderDetails?.payment_method}
               </span>
             </div>
+            {checkRole(getCookie("token")) !== "admin" && (
+              <div className="flexBetween gap-5 w-full relative">
+                <Link
+                  to={`/dashboard/invoice-details/${btoa(
+                    btoa(
+                      OrderDetails?.order_id +
+                        "||" +
+                        atob(atob(getCookie("token"))).split("|")[0]
+                    )
+                  )}`}
+                  className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
+                >
+                  Download Invoice
+                  <ReceiptText className="w-6" />
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>
 
-      <div className="col-span-12 md:col-span-3 w-full relative bg-white rounded-lg">
-        <div className="sm:p-4 p-2 flex flex-col space-y-4 relative w-full">
-          <div className="flex items-center gap-4">
-            <Settings2 className="w-6 text-gray-400" />
-            <h3 className="font-monaMedium text-md">Admin Actions</h3>
-          </div>
-          <hr className="bg-gray-200 h-px w-full" />
+      {checkRole(getCookie("token")) === "admin" && (
+        <div className="col-span-12 md:col-span-3 w-full relative bg-white rounded-lg">
+          <div className="sm:p-4 p-2 flex flex-col space-y-4 relative w-full">
+            <div className="flex items-center gap-4">
+              <Settings2 className="w-6 text-gray-400" />
+              <h3 className="font-monaMedium text-md">Admin Actions</h3>
+            </div>
+            <hr className="bg-gray-200 h-px w-full" />
 
-          <div className="flexStart flex-col w-full text-sm space-y-5">
-            <div className="flexBetween gap-5 w-full relative">
-              <div className="flex items-center w-2/5">
-                <span>Status</span>
-              </div>
-              <div className="relative flex items-center w-full">
-                <select
-                  className="invoice-select border border-gray-400"
-                  value={status !== '' ? status : OrderDetails?.order_status}
-                  onChange={handleChange}
-                >
-                  <option
-                    className="invoice-selectOpt"
-                    value={''}
-                    onClick={() => setEnableUpdateButton(false)}
+            <div className="flexStart flex-col w-full text-sm space-y-5">
+              <div className="flexBetween gap-5 w-full relative">
+                <div className="flex items-center w-2/5">
+                  <span>Status</span>
+                </div>
+                <div className="relative flex items-center w-full">
+                  <select
+                    className="invoice-select border border-gray-400"
+                    value={status !== "" ? status : OrderDetails?.order_status}
+                    onChange={handleChange}
                   >
-                    Select Status
-                  </option>
-                  <option className="invoice-selectOpt" value={'pending'}>
-                    Pending
-                  </option>
-                  <option className="invoice-selectOpt" value={'in progres'}>
-                    In Progress
-                  </option>
-                  <option className="invoice-selectOpt" value={'delivered'}>
-                    Delivered
-                  </option>
-                  <option className="invoice-selectOpt" value={'cancelled'}>
-                    Cancelled
-                  </option>
-                </select>
-                <div className="absolute right-1.5 flex items-center">
-                  <ChevronDown className="w-5 h-5" />
+                    <option
+                      className="invoice-selectOpt"
+                      value={""}
+                      onClick={() => setEnableUpdateButton(false)}
+                    >
+                      Select Status
+                    </option>
+                    <option className="invoice-selectOpt" value={"pending"}>
+                      Pending
+                    </option>
+                    <option className="invoice-selectOpt" value={"in progres"}>
+                      In Progress
+                    </option>
+                    <option className="invoice-selectOpt" value={"delivered"}>
+                      Delivered
+                    </option>
+                    <option className="invoice-selectOpt" value={"cancelled"}>
+                      Cancelled
+                    </option>
+                  </select>
+                  <div className="absolute right-1.5 flex items-center">
+                    <ChevronDown className="w-5 h-5" />
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* <div className="flexBetween gap-5 w-full relative">
+              {/* <div className="flexBetween gap-5 w-full relative">
               <div className="flex items-center w-2/5">
                 <span>Invoice</span>
               </div>
@@ -239,7 +270,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
               </Link>
             </div> */}
 
-            {/* <div className="flexBetween gap-5 w-full relative">
+              {/* <div className="flexBetween gap-5 w-full relative">
               <div className="flex items-center w-2/5">
                 <span>Message</span>
               </div>
@@ -252,38 +283,39 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
               </Link>
             </div> */}
 
-            <div className="flexBetween gap-5 w-full relative">
-              <button
-                className={`min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg${
-                  status !== '' && enableUpdateButton
-                    ? ''
-                    : ' opacity-50 cursor-not-allowed'
-                }`}
-                disabled={status === '' || !enableUpdateButton}
-                onClick={updateOrderStatus}
-              >
-                Update
-                <RefreshCw className="w-6" />
-              </button>
-            </div>
-            <div className="flexBetween gap-5 w-full relative">
-              <Link
-                to={`/dashboard/invoice-details/${btoa(
-                  btoa(
-                    OrderDetails?.order_id +
-                      '||' +
-                      atob(atob(getCookie('token'))).split('|')[0]
-                  )
-                )}`}
-                className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
-              >
-                Download Invoice
-                <ReceiptText className="w-6" />
-              </Link>
+              <div className="flexBetween gap-5 w-full relative">
+                <button
+                  className={`min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg${
+                    status !== "" && enableUpdateButton
+                      ? ""
+                      : " opacity-50 cursor-not-allowed"
+                  }`}
+                  disabled={status === "" || !enableUpdateButton}
+                  onClick={updateOrderStatus}
+                >
+                  Update
+                  <RefreshCw className="w-6" />
+                </button>
+              </div>
+              <div className="flexBetween gap-5 w-full relative">
+                <Link
+                  to={`/dashboard/invoice-details/${btoa(
+                    btoa(
+                      OrderDetails?.order_id +
+                        "||" +
+                        atob(atob(getCookie("token"))).split("|")[0]
+                    )
+                  )}`}
+                  className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
+                >
+                  Download Invoice
+                  <ReceiptText className="w-6" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       <div className="col-span-12 md:col-span-6 relative md:-mt-12 w-full bg-white rounded-lg">
         <div className="sm:p-4 p-2 flex flex-col space-y-4 relative w-full">
@@ -368,13 +400,15 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
               <h3 className="font-monaMedium text-md">Project Deliverables</h3>
             </div>
 
-            <Link
-              to={'javascript:void(0)'}
-              className="flexBetween px-3 py-2 gap-4 bg-primary text-white rounded-lg"
-            >
-              Upload files
-              <Upload className="w-5" />
-            </Link>
+            {checkRole(getCookie("token")) === "admin" && (
+              <Link
+                to={"javascript:void(0)"}
+                className="flexBetween px-3 py-2 gap-4 bg-primary text-white rounded-lg"
+              >
+                Upload files
+                <Upload className="w-5" />
+              </Link>
+            )}
           </div>
           <hr className="bg-gray-200 h-px w-full" />
 

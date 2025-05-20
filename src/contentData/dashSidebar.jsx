@@ -27,6 +27,7 @@ import Invoices from '@/views/Invoices';
 import SubmitTicket from '@/views/SubmitTicket';
 import Settings from '@/views/Settings';
 import OrderDetails from '@/views/OrderDetails';
+import OrderDetailsForUser from '@/views/OrderDetailsForUser';
 import TrackTicket from '@/views/TrackTicket';
 
 import UserDetails from '@/views/UserDetails';
@@ -65,7 +66,7 @@ export const userDashSidebar = [
     name: 'Order Details',
     icon: <Package className="w-6 h-6" />,
     path: 'order-details',
-    component: <UserList />,
+    component: <OrderDetailsForUser />,
     layout: '/dashboard',
     direct: true,
   },
