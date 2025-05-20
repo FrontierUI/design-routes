@@ -71,6 +71,14 @@ export const userDashSidebar = [
     direct: true,
   },
   {
+    name: 'Invoice Details',
+    icon: <ReceiptText className="w-6 h-6" />,
+    path: 'invoice-details',
+    component: <InvoiceId />,
+    layout: '/dashboard',
+    direct: false,
+  },
+  {
     name: 'Download Invoice',
     icon: <FileDown className="w-6 h-6" />,
     path: 'invoice',
@@ -249,7 +257,6 @@ export const adminDashSidebar = [
     layout: '/dashboard',
     direct: true,
   },
-
   {
     name: 'Invoice Details',
     icon: <ReceiptText className="w-6 h-6" />,

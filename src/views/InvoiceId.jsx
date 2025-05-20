@@ -76,7 +76,7 @@ const InvoiceId = () => {
           heightLeft -= pageHeight;
         }
 
-        pdf.save('download.pdf');
+        pdf.save(`Inv-${orderDetails?.order_id?.toString().padStart(5, '0')}-${id}.pdf`);
       }, 1500);
 
       setTimeout(() => {
