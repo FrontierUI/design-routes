@@ -179,7 +179,7 @@ const OrderDetails = () => {
                       <td className="rounded-r-lg p-4 text-left text-md font-monaMedium">
                         <Link
                           className="flexBetween gap-3 bg-primary text-white py-2 px-4 rounded-lg"
-                          to={`/dashboard/user-order-details/${btoa(
+                          to={`/dashboard/order-details/${btoa(
                             btoa(order.order_id)
                           )}`}
                         >
