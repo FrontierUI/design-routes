@@ -1,7 +1,7 @@
-import { Base64 } from 'js-base64';
+import { Base64 } from "js-base64";
 
 const appendScript = (scriptToAppend, scriptToAppendID) => {
-  const script = document.createElement('script');
+  const script = document.createElement("script");
   script.src = scriptToAppend;
   script.async = true;
 
@@ -17,7 +17,7 @@ const removeScript = (scriptToRemoveID) => {
 };
 
 const appendStylesheet = (scriptToAppend, scriptToAppendID) => {
-  const link = document.createElement('link');
+  const link = document.createElement("link");
   link.href = scriptToAppend;
 
   if (scriptToAppendID !== undefined) link.id = scriptToAppendID;
@@ -32,55 +32,55 @@ const removeStylesheet = (scriptToRemoveID) => {
 };
 
 const setCookie = (name, value, days) => {
-  var expires = '';
+  var expires = "";
   if (days) {
     var date = new Date();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-    expires = '; expires=' + date.toUTCString();
+    expires = "; expires=" + date.toUTCString();
   }
-  document.cookie = name + '=' + (value || '') + expires + '; path=/';
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
 };
 
 const getCookie = (name) => {
-  var nameEQ = name + '=';
-  var ca = document.cookie.split(';');
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(";");
   for (var i = 0; i < ca.length; i++) {
     var c = ca[i];
-    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+    while (c.charAt(0) === " ") c = c.substring(1, c.length);
     if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
   }
   return null;
 };
 
 const eraseCookie = (name) => {
-  document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 };
 
 const checkRole = (token) => {
   //return window.atob(window.atob(token)).split("|")[3];
-  return base64_decode(token).split('|')[3];
+  return base64_decode(token).split("|")[3];
 };
 
 const base64_encode = (value) => {
-  if (value.trim() === '') return null;
+  if (value.trim() === "") return null;
 
   return Base64.encode(value);
 };
 
 const base64_decode = (value) => {
-  if (value.trim() === '') return null;
+  if (value.trim() === "") return null;
 
   return Base64.decode(Base64.decode(value));
 };
 
 const validate_textfield = (text) => {
-  if (text != null && text.toString().trim() !== '') return true;
+  if (text != null && text.toString().trim() !== "") return true;
 
   return false;
 };
 
 const openInNewTab = (url) => {
-  window.open(url, '_blank', 'noopener,noreferrer');
+  window.open(url, "_blank", "noopener,noreferrer");
 };
 
 const formatDate = (dateString) => {
@@ -89,21 +89,30 @@ const formatDate = (dateString) => {
     month = date.getMonth(),
     year = date.getFullYear(),
     months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
     ];
 
-  return day + '-' + months[month] + '-' + year;
+  return day + "-" + months[month] + "-" + year;
+};
+
+const formatTime = (dateString) => {
+  const date = new Date(dateString);
+  let hours = date.getHours().toString().padStart(2, "0");
+  let minutes = date.getMinutes().toString().padStart(2, "0");
+  let seconds = date.getSeconds().toString().padStart(2, "0");
+
+  return `${hours}:${minutes}:${seconds}`;
 };
 
 const addScript = (
@@ -111,9 +120,9 @@ const addScript = (
   id,
   integrity,
   async = true,
-  crossOrigin = 'anonymous'
+  crossOrigin = "anonymous"
 ) => {
-  const script = document.createElement('script');
+  const script = document.createElement("script");
   script.src = url;
   script.id = id;
 
@@ -159,7 +168,7 @@ const currencyformator = (price) => {
   // return USDollar.format(price);
 
   return new Intl.NumberFormat().format(price);
-}
+};
 
 export {
   appendScript,
@@ -173,11 +182,12 @@ export {
   validate_textfield,
   openInNewTab,
   formatDate,
+  formatTime,
   addScript,
   appendStylesheet,
   removeStylesheet,
   validateEmail,
   validateUrl,
   validatePhone,
-  currencyformator
+  currencyformator,
 };
