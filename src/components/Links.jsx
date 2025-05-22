@@ -26,7 +26,7 @@ export function SidebarLinks(props) {
                 <span
                   className={`${
                     activeRoute(route.path) === true
-                      ? 'font-bold text-primary'
+                      ? 'font-bold text-primary duration-300 hover:text-primary'
                       : 'font-medium text-gray-700 duration-300 hover:text-primary'
                   }`}
                 >
