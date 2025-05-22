@@ -445,38 +445,6 @@
     #000 25% 75%,
     #0000 97%
   ) !important;
-
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-
-  -webkit-mask-position: center;
-  mask-position: center;
-
-  /* -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%; */
 }
 
 .startItem {
@@ -494,13 +462,7 @@
   border-radius: 1rem !important;
 }
 
-.client-logo {
-  background: transparent;
-}
-
 .client-logo img {
-  min-width: 50px;
-  height: 60px;
   object-fit: contain;
 }
 
