@@ -85,6 +85,9 @@ const SubmitTicket = () => {
               <thead className="bg-white whitespace-nowrap w-full">
                 <tr>
                   <th className="rounded-l-lg p-4 lg:pl-8 text-left text-md font-monaMedium">
+                    Ticket ID
+                  </th>
+                  <th className="rounded-l-lg p-4 lg:pl-8 text-left text-md font-monaMedium">
                     Order ID
                   </th>
                   <th className="p-4 text-left text-md font-monaMedium">
@@ -114,6 +117,9 @@ const SubmitTicket = () => {
                     <td className="rounded-l-lg p-4 lg:pl-8 text-left">
                       {ticket?.ticket_id !== "" && `st-`}
                       {ticket?.ticket_id?.toString().padStart(5, "0")}
+                    </td>
+                    <td className="rounded-l-lg p-4 lg:pl-8 text-left">
+                      {ticket?.order_id}
                     </td>
                     <td className="p-4 text-left">Standard</td>
                     <td className="p-4 text-left">

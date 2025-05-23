@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 import DashboardBanner from "@/components/DashboardBanner";
 import {
@@ -15,9 +15,15 @@ import Toast from "@/components/Toast";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-import { formatDate, formatTime, getCookie, checkRole } from "../func";
+import {
+  formatDate,
+  formatTime,
+  getCookie,
+  checkRole,
+  formatFileSize,
+} from "../func";
 
 let orderStatus = "";
 
@@ -27,8 +33,11 @@ const TicketID = () => {
   const [enableUpdateButton, setEnableUpdateButton] = useState(false);
   const [ticketDetails, setTicketDetails] = useState({});
   const [ticketResponses, setTicketResponses] = useState([]);
+  const [ticketAttachments, setTicketAttachments] = useState([]);
   const [response, setResponse] = useState("");
   const [toasts, setToasts] = useState([]);
+  const fileInputRef = useRef(null);
+  const [files, setFiles] = useState([]);
 
   useEffect(() => {
     if (id !== null && id !== undefined) fetchTicketDetails();
@@ -76,6 +85,7 @@ const TicketID = () => {
         if (response.data.success === "true") {
           setTicketDetails(response.data.ticket_details);
           setTicketResponses(response.data.ticket_responses);
+          setTicketAttachments(response.data.ticket_attachments);
         }
       })
       .catch((error) => {
@@ -112,6 +122,25 @@ const TicketID = () => {
 
   const handleResponseChange = (content, delta, source, editor) => {
     setResponse(content); // content is the HTML string
+  };
+
+  const handleAttachFile = (e) => {
+    e.preventDefault();
+    fileInputRef.current.click();
+  };
+
+  const handleFileChange = (e) => {
+    //setFiles(e.target.files); // Store FileList in state
+
+    const selectedFiles = Array.from(e.target.files); // Convert FileList to array
+    const maxFileSize = 5 * 1024 * 1024; // 5 MB in bytes
+
+    const validFiles = selectedFiles.filter((file) => file.size <= maxFileSize);
+
+    setFiles(validFiles);
+
+    if (validFiles.length > e.target.files)
+      addToast("error", "Max allowed file size is 5MB");
   };
 
   const isContentEmpty = () => {
@@ -152,13 +181,55 @@ const TicketID = () => {
     }
   };
 
-  const addTicketResponse = () => {
+  const addTicketResponse = async () => {
     if (status !== orderStatus) {
-      const json = JSON.stringify({
+      let Payload = {
         token: getCookie("token"),
         ticket_id: ticketDetails.ticket_id,
         response: response,
-      });
+        files: [], // Array to hold base64-encoded files
+      };
+
+      // Convert files to base64
+      if (files && files.length > 0) {
+        const filePromises = Array.from(files).map((file) => {
+          return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+              const ext = file.name.split(".").pop().toLowerCase();
+              const validTypes = {
+                "image/png": "png",
+                "image/jpeg": "jpg",
+                "image/jpg": "jpg",
+                "application/pdf": "pdf",
+                "application/msword": "doc",
+                "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+                  "docx",
+              };
+              if (!validTypes[file.type]) {
+                reject(new Error(`Unsupported file type: ${file.type}`));
+                return;
+              }
+              resolve({
+                name: file.name,
+                type: file.type,
+                extension: validTypes[file.type],
+                size: Math.round(file.size / 1000) + " kB",
+                base64: reader.result.split(",")[1], // Remove data URL prefix
+              });
+            };
+            reader.onerror = () =>
+              reject(new Error(`Failed to read file: ${file.name}`));
+          });
+        });
+
+        // Wait for all files to be converted to base64
+        Payload.files = await Promise.all(filePromises);
+      }
+
+      const json = JSON.stringify(Payload);
+
       axios
         .post(
           `${import.meta.env.VITE_BASE_API}/api.php?action=add_ticket_response`,
@@ -172,6 +243,7 @@ const TicketID = () => {
         .then((response) => {
           if (response.data.success === "true") {
             setResponse("");
+            setFiles([]);
             fetchTicketDetails();
             addToast("success", response.data.message);
           }
@@ -271,7 +343,7 @@ const TicketID = () => {
                               </option>
                               <option
                                 className="ticket-selectOpt"
-                                value={"in-preogress"}
+                                value={"in-progress"}
                               >
                                 In Progress
                               </option>
@@ -339,12 +411,127 @@ const TicketID = () => {
                         <span>{ticketDetails.description}</span>
                       </div>
 
+                      <div className="relative flexStart flex-col space-y-2 w-full pb-8">
+                        <div className="flex items-center gap-2">
+                          <h3 className="font-monaSemibold text-lg">
+                            Attached file(s):
+                          </h3>
+                        </div>
+
+                        {ticketAttachments?.length > 0 ? (
+                          ticketAttachments?.map((attachment, index) => (
+                            <div
+                              className="flexBetween flex-wrap gap-3 w-full text-sm p-2"
+                              key={index}
+                              style={{
+                                backgroundColor: "#eeeeee66",
+                                borderRadius: "5px",
+                              }}
+                            >
+                              <Link
+                                className="flex-1 "
+                                //onClick={() => handleDownload(`${import.meta.env.VITE_BASE_API}/uploads/tickets/${attachment.file_path}`)}
+                                to={`${
+                                  import.meta.env.VITE_BASE_API
+                                }/uploads/tickets/${attachment.file_path}`}
+                                download={attachment.file_path}
+                                target="_blank"
+                              >
+                                {attachment.file_name}
+                                <span className="pl-2 text-gray-500 text-xs">
+                                  {formatFileSize(attachment.file_size)}
+                                </span>
+                              </Link>
+                              {/* <button className="py-2 px-4 flexy gap-3 bg-red-100 text-red-500 rounded-lg">
+                                Remove
+                                <Trash2 className="w-5 h-5" />
+                              </button> */}
+                              {parseInt(atob(atob(getCookie("token")))?.split("|")[0]) !== attachment.attached_by ? (
+                                <div className="py-1 px-2 flexy gap-1 bg-green-100 text-green-500 rounded-lg">
+                                  Attached By:
+                                  <span className="font-monaSemibold">
+                                    Admin
+                                  </span>
+                                </div>
+                              ) : (
+                                <div className="py-1 px-2 flexy gap-1 bg-blue-100 text-blue-500 rounded-lg">
+                                  Attached By:
+                                  <span className="font-monaSemibold">User</span>
+                                </div>
+                              )}
+                            </div>
+                          ))
+                        ) : (
+                          <div className="flexBetween flex-wrap gap-3 w-full text-sm">
+                            <div
+                              className="flex-1 text-center p-4"
+                              style={{
+                                backgroundColor: "#eee",
+                                borderRadius: "5px",
+                              }}
+                            >
+                              No attachment found
+                            </div>
+                          </div>
+                        )}
+                      </div>
+
                       <div className="relative flexStart flex-col space-y-3 w-full pb-8">
-                        <button className="ticket-formLabel flexy gap-3 cursor-pointer">
+                        <input
+                          id="files"
+                          type="file"
+                          name="files[]"
+                          multiple
+                          accept=".png,.jpg,.pdf,.doc,.docx"
+                          style={{ display: "none" }}
+                          ref={fileInputRef}
+                          onChange={handleFileChange}
+                        />
+                        <button
+                          id="btnAttachFile"
+                          className="ticket-formLabel flexy gap-3 cursor-pointer"
+                          onClick={handleAttachFile}
+                        >
                           <FilePlus2 className="w-8 h-8 text-gray-500" />
                           File Attach
                         </button>
-                        <div className="flexBetween flex-wrap gap-3 w-full text-sm">
+
+                        {files.length > 0 ? (
+                          [...files].map((file, index) => (
+                            <div
+                              className="flexBetween flex-wrap gap-3 w-full md:w-1/2 text-sm"
+                              key={index}
+                            >
+                              <div className="flex-1 ">
+                                {file.name}
+                                <span className="pl-2 text-gray-500 text-xs">
+                                  {formatFileSize(file.size)}
+                                </span>
+                              </div>
+                              <button
+                                className="py-2 px-4 flexy gap-3 bg-red-100 text-red-500 rounded-lg"
+                                onClick={(e) => removeAttachedFile(e, index)}
+                              >
+                                Remove
+                                <Trash2 className="w-5 h-5" />
+                              </button>
+                            </div>
+                          ))
+                        ) : (
+                          <div className="flexBetween flex-wrap gap-3 w-full text-sm">
+                            <div
+                              className="flex-1 text-center p-4"
+                              style={{
+                                backgroundColor: "#eee",
+                                borderRadius: "5px",
+                              }}
+                            >
+                              No new file attached
+                            </div>
+                          </div>
+                        )}
+
+                        {/* <div className="flexBetween flex-wrap gap-3 w-full text-sm">
                           <div className="flex-1 ">
                             filename.psd
                             <span className="pl-2 text-gray-500 text-xs">
@@ -355,7 +542,7 @@ const TicketID = () => {
                             Remove
                             <Trash2 className="w-5 h-5" />
                           </button>
-                        </div>
+                        </div> */}
                       </div>
 
                       {/* <div className="relative w-full pb-4">

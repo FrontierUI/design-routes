@@ -66,6 +66,10 @@ const ViewAllTickets = () => {
                     </span>
                   </div>
                   <div className="flexStart flex-col space-y-1">
+                    <span className="text-gray-600">Order Id:</span>
+                    <span>{ticket?.order_id}</span>
+                  </div>
+                  <div className="flexStart flex-col space-y-1">
                     <span className="text-gray-600">Created At</span>
                     <span>{formatDate(ticket?.created_at)}</span>
                   </div>
