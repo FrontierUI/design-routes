@@ -54,16 +54,16 @@ const AdminDashboard = (props) => {
   };
 
   const getRoutes = (dashSidebar) => {
-    console.log('dashSidebar', dashSidebar);
+    // console.log('dashSidebar', dashSidebar);
     if (
       params.page !== undefined &&
       params.page !== null &&
       params.page.toString().trim() !== ''
     ) {
-      console.log('page', params.page);
+      // console.log('page', params.page);
       return dashSidebar.map((prop) => {
         if (prop.layout === '/dashboard' && prop.path === params.page) {
-          console.log('prop.component', prop.component);
+          // console.log('prop.component', prop.component);
           return prop.component;
         } else {
           return null;
