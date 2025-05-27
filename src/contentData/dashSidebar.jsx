@@ -42,7 +42,6 @@ import ViewAllTickets from '../views/ViewAllTickets';
 var role = '';
 if (getCookie('token') !== undefined && getCookie('token') !== null) {
   role = checkRole(getCookie('token'));
-  console.log('role', role);
 }
 
 export const userDashSidebar = [
@@ -68,7 +67,7 @@ export const userDashSidebar = [
     path: 'order-details',
     component: <OrderDetailsForUser />,
     layout: '/dashboard',
-    direct: true,
+    direct: false,
   },
   {
     name: 'Invoice Details',
@@ -84,7 +83,7 @@ export const userDashSidebar = [
     path: 'invoice',
     component: <Invoices />,
     layout: '/dashboard',
-    direct: true,
+    direct: false,
   },
   // {
   //   name: 'Submit Ticket',
@@ -124,7 +123,7 @@ export const userDashSidebar = [
     path: 'create-ticket',
     component: <CreateTicket />,
     layout: '/dashboard',
-    direct: false,
+    direct: true,
   },
   {
     name: 'Track Ticket Status',
@@ -132,7 +131,7 @@ export const userDashSidebar = [
     path: 'track-ticket-status',
     component: <TrackTicket />,
     layout: '/dashboard',
-    direct: true,
+    direct: false,
   },
   {
     name: 'Invoices',
@@ -140,7 +139,7 @@ export const userDashSidebar = [
     path: 'invoices',
     component: <Invoices />,
     layout: '/dashboard',
-    direct: true,
+    direct: false,
   },
 
   {
@@ -216,6 +215,7 @@ export const adminDashSidebar = [
     path: 'view-all-orders',
     component: <AllOrders />,
     layout: '/dashboard',
+    direct: true,
   },
   {
     name: 'User Order Details',
@@ -231,7 +231,7 @@ export const adminDashSidebar = [
     path: 'update-order-status',
     component: <UpdateOrderStatus />,
     layout: '/dashboard',
-    direct: false,
+    direct: true,
   },
   {
     name: 'View All Tickets',
@@ -255,7 +255,7 @@ export const adminDashSidebar = [
     path: 'update-ticket-status',
     component: <TrackTicket />,
     layout: '/dashboard',
-    direct: true,
+    direct: false,
   },
   {
     name: 'Invoice Details',
@@ -271,7 +271,7 @@ export const adminDashSidebar = [
     path: 'view-transactions',
     component: <UserDetails />,
     layout: '/dashboard',
-    direct: true,
+    direct: false,
   },
 ];
 

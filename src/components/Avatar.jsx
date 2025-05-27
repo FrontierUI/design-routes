@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { LogOut, Settings, User } from 'lucide-react';
@@ -6,6 +7,22 @@ import { eraseCookie } from '../func';
 
 const Avatar = () => {
   const navigate = useNavigate();
+
+  const [profilePicture, setProfilePicture] = useState(null);
+  const [registrationMethod, setregistrationMethod] = useState(null);
+
+  useEffect(() => {
+    if (
+      window.localStorage.getItem('loginSecret') !== null &&
+      window.localStorage.getItem('loginSecret') !== undefined
+    ) {
+      let temp = JSON.parse(
+        atob(atob(window.localStorage.getItem('loginSecret')))
+      );
+      setProfilePicture(temp['profile_picture']);
+      setregistrationMethod(temp['registration_method']);
+    }
+  }, []);
 
   const handleLogout = () => {
     eraseCookie('token');
@@ -20,25 +37,35 @@ const Avatar = () => {
   return (
     <div className="relative inline-block group min-w-8">
       <div className="flex items-center cursor-pointer">
-        <img
-          src="/images/icons/ProfAvatar.svg"
-          alt="Profile"
-          className="w-10 h-10 img-fluid rounded-full shadow"
-        />
-        {/* <ChevronDown className="w-4 h-4 text-white" /> */}
+        {profilePicture !== '' && profilePicture !== null ? (
+          <img
+            src={
+              registrationMethod === 'website'
+                ? `${import.meta.env.VITE_BASE_API}${profilePicture}`
+                : `${profilePicture}`
+            }
+            className="w-10 h-10 img-fluid rounded-full shadow"
+            alt="Profile"
+          />
+        ) : (
+          <img
+            src="/images/icons/ProfAvatar.svg"
+            className="w-10 h-10 img-fluid rounded-full shadow"
+            alt="Profile"
+          />
+        )}
       </div>
-      {/* <img src="/images/icons/avatar.png" className="img-fluid w-12" alt="" /> */}
 
       <div className="absolute right-0 mt-1 w-48 bg-stone-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transform transition-all duration-300 origin-top pointer-events-none group-hover:pointer-events-auto">
         <div className="py-1">
           <Link
-            href="#account"
+            to="#account"
             className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-200"
           >
             <User className="w-4 h-4 mr-2" /> Account
           </Link>
           <Link
-            href="#settings"
+            to={'/dashboard/settings'}
             className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-200"
           >
             <Settings className="w-4 h-4 mr-2" /> Settings

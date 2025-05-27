@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-import DashboardBanner from "@/components/DashboardBanner";
-import { Link } from "react-router-dom";
-import { ListFilter, Search } from "lucide-react";
-import { formatDate, getCookie } from "@/func";
+import DashboardBanner from '@/components/DashboardBanner';
+import { Link } from 'react-router-dom';
+import { ListFilter, Search } from 'lucide-react';
+import { formatDate, getCookie } from '@/func';
 
 const OrderDetails = () => {
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState('');
   const [orders, setOrders] = useState([]);
   const [offset, setOffset] = useState(0);
   const [limit, setLimit] = useState(50);
@@ -22,7 +22,7 @@ const OrderDetails = () => {
 
   const fetchOrders = () => {
     const json = JSON.stringify({
-      token: getCookie("token"),
+      token: getCookie('token'),
       limit: limit,
       offset: offset,
     });
@@ -31,10 +31,10 @@ const OrderDetails = () => {
       .post(
         `${import.meta.env.VITE_BASE_API}/api.php?action=get_orders`,
         JSON.stringify({ params: json }),
-        { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
+        { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
       )
       .then((response) => {
-        if (response.data.success === "true") {
+        if (response.data.success === 'true') {
           setOrders(response.data.orders);
         }
       })
@@ -44,26 +44,30 @@ const OrderDetails = () => {
   };
 
   const StatusBedge = ({ Status }) => {
-    if (Status === "pending")
+    if (Status === 'pending')
       return (
         <button className="bg-yellow-100 text-yellow-500 px-5 py-2 rounded-lg">
           Pending
         </button>
       );
-    else if (Status === "inprogress")
+    else if (Status === 'inprogress')
       return (
         <button className="bg-blue-100 text-blue-500 px-5 py-2 rounded-lg">
           In Progress
         </button>
       );
-    else if (Status === "completed")
-      <button className="bg-green-100 text-green-500 px-5 py-2 rounded-lg">
-        Completed
-      </button>;
-    else if (Status === "cancelled")
-      <button className="bg-red-100 text-red-500 px-5 py-2 rounded-lg">
-        Cancelled
-      </button>;
+    else if (Status === 'completed')
+      return (
+        <button className="bg-green-100 text-green-500 px-5 py-2 rounded-lg">
+          Completed
+        </button>
+      );
+    else if (Status === 'cancelled')
+      return (
+        <button className="bg-red-100 text-red-500 px-5 py-2 rounded-lg">
+          Cancelled
+        </button>
+      );
   };
 
   return (
@@ -84,7 +88,7 @@ const OrderDetails = () => {
               />
               <div className="flex items-center gap-2">
                 <p className="font-monaMedium text-xl">Filter</p>
-                <Link to={"javascript:void(0)"} className="flexy">
+                <Link to={'javascript:void(0)'} className="flexy">
                   <ListFilter className="w-6 h-6" />
                 </Link>
               </div>
@@ -107,9 +111,6 @@ const OrderDetails = () => {
                   <th className="p-4 text-left text-md font-monaMedium">
                     Order ID
                   </th>
-                  {/* <th className="p-4 text-left text-md font-monaMedium">
-                    Number
-                  </th> */}
                   <th className="rounded-r-lg p-4 text-left text-md font-monaMedium">
                     Status
                   </th>
@@ -161,17 +162,16 @@ const OrderDetails = () => {
                       <td className="text-left p-4 max-sm:pr-12">
                         {order.order_id}
                       </td>
-                      {/* <td className="p-4 text-left">4</td> */}
-                      <td className="rounded-r-lg p-4 text-left">
+                      <td className="p-4 text-left">
                         <StatusBedge Status={order.order_status} />
                       </td>
-                      <td className="rounded-r-lg p-4 text-left">
-                        {order.payment_status === "COMPLETED" ? (
-                          <button className="bg-green-100 text-green-500 px-5 py-2 rounded-lg text-center py-2 px-5 pointer-events-none text-sm">
+                      <td className="p-4 text-left">
+                        {order.payment_status === 'COMPLETED' ? (
+                          <button className="bg-green-100 text-green-500 px-5 py-2 rounded-lg text-center pointer-events-none text-sm">
                             Paid
                           </button>
                         ) : (
-                          <button className="bg-red-100 text-red-500 px-5 py-2 rounded-lg text-center py-2 px-5 pointer-events-none text-sm">
+                          <button className="bg-red-100 text-red-500 px-5 py-2 rounded-lg text-center pointer-events-none text-sm">
                             {order.payment_status}
                           </button>
                         )}
@@ -199,44 +199,6 @@ const OrderDetails = () => {
                   </tr>
                 </tbody>
               )}
-
-              {/* <tbody className="w-full whitespace-nowrap">
-                <tr className="w-full text-sm">
-                  <td className="rounded-l-lg p-4 text-left">2026/01/19</td>
-                  <td className="p-4">Creative Campaign</td>
-                  <td className="p-4">Premium</td>
-                  <td className="text-left p-4 max-sm:pr-12">122994</td>
-                  <td className="p-4 text-left">4</td>
-                  <td className="rounded-r-lg p-4 text-left">
-                    <button className="bg-red-100 rounded-lg text-red-500 text-center py-2 px-5 pointer-events-none text-sm">
-                      Suspended
-                    </button>
-                  </td>
-                  <td className="rounded-r-lg p-4 text-left">
-                    <button className="bg-yellow-100 rounded-lg text-yellow-500 text-center py-2 px-5 pointer-events-none text-sm">
-                      Pending
-                    </button>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="rounded-l-lg p-4 text-left">2026/01/19</td>
-                  <td className="p-4 text-left">Brand Identity & Design</td>
-                  <td className="p-4 text-left">Standard</td>
-                  <td className="p-4 text-left">122993</td>
-                  <td className="p-4 text-left">12</td>
-                  <td className="rounded-r-lg p-4">
-                    <button className="bg-blue-100 rounded-lg text-primary text-center py-2 px-5 pointer-events-none text-sm">
-                      In progress
-                    </button>
-                  </td>
-                  <td className="rounded-r-lg p-4">
-                    <button className="bg-green-100 rounded-lg text-green-500 text-center py-2 px-5 pointer-events-none text-sm">
-                      Paid
-                    </button>
-                  </td>
-                </tr>
-              </tbody> */}
             </table>
           </div>
         </div>

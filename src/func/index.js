@@ -106,6 +106,14 @@ const formatDate = (dateString) => {
   return day + '-' + months[month] + '-' + year;
 };
 
+const formatTime = (dateString) => {
+  const date = new Date(dateString);
+  let hours = date.getHours().toString().padStart(2, '0');
+  let minutes = date.getMinutes().toString().padStart(2, '0');
+  let seconds = date.getSeconds().toString().padStart(2, '0');
+  return `${hours}:${minutes}:${seconds}`;
+};
+
 const addScript = (
   url,
   id,
@@ -150,16 +158,20 @@ const validatePhone = (text) => {
 };
 
 const currencyformator = (price) => {
-  // // Format the price above to USD using the locale, style, and currency.
-  // let USDollar = new Intl.NumberFormat('en-US', {
-  //   style: 'currency',
-  //   currency: 'USD',
-  // });
-
-  // return USDollar.format(price);
-
   return new Intl.NumberFormat().format(price);
-}
+};
+
+const formatFileSize = (bytes) => {
+  if (bytes === 0) return '0 Bytes';
+
+  const units = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+  const k = 1024;
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+  const size = parseFloat((bytes / Math.pow(k, i)).toFixed(2));
+
+  return `${size} ${units[i]}`;
+};
 
 export {
   appendScript,
@@ -173,11 +185,13 @@ export {
   validate_textfield,
   openInNewTab,
   formatDate,
+  formatTime,
   addScript,
   appendStylesheet,
   removeStylesheet,
   validateEmail,
   validateUrl,
   validatePhone,
-  currencyformator
+  currencyformator,
+  formatFileSize,
 };

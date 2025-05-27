@@ -206,11 +206,9 @@ const SMMPackage = ({ Packages }) => {
                               alt=""
                             />
                             <div className="flex flex-col space-y-1">
-                              <span className="text-md lg:text-lg leading-none">
+                              <span className="text-md leading-none">
                                 {feature}
-                              </span>
-                              <span className="text-md lg:text-lg leading-none">
-                                (16 Post, 8 Stories, 3 Video, 5 Reel)
+                                {console.log(feature)}
                               </span>
                             </div>
                           </li>

@@ -1,23 +1,47 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { FileDown, Package, Pencil, Ticket } from 'lucide-react';
 
-const ProfileOverview = () => {
+const ProfileOverview = ({ TotalOrders, TotalTickets }) => {
+  const [userDetails, setUserDetails] = useState({});
+
+  useEffect(() => {
+    let loginSecret = window.localStorage.getItem('loginSecret');
+    if (loginSecret !== undefined) {
+      setUserDetails(JSON.parse(atob(atob(loginSecret))));
+    }
+  }, []);
+
   return (
     <div className="grid grid-cols-12 grid-flow-dense gap-6 w-full h-full  mx-auto">
-      <div className="md:row-span-3 col-span-12 md:col-span-6 w-full bg-white relative rounded-lg">
+      <div className="md:row-span-2 col-span-12 md:col-span-6 w-full bg-white relative rounded-lg">
         <div className="sm:p-5 p-3 flex flex-col relative w-full">
           <div className="relative flex items-start justify-between w-full">
             <div className="flex items-center gap-3">
-              <img
-                src="/images/icons/ProfAvatar.svg"
-                className="img-fluid w-12"
-                alt=""
-              />
+              {userDetails.profile_picture !== null &&
+              userDetails.profile_picture !== undefined &&
+              userDetails.profile_picture !== '' ? (
+                <img
+                  src={`${import.meta.env.VITE_BASE_API}${
+                    userDetails.profile_picture
+                  }`}
+                  className="img-fluid w-12"
+                  alt=""
+                />
+              ) : (
+                <img
+                  src="/images/icons/ProfAvatar.svg"
+                  className="img-fluid w-12"
+                  alt=""
+                />
+              )}
               <div className="flex flex-col leading-none">
-                <h2 className="font-monaBold text-xl">Jane Name</h2>
+                <h2 className="font-monaBold text-xl capitalize">
+                  {userDetails.name}
+                </h2>
                 <span className="font-monaLight text-sm">
-                  jessica.hanson@example.com
+                  {userDetails.email}
                 </span>
               </div>
             </div>
@@ -30,51 +54,30 @@ const ProfileOverview = () => {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row items-center justify-center md:justify-between w-full gap-5 relative mt-6 md:mt-12">
-            <div className="flex rounded-lg border-2 border-dashed border-gray-300 p-3 w-full">
-              <div className="flex flex-col w-full space-y-4 text-sm">
-                <div className="flex items-center justify-between gap-5">
-                  <p className="text-gray-600">Account Status</p>
-                  <span>Active</span>
-                </div>
-                <div className="flex items-center justify-between gap-5">
-                  <p className="text-gray-600">Order in progress</p>
-                  <span className="text-red-600">Active</span>
-                </div>
-              </div>
-            </div>
-            <div className="flex rounded-lg border-2 border-dashed border-gray-300 p-3 w-full">
-              <div className="flex flex-col w-full space-y-4 text-sm">
-                <div className="flex items-center justify-between gap-5">
-                  <p className="text-gray-600">Account Status</p>
-                  <span>Active</span>
-                </div>
-                <div className="flex items-center justify-between gap-5">
-                  <p className="text-gray-600">Account Status</p>
-                  <span className="text-green-500">Active</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
       <div className="col-span-12 md:col-span-6 w-full bg-white rounded-lg">
-        <Link to={'javascript:void(0)'} className="justStartCenter gap-3 p-3">
-          <FileDown className="w-7 h-7" />
-          <span>Invoices</span>
-        </Link>
-      </div>
-      <div className="col-span-12 md:col-span-6 w-full bg-white rounded-lg">
-        <Link to={'javascript:void(0)'} className="justStartCenter gap-3 p-3">
+        <Link
+          to={'/dashboard/view-order-history'}
+          className="justStartCenter gap-3 p-3"
+        >
           <Package className="w-7 h-7" />
-          <span>Order Details</span>
+          <p>
+            Orders: <span className="font-monaBold text-lg">{TotalOrders}</span>
+          </p>
         </Link>
       </div>
       <div className="col-span-12 md:col-span-6 w-full bg-white rounded-lg">
-        <Link to={'javascript:void(0)'} className="justStartCenter gap-3 p-3">
+        <Link
+          to={'/dashboard/view-all-tickets'}
+          className="justStartCenter gap-3 p-3"
+        >
           <Ticket className="w-7 h-7" />
-          <span>Tickets</span>
+          <p>
+            Tickets:{' '}
+            <span className="font-monaBold text-lg">{TotalTickets}</span>
+          </p>
         </Link>
       </div>
     </div>

@@ -15,7 +15,7 @@ export function SidebarLinks(props) {
 
   const createLinks = (dashSidebar) => {
     return dashSidebar.map((route, index) => {
-      if (route.layout === '/dashboard') {
+      if (route.layout === '/dashboard' && route.direct === true) {
         return (
           <Link key={index} to={route.layout + '/' + route.path}>
             <div className="relative mb-3 flex hover:cursor-pointer">

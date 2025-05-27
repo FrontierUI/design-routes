@@ -1,12 +1,15 @@
-import { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { Fragment, useEffect, useState } from 'react';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 import AdminSidebar from '@/components/AdminSidebar';
 
 import { dashSidebar } from '@/contentData/dashSidebar';
 import DashboardNavbar from '@/components/DashboardNavbar';
 
+import { getCookie } from '../../func';
+
 const AdminDashboard = (props) => {
+  const navigate = useNavigate();
   const { ...rest } = props;
 
   const params = useParams();
@@ -16,6 +19,9 @@ const AdminDashboard = (props) => {
   const [currentRoute, setCurrentRoute] = useState('Overview');
 
   useEffect(() => {
+    if (getCookie('token') === undefined && getCookie('token') === null)
+      navigate(`/auth/sign-in`, { replace: true });
+
     window.addEventListener('resize', () =>
       window.innerWidth < 1200 ? setOpen(false) : setOpen(true)
     );
@@ -54,17 +60,14 @@ const AdminDashboard = (props) => {
   };
 
   const getRoutes = (dashSidebar) => {
-    console.log('dashSidebar', dashSidebar);
     if (
       params.page !== undefined &&
       params.page !== null &&
       params.page.toString().trim() !== ''
     ) {
-      console.log('page', params.page);
-      return dashSidebar.map((prop) => {
+      return dashSidebar.map((prop, index) => {
         if (prop.layout === '/dashboard' && prop.path === params.page) {
-          console.log('prop.component', prop.component);
-          return prop.component;
+          return <Fragment key={index}>{prop.component}</Fragment>;
         } else {
           return null;
         }
@@ -91,13 +94,6 @@ const AdminDashboard = (props) => {
 
             <div className="mx-auto mb-auto w-full relative min-h-[88vh] p-2 md:pr-2">
               {getRoutes(dashSidebar)}
-
-              {/* <Routes>
-                <Route
-                  path="/"
-                  element={<Navigate to="/dashboard/overview" replace />}
-                />
-              </Routes> */}
             </div>
           </div>
         </main>

@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
-import { Plus, SquarePen } from "lucide-react";
+import { Link } from 'react-router-dom';
+import { Plus, SquarePen } from 'lucide-react';
 
-import DashboardBanner from "@/components/DashboardBanner";
-import { useEffect, useState } from "react";
-import { formatDate, getCookie } from "../func";
-import axios from "axios";
+import DashboardBanner from '@/components/DashboardBanner';
+import { useEffect, useState } from 'react';
+import { formatDate, getCookie } from '../func';
+import axios from 'axios';
 
 const ViewAllTickets = () => {
   const [tickets, setTickets] = useState([]);
@@ -19,7 +19,7 @@ const ViewAllTickets = () => {
 
   const fetchTickets = () => {
     const json = JSON.stringify({
-      token: getCookie("token"),
+      token: getCookie('token'),
       limit: 10,
       offset: 0,
     });
@@ -30,12 +30,12 @@ const ViewAllTickets = () => {
         JSON.stringify({ params: json }),
         {
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            'Content-Type': 'application/x-www-form-urlencoded',
           },
         }
       )
       .then((response) => {
-        if (response.data.success === "true") {
+        if (response.data.success === 'true') {
           // console.log(response.data.tickets);
           setTickets(response.data.tickets);
         }
@@ -61,15 +61,19 @@ const ViewAllTickets = () => {
                   <div className="flexStart flex-col space-y-1">
                     <span className="text-gray-600">Ticket:</span>
                     <span className="text-green-500">
-                      {ticket?.ticket_id !== "" && `st-`}
-                      {ticket?.ticket_id?.toString().padStart(5, "0")}
+                      {ticket?.ticket_id !== '' && `st-`}
+                      {ticket?.ticket_id?.toString().padStart(5, '0')}
                     </span>
+                  </div>
+                  <div className="flexStart flex-col space-y-1">
+                    <span className="text-gray-600">Order Id:</span>
+                    <span>{ticket?.order_id}</span>
                   </div>
                   <div className="flexStart flex-col space-y-1">
                     <span className="text-gray-600">Created At</span>
                     <span>{formatDate(ticket?.created_at)}</span>
                   </div>
-                  {ticket?.updated_at !== "" && (
+                  {ticket?.updated_at !== '' && (
                     <div className="flexStart flex-col space-y-1">
                       <span className="text-gray-600">Updated At</span>
                       <span>{formatDate(ticket?.updated_at)}</span>

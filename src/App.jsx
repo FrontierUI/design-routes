@@ -1,11 +1,5 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import TicketID from './views/TicketID';
-
-// import { base64_decode } from './func';
-
-// import Navbar from '@/components/Navbar';
-// import Footer from '@/components/Footer';
 
 const Home = lazy(() => import('@/pages/Home'));
 const About = lazy(() => import('@/pages/About'));
@@ -46,10 +40,6 @@ const ForAgencies = lazy(() => import('@/pages/verticals/ForAgencies'));
 
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
 
-// const UserDashboard = lazy(() => import('./pages/dashboard/UserDashboard'));
-// const Overview = lazy(() => import('./views/Overview'));
-// const UserList = lazy(() => import('./views/UserList'));
-
 const LoadingFallback = () => {
   return (
     <div className="loading flex items-center justify-center min-h-screen bg-gray-100">
@@ -75,8 +65,6 @@ const App = () => {
   return (
     <Suspense fallback={<LoadingFallback />}>
       <main className="relative max-w-full w-full h-full overflow-x-hidden">
-        {/* <Navbar /> */}
-
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/pricing" element={<Pricing />} />
@@ -133,8 +121,6 @@ const App = () => {
           <Route path="/dashboard/:page" element={<AdminDashboard />} />
           <Route path="/dashboard/:page/:id" element={<AdminDashboard />} />
         </Routes>
-
-        {/* <Footer /> */}
       </main>
     </Suspense>
   );
