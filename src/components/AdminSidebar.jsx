@@ -21,7 +21,7 @@ const AdminSidebar = ({ open, onClose }) => {
       </span>
 
       <div className={`mx-auto mt-8 flex items-center`}>
-        <Link to={'javascript:void(0)'} className="">
+        <Link to={'/'} className="">
           <img src={brand} className="img-fluid w-36" alt="" />
         </Link>
       </div>

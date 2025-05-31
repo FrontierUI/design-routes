@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import {
   CalendarClock,
@@ -13,25 +13,24 @@ import {
   Settings2,
   Upload,
   User,
-} from "lucide-react";
+} from 'lucide-react';
 
-import { formatDate, getCookie, checkRole } from "@/func";
-import Toast from "@/components/Toast";
+import { formatDate, getCookie, checkRole } from '@/func';
+import Toast from '@/components/Toast';
 
 let user_id = null;
 
 const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
-  const [status, setStatus] = useState("");
-  const [enableUpdateButton, setEnableUpdateButton] = useState(false);
+  const [status, setStatus] = useState('');
+
   const [toasts, setToasts] = useState([]);
+  const [enableUpdateButton, setEnableUpdateButton] = useState(false);
 
   const orderStatus = OrderDetails?.order_status;
 
   useEffect(() => {
-    if (getCookie("token") !== undefined && getCookie("token") !== null) {
-      //console.log(atob(atob(getCookie("token"))).split("|")[0]);
-      user_id = atob(atob(getCookie("token"))).split("|")[0];
-      //console.log(checkRole(getCookie("token")))
+    if (getCookie('token') !== undefined && getCookie('token') !== null) {
+      user_id = atob(atob(getCookie('token'))).split('|')[0];
     }
   }, []);
 
@@ -51,14 +50,13 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
 
   const handleChange = (e) => {
     const newStatus = e.target.value;
-    if (newStatus !== "") setStatus(newStatus);
-    // You can also call an API or trigger any side effect here
+    if (newStatus !== '') setStatus(newStatus);
   };
 
   const updateOrderStatus = () => {
     if (status !== orderStatus) {
       const json = JSON.stringify({
-        token: getCookie("token"),
+        token: getCookie('token'),
         order_id: OrderDetails.order_id,
         status: status,
       });
@@ -67,15 +65,11 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
         .post(
           `${import.meta.env.VITE_BASE_API}/api.php?action=update_order`,
           JSON.stringify({ params: json }),
-          {
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-            },
-          }
+          { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
         )
         .then((response) => {
-          if (response.data.success === "true") {
-            addToast("success", response.data.message);
+          if (response.data.success === 'true') {
+            addToast('success', response.data.message);
           }
         })
         .catch((error) => {
@@ -96,9 +90,9 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
       ))}
       <div
         className={
-          checkRole(getCookie("token")) === "admin"
-            ? "col-span-12 md:col-span-6 w-full relative rounded-lg"
-            : "col-span-12 md:col-span-6 w-full relative rounded-lg"
+          checkRole(getCookie('token')) === 'admin'
+            ? 'col-span-12 md:col-span-6 w-full relative rounded-lg'
+            : 'col-span-12 md:col-span-6 w-full relative rounded-lg'
         }
       >
         <div className="sm:p-5 p-3 bg-white rounded-lg flex flex-col relative w-full space-y-4">
@@ -142,20 +136,14 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
               </div>
             </div>
           </div>
-          {/* <div className="flex items-end justify-end pt-3">
-            <Link className="px-3 py-2 flexBetween gap-4 rounded-lg bg-primary text-white w-3/5 md:w-1/3">
-              Download Invoice
-              <FileDown className="w-6" />
-            </Link>
-          </div> */}
         </div>
       </div>
 
       <div
         className={
-          checkRole(getCookie("token")) === "admin"
-            ? "col-span-12 md:col-span-3 w-full relative bg-white rounded-lg"
-            : "col-span-12 md:col-span-6 w-full relative bg-white rounded-lg"
+          checkRole(getCookie('token')) === 'admin'
+            ? 'col-span-12 md:col-span-3 w-full relative bg-white rounded-lg'
+            : 'col-span-12 md:col-span-6 w-full relative bg-white rounded-lg'
         }
       >
         <div className="sm:p-4 p-2 flex flex-col relative w-full space-y-4">
@@ -190,14 +178,14 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                 {OrderDetails?.payment_method}
               </span>
             </div>
-            {checkRole(getCookie("token")) !== "admin" && (
+            {checkRole(getCookie('token')) !== 'admin' && (
               <div className="flexBetween gap-5 w-full relative">
                 <Link
                   to={`/dashboard/invoice-details/${btoa(
                     btoa(
                       OrderDetails?.order_id +
-                        "||" +
-                        atob(atob(getCookie("token"))).split("|")[0]
+                        '||' +
+                        atob(atob(getCookie('token'))).split('|')[0]
                     )
                   )}`}
                   className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
@@ -211,7 +199,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
         </div>
       </div>
 
-      {checkRole(getCookie("token")) === "admin" && (
+      {checkRole(getCookie('token')) === 'admin' && (
         <div className="col-span-12 md:col-span-3 w-full relative bg-white rounded-lg">
           <div className="sm:p-4 p-2 flex flex-col space-y-4 relative w-full">
             <div className="flex items-center gap-4">
@@ -228,26 +216,26 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                 <div className="relative flex items-center w-full">
                   <select
                     className="invoice-select border border-gray-400"
-                    value={status !== "" ? status : OrderDetails?.order_status}
+                    value={status !== '' ? status : OrderDetails?.order_status}
                     onChange={handleChange}
                   >
                     <option
                       className="invoice-selectOpt"
-                      value={""}
+                      value={''}
                       onClick={() => setEnableUpdateButton(false)}
                     >
                       Select Status
                     </option>
-                    <option className="invoice-selectOpt" value={"pending"}>
+                    <option className="invoice-selectOpt" value={'pending'}>
                       Pending
                     </option>
-                    <option className="invoice-selectOpt" value={"in progres"}>
+                    <option className="invoice-selectOpt" value={'in progres'}>
                       In Progress
                     </option>
-                    <option className="invoice-selectOpt" value={"delivered"}>
+                    <option className="invoice-selectOpt" value={'delivered'}>
                       Delivered
                     </option>
-                    <option className="invoice-selectOpt" value={"cancelled"}>
+                    <option className="invoice-selectOpt" value={'cancelled'}>
                       Cancelled
                     </option>
                   </select>
@@ -257,40 +245,14 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                 </div>
               </div>
 
-              {/* <div className="flexBetween gap-5 w-full relative">
-              <div className="flex items-center w-2/5">
-                <span>Invoice</span>
-              </div>
-              <Link
-                to={'javascript:void(0)'}
-                className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
-              >
-                Resend Invoice
-                <ReceiptText className="w-6" />
-              </Link>
-            </div> */}
-
-              {/* <div className="flexBetween gap-5 w-full relative">
-              <div className="flex items-center w-2/5">
-                <span>Message</span>
-              </div>
-              <Link
-                to={'javascript:void(0)'}
-                className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
-              >
-                Send Message
-                <MessageCircleMore className="w-6" />
-              </Link>
-            </div> */}
-
               <div className="flexBetween gap-5 w-full relative">
                 <button
                   className={`min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg${
-                    status !== "" && enableUpdateButton
-                      ? ""
-                      : " opacity-50 cursor-not-allowed"
+                    status !== '' && enableUpdateButton
+                      ? ''
+                      : ' opacity-50 cursor-not-allowed'
                   }`}
-                  disabled={status === "" || !enableUpdateButton}
+                  disabled={status === '' || !enableUpdateButton}
                   onClick={updateOrderStatus}
                 >
                   Update
@@ -302,8 +264,8 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                   to={`/dashboard/invoice-details/${btoa(
                     btoa(
                       OrderDetails?.order_id +
-                        "||" +
-                        atob(atob(getCookie("token"))).split("|")[0]
+                        '||' +
+                        atob(atob(getCookie('token'))).split('|')[0]
                     )
                   )}`}
                   className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
@@ -374,20 +336,6 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                 </div>
               </div>
             </li>
-
-            {/* <li className="flexBetween w-full gap-4">
-              <div className="flex items-center w-1/2 md:w-1/3">
-                <span>Revision Requested</span>
-              </div>
-              <div className="flex items-end justify-end">
-                <div className="flexy flex-col w-full space-y-3">
-                  <button className="py-2 px-6 rounded-lg bg-green-100 text-green-500">
-                    User
-                  </button>
-                  <span className="text-xs">Mar 5, 2028 – 3:42 PM</span>
-                </div>
-              </div>
-            </li> */}
           </ul>
         </div>
       </div>
@@ -400,9 +348,9 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
               <h3 className="font-monaMedium text-md">Project Deliverables</h3>
             </div>
 
-            {checkRole(getCookie("token")) === "admin" && (
+            {checkRole(getCookie('token')) === 'admin' && (
               <Link
-                to={"javascript:void(0)"}
+                to={'javascript:void(0)'}
                 className="flexBetween px-3 py-2 gap-4 bg-primary text-white rounded-lg"
               >
                 Upload files
@@ -410,6 +358,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
               </Link>
             )}
           </div>
+
           <hr className="bg-gray-200 h-px w-full" />
 
           {OrderDeliverables?.length > 0 ? (
@@ -431,16 +380,6 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
               </li>
             </ul>
           )}
-          {/* <ul className="flex flex-col space-y-5 py-4">
-            <li className="p-2 sm:p-4 w-full bg-[#e3e2ff] rounded-lg flexBetween">
-              <span>File Name.zip</span>
-              <Ellipsis className="w-6" />
-            </li>
-            <li className="p-2 sm:p-4 w-full bg-[#e3e2ff] rounded-lg flexBetween">
-              <span>File Name.zip</span>
-              <Ellipsis className="w-6" />
-            </li>
-          </ul> */}
         </div>
       </div>
     </div>

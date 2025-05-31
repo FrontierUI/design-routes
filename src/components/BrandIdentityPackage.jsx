@@ -202,9 +202,7 @@ const BrandIdentityPackage = ({ Packages }) => {
                               className="img-fluid w-5"
                               alt=""
                             />
-                            <span className="text-md lg:text-lg">
-                              {feature}
-                            </span>
+                            <span className="text-md">{feature}</span>
                           </li>
                         )
                       )}

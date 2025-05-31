@@ -159,22 +159,22 @@ export const userDashSidebar = [
     direct: true,
   },
 
-  {
-    name: 'Contacts',
-    icon: <Mail className="w-6 h-6" />,
-    path: 'contacts',
-    component: <UserList />,
-    layout: '/dashboard',
-    direct: true,
-  },
-  {
-    name: 'Help Center',
-    icon: <LifeBuoy className="w-6 h-6" />,
-    path: 'help-center',
-    component: <UserList />,
-    layout: '/dashboard',
-    direct: true,
-  },
+  // {
+  //   name: 'Contacts',
+  //   icon: <Mail className="w-6 h-6" />,
+  //   path: 'contacts',
+  //   component: <UserList />,
+  //   layout: '/dashboard',
+  //   direct: true,
+  // },
+  // {
+  //   name: 'Help Center',
+  //   icon: <LifeBuoy className="w-6 h-6" />,
+  //   path: 'help-center',
+  //   component: <UserList />,
+  //   layout: '/dashboard',
+  //   direct: true,
+  // },
 ];
 
 export const adminDashSidebar = [
