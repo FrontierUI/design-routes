@@ -106,6 +106,17 @@ const SignIn = () => {
         navigate(`/dashboard/overview`, { replace: true });
       else navigate(`/dashboard/overview`, { replace: true });
     }
+
+    // Respond to the `storage` eventAdd commentMore actions
+    function storageEventHandler(event) {
+      navigate(`/dashboard/overview`, { replace: true });
+    }
+    // Hook up the event handler
+    window.addEventListener('storage', storageEventHandler);
+    return () => {
+      // Remove the handler when the component unmounts
+      window.removeEventListener('storage', storageEventHandler);
+    };
   }, []);
 
   const addToast = (type, message) => {
@@ -254,16 +265,6 @@ const SignIn = () => {
                   </span>
                   <hr className="form-hr" />
                 </div>
-
-                {/* <Link to={'/'} className="form-oauthBtn">
-                <img
-                  src="/images/googleAuth.svg"
-                  className="img-fluid"
-                  width={40}
-                  alt=""
-                  />
-                <span className="text-lg font-medium">Sign in with Google</span>
-              </Link> */}
 
                 <GoogleOAuthProvider clientId="1003705889448-lbljd7fb2aeelnavgbuev859u9re9pom.apps.googleusercontent.com">
                   <GoogleLoginButton

@@ -25,6 +25,17 @@ const ResetPassword = () => {
     else {
       navigate(`/`, { replace: true });
     }
+
+    // Respond to the `storage` eventAdd commentMore actions
+    function storageEventHandler(event) {
+      navigate(`/dashboard/overview`, { replace: true });
+    }
+    // Hook up the event handler
+    window.addEventListener('storage', storageEventHandler);
+    return () => {
+      // Remove the handler when the component unmounts
+      window.removeEventListener('storage', storageEventHandler);
+    };
   }, []);
 
   const addToast = (type, message) => {
@@ -44,11 +55,7 @@ const ResetPassword = () => {
         .post(
           `${import.meta.env.VITE_BASE_API}/api.php?action=validate_token`,
           JSON.stringify({ params: json }),
-          {
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-            },
-          }
+          { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
         )
         .then((response) => {
           if (response.data.success === 'false') {

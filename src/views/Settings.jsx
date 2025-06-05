@@ -12,16 +12,98 @@ const Settings = () => {
   const [phone, setPhone] = useState(null);
   const [bio, setBio] = useState(null);
   const [address, setAddress] = useState(null);
+  const [profilePicture, setProfilePicture] = useState([]);
 
-  const [editMode, setEditMode] = useState({ personal: false, address: false });
+  const [editMode, setEditMode] = useState({
+    profile: false,
+    personal: false,
+    address: false,
+  });
 
   useEffect(() => {
     if (getCookie('token') !== undefined) fetchUserProfile();
   }, []);
 
-  useEffect(() => {
-    console.log('userProfile', userProfile);
-  }, [userProfile]);
+  // useEffect(() => {
+  //   console.log('userProfile', userProfile);
+  // }, [userProfile]);
+
+  const changeHandler = (e) => {
+    let files = e.target.files;
+    //console.log("files: ", files);
+
+    var allFiles = [];
+    for (var i = 0; i < files.length; i++) {
+      let file = files[i];
+
+      let ext = '';
+      switch (file.type) {
+        case 'image/x-png':
+          ext = 'png';
+          break;
+        case 'image/png':
+          ext = 'png';
+          break;
+        case 'image/jpeg':
+          ext = 'jpg';
+          break;
+        case 'image/webp':
+          ext = 'webp';
+          break;
+        default:
+          break;
+      }
+
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+
+      reader.onload = () => {
+        let fileInfo = {
+          name: file.name.replace(`.${ext}`, ''),
+          type: file.type,
+          extention: ext,
+          size: Math.round(file.size / 1000) + ' kB',
+          base64: reader.result,
+          file: file,
+        };
+
+        allFiles.push(fileInfo);
+
+        if (allFiles.length == files.length) {
+          console.log(allFiles);
+          //if (this.props.multiple) this.props.onDone(allFiles);
+          //else this.props.onDone(allFiles[0]);
+          setProfilePicture(allFiles);
+        }
+      };
+    }
+  };
+
+  const removeImage = (i) => {
+    let array = [...images];
+    array.splice(i, 1);
+    setProfilePicture(array);
+  };
+
+  const ReturnProfilePictureUrl = () => {
+    let url = '';
+
+    if (profilePicture.length > 0) {
+      url = profilePicture[0]['base64'];
+    } else if (
+      userProfile?.profile_picture !== '' &&
+      userProfile?.profile_picture !== null
+    ) {
+      url =
+        userProfile.registration_method === 'website'
+          ? `${import.meta.env.VITE_BASE_API}${userProfile.profile_picture}`
+          : `${userProfile.profile_picture}`;
+    } else {
+      url = '/images/icons/ProfAvatar.svg';
+    }
+
+    return <img src={url} className="img-fluid w-12" alt="" />;
+  };
 
   const fetchUserProfile = () => {
     const json = JSON.stringify({ token: getCookie('token') });
@@ -55,6 +137,10 @@ const Settings = () => {
       .then((response) => {
         if (response.data.success === 'true') {
           fetchUserProfile();
+          window.localStorage.setItem('loginSecret', response.data.secret);
+
+          const customEvent = new CustomEvent('myCustomStorageEvent', {});
+          window.dispatchEvent(customEvent);
         }
       })
       .catch((error) => {
@@ -63,24 +149,46 @@ const Settings = () => {
   };
 
   const handleEnableEdit = (type) => {
-    if (type === 'personal') {
-      setEditMode({ personal: true, address: false });
+    if (type === 'profile') {
+      setEditMode({ profile: true, personal: false, address: false });
+    } else if (type === 'personal') {
+      setEditMode({ profile: false, personal: true, address: false });
     } else if (type === 'address') {
-      setEditMode({ personal: false, address: true });
+      setEditMode({ profile: false, personal: false, address: true });
     }
   };
 
   const handleDisableEdit = (type) => {
-    if (type === 'personal') {
+    if (type === 'profile') {
+      let myUpdateObject = {
+        id: userProfile.id,
+        job_designation:
+          userProfile.job_designation !== null
+            ? userProfile.job_designation
+            : '',
+        bio: userProfile.bio !== null ? userProfile.bio : '',
+        phone: userProfile.phone !== null ? userProfile.phone : '',
+        address: userProfile.address !== null ? userProfile.address : '',
+        profile_picture: profilePicture !== null ? profilePicture : [],
+      };
+
+      setEditMode({ profile: false, personal: false, address: false });
+
+      updateUserProfile(myUpdateObject);
+    } else if (type === 'personal') {
       let myUpdateObject = {
         id: userProfile.id,
         job_designation: jobDesignation !== null ? jobDesignation : '',
         bio: bio !== null ? bio : '',
         phone: phone !== null ? phone : '',
         address: userProfile.address !== null ? userProfile.address : '',
+        profile_picture:
+          userProfile.profile_picture !== null
+            ? userProfile.profile_picture
+            : '',
       };
 
-      setEditMode({ personal: false, address: false });
+      setEditMode({ profile: false, personal: false, address: false });
 
       updateUserProfile(myUpdateObject);
     } else if (type === 'address') {
@@ -93,9 +201,13 @@ const Settings = () => {
         bio: userProfile.bio !== null ? userProfile.bio : '',
         phone: userProfile.phone !== null ? userProfile.phone : '',
         address: address !== null ? address : '',
+        profile_picture:
+          userProfile.profile_picture !== null
+            ? userProfile.profile_picture
+            : '',
       };
 
-      setEditMode({ personal: false, address: false });
+      setEditMode({ profile: false, personal: false, address: false });
 
       updateUserProfile(myUpdateObject);
     }
@@ -109,7 +221,7 @@ const Settings = () => {
         <div className="w-full h-full relative border-2 border-gray-300 border-dashed rounded-md p-2 md:p-5">
           <div className="flex items-center justify-start md:justify-between gap-5 w-full">
             <div className="flex items-center gap-2.5">
-              {userProfile?.profile_picture !== '' &&
+              {/* {userProfile?.profile_picture !== '' &&
               userProfile?.profile_picture !== null ? (
                 <img
                   src={
@@ -128,13 +240,46 @@ const Settings = () => {
                   className="img-fluid w-12"
                   alt=""
                 />
+              )} */}
+
+              {editMode.profile === true ? (
+                <div className="flex flex-col">
+                  <ReturnProfilePictureUrl />
+                  <input
+                    type="file"
+                    onChange={changeHandler}
+                    name="profile_picture"
+                    accept="image/x-png,image/gif,image/jpeg"
+                  />
+                </div>
+              ) : (
+                <ReturnProfilePictureUrl />
               )}
+
               <div className="flex flex-col leading-none">
                 <h2 className="font-monaBold text-xl">{userProfile?.name}</h2>
                 <span className="font-monaLight text-sm">
                   {userProfile?.email}
                 </span>
               </div>
+            </div>
+
+            <div className="flex items-start justify-end w-full">
+              {editMode.profile === true ? (
+                <button
+                  className="flexy p-2.5 max-xs:w-5 max-xs:h-5 bg-primary text-white rounded-full"
+                  onClick={() => handleDisableEdit('profile')}
+                >
+                  <Check className="sm:w-5 sm:h-5 h-4 w-4" />
+                </button>
+              ) : (
+                <button
+                  className="flexy p-2.5 max-xs:w-5 max-xs:h-5 bg-primary text-white rounded-full"
+                  onClick={() => handleEnableEdit('profile')}
+                >
+                  <Pencil className="sm:w-5 sm:h-5 h-4 w-4" />
+                </button>
+              )}
             </div>
           </div>
         </div>

@@ -1,15 +1,15 @@
 import { Fragment, useEffect, useState } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 import AdminSidebar from '@/components/AdminSidebar';
 
 import { dashSidebar } from '@/contentData/dashSidebar';
 import DashboardNavbar from '@/components/DashboardNavbar';
 
-import { getCookie } from '../../func';
+// import { getCookie } from '../../func';
 
 const AdminDashboard = (props) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { ...rest } = props;
 
   const params = useParams();
@@ -19,8 +19,8 @@ const AdminDashboard = (props) => {
   const [currentRoute, setCurrentRoute] = useState('Overview');
 
   useEffect(() => {
-    if (getCookie('token') === undefined && getCookie('token') === null)
-      navigate(`/auth/sign-in`, { replace: true });
+    // if (getCookie('token') === undefined && getCookie('token') === null)
+    //   navigate(`/auth/sign-in`, { replace: true });
 
     window.addEventListener('resize', () =>
       window.innerWidth < 1200 ? setOpen(false) : setOpen(true)

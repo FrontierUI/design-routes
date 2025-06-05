@@ -33,11 +33,7 @@ const UserList = () => {
       .post(
         `${import.meta.env.VITE_BASE_API}/api.php?action=get_users`,
         JSON.stringify({ params: json }),
-        {
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
-        }
+        { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
       )
       .then((response) => {
         if (response.data.success === 'true') {

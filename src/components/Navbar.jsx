@@ -13,6 +13,12 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
+    if (localStorage.getItem('isLoggedIn') !== null) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+
     // Respond to the `storage` event
     function storageEventHandler(event) {
       if (localStorage.getItem('isLoggedIn') !== null) {
@@ -53,7 +59,7 @@ const Navbar = () => {
         </ul>
 
         <div className="itemsCenter gap-x-3 lg:gap-x-5">
-          <Link
+          {/* <Link
             className="hidden lg:flex items-center justify-center lg:transitAll lg:scal105"
             to="https://koalendar.com/e/meet-with-routes-design"
             onClick={() => toggleDrawer()}
@@ -65,17 +71,32 @@ const Navbar = () => {
             >
               Get a demo
             </button>
-          </Link>
+          </Link> */}
 
           {isLoggedIn ? (
             <Avatar />
           ) : (
-            <Link
-              className="flexy transitAll scal105 lg:hover:shadow-drop-4 bg-primary text-white px-6 py-2 shadow rounded-full itemsCenter"
-              to="/auth/sign-in"
-            >
-              Sign in
-            </Link>
+            <>
+              <Link
+                className="hidden lg:flex items-center justify-center lg:transitAll lg:scal105"
+                to="https://koalendar.com/e/meet-with-routes-design"
+                onClick={() => toggleDrawer()}
+                target="_blank"
+              >
+                <button
+                  aria-label="get-a-demo"
+                  className="bg-primary hidden lg:flex text-white lg:hover:shadow-drop-4 px-6 py-2 shadow rounded-full itemsCenter"
+                >
+                  Get a demo
+                </button>
+              </Link>
+              <Link
+                className="flexy transitAll scal105 lg:hover:shadow-drop-4 bg-primary text-white px-6 py-2 shadow rounded-full itemsCenter"
+                to="/auth/sign-in"
+              >
+                Sign in
+              </Link>
+            </>
           )}
 
           <div className="lg:hidden">

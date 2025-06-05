@@ -22,6 +22,31 @@ const Avatar = () => {
       setProfilePicture(temp['profile_picture']);
       setregistrationMethod(temp['registration_method']);
     }
+
+    // Define event handlerAdd commentMore actions
+    const handleCustomStorageEvent = (event) => {
+      // console.log('Custom event triggered:', event.detail);
+      // alert(`Custom event received with message: ${event.detail.message}`);
+
+      if (localStorage.getItem('loginSecret') !== null) {
+        let temp = JSON.parse(
+          atob(atob(window.localStorage.getItem('loginSecret')))
+        );
+        setProfilePicture(temp['profile_picture']);
+        setregistrationMethod(temp['registration_method']);
+      }
+    };
+
+    // Add event listenerAdd commentMore actions
+    window.addEventListener('myCustomStorageEvent', handleCustomStorageEvent);
+
+    // Cleanup on component unmount
+    return () => {
+      window.removeEventListener(
+        'myCustomStorageEvent',
+        handleCustomStorageEvent
+      );
+    };
   }, []);
 
   const handleLogout = () => {

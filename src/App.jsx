@@ -1,5 +1,7 @@
 import { lazy, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
+
+import { getCookie } from '@/func';
 
 const Home = lazy(() => import('@/pages/Home'));
 const About = lazy(() => import('@/pages/About'));
@@ -38,7 +40,12 @@ const SME = lazy(() => import('@/pages/verticals/SME'));
 const ForBrands = lazy(() => import('@/pages/verticals/ForBrands'));
 const ForAgencies = lazy(() => import('@/pages/verticals/ForAgencies'));
 
-const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
+const AdminDashboard = lazy(() => import('@/pages/admin/AdminDashboard'));
+
+function ProtectedRoute() {
+  const token = getCookie('token');
+  return token ? <Outlet /> : <Navigate to="/auth/sign-in" replace />;
+}
 
 const LoadingFallback = () => {
   return (
@@ -118,8 +125,13 @@ const App = () => {
 
           <Route path="/our-work/:slug" element={<PortfolioPage />} />
 
-          <Route path="/dashboard/:page" element={<AdminDashboard />} />
-          <Route path="/dashboard/:page/:id" element={<AdminDashboard />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/dashboard/:page" element={<AdminDashboard />} />
+          </Route>
+
+          <Route element={<ProtectedRoute />}>
+            <Route path="/dashboard/:page/:id" element={<AdminDashboard />} />
+          </Route>
         </Routes>
       </main>
     </Suspense>

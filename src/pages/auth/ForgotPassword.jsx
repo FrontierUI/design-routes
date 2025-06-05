@@ -21,6 +21,17 @@ const ForgotPassword = () => {
         navigate(`/projects`, { replace: true });
       else navigate(`/projects`, { replace: true });
     }
+
+    // Respond to the `storage` event
+    function storageEventHandler(event) {
+      navigate(`/dashboard/overview`, { replace: true });
+    }
+    // Hook up the event handler
+    window.addEventListener('storage', storageEventHandler);
+    return () => {
+      // Remove the handler when the component unmounts
+      window.removeEventListener('storage', storageEventHandler);
+    };
   }, []);
 
   const addToast = (type, message) => {
@@ -42,11 +53,7 @@ const ForgotPassword = () => {
         .post(
           `${import.meta.env.VITE_BASE_API}/api.php?action=forgotpassword`,
           JSON.stringify({ params: json }),
-          {
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-            },
-          }
+          { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
         )
         .then((response) => {
           if (response.data.success === 'true') {

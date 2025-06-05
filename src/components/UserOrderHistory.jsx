@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -6,25 +6,29 @@ import {
   CalendarClock,
   ChevronDown,
   Ellipsis,
+  FilePlus2,
   Package,
   PackageCheck,
   ReceiptText,
   RefreshCw,
   Settings2,
+  Trash2,
   Upload,
   User,
 } from 'lucide-react';
 
-import { formatDate, getCookie, checkRole } from '@/func';
+import { formatDate, getCookie, checkRole, formatFileSize } from '../func';
 import Toast from '@/components/Toast';
 
 let user_id = null;
 
 const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
-  const [status, setStatus] = useState('');
+  const fileInputRef = useRef(null);
 
+  const [status, setStatus] = useState('');
   const [toasts, setToasts] = useState([]);
   const [enableUpdateButton, setEnableUpdateButton] = useState(false);
+  const [files, setFiles] = useState([]);
 
   const orderStatus = OrderDetails?.order_status;
 
@@ -53,6 +57,23 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
     if (newStatus !== '') setStatus(newStatus);
   };
 
+  const handleAttachFile = (e) => {
+    e.preventDefault();
+    fileInputRef.current.click();
+  };
+
+  const handleFileChange = (e) => {
+    const selectedFiles = Array.from(e.target.files);
+    const maxFileSize = 1024 * 1024 * 1024;
+
+    const validFiles = selectedFiles.filter((file) => file.size <= maxFileSize);
+
+    setFiles(validFiles);
+
+    if (validFiles.length > e.target.files)
+      addToast('error', 'Max allowed file size is 1 GB');
+  };
+
   const updateOrderStatus = () => {
     if (status !== orderStatus) {
       const json = JSON.stringify({
@@ -76,6 +97,102 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
           console.error(`Error: ${error}`);
         });
     }
+  };
+
+  const uploaddeliverables = () => {
+    files.forEach(async (f, index) => {
+      let Payload = {
+        token: getCookie('token'),
+        order_id: OrderDetails.order_id,
+        description: '',
+        files: [],
+      };
+
+      if (files && files.length > 0) {
+        const filePromises = Array.from([files[index]]).map((file) => {
+          return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+
+            reader.readAsDataURL(file);
+
+            reader.onload = () => {
+              const ext = file.name.split('.').pop().toLowerCase();
+              const validTypes = {
+                // Image formats
+                'image/png': 'png',
+                'image/jpg': 'jpg',
+                'image/jpeg': 'jpeg',
+                'image/gif': 'gif',
+                'image/webp': 'webp',
+                'image/avif': 'avif',
+                'image/svg+xml': 'svg',
+                'application/postscript': 'ai',
+                'image/vnd.adobe.photoshop': 'psd',
+
+                // Document formats
+                'application/pdf': 'pdf',
+                'application/msword': 'doc',
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+                  'docx',
+                'application/vnd.ms-powerpoint': 'ppt',
+                'application/vnd.openxmlformats-officedocument.presentationml.presentation':
+                  'pptx',
+                'application/vnd.ms-excel': 'xlsx',
+
+                // Font formats
+                'font/woff2': 'woff2',
+                'font/woff': 'woff',
+                'font/ttf': 'ttf',
+                'font/otf': 'otf',
+                'video/mp4': 'mp4',
+                'video/x-msvideo': 'avi',
+                'audio/mpeg': 'mp3',
+                'model/3mf': 'max',
+                'application/octet-stream': '3ds',
+                'model/x3d+fbx': 'fbx',
+              };
+              if (!validTypes[file.type]) {
+                reject(new Error(`Unsupported file type: ${file.type}`));
+                return;
+              }
+              resolve({
+                name: file.name,
+                type: file.type,
+                extension: validTypes[file.type],
+                size: Math.round(file.size / 1000),
+                base64: reader.result.split(',')[1], // Remove data URL prefix
+              });
+            };
+            reader.onerror = () =>
+              reject(new Error(`Failed to read file: ${file.name}`));
+          });
+        });
+
+        Payload.files = await Promise.all(filePromises);
+      }
+
+      const json = JSON.stringify(Payload);
+
+      axios
+        .post(
+          `${import.meta.env.VITE_BASE_API}/api.php?action=add_deliverable`,
+          JSON.stringify({ params: json }),
+          { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+        )
+        .then((response) => {
+          if (response.data.success === 'true') {
+            // setResponse("");
+            // setFiles([]);
+            // fetchTicketDetails();
+            // addToast("success", response.data.message);
+
+            console.log(response.data.deliverable_id);
+          }
+        })
+        .catch((error) => {
+          console.error(`Error: ${error}`);
+        });
+    });
   };
 
   return (
@@ -349,15 +466,63 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
             </div>
 
             {checkRole(getCookie('token')) === 'admin' && (
-              <Link
-                to={'javascript:void(0)'}
-                className="flexBetween px-3 py-2 gap-4 bg-primary text-white rounded-lg"
-              >
-                Upload files
-                <Upload className="w-5" />
-              </Link>
+              <>
+                <input
+                  id="files"
+                  type="file"
+                  name="files[]"
+                  multiple
+                  // accept=".png,.jpg,.pdf,.doc,.docx"
+                  accept=".max,.3ds,.fbx,.xlsx,.doc,.docx,.ppt,.pptx,.woff2,.woff,.ttf,.otf,.mp4,.mp3,.avi,.avif,.gif,.webp,.jpeg,.jpg,.png,.svg,.ai,.psd,.pdf"
+                  style={{ display: 'none' }}
+                  ref={fileInputRef}
+                  onChange={handleFileChange}
+                />
+
+                <button
+                  id="btnAttachFile"
+                  className="flexBetween px-3 py-2 gap-4 bg-primary text-white rounded-lg"
+                  onClick={handleAttachFile}
+                >
+                  <FilePlus2 className="w-5" />
+                  File Attach
+                </button>
+              </>
             )}
           </div>
+
+          {checkRole(getCookie('token')) === 'admin' &&
+            files.length > 0 &&
+            [...files].map((file, index) => (
+              <div
+                className="flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between gap-5 w-full"
+                key={index}
+              >
+                <div className="flex-1 ">
+                  {file.name}
+                  <span className="pl-2 text-gray-500 text-xs">
+                    {formatFileSize(file.size)}
+                  </span>
+                </div>
+                <button
+                  className="py-2 px-4 flexy gap-3 bg-red-100 text-red-500 rounded-lg"
+                  onClick={(e) => removeAttachedFile(e, index)}
+                >
+                  Remove
+                  <Trash2 className="w-5 h-5" />
+                </button>
+              </div>
+            ))}
+
+          {files.length > 0 && (
+            <button
+              className="flexBetween px-3 py-2 gap-4 bg-primary text-white rounded-lg"
+              onClick={uploaddeliverables}
+            >
+              Upload files
+              <Upload className="w-5" />
+            </button>
+          )}
 
           <hr className="bg-gray-200 h-px w-full" />
 

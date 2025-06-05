@@ -9,10 +9,11 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
 
   const [toasts, setToasts] = useState([]);
 
@@ -23,6 +24,17 @@ const SignUp = () => {
         navigate(`/dashboard/overview`, { replace: true });
       else navigate(`/dashboard/overview`, { replace: true });
     }
+
+    // Respond to the `storage` eventAdd commentMore actions
+    function storageEventHandler(event) {
+      navigate(`/dashboard/overview`, { replace: true });
+    }
+    // Hook up the event handler
+    window.addEventListener('storage', storageEventHandler);
+    return () => {
+      // Remove the handler when the component unmounts
+      window.removeEventListener('storage', storageEventHandler);
+    };
   }, []);
 
   const addToast = (type, message) => {
@@ -52,11 +64,7 @@ const SignUp = () => {
         .post(
           `${import.meta.env.VITE_BASE_API}/api.php?action=register`,
           JSON.stringify({ params: json }),
-          {
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-            },
-          }
+          { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
         )
         .then((response) => {
           if (response.data.success === 'true') {
