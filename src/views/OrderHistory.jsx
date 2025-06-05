@@ -55,6 +55,7 @@ const OrderHistory = () => {
         <UserOrderHistory
           OrderDetails={orderDetails}
           OrderDeliverables={orderDeliverables}
+          fetchOrderDetails={fetchOrderDetails}
         />
       </div>
     </div>

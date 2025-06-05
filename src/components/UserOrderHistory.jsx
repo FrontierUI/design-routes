@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 import {
   CalendarClock,
   ChevronDown,
+  Download,
   Ellipsis,
   FilePlus2,
   Package,
@@ -15,26 +16,32 @@ import {
   Trash2,
   Upload,
   User,
-} from 'lucide-react';
+} from "lucide-react";
 
-import { formatDate, getCookie, checkRole, formatFileSize } from '../func';
-import Toast from '@/components/Toast';
+import { formatDate, getCookie, checkRole, formatFileSize } from "../func";
+import Toast from "@/components/Toast";
 
 let user_id = null;
 
-const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
+const UserOrderHistory = ({
+  OrderDetails,
+  OrderDeliverables,
+  fetchOrderDetails,
+}) => {
   const fileInputRef = useRef(null);
 
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState("");
   const [toasts, setToasts] = useState([]);
   const [enableUpdateButton, setEnableUpdateButton] = useState(false);
   const [files, setFiles] = useState([]);
 
+  const [uploading, setUploading] = useState(false);
+
   const orderStatus = OrderDetails?.order_status;
 
   useEffect(() => {
-    if (getCookie('token') !== undefined && getCookie('token') !== null) {
-      user_id = atob(atob(getCookie('token'))).split('|')[0];
+    if (getCookie("token") !== undefined && getCookie("token") !== null) {
+      user_id = atob(atob(getCookie("token"))).split("|")[0];
     }
   }, []);
 
@@ -42,6 +49,10 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
     if (status !== orderStatus) setEnableUpdateButton(true);
     else setEnableUpdateButton(false);
   }, [status]);
+
+  // useEffect(()=>{
+  //   console.log("uploading", uploading)
+  // }, [uploading]);
 
   const addToast = (type, message) => {
     const id = Date.now();
@@ -54,7 +65,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
 
   const handleChange = (e) => {
     const newStatus = e.target.value;
-    if (newStatus !== '') setStatus(newStatus);
+    if (newStatus !== "") setStatus(newStatus);
   };
 
   const handleAttachFile = (e) => {
@@ -71,13 +82,13 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
     setFiles(validFiles);
 
     if (validFiles.length > e.target.files)
-      addToast('error', 'Max allowed file size is 1 GB');
+      addToast("error", "Max allowed file size is 1 GB");
   };
 
   const updateOrderStatus = () => {
     if (status !== orderStatus) {
       const json = JSON.stringify({
-        token: getCookie('token'),
+        token: getCookie("token"),
         order_id: OrderDetails.order_id,
         status: status,
       });
@@ -86,11 +97,11 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
         .post(
           `${import.meta.env.VITE_BASE_API}/api.php?action=update_order`,
           JSON.stringify({ params: json }),
-          { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+          { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
         )
         .then((response) => {
-          if (response.data.success === 'true') {
-            addToast('success', response.data.message);
+          if (response.data.success === "true") {
+            addToast("success", response.data.message);
           }
         })
         .catch((error) => {
@@ -99,100 +110,295 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
     }
   };
 
-  const uploaddeliverables = () => {
-    files.forEach(async (f, index) => {
+  // const uploaddeliverables = () => {
+  //   files.forEach(async (f, index) => {
+  //     let Payload = {
+  //       token: getCookie('token'),
+  //       order_id: OrderDetails.order_id,
+  //       description: '',
+  //       files: [],
+  //     };
+
+  //     if (files && files.length > 0) {
+  //       const filePromises = Array.from([files[index]]).map((file) => {
+  //         return new Promise((resolve, reject) => {
+  //           const reader = new FileReader();
+
+  //           reader.readAsDataURL(file);
+
+  //           reader.onload = () => {
+  //             const ext = file.name.split('.').pop().toLowerCase();
+  //             const validTypes = {
+  //               // Image formats
+  //               'image/png': 'png',
+  //               'image/jpg': 'jpg',
+  //               'image/jpeg': 'jpeg',
+  //               'image/gif': 'gif',
+  //               'image/webp': 'webp',
+  //               'image/avif': 'avif',
+  //               'image/svg+xml': 'svg',
+  //               'application/postscript': 'ai',
+  //               'image/vnd.adobe.photoshop': 'psd',
+
+  //               // Document formats
+  //               'application/pdf': 'pdf',
+  //               'application/msword': 'doc',
+  //               'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+  //                 'docx',
+  //               'application/vnd.ms-powerpoint': 'ppt',
+  //               'application/vnd.openxmlformats-officedocument.presentationml.presentation':
+  //                 'pptx',
+  //               'application/vnd.ms-excel': 'xlsx',
+
+  //               // Font formats
+  //               'font/woff2': 'woff2',
+  //               'font/woff': 'woff',
+  //               'font/ttf': 'ttf',
+  //               'font/otf': 'otf',
+  //               'video/mp4': 'mp4',
+  //               'video/x-msvideo': 'avi',
+  //               'audio/mpeg': 'mp3',
+  //               'model/3mf': 'max',
+  //               'application/octet-stream': '3ds',
+  //               'model/x3d+fbx': 'fbx',
+  //             };
+  //             if (!validTypes[file.type]) {
+  //               reject(new Error(`Unsupported file type: ${file.type}`));
+  //               return;
+  //             }
+  //             resolve({
+  //               name: file.name,
+  //               type: file.type,
+  //               extension: validTypes[file.type],
+  //               size: Math.round(file.size / 1000),
+  //               base64: reader.result.split(',')[1], // Remove data URL prefix
+  //             });
+  //           };
+  //           reader.onerror = () =>
+  //             reject(new Error(`Failed to read file: ${file.name}`));
+  //         });
+  //       });
+
+  //       Payload.files = await Promise.all(filePromises);
+  //     }
+
+  //     const json = JSON.stringify(Payload);
+
+  //     axios
+  //       .post(
+  //         `${import.meta.env.VITE_BASE_API}/api.php?action=add_deliverable`,
+  //         JSON.stringify({ params: json }),
+  //         { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+  //       )
+  //       .then((response) => {
+  //         if (response.data.success === 'true') {
+  //           // setResponse("");
+  //           // setFiles([]);
+  //           // fetchTicketDetails();
+  //           // addToast("success", response.data.message);
+
+  //           console.log(response.data.deliverable_id);
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.error(`Error: ${error}`);
+  //       });
+  //   });
+  // };
+
+  const uploaddeliverables = async () => {
+    setUploading(true);
+    // let currentFileIndex = 0;
+    const uploadStatus = files.map((file) => ({
+      name: file.name,
+      progress: 0,
+      status: "pending", // pending, uploading, completed, failed
+    }));
+
+    // console.log("uploadStatus", uploadStatus);
+
+    // Function to update progress in UI
+    const updateProgress = (index, progress, status) => {
+      uploadStatus[index].progress = progress;
+      uploadStatus[index].status = status;
+      // console.log(`File: ${uploadStatus[index].name}, Progress: ${progress}%, Status: ${status}`);
+      // Update UI here, e.g., dispatch an event or update state
+      // Example: dispatchEvent(new CustomEvent('uploadProgress', { detail: uploadStatus }));
+
+      setTimeout(() => {
+        if (document.getElementById(`pbspan${index}`) !== undefined) {
+          document.getElementById(`pbspan${index}`).innerHTML = `${progress}%`;
+          document
+            .getElementById(`pbcircle${index}`)
+            .setAttribute("stroke-dashoffset", `${100 - progress}`);
+        }
+      }, 1000);
+    };
+
+    const uploadFile = async (index) => {
+      if (index >= files.length) {
+        setFiles([]);
+        fetchOrderDetails(OrderDetails.order_id);
+        console.log("All uploads completed");
+        return;
+      }
+
+      const file = files[index];
+      updateProgress(index, 0, "uploading");
+
       let Payload = {
-        token: getCookie('token'),
+        token: getCookie("token"),
         order_id: OrderDetails.order_id,
-        description: '',
+        description: "",
         files: [],
       };
 
-      if (files && files.length > 0) {
-        const filePromises = Array.from([files[index]]).map((file) => {
-          return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-
-            reader.readAsDataURL(file);
-
-            reader.onload = () => {
-              const ext = file.name.split('.').pop().toLowerCase();
-              const validTypes = {
-                // Image formats
-                'image/png': 'png',
-                'image/jpg': 'jpg',
-                'image/jpeg': 'jpeg',
-                'image/gif': 'gif',
-                'image/webp': 'webp',
-                'image/avif': 'avif',
-                'image/svg+xml': 'svg',
-                'application/postscript': 'ai',
-                'image/vnd.adobe.photoshop': 'psd',
-
-                // Document formats
-                'application/pdf': 'pdf',
-                'application/msword': 'doc',
-                'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
-                  'docx',
-                'application/vnd.ms-powerpoint': 'ppt',
-                'application/vnd.openxmlformats-officedocument.presentationml.presentation':
-                  'pptx',
-                'application/vnd.ms-excel': 'xlsx',
-
-                // Font formats
-                'font/woff2': 'woff2',
-                'font/woff': 'woff',
-                'font/ttf': 'ttf',
-                'font/otf': 'otf',
-                'video/mp4': 'mp4',
-                'video/x-msvideo': 'avi',
-                'audio/mpeg': 'mp3',
-                'model/3mf': 'max',
-                'application/octet-stream': '3ds',
-                'model/x3d+fbx': 'fbx',
-              };
-              if (!validTypes[file.type]) {
-                reject(new Error(`Unsupported file type: ${file.type}`));
-                return;
-              }
-              resolve({
-                name: file.name,
-                type: file.type,
-                extension: validTypes[file.type],
-                size: Math.round(file.size / 1000),
-                base64: reader.result.split(',')[1], // Remove data URL prefix
-              });
+      try {
+        // Convert file to base64
+        const fileData = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onload = () => {
+            const ext = file.name.split(".").pop().toLowerCase();
+            const validTypes = {
+              "image/png": "png",
+              "image/jpeg": "jpg",
+              "image/jpeg": "jpeg",
+              "image/gif": "gif",
+              "image/webp": "webp",
+              "image/avif": "avif",
+              "image/svg+xml": "svg",
+              "application/postscript": "ai",
+              "image/vnd.adobe.photoshop": "psd",
+              "application/pdf": "pdf",
+              "application/msword": "doc",
+              "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+                "docx",
+              "application/vnd.ms-powerpoint": "ppt",
+              "application/vnd.openxmlformats-officedocument.presentationml.presentation":
+                "pptx",
+              "application/vnd.ms-excel": "xlsx",
+              "font/woff2": "woff2",
+              "font/woff": "woff",
+              "font/ttf": "ttf",
+              "font/otf": "otf",
+              "video/mp4": "mp4",
+              "video/x-msvideo": "avi",
+              "audio/mpeg": "mp3",
+              "model/3mf": "max",
+              "application/octet-stream": "3ds",
+              "model/x3d+fbx": "fbx",
             };
-            reader.onerror = () =>
-              reject(new Error(`Failed to read file: ${file.name}`));
-          });
+
+            if (!validTypes[file.type]) {
+              reject(new Error(`Unsupported file type: ${file.type}`));
+              return;
+            }
+
+            resolve({
+              name: file.name,
+              type: file.type,
+              extension: validTypes[file.type],
+              size: Math.round(file.size / 1000),
+              base64: reader.result.split(",")[1],
+            });
+          };
+          reader.onerror = () =>
+            reject(new Error(`Failed to read file: ${file.name}`));
         });
 
-        Payload.files = await Promise.all(filePromises);
-      }
+        Payload.files = [fileData];
+        const json = JSON.stringify(Payload);
 
-      const json = JSON.stringify(Payload);
-
-      axios
-        .post(
+        // Upload file with progress tracking
+        await axios.post(
           `${import.meta.env.VITE_BASE_API}/api.php?action=add_deliverable`,
           JSON.stringify({ params: json }),
-          { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
-        )
-        .then((response) => {
-          if (response.data.success === 'true') {
-            // setResponse("");
-            // setFiles([]);
-            // fetchTicketDetails();
-            // addToast("success", response.data.message);
-
-            console.log(response.data.deliverable_id);
+          {
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            onUploadProgress: (progressEvent) => {
+              const percentCompleted = Math.round(
+                (progressEvent.loaded * 100) / progressEvent.total
+              );
+              updateProgress(index, percentCompleted, "uploading");
+            },
           }
-        })
-        .catch((error) => {
-          console.error(`Error: ${error}`);
-        });
-    });
+        );
+
+        updateProgress(index, 100, "completed");
+        // console.log(`File ${file.name} uploaded successfully`);
+
+        // Proceed to next file
+        await uploadFile(index + 1);
+      } catch (error) {
+        updateProgress(index, 0, "failed");
+        console.error(`Error uploading ${file.name}: ${error}`);
+        // Continue with next file even if one fails
+        await uploadFile(index + 1);
+      }
+    };
+
+    // Start uploading the first file
+    await uploadFile(0);
+
+    // setTimeout(()=>{
+    //   setUploading(false);
+    // }, 1000 * 5)
+  };
+
+  const ProgressBar = ({ PBIndex }) => {
+    return (
+      <div class="relative size-10">
+        <svg
+          class="size-full -rotate-90"
+          viewBox="0 0 36 36"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Background Circle */}
+          <circle
+            cx="18"
+            cy="18"
+            r="16"
+            fill="none"
+            class="stroke-current text-gray-200 dark:text-neutral-700"
+            stroke-width="2"
+          ></circle>
+          {/* Progress Circle */}
+          <circle
+            id={`pbcircle${PBIndex}`}
+            cx="18"
+            cy="18"
+            r="16"
+            fill="none"
+            class="stroke-current text-blue-600 dark:text-blue-500"
+            stroke-width="2"
+            stroke-dasharray="100"
+            stroke-dashoffset={`${0}`}
+            stroke-linecap="round"
+          ></circle>
+        </svg>
+
+        {/* Percentage Text */}
+        <div class="absolute top-1/2 start-1/2 transform -translate-y-1/2 -translate-x-1/2">
+          <span
+            class="text-center text-2xl font-bold text-blue-600 dark:text-blue-500"
+            style={{ fontSize: "10px" }}
+            id={`pbspan${PBIndex}`}
+          >
+            0%
+          </span>
+        </div>
+      </div>
+    );
+  };
+
+  const downloadFile = (url, filename) => {
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a); // Required for Firefox
+    a.click();
+    document.body.removeChild(a);
   };
 
   return (
@@ -207,9 +413,9 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
       ))}
       <div
         className={
-          checkRole(getCookie('token')) === 'admin'
-            ? 'col-span-12 md:col-span-6 w-full relative rounded-lg'
-            : 'col-span-12 md:col-span-6 w-full relative rounded-lg'
+          checkRole(getCookie("token")) === "admin"
+            ? "col-span-12 md:col-span-6 w-full relative rounded-lg"
+            : "col-span-12 md:col-span-6 w-full relative rounded-lg"
         }
       >
         <div className="sm:p-5 p-3 bg-white rounded-lg flex flex-col relative w-full space-y-4">
@@ -258,9 +464,9 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
 
       <div
         className={
-          checkRole(getCookie('token')) === 'admin'
-            ? 'col-span-12 md:col-span-3 w-full relative bg-white rounded-lg'
-            : 'col-span-12 md:col-span-6 w-full relative bg-white rounded-lg'
+          checkRole(getCookie("token")) === "admin"
+            ? "col-span-12 md:col-span-3 w-full relative bg-white rounded-lg"
+            : "col-span-12 md:col-span-6 w-full relative bg-white rounded-lg"
         }
       >
         <div className="sm:p-4 p-2 flex flex-col relative w-full space-y-4">
@@ -295,14 +501,14 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                 {OrderDetails?.payment_method}
               </span>
             </div>
-            {checkRole(getCookie('token')) !== 'admin' && (
+            {checkRole(getCookie("token")) !== "admin" && (
               <div className="flexBetween gap-5 w-full relative">
                 <Link
                   to={`/dashboard/invoice-details/${btoa(
                     btoa(
                       OrderDetails?.order_id +
-                        '||' +
-                        atob(atob(getCookie('token'))).split('|')[0]
+                        "||" +
+                        atob(atob(getCookie("token"))).split("|")[0]
                     )
                   )}`}
                   className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
@@ -316,7 +522,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
         </div>
       </div>
 
-      {checkRole(getCookie('token')) === 'admin' && (
+      {checkRole(getCookie("token")) === "admin" && (
         <div className="col-span-12 md:col-span-3 w-full relative bg-white rounded-lg">
           <div className="sm:p-4 p-2 flex flex-col space-y-4 relative w-full">
             <div className="flex items-center gap-4">
@@ -333,26 +539,26 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                 <div className="relative flex items-center w-full">
                   <select
                     className="invoice-select border border-gray-400"
-                    value={status !== '' ? status : OrderDetails?.order_status}
+                    value={status !== "" ? status : OrderDetails?.order_status}
                     onChange={handleChange}
                   >
                     <option
                       className="invoice-selectOpt"
-                      value={''}
+                      value={""}
                       onClick={() => setEnableUpdateButton(false)}
                     >
                       Select Status
                     </option>
-                    <option className="invoice-selectOpt" value={'pending'}>
+                    <option className="invoice-selectOpt" value={"pending"}>
                       Pending
                     </option>
-                    <option className="invoice-selectOpt" value={'in progres'}>
+                    <option className="invoice-selectOpt" value={"in progres"}>
                       In Progress
                     </option>
-                    <option className="invoice-selectOpt" value={'delivered'}>
+                    <option className="invoice-selectOpt" value={"delivered"}>
                       Delivered
                     </option>
-                    <option className="invoice-selectOpt" value={'cancelled'}>
+                    <option className="invoice-selectOpt" value={"cancelled"}>
                       Cancelled
                     </option>
                   </select>
@@ -365,11 +571,11 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
               <div className="flexBetween gap-5 w-full relative">
                 <button
                   className={`min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg${
-                    status !== '' && enableUpdateButton
-                      ? ''
-                      : ' opacity-50 cursor-not-allowed'
+                    status !== "" && enableUpdateButton
+                      ? ""
+                      : " opacity-50 cursor-not-allowed"
                   }`}
-                  disabled={status === '' || !enableUpdateButton}
+                  disabled={status === "" || !enableUpdateButton}
                   onClick={updateOrderStatus}
                 >
                   Update
@@ -381,8 +587,8 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                   to={`/dashboard/invoice-details/${btoa(
                     btoa(
                       OrderDetails?.order_id +
-                        '||' +
-                        atob(atob(getCookie('token'))).split('|')[0]
+                        "||" +
+                        atob(atob(getCookie("token"))).split("|")[0]
                     )
                   )}`}
                   className="min-w-40 w-full bg-primary text-white py-2 px-3 gap-4 flexBetween rounded-lg"
@@ -465,7 +671,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
               <h3 className="font-monaMedium text-md">Project Deliverables</h3>
             </div>
 
-            {checkRole(getCookie('token')) === 'admin' && (
+            {checkRole(getCookie("token")) === "admin" && (
               <>
                 <input
                   id="files"
@@ -474,7 +680,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                   multiple
                   // accept=".png,.jpg,.pdf,.doc,.docx"
                   accept=".max,.3ds,.fbx,.xlsx,.doc,.docx,.ppt,.pptx,.woff2,.woff,.ttf,.otf,.mp4,.mp3,.avi,.avif,.gif,.webp,.jpeg,.jpg,.png,.svg,.ai,.psd,.pdf"
-                  style={{ display: 'none' }}
+                  style={{ display: "none" }}
                   ref={fileInputRef}
                   onChange={handleFileChange}
                 />
@@ -491,7 +697,7 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
             )}
           </div>
 
-          {checkRole(getCookie('token')) === 'admin' &&
+          {checkRole(getCookie("token")) === "admin" &&
             files.length > 0 &&
             [...files].map((file, index) => (
               <div
@@ -504,13 +710,17 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                     {formatFileSize(file.size)}
                   </span>
                 </div>
-                <button
-                  className="py-2 px-4 flexy gap-3 bg-red-100 text-red-500 rounded-lg"
-                  onClick={(e) => removeAttachedFile(e, index)}
-                >
-                  Remove
-                  <Trash2 className="w-5 h-5" />
-                </button>
+                {!uploading ? (
+                  <button
+                    className="py-2 px-4 flexy gap-3 bg-red-100 text-red-500 rounded-lg"
+                    onClick={(e) => removeAttachedFile(e, index)}
+                  >
+                    Remove
+                    <Trash2 className="w-5 h-5" />
+                  </button>
+                ) : (
+                  <ProgressBar PBIndex={index} />
+                )}
               </div>
             ))}
 
@@ -532,9 +742,18 @@ const UserOrderHistory = ({ OrderDetails, OrderDeliverables }) => {
                 <li
                   className="p-2 sm:p-4 w-full bg-[#e3e2ff] rounded-lg flexBetween"
                   key={index}
+                  onClick={() =>
+                    downloadFile(
+                      `${import.meta.env.VITE_BASE_API}/uploads/deliverables/${
+                        deliverable.file_name
+                      }`,
+                      deliverable.original_file_name
+                    )
+                  }
                 >
                   <span>{deliverable.original_file_name}</span>
-                  <Ellipsis className="w-6" />
+                  {/* <Ellipsis className="w-6" /> */}
+                  <Download className="w-6" />
                 </li>
               ))}
             </ul>

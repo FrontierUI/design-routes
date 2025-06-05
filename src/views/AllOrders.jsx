@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-import { ListFilter, Search } from 'lucide-react';
+import { ListFilter, Search } from "lucide-react";
 
-import DashboardBanner from '@/components/DashboardBanner';
-import { formatDate, getCookie } from '@/func';
+import DashboardBanner from "@/components/DashboardBanner";
+import { formatDate, getCookie } from "@/func";
 
 const AllOrders = () => {
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
   const [orders, setOrders] = useState([]);
   const [offset, setOffset] = useState(0);
   const [limit, setLimit] = useState(50);
@@ -23,7 +23,7 @@ const AllOrders = () => {
 
   const fetchOrders = () => {
     const json = JSON.stringify({
-      token: getCookie('token'),
+      token: getCookie("token"),
       limit: limit,
       offset: offset,
     });
@@ -32,10 +32,10 @@ const AllOrders = () => {
       .post(
         `${import.meta.env.VITE_BASE_API}/api.php?action=get_orders`,
         JSON.stringify({ params: json }),
-        { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+        { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
       )
       .then((response) => {
-        if (response.data.success === 'true') {
+        if (response.data.success === "true") {
           setOrders(response.data.orders);
         }
       })
@@ -45,26 +45,30 @@ const AllOrders = () => {
   };
 
   const StatusBedge = ({ Status }) => {
-    if (Status === 'pending')
+    if (Status === "pending")
       return (
         <button className="bg-yellow-100 text-yellow-500 px-5 py-2 rounded-lg">
           Pending
         </button>
       );
-    else if (Status === 'inprogress')
+    else if (Status === "inprogress")
       return (
         <button className="bg-blue-100 text-blue-500 px-5 py-2 rounded-lg">
           In Progress
         </button>
       );
-    else if (Status === 'completed')
-      <button className="bg-green-100 text-green-500 px-5 py-2 rounded-lg">
-        Completed
-      </button>;
-    else if (Status === 'cancelled')
-      <button className="bg-red-100 text-red-500 px-5 py-2 rounded-lg">
-        Cancelled
-      </button>;
+    else if (Status === "completed" || Status === "delivered")
+      return (
+        <button className="bg-green-100 text-green-500 px-5 py-2 rounded-lg capitalize">
+          {Status}
+        </button>
+      );
+    else if (Status === "cancelled")
+      return (
+        <button className="bg-red-100 text-red-500 px-5 py-2 rounded-lg">
+          Cancelled
+        </button>
+      );
   };
 
   return (
@@ -85,7 +89,7 @@ const AllOrders = () => {
               />
               <div className="flex items-center gap-2">
                 <p className="font-monaMedium text-xl">Filter</p>
-                <Link to={'javascript:void(0)'} className="flexy">
+                <Link to={"javascript:void(0)"} className="flexy">
                   <ListFilter className="w-6 h-6" />
                 </Link>
               </div>
@@ -167,7 +171,7 @@ const AllOrders = () => {
                         <StatusBedge Status={order.order_status} />
                       </td>
                       <td className="p-4 text-left">
-                        {order.payment_status === 'COMPLETED' ? (
+                        {order.payment_status === "COMPLETED" ? (
                           <button className="bg-green-100 text-green-500 px-5 py-2 rounded-lg">
                             Paid
                           </button>
