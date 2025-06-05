@@ -67,7 +67,7 @@ const Avatar = () => {
             src={
               registrationMethod === 'website'
                 ? `${import.meta.env.VITE_BASE_API}${profilePicture}`
-                : `${profilePicture}`
+                : `${(profilePicture.startsWith("http://") || profilePicture.startsWith("https://")) ? profilePicture : `${import.meta.env.VITE_BASE_API}${profilePicture}`}`
             }
             className="w-10 h-10 img-fluid rounded-full shadow"
             alt="Profile"
